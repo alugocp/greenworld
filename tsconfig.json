@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "noImplicitAny" : false,
+    "removeComments": true,
+    "module": "commonjs",
+    "sourceMap": true,
+    "rootDir": "tasks",
+    "outDir": "build",
+    "target": "es5"
+  },
+  "include": [
+    "tasks/lib/*.ts",
+    "tasks/*.ts"
+  ]
+}

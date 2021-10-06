@@ -1,0 +1,19 @@
+{
+  "plants": [
+    {
+      "name": "Flint Corn",
+      "species": "zea mays",
+      "variety": "indurata"
+    },
+    {
+      "name": "Flour Corn",
+      "species": "zea mays",
+      "variety": "amylacea"
+    },
+    {
+      "name": "Arabidopsis",
+      "species": "arabidopsis thaliana",
+      "variety": null
+    }
+  ]
+}

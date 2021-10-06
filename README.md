@@ -9,11 +9,19 @@ These commands will help you throughout development and deployment of this proje
 ### View available tasks
 ```bash
 grunt
-# or
-grunt availabletasks
 ```
 
 ### Linting
 ```bash
-grunt tslint
+grunt lint
+```
+
+### Compile the scripts
+```bash
+grunt ts
+```
+
+### Evaluate pairwise plant companionship
+```bash
+grunt evaluate
 ```
