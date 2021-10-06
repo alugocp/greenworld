@@ -1,0 +1,14 @@
+{
+  "name": "greenworld",
+  "version": "1.0.0",
+  "description": "This is LugoCorp's companion planting database research project. This README contains all the information you'll need to initialize the database and run the core algorithms. The purpose of this project is to identify potential companion farming groups and to query those groups by target environmental factors.",
+  "author": "Alex Lugo",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-available-tasks": "^0.6.3",
+    "grunt-tslint": "^5.0.2",
+    "tslint": "^6.1.3",
+    "typescript": "^4.4.3"
+  }
+}
