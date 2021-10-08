@@ -2,18 +2,33 @@
   "plants": [
     {
       "name": "Flint Corn",
-      "species": "zea mays",
-      "variety": "indurata"
+      "species": "zea mays indurata",
+      "inputs": ["nitrogen", "carbon"],
+      "outputs": ["oxygen"]
     },
     {
       "name": "Flour Corn",
-      "species": "zea mays",
-      "variety": "amylacea"
+      "species": "zea mays amylacea",
+      "inputs": ["nitrogen", "carbon"],
+      "outputs": ["oxygen"]
     },
     {
       "name": "Arabidopsis",
       "species": "arabidopsis thaliana",
-      "variety": null
+      "inputs": ["oxygen"],
+      "outputs": ["nitrogen"]
+    },
+    {
+      "name": "Tomato",
+      "species": "solanum lycopersicum",
+      "inputs": ["oxygen", "carbon"],
+      "outputs": ["nitrogen"]
+    },
+    {
+      "name": "Watermelon",
+      "species": "citrullus lanatus",
+      "inputs": ["nitrogen"],
+      "outputs": ["carbon", "oxygen"]
     }
   ]
 }
