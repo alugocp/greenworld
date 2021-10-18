@@ -20,28 +20,54 @@
 - [The ultimate companion planting guide + chart](https://waldenlabs.com/the-ultimate-companion-planting-guide-chart/)
 - [Use of a systematic planting design to investigate the effects of companion crop population density on yield and forage establishment and productivity](https://cdnsciencepub.com/doi/10.4141/cjps90-105)
 
-# Corn research
+# Plant studies
+## Corn
 - [Carbon and nitrogen cycling with corn biomass harvest](https://crops.extension.iastate.edu/encyclopedia/carbon-and-nitrogen-cycling-corn-biomass-harvest)
 - [Nutrient sufficiency concepts for modern corn hybrids: impact of management practices and yield levels](https://ag.purdue.edu/agry/directory/Documents/CM-RS-13-0022_Final%20Version_4-11-2014.pdf)
 - [Fertilization influence on biomass yield and nutrient uptake of sweet corn in potentially hardsetting soil under no tillage](https://link.springer.com/article/10.1186/s42269-021-00526-w)
 - [Understanding nutrient requirements for high-yielding corn](https://blog.agricen.com/understanding-nutrient-requirements-for-high-corn-yield-what-does-it-mean-for-p-and-k)
 - [Modern corn hybrids' nutrient uptake patterns](http://www.ipni.net/publication/bettercrops.nsf/0/926946F50406A54085257B18005BB7AA/%24FILE/page%207.pdf)
 
-# Nutrient uptake measurements
-- [Nutrient uptake and assimilation](https://ww2.odu.edu/~jrule/Biol695/pdf/3.pdf)
-- [The Mineral Nutrition of Wild Plants Revisited: A Re-evaluation of Processes and Patterns](https://www.cgd.ucar.edu/events/20130729/files/Aerts-Chapin-1999.pdf)
+## Carrot
+- [Carrot Nitrogen Uptake and Partitioning](http://geisseler.ucdavis.edu/Guidelines/N_Carrot.html)
+- [Seasonal nutrient partitioning and uptake in hybrid carrot seed production](https://acsess.onlinelibrary.wiley.com/doi/10.1002/agj2.20503)
+
+## Potato
+- [Crop Guide: Potato Nutritional Requirements](https://www.haifa-group.com/crop-guide/field-crops/crop-guide-potato/nutrients-growing-potatoes)
+- [Nutritional requirements of potatoes](https://eprints.nwisrl.ars.usda.gov/id/eprint/36/1/1186.pdf)
+
+## Spinach
+- [Nutrient uptake and growth of spinach as affected by cow manure co-composted with poplar leaf litter](https://link.springer.com/article/10.1007/s40093-017-0154-x)
+- [Nutrient and Water Use of Fresh Market Spinach](https://journals.ashs.org/horttech/view/journals/horttech/23/3/article-p325.xml)
+
+## Tomato
 - [Differential nutrient uptake and its transport in tomato plants on different fertilizer regimens](https://journals.ashs.org/hortsci/view/journals/hortsci/46/8/article-p1170.xml)
 - [Nutrient uptake by tomatoes grown in hydroponics](https://www.ishs.org/ishs-article/401_42)
 - [Evaluation of the nutrients uptake by tomato plants in different phenological stages using an electrical conductivity technique](https://www.mdpi.com/2077-0472/11/4/292/htm)
+
+# Nutrient cycle
+- [Understanding Soil Microbes and Nutrient Recycling](https://ohioline.osu.edu/factsheet/sag-16)
+- [Autophagy, plant senescence, and nutrient recycling](https://pubmed.ncbi.nlm.nih.gov/24687977/)
+
+## Nutrient uptake
+- [Nutrient uptake and assimilation](https://ww2.odu.edu/~jrule/Biol695/pdf/3.pdf)
+- [The Mineral Nutrition of Wild Plants Revisited: A Re-evaluation of Processes and Patterns](https://www.cgd.ucar.edu/events/20130729/files/Aerts-Chapin-1999.pdf)
 - [Roots, growth and nutrient uptake](https://www.agry.purdue.edu/ext/pubs/AGRY-95-08.pdf)
 - [Growth, yield and nutrient uptake of taro grown under upland conditions](https://www.ars.usda.gov/ARSUserFiles/60900500/images/Selected%20Reprints/Taro.pdf)
-- [Carrot Nitrogen Uptake and Partitioning](http://geisseler.ucdavis.edu/Guidelines/N_Carrot.html)
-- [Seasonal nutrient partitioning and uptake in hybrid carrot seed production](https://acsess.onlinelibrary.wiley.com/doi/10.1002/agj2.20503)
-- [Crop Guide: Potato Nutritional Requirements](https://www.haifa-group.com/crop-guide/field-crops/crop-guide-potato/nutrients-growing-potatoes)
-- [Nutritional requirements of potatoes](https://eprints.nwisrl.ars.usda.gov/id/eprint/36/1/1186.pdf)
-- [Nutrient uptake and growth of spinach as affected by cow manure co-composted with poplar leaf litter](https://link.springer.com/article/10.1007/s40093-017-0154-x)
-- [Nutrient and Water Use of Fresh Market Spinach](https://journals.ashs.org/horttech/view/journals/horttech/23/3/article-p325.xml)
 - [Nutrition & Lighting Requirements of Lettuce](https://www.purdue.edu/hla/sites/cea/wp-content/uploads/sites/15/2017/04/Nutrition-and-Light-Requirement-of-Lettuce.pdf)
+
+## Immobilization
+- [Nutrient uptake and immobilization in a short-rotation coppice stand of hybrid poplars in north-west France](https://www.sciencedirect.com/science/article/abs/pii/S0378112799001450)
+
+## Mineralization
+- [Genotypic variation in maize (Zea mays) influences rates of soilorganic matter mineralization and gross nitrification](https://nph.onlinelibrary.wiley.com/doi/pdf/10.1111/nph.17537)
+
+## Leaching
+- [Nutrient Leaching](http://www.css.cornell.edu/faculty/lehmann/publ/Lehmann%20et%20al.,%202003,%20Leaching%20CABI%20book.pdf)
+- [Soil net nitrogen mineralization and leaching under Miscanthus × giganteus and Zea mays](https://experts.illinois.edu/en/publications/soil-net-nitrogen-mineralization-and-leaching-under-miscanthusgig)
+
+## Organic nutrient production
+- [Evaluation of an Organic Nitrogen Source in a Yellow Squash- Collard Rotation](https://journals.ashs.org/hortsci/view/journals/hortsci/50/1/article-p51.xml)
 
 # Tech stack
 - [GeographicLib](https://www.npmjs.com/package/geographiclib)
