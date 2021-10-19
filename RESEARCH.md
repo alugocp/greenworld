@@ -6,6 +6,7 @@
 - [AquaCrop publications](http://www.fao.org/aquacrop/resources/publications/en/)
 - [The arabidopsis information resource (TAIR)](https://www.arabidopsis.org/)
 - [The role of arabidopsis in plant science research](https://www.nsf.gov/bio/pubs/reports/arabid/chap1.htm)
+- [Plant Sampling Guidelines](https://www.researchgate.net/profile/Paul-Hepperly/post/Measurement_of_nutrient_uptake_by_plants/attachment/5bec2829cfe4a76455021778/AS%3A692865571254286%401542203433741/download/Plant+Sampling+Protocols.pdf)
 
 # Planting tips
 - [A gardener's guide to sun exposure](https://southernlivingplants.com/planting-care/a-gardeners-guide-to-sun-exposure/)
@@ -48,6 +49,8 @@
 # Nutrient cycle
 - [Understanding Soil Microbes and Nutrient Recycling](https://ohioline.osu.edu/factsheet/sag-16)
 - [Autophagy, plant senescence, and nutrient recycling](https://pubmed.ncbi.nlm.nih.gov/24687977/)
+- [Plant nutrients in the soil](https://www.dpi.nsw.gov.au/agriculture/soils/soil-testing-and-analysis/plant-nutrients)
+- [Indirect Measures of Plant Nutrients](https://nue.okstate.edu/indirect_measures_of_plant_nutri.htm)
 
 ## Nutrient uptake
 - [Nutrient uptake and assimilation](https://ww2.odu.edu/~jrule/Biol695/pdf/3.pdf)
@@ -55,6 +58,9 @@
 - [Roots, growth and nutrient uptake](https://www.agry.purdue.edu/ext/pubs/AGRY-95-08.pdf)
 - [Growth, yield and nutrient uptake of taro grown under upland conditions](https://www.ars.usda.gov/ARSUserFiles/60900500/images/Selected%20Reprints/Taro.pdf)
 - [Nutrition & Lighting Requirements of Lettuce](https://www.purdue.edu/hla/sites/cea/wp-content/uploads/sites/15/2017/04/Nutrition-and-Light-Requirement-of-Lettuce.pdf)
+- [Measurement of nutrient uptake by plants?](https://www.researchgate.net/post/Measurement_of_nutrient_uptake_by_plants)
+- [Analyzing plant nutrient uptake and utilization efficiencies: comparison between crops and approaches](https://link.springer.com/article/10.1007/s11104-018-3738-y)
+- [Nutrient use and uptake in Pinus taeda](https://pubmed.ncbi.nlm.nih.gov/18450573/)
 
 ## Immobilization
 - [Nutrient uptake and immobilization in a short-rotation coppice stand of hybrid poplars in north-west France](https://www.sciencedirect.com/science/article/abs/pii/S0378112799001450)
@@ -65,6 +71,7 @@
 ## Leaching
 - [Nutrient Leaching](http://www.css.cornell.edu/faculty/lehmann/publ/Lehmann%20et%20al.,%202003,%20Leaching%20CABI%20book.pdf)
 - [Soil net nitrogen mineralization and leaching under Miscanthus × giganteus and Zea mays](https://experts.illinois.edu/en/publications/soil-net-nitrogen-mineralization-and-leaching-under-miscanthusgig)
+- [Nitrogen in the Environment: Leaching](https://extension.missouri.edu/publications/wq262)
 
 ## Organic nutrient production
 - [Evaluation of an Organic Nitrogen Source in a Yellow Squash- Collard Rotation](https://journals.ashs.org/hortsci/view/journals/hortsci/50/1/article-p51.xml)
