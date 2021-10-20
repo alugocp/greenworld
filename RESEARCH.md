@@ -20,6 +20,7 @@
 - [What is companion planting?](https://www.thespruce.com/companion-planting-with-chart-5025124)
 - [The ultimate companion planting guide + chart](https://waldenlabs.com/the-ultimate-companion-planting-guide-chart/)
 - [Use of a systematic planting design to investigate the effects of companion crop population density on yield and forage establishment and productivity](https://cdnsciencepub.com/doi/10.4141/cjps90-105)
+- [The Interworking of the Three Sisters](https://www.oneidaindiannation.com/the-interworking-of-the-three-sisters/)
 
 # Plant studies
 ## Corn
@@ -28,6 +29,11 @@
 - [Fertilization influence on biomass yield and nutrient uptake of sweet corn in potentially hardsetting soil under no tillage](https://link.springer.com/article/10.1186/s42269-021-00526-w)
 - [Understanding nutrient requirements for high-yielding corn](https://blog.agricen.com/understanding-nutrient-requirements-for-high-corn-yield-what-does-it-mean-for-p-and-k)
 - [Modern corn hybrids' nutrient uptake patterns](http://www.ipni.net/publication/bettercrops.nsf/0/926946F50406A54085257B18005BB7AA/%24FILE/page%207.pdf)
+
+## Gourds
+- [Corn Stover Removal Effects On Soil Aggregation and Squash Fruit Yield in Cover Cropping Systems](https://scisoc.confex.com/scisoc/2013am/webprogram/Handout/Paper80042/Lance%20Ouellette_Poster_Presentation.pdf)
+- [Squash yield, nutrient content and soil fertility parameters in response to methods of fertilizer application and rates of nitrogen fertigation](https://link.springer.com/article/10.1023/B:FRES.0000019036.64212.9c)
+- [Pumpkins and Other Cultivars of Genus Cucurbita](https://www.thehenryford.org/explore/blog/pumpkins-and-other-cultivars-of-genus-cucurbita)
 
 ## Carrot
 - [Carrot Nitrogen Uptake and Partitioning](http://geisseler.ucdavis.edu/Guidelines/N_Carrot.html)
