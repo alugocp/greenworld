@@ -29,6 +29,9 @@
 - [Fertilization influence on biomass yield and nutrient uptake of sweet corn in potentially hardsetting soil under no tillage](https://link.springer.com/article/10.1186/s42269-021-00526-w)
 - [Understanding nutrient requirements for high-yielding corn](https://blog.agricen.com/understanding-nutrient-requirements-for-high-corn-yield-what-does-it-mean-for-p-and-k)
 - [Modern corn hybrids' nutrient uptake patterns](http://www.ipni.net/publication/bettercrops.nsf/0/926946F50406A54085257B18005BB7AA/%24FILE/page%207.pdf)
+- [Corn Growth Stages](https://crops.extension.iastate.edu/encyclopedia/corn-growth-stages)
+- [VT Corn Growth Stages and Scouting Tips](https://www.pioneer.com/us/agronomy/corn-vt.html)
+- [Corn growth stages with estimated calendar days and growing-degree units](https://mygeohub.org/resources/879/download/Corn-growth-stage-day-and-GDU-calendar10.pdf)
 
 ## Gourds
 - [Corn Stover Removal Effects On Soil Aggregation and Squash Fruit Yield in Cover Cropping Systems](https://scisoc.confex.com/scisoc/2013am/webprogram/Handout/Paper80042/Lance%20Ouellette_Poster_Presentation.pdf)
