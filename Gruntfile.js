@@ -10,6 +10,7 @@ module.exports = function(grunt) {
       files: {
         src: [
           'Gruntfile.js',
+          'tests/*.spec.ts',
           'tasks/lib/*.ts',
           'tasks/*.ts'
         ]
@@ -29,6 +30,12 @@ module.exports = function(grunt) {
         args: [
           'build/evaluate.js'
         ]
+      },
+      test: {
+        cmd: 'ts-mocha',
+        args: [
+          'tests/*.spec.ts'
+        ]
       }
     }
   });
@@ -43,4 +50,5 @@ module.exports = function(grunt) {
   grunt.registerTask('lint', ['tslint']);
   grunt.registerTask('default', ['availabletasks']);
   grunt.registerTask('evaluate', ['run:evaluate']);
+  grunt.registerTask('test', ['run:test']);
 };
