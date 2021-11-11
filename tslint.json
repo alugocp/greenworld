@@ -4,6 +4,7 @@
   ],
   "rules": {
     "whitespace": [true, "check-branch", "check-operator", "check-typecast"],
+    "comment-type": [true, "doc", "singleline"],
     "no-irregular-whitespace": [true],
     "max-classes-per-file": [false],
     "quotemark": [true, "single"],

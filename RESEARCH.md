@@ -13,6 +13,7 @@
 - [Crop nutrient replacement: calculator for fertiliser requirements](https://www.dpi.nsw.gov.au/agriculture/horticulture/tropical/fertilising/replacement)
 - [Cover crop spec guide](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1081555.pdf)
 - [Growth habits and trellis requirements of climbing palms in north-eastern queensland](https://www.researchgate.net/publication/240509382_Growth_Habits_and_Trellis_Requirements_of_Climbing_Palms_Calamus_spp_in_North-Eastern_Queensland)
+- [SECTION 600.TABLE B STANDARD WEIGHT PER BUSHEL FOR AGRICULTURAL COMMODITIES](https://www.ilga.gov/commission/jcar/admincode/008/00800600zz9998br.html)
 
 # Companion planting
 - [12 examples of companion planting](https://simplicable.com/new/companion-planting)

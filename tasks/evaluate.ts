@@ -1,7 +1,7 @@
-/*
-  This file is the script that evaluates companionship profiles for
-  the plants in the database
-*/
+/**
+ * This file is the script that evaluates companionship profiles for
+ * the plants in the database
+ */
 import fs = require('fs');
 const data = JSON.parse(fs.readFileSync('database.json').toString());
 let companions = [];

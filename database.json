@@ -1,5 +1,26 @@
 {
+  "conversions": {
+    "oz/lb": 16
+  },
   "plants": [
+    {
+      "name": "Flint Corn",
+      "species": "zea mays indurata",
+      "conversions": {
+        "lb/bu": 70,
+        "bu/A": 230
+      },
+      "uptake": [
+        {"nutrient": "N", "rate": "256 lb/A"},
+        {"nutrient": "P2O5", "rate": "101 lb/A"},
+        {"nutrient": "K2O", "rate": "180 lb/A"},
+        {"nutrient": "S", "rate": "23 lb/A"},
+        {"nutrient": "Zn", "rate": "7.1 oz/A"},
+        {"nutrient": "B", "rate": "1.2 oz/A"}
+      ]
+    }
+  ],
+  "plants (old)": [
     {
       "name": "Flint Corn",
       "species": "zea mays indurata",
