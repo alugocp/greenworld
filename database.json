@@ -1,6 +1,7 @@
 {
   "conversions": {
-    "oz/lb": 16
+    "oz/lb": 16,
+    "g/kg": 1000
   },
   "plants": [
     {
@@ -18,6 +19,22 @@
         {"nutrient": "Zn", "rate": "7.1 oz/A"},
         {"nutrient": "B", "rate": "1.2 oz/A"}
       ]
+    },
+    {
+      "name": "Zucchini",
+      "species": "cucurbita pepo",
+      "uptake": [
+        {"nutrient": "N", "rate": "103 g/kg"},
+        {"nutrient": "P", "rate": "18.3 g/kg"},
+        {"nutrient": "K", "rate": "174.4 g/kg"},
+        {"nutrient": "Ca", "rate": "51.3 g/kg"},
+        {"nutrient": "Mg", "rate": "24.8 g/kg"}
+      ]
+    },
+    {
+      "name": "Butternut Squash",
+      "species": "cucurbita moschata",
+      "uptake": []
     }
   ],
   "plants (old)": [

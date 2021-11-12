@@ -31,6 +31,12 @@ module.exports = function(grunt) {
           'build/evaluate.js'
         ]
       },
+      uptake: {
+        cmd: 'node',
+        args: [
+          'build/uptake.js'
+        ]
+      },
       test: {
         cmd: 'ts-mocha',
         args: [
@@ -50,5 +56,7 @@ module.exports = function(grunt) {
   grunt.registerTask('lint', ['tslint']);
   grunt.registerTask('default', ['availabletasks']);
   grunt.registerTask('evaluate', ['run:evaluate']);
+  grunt.registerTask('uptake', ['run:uptake']);
   grunt.registerTask('test', ['run:test']);
+  grunt.registerTask('qualify', ['lint', 'test']);
 };

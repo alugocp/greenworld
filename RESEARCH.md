@@ -38,6 +38,14 @@
 - [Corn Stover Removal Effects On Soil Aggregation and Squash Fruit Yield in Cover Cropping Systems](https://scisoc.confex.com/scisoc/2013am/webprogram/Handout/Paper80042/Lance%20Ouellette_Poster_Presentation.pdf)
 - [Squash yield, nutrient content and soil fertility parameters in response to methods of fertilizer application and rates of nitrogen fertigation](https://link.springer.com/article/10.1023/B:FRES.0000019036.64212.9c)
 - [Pumpkins and Other Cultivars of Genus Cucurbita](https://www.thehenryford.org/explore/blog/pumpkins-and-other-cultivars-of-genus-cucurbita)
+- [Yield, water requirement, nutrient uptake and fruit quality of zucchini squash grown in soil and closed soilless culture](https://www.researchgate.net/publication/298728928_Yield_water_requirement_nutrient_uptake_and_fruit_quality_of_zucchini_squash_grown_in_soil_and_closed_soilless_culture)
+- [Nitrogen and water use efficiency of zucchini squash for a plastic mulch bed system on a sandy soil](https://abe.ufl.edu/Faculty/carpena/files/pdf/publications/refereed_articles/NitrogenAndWaterUseEfficiency.pdf)
+- [Nutrient uptake and partitioning by Zucchini squash [Cucurbita pepo], head lettuce and potato in response to nitrogen](https://agris.fao.org/agris-search/search.do?recordID=AU19960004025)
+- [Phytochemical profiles and nutritional composition of squash (Cucurbita moschata D.) from Tunisia](https://www.researchgate.net/publication/338503099_Phytochemical_profiles_and_nutritional_composition_of_squash_Cucurbita_moschata_D_from_Tunisia)
+- [EFFECT OF DIFFERENT FERTILIZERS ON THE MINERAL CONTENT OF PUMPKIN FRUIT](https://bibliotekanauki.pl/api/full-texts/2020/12/9/ccbd9a8b-62bb-47e4-bd6b-55726008938a.pdf)
+- [Effects of poultry manure on nutrient uptake of Cucurbita moschata (duch. ex lam.) duch. ex poir](https://www.semanticscholar.org/paper/Effects-of-poultry-manure-on-nutrient-uptake-of-ex-Okonwu-Mensah/8487f71f1870e4c90f8ca54183d35f80ea601fd3)
+- [Effects of NPK fertilizer on nutrient uptake of Cucurbita moschata (Duch. ex Lam.) Duch. ex Poir](https://www.ajol.info/index.php/sa/article/view/156874)
+- [Squash (cucurbita moschata) production](https://www.nda.agric.za/docs/Brochures/PG_Squash.pdf)
 
 ## Carrot
 - [Carrot Nitrogen Uptake and Partitioning](http://geisseler.ucdavis.edu/Guidelines/N_Carrot.html)
