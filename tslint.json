@@ -8,6 +8,7 @@
     "no-irregular-whitespace": [true],
     "max-classes-per-file": [false],
     "quotemark": [true, "single"],
+    "no-string-literal": [false],
     "no-console": [false]
   }
 }

@@ -10,44 +10,34 @@ module.exports = function(grunt) {
       files: {
         src: [
           'Gruntfile.js',
-          'tests/*.spec.ts',
-          'tasks/lib/*.ts',
-          'tasks/*.ts'
+          'src/**/*.ts'
         ]
       }
     },
     availabletasks: {
       tasks: {}
     },
-    ts: {
-      default : {
-        tsconfig: 'tsconfig.json'
-      }
-    },
     run: {
+      compile: {
+        cmd: 'tsc',
+        args: ['-p', 'tsconfig.json']
+      },
       evaluate: {
         cmd: 'node',
-        args: [
-          'build/evaluate.js'
-        ]
+        args: ['build/tasks/evaluate.js']
       },
       uptake: {
         cmd: 'node',
-        args: [
-          'build/uptake.js'
-        ]
+        args: ['build/tasks/uptake.js']
       },
       test: {
         cmd: 'ts-mocha',
-        args: [
-          'tests/*.spec.ts'
-        ]
+        args: ['src/tests/*.spec.ts']
       }
     }
   });
 
   // Loaded NPM tasks
-  grunt.loadNpmTasks('grunt-ts');
   grunt.loadNpmTasks('grunt-run');
   grunt.loadNpmTasks('grunt-tslint');
   grunt.loadNpmTasks('grunt-available-tasks');
@@ -56,7 +46,8 @@ module.exports = function(grunt) {
   grunt.registerTask('lint', ['tslint']);
   grunt.registerTask('default', ['availabletasks']);
   grunt.registerTask('evaluate', ['run:evaluate']);
+  grunt.registerTask('compile', ['run:compile']);
   grunt.registerTask('uptake', ['run:uptake']);
   grunt.registerTask('test', ['run:test']);
-  grunt.registerTask('qualify', ['lint', 'test']);
+  grunt.registerTask('qualify', ['lint', 'compile', 'test']);
 };

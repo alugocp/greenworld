@@ -1,7 +1,7 @@
 /**
  * This file tests the unit conversion logic
  */
-import * as conversions from '../tasks/lib/conversions';
+import * as conversions from '../lib/conversions';
 import {expect} from 'chai';
 
 /**
@@ -62,7 +62,7 @@ describe('Conversion number tests', (): void => {
   it('Test floating point numbers', (): void => {
     const ratio = conversions.convertUptakeUnits('1234.567 g/kg', {
       'g/kg': 1000
-    });
+    }, 6);
     expect(ratio).to.equal(1.234567);
   });
 });

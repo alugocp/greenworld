@@ -4,12 +4,12 @@
     "removeComments": true,
     "module": "commonjs",
     "sourceMap": true,
-    "rootDir": "tasks",
+    "rootDir": "src",
     "outDir": "build",
     "target": "es5"
   },
   "include": [
-    "tasks/lib/*.ts",
-    "tasks/*.ts"
+    "src/lib/*.ts",
+    "src/tasks/*.ts"
   ]
 }
