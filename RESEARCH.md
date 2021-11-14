@@ -7,6 +7,7 @@
 - [The arabidopsis information resource (TAIR)](https://www.arabidopsis.org/)
 - [The role of arabidopsis in plant science research](https://www.nsf.gov/bio/pubs/reports/arabid/chap1.htm)
 - [Plant Sampling Guidelines](https://www.researchgate.net/profile/Paul-Hepperly/post/Measurement_of_nutrient_uptake_by_plants/attachment/5bec2829cfe4a76455021778/AS%3A692865571254286%401542203433741/download/Plant+Sampling+Protocols.pdf)
+- [Soil pH for Field Crops](http://cceonondaga.org/resources/soil-ph-for-field-crops) (Ketterings et al., 2005)
 
 # Planting tips
 - [A gardener's guide to sun exposure](https://southernlivingplants.com/planting-care/a-gardeners-guide-to-sun-exposure/)
@@ -14,6 +15,7 @@
 - [Cover crop spec guide](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1081555.pdf)
 - [Growth habits and trellis requirements of climbing palms in north-eastern queensland](https://www.researchgate.net/publication/240509382_Growth_Habits_and_Trellis_Requirements_of_Climbing_Palms_Calamus_spp_in_North-Eastern_Queensland)
 - [SECTION 600.TABLE B STANDARD WEIGHT PER BUSHEL FOR AGRICULTURAL COMMODITIES](https://www.ilga.gov/commission/jcar/admincode/008/00800600zz9998br.html)
+- [Vegetable Crop Soil pH Tolerances](https://harvesttotable.com/vegetable-crop-soil-ph-tolerances/) (Steve Albert, 2015)
 
 # Companion planting
 - [12 examples of companion planting](https://simplicable.com/new/companion-planting)
@@ -29,23 +31,27 @@
 - [Nutrient sufficiency concepts for modern corn hybrids: impact of management practices and yield levels](https://ag.purdue.edu/agry/directory/Documents/CM-RS-13-0022_Final%20Version_4-11-2014.pdf)
 - [Fertilization influence on biomass yield and nutrient uptake of sweet corn in potentially hardsetting soil under no tillage](https://link.springer.com/article/10.1186/s42269-021-00526-w)
 - [Understanding nutrient requirements for high-yielding corn](https://blog.agricen.com/understanding-nutrient-requirements-for-high-corn-yield-what-does-it-mean-for-p-and-k)
-- [Modern corn hybrids' nutrient uptake patterns](http://www.ipni.net/publication/bettercrops.nsf/0/926946F50406A54085257B18005BB7AA/%24FILE/page%207.pdf)
+- [Modern corn hybrids' nutrient uptake patterns](http://www.ipni.net/publication/bettercrops.nsf/0/926946F50406A54085257B18005BB7AA/%24FILE/page%207.pdf) (Bender et al., 2013)
 - [Corn Growth Stages](https://crops.extension.iastate.edu/encyclopedia/corn-growth-stages)
 - [VT Corn Growth Stages and Scouting Tips](https://www.pioneer.com/us/agronomy/corn-vt.html)
 - [Corn growth stages with estimated calendar days and growing-degree units](https://mygeohub.org/resources/879/download/Corn-growth-stage-day-and-GDU-calendar10.pdf)
+- [Nutrient Sufficiency Concepts for Modern Corn Hybrids: Impacts of Management Practices and Yield Levels](https://ag.purdue.edu/agry/directory/Documents/CM-RS-13-0022_Final%20Version_4-11-2014.pdf) (Ciampitti and Vyn, 2014)
+- [Corn Management in High pH Soils](https://www.pioneer.com/us/agronomy/high-ph-soils-management.html) (Lutt et al., 2019)
+- [What pH Does Corn Need?](https://homeguides.sfgate.com/ph-corn-need-104650.html) (Shorter, 2014)
 
 ## Gourds
 - [Corn Stover Removal Effects On Soil Aggregation and Squash Fruit Yield in Cover Cropping Systems](https://scisoc.confex.com/scisoc/2013am/webprogram/Handout/Paper80042/Lance%20Ouellette_Poster_Presentation.pdf)
 - [Squash yield, nutrient content and soil fertility parameters in response to methods of fertilizer application and rates of nitrogen fertigation](https://link.springer.com/article/10.1023/B:FRES.0000019036.64212.9c)
 - [Pumpkins and Other Cultivars of Genus Cucurbita](https://www.thehenryford.org/explore/blog/pumpkins-and-other-cultivars-of-genus-cucurbita)
-- [Yield, water requirement, nutrient uptake and fruit quality of zucchini squash grown in soil and closed soilless culture](https://www.researchgate.net/publication/298728928_Yield_water_requirement_nutrient_uptake_and_fruit_quality_of_zucchini_squash_grown_in_soil_and_closed_soilless_culture)
+- [Yield, water requirement, nutrient uptake and fruit quality of zucchini squash grown in soil and closed soilless culture](https://www.researchgate.net/publication/298728928_Yield_water_requirement_nutrient_uptake_and_fruit_quality_of_zucchini_squash_grown_in_soil_and_closed_soilless_culture) (Rouphael et al., 2003)
 - [Nitrogen and water use efficiency of zucchini squash for a plastic mulch bed system on a sandy soil](https://abe.ufl.edu/Faculty/carpena/files/pdf/publications/refereed_articles/NitrogenAndWaterUseEfficiency.pdf)
 - [Nutrient uptake and partitioning by Zucchini squash [Cucurbita pepo], head lettuce and potato in response to nitrogen](https://agris.fao.org/agris-search/search.do?recordID=AU19960004025)
 - [Phytochemical profiles and nutritional composition of squash (Cucurbita moschata D.) from Tunisia](https://www.researchgate.net/publication/338503099_Phytochemical_profiles_and_nutritional_composition_of_squash_Cucurbita_moschata_D_from_Tunisia)
 - [EFFECT OF DIFFERENT FERTILIZERS ON THE MINERAL CONTENT OF PUMPKIN FRUIT](https://bibliotekanauki.pl/api/full-texts/2020/12/9/ccbd9a8b-62bb-47e4-bd6b-55726008938a.pdf)
-- [Effects of poultry manure on nutrient uptake of Cucurbita moschata (duch. ex lam.) duch. ex poir](https://www.semanticscholar.org/paper/Effects-of-poultry-manure-on-nutrient-uptake-of-ex-Okonwu-Mensah/8487f71f1870e4c90f8ca54183d35f80ea601fd3)
-- [Effects of NPK fertilizer on nutrient uptake of Cucurbita moschata (Duch. ex Lam.) Duch. ex Poir](https://www.ajol.info/index.php/sa/article/view/156874)
-- [Squash (cucurbita moschata) production](https://www.nda.agric.za/docs/Brochures/PG_Squash.pdf)
+- [Effects of poultry manure on nutrient uptake of Cucurbita moschata (duch. ex lam.) duch. ex poir](https://www.semanticscholar.org/paper/Effects-of-poultry-manure-on-nutrient-uptake-of-ex-Okonwu-Mensah/8487f71f1870e4c90f8ca54183d35f80ea601fd3) (Okonwu and Mensah, 2011)
+- [Effects of NPK fertilizer on nutrient uptake of Cucurbita moschata (Duch. ex Lam.) Duch. ex Poir](https://www.ajol.info/index.php/sa/article/view/156874) (Okonwu and Mensah, 2017)
+- [Squash (cucurbita moschata) production](https://www.nda.agric.za/docs/Brochures/PG_Squash.pdf) (Department of Agriculture, Forestry and Fisheries; 2011)
+- [Growing summer squash and zucchini in home gardens](https://extension.umn.edu/vegetables/growing-summer-squash-and-zucchini-home-gardens#soil-testing-and-fertilizer-340060) (Fritz and Rosen, 2018)
 
 ## Carrot
 - [Carrot Nitrogen Uptake and Partitioning](http://geisseler.ucdavis.edu/Guidelines/N_Carrot.html)
@@ -63,6 +69,12 @@
 - [Differential nutrient uptake and its transport in tomato plants on different fertilizer regimens](https://journals.ashs.org/hortsci/view/journals/hortsci/46/8/article-p1170.xml)
 - [Nutrient uptake by tomatoes grown in hydroponics](https://www.ishs.org/ishs-article/401_42)
 - [Evaluation of the nutrients uptake by tomato plants in different phenological stages using an electrical conductivity technique](https://www.mdpi.com/2077-0472/11/4/292/htm)
+
+## Cucumber
+- [Soil PH for Cucumbers](https://homeguides.sfgate.com/soil-ph-cucumbers-73822.html)
+
+## Melons
+- [Melon Nutritional Summary](https://www.yara.com.au/crop-nutrition/melon/melon-nutritional-summary/) (Rincon-Sanchez et al., 1998) (Quattrucci, 2000)
 
 # Nutrient cycle
 - [Understanding Soil Microbes and Nutrient Recycling](https://ohioline.osu.edu/factsheet/sag-16)

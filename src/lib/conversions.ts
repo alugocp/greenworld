@@ -29,6 +29,14 @@ export function convertUptakeUnits (rate: string, conversions: object, places: n
     ratio /= conversions['lb/bu'] as number;
     unit2 = 'lb';
   }
+  if (unit1 === 'kg') {
+    ratio *= conversions['g/kg'] as number;
+    unit1 = 'g';
+  }
+  if (unit1 === 'g' && unit2 === 't') {
+    ratio /= conversions['g/t'] as number;
+    unit2 = 'g';
+  }
   if (unit1 === 'g' && unit2 === 'kg') {
     ratio /= conversions['g/kg'] as number;
     unit2 = 'g';
