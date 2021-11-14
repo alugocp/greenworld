@@ -26,9 +26,9 @@ module.exports = function(grunt) {
         cmd: 'node',
         args: ['build/tasks/evaluate.js']
       },
-      uptake: {
+      info: {
         cmd: 'node',
-        args: ['build/tasks/uptake.js']
+        args: ['build/tasks/info.js']
       },
       test: {
         cmd: 'ts-mocha',
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['availabletasks']);
   grunt.registerTask('evaluate', ['run:evaluate']);
   grunt.registerTask('compile', ['run:compile']);
-  grunt.registerTask('uptake', ['run:uptake']);
+  grunt.registerTask('info', ['run:info']);
   grunt.registerTask('test', ['run:test']);
-  grunt.registerTask('qualify', ['lint', 'compile', 'test']);
+  grunt.registerTask('verify', ['lint', 'compile', 'test']);
 };

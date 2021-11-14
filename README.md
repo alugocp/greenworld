@@ -18,10 +18,20 @@ grunt lint
 
 ### Compile the scripts
 ```bash
-grunt ts
+grunt compile
 ```
 
-### Evaluate pairwise plant companionship
+### Run unit tests
 ```bash
-grunt evaluate
+grunt test
+```
+
+### Lint, compile and run tests
+```bash
+grunt verify
+```
+
+### View logged plant info
+```bash
+grunt info
 ```

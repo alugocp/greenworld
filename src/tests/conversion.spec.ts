@@ -46,6 +46,21 @@ describe('Conversion unit tests', (): void => {
     });
     expect(ratio).to.equal(1);
   });
+
+  it('Test g/t conversions', (): void => {
+    const ratio = conversions.convertUptakeUnits('1000 g/t', {
+      'g/t': 1000
+    });
+    expect(ratio).to.equal(1);
+  });
+
+  it('Test kg/t conversions', (): void => {
+    const ratio = conversions.convertUptakeUnits('1000 kg/t', {
+      'g/kg': 2,
+      'g/t': 1000
+    });
+    expect(ratio).to.equal(2);
+  });
 });
 
 /**
