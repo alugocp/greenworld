@@ -25,41 +25,32 @@ describe('Conversion unit tests', (): void => {
 
   it('Test oz/A conversions', (): void => {
     const ratio = conversions.convertUptakeUnits('10 oz/A', {
-      'oz/lb': 10,
       'bu/A': 10,
       'lb/bu': 10
     });
-    expect(ratio).to.equal(0.01);
+    expect(ratio).to.equal(0.0063);
   });
 
   it('Test oz/bu conversions', (): void => {
     const ratio = conversions.convertUptakeUnits('10 oz/bu', {
-      'oz/lb': 10,
       'lb/bu': 10
     });
-    expect(ratio).to.equal(0.1);
+    expect(ratio).to.equal(0.0625);
   });
 
   it('Test g/kg conversions', (): void => {
-    const ratio = conversions.convertUptakeUnits('1000 g/kg', {
-      'g/kg': 1000
-    });
+    const ratio = conversions.convertUptakeUnits('1000 g/kg');
     expect(ratio).to.equal(1);
   });
 
   it('Test g/t conversions', (): void => {
-    const ratio = conversions.convertUptakeUnits('1000 g/t', {
-      'g/t': 1000
-    });
-    expect(ratio).to.equal(1);
+    const ratio = conversions.convertUptakeUnits('1000 g/t');
+    expect(ratio).to.equal(0.0011);
   });
 
   it('Test kg/t conversions', (): void => {
-    const ratio = conversions.convertUptakeUnits('1000 kg/t', {
-      'g/kg': 2,
-      'g/t': 1000
-    });
-    expect(ratio).to.equal(2);
+    const ratio = conversions.convertUptakeUnits('1000 kg/t');
+    expect(ratio).to.equal(1.1023);
   });
 });
 
