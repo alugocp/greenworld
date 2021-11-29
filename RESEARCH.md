@@ -8,6 +8,8 @@
 - [The role of arabidopsis in plant science research](https://www.nsf.gov/bio/pubs/reports/arabid/chap1.htm)
 - [Plant Sampling Guidelines](https://www.researchgate.net/profile/Paul-Hepperly/post/Measurement_of_nutrient_uptake_by_plants/attachment/5bec2829cfe4a76455021778/AS%3A692865571254286%401542203433741/download/Plant+Sampling+Protocols.pdf)
 - [Soil pH for Field Crops](http://cceonondaga.org/resources/soil-ph-for-field-crops) (Ketterings et al., 2005)
+- [Analyzing plant nutrient uptake and utilization efficiencies: comparison between crops and approaches](https://link.springer.com/article/10.1007/s11104-018-3738-y)
+- [NUOnet (Nutrient Use and Outcome Network) database](https://data.nal.usda.gov/dataset/nuonet-nutrient-use-and-outcome-network-database)
 
 # Planting tips
 - [A gardener's guide to sun exposure](https://southernlivingplants.com/planting-care/a-gardeners-guide-to-sun-exposure/)

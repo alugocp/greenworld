@@ -20,7 +20,7 @@ module.exports = function(grunt) {
     },
     run: {
       compile: {
-        cmd: 'tsc',
+        cmd: './node_modules/.bin/tsc',
         args: ['-p', 'tsconfig.json']
       },
       evaluate: {
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         args: ['build/tasks/info.js']
       },
       test: {
-        cmd: 'ts-mocha',
+        cmd: './node_modules/.bin/ts-mocha',
         args: ['src/tests/*.spec.ts']
       }
     }
