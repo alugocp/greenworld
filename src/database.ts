@@ -41,10 +41,20 @@ export default {
       name: 'Butternut Squash',
       species: 'cucurbita moschata',
       references: [
-        'Department of Agriculture, Forestry and Fisheries; 2011'
+        'Department of Agriculture, Forestry and Fisheries; 2011',
+        'Starke Ayres, 2019',
+        'Napier, 2009'
       ],
+      conversions: {
+        'kg/plant': 1.4,
+        'plant/ha': 10000
+      },
       pH: [5.6, 6.5],
-      uptake: []
+      uptake: [
+        {nutrient: 'N', rate: '160 kg/ha'},
+        {nutrient: 'P', rate: '20 kg/ha'},
+        {nutrient: 'K', rate: '20 kg/ha'}
+      ]
     },
     {
       name: 'Muskmelon',

@@ -54,6 +54,8 @@
 - [Effects of NPK fertilizer on nutrient uptake of Cucurbita moschata (Duch. ex Lam.) Duch. ex Poir](https://www.ajol.info/index.php/sa/article/view/156874) (Okonwu and Mensah, 2017)
 - [Squash (cucurbita moschata) production](https://www.nda.agric.za/docs/Brochures/PG_Squash.pdf) (Department of Agriculture, Forestry and Fisheries; 2011)
 - [Growing summer squash and zucchini in home gardens](https://extension.umn.edu/vegetables/growing-summer-squash-and-zucchini-home-gardens#soil-testing-and-fertilizer-340060) (Fritz and Rosen, 2018)
+- [Pumpkin Production](https://www.dpi.nsw.gov.au/__data/assets/pdf_file/0004/311485/Pumpkin-production.pdf) (Napier 2009)
+- [Shiba Butternut Squash](https://www.rfdsafeagri.com/wp-content/uploads/2019/10/Butternut-Shiba.pdf) (Starke Ayres, 2019)
 
 ## Carrot
 - [Carrot Nitrogen Uptake and Partitioning](http://geisseler.ucdavis.edu/Guidelines/N_Carrot.html)

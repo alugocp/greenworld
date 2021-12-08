@@ -47,6 +47,12 @@ export function convertUptakeUnits (rate: string, table: object = {}, places: nu
     ratio /= table['g/kg'] as number;
     unit2 = 'g';
   }
+  if (unit1 === 'g' && unit2 === 'ha') {
+    ratio /= table['plant/ha'] as number;
+    ratio /= table['kg/plant'] as number;
+    ratio /= table['g/kg'] as number;
+    unit2 = 'g';
+  }
   if (unit1 !== unit2 || ['lb', 'g'].indexOf(unit1) < 0) {
     throw new Error(`Incomplete conversion for rate '${rate}'`);
   }
