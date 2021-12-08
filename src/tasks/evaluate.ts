@@ -2,61 +2,49 @@
  * This file is the script that evaluates companionship profiles for
  * the plants in the database
  */
-import fs = require('fs');
-const data = JSON.parse(fs.readFileSync('database.json').toString());
-let companions = [];
-let identified = [];
-const scores = {};
-const thresh = 0;
+ import * as conversions from '../lib/conversions';
+ import data from '../database';
 
-function getKey(a, b) {
-  return `${a.species}, ${b.species}`;
+function overlaps(range1: number[], range2: number[]): boolean {
+  return (range1[0] < range2[0]) ? (range1[1] >= range2[0]) : (range2[1] >= range1[0]);
 }
 
-function getScore(a, b) {
-  return scores[getKey(a, b)] || scores[getKey(b, a)];
-}
-
-// Do pairwise comparison
-for (let a = 0; a < data.plants.length - 1; a++) {
-  for (let b = a + 1; b < data.plants.length; b++) {
-    let score = data.plants[a].inputs.map(x => data.plants[b].outputs.indexOf(x) > -1 ? 1 : 0).reduce((acc, x) => acc + x, 0);
-    score += data.plants[b].inputs.map(x => data.plants[a].outputs.indexOf(x) > -1 ? 1 : 0).reduce((acc, x) => acc + x, 0);
-    score -= data.plants[a].inputs.map(x => data.plants[b].inputs.indexOf(x) > -1 ? 1 : 0).reduce((acc, x) => acc + x, 0);
-    scores[getKey(data.plants[a], data.plants[b])] = score;
-    if (score >= thresh) {
-      companions.push([data.plants[a], data.plants[b]]);
-    }
-    console.log(`${data.plants[a].species}, ${data.plants[b].species}: ${score}`);
+function magnitude(input: number): number {
+  input = Math.abs(input);
+  let result: number = 0;
+  while (input < 1) {
+    input *= 10;
+    result++;
   }
+  if (Math.round(input) === 10) {
+    result--;
+  }
+  return result;
 }
-console.log('');
 
-// Identify compatible groups
-identified = [...identified, ...companions];
-while (companions.length > 0) {
-  const groups = [...companions];
-  companions = [];
-  for (const group of groups) {
-    for (const plant of data.plants) {
-      if (group.map(x => x.species).indexOf(plant.species) > -1) {
-        continue;
-      }
-      let accept = true;
-      for (const plant1 of group) {
-        if (getScore(plant1, plant) < thresh) {
-          accept = false;
-          break;
+for (let a = 0; a < data.plants.length - 1; a++) {
+  const plant1 = data.plants[a];
+  for (let b = a + 1; b < data.plants.length; b++) {
+    const plant2 = data.plants[b];
+    process.stdout.write(`\x1b[4m${plant1.name} x ${plant2.name}\x1b[0m\n`);
+    if (overlaps(plant1.pH as number[], plant2.pH as number[])) {
+      process.stdout.write(`• pH ranges overlap\n`);
+    } else {
+      process.stdout.write(`• pH ranges do not overlap\n`);
+    }
+    for (const nut1 of plant1.uptake) {
+      for (const nut2 of plant2.uptake) {
+        if (nut1.nutrient === nut2.nutrient) {
+          const ratio1 = conversions.convertUptakeUnits(nut1.rate, plant1.conversions || {});
+          const ratio2 = conversions.convertUptakeUnits(nut2.rate, plant2.conversions || {});
+          const mag1 = magnitude(ratio1);
+          const mag2 = magnitude(ratio2);
+          if (mag1 === mag2) {
+            process.stdout.write(`• Compete for ${nut1.nutrient}\n`);
+          }
         }
       }
-      if (accept) {
-        companions.push([...group, plant]);
-      }
     }
+    console.log('');
   }
-  identified = [...identified, ...companions];
 }
-
-// Log output
-console.log(`${identified.length} group(s):`);
-identified.map(x => x.map(y => y.species).join(', ')).sort().map(x => console.log(x));
