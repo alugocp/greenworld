@@ -18,6 +18,7 @@
 - [Growth habits and trellis requirements of climbing palms in north-eastern queensland](https://www.researchgate.net/publication/240509382_Growth_Habits_and_Trellis_Requirements_of_Climbing_Palms_Calamus_spp_in_North-Eastern_Queensland)
 - [SECTION 600.TABLE B STANDARD WEIGHT PER BUSHEL FOR AGRICULTURAL COMMODITIES](https://www.ilga.gov/commission/jcar/admincode/008/00800600zz9998br.html)
 - [Vegetable Crop Soil pH Tolerances](https://harvesttotable.com/vegetable-crop-soil-ph-tolerances/) (Steve Albert, 2015)
+- [Sunlight requirements for growing vegetables](https://www.farmanddairy.com/top-stories/sunlight-requirements-for-growing-vegetables/250815.html)
 
 # Companion planting
 - [12 examples of companion planting](https://simplicable.com/new/companion-planting)
@@ -26,6 +27,10 @@
 - [The ultimate companion planting guide + chart](https://waldenlabs.com/the-ultimate-companion-planting-guide-chart/)
 - [Use of a systematic planting design to investigate the effects of companion crop population density on yield and forage establishment and productivity](https://cdnsciencepub.com/doi/10.4141/cjps90-105)
 - [The Interworking of the Three Sisters](https://www.oneidaindiannation.com/the-interworking-of-the-three-sisters/)
+- [There are 7 F's in Food Forest](https://beetrooted.wordpress.com/2012/05/16/the-7-fs-of-food-forest-2/)
+- [The Seven Layers Of A Forest](https://worldwidepermaculture.com/seven-layers-forest/)
+- [How to Start a Food Forest – The Ultimate Low-Maintenance Garden](https://morningchores.com/food-forest/)
+- [Companion Planting: Three Sisters Garden Plans](https://www.growveg.com/guides/companion-planting-three-sisters-garden-plans/)
 
 # Plant studies
 ## Corn
@@ -40,6 +45,7 @@
 - [Nutrient Sufficiency Concepts for Modern Corn Hybrids: Impacts of Management Practices and Yield Levels](https://ag.purdue.edu/agry/directory/Documents/CM-RS-13-0022_Final%20Version_4-11-2014.pdf) (Ciampitti and Vyn, 2014)
 - [Corn Management in High pH Soils](https://www.pioneer.com/us/agronomy/high-ph-soils-management.html) (Lutt et al., 2019)
 - [What pH Does Corn Need?](https://homeguides.sfgate.com/ph-corn-need-104650.html) (Shorter, 2014)
+- [Maize Nutrient Accumulation and Partitioning in Response to Plant Density and Nitrogen Rate: I. Macronutrients](https://acsess.onlinelibrary.wiley.com/doi/full/10.2134/agronj2012.0467)
 
 ## Gourds
 - [Corn Stover Removal Effects On Soil Aggregation and Squash Fruit Yield in Cover Cropping Systems](https://scisoc.confex.com/scisoc/2013am/webprogram/Handout/Paper80042/Lance%20Ouellette_Poster_Presentation.pdf)
@@ -56,6 +62,9 @@
 - [Growing summer squash and zucchini in home gardens](https://extension.umn.edu/vegetables/growing-summer-squash-and-zucchini-home-gardens#soil-testing-and-fertilizer-340060) (Fritz and Rosen, 2018)
 - [Pumpkin Production](https://www.dpi.nsw.gov.au/__data/assets/pdf_file/0004/311485/Pumpkin-production.pdf) (Napier 2009)
 - [Shiba Butternut Squash](https://www.rfdsafeagri.com/wp-content/uploads/2019/10/Butternut-Shiba.pdf) (Starke Ayres, 2019)
+
+## Legumes
+- [Nutrient Uptake and Partitioning by Dry Beans in Manitoba](https://umanitoba.ca/faculties/afs/agronomists_conf/media/Heard_drybean_nutrient_uptake-poster.pdf) (Heard and Brolley, 2008)
 
 ## Carrot
 - [Carrot Nitrogen Uptake and Partitioning](http://geisseler.ucdavis.edu/Guidelines/N_Carrot.html)
@@ -95,6 +104,7 @@
 - [Measurement of nutrient uptake by plants?](https://www.researchgate.net/post/Measurement_of_nutrient_uptake_by_plants)
 - [Analyzing plant nutrient uptake and utilization efficiencies: comparison between crops and approaches](https://link.springer.com/article/10.1007/s11104-018-3738-y)
 - [Nutrient use and uptake in Pinus taeda](https://pubmed.ncbi.nlm.nih.gov/18450573/)
+- [Nutrient Uptake](https://landresources.montana.edu/soilfertility/nutuptake.html)
 
 ## Immobilization
 - [Nutrient uptake and immobilization in a short-rotation coppice stand of hybrid poplars in north-west France](https://www.sciencedirect.com/science/article/abs/pii/S0378112799001450)
@@ -109,6 +119,8 @@
 
 ## Organic nutrient production
 - [Evaluation of an Organic Nitrogen Source in a Yellow Squash- Collard Rotation](https://journals.ashs.org/hortsci/view/journals/hortsci/50/1/article-p51.xml)
+- [Do green beans put nitrogen back into the soil?](https://treehozz.com/do-green-beans-put-nitrogen-back-into-the-soil)
+- [Introducing Nitrogen Fixing Trees: Nature’s Solution to Curing N2 Deficiency](https://www.permaculturenews.org/2015/10/20/introducing-nitrogen-fixing-trees-natures-solution-to-curing-n2-deficiency/)
 
 # Tech stack
 - [GeographicLib](https://www.npmjs.com/package/geographiclib)

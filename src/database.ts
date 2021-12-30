@@ -22,22 +22,6 @@ export default {
       ]
     },
     {
-      name: 'Zucchini',
-      species: 'cucurbita pepo',
-      references: [
-        'Rouphael et al., 2003',
-        'Fritz and Rosen, 2018'
-      ],
-      pH: [6.0, 6.5],
-      uptake: [
-        {nutrient: 'N', rate: '103 g/kg'},
-        {nutrient: 'P', rate: '18.3 g/kg'},
-        {nutrient: 'K', rate: '174.4 g/kg'},
-        {nutrient: 'Ca', rate: '51.3 g/kg'},
-        {nutrient: 'Mg', rate: '24.8 g/kg'}
-      ]
-    },
-    {
       name: 'Butternut Squash',
       species: 'cucurbita moschata',
       references: [
@@ -54,6 +38,45 @@ export default {
         {nutrient: 'N', rate: '160 kg/ha'},
         {nutrient: 'P', rate: '20 kg/ha'},
         {nutrient: 'K', rate: '20 kg/ha'}
+      ]
+    },
+    {
+      name: 'Navy Beans',
+      species: 'Phaseolus Vulgaris',
+      references: [
+        'Heard and Brolley, 2008'
+      ],
+      conversions: {
+        'lb/A': 2350
+      },
+      uptake: [
+        {nutrient: 'N', rate: '58 lb/A'},
+        {nutrient: 'P2O5', rate: '17 lb/A'},
+        {nutrient: 'K2O', rate: '49 lb/A'},
+        {nutrient: 'S', rate: '4.2 lb/A'},
+        {nutrient: 'Ca', rate: '38 lb/A'},
+        {nutrient: 'Mg', rate: '8.8 lb/A'},
+        {nutrient: 'Zn', rate: '0.062 lb/A'},
+        {nutrient: 'Fe', rate: '0.72 lb/A'},
+        {nutrient: 'Mn', rate: '0.17 lb/A'},
+        {nutrient: 'Cu', rate: '0.009 lb/A'},
+        {nutrient: 'B', rate: '0.06 lb/A'}
+      ]
+    },
+    {
+      name: 'Zucchini',
+      species: 'cucurbita pepo',
+      references: [
+        'Rouphael et al., 2003',
+        'Fritz and Rosen, 2018'
+      ],
+      pH: [6.0, 6.5],
+      uptake: [
+        {nutrient: 'N', rate: '103 g/kg'},
+        {nutrient: 'P', rate: '18.3 g/kg'},
+        {nutrient: 'K', rate: '174.4 g/kg'},
+        {nutrient: 'Ca', rate: '51.3 g/kg'},
+        {nutrient: 'Mg', rate: '24.8 g/kg'}
       ]
     },
     {

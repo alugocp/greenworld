@@ -27,6 +27,10 @@ export function convertUptakeUnits (rate: string, table: object = {}, places: nu
     ratio /= table['oz/lb'] as number;
     unit1 = 'lb';
   }
+  if (unit1 === 'lb' && unit2 === 'A' && table['lb/A']) {
+    ratio /= table['lb/A'];
+    unit2 = 'lb';
+  }
   if (unit2 === 'A') {
     ratio /= table['bu/A'] as number;
     unit2 = 'bu';
