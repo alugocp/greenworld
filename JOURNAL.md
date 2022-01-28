@@ -15,3 +15,8 @@ Note: You'll need to store average biomass of a single unit of each crop
 - Each species in a companionship fills 1 of 7 (or more) layers, also known as forest layers
   - Canopy layer is over 30 feet, sub-canopy layer is 10 - 30 feet, and shrub layer is up to 10 feet
 - Plant sunlight/shade requirements come in three settings: direct sunlight, partial sun, and shade
+
+# Metabolism
+- **Metabolic pathway** - a linked series of chemical reactions occurring within a cell
+- **Metabolite** - an intermediate result of a metabolic pathway
+- **Metabolomics** - the comprehensive measurement of all metabolites in a biological specimen

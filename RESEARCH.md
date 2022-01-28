@@ -11,6 +11,12 @@
 - [Analyzing plant nutrient uptake and utilization efficiencies: comparison between crops and approaches](https://link.springer.com/article/10.1007/s11104-018-3738-y)
 - [NUOnet (Nutrient Use and Outcome Network) database](https://data.nal.usda.gov/dataset/nuonet-nutrient-use-and-outcome-network-database)
 
+# Nutrients and Metabolic Pathways
+- [Analysis of metabolites and metabolic pathways in three maize (Zea mays L.) varieties from the same origin using GC–MS](https://www.nature.com/articles/s41598-020-73041-z)
+- [Molecular Mechanisms of Phosphorus Metabolism and Transport during Leaf Senescence](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4844268/)
+- [CornCyc 9.0 at MaizeGDB](https://corncyc-b73-v4.maizegdb.org/)
+- [Coordinated Transport of Nitrate, Potassium, and Sodium](https://www.frontiersin.org/articles/10.3389/fpls.2020.00247/full)
+
 # Planting tips
 - [A gardener's guide to sun exposure](https://southernlivingplants.com/planting-care/a-gardeners-guide-to-sun-exposure/)
 - [Crop nutrient replacement: calculator for fertiliser requirements](https://www.dpi.nsw.gov.au/agriculture/horticulture/tropical/fertilising/replacement)
@@ -19,6 +25,8 @@
 - [SECTION 600.TABLE B STANDARD WEIGHT PER BUSHEL FOR AGRICULTURAL COMMODITIES](https://www.ilga.gov/commission/jcar/admincode/008/00800600zz9998br.html)
 - [Vegetable Crop Soil pH Tolerances](https://harvesttotable.com/vegetable-crop-soil-ph-tolerances/) (Steve Albert, 2015)
 - [Sunlight requirements for growing vegetables](https://www.farmanddairy.com/top-stories/sunlight-requirements-for-growing-vegetables/250815.html)
+- [Ruth Stout Method](https://www.goveganic.net/article182.html)
+- [Masanobu Fukuoka](https://f-masanobu.jp/en/)
 
 # Companion planting
 - [12 examples of companion planting](https://simplicable.com/new/companion-planting)
@@ -46,6 +54,7 @@
 - [Corn Management in High pH Soils](https://www.pioneer.com/us/agronomy/high-ph-soils-management.html) (Lutt et al., 2019)
 - [What pH Does Corn Need?](https://homeguides.sfgate.com/ph-corn-need-104650.html) (Shorter, 2014)
 - [Maize Nutrient Accumulation and Partitioning in Response to Plant Density and Nitrogen Rate: I. Macronutrients](https://acsess.onlinelibrary.wiley.com/doi/full/10.2134/agronj2012.0467)
+- [Effects of enhanced ammonium nitrogen availability for corn](https://www.crops.org/files/publications/jnrlse/pdfs/jnr018/018-02-0093.pdf)
 
 ## Gourds
 - [Corn Stover Removal Effects On Soil Aggregation and Squash Fruit Yield in Cover Cropping Systems](https://scisoc.confex.com/scisoc/2013am/webprogram/Handout/Paper80042/Lance%20Ouellette_Poster_Presentation.pdf)
@@ -62,9 +71,13 @@
 - [Growing summer squash and zucchini in home gardens](https://extension.umn.edu/vegetables/growing-summer-squash-and-zucchini-home-gardens#soil-testing-and-fertilizer-340060) (Fritz and Rosen, 2018)
 - [Pumpkin Production](https://www.dpi.nsw.gov.au/__data/assets/pdf_file/0004/311485/Pumpkin-production.pdf) (Napier 2009)
 - [Shiba Butternut Squash](https://www.rfdsafeagri.com/wp-content/uploads/2019/10/Butternut-Shiba.pdf) (Starke Ayres, 2019)
+- [Metabolic pathways - Cucurbita maxima (winter squash)](https://www.kegg.jp/pathway/cmax01100)
+- [Nutrient evaluation of the seed, pulp, flesh, and peel of spaghetti squash](https://www.researchgate.net/publication/352830278_Nutrient_evaluation_of_the_seed_pulp_flesh_and_peel_of_spaghetti_squash)
 
 ## Legumes
 - [Nutrient Uptake and Partitioning by Dry Beans in Manitoba](https://umanitoba.ca/faculties/afs/agronomists_conf/media/Heard_drybean_nutrient_uptake-poster.pdf) (Heard and Brolley, 2008)
+- [Genetic and Molecular Mechanisms Underlying Symbiotic Specificity in Legume-Rhizobium Interactions](https://www.frontiersin.org/articles/10.3389/fpls.2018.00313/full)
+- [Interaction and Regulation of Carbon, Nitrogen, and Phosphorus Metabolisms in Root Nodules of Legumes](https://www.frontiersin.org/articles/10.3389/fpls.2018.01860/full)
 
 ## Carrot
 - [Carrot Nitrogen Uptake and Partitioning](http://geisseler.ucdavis.edu/Guidelines/N_Carrot.html)
@@ -121,6 +134,7 @@
 - [Evaluation of an Organic Nitrogen Source in a Yellow Squash- Collard Rotation](https://journals.ashs.org/hortsci/view/journals/hortsci/50/1/article-p51.xml)
 - [Do green beans put nitrogen back into the soil?](https://treehozz.com/do-green-beans-put-nitrogen-back-into-the-soil)
 - [Introducing Nitrogen Fixing Trees: Nature’s Solution to Curing N2 Deficiency](https://www.permaculturenews.org/2015/10/20/introducing-nitrogen-fixing-trees-natures-solution-to-curing-n2-deficiency/)
+- [Legume crop rotation suppressed nitrifying microbial community in a sugarcane cropping soil](https://www.nature.com/articles/s41598-017-17080-z)
 
 # Tech stack
 - [GeographicLib](https://www.npmjs.com/package/geographiclib)
