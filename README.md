@@ -1,37 +1,26 @@
 # Greenworld Algorithm
-This is LugoCorp's companion planting database research project.
-This README contains all the information you'll need to initialize the database and run the core algorithms.
+This is LugoCorp's companion planting data warehouse research project.
+This README contains all the information you'll need to initialize the warehouse and run the core algorithms.
 The purpose of this project is to identify potential companion farming groups and to query those groups by target environmental factors.
 
 ## Tasks
 These commands will help you throughout development and deployment of this project.
 
-### View available tasks
-```bash
-grunt
-```
+- `grunt` view available tasks
+- `grunt lint` lint the project
+- `grunt compile` compile the scripts
+- `grunt test` run unit tests
+- `grunt verify` lint, compile and run the tests
+- `grunt info` view logged plant info
 
-### Linting
-```bash
-grunt lint
-```
+## Algorithm design
+- Companionship groups are a selection of species that fill the niches within a companionship model (such as the forest garden model).
+- We look at every combination of plants between different niches (smallest groups up to largest groups) and generate the compatibility report for each one. Larger groups can pull from a subgroup for some of its pairwise compatibility data.
+- Pairwise compatibility is determined by nutrient uptake (per plant organ), synthesis, pest control, and preferred environment (soil pH and sunlight, maybe more factors one day). It is a list of factors that are labeled as beneficial, detrimental or neutral.
+- Group compatibility is also determined by model-specific factors (the combination of certain niches, etc) that need to be recalculated per group.
+- Each group is then assigned a recommended environment. This consists of a pH range, amount of sunlight, higher density of certain nutrients (for groups where the overall uptake exceeds average levels in some soil standard)
 
-### Compile the scripts
-```bash
-grunt compile
-```
-
-### Run unit tests
-```bash
-grunt test
-```
-
-### Lint, compile and run tests
-```bash
-grunt verify
-```
-
-### View logged plant info
-```bash
-grunt info
-```
+## Warehouse/UI design
+The project uses a MongoDB database that gets populated by the core algorithm (written in Python).
+Users can then query the database through a view that makes everything pretty.
+There can be multiple interface tools that query the database, such as a command line tool or web GUI.
