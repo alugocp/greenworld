@@ -6,12 +6,8 @@ The purpose of this project is to identify potential companion farming groups an
 ## Tasks
 These commands will help you throughout development and deployment of this project.
 
-- `grunt` view available tasks
-- `grunt lint` lint the project
-- `grunt compile` compile the scripts
-- `grunt test` run unit tests
-- `grunt verify` lint, compile and run the tests
-- `grunt info` view logged plant info
+- `python3 -m pip install -r requirements.txt` installs all project dependencies
+- `./gw` views the project options
 
 ## Algorithm design
 - Companionship groups are a selection of species that fill the niches within a companionship model (such as the forest garden model).

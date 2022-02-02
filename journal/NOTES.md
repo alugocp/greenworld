@@ -20,3 +20,9 @@ Note: You'll need to store average biomass of a single unit of each crop
 - **Metabolic pathway** - a linked series of chemical reactions occurring within a cell
 - **Metabolite** - an intermediate result of a metabolic pathway
 - **Metabolomics** - the comprehensive measurement of all metabolites in a biological specimen
+
+# Useful Python links
+- [Packaging Python for Pip](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+- [Modules vs. packages](https://docs.python.org/3/tutorial/modules.html)
+- [Pylint](https://pylint.org/)
+- [Python style guide](https://www.python.org/dev/peps/pep-0008/)
