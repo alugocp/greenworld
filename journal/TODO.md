@@ -2,7 +2,7 @@
 
 ## Algorithm
 - ~~Set up algorithm basics~~
-- Write a printer that makes console output easy
+- ~~Write a printer that makes console output easy~~
 - Create an iterator for every combination of species from different niches
 - Add some tests for the combinations logic
 - Work out the species type (replace instances of species: str with species: Species)
