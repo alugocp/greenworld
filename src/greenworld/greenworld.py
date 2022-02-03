@@ -1,5 +1,6 @@
 from .model.forest import ForestGardenModel
 from .model.model import GardenModel
+from .types import Niche, Niches, Species
 from .math.combinatorics import Combinatorics
 from .database.species_test import TestSpeciesData
 from .database.niche_test import TestNicheData
@@ -8,7 +9,6 @@ from .database.niche import NicheData
 from .printer import Printer
 from .group import Group
 from typing import Dict, List
-from time import sleep
 
 # This class is the main algorithm handler for calculating companionship groups.
 # It ties all the business logic of this project together.
@@ -28,9 +28,9 @@ class Greenworld:
 
         # Divide species into model niches
         self.printer.print_line('Cataloging species into niches...')
-        niches: List[str] = self.model.get_niches()
+        niches: Niches = self.model.get_niches()
         self.niche_data.initialize_niche_catalogs(niches)
-        niche_numbers: Dict[str, int] = {}
+        niche_numbers: Dict[Niche, int] = {}
         total_species = 0
         for niche in niches:
             niche_numbers[niche] = 0
@@ -38,7 +38,7 @@ class Greenworld:
         self.printer.add_line('-----')
         self.printer.add_line('total: 0')
         for species in self.species_data.get_species_iterator():
-            niche: str = self.model.get_niche_of_species(species)
+            niche: Niche = self.model.get_niche_of_species(species)
             self.niche_data.add_to_niche(niche, species)
             niche_numbers[niche] += 1
             total_species += 1
@@ -82,6 +82,5 @@ class Greenworld:
                     self.printer.update_line(0, f'{niches_visited}/{num_niche_combos} niche combinations')
                     self.printer.update_line(1, f'{groups_visited}/{num_total_groups} companion groups')
                     # Calculate a companionship report for the group, perhaps using a previous group for some of the data
-                    # sleep(0.01)
         self.printer.update_line(0, f'{niches_visited}/{num_niche_combos} niche combinations')
         self.printer.close_stack()

@@ -1,13 +1,14 @@
+from ..types import Niches, Niche
 from typing import Dict, Iterable, Iterator, List
 from math import factorial
 
 # This class represents combinatoric algorithms for estimating runtime and
 # iterating through combinations of data.
 class Combinatorics:
-    niche_numbers: Dict[str, int]
-    niches: List[str]
+    niche_numbers: Dict[Niche, int]
+    niches: Niches
 
-    def __init__(self, niches: List[str], niche_numbers: Dict[str, int]):
+    def __init__(self, niches: Niches, niche_numbers: Dict[Niche, int]):
         self.niche_numbers = niche_numbers
         self.niches = niches
 
@@ -24,7 +25,7 @@ class Combinatorics:
 
     # This function returns the number of combinations between species from the
     # given niches.
-    def get_number_groups_from_subniches(self, subniches: List[str]) -> int:
+    def get_number_groups_from_subniches(self, subniches: Niches) -> int:
         if len(subniches) == 0:
             return 0
         result: int = 1

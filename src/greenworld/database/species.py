@@ -1,3 +1,4 @@
+from ..types import Species
 from typing import Iterator
 
 # This class represents an interface of species data access. An implementation
@@ -5,5 +6,5 @@ from typing import Iterator
 class SpeciesData:
 
     # Returns an iterator for every species in the data source.
-    def get_species_iterator(self) -> Iterator[str]:
+    def get_species_iterator(self) -> Iterator[Species]:
         pass
