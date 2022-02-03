@@ -28,7 +28,11 @@ class TestSpeciesIterator:
         'Potato',
         'Plantain',
         'Banana',
-        'Cassava'
+        'Cassava',
+        'Sunflower',
+        'Dandelion',
+        'Cantaloupe',
+        'Honeydew'
     ]
 
     def __iter__(self):

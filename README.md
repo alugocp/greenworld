@@ -7,6 +7,7 @@ The purpose of this project is to identify potential companion farming groups an
 These commands will help you throughout development and deployment of this project.
 
 - `python3 -m pip install -r requirements.txt` installs all project dependencies
+- `./gw run` runs the core algorithm
 - `./gw` views the project options
 
 ## Algorithm design
