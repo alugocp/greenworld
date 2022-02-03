@@ -1,4 +1,4 @@
-from typing import List, Dict
+from typing import Dict, Iterable, List
 
 # This class represents a test implementation of NicheData.
 class TestNicheData:
@@ -10,3 +10,6 @@ class TestNicheData:
 
     def add_to_niche(self, niche: str, species: str) -> None:
         self.catalogs[niche].append(species)
+
+    def get_niche_species_iterable(self, niche: str) -> Iterable[str]:
+        return self.catalogs[niche]

@@ -3,7 +3,8 @@
 ## Algorithm
 - ~~Set up algorithm basics~~
 - ~~Write a printer that makes console output easy~~
-- Create an iterator for every combination of species from different niches
+- ~~Create an iterator for every combination of species from different niches~~
+- Add custom types for readability (Species, Niche and Niches mainly)
 - Add some tests for the combinations logic
 - Work out the species type (replace instances of species: str with species: Species)
 - Write basic companionship reporting algorithms (global and model-based)

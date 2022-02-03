@@ -1,0 +1,121 @@
+from typing import Dict, Iterable, Iterator, List
+from math import factorial
+
+# This class represents combinatoric algorithms for estimating runtime and
+# iterating through combinations of data.
+class Combinatorics:
+    niche_numbers: Dict[str, int]
+    niches: List[str]
+
+    def __init__(self, niches: List[str], niche_numbers: Dict[str, int]):
+        self.niche_numbers = niche_numbers
+        self.niches = niches
+
+    # This function returns the number combinations (n choose k)
+    def combination(self, n: int, k: int) -> int:
+        return (int)(factorial(n) / (factorial(k) * factorial(n - k)))
+
+    # This function returns the number of combinations of niches
+    def get_number_niche_combinations(self) -> int:
+        result: int = 0
+        for n in range(2, len(self.niches) + 1):
+            result += self.combination(len(self.niches), n)
+        return result
+
+    # This function returns the number of combinations between species from the
+    # given niches.
+    def get_number_groups_from_subniches(self, subniches: List[str]) -> int:
+        if len(subniches) == 0:
+            return 0
+        result: int = 1
+        for niche in subniches:
+            result *= self.niche_numbers[niche]
+        return result
+
+    # This function returns the total number of companionship groups you can
+    # have with the number of niches and species in each niche.
+    def get_number_total_groups(self) -> int:
+        result = 0
+        for n in range(2, len(self.niches) + 1):
+            for subniches in self.iterate_subset_combinations(n, self.niches):
+                result += self.get_number_groups_from_subniches(subniches)
+        return result
+
+    # This function allows you to iterate through every combination of k
+    # elements in this set
+    def iterate_subset_combinations(self, k: int, items: List) -> Iterator:
+        return CombinationsSubsetIterator(k, items)
+
+    # This function allows you to iterate through every combination of a group
+    # of iterables.
+    def iterate_combinations(self, *args: Iterable) -> Iterator:
+        return CombinationsIterator(*args)
+
+# This helper class is sued to iterate through every combination of k items from
+# a set of n items.
+class CombinationsSubsetIterator:
+    first: bool = True
+    current: List
+    items: List
+    k: int
+
+    def __init__(self, k: int, items: List):
+        self.current = [a for a in range(k)]
+        self.items = items
+        self.k = k
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.first:
+            self.first = False
+        else:
+            i = self.k - 1
+            while i >= 0 and self.current[i] == len(self.items) - self.k + i:
+                i -= 1
+            if i < 0:
+                raise StopIteration
+            self.current[i] += 1
+            for a in range(i + 1, self.k):
+                self.current[a] = self.current[a - 1] + 1
+        return list(map(lambda x: self.items[x], self.current))
+
+# This helper class is sued to iterate through every combination of k items from
+# a set of n items.
+class CombinationsIterator:
+    iterables: List[Iterable]
+    iterators: List[Iterator]
+    first: bool = True
+    current: List
+
+    def __init__(self, iterables: List[Iterable]):
+        def next_or_none(x: Iterator):
+            try:
+                return next(x)
+            except StopIteration:
+                return None
+        self.iterators = list(map(lambda x: x.__iter__(), iterables))
+        self.current = list(map(next_or_none, self.iterators))
+        self.iterables = iterables
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.first:
+            self.first = False
+        else:
+            i = len(self.iterators) - 1
+            while True:
+                try:
+                    self.current[i] = next(self.iterators[i])
+                except StopIteration:
+                    self.iterators[i] = self.iterables[i].__iter__()
+                    self.current[i] = next(self.iterators[i])
+                    i -= 1
+                    if i < 0:
+                        raise StopIteration
+                    continue
+                break
+        return self.current

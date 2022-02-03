@@ -16,7 +16,18 @@ class TestSpeciesIterator:
         'Squash',
         'Watermelon',
         'Cucumber',
-        'Mushroom'
+        'Mushroom',
+        'Garlic',
+        'Onion',
+        'Tomato',
+        'Basil',
+        'Parsley',
+        'Mango',
+        'Dragon Fruit',
+        'Potato',
+        'Plantain',
+        'Banana',
+        'Cassava'
     ]
 
     def __iter__(self):
@@ -26,4 +37,4 @@ class TestSpeciesIterator:
         if self.num < len(self.data):
             self.num += 1
             return self.data[self.num - 1]
-        raise StopIteration()
+        raise StopIteration
