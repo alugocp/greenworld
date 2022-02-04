@@ -7,8 +7,11 @@ The purpose of this project is to identify potential companion farming groups an
 These commands will help you throughout development and deployment of this project.
 
 - `python3 -m pip install -r requirements.txt` installs all project dependencies
+- `python3 -m pylint src` lints the project code
 - `./gw run` runs the core algorithm
 - `./gw` views the project options
+
+**Note:** This project targets Python 3.8
 
 ## Algorithm design
 - Companionship groups are a selection of species that fill the niches within a companionship model (such as the forest garden model).
