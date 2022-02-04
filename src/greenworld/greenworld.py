@@ -1,7 +1,7 @@
-from typing import Callable, Dict
+from typing import Dict, List
 from .model.forest import ForestGardenModel
 from .model.model import GardenModel
-from .types import Niche, Niches
+from .types import Niche, Niches, Species
 from .math.combinatorics import NicheCombinatorics
 from .math.combinatorics import iterate_combinations
 from .math.combinatorics import iterate_subset_combinations
@@ -29,10 +29,10 @@ class Greenworld:
         self.printer.print_line()
         self.niches = self.model.get_niches()
         self.niche_numbers = self.catalog_into_niches()
-        self.iterate_through_groups(self.calculate_score)
+        self.process_groups()
         self.printer.print_line('Done.')
 
-    # This function divides the species data into niches
+    # This function divides the species data into niches.
     def catalog_into_niches(self) -> Dict[Niche, int]:
         self.printer.print_line('Cataloging species into niches...')
         self.niche_data.initialize_niche_catalogs(self.niches)
@@ -54,15 +54,15 @@ class Greenworld:
         self.printer.print_line()
         return niche_numbers
 
-    # This function iterates through every group of species from different niches
-    def iterate_through_groups(self, callback: Callable[[Group], None]) -> None:
+    # This function iterates through every group of species from different niches.
+    def process_groups(self) -> None:
         groups_visited = 0
         niches_visited = 0
         group: Group = Group(self.niches)
         combos = NicheCombinatorics(self.niches, self.niche_numbers)
         num_niche_combos = combos.get_number_niche_combinations()
         num_total_groups = combos.get_number_total_groups()
-        self.printer.print_line('Iterating through companion groups...')
+        self.printer.print_line('Calculating companion groups...')
         self.printer.add_line(f'0/{num_niche_combos} niche combinations')
         self.printer.add_line(f'0/{num_total_groups} companion groups')
         for niche in self.niches:
@@ -78,26 +78,30 @@ class Greenworld:
                 # For every combination of species to fill this submodel
                 niche_iterables = list(map(self.niche_data.get_niche_species_iterable, subniches))
                 for grouping in iterate_combinations(niche_iterables):
-                    # Set the group's species
-                    for a, niche in enumerate(self.niches):
-                        if niche in subniches:
-                            i = subniches.index(niche)
-                            group.fill_niche(subniches[i], grouping[i])
-                            self.printer.update_line(2 + a, f'{niche}: {grouping[i]}')
-                        else:
-                            group.fill_niche(subniches[i], None)
-                            self.printer.update_line(2 + a, f'{niche}: ---')
-                    # Do something on the group
                     groups_visited += 1
                     self.printer.update_line(
                         0, f'{niches_visited}/{num_niche_combos} niche combinations')
                     self.printer.update_line(
                         1, f'{groups_visited}/{num_total_groups} companion groups')
-                    callback(group)
+                    self.update_group(group, subniches, grouping)
+                    self.calculate_score(group)
+                    # Write the group to the database
         self.printer.update_line(0, f'{niches_visited}/{num_niche_combos} niche combinations')
         self.printer.close_stack()
+        self.printer.print_line()
 
-    # This function calculates compatibility data for the given group
+    # Updates the niches and species of the given group.
+    def update_group(self, group: Group, subniches: Niches, grouping: List[Species]) -> None:
+        for a, niche in enumerate(self.niches):
+            if niche in subniches:
+                i = subniches.index(niche)
+                group.fill_niche(niche, grouping[i])
+                self.printer.update_line(2 + a, f'{niche}: {grouping[i]}')
+            else:
+                group.fill_niche(niche, None)
+                self.printer.update_line(2 + a, f'{niche}: ---')
+
+    # This function calculates compatibility data for the given group.
     def calculate_score(self, group: Group) -> None:
         # Calculate a companionship report for the group, perhaps using a previous group for some of
         # the data.
