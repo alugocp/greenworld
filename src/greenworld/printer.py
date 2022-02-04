@@ -1,3 +1,4 @@
+from io import TextIOWrapper
 from typing import List
 from sys import stdout
 
@@ -7,14 +8,16 @@ from sys import stdout
 class Printer:
     active: bool
     stack: List[str] = []
+    out: TextIOWrapper
 
     def __init__(self, active: bool):
         self.active = active
+        self.out = stdout
 
     # This function wraps the buffer output method
     def print(self, msg) -> None:
-        stdout.write(msg)
-        stdout.flush()
+        self.out.write(msg)
+        self.out.flush()
 
     # Just prints a line without any advanced stack features
     def print_line(self, msg = '') -> None:

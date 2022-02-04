@@ -6,7 +6,7 @@
 - ~~Create an iterator for every combination of species from different niches~~
 - ~~Add custom types for readability (Species, Niche and Niches mainly)~~
 - ~~Run pip for the first time to start using dependencies~~
-- Start linting the code
+- ~~Start linting the code~~
 - Add some tests for the combinations logic
 - Work out the species type (have it be more complex than just str)
 - Write basic companionship reporting algorithms (global and model-based)

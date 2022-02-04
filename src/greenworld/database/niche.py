@@ -1,5 +1,5 @@
+from typing import Iterable
 from ..types import Niche, Niches, Species
-from typing import Iterable, List
 
 # This class represents an interface of niche data access. An implementation may
 # connect this interface to a database or other source.

@@ -1,5 +1,5 @@
+from typing import Dict
 from .types import Niche, Niches, Species
-from typing import Dict, List
 
 # This class represents a grouping of potential companion species.
 class Group:

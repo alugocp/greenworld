@@ -1,5 +1,5 @@
-from ..types import Species
 from typing import Iterator
+from ..types import Species
 
 # This class represents an interface of species data access. An implementation
 # may connect this interface to a database or other source.

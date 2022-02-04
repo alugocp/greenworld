@@ -1,10 +1,9 @@
+import sys
 from greenworld.greenworld import Greenworld
 from greenworld.printer import Printer
-import sys
 printer = Printer(True)
 
-# Displays helpful information
-def help():
+def help_cmd():
     printer.print_line('OVERVIEW: LugoCorp\'s Greenworld algorithm')
     printer.print_line()
     printer.print_line('USAGE: gw [options]')
@@ -15,27 +14,27 @@ def help():
     printer.print_line('\t--version\tDisplays version information')
 
 # Displays version info
-def version():
+def version_cmd():
     printer.print_line('Greenworld algorithm v1.0 (alpha)')
     printer.print_line('Designed by LugoCorp')
 
 # Runs the core algorithm
-def run():
+def run_cmd():
     gw = Greenworld()
-    gw.calculate_groups()
+    gw.calculate_compatibility_scores()
 
 # Parse arguments
 args = sys.argv[1:]
 if len(args) == 0:
-    help()
-while len(args):
+    help_cmd()
+while len(args) > 0:
     arg = args[0]
     if arg == '--help':
-        help()
+        help_cmd()
     elif arg == '--version':
-        version()
+        version_cmd()
     elif arg == 'run':
-        run()
+        run_cmd()
     else:
-        help()
+        help_cmd()
     args.pop(0)

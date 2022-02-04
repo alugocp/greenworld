@@ -1,16 +1,8 @@
-from ..types import Species
 from typing import Iterator, List
+from ..types import Species
 
 # This class represents a test implementation of SpeciesData.
 class TestSpeciesData:
-
-    # Returns an iterator for every species in the data source.
-    def get_species_iterator(self) -> Iterator[Species]:
-        return TestSpeciesIterator()
-
-# This class is an iterator to be used by TestSpeciesData.
-class TestSpeciesIterator:
-    num: int = 0
     data: List[Species] = [
         'Corn',
         'Beans',
@@ -35,11 +27,6 @@ class TestSpeciesIterator:
         'Honeydew'
     ]
 
-    def __iter__(self):
-        return self
-
-    def __next__(self):
-        if self.num < len(self.data):
-            self.num += 1
-            return self.data[self.num - 1]
-        raise StopIteration
+    # Returns an iterator for every species in the data source.
+    def get_species_iterator(self) -> Iterator[Species]:
+        return self.data.__iter__()

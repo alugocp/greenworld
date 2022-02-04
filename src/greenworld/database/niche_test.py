@@ -1,5 +1,5 @@
-from ..types import Niche, Niches, Species
 from typing import Dict, Iterable, List
+from ..types import Niche, Niches, Species
 
 # This class represents a test implementation of NicheData.
 class TestNicheData:
