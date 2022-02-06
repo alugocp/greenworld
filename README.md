@@ -10,6 +10,7 @@ These commands will help you throughout development and deployment of this proje
 - `python3 -m pylint src` lints the project code
 - `./gw run` runs the core algorithm
 - `./gw` views the project options
+- `./tests` runs all the unit tests
 
 **Note:** This project targets Python 3.8
 

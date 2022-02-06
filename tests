@@ -1,0 +1,7 @@
+#!/bin/bash
+export PYTHONPATH="$PYTHONPATH:$(pwd)/src"
+folder="src/testing"
+files=( $(ls "$folder") )
+for file in "${files[@]}"; do
+    python3.8 "$folder/$file"
+done
