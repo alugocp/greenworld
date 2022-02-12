@@ -10,7 +10,8 @@ class GardenModel:
     def get_niches(self) -> Niches:
         pass
 
-    # Returns the niche that a given species would fill in this model.
+    # Returns the niche that a given species would fill in this model. Or
+    # returns None if that species should be ignored for this model.
     def get_niche_of_species(self, species: Species) -> Niche:
         pass
 

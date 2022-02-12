@@ -15,12 +15,12 @@ class Printer:
         self.out = stdout
 
     # This function wraps the buffer output method
-    def print(self, msg) -> None:
+    def print(self, msg: str) -> None:
         self.out.write(msg)
         self.out.flush()
 
     # Just prints a line without any advanced stack features
-    def print_line(self, msg = '') -> None:
+    def print_line(self, msg: str = '') -> None:
         if self.active:
             if len(self.stack) > 0:
                 raise RuntimeError('Cannot use Printer.print_line in a print stack')
@@ -31,13 +31,13 @@ class Printer:
         self.stack = []
 
     # This function adds a line to the stack
-    def add_line(self, msg) -> None:
+    def add_line(self, msg: str) -> None:
         if self.active:
             self.stack.append(msg)
             self.print(f'{msg}\n')
 
     # This function updates the line at index i on the stack
-    def update_line(self, i, msg) -> None:
+    def update_line(self, i: int, msg: str) -> None:
         if self.active:
             diff = len(self.stack) - i
             clear = ''.join([' ' * len(self.stack[i])])

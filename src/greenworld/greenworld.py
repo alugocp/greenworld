@@ -45,11 +45,15 @@ class Greenworld:
         self.printer.add_line('total: 0')
         for species in self.species_data.get_species_iterator():
             niche: Niche = self.model.get_niche_of_species(species)
-            self.niche_data.add_to_niche(niche, species)
-            niche_numbers[niche] += 1
-            total_species += 1
-            self.printer.update_line(self.niches.index(niche), f'{niche}: {niche_numbers[niche]}')
-            self.printer.update_line(len(self.niches) + 1, f'total: {total_species}')
+            if niche:
+                self.niche_data.add_to_niche(niche, species)
+                niche_numbers[niche] += 1
+                total_species += 1
+                self.printer.update_line(
+                    self.niches.index(niche),
+                    f'{niche}: {niche_numbers[niche]}'
+                )
+                self.printer.update_line(len(self.niches) + 1, f'total: {total_species}')
         self.printer.close_stack()
         self.printer.print_line()
         return niche_numbers
@@ -84,7 +88,8 @@ class Greenworld:
                     self.printer.update_line(
                         1, f'{groups_visited}/{num_total_groups} companion groups')
                     self.update_group(group, subniches, grouping)
-                    self.calculate_score(group)
+                    self.calculate_global_compatibility(group)
+                    self.model.calculate_model_compatibility(group)
                     # Write the group to the database
         self.printer.update_line(0, f'{niches_visited}/{num_niche_combos} niche combinations')
         self.printer.close_stack()
@@ -92,6 +97,8 @@ class Greenworld:
 
     # Updates the niches and species of the given group.
     def update_group(self, group: Group, subniches: Niches, grouping: List[Species]) -> None:
+        group.model_factors = []
+        group.global_factors = []
         for a, niche in enumerate(self.niches):
             if niche in subniches:
                 i = subniches.index(niche)
@@ -102,7 +109,7 @@ class Greenworld:
                 self.printer.update_line(2 + a, f'{niche}: ---')
 
     # This function calculates compatibility data for the given group.
-    def calculate_score(self, group: Group) -> None:
+    def calculate_global_compatibility(self, group: Group) -> None:
         # Calculate a companionship report for the group, perhaps using a previous group for some of
         # the data.
         pass
