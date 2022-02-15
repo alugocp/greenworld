@@ -1,4 +1,5 @@
-from ..types import Niches, Niche, Species
+from ..types import Niches, Niche
+from ..species import Species
 from .model import GardenModel
 from ..group import Group
 

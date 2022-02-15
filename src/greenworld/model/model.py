@@ -1,4 +1,5 @@
-from ..types import Niches, Niche, Species
+from ..types import Niches, Niche
+from ..species import Species
 from ..group import Group
 
 # This class represents an interface for any gardening model. Garden models are

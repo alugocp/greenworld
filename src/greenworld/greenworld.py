@@ -1,7 +1,8 @@
 from typing import Dict, List
 from .model.forest import ForestGardenModel
 from .model.model import GardenModel
-from .types import Niche, Niches, Species
+from .types import Niche, Niches
+from .species import Species
 from .math.combinatorics import NicheCombinatorics
 from .math.combinatorics import iterate_combinations
 from .math.combinatorics import iterate_subset_combinations
