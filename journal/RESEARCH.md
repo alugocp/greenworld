@@ -10,6 +10,7 @@
 - [Soil pH for Field Crops](http://cceonondaga.org/resources/soil-ph-for-field-crops) (Ketterings et al., 2005)
 - [Analyzing plant nutrient uptake and utilization efficiencies: comparison between crops and approaches](https://link.springer.com/article/10.1007/s11104-018-3738-y)
 - [NUOnet (Nutrient Use and Outcome Network) database](https://data.nal.usda.gov/dataset/nuonet-nutrient-use-and-outcome-network-database)
+- [International Plant Name Index](https://www.ipni.org/)
 
 # Nutrients and Metabolic Pathways
 - [Analysis of metabolites and metabolic pathways in three maize (Zea mays L.) varieties from the same origin using GC–MS](https://www.nature.com/articles/s41598-020-73041-z)
@@ -58,6 +59,7 @@
 - [What pH Does Corn Need?](https://homeguides.sfgate.com/ph-corn-need-104650.html) (Shorter, 2014)
 - [Maize Nutrient Accumulation and Partitioning in Response to Plant Density and Nitrogen Rate: I. Macronutrients](https://acsess.onlinelibrary.wiley.com/doi/full/10.2134/agronj2012.0467)
 - [Effects of enhanced ammonium nitrogen availability for corn](https://www.crops.org/files/publications/jnrlse/pdfs/jnr018/018-02-0093.pdf)
+- [SOIL REQUIREMENTS FOR GROWING CORN](https://www.ecofarmingdaily.com/grow-crops/grow-corn/soil-requirements)
 
 ## Gourds
 - [Corn Stover Removal Effects On Soil Aggregation and Squash Fruit Yield in Cover Cropping Systems](https://scisoc.confex.com/scisoc/2013am/webprogram/Handout/Paper80042/Lance%20Ouellette_Poster_Presentation.pdf)

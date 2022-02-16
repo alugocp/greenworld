@@ -1,7 +1,7 @@
 from typing import Iterator, List
+from ..types import Kingdom, Sunlight, Drainage, Water
 from .species import SpeciesData
 from ..species import Species
-from ..types import Kingdom
 
 # This class represents a JSON-like implementation of SpeciesData.
 class JsonSpeciesData(SpeciesData):
@@ -9,14 +9,21 @@ class JsonSpeciesData(SpeciesData):
     data: List[object] = [
         {
             'name': 'Corn',
-            'latin': 'zea mays'
+            'latin': 'zea mays',
+            'sunlight': Sunlight.FULL_SUN,
+            'pH': (6.0, 6.5),
+            'water': Water.MODERATE,
+            'drainage': Drainage.SOMEWHAT_POORLY_DRAINED
         },
         {
-            'name': 'Beans',
-            'latin': 'phaseolus lunatus'
+            'name': 'Lima Bean',
+            'latin': 'phaseolus lunatus',
+            'pH': (6.0, 6.8),
+            'water': Water.MODERATE,
+            'drainage': Drainage.WELL_DRAINED
         },
         {
-            'name': 'Squash',
+            'name': 'Butternut Squash',
             'latin': 'cucurbita moschata'
         },
         {
@@ -57,7 +64,7 @@ class JsonSpeciesData(SpeciesData):
             'latin': 'mangifera indica'
         },
         {
-            'name': 'Dragon Fruit',
+            'name': 'Yellow Dragon Fruit',
             'latin': 'selenicereus megalanthus'
         },
         {
