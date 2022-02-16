@@ -10,9 +10,9 @@ class Printer:
     stack: List[str] = []
     out: TextIOWrapper
 
-    def __init__(self, active: bool):
+    def __init__(self, active: bool, out: TextIOWrapper = stdout):
         self.active = active
-        self.out = stdout
+        self.out = out
 
     # This function wraps the buffer output method
     def print(self, msg: str) -> None:

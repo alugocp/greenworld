@@ -1,27 +1,31 @@
 from typing import Dict, List
-from .model.forest import ForestGardenModel
 from .model.model import GardenModel
 from .types import Niche, Niches
 from .species import Species
 from .math.combinatorics import NicheCombinatorics
 from .math.combinatorics import iterate_combinations
 from .math.combinatorics import iterate_subset_combinations
-from .database.species_test import TestSpeciesData
-from .database.niche_test import TestNicheData
 from .database.species import SpeciesData
 from .database.niche import NicheData
+from .injector import Injector
 from .printer import Printer
 from .group import Group
 
 # This class is the main algorithm handler for calculating companionship groups.
 # It ties all the business logic of this project together.
 class Greenworld:
-    printer: Printer = Printer(True)
-    model: GardenModel = ForestGardenModel()
-    species_data: SpeciesData = TestSpeciesData()
-    niche_data: NicheData = TestNicheData()
     niche_numbers: Dict[Niche, int]
+    species_data: SpeciesData
+    niche_data: NicheData
+    model: GardenModel
+    printer: Printer
     niches: Niches
+
+    def __init__(self, injector: Injector):
+        self.species_data = injector.get_service('species-data')
+        self.niche_data = injector.get_service('niche-data')
+        self.model = injector.get_service('garden-model')
+        self.printer = injector.get_service('printer')
 
     # This function is what runs the core algorithm code.
     def calculate_compatibility_scores(self) -> None:

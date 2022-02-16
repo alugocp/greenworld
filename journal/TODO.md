@@ -9,8 +9,8 @@
 - ~~Start linting the code~~
 - ~~Add some tests for the combinations logic~~
 - ~~Work out the species type (have it be more complex than just str)~~
+- ~~Do dependency injection~~
 - Add support for ANSII styling with the printer
-- Do dependency injection
 - Write basic companionship reporting algorithms (global and model-based)
 - Allow later group analysis to pull some global features from past subgroups
 - Connect the data to MongoDB database (write new implementations for data output)
