@@ -1,5 +1,6 @@
 from typing import Iterator, List
 from ..species import Species
+from ..types import Kingdom
 
 # This class represents a test implementation of SpeciesData.
 class TestSpeciesData:
@@ -9,7 +10,7 @@ class TestSpeciesData:
         Species('Squash', 'cucurbita moschata'),
         Species('Watermelon', 'citrullus lanatus'),
         Species('Cucumber', 'cucumis sativus'),
-        Species('Mushroom', 'stropharia rugosa-annulata'),
+        Species('Winecap Mushroom', 'stropharia rugosa-annulata', Kingdom.FUNGI),
         Species('Garlic', 'allium sativum'),
         Species('Onion', 'allium cepa'),
         Species('Cherry Tomato', 'solanum lycopersicum'),

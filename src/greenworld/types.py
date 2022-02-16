@@ -3,7 +3,7 @@ from enum import Enum
 
 Niche = str
 Niches = List[Niche]
-PH = Tuple[float, float]
+Range = Tuple[float, float]
 
 class Drainage(Enum):
     EXCESSIVELY_DRAINED          = 6
@@ -20,3 +20,13 @@ class Sunlight(Enum):
     PARTIAL_SHADE = 2
     FULL_SHADE    = 1
     DENSE_SHADE   = 0
+
+class Water(Enum):
+    HIGH     = 3
+    MODERATE = 2
+    LOW      = 1
+    VERY_LOW = 0
+
+class Kingdom(Enum):
+    FUNGI = 'fungi'
+    PLANT = 'plant'
