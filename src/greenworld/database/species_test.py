@@ -9,7 +9,7 @@ class TestSpeciesData:
         Species('Squash', 'cucurbita moschata'),
         Species('Watermelon', 'citrullus lanatus'),
         Species('Cucumber', 'cucumis sativus'),
-        Species('Mushroom', 'stropharia rugosoannulata'),
+        Species('Mushroom', 'stropharia rugosa-annulata'),
         Species('Garlic', 'allium sativum'),
         Species('Onion', 'allium cepa'),
         Species('Cherry Tomato', 'solanum lycopersicum'),

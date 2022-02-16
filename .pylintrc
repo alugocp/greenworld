@@ -7,3 +7,4 @@ disable=
   C0116, # missing-function-docstring
   C0304, # missing-final-newline
   R0903, # too-few-public-methods
+  R0801, # Similar lines in 2 files

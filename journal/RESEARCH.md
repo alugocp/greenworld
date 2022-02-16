@@ -39,6 +39,9 @@
 - [The Seven Layers Of A Forest](https://worldwidepermaculture.com/seven-layers-forest/)
 - [How to Start a Food Forest – The Ultimate Low-Maintenance Garden](https://morningchores.com/food-forest/)
 - [Companion Planting: Three Sisters Garden Plans](https://www.growveg.com/guides/companion-planting-three-sisters-garden-plans/)
+- [Mushroom Garden](https://northspore.com/pages/mushroom-garden)
+- [COMPANION PLANTING STRAWBERRIES WITH MUSHROOMS](https://practicalselfreliance.com/companion-planting-strawberries-mushrooms)
+- [Six Steps to Mushroom Farming](https://www.mushroomcouncil.com/growing-mushrooms/six-steps-to-mushroom-farming/)
 
 # Plant studies
 ## Corn
