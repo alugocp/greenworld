@@ -4,7 +4,7 @@ from typing import Dict
 class Injector:
     services: Dict[str, object] = {}
 
-    def register_service(self, name: str, service: object) -> None:
+    def register_service(self, name: str, service) -> None:
         if name in self.services:
             raise RuntimeError(f'Service \'{name}\' is already registered')
         self.services[name] = service

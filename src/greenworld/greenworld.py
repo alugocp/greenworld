@@ -30,12 +30,12 @@ class Greenworld:
     # This function is what runs the core algorithm code.
     def calculate_compatibility_scores(self) -> None:
         self.printer.print_line('Initializing Greenworld algorithm...')
-        self.printer.print_line(f'Using model \'{self.model.__class__.__name__}\'')
+        self.printer.print_line(f'Using model \033[32m\'{self.model.__class__.__name__}\'\033[0m')
         self.printer.print_line()
         self.niches = self.model.get_niches()
         self.niche_numbers = self.catalog_into_niches()
         self.process_groups()
-        self.printer.print_line('Done.')
+        self.printer.print_line('\033[32mDone.\033[0m')
 
     # This function divides the species data into niches.
     def catalog_into_niches(self) -> Dict[Niche, int]:
@@ -45,9 +45,9 @@ class Greenworld:
         total_species = 0
         for niche in self.niches:
             niche_numbers[niche] = 0
-            self.printer.add_line(f'{niche}: 0')
+            self.printer.add_line(f'\033[1m{niche}:\033[0m \033[32m0\033[0m')
         self.printer.add_line('-----')
-        self.printer.add_line('total: 0')
+        self.printer.add_line('\033[1mtotal:\033[0m \033[32m0\033[0m')
         for species in self.species_data.get_species_iterator():
             niche: Niche = self.model.get_niche_of_species(species)
             if niche:
@@ -56,9 +56,11 @@ class Greenworld:
                 total_species += 1
                 self.printer.update_line(
                     self.niches.index(niche),
-                    f'{niche}: {niche_numbers[niche]}'
+                    f'\033[1m{niche}:\033[0m \033[32m{niche_numbers[niche]}\033[0m'
                 )
-                self.printer.update_line(len(self.niches) + 1, f'total: {total_species}')
+                self.printer.update_line(len(self.niches) + 1,
+                    f'\033[1mtotal:\033[0m \033[32m{total_species}\033[0m'
+                )
         self.printer.close_stack()
         self.printer.print_line()
         return niche_numbers
@@ -72,8 +74,8 @@ class Greenworld:
         num_niche_combos = combos.get_number_niche_combinations()
         num_total_groups = combos.get_number_total_groups()
         self.printer.print_line('Calculating companion groups...')
-        self.printer.add_line(f'0/{num_niche_combos} niche combinations')
-        self.printer.add_line(f'0/{num_total_groups} companion groups')
+        self.printer.add_line(f'\033[32m0/{num_niche_combos}\033[0m niche combinations')
+        self.printer.add_line(f'\033[32m0/{num_total_groups}\033[0m companion groups')
         for niche in self.niches:
             self.printer.add_line(f'{niche}: ---')
         # For every possible number of niches in a submodel
@@ -89,14 +91,16 @@ class Greenworld:
                 for grouping in iterate_combinations(niche_iterables):
                     groups_visited += 1
                     self.printer.update_line(
-                        0, f'{niches_visited}/{num_niche_combos} niche combinations')
+                        0, f'\033[32m{niches_visited}/{num_niche_combos}\033[0m niche combinations')
                     self.printer.update_line(
-                        1, f'{groups_visited}/{num_total_groups} companion groups')
+                        1, f'\033[32m{groups_visited}/{num_total_groups}\033[0m companion groups')
                     self.update_group(group, subniches, grouping)
                     self.calculate_global_compatibility(group)
                     self.model.calculate_model_compatibility(group)
                     # Write the group to the database
-        self.printer.update_line(0, f'{niches_visited}/{num_niche_combos} niche combinations')
+        self.printer.update_line(0,
+            f'\033[32m{niches_visited}/{num_niche_combos}\033[0m niche combinations'
+        )
         self.printer.close_stack()
         self.printer.print_line()
 
@@ -108,10 +112,12 @@ class Greenworld:
             if niche in subniches:
                 i = subniches.index(niche)
                 group.fill_niche(niche, grouping[i])
-                self.printer.update_line(2 + a, f'{niche}: {grouping[i]}')
+                self.printer.update_line(2 + a,
+                    f'\033[1m{niche}:\033[0m \033[32m{grouping[i]}\033[0m'
+                )
             else:
                 group.fill_niche(niche, None)
-                self.printer.update_line(2 + a, f'{niche}: ---')
+                self.printer.update_line(2 + a, f'\033[1m{niche}:\033[0m ---')
 
     # This function calculates compatibility data for the given group.
     def calculate_global_compatibility(self, group: Group) -> None:
