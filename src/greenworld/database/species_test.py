@@ -1,9 +1,10 @@
 from typing import Iterator, List
+from .species import SpeciesData
 from ..species import Species
 from ..types import Kingdom
 
 # This class represents a test implementation of SpeciesData.
-class TestSpeciesData:
+class TestSpeciesData(SpeciesData):
     data: List[Species] = [
         Species(name = 'Corn', latin = 'zea mays'),
         Species(name = 'Beans', latin = 'phaseolus lunatus'),

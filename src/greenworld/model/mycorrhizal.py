@@ -1,6 +1,8 @@
+from typing import List
 from ..types import Niches, Niche, Kingdom
 from ..species import Species
 from .model import GardenModel
+from ..factor import Factor
 from ..group import Group
 
 # This class represents a companion group with a mycorrhizal fungus and some
@@ -18,5 +20,5 @@ class MycorrhizalModel(GardenModel):
             return 'fungus'
         return 'root'
 
-    def calculate_model_compatibility(self, group: Group) -> None:
-        pass
+    def calculate_model_compatibility(self, group: Group) -> List[Factor]:
+        return []

@@ -1,9 +1,10 @@
 from typing import Dict, Iterable, List
 from ..types import Niche, Niches
 from ..species import Species
+from .niche import NicheData
 
 # This class represents a test implementation of NicheData.
-class TestNicheData:
+class TestNicheData(NicheData):
     catalogs: Dict[Niche, List[Species]] = {}
 
     def initialize_niche_catalogs(self, niches: Niches) -> None:

@@ -1,5 +1,7 @@
+from typing import List
 from ..types import Niches, Niche
 from ..species import Species
+from ..factor import Factor
 from ..group import Group
 
 # This class represents an interface for any gardening model. Garden models are
@@ -17,5 +19,5 @@ class GardenModel:
         pass
 
     # Populates a group's model compatibility based on this garden model.
-    def calculate_model_compatibility(self, group: Group) -> None:
+    def calculate_model_compatibility(self, group: Group) -> List[Factor]:
         pass

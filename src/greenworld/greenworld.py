@@ -2,13 +2,16 @@ from typing import Dict, List
 from .model.model import GardenModel
 from .types import Niche, Niches
 from .species import Species
+from .math.comparisons import overlaps
 from .math.combinatorics import NicheCombinatorics
 from .math.combinatorics import iterate_combinations
 from .math.combinatorics import iterate_subset_combinations
 from .database.species import SpeciesData
 from .database.niche import NicheData
+from .database.group import GroupData
 from .injector import Injector
 from .printer import Printer
+from .factor import Factor
 from .group import Group
 
 # This class is the main algorithm handler for calculating companionship groups.
@@ -17,6 +20,7 @@ class Greenworld:
     niche_numbers: Dict[Niche, int]
     species_data: SpeciesData
     niche_data: NicheData
+    group_data: GroupData
     model: GardenModel
     printer: Printer
     niches: Niches
@@ -24,17 +28,25 @@ class Greenworld:
     def __init__(self, injector: Injector):
         self.species_data = injector.get_service('species-data')
         self.niche_data = injector.get_service('niche-data')
+        self.group_data = injector.get_service('group-data')
         self.model = injector.get_service('garden-model')
         self.printer = injector.get_service('printer')
 
     # This function is what runs the core algorithm code.
     def calculate_compatibility_scores(self) -> None:
         self.printer.print_line('Initializing Greenworld algorithm...')
+        self.species_data.open()
+        self.niche_data.open()
+        self.group_data.open()
         self.printer.print_line(f'Using model \033[32m\'{self.model.__class__.__name__}\'\033[0m')
         self.printer.print_line()
         self.niches = self.model.get_niches()
         self.niche_numbers = self.catalog_into_niches()
         self.process_groups()
+        self.printer.print_line('Closing algorithm resources...')
+        self.group_data.close()
+        self.niche_data.close()
+        self.species_data.close()
         self.printer.print_line('\033[32mDone.\033[0m')
 
     # This function divides the species data into niches.
@@ -95,9 +107,9 @@ class Greenworld:
                     self.printer.update_line(
                         1, f'\033[32m{groups_visited}/{num_total_groups}\033[0m companion groups')
                     self.update_group(group, subniches, grouping)
-                    self.calculate_global_compatibility(group)
-                    self.model.calculate_model_compatibility(group)
-                    # Write the group to the database
+                    group.global_factors = calculate_global_compatibility(group)
+                    group.model_factors = self.model.calculate_model_compatibility(group)
+                    self.group_data.write_group(group)
         self.printer.update_line(0,
             f'\033[32m{niches_visited}/{num_niche_combos}\033[0m niche combinations'
         )
@@ -119,8 +131,24 @@ class Greenworld:
                 group.fill_niche(niche, None)
                 self.printer.update_line(2 + a, f'\033[1m{niche}:\033[0m ---')
 
-    # This function calculates compatibility data for the given group.
-    def calculate_global_compatibility(self, group: Group) -> None:
-        # Calculate a companionship report for the group, perhaps using a previous group for some of
-        # the data.
-        pass
+# This function calculates compatibility data for the given group.
+def calculate_global_compatibility(group: Group) -> List[Factor]:
+    factors = []
+    species = list(filter(lambda x: x is not None, group.species.values()))
+    for i1 in range(0, len(species) - 1):
+        for i2 in range(i1, len(species)):
+            species1 = species[i1]
+            species2 = species[i2]
+            if not overlaps(species1.pH, species2.pH):
+                factors.append(Factor(Factor.BAD,
+                    f'{species1} and {species2} require different soil pH levels'
+                ))
+            if species1.drainage != species2.drainage:
+                factors.append(Factor(Factor.BAD,
+                    f'{species1} and {species2} require different soil drainage levels'
+                ))
+            if species1.water != species2.water:
+                factors.append(Factor(Factor.NEUTRAL,
+                    f'{species1} and {species2} will need different levels of water'
+                ))
+    return factors

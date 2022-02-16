@@ -1,6 +1,8 @@
+from typing import List
 from ..types import Niches, Niche
 from ..species import Species
 from .model import GardenModel
+from ..factor import Factor
 from ..group import Group
 
 # This class represents the forest garden model.
@@ -27,5 +29,5 @@ class ForestGardenModel(GardenModel):
             self.latest_niche = 0
         return result
 
-    def calculate_model_compatibility(self, group: Group) -> None:
-        pass
+    def calculate_model_compatibility(self, group: Group) -> List[Factor]:
+        return []

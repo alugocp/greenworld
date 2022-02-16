@@ -1,9 +1,10 @@
 from typing import Iterator, List
+from .species import SpeciesData
 from ..species import Species
 from ..types import Kingdom
 
 # This class represents a JSON-like implementation of SpeciesData.
-class JsonSpeciesData:
+class JsonSpeciesData(SpeciesData):
     species: List[Species]
     data: List[object] = [
         {

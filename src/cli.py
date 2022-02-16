@@ -2,6 +2,7 @@ import sys
 from greenworld.greenworld import Greenworld
 from greenworld.database.species_json import JsonSpeciesData
 from greenworld.database.niche_test import TestNicheData
+from greenworld.database.group_text import TextGroupData
 from greenworld.model.mycorrhizal import MycorrhizalModel
 from greenworld.model.forest import ForestGardenModel
 from greenworld.model.model import GardenModel
@@ -36,6 +37,7 @@ def run_cmd():
     injector.register_service('garden-model', garden_model)
     injector.register_service('species-data', JsonSpeciesData())
     injector.register_service('niche-data', TestNicheData())
+    injector.register_service('group-data', TextGroupData('output.txt'))
     gw = Greenworld(injector)
     gw.calculate_compatibility_scores()
 

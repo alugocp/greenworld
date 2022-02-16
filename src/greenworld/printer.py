@@ -7,11 +7,12 @@ from sys import stdout
 # desired effects.
 class Printer:
     active: bool
-    stack: List[str] = []
+    stack: List[str]
     out: TextIOWrapper
 
     def __init__(self, active: bool, out: TextIOWrapper = stdout):
         self.active = active
+        self.stack = []
         self.out = out
 
     # This function wraps the buffer output method
