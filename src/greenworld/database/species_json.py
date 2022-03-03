@@ -10,29 +10,43 @@ class JsonSpeciesData(SpeciesData):
         {
             'name': 'Corn',
             'latin': 'zea mays',
-            'sunlight': Sunlight.FULL_SUN,
             'pH': (6.0, 6.5),
-            'water': Water.MODERATE,
-            'drainage': Drainage.SOMEWHAT_POORLY_DRAINED
+            'water': Water.LOW,
+            'drainage': Drainage.SOMEWHAT_POORLY_DRAINED,
+            'sunlight': Sunlight.FULL_SUN,
+            'height': (2.0, 2.0)
         },
         {
             'name': 'Lima Bean',
             'latin': 'phaseolus lunatus',
             'pH': (6.0, 6.8),
-            'water': Water.MODERATE,
-            'drainage': Drainage.WELL_DRAINED
+            'water': Water.LOW,
+            'sunlight': Sunlight.FULL_SUN,
+            'height': (6.0, 6.0)
         },
         {
             'name': 'Butternut Squash',
-            'latin': 'cucurbita moschata'
+            'latin': 'cucurbita moschata',
+            'pH': (6.0, 6.5),
+            'water': Water.LOW,
+            'sunlight': Sunlight.FULL_SUN,
+            'height': (0.6, 0.6)
         },
         {
             'name': 'Watermelon',
-            'latin': 'citrullus lanatus'
+            'latin': 'citrullus lanatus',
+            'pH': (6.0, 6.8),
+            'water': Water.VERY_LOW,
+            'sunlight': Sunlight.FULL_SUN,
+            'height': (0.5, 0.5)
         },
         {
             'name': 'Cucumber',
-            'latin': 'cucumis sativus'
+            'latin': 'cucumis sativus',
+            'pH': (6.0, 7.0),
+            'water': Water.LOW,
+            'sunlight': Sunlight.FULL_SUN,
+            'height': (2.0, 2.0)
         },
         {
             'name': 'Winecap Mushroom',
@@ -93,11 +107,84 @@ class JsonSpeciesData(SpeciesData):
         },
         {
             'name': 'Cantaloupe',
-            'latin': 'cucumis melo'
+            'latin': 'cucumis melo',
+            'pH': (6.0, 6.5),
+            'water': Water.VERY_LOW,
+            'sunlight': Sunlight.FULL_SUN,
+            'height': (1.5, 1.5)
         },
         {
             'name': 'Winter Melon',
-            'latin': 'benincasa hispida'
+            'latin': 'benincasa hispida',
+            'pH': (5.8, 6.8),
+            'water': Water.VERY_LOW,
+            'sunlight': Sunlight.FULL_SUN,
+            'height': (6.0, 6.0)
+        },
+        {
+            'name': 'Annabelle Hydrangea',
+            'latin': 'hydrangea aborescens',
+            'pH': (6.0, 6.5),
+            'water': Water.LOW,
+            'drainage': Drainage.WELL_DRAINED,
+            'sunlight': Sunlight.LIGHT_SHADE,
+            'height': (3.0, 3.0)
+        },
+        {
+            'name': 'Asparagus',
+            'latin': 'asparagus officinalis'
+        },
+        {
+            'name': 'Parsley',
+            'latin': 'petroselinum crispum'
+        },
+        {
+            'name': 'Basil',
+            'latin': 'ocimum basilicum'
+        },
+        {
+            'name': 'Beetroot',
+            'latin': 'beta vulgaris'
+        },
+        {
+            'name': 'Lettuce',
+            'latin': 'lactuca sativa'
+        },
+        {
+            'name': 'Broccoli',
+            'latin': 'brassica oleracea'
+        },
+        {
+            'name': 'Sweet Cherry',
+            'latin': 'prunus avium'
+        },
+        {
+            'name': 'Spinach',
+            'latin': 'spinacia oleracea'
+        },
+        {
+            'name': 'Rosemary',
+            'latin': 'salvia rosmarinus'
+        },
+        {
+            'name': 'Bottle Gourd',
+            'latin': 'lagenaria siceraria'
+        },
+        {
+            'name': 'Radish',
+            'latin': 'raphanus raphanistrum'
+        },
+        {
+            'name': 'Marigold',
+            'latin': 'calendula officinalis'
+        },
+        {
+            'name': 'Pumpkin',
+            'latin': 'cucurbita maxima'
+        },
+        {
+            'name': 'Pinto Bean',
+            'latin': 'phaseolus vulgaris'
         }
     ]
 

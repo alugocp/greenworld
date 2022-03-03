@@ -11,9 +11,12 @@ Convert uptake data with the following:
 
 Note: You'll need to store average biomass of a single unit of each crop
 
+## Standardized units in data
+- `height` (meters)
+
 # Additional constraints
 - Each species in a companionship fills 1 of 7 (or more) layers, also known as forest layers
-  - Canopy layer is over 30 feet, sub-canopy layer is 10 - 30 feet, and shrub layer is up to 10 feet
+  - Canopy layer is over 30 feet (9 meters), sub-canopy layer is 10 - 30 feet, and shrub layer is up to 10 feet (3 meters)
 - [Soil drainage requirements](https://cteco.uconn.edu/guides/Soils_Drainage.htm): excessively drained, somewhat excessively drained, well drained, moderately well drained, somewhat poorly drained, poorly drained, very poorly drained
 - [Sunlight requirements](https://www.johnson.k-state.edu/lawn-garden/agent-articles/miscellaneous/defining-sun-requirements-for-plants.html): full sun, light shade, partial shade, full shade, dense shade
 - [Water requirements](https://www.ladwp.cafriendlylandscaping.com/Garden-Resources/WaterNeeds.php): high, moderate, low, very low

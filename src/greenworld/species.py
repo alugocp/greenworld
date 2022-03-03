@@ -19,9 +19,9 @@ class Species:
             'sunlight': Sunlight.LIGHT_SHADE,
             'drainage': Drainage.WELL_DRAINED,
             'kingdom': Kingdom.PLANT,
+            'water': Water.MODERATE,
             'height': (1.0, 1.0),
             'roots': (0.2, 0.2),
-            'water': Water.MODERATE,
             'pH': (7.0, 7.0)
         }
         for k, v in defaults.items():

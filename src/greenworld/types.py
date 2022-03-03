@@ -22,10 +22,10 @@ class Sunlight(Enum):
     DENSE_SHADE   = 0
 
 class Water(Enum):
-    HIGH     = 3
-    MODERATE = 2
-    LOW      = 1
-    VERY_LOW = 0
+    HIGH     = 3    # Water
+    MODERATE = 2    # Wet
+    LOW      = 1    # Moist
+    VERY_LOW = 0    # Dry
 
 class Kingdom(Enum):
     FUNGI = 'fungi'
