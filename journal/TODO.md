@@ -15,7 +15,7 @@
 - [x] Add help and version commands (with usage/credits displayed)
 
 ## Algorithm Development and Validation
-- [ ] Gather a group of species for validation tests
+- [x] Gather a group of species for validation tests
 - [ ] Write some basic companionship rules
 - [ ] Write a validation test based on expected companion groups and anti-companion groups
 - [ ] Research some companion plant groups and what exactly makes them beneficial (also anti-companion groups and what makes them detrimental)
