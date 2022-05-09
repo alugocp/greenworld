@@ -1,4 +1,4 @@
-from typing import Dict, List
+from typing import List
 from .species import Species
 from .math.comparisons import overlaps
 from .math.combinatorics import combination

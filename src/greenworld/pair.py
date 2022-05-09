@@ -1,4 +1,4 @@
-from typing import Dict, Iterator, List
+from typing import List
 from .species import Species
 from .factor import Factor
 

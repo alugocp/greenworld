@@ -1,4 +1,3 @@
-from typing import Iterable, Iterator, List
 from math import factorial
 
 # This function returns the number combinations (n choose k)

@@ -38,7 +38,7 @@ class Printer:
             self.print(f'{msg}\n')
 
     def add_lines(self, n: int) -> None:
-        for a in range(n):
+        for _ in range(n):
             self.add_line('')
 
     # This function updates the line at index i on the stack
