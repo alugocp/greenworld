@@ -1,6 +1,6 @@
 from typing import Iterator
-from ..species import Species
-from .data import Data
+from greenworld.model.species import Species
+from greenworld.database.data import Data
 
 # This class represents an interface of species data access. An implementation
 # may connect this interface to a database or other source.

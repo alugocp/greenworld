@@ -1,7 +1,7 @@
 import sys
 from greenworld.greenworld import Greenworld
-from greenworld.database.pair_text import TextPairData
-from greenworld.database.species_json import JsonSpeciesData
+from greenworld.database.dev.pair_text import TextPairData
+from greenworld.database.dev.species_json import JsonSpeciesData
 from greenworld.injector import Injector
 from greenworld.printer import Printer
 printer = Printer(True)
@@ -12,6 +12,7 @@ def help_cmd():
     printer.print_line('USAGE: gw [options]')
     printer.print_line()
     printer.print_line('OPTIONS:')
+    printer.print_line('\trun\t\tRuns the core algorithm')
     printer.print_line('\t--help\t\tDisplays helpful information')
     printer.print_line('\t--version\tDisplays version information')
 

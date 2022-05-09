@@ -1,4 +1,4 @@
-from ..types import Range
+from greenworld.model.types import Range
 
 def overlaps(r1: Range, r2: Range) -> bool:
     return ((r1[0] >= r2[0] and r1[0] <= r2[1]) or

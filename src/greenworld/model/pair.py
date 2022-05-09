@@ -1,6 +1,6 @@
 from typing import List
-from .species import Species
-from .factor import Factor
+from greenworld.model.species import Species
+from greenworld.model.factor import Factor
 
 # This class represents a grouping of potential companion species.
 class Pair:

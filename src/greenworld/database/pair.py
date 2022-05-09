@@ -1,5 +1,5 @@
-from ..pair import Pair
-from .data import Data
+from greenworld.database.data import Data
+from greenworld.model.pair import Pair
 
 # This class represents an interface of pair data access. An implementation may
 # connect this interface to a database or other source.

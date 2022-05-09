@@ -1,13 +1,13 @@
 from typing import List
-from .species import Species
-from .math.comparisons import overlaps
-from .math.combinatorics import combination
-from .database.species import SpeciesData
-from .database.pair import PairData
-from .injector import Injector
-from .printer import Printer
-from .factor import Factor
-from .pair import Pair
+from greenworld.model.species import Species
+from greenworld.math.comparisons import overlaps
+from greenworld.math.combinatorics import combination
+from greenworld.database.species import SpeciesData
+from greenworld.database.pair import PairData
+from greenworld.injector import Injector
+from greenworld.printer import Printer
+from greenworld.model.factor import Factor
+from greenworld.model.pair import Pair
 
 # This class is the main algorithm handler for calculating companionship pairs.
 # It ties all the business logic of this project together.

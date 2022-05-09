@@ -1,5 +1,5 @@
-from .pair import PairData
-from ..pair import Pair
+from greenworld.database.pair import PairData
+from greenworld.model.pair import Pair
 
 class TextPairData(PairData):
     path: str

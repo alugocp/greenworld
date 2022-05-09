@@ -1,7 +1,7 @@
 from typing import Iterator, List
-from ..types import Kingdom, Sunlight, Drainage, Water
-from .species import SpeciesData
-from ..species import Species
+from greenworld.model.types import Kingdom, Sunlight, Drainage, Water
+from greenworld.database.species import SpeciesData
+from greenworld.model.species import Species
 
 # This class represents a JSON-like implementation of SpeciesData.
 class JsonSpeciesData(SpeciesData):

@@ -1,5 +1,5 @@
 from typing import Dict
-from .types import Sunlight, Drainage, Water, Range, Kingdom
+from greenworld.model.types import Sunlight, Drainage, Water, Range, Kingdom
 
 # This class represents a single species logged within this project. It contains
 # information to help determine an organism's ideal growing environment.
