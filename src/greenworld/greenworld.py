@@ -40,9 +40,10 @@ class Greenworld:
         iteration = 1
         for s1 in self.species_data.get_species_iterator():
             for s2 in self.species_data.get_species_iterator(s1):
-                self.printer.update_line(0, f'Calculating pair {iteration}/{total}...')
-                self.printer.update_line(1, str(s1))
-                self.printer.update_line(2, str(s2))
+                msg = f'Calculating pair \033[32m{iteration}\033[0m/\033[32m{total}\033[0m...'
+                self.printer.update_line(0, msg)
+                self.printer.update_line(1, f'• \033[32m{s1}\033[0m')
+                self.printer.update_line(2, f'• \033[32m{s2}\033[0m')
                 pair.reset(s1, s2)
                 pair.factors = calculate_compatibility(s1, s2)
                 self.pair_data.write_pair(pair)
