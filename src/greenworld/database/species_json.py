@@ -192,5 +192,13 @@ class JsonSpeciesData(SpeciesData):
         self.species = list(map(lambda data: Species(**data), self.data))
 
     # Returns an iterator for every species in the data source.
-    def get_species_iterator(self) -> Iterator[Species]:
+    # If 'species' is provided, then return an iterator for every
+    # species after the provided one.
+    def get_species_iterator(self, species: Species = None) -> Iterator[Species]:
+        if species:
+            return self.species[self.species.index(species) + 1:].__iter__()
         return self.species.__iter__()
+
+    # Returns the number of species in this data set
+    def get_species_count(self) -> int:
+        return len(self.species)

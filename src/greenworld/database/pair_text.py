@@ -1,9 +1,9 @@
 from typing import TextIO
 from ..printer import Printer
-from .group import GroupData
-from ..group import Group
+from .pair import PairData
+from ..pair import Pair
 
-class TextGroupData(GroupData):
+class TextPairData(PairData):
     printer: Printer
     file: TextIO
     path: str
@@ -18,9 +18,8 @@ class TextGroupData(GroupData):
     def close(self) -> None:
         self.file.close()
 
-    def write_group(self, group: Group) -> None:
-        for k, v in group.species.items():
-            self.printer.print_line(f'{k}: {v}')
-        for factor in group.global_factors:
+    def write_pair(self, pair: Pair) -> None:
+        self.printer.print_line(str(pair))
+        for factor in pair.factors:
             self.printer.print_line(str(factor))
         self.printer.print_line()

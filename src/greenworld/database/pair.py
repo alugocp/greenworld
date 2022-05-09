@@ -1,9 +1,9 @@
-from ..group import Group
+from ..pair import Pair
 from .data import Data
 
-# This class represents an interface of group data access. An implementation may
+# This class represents an interface of pair data access. An implementation may
 # connect this interface to a database or other source.
-class GroupData(Data):
+class PairData(Data):
 
     # Opens the output source connection
     def open(self) -> None:
@@ -13,6 +13,6 @@ class GroupData(Data):
     def close(self) -> None:
         pass
 
-    # Writes group data to whatever source your implementation uses
-    def write_group(self, group: Group) -> None:
+    # Writes pair data to whatever source your implementation uses
+    def write_pair(self, pair: Pair) -> None:
         pass

@@ -37,6 +37,10 @@ class Printer:
             self.stack.append(msg)
             self.print(f'{msg}\n')
 
+    def add_lines(self, n: int) -> None:
+        for a in range(n):
+            self.add_line('')
+
     # This function updates the line at index i on the stack
     def update_line(self, i: int, msg: str) -> None:
         if self.active:

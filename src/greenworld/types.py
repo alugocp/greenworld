@@ -1,8 +1,6 @@
 from typing import List, Tuple
 from enum import Enum
 
-Niche = str
-Niches = List[Niche]
 Range = Tuple[float, float]
 
 class Drainage(Enum):
