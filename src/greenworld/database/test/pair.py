@@ -4,16 +4,7 @@ from greenworld.model.pair import Pair
 
 # This class represents an implementation PairData for unit tests.
 class TestPairData(PairData):
-    pairs: List[Pair]
-
-    def __init__(self, path: str):
-        self.pairs = []
-
-    def open(self) -> None:
-        pass
-
-    def close(self) -> None:
-        pass
+    pairs: List[Pair] = []
 
     def write_pair(self, pair: Pair) -> None:
         self.pairs.append(pair)

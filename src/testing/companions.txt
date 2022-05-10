@@ -1,0 +1,25 @@
+potato
+tomato
+onion
+corn
+squash
+beans
+mint
+watermelon
+parsley
+basil
+garlic
+chives
+sunflower
+kohlrabi
+nasturtium
+dill
+carrots
+peas
+peppers
+marigold
+
+tomato, garlic, parsley, basil
+corn, squash, beans
+sunflower, squash, beans
+mint, watermelon

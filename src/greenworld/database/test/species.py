@@ -1,5 +1,4 @@
 from typing import Iterator, List
-from greenworld.model.types import Kingdom, Sunlight, Drainage, Water
 from greenworld.database.species import SpeciesData
 from greenworld.model.species import Species
 
@@ -8,186 +7,87 @@ class TestSpeciesData(SpeciesData):
     species: List[Species]
     data: List[object] = [
         {
-            'name': 'Corn',
-            'latin': 'zea mays',
-            'pH': (6.0, 6.5),
-            'water': Water.LOW,
-            'drainage': Drainage.SOMEWHAT_POORLY_DRAINED,
-            'sunlight': Sunlight.FULL_SUN,
-            'height': (2.0, 2.0)
-        },
-        {
-            'name': 'Lima Bean',
-            'latin': 'phaseolus lunatus',
-            'pH': (6.0, 6.8),
-            'water': Water.LOW,
-            'sunlight': Sunlight.FULL_SUN,
-            'height': (6.0, 6.0)
-        },
-        {
-            'name': 'Butternut Squash',
-            'latin': 'cucurbita moschata',
-            'pH': (6.0, 6.5),
-            'water': Water.LOW,
-            'sunlight': Sunlight.FULL_SUN,
-            'height': (0.6, 0.6)
-        },
-        {
-            'name': 'Watermelon',
-            'latin': 'citrullus lanatus',
-            'pH': (6.0, 6.8),
-            'water': Water.VERY_LOW,
-            'sunlight': Sunlight.FULL_SUN,
-            'height': (0.5, 0.5)
-        },
-        {
-            'name': 'Cucumber',
-            'latin': 'cucumis sativus',
-            'pH': (6.0, 7.0),
-            'water': Water.LOW,
-            'sunlight': Sunlight.FULL_SUN,
-            'height': (2.0, 2.0)
-        },
-        {
-            'name': 'Winecap Mushroom',
-            'latin': 'stropharia rugosa-annulata',
-            'kingdom': Kingdom.FUNGI
-        },
-        {
-            'name': 'Garlic',
-            'latin': 'allium sativum'
-        },
-        {
-            'name': 'Onion',
-            'latin': 'allium cepa'
-        },
-        {
-            'name': 'Cherry Tomato',
-            'latin': 'solanum lycopersicum'
-        },
-        {
-            'name': 'Basil',
-            'latin': 'ocimum basilicum'
-        },
-        {
-            'name': 'Parsley',
-            'latin': 'petroselinum crispum'
-        },
-        {
-            'name': 'Mango',
-            'latin': 'mangifera indica'
-        },
-        {
-            'name': 'Yellow Dragon Fruit',
-            'latin': 'selenicereus megalanthus'
-        },
-        {
-            'name': 'Potato',
+            'name': 'potato',
             'latin': 'solanum tuberosum'
         },
         {
-            'name': 'Plantain',
-            'latin': 'musa x paradisiaca'
+            'name': 'tomato',
+            'latin': 'solanum lycopersicum'
         },
         {
-            'name': 'Banana',
-            'latin': 'musa acuminata'
+            'name': 'onion',
+            'latin': 'allium cepa'
         },
         {
-            'name': 'Cassava',
-            'latin': 'manihot esculenta'
+            'name': 'corn',
+            'latin': 'zea mays'
         },
         {
-            'name': 'Sunflower',
-            'latin': 'helianthus dissectifolius'
+            'name': 'squash',
+            'latin': 'cucurbita moschata'
         },
         {
-            'name': 'Dandelion',
-            'latin': 'taraxacum officinale'
+            'name': 'beans',
+            'latin': 'phaseolus vulgaris'
         },
         {
-            'name': 'Cantaloupe',
-            'latin': 'cucumis melo',
-            'pH': (6.0, 6.5),
-            'water': Water.VERY_LOW,
-            'sunlight': Sunlight.FULL_SUN,
-            'height': (1.5, 1.5)
+            'name': 'mint',
+            'latin': 'mentha spicata'
         },
         {
-            'name': 'Winter Melon',
-            'latin': 'benincasa hispida',
-            'pH': (5.8, 6.8),
-            'water': Water.VERY_LOW,
-            'sunlight': Sunlight.FULL_SUN,
-            'height': (6.0, 6.0)
+            'name': 'watermelon',
+            'latin': 'citrullus lanatus'
         },
         {
-            'name': 'Annabelle Hydrangea',
-            'latin': 'hydrangea aborescens',
-            'pH': (6.0, 6.5),
-            'water': Water.LOW,
-            'drainage': Drainage.WELL_DRAINED,
-            'sunlight': Sunlight.LIGHT_SHADE,
-            'height': (3.0, 3.0)
-        },
-        {
-            'name': 'Asparagus',
-            'latin': 'asparagus officinalis'
-        },
-        {
-            'name': 'Parsley',
+            'name': 'parsley',
             'latin': 'petroselinum crispum'
         },
         {
-            'name': 'Basil',
+            'name': 'basil',
             'latin': 'ocimum basilicum'
         },
         {
-            'name': 'Beetroot',
-            'latin': 'beta vulgaris'
+            'name': 'garlic',
+            'latin': 'allium sativum'
         },
         {
-            'name': 'Lettuce',
-            'latin': 'lactuca sativa'
+            'name': 'chives',
+            'latin': 'allium schoenoprasum'
         },
         {
-            'name': 'Broccoli',
+            'name': 'sunflower',
+            'latin': 'helianthus annuus'
+        },
+        {
+            'name': 'kohlrabi',
             'latin': 'brassica oleracea'
         },
         {
-            'name': 'Sweet Cherry',
-            'latin': 'prunus avium'
+            'name': 'nasturtium',
+            'latin': 'tropaeolum majus'
         },
         {
-            'name': 'Spinach',
-            'latin': 'spinacia oleracea'
+            'name': 'dill',
+            'latin': 'anethum graveolens'
         },
         {
-            'name': 'Rosemary',
-            'latin': 'salvia rosmarinus'
+            'name': 'carrots',
+            'latin': 'daucus carota'
         },
         {
-            'name': 'Bottle Gourd',
-            'latin': 'lagenaria siceraria'
+            'name': 'peas',
+            'latin': 'pisum sativum'
         },
         {
-            'name': 'Radish',
-            'latin': 'raphanus raphanistrum'
+            'name': 'peppers',
+            'latin': 'capsicum annuum'
         },
         {
-            'name': 'Marigold',
+            'name': 'marigold',
             'latin': 'calendula officinalis'
-        },
-        {
-            'name': 'Pumpkin',
-            'latin': 'cucurbita maxima'
-        },
-        {
-            'name': 'Pinto Bean',
-            'latin': 'phaseolus vulgaris'
         }
     ]
-    
+
     def __init__(self):
         self.species = list(map(lambda data: Species(**data), self.data))
 

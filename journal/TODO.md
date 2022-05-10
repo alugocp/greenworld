@@ -17,7 +17,7 @@
 ## Algorithm Development and Validation
 - [x] Gather a group of species for validation tests
 - [x] Write some basic companionship rules
-- [ ] Write a validation test based on expected companion groups and anti-companion groups
+- [x] Write a validation test based on expected companion groups and anti-companion groups
 - [ ] Research some companion plant groups and what exactly makes them beneficial (also anti-companion groups and what makes them detrimental)
 - [ ] Find out where to get metabolic pathway data for crops (to see input/output nutrient forms) (perhaps nutrient uptake and nutrient level data)
 - [ ] Tweak algorithm rules and add data as needed until tests work

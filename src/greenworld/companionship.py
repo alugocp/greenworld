@@ -27,7 +27,7 @@ def calculate_compatibility(s1: Species, s2: Species) -> List[Factor]:
     # Good if a vining plant is grown up a stalky plant
     # Good if one plant synthesizes a nutrient required by another plant
     # Good if one plant attracts pollinators (and the other needs pollinators)
-    # If they're the same species and may cross pollinate, suggest either planting far away or accepting hybrid offspring
+    # If same species and may cross pollinate, suggest either planting far away or get hybrid
     # Good if the shorter plant likes some shade (provided by taller plant)
     # Plant farther away if one plant needs more water than another
     # Plant shallow root plants away from root crops (so root harvest doesn't disrupt shallow roots)

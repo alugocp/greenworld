@@ -31,7 +31,6 @@ class Greenworld:
 
     # This function iterates through every pair of species.
     def process_pairs(self) -> None:
-        pair = Pair()
         total = combination(self.species_data.get_species_count(), 2)
         self.printer.add_lines(3)
         iteration = 1
@@ -41,7 +40,7 @@ class Greenworld:
                 self.printer.update_line(0, msg)
                 self.printer.update_line(1, f'• \033[32m{s1}\033[0m')
                 self.printer.update_line(2, f'• \033[32m{s2}\033[0m')
-                pair.reset(s1, s2)
+                pair = Pair(s1, s2)
                 pair.factors = calculate_compatibility(s1, s2)
                 self.pair_data.write_pair(pair)
                 iteration += 1

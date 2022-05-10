@@ -13,5 +13,9 @@ class Factor():
         self.label = label
 
     def __repr__(self):
-        outcome = ['BAD', 'NEUTRAL', 'GOOD'][self.outcome]
+        outcome = self.outcome_str(self.outcome)
         return f'({outcome}) {self.label}'
+
+    @classmethod
+    def outcome_str(cls, outcome: int) -> str:
+        return ['BAD', 'NEUTRAL', 'GOOD'][outcome]
