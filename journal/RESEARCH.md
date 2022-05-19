@@ -12,12 +12,17 @@
 - [NUOnet (Nutrient Use and Outcome Network) database](https://data.nal.usda.gov/dataset/nuonet-nutrient-use-and-outcome-network-database)
 - [International Plant Name Index](https://www.ipni.org/)
 - [Plants For A Future](https://pfaf.org/user/Default.aspx)
+- [NPK nutrient uptake database](https://plantsorig.sc.egov.usda.gov/npk/main)
+- [General USDA plants database](https://plants.sc.egov.usda.gov/home)
+- [KEGG Metabolic Pathways Database](https://www.kegg.jp/kegg/pathway.html)
+- [Plant Metabolic Pathways Databases](https://plantcyc.org)
 
 # Nutrients and Metabolic Pathways
 - [Analysis of metabolites and metabolic pathways in three maize (Zea mays L.) varieties from the same origin using GC–MS](https://www.nature.com/articles/s41598-020-73041-z)
 - [Molecular Mechanisms of Phosphorus Metabolism and Transport during Leaf Senescence](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4844268/)
 - [CornCyc 9.0 at MaizeGDB](https://corncyc-b73-v4.maizegdb.org/)
 - [Coordinated Transport of Nitrate, Potassium, and Sodium](https://www.frontiersin.org/articles/10.3389/fpls.2020.00247/full)
+- [Plant B vitamin pathways and their compartmentation: a guide for the perplexed](https://pubmed.ncbi.nlm.nih.gov/22915736/)
 
 # Planting tips
 - [A gardener's guide to sun exposure](https://southernlivingplants.com/planting-care/a-gardeners-guide-to-sun-exposure/)
