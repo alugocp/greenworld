@@ -50,10 +50,16 @@ class ValidationTests(unittest.TestCase):
             expected = self.get_expected(pair)
             has_good = ValidationTests.has_outcome(pair.factors, Factor.GOOD)
             has_bad = ValidationTests.has_outcome(pair.factors, Factor.BAD)
-            if expected == Factor.GOOD and has_bad:
-                errors.append(f'{pair} should not have BAD')
-            if expected == Factor.BAD and has_good:
-                errors.append(f'{pair} should not have GOOD')
+            if expected == Factor.GOOD:
+                if has_bad:
+                    errors.append(f'{pair} should not have BAD')
+                if not has_good:
+                    errors.append(f'{pair} should have GOOD')
+            if expected == Factor.BAD:
+                if has_good:
+                    errors.append(f'{pair} should not have GOOD')
+                if not has_bad:
+                    errors.append(f'{pair} should have BAD')
         for e in errors:
             print(e)
         self.assertTrue(len(errors) == 0)

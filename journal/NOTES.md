@@ -26,6 +26,28 @@ Note: You'll need to store average biomass of a single unit of each crop
 - **Metabolite** - an intermediate result of a metabolic pathway
 - **Metabolomics** - the comprehensive measurement of all metabolites in a biological specimen
 
+# Plant Taxonomy
+As defined by the [International Code of Nomenclature on Algae, Fungi and Plants](https://en.wikipedia.org/wiki/International_Code_of_Nomenclature_for_algae,_fungi,_and_plants):
+- `Kingdom`
+- `Division`
+- `Class`
+- `Order`
+- `Family`
+- `Genus`
+- `Species`
+
+There are only 620 plant families in existence.
+
+# Growth Habits
+- `Forb (herb)` An herbaceous (non woody) plant without grass-like characteristics
+- `Graminoid` Grass or grass-like plant
+- `Lichenous` Recognized as single plant but is living in symbiosis with a fungus
+- `Nonvascular` Terrestrial, herbaceous green plant often attached to some object
+- `Shrub` Perennial woody plant that is usually multi-stemmed and under 5 meters tall
+- `Subshrub` Low growing shrub never exceeding 1 meter
+- `Tree` Perennial woody plant usually with single stem and over 5 meters tall
+- `Vine` Twining plant with long stems, can be woody or herbaceous
+
 # Useful Python links
 - [Packaging Python for Pip](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 - [Modules vs. packages](https://docs.python.org/3/tutorial/modules.html)

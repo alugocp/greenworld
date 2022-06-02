@@ -16,6 +16,15 @@
 - [General USDA plants database](https://plants.sc.egov.usda.gov/home)
 - [KEGG Metabolic Pathways Database](https://www.kegg.jp/kegg/pathway.html)
 - [Plant Metabolic Pathways Databases](https://plantcyc.org)
+- [Integrated Taxonomic Information System - Zea Mays](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=42269#null)
+- [The Plant List - All Families](http://theplantlist.org/browse/-/)
+
+# Morphology and Growth Habit
+- [Evolution of the plant body plan](https://pubmed.ncbi.nlm.nih.gov/30612613/)
+- [Multiple origins of the determinate growth habit in domesticated common bean (Phaseolus vulgaris)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3503494/)
+- [USDA Plants Database - Growth Habit Search](https://plants.sc.egov.usda.gov/home/growthHabitSearch)
+- [Growth Habits Codes and Definitions (USDA)](https://plantsorig.sc.egov.usda.gov/growth_habits_def.html)
+- [Habit Growth Form List (Australian Government)](https://www.anbg.gov.au/cpbr/herbarium/collecting/habit-types.html)
 
 # Nutrients and Metabolic Pathways
 - [Analysis of metabolites and metabolic pathways in three maize (Zea mays L.) varieties from the same origin using GC–MS](https://www.nature.com/articles/s41598-020-73041-z)
@@ -34,6 +43,7 @@
 - [Sunlight requirements for growing vegetables](https://www.farmanddairy.com/top-stories/sunlight-requirements-for-growing-vegetables/250815.html)
 - [Ruth Stout Method](https://www.goveganic.net/article182.html)
 - [Masanobu Fukuoka](https://f-masanobu.jp/en/)
+- [Plant Life Cycles](https://extension.psu.edu/plant-life-cycles)
 
 # Companion planting
 - [12 examples of companion planting](https://simplicable.com/new/companion-planting)
