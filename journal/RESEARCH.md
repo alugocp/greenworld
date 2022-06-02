@@ -26,6 +26,9 @@
 - [Growth Habits Codes and Definitions (USDA)](https://plantsorig.sc.egov.usda.gov/growth_habits_def.html)
 - [Habit Growth Form List (Australian Government)](https://www.anbg.gov.au/cpbr/herbarium/collecting/habit-types.html)
 
+# Plant Pathology
+- [Plant Disease Basics and Diagnosis](https://extension.psu.edu/plant-disease-basics-and-diagnosis)
+
 # Nutrients and Metabolic Pathways
 - [Analysis of metabolites and metabolic pathways in three maize (Zea mays L.) varieties from the same origin using GC–MS](https://www.nature.com/articles/s41598-020-73041-z)
 - [Molecular Mechanisms of Phosphorus Metabolism and Transport during Leaf Senescence](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4844268/)

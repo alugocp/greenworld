@@ -1,9 +1,11 @@
 from typing import Dict
-from greenworld.model.types import Sunlight, Drainage, Water, Range, Kingdom
+from greenworld.model.types import Sunlight, Drainage, Water, Range, Kingdom, GrowthHabit, Duration
 
 # This class represents a single species logged within this project. It contains
 # information to help determine an organism's ideal growing environment.
 class Species:
+    habit: GrowthHabit
+    duration: Duration
     sunlight: Sunlight
     drainage: Drainage
     kingdom: Kingdom
@@ -16,6 +18,8 @@ class Species:
 
     def __init__(self, **kwargs):
         defaults: Dict[str, object] = {
+            'habit': GrowthHabit.GRAMINOID,
+            'duration': Duration.PERENNIAL,
             'sunlight': Sunlight.LIGHT_SHADE,
             'drainage': Drainage.WELL_DRAINED,
             'kingdom': Kingdom.PLANT,

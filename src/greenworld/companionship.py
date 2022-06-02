@@ -18,6 +18,10 @@ def calculate_compatibility(s1: Species, s2: Species) -> List[Factor]:
         factors.append(Factor(Factor.NEUTRAL,
             f'{s1} and {s2} will need different levels of water'
         ))
+    if s1.latin.split(' ')[0] == s2.latin.split(' ')[0]:
+        factors.append(Factor(Factor.BAD,
+            f'{s1} and {s2} may share diseases that affect their genus'
+        ))
     # Bad if soil pH levels don't overlap
     # Bad if species have the same diseases or pests
     # Good, plant far away if one plant attracts another one's pests

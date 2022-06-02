@@ -52,14 +52,14 @@ class ValidationTests(unittest.TestCase):
             has_bad = ValidationTests.has_outcome(pair.factors, Factor.BAD)
             if expected == Factor.GOOD:
                 if has_bad:
-                    errors.append(f'{pair} should not have BAD')
+                    errors.append(f'{pair} should not have BAD') # False positive signal
                 if not has_good:
-                    errors.append(f'{pair} should have GOOD')
-            if expected == Factor.BAD:
+                    errors.append(f'{pair} should have GOOD') # False negative signal
+            elif expected == Factor.BAD:
                 if has_good:
-                    errors.append(f'{pair} should not have GOOD')
+                    errors.append(f'{pair} should not have GOOD') # False positive signal
                 if not has_bad:
-                    errors.append(f'{pair} should have BAD')
+                    errors.append(f'{pair} should have BAD') # False negative signal
         for e in errors:
             print(e)
         self.assertTrue(len(errors) == 0)
