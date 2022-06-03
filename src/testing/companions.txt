@@ -1,25 +1,43 @@
-potato
-tomato
-onion
-corn
-squash
-beans
-mint
-watermelon
-parsley
-basil
-garlic
-chives
-sunflower
-kohlrabi
-nasturtium
-dill
-carrots
-peas
-peppers
-marigold
+potato, garlic # Garlic repels pests
+potato, onion # Onion repels pests
+potato, peas # Peas fix nitrogen
+potato, beans # Beans fix nitrogen
+potato, corn # Corn can provide shade
+potato, basil # Basil repels pests
+potato, parsley # Parsley can be a sacrificial crop
+potato, marigold
+potato, nasturtium
 
-tomato, garlic, parsley, basil
-corn, squash, beans
-sunflower, squash, beans
-mint, watermelon
+tomato, basil # Basil repels insects
+tomato, beans # Similar preferred environment
+tomato, carrots # Help loosen soil for tomatoes
+tomato, chives # Improves tomato health
+tomato, garlic # Garlic repels pests
+tomato, marigold # Marigolds repel pests
+tomato, mint # Improves tomato health
+tomato, nasturtium # Sacrificial crop for aphids
+tomato, onion
+tomato, parsley # Improves tomato health
+tomato, squash
+
+onion, peppers # Onions protect against pests
+onion, carrots # Onions protect against pests
+onion, parsley # Onions protect against pests
+
+corn, squash # Squash keeps the soil cool and weed-free
+corn, beans # Beans fix nitrogen
+corn, watermelon # Melons keep the soil cool and weed-free
+corn, marigold # Attract predatory insects to deter pests
+corn, mint # Mint can detract deer
+corn, nasturtium # Nasturtium can be sacrificial crop
+corn, sunflower # Sunflowers attract beneficial insects
+
+squash, nasturtium # Nasturtiums attract beneficial insects, can be sacrificial
+squash, beans # beans fix nitrogen for squash, squash spikes keep pests away
+squash, marigold # Marigolds repel pests
+squash, peas # Peas fix nitrogen
+squash, mint # Mint attracts pollinators and predatory insects
+
+beans, nasturtium # Nasturtiums trap bean pests
+beans, peas # Nitrogen fixers work well together
+beans, carrots # Beans provide nitrogen and pest protection

@@ -79,6 +79,7 @@
 - [Maize Nutrient Accumulation and Partitioning in Response to Plant Density and Nitrogen Rate: I. Macronutrients](https://acsess.onlinelibrary.wiley.com/doi/full/10.2134/agronj2012.0467)
 - [Effects of enhanced ammonium nitrogen availability for corn](https://www.crops.org/files/publications/jnrlse/pdfs/jnr018/018-02-0093.pdf)
 - [SOIL REQUIREMENTS FOR GROWING CORN](https://www.ecofarmingdaily.com/grow-crops/grow-corn/soil-requirements)
+- [12 Corn Companion Plants & 4 That Should Be Nowhere Near](https://www.ruralsprout.com/corn-companion-plants/)
 
 ## Gourds
 - [Corn Stover Removal Effects On Soil Aggregation and Squash Fruit Yield in Cover Cropping Systems](https://scisoc.confex.com/scisoc/2013am/webprogram/Handout/Paper80042/Lance%20Ouellette_Poster_Presentation.pdf)
@@ -97,11 +98,13 @@
 - [Shiba Butternut Squash](https://www.rfdsafeagri.com/wp-content/uploads/2019/10/Butternut-Shiba.pdf) (Starke Ayres, 2019)
 - [Metabolic pathways - Cucurbita maxima (winter squash)](https://www.kegg.jp/pathway/cmax01100)
 - [Nutrient evaluation of the seed, pulp, flesh, and peel of spaghetti squash](https://www.researchgate.net/publication/352830278_Nutrient_evaluation_of_the_seed_pulp_flesh_and_peel_of_spaghetti_squash)
+- [Squash Companion Plants (What Not to Grow Near Squash)](https://thehometome.com/squash-companion-plants/)
 
 ## Legumes
 - [Nutrient Uptake and Partitioning by Dry Beans in Manitoba](https://umanitoba.ca/faculties/afs/agronomists_conf/media/Heard_drybean_nutrient_uptake-poster.pdf) (Heard and Brolley, 2008)
 - [Genetic and Molecular Mechanisms Underlying Symbiotic Specificity in Legume-Rhizobium Interactions](https://www.frontiersin.org/articles/10.3389/fpls.2018.00313/full)
 - [Interaction and Regulation of Carbon, Nitrogen, and Phosphorus Metabolisms in Root Nodules of Legumes](https://www.frontiersin.org/articles/10.3389/fpls.2018.01860/full)
+- [14 Companion Plants for Beans (And 3 To Avoid)](https://traditionalgardening.com/companion-plants-for-beans/)
 
 ## Carrot
 - [Carrot Nitrogen Uptake and Partitioning](http://geisseler.ucdavis.edu/Guidelines/N_Carrot.html)
@@ -110,6 +113,7 @@
 ## Potato
 - [Crop Guide: Potato Nutritional Requirements](https://www.haifa-group.com/crop-guide/field-crops/crop-guide-potato/nutrients-growing-potatoes)
 - [Nutritional requirements of potatoes](https://eprints.nwisrl.ars.usda.gov/id/eprint/36/1/1186.pdf)
+- [30 Potato Companion Plants And 8 Plants To Never Grow With Potatoes](https://www.ruralsprout.com/potato-companion-plants/)
 
 ## Spinach
 - [Nutrient uptake and growth of spinach as affected by cow manure co-composted with poplar leaf litter](https://link.springer.com/article/10.1007/s40093-017-0154-x)
@@ -119,12 +123,16 @@
 - [Differential nutrient uptake and its transport in tomato plants on different fertilizer regimens](https://journals.ashs.org/hortsci/view/journals/hortsci/46/8/article-p1170.xml)
 - [Nutrient uptake by tomatoes grown in hydroponics](https://www.ishs.org/ishs-article/401_42)
 - [Evaluation of the nutrients uptake by tomato plants in different phenological stages using an electrical conductivity technique](https://www.mdpi.com/2077-0472/11/4/292/htm)
+- [Best and Worst Companion Plants for Tomatoes](https://www.thespruce.com/companion-plants-for-tomatoes-1403289)
 
 ## Cucumber
 - [Soil PH for Cucumbers](https://homeguides.sfgate.com/soil-ph-cucumbers-73822.html)
 
 ## Melons
 - [Melon Nutritional Summary](https://www.yara.com.au/crop-nutrition/melon/melon-nutritional-summary/) (Rincon-Sanchez et al., 1998) (Quattrucci, 2000)
+
+## Onions
+- [17 Best and Worst Companion Plants For Onions](https://backgarden.org/companion-plants-for-onions/)
 
 # Nutrient cycle
 - [Understanding Soil Microbes and Nutrient Recycling](https://ohioline.osu.edu/factsheet/sag-16)

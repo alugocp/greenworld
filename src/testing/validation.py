@@ -1,4 +1,5 @@
 import os
+import sys
 import unittest
 from typing import List, Tuple
 from greenworld.model.pair import Pair
@@ -23,10 +24,26 @@ class ValidationTests(unittest.TestCase):
         injector.register_service('pair-data', self.pairs)
         self.greenworld = Greenworld(injector)
         source = lambda x: os.path.join(os.path.dirname(__file__), x)
+        clean = lambda lines: list(filter(
+            lambda x: len(x) == 2, map(
+                lambda x: tuple(x.strip().split(' # ')[0].split(', ')), lines)))
         with open(source('companions.txt'), 'r', encoding = 'utf8') as file:
-            self.good_pairs = list(map(lambda x: tuple(x.split(', ')), file.readlines()))
+            self.good_pairs = clean(file.readlines())
         with open(source('anticompanions.txt'), 'r', encoding = 'utf8') as file:
-            self.bad_pairs = list(map(lambda x: tuple(x.split(', ')), file.readlines()))
+            self.bad_pairs = clean(file.readlines())
+        # Validate that all plants are listed in plants.txt
+        nonexistent = []
+        with open(source('plants.txt'), 'r', encoding = 'utf8') as file:
+            plants = list(map(lambda x: x.strip(), file.readlines()))
+            for a, b in self.good_pairs + self.bad_pairs:
+                if not a in plants:
+                    nonexistent.append(a)
+                if not b in plants:
+                    nonexistent.append(b)
+        if len(nonexistent) > 0:
+            formatted = ', '.join(nonexistent)
+            print(f'Invalid referenced plants: {formatted}')
+            sys.exit(1)
 
     @classmethod
     def has_outcome(cls, factors: List[Factor], outcome: int) -> bool:

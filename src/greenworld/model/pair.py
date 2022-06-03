@@ -13,4 +13,4 @@ class Pair:
         self.s2 = s2
 
     def __repr__(self) -> str:
-        return f'({self.s1}, {self.s2})'
+        return f'({self.s1.name}, {self.s2.name})'

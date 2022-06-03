@@ -1,1 +1,21 @@
-tomato, potato
+tomato, corn # They share a pest (corn earworm/tomato fruitworm)
+tomato, peppers # All in the same family, share pests
+tomato, potato # All in the same family, share pests
+tomato, fennel # Allelopathic effect on tomato
+
+potato, squash # Compete for resources, both affected by blight
+potato, carrots # Both are roots, so harvesting may damage either one
+potato, sunflower # Sunflowers have allelopathic effect, may stunt potato growth
+potato, fennel # Allelopathic effect on potato
+
+onion, beans # Onions stunt legume growth
+onion, peas # Onions stunt legume growth
+onion, garlic # May suffer the same pests
+onion, chives # May suffer the same pests
+
+corn, fennel
+
+beans, chives # Alliums stunt legume growth
+beans, garlic # Alliums stunt legume growth
+beans, peppers # Vines may compete
+beans, sunflower # Sunflower may stunt bean growth
