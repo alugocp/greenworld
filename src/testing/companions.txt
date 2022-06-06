@@ -41,3 +41,73 @@ squash, mint # Mint attracts pollinators and predatory insects
 beans, nasturtium # Nasturtiums trap bean pests
 beans, peas # Nitrogen fixers work well together
 beans, carrots # Beans provide nitrogen and pest protection
+
+mint, beans # Mint deters pests
+mint, carrots # Mint deters pests
+mint, onion # Mint deters pests
+mint, peas # Mint deters pests
+mint, peppers # Mint deters pests
+
+watermelon, onion # Deter pests
+watermelon, garlic # Deter pests
+watermelon, chives # Deter pests
+watermelon, beans # Fix nitrogen
+watermelon, carrots # Loosen the soil
+watermelon, mint # Deters pests
+watermelon, nasturtium # Attracts pollinators
+watermelon, marigold # Attracts pollinators
+
+parsley, corn # Parsley attracts beneficial insects
+parsley, beans # Parsley attracts beneficial insects
+parsley, peppers # Parsley repels pests
+parsley, chives # Attract beneficial bugs together
+
+basil, chives # Chives deter pests
+basil, garlic # Garlic deters pests
+basil, fennel # Fennel deters pests
+basil, marigold # Marigolds deter pests
+basil, onion # Onions deter pests
+basil, parsley # Have similar soil requirements
+basil, peppers # Basil deters pests
+
+garlic, carrots # Deter each others pests
+garlic, nasturtium # Nasturtiums supress weeds
+garlic, marigold # Garlic deters pests
+
+chives, carrots # Chives deter pests
+chives, peas # Chives deter pests
+chives, peppers # Chives deter pests
+chives, potato # Chives have shallow roots
+
+sunflower, tomato # Attract pollinators
+sunflower, peppers # Deters pests
+sunflower, onion # Deters pests
+sunflower, garlic # Deters pests
+sunflower, chives # Deters pests
+sunflower, peas # Sunflowers provide shade
+sunflower, mint # Deters pests
+sunflower, basil # Deters pests
+
+kohlrabi, onion # Deter pests
+kohlrabi, garlic # Deter pests
+kohlrabi, potato # Loosen the soil
+
+nasturtium, peppers # Nasturtiums repel pests
+nasturtium, marigold # These two deter a lot of pests together
+
+carrots, peas # Legumes fix nitrogen in the soil
+carrots, parsley # Parsley attracts beneficial insects
+
+peas, corn # Peas fix nitrogen for corn
+peas, basil # Basil repels pests
+peas, nasturtium # Sacrificial plant for aphids
+peas, marigold # Sacrificial plant for aphids
+
+peppers, tomato # Tomato foliage can help keep peppers shaded and humid
+peppers, corn # Corn can shade and shelter peppers
+peppers, beans # Beans fix nitrogen for peppers
+peppers, squash # Squash leaves supress weeds
+peppers, peas # Peas can fix notrgen and be used in crop rotation with peppers
+peppers, garlic # Repels pests
+peppers, carrots # Carrots help cover the ground
+peppers, marigold

@@ -105,10 +105,12 @@
 - [Genetic and Molecular Mechanisms Underlying Symbiotic Specificity in Legume-Rhizobium Interactions](https://www.frontiersin.org/articles/10.3389/fpls.2018.00313/full)
 - [Interaction and Regulation of Carbon, Nitrogen, and Phosphorus Metabolisms in Root Nodules of Legumes](https://www.frontiersin.org/articles/10.3389/fpls.2018.01860/full)
 - [14 Companion Plants for Beans (And 3 To Avoid)](https://traditionalgardening.com/companion-plants-for-beans/)
+- [Companion Plants For Peas: (Best & Worst)](https://shinyplant.com/companion-plants-for-peas/)
 
 ## Carrot
 - [Carrot Nitrogen Uptake and Partitioning](http://geisseler.ucdavis.edu/Guidelines/N_Carrot.html)
 - [Seasonal nutrient partitioning and uptake in hybrid carrot seed production](https://acsess.onlinelibrary.wiley.com/doi/10.1002/agj2.20503)
+- [17 Companion Plants for Carrots (And 3 To Avoid)](https://traditionalgardening.com/companion-plants-for-carrots/#4_Parsley)
 
 ## Potato
 - [Crop Guide: Potato Nutritional Requirements](https://www.haifa-group.com/crop-guide/field-crops/crop-guide-potato/nutrients-growing-potatoes)
@@ -130,9 +132,28 @@
 
 ## Melons
 - [Melon Nutritional Summary](https://www.yara.com.au/crop-nutrition/melon/melon-nutritional-summary/) (Rincon-Sanchez et al., 1998) (Quattrucci, 2000)
+- [Good & Bad Watermelon Companion Plants](https://growers-planet.com/watermelon-companion-plants/)
 
-## Onions
+## Alliums
 - [17 Best and Worst Companion Plants For Onions](https://backgarden.org/companion-plants-for-onions/)
+- [14 Best Companion Plants For Garlic And 6 To Avoid Planting Plant Near](https://www.gardeningchores.com/garlic-companion-plants/)
+- [13+ Best Chives Companion Plants (& What NOT to Plant Nearby)](https://seedsandgrain.com/chives-companion-plants/)
+
+## Herbs
+- [The 11 Best Mint Companion Plants (& What NOT to Plant Nearby)](https://seedsandgrain.com/mint-companion-plants/)
+- [10 Parsley Companion Plants (What Not to Grow Near Parsley)](https://thehometome.com/parsley-companion-plants/)
+- [17 Basil Companion Plants (& What NOT to Plant Nearby)](https://seedsandgrain.com/basil-companion-plants/)
+- [Companion Planting Fennel](https://growing-guides.co.uk/companion-planting-fennel/)
+
+## Flowers
+- [Good & Bad Sunflower Companion Plants](https://growers-planet.com/sunflower-companion-plants/)
+- [Nasturtium Companion Plants (What Not To Grow Near Nasturtiums)](https://thehometome.com/nasturtium-companion-plants/)
+
+## Brassicas
+- [21 Best Kohlrabi Companion Plants (& The Worst)](https://growers-planet.com/kohlrabi-companion-plants/)
+
+## Peppers
+- [35 Companion Plants For Peppers (& 4 Plants To Avoid)](https://www.ruralsprout.com/pepper-companion-plants/)
 
 # Nutrient cycle
 - [Understanding Soil Microbes and Nutrient Recycling](https://ohioline.osu.edu/factsheet/sag-16)
