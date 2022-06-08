@@ -2,13 +2,32 @@ from typing import Iterator, List
 from greenworld.database.species import SpeciesData
 from greenworld.model.species import Species
 
+"""
+- Data to add for each crop -
+habit: Growth habit enum
+duration: Lifetime enum
+sunlight: Preferred sunlight enum
+drainage: Preferred soil drainage enum
+kingdom: Taxonomic kingdom
+water: Preferred water enum
+height: height range
+roots: roots length range
+pH: Preferred soil pH range
+"""
+
 # This class represents an implementation SpeciesData for unit tests.
 class TestSpeciesData(SpeciesData):
     species: List[Species]
     data: List[object] = [
         {
             'name': 'potato',
-            'latin': 'solanum tuberosum'
+            'latin': 'solanum tuberosum',
+            'habit': GrowthHabit.HERB,
+            'duration': Duration.PERENNIAL,
+            'sunlight': Sunlight.FULL_SUN,
+            'drainage': Drainage.WELL_DRAINED,
+            'kingdom': Kingdom.PLANT,
+            'pH': (5.8, 6.5)
         },
         {
             'name': 'tomato',

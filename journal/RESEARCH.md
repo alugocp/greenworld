@@ -116,6 +116,7 @@
 - [Crop Guide: Potato Nutritional Requirements](https://www.haifa-group.com/crop-guide/field-crops/crop-guide-potato/nutrients-growing-potatoes)
 - [Nutritional requirements of potatoes](https://eprints.nwisrl.ars.usda.gov/id/eprint/36/1/1186.pdf)
 - [30 Potato Companion Plants And 8 Plants To Never Grow With Potatoes](https://www.ruralsprout.com/potato-companion-plants/)
+- [The influence of intercropping with Allium on some insect populations in potato (Solatium tuberosum)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1744-7348.1991.tb04859.x)
 
 ## Spinach
 - [Nutrient uptake and growth of spinach as affected by cow manure co-composted with poplar leaf litter](https://link.springer.com/article/10.1007/s40093-017-0154-x)
