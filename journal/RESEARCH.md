@@ -19,6 +19,17 @@
 - [Integrated Taxonomic Information System - Zea Mays](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=42269#null)
 - [The Plant List - All Families](http://theplantlist.org/browse/-/)
 
+# Allelochemicals and phytotoxicity
+- [Allelochemicals and Signaling Chemicals in Plants](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6695906/)
+- [Collection and Identification of Allelopathic Compounds from the Undisturbed Root System of Bigalta Limpograss (Hemarthria altissima)](https://pubmed.ncbi.nlm.nih.gov/16662150/)
+- [Allelopathic Plants: Models for Studying Plant-Interkingdom Interactions](https://pubmed.ncbi.nlm.nih.gov/31837955/)
+- [Allelochemicals in Plants](https://link.springer.com/chapter/10.1007/978-0-387-77337-7_4)
+- [Allelopathic Potential of Rice and Identification of Published Allelochemicals by Cloud-Based Metabolomics Platform](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7344986/)
+- [Prediction and evaluation of allelopathic plants species in Algerian Saharan ecosystem](https://www.sciencedirect.com/science/article/abs/pii/S1433831921000597)
+- [Allelochemicals: sources, toxicity and microbial transformation in soil —a review](https://annalsmicrobiology.biomedcentral.com/articles/10.1007/BF03175528)
+- [Toxic Plants – Phytotoxin (TPPT) Database](https://www.agroscope.admin.ch/agroscope/en/home/publications/apps/tppt.html)
+- [Comprehensive Toxic Plants–Phytotoxins Database and Its Application in Assessing Aquatic Micropollution Potential](https://pubs.acs.org/doi/10.1021/acs.jafc.8b01639)
+
 # Morphology and Growth Habit
 - [Evolution of the plant body plan](https://pubmed.ncbi.nlm.nih.gov/30612613/)
 - [Multiple origins of the determinate growth habit in domesticated common bean (Phaseolus vulgaris)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3503494/)
@@ -26,8 +37,9 @@
 - [Growth Habits Codes and Definitions (USDA)](https://plantsorig.sc.egov.usda.gov/growth_habits_def.html)
 - [Habit Growth Form List (Australian Government)](https://www.anbg.gov.au/cpbr/herbarium/collecting/habit-types.html)
 
-# Plant Pathology
+# Pests and Plant Pathology
 - [Plant Disease Basics and Diagnosis](https://extension.psu.edu/plant-disease-basics-and-diagnosis)
+- [EPPO (international plant pest database)](https://gd.eppo.int/)
 
 # Nutrients and Metabolic Pathways
 - [Analysis of metabolites and metabolic pathways in three maize (Zea mays L.) varieties from the same origin using GC–MS](https://www.nature.com/articles/s41598-020-73041-z)

@@ -107,7 +107,7 @@ peppers, tomato # Tomato foliage can help keep peppers shaded and humid
 peppers, corn # Corn can shade and shelter peppers
 peppers, beans # Beans fix nitrogen for peppers
 peppers, squash # Squash leaves supress weeds
-peppers, peas # Peas can fix notrgen and be used in crop rotation with peppers
+peppers, peas # Peas can fix nitrogen and be used in crop rotation with peppers
 peppers, garlic # Repels pests
 peppers, carrots # Carrots help cover the ground
 peppers, marigold
