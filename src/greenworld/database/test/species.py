@@ -1,19 +1,22 @@
 from typing import Iterator, List
 from greenworld.database.species import SpeciesData
 from greenworld.model.species import Species
+from greenworld.model.types import GrowthHabit
+from greenworld.model.types import Duration
+from greenworld.model.types import Sunlight
+from greenworld.model.types import Drainage
+from greenworld.model.types import Kingdom
 
-"""
-- Data to add for each crop -
-habit: Growth habit enum
-duration: Lifetime enum
-sunlight: Preferred sunlight enum
-drainage: Preferred soil drainage enum
-kingdom: Taxonomic kingdom
-water: Preferred water enum
-height: height range
-roots: roots length range
-pH: Preferred soil pH range
-"""
+# Data to add for each crop
+# habit: Growth habit enum
+# duration: Lifetime enum
+# sunlight: Preferred sunlight enum
+# drainage: Preferred soil drainage enum
+# kingdom: Taxonomic kingdom
+# water: Preferred water enum
+# height: height range
+# roots: roots length range
+# pH: Preferred soil pH range
 
 # This class represents an implementation SpeciesData for unit tests.
 class TestSpeciesData(SpeciesData):

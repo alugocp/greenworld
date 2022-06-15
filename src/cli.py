@@ -2,6 +2,7 @@ import sys
 from greenworld.greenworld import Greenworld
 from greenworld.database.dev.pair_text import TextPairData
 from greenworld.database.dev.species_json import JsonSpeciesData
+from greenworld.algorithm.init import algorithm
 from greenworld.injector import Injector
 from greenworld.printer import Printer
 printer = Printer(True)
@@ -27,6 +28,7 @@ def run_cmd():
     injector.register_service('printer', printer)
     injector.register_service('species-data', JsonSpeciesData())
     injector.register_service('pair-data', TextPairData('output.txt'))
+    injector.register_service('algorithm', algorithm)
     gw = Greenworld(injector)
     gw.calculate_compatibility_scores()
 
