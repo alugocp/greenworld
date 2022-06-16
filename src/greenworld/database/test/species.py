@@ -6,6 +6,7 @@ from greenworld.model.types import Duration
 from greenworld.model.types import Sunlight
 from greenworld.model.types import Drainage
 from greenworld.model.types import Kingdom
+from greenworld.model.types import Water
 
 # Data to add for each crop
 # habit: Growth habit enum
@@ -30,28 +31,78 @@ class TestSpeciesData(SpeciesData):
             'sunlight': Sunlight.FULL_SUN,
             'drainage': Drainage.WELL_DRAINED,
             'kingdom': Kingdom.PLANT,
+            'water': Water.MODERATE,
+            'height': (1.0, 1.0),
+            'roots': (0.6, 0.6),
             'pH': (5.8, 6.5)
         },
         {
             'name': 'tomato',
-            'latin': 'solanum lycopersicum'
+            'latin': 'solanum lycopersicum',
+            'habit': GrowthHabit.VINE,
+            'duration': Duration.ANNUAL,
+            'sunlight': Sunlight.FULL_SUN,
+            'drainage': Drainage.WELL_DRAINED,
+            'kingdom': Kingdom.PLANT,
+            'water': Water.MODERATE,
+            'height': (0.91, 1.22),
+            'roots': (0.3, 0.3),
+            'pH': (6.2, 6.8)
         },
         {
             'name': 'onion',
-            'latin': 'allium cepa'
+            'latin': 'allium cepa',
+            'habit': GrowthHabit.HERB,
+            'duration': Duration.BIENNIAL,
+            'sunlight': Sunlight.FULL_SUN,
+            'drainage': Drainage.SOMEWHAT_EXCESSIVELY_DRAINED,
+            'kingdom': Kingdom.PLANT,
+            'water': Water.MODERATE,
+            'height': (0.75, 1.8),
+            'roots': (0.3, 0.76),
+            'pH': (6.0, 7.0)
         },
         {
             'name': 'corn',
-            'latin': 'zea mays'
+            'latin': 'zea mays',
+            'habit': GrowthHabit.GRAMINOID,
+            'duration': Duration.ANNUAL,
+            'sunlight': Sunlight.FULL_SUN,
+            'drainage': Drainage.WELL_DRAINED,
+            'kingdom': Kingdom.PLANT,
+            'water': Water.MODERATE,
+            'height': (1.52, 3.66),
+            'roots': (0.15, 0.75),
+            'pH': (5.8, 6.2)
         },
         {
             'name': 'squash',
-            'latin': 'cucurbita moschata'
+            'latin': 'cucurbita moschata',
+            'habit': GrowthHabit.VINE,
+            'duration': Duration.ANNUAL,
+            'sunlight': Sunlight.FULL_SUN,
+            'drainage': Drainage.WELL_DRAINED,
+            'kingdom': Kingdom.PLANT,
+            'water': Water.MODERATE,
+            'height': (1.52, 2.44),
+            'roots': (0.3, 0.6),
+            'pH': (6.0, 6.5)
         },
         {
             'name': 'beans',
-            'latin': 'phaseolus vulgaris'
-        },
+            'latin': 'phaseolus vulgaris',
+            'habit': GrowthHabit.VINE,
+            'duration': Duration.ANNUAL,
+            'sunlight': Sunlight.FULL_SUN,
+            'drainage': Drainage.WELL_DRAINED,
+            'kingdom': Kingdom.PLANT,
+            'water': Water.MODERATE,
+            'height': (1.5, 3.0),
+            'roots': (0.46, 0.61),
+            'pH': (6.0, 7.0)
+        }
+    ]
+    """
         {
             'name': 'mint',
             'latin': 'mentha spicata'
@@ -108,7 +159,7 @@ class TestSpeciesData(SpeciesData):
             'name': 'marigold',
             'latin': 'calendula officinalis'
         }
-    ]
+    """
 
     def __init__(self):
         self.species = list(map(lambda data: Species(**data), self.data))

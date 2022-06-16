@@ -59,6 +59,7 @@
 - [Ruth Stout Method](https://www.goveganic.net/article182.html)
 - [Masanobu Fukuoka](https://f-masanobu.jp/en/)
 - [Plant Life Cycles](https://extension.psu.edu/plant-life-cycles)
+- [Best Cover Crops For Clay Soil: Fixing Clay Soil With Cover Crops](https://www.gardeningknowhow.com/edible/grains/cover-crops/cover-crops-for-clay-soil.htm)
 
 # Companion planting
 - [12 examples of companion planting](https://simplicable.com/new/companion-planting)
@@ -129,6 +130,7 @@
 - [Nutritional requirements of potatoes](https://eprints.nwisrl.ars.usda.gov/id/eprint/36/1/1186.pdf)
 - [30 Potato Companion Plants And 8 Plants To Never Grow With Potatoes](https://www.ruralsprout.com/potato-companion-plants/)
 - [The influence of intercropping with Allium on some insect populations in potato (Solatium tuberosum)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1744-7348.1991.tb04859.x)
+- [International Potato Center](https://cipotato.org/)
 
 ## Spinach
 - [Nutrient uptake and growth of spinach as affected by cow manure co-composted with poplar leaf litter](https://link.springer.com/article/10.1007/s40093-017-0154-x)

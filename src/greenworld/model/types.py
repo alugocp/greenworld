@@ -15,7 +15,7 @@ class Drainage(Enum):
 
 # How much sunlight a plant requires
 class Sunlight(Enum):
-    FULL_SUN      = 4
+    FULL_SUN      = 4 # 6 - 8 hours a day
     LIGHT_SHADE   = 3
     PARTIAL_SHADE = 2
     FULL_SHADE    = 1
@@ -23,10 +23,10 @@ class Sunlight(Enum):
 
 # How much water a plant requires
 class Water(Enum):
-    HIGH     = 3    # Water
-    MODERATE = 2    # Wet
-    LOW      = 1    # Moist
-    VERY_LOW = 0    # Dry
+    HIGH     = 3 # Water
+    MODERATE = 2 # Wet
+    LOW      = 1 # Moist
+    VERY_LOW = 0 # Dry
 
 # Taxonomic level
 class Kingdom(Enum):
@@ -35,17 +35,17 @@ class Kingdom(Enum):
 
 # The growth habit displayed by a plant
 class GrowthHabit(Enum):
-    HERB        = 0
-    GRAMINOID   = 1
-    LICHENOUS   = 2
-    NONVASCULAR = 3
-    SHRUB       = 4
-    SUBSHRUB    = 5
-    TREE        = 6
-    VINE        = 7
+    HERB        = 0 # non woody and non grass-like
+    GRAMINOID   = 1 # Grass or grass-like
+    LICHENOUS   = 2 # Actually two organisms living together
+    NONVASCULAR = 3 # Terrestrial, like a moss or something
+    SHRUB       = 4 # Perennial woody plant below 5 meters
+    SUBSHRUB    = 5 # Smaller shrub under 1 meter
+    TREE        = 6 # Perennial woody plant, over 5 meters
+    VINE        = 7 # Plant with long stems, woody or herbaceous
 
 # The general lifespan duration of a plant
 class Duration(Enum):
-    ANNUAL    = 0
-    BIENNIAL  = 1
-    PERENNIAL = 2
+    ANNUAL    = 0 # Lifecycle lasts 1 year
+    BIENNIAL  = 1 # Lifecycle lasts 2 years
+    PERENNIAL = 2 # Can get older than just 2 years

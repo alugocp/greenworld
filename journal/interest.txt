@@ -11,7 +11,6 @@ elderberry
 echinacea
 black eyed susan
 snake berry
-pokeweed
 goumi berry
 fennel
 may apple
@@ -30,3 +29,6 @@ dragon fruit
 blueberry
 blackberry
 huckleberry
+bottle gourd
+tobacco
+milkweed

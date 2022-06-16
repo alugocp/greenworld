@@ -4,6 +4,7 @@ import unittest
 from typing import List, Tuple
 from greenworld.model.pair import Pair
 from greenworld.model.factor import Factor
+from greenworld.algorithm.init import algorithm
 from greenworld.database.test.pair import TestPairData
 from greenworld.database.test.species import TestSpeciesData
 from greenworld.greenworld import Greenworld
@@ -22,6 +23,7 @@ class ValidationTests(unittest.TestCase):
         injector.register_service('species-data', TestSpeciesData())
         injector.register_service('printer', Printer(False))
         injector.register_service('pair-data', self.pairs)
+        injector.register_service('algorithm', algorithm)
         self.greenworld = Greenworld(injector)
         source = lambda x: os.path.join(os.path.dirname(__file__), x)
         clean = lambda lines: list(filter(
