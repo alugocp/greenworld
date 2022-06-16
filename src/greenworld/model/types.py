@@ -49,3 +49,8 @@ class Duration(Enum):
     ANNUAL    = 0 # Lifecycle lasts 1 year
     BIENNIAL  = 1 # Lifecycle lasts 2 years
     PERENNIAL = 2 # Can get older than just 2 years
+
+# The type of recommended distance between two plants
+class SuggestionType(Enum):
+    SPATIAL  = 0 # Defines how far apart you should plant these crops
+    TEMPORAL = 1 # Defines how long you should wait in between planting these crops

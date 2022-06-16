@@ -17,6 +17,6 @@ class TextPairData(PairData):
     def write_pair(self, pair: Pair) -> None:
         with open(self.path, 'a', encoding = 'utf8') as file:
             file.write(f'{pair}\n')
-            for factor in pair.factors:
-                file.write(f'{factor}\n')
+            for suggestion in pair.suggestions:
+                file.write(f'{suggestion}\n')
             file.write('\n')

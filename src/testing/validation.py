@@ -3,7 +3,7 @@ import sys
 import unittest
 from typing import List, Tuple
 from greenworld.model.pair import Pair
-from greenworld.model.factor import Factor
+from greenworld.model.suggestion import Suggestion
 from greenworld.algorithm.init import algorithm
 from greenworld.database.test.pair import TestPairData
 from greenworld.database.test.species import TestSpeciesData
@@ -48,33 +48,33 @@ class ValidationTests(unittest.TestCase):
             sys.exit(1)
 
     @classmethod
-    def has_outcome(cls, factors: List[Factor], outcome: int) -> bool:
-        for factor in factors:
-            if factor.outcome == outcome:
+    def has_outcome(cls, suggestions: List[Suggestion], outcome: bool) -> bool:
+        for suggestion in suggestions:
+            if (outcome is True and suggestion.span[1] < 1.0) or (outcome is False and suggestion.span[0] > 1.0):
                 return True
         return False
 
-    def get_expected(self, pair: Pair) -> int:
+    def get_expected(self, pair: Pair) -> bool:
         found = lambda p, list: (p.s1.name, p.s2.name) in list or (p.s2.name, p.s1.name) in list
         if found(pair, self.good_pairs):
-            return Factor.GOOD
+            return True
         if found(pair, self.bad_pairs):
-            return Factor.BAD
-        return Factor.NEUTRAL
+            return False
+        return None
 
     def test(self):
         errors = []
         self.greenworld.calculate_compatibility_scores()
         for pair in self.pairs.get_pairs():
             expected = self.get_expected(pair)
-            has_good = ValidationTests.has_outcome(pair.factors, Factor.GOOD)
-            has_bad = ValidationTests.has_outcome(pair.factors, Factor.BAD)
-            if expected == Factor.GOOD:
+            has_good = ValidationTests.has_outcome(pair.suggestions, True)
+            has_bad = ValidationTests.has_outcome(pair.suggestions, False)
+            if expected is True:
                 if has_bad:
                     errors.append(f'{pair} should not have BAD') # False positive signal
                 if not has_good:
                     errors.append(f'{pair} should have GOOD') # False negative signal
-            elif expected == Factor.BAD:
+            elif expected is False:
                 if has_good:
                     errors.append(f'{pair} should not have GOOD') # False positive signal
                 if not has_bad:

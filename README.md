@@ -1,6 +1,6 @@
 # Greenworld Algorithm
 This is LugoCorp's companion planting data warehouse research project.
-This README contains all the information you'll need to initialize the warehouse and run the core algorithms.
+This `README` contains all the information you'll need to initialize the warehouse and run the core algorithms.
 The purpose of this project is to identify potential companion farming groups and to query those groups by target environmental factors.
 
 ## Tasks
@@ -16,7 +16,8 @@ These commands will help you throughout development and deployment of this proje
 
 ## Algorithm design
 The core algorithm looks at every combination of plants and generates a compatibility report for each one.
-Pairwise compatibility is determined by nutrient uptake (per plant organ), nutrient synthesis, pest control, and preferred environment (soil pH and sunlight, maybe more factors one day). It is a list of factors that are labeled as beneficial, detrimental or suggestions for planting these two species together.
+Pairwise compatibility is determined by growth habit, preferred environment, nutrient chemistry, insect relationships, and allelopathy.
+It is a list of suggested spatial and temporal ranges for planting any two crops in relation to each other.
 
 ## Warehouse/UI design
 The project uses a MongoDB database that gets populated by the core algorithm (written in Python).

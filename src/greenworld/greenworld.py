@@ -45,7 +45,7 @@ class Greenworld:
                 self.printer.update_line(1, f'• \033[32m{s1}\033[0m')
                 self.printer.update_line(2, f'• \033[32m{s2}\033[0m')
                 pair = Pair(s1, s2)
-                pair.factors = self.algorithm.run(s1, s2)
+                pair.suggestions = self.algorithm.run(s1, s2)
                 self.pair_data.write_pair(pair)
                 iteration += 1
         self.printer.close_stack()

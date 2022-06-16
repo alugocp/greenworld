@@ -1,10 +1,10 @@
 from typing import List
+from greenworld.model.suggestion import Suggestion
 from greenworld.model.species import Species
-from greenworld.model.factor import Factor
 
 # This class represents a grouping of potential companion species.
 class Pair:
-    factors: List[Factor] = []
+    suggestions: List[Suggestion] = []
     s1: Species
     s2: Species
 
