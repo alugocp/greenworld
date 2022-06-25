@@ -59,10 +59,13 @@ class ValidationTests(unittest.TestCase):
             actual = list(map(lambda x: x[0], pair.suggestions))
             for s in expected:
                 if s in actual:
+                     # Ignore calculated suggestions that were expected
                     actual.remove(s)
                 else:
+                    # Raise expected suggestions that were not calculated
                     local.append(f'• Missing {s}')
             for s in actual:
+                # Raise calculated suggestions that were not expected
                 local.append(f'• Unexpected {s}')
             if len(local) > 0:
                 print(f'{pair.s1.name}, {pair.s2.name}:')

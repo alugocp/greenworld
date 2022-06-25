@@ -25,34 +25,6 @@ class Suggestion:
         ceil = math.floor(span[1] * 100) / 100
         return f'{self}: {floor} - {ceil}'
 
-    #
-    # List of constructors for special suggestions
-    #
-
-    @classmethod
-    def disease(cls, x: float, y: float):
-        return (cls('disease', SuggestionType.SPATIAL), (x, y))
-
-    @classmethod
-    def root_disruption(cls, x: float, y: float):
-        return (cls('root disruption', SuggestionType.SPATIAL), (x, y))
-
-    @classmethod
-    def soil_loosener(cls, x: float, y: float):
-        return (cls('soil loosener', SuggestionType.TEMPORAL), (x, y))
-
-    @classmethod
-    def ph_mismatch(cls, x: float, y: float):
-        return (cls('pH mismatch', SuggestionType.SPATIAL), (x, y))
-
-    @classmethod
-    def water_mismatch(cls, x: float, y: float):
-        return (cls('water mismatch', SuggestionType.SPATIAL), (x, y))
-
-    @classmethod
-    def drainage_mismatch(cls, x: float, y: float):
-        return (cls('drainage mismatch', SuggestionType.SPATIAL), (x, y))
-
 # Suggestion-related typedefs
 SuggestedRange = Tuple[Suggestion, Range]
 SuggestionSet = List[SuggestedRange]

@@ -1,3 +1,4 @@
+from greenworld.model.dict import SuggestionDict
 from greenworld.math.combinatorics import combination
 from greenworld.algorithm.algorithm import Algorithm
 from greenworld.database.species import SpeciesData
@@ -19,6 +20,7 @@ class Greenworld:
         self.algorithm = injector.get_service('algorithm')
         self.pair_data = injector.get_service('pair-data')
         self.printer = injector.get_service('printer')
+        SuggestionDict().init()
 
     # This function is what runs the core algorithm code.
     def calculate_compatibility_scores(self) -> None:
