@@ -1,33 +1,39 @@
 import math
-from typing import List
+from typing import Callable, List, Tuple
+from greenworld.model.species import Species
 from greenworld.model.types import SuggestionType, Range
 
-# This class represents a suggested distance between your crops,
-# be it spatial or temporal
+# This class represents a suggestion to attach to a planting range
 class Suggestion:
     dimension: SuggestionType
-    span: Range
-    key: str
+    label: str
 
-    def __init__(self, key: str, span: Range, dimension: SuggestionType):
+    def __init__(self, label: str, dimension: SuggestionType):
         self.dimension = dimension
-        self.span = span
-        self.key = key
+        self.label = label
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         dimension = 'temporal' if self.dimension == SuggestionType.TEMPORAL else 'spatial'
-        floor = math.floor(self.span[0] * 100) / 100
-        ceil = math.floor(self.span[1] * 100) / 100
-        return f'{self.key} ({dimension}): {floor} - {ceil}'
+        return f'{self.label} ({dimension})'
 
-# A special set class for the suggestion type
-class SuggestionSet:
-    list: List[Suggestion]
+    def __eq__(self, other) -> bool:
+        return self.label == other.label and self.dimension == other.dimension
 
-    def __init__(self):
-        self.list = []
+    # Returns a string representation of this suggestion with a range attached to it
+    def display(self, span: Range) -> str:
+        floor = math.floor(span[0] * 100) / 100
+        ceil = math.floor(span[1] * 100) / 100
+        return f'{self}: {floor} - {ceil}'
 
-    def add(self, key: str, span: Range, dimension: SuggestionType = SuggestionType.SPATIAL):
-        if len(span) != 2:
-            raise f'Invalid range length for {span}'
-        self.list.append(Suggestion(key, span, dimension))
+    #
+    # List of constructors for special suggestions
+    #
+
+    @classmethod
+    def DISEASE(cls):
+        return cls('disease', SuggestionType.SPATIAL)
+
+# Suggestion-related typedefs
+SuggestedRange = Tuple[Suggestion, Range]
+SuggestionSet = List[SuggestedRange]
+Engine = Callable[[SuggestionSet, Species, Species], None]

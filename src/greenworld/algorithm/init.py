@@ -1,7 +1,7 @@
 from greenworld.math.comparisons import overlaps
 from greenworld.algorithm.algorithm import Algorithm
-from greenworld.model.suggestion import SuggestionSet
 from greenworld.model.types import SuggestionType
+from greenworld.model.suggestion import Suggestion, SuggestionSet
 from greenworld.model.species import Species
 algorithm = Algorithm()
 
@@ -9,8 +9,10 @@ algorithm = Algorithm()
 @algorithm.register('Insect relationship factors')
 def insect_factors(s: SuggestionSet, s1: Species, s2: Species) -> None:
     if s1.latin.split(' ')[0] == s2.latin.split(' ')[0]:
-        s.add('disease', (1.5, 1.5))
+        # s.add('disease', (1.5, 1.5))
+        s.append((Suggestion.DISEASE(), (1.5, 1.5)))
 
+"""
 # Allelopathy
 @algorithm.register('Allelopathy and allelochemical factors')
 def allelopathy_factors(s: SuggestionSet, s1: Species, s2: Species) -> None:
@@ -42,6 +44,7 @@ def environment_factors(s: SuggestionSet, s1: Species, s2: Species) -> None:
 @algorithm.register('Nutrient use factors')
 def nutrient_factors(s: SuggestionSet, s1: Species, s2: Species) -> None:
     pass
+"""
 
 # Bad if species have the same diseases or pests
 # Good, plant far away if one plant attracts another one's pests

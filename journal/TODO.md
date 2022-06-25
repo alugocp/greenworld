@@ -19,7 +19,7 @@
 - [x] Write some basic companionship rules
 - [x] Write a validation test based on expected companion groups and anti-companion groups
 - [x] Find out where to get biochemical pathway data for crops (to see input/output nutrient forms) (perhaps nutrient uptake and nutrient level data)
-- [ ] Tweak algorithm rules and add data as needed until tests work
+- [ ] Tweak algorithm rules and add data as needed until tests look good
 - [ ] Develop a concrete schema for species data
 
 ## Expanding on the Algorithm

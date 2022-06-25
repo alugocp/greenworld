@@ -100,17 +100,35 @@ class TestSpeciesData(SpeciesData):
             'height': (1.5, 3.0),
             'roots': (0.46, 0.61),
             'pH': (6.0, 7.0)
-        }
-    ]
-    """
+        },
         {
             'name': 'mint',
-            'latin': 'mentha spicata'
+            'latin': 'mentha spicata',
+            'habit': GrowthHabit.HERB,
+            'duration': Duration.PERENNIAL,
+            'sunlight': Sunlight.PARTIAL_SHADE,
+            'drainage': Drainage.WELL_DRAINED,
+            'kingdom': Kingdom.PLANT,
+            'water': Water.LOW,
+            'height': (0.025, 0.152),
+            'roots': (0.05, 0.61),
+            'pH': (6.0, 7.5)
         },
         {
             'name': 'watermelon',
-            'latin': 'citrullus lanatus'
-        },
+            'latin': 'citrullus lanatus',
+            'habit': GrowthHabit.VINE,
+            'duration': Duration.ANNUAL,
+            'sunlight': Sunlight.FULL_SUN,
+            'drainage': Drainage.WELL_DRAINED,
+            'kingdom': Kingdom.PLANT,
+            'water': Water.HIGH,
+            'height': (1.829, 2.438),
+            'roots': (0.203, 0.254),
+            'pH': (6.0, 6.8)
+        }
+    ]
+    """
         {
             'name': 'parsley',
             'latin': 'petroselinum crispum'

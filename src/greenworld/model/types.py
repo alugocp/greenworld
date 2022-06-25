@@ -1,9 +1,11 @@
 from typing import Tuple
-from enum import Enum
+from enum import Enum, unique
 
+# Simple typedefs
 Range = Tuple[float, float]
 
 # The preferred drainage level of a plant's soil
+@unique
 class Drainage(Enum):
     EXCESSIVELY_DRAINED          = 6
     SOMEWHAT_EXCESSIVELY_DRAINED = 5
@@ -14,6 +16,7 @@ class Drainage(Enum):
     VERY_POORLY_DRAINED          = 0
 
 # How much sunlight a plant requires
+@unique
 class Sunlight(Enum):
     FULL_SUN      = 4 # 6 - 8 hours a day
     LIGHT_SHADE   = 3
@@ -22,6 +25,7 @@ class Sunlight(Enum):
     DENSE_SHADE   = 0
 
 # How much water a plant requires
+@unique
 class Water(Enum):
     HIGH     = 3 # Water
     MODERATE = 2 # Wet
@@ -29,11 +33,13 @@ class Water(Enum):
     VERY_LOW = 0 # Dry
 
 # Taxonomic level
+@unique
 class Kingdom(Enum):
     FUNGI = 'fungi'
     PLANT = 'plant'
 
 # The growth habit displayed by a plant
+@unique
 class GrowthHabit(Enum):
     HERB        = 0 # non woody and non grass-like
     GRAMINOID   = 1 # Grass or grass-like
@@ -45,12 +51,14 @@ class GrowthHabit(Enum):
     VINE        = 7 # Plant with long stems, woody or herbaceous
 
 # The general lifespan duration of a plant
+@unique
 class Duration(Enum):
     ANNUAL    = 0 # Lifecycle lasts 1 year
     BIENNIAL  = 1 # Lifecycle lasts 2 years
     PERENNIAL = 2 # Can get older than just 2 years
 
 # The type of recommended distance between two plants
+@unique
 class SuggestionType(Enum):
     SPATIAL  = 0 # Defines how far apart you should plant these crops
     TEMPORAL = 1 # Defines how long you should wait in between planting these crops

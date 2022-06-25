@@ -1,10 +1,10 @@
 from typing import List
-from greenworld.model.suggestion import Suggestion
+from greenworld.model.suggestion import SuggestionSet
 from greenworld.model.species import Species
 
 # This class represents a grouping of potential companion species.
 class Pair:
-    suggestions: List[Suggestion] = []
+    suggestions: SuggestionSet = []
     s1: Species
     s2: Species
 
