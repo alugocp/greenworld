@@ -1,4 +1,4 @@
-from typing import Callable, List
+from typing import List
 from greenworld.model.species import Species
 from greenworld.model.suggestion import Engine, SuggestionSet
 

@@ -18,5 +18,5 @@ class TextPairData(PairData):
         with open(self.path, 'a', encoding = 'utf8') as file:
             file.write(f'{pair}\n')
             for suggestion in pair.suggestions:
-                file.write(f'{suggestion}\n')
+                file.write(f'{suggestion[0].display(suggestion[1])}\n')
             file.write('\n')

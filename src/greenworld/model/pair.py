@@ -1,4 +1,3 @@
-from typing import List
 from greenworld.model.suggestion import SuggestionSet
 from greenworld.model.species import Species
 

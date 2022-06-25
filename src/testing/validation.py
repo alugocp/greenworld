@@ -1,8 +1,7 @@
 import os
 import sys
 import unittest
-from typing import List, Tuple
-from greenworld.model.pair import Pair
+from typing import List
 from greenworld.model.suggestion import Suggestion
 from greenworld.algorithm.init import algorithm
 from greenworld.database.test.pair import TestPairData
@@ -42,7 +41,8 @@ class ValidationTests(unittest.TestCase):
             sys.exit(1)
 
     # Grabs the expected suggestions from our validation data
-    def get_expected(self, s1: str, s2: str) -> List[Suggestion]:
+    @classmethod
+    def get_expected(cls, s1: str, s2: str) -> List[Suggestion]:
         if s1 in data and s2 in data[s1]:
             return data[s1][s2]
         if s2 in data and s1 in data[s2]:
