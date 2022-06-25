@@ -31,9 +31,9 @@ def growth_habit_factors(s: SuggestionSet, s1: Species, s2: Species) -> None:
 @algorithm.register('Growth environment factors')
 def environment_factors(s: SuggestionSet, s1: Species, s2: Species) -> None:
     if not overlaps(s1.pH, s2.pH):
-        s.append(ph_mismatch(1.0, 1.0))
+        s.append(Suggestion.ph_mismatch(1.0, 1.0))
     if s1.drainage != s2.drainage:
-        s.append(drainage_mismatch(1.0, 1.0))
+        s.append(Suggestion.drainage_mismatch(1.0, 1.0))
     if s1.water != s2.water:
         s.append(Suggestion.water_mismatch(1.0, 1.0))
 
