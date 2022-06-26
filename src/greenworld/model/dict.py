@@ -17,6 +17,13 @@ class SuggestionDict:
 		(SuggestionType.SPATIAL,  'resource competition'), # Both dimensions
 		(SuggestionType.SPATIAL,  'similar diseases'), # Both dimensions
 		(SuggestionType.SPATIAL,  'bad allelopathy'), # Both dimensions
+		(SuggestionType.SPATIAL,  'good allelopathy'), # Both dimensions
+		(SuggestionType.SPATIAL,  'same pests'), # Both dimensions
+		(SuggestionType.SPATIAL,  'vine competition'),
+		(SuggestionType.SPATIAL,  'sunlight competition'),
+		(SuggestionType.SPATIAL,  'overgrowth competition'),
+		(SuggestionType.SPATIAL,  'supress weeds'),
+		(SuggestionType.SPATIAL,  'attracts friends'),
 		(SuggestionType.TEMPORAL, 'soil loosener')
 	]
 

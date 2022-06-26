@@ -21,168 +21,168 @@ def generate_validation_data():
 			'fennel': [ S.bad_allelopathy() ]
 		},
 		'tomato': {
-			'basil': [  ],
-			'beans': [  ],
-			'carrots': [  ],
-			'chives': [  ],
-			'garlic': [  ],
-			'marigold': [  ],
-			'mint': [  ],
-			'nasturtium': [  ],
-			'onion': [  ],
-			'parsley': [  ],
-			'squash': [  ],
-			'corn': [  ],
-			'peppers': [  ],
-			'potato': [  ],
-			'fennel': [  ]
+			'basil': [ S.repels_pests() ],
+			'beans': [  ], # Similar preferred environment, fill in more specifically later
+			'carrots': [ S.soil_loosener() ],
+			'chives': [ S.good_allelopathy() ],
+			'garlic': [ S.repels_pests() ],
+			'marigold': [ S.repels_pests() ],
+			'mint': [ S.good_allelopathy() ],
+			'nasturtium': [ S.sacrificial_crop() ],
+			'onion': [ S.repels_pests() ],
+			'parsley': [ S.good_allelopathy() ],
+			'squash': [  ], # Unknown reasons, look into later
+			'corn': [ S.same_pests() ],
+			'peppers': [ S.same_pests() ],
+			'potato': [ S.same_pests() ],
+			'fennel': [ S.bad_allelopathy() ]
 		},
 		'onion': {
-			'peppers': [  ],
-			'carrots': [  ],
-			'parsley': [  ],
-			'beans': [  ],
-			'peas': [  ],
-			'garlic': [  ],
-			'chives': [  ]
+			'peppers': [ S.repels_pests() ],
+			'carrots': [ S.repels_pests() ],
+			'parsley': [ S.repels_pests() ],
+			'beans': [ S.bad_allelopathy() ],
+			'peas': [ S.bad_allelopathy() ],
+			'garlic': [ S.same_pests() ],
+			'chives': [ S.same_pests() ]
 		},
 		'corn': {
-			'squash': [  ],
-			'beans': [  ],
-			'watermelon': [  ],
-			'marigold': [  ],
-			'mint': [  ],
-			'nasturtium': [  ],
-			'sunflower': [  ],
-			'fennel': [  ]
+			'squash': [ S.supress_weeds() ],
+			'beans': [ S.nitrogen_fixer() ],
+			'watermelon': [ S.supress_weeds() ],
+			'marigold': [ S.attracts_friends() ],
+			'mint': [ S.repels_pests() ],
+			'nasturtium': [ S.sacrificial_crop() ],
+			'sunflower': [ S.attracts_friends() ],
+			'fennel': [ S.bad_allelopathy() ]
 		},
 		'squash': {
-			'nasturtium': [  ],
-			'beans': [  ],
-			'marigold': [  ],
-			'peas': [  ],
-			'mint': [  ]
+			'nasturtium': [ S.attracts_friends(), S.sacrificial_crop() ],
+			'beans': [ S.nitrogen_fixer(), S.repels_pests() ],
+			'marigold': [ S.repels_pests() ],
+			'peas': [ S.nitrogen_fixer() ],
+			'mint': [ S.attracts_friends() ]
 		},
 		'beans': {
-			'nasturtium': [  ],
-			'peas': [  ],
-			'carrots': [  ],
-			'chives': [  ],
-			'garlic': [  ],
-			'peppers': [  ],
-			'sunflower': [  ]
+			'nasturtium': [ S.sacrificial_crop() ],
+			'peas': [ S.nitrogen_fixer() ],
+			'carrots': [ S.nitrogen_fixer(), S.repels_pests() ],
+			'chives': [ S.bad_allelopathy() ],
+			'garlic': [ S.bad_allelopathy() ],
+			'peppers': [ S.vine_competition() ],
+			'sunflower': [ S.bad_allelopathy() ]
 		},
 		'mint': {
-			'beans': [  ],
-			'carrots': [  ],
-			'onion': [  ],
-			'peas': [  ],
-			'peppers': [  ]
+			'beans': [ S.repels_pests() ],
+			'carrots': [ S.repels_pests() ],
+			'onion': [ S.repels_pests() ],
+			'peas': [ S.repels_pests() ],
+			'peppers': [ S.repels_pests() ]
 		},
 		'watermelon': {
-			'onion': [  ],
-			'garlic': [  ],
-			'chives': [  ],
-			'beans': [  ],
-			'carrots': [  ],
-			'mint': [  ],
-			'nasturtium': [  ],
-			'marigold': [  ],
-			'sunflower': [  ],
-			'squash': [  ],
-			'tomato': [  ],
-			'peppers': [  ],
-			'potato': [  ]
+			'onion': [ S.repels_pests() ],
+			'garlic': [ S.repels_pests() ],
+			'chives': [ S.repels_pests() ],
+			'beans': [ S.nitrogen_fixer() ],
+			'carrots': [ S.soil_loosener() ],
+			'mint': [ S.repels_pests() ],
+			'nasturtium': [ S.attracts_friends() ],
+			'marigold': [ S.attracts_friends() ],
+			'sunflower': [ S.sunlight_competition() ],
+			'squash': [ S.resource_competition() ],
+			'tomato': [ S.sunlight_competition() ],
+			'peppers': [ S.sunlight_competition() ],
+			'potato': [ S.same_pests() ]
 		},
 		'parsley': {
-			'corn': [  ],
-			'beans': [  ],
-			'peppers': [  ],
-			'chives': [  ],
-			'carrots': [  ],
-			'garlic': [  ],
-			'onion': [  ],
-			'mint': [  ]
+			'corn': [ S.attracts_friends() ],
+			'beans': [ S.attracts_friends() ],
+			'peppers': [ S.repels_pests() ],
+			'chives': [ S.attracts_friends() ],
+			'carrots': [ S.same_pests() ],
+			'garlic': [ S.bad_allelopathy() ],
+			'onion': [ S.bad_allelopathy() ],
+			'mint': [ S.overgrowth_competition() ]
 		},
 		'basil': {
-			'chives': [  ],
-			'garlic': [  ],
-			'fennel': [  ],
-			'marigold': [  ],
-			'onion': [  ],
-			'parsley': [  ],
-			'peppers': [  ]
+			'chives': [ S.repels_pests() ],
+			'garlic': [ S.repels_pests() ],
+			'fennel': [ S.repels_pests() ],
+			'marigold': [ S.repels_pests() ],
+			'onion': [ S.repels_pests() ],
+			'parsley': [  ], # Similar preferred environment, fill in more specifically later
+			'peppers': [ S.repels_pests() ]
 		},
 		'garlic': {
-			'carrots': [  ],
-			'nasturtium': [  ],
-			'marigold': [  ]
+			'carrots': [ S.repels_pests() ],
+			'nasturtium': [ S.supress_weeds() ],
+			'marigold': [ S.repels_pests() ]
 		},
 		'chives': {
-			'carrots': [  ],
-			'peas': [  ],
-			'peppers': [  ],
-			'potato': [  ]
+			'carrots': [ S.repels_pests() ],
+			'peas': [ S.repels_pests() ],
+			'peppers': [ S.repels_pests() ],
+			'potato': [  ] # Nothing particular, chives just have short roots so there's no root disruption
 		},
 		'sunflower': {
-			'tomato': [  ],
-			'peppers': [  ],
-			'onion': [  ],
-			'garlic': [  ],
-			'chives': [  ],
-			'peas': [  ],
-			'mint': [  ],
-			'basil': [  ],
-			'potato': [  ],
-			'corn': [  ],
-			'fennel': [  ],
-			'squash': [  ],
-			'watermelon': [  ]
+			'tomato': [ S.attracts_friends() ],
+			'peppers': [ S.repels_pests() ],
+			'onion': [ S.repels_pests() ],
+			'garlic': [ S.repels_pests() ],
+			'chives': [ S.repels_pests() ],
+			'peas': [ S.provides_shade() ],
+			'mint': [ S.repels_pests() ],
+			'basil': [ S.repels_pests() ],
+			'potato': [ S.same_pests() ],
+			'corn': [ S.sunlight_competition() ],
+			'fennel': [ S.bad_allelopathy() ],
+			'squash': [ S.resource_competition() ],
+			'watermelon': [ S.resource_competition() ]
 		},
 		'kohlrabi': {
-			'onion': [  ],
-			'garlic': [  ],
-			'potato': [  ],
-			'beans': [  ],
-			'tomato': [  ],
-			'watermelon': [  ],
-			'squash': [  ],
-			'sunflower': [  ]
+			'onion': [ S.repels_pests() ],
+			'garlic': [ S.repels_pests() ],
+			'potato': [ S.soil_loosener() ],
+			'beans': [ S.bad_allelopathy() ],
+			'tomato': [ S.bad_allelopathy() ],
+			'watermelon': [ S.sunlight_competition() ],
+			'squash': [ S.sunlight_competition() ],
+			'sunflower': [ S.sunlight_competition() ]
 		},
 		'nasturtium': {
-			'peppers': [  ],
-			'marigold': [  ],
-			'fennel': [  ]
+			'peppers': [ S.repels_pests() ],
+			'marigold': [ S.repels_pests() ],
+			'fennel': [ S.bad_allelopathy() ]
 		},
 		'fennel': {
-			'beans': [  ],
-			'kohlrabi': [  ],
-			'peppers': [  ]
+			'beans': [ S.bad_allelopathy() ],
+			'kohlrabi': [ S.bad_allelopathy() ],
+			'peppers': [ S.bad_allelopathy() ]
 		},
 		'carrots': {
-			'peas': [  ],
-			'parsley': [  ],
-			'fennel': [  ]
+			'peas': [ S.nitrogen_fixer() ],
+			'parsley': [ S.attracts_friends() ],
+			'fennel': [ S.bad_allelopathy() ]
 		},
 		'peas': {
-			'corn': [  ],
-			'basil': [  ],
-			'nasturtium': [  ],
-			'marigold': [  ],
-			'garlic': [  ],
-			'chives': [  ]
+			'corn': [ S.nitrogen_fixer() ],
+			'basil': [ S.repels_pests() ],
+			'nasturtium': [ S.sacrificial_crop() ],
+			'marigold': [ S.sacrificial_crop() ],
+			'garlic': [ S.bad_allelopathy() ],
+			'chives': [ S.bad_allelopathy() ]
 		},
 		'peppers': {
-			'tomato': [  ],
-			'corn': [  ],
-			'beans': [  ],
-			'squash': [  ],
-			'peas': [  ],
-			'garlic': [  ],
-			'carrots': [  ],
-			'marigold': [  ],
-			'kohlrabi': [  ],
-			'potato': [  ]
+			'tomato': [ S.provides_shade() ],
+			'corn': [ S.provides_shade() ],
+			'beans': [ S.nitrogen_fixer() ],
+			'squash': [ S.supress_weeds() ],
+			'peas': [ S.nitrogen_fixer() ],
+			'garlic': [ S.repels_pests() ],
+			'carrots': [ S.supress_weeds() ],
+			'marigold': [ S.repels_pests() ],
+			'kohlrabi': [  ], # Prefer different environments, fill out more specifically later
+			'potato': [ S.same_pests() ]
 		},
 		'marigold': {
 
