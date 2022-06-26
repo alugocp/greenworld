@@ -8,7 +8,7 @@ algorithm = Algorithm()
 @algorithm.register('Insect relationship factors')
 def insect_factors(s: SuggestionSet, s1: Species, s2: Species) -> None:
     if s1.latin.split(' ')[0] == s2.latin.split(' ')[0]:
-        s.append(Suggestion.disease(1.5, 1.5))
+        s.append(Suggestion.similar_diseases(1.5, 1.5))
 
 # Allelopathy
 @algorithm.register('Allelopathy and allelochemical factors')

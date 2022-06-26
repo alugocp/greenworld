@@ -3,6 +3,7 @@ argument-rgx=^[a-z][a-z0-9]*(_[a-z0-9]+)*$
 variable-rgx=^[a-z][a-z0-9]*(_[a-z0-9]+)*$
 attr-rgx=[a-z][a-z0-9]*(_[a-z0-9]+)*$
 disable=
+  E1101, # no-member
   C0114, # missing-module-docstring
   C0115, # missing-class-docstring
   C0116, # missing-function-docstring

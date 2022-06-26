@@ -17,7 +17,9 @@ class Suggestion:
         return f'{self.label} ({dimension})'
 
     def __eq__(self, other) -> bool:
-        return self.label == other.label and self.dimension == other.dimension
+        return (other.__class__ == self.__class__ and
+            self.label == other.label and
+            self.dimension == other.dimension)
 
     # Returns a string representation of this suggestion with a range attached to it
     def display(self, span: Range) -> str:
