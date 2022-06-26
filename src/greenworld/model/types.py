@@ -1,8 +1,6 @@
-from typing import Tuple
+from typing import Callable, Tuple, List
 from enum import Enum, unique
-
-# Simple typedefs
-Range = Tuple[float, float]
+from math import floor
 
 # The preferred drainage level of a plant's soil
 @unique
@@ -62,3 +60,19 @@ class Duration(Enum):
 class SuggestionType(Enum):
     SPATIAL  = 0 # Defines how far apart you should plant these crops
     TEMPORAL = 1 # Defines how long you should wait in between planting these crops
+
+# Simple typedefs
+Range = Tuple[float, float]
+Suggestion = Tuple[SuggestionType, str]
+SuggestedRange = Tuple[Suggestion, Range]
+SuggestionSet = List[SuggestedRange]
+
+# String conversion methods
+def stringify_suggestion(s: Suggestion) -> str:
+    dimension = 'temporal' if s[0] == SuggestionType.TEMPORAL else 'spatial'
+    return f'{s[1]} ({dimension})'
+
+def stringify_suggested_range(r: SuggestedRange) -> str:
+    bot = floor(r[1][0] * 100) / 100
+    top = floor(r[1][1] * 100) / 100
+    return f'{stringify_suggestion(r[0])}: {bot} - {top}'

@@ -1,6 +1,6 @@
-from greenworld.model.dict import SuggestionDict
-from greenworld.math.combinatorics import combination
+from greenworld.algorithm.canonical import CanonicalSuggestions
 from greenworld.algorithm.algorithm import Algorithm
+from greenworld.math.combinatorics import combination
 from greenworld.database.species import SpeciesData
 from greenworld.database.pair import PairData
 from greenworld.injector import Injector
@@ -20,7 +20,7 @@ class Greenworld:
         self.algorithm = injector.get_service('algorithm')
         self.pair_data = injector.get_service('pair-data')
         self.printer = injector.get_service('printer')
-        SuggestionDict().init()
+        CanonicalSuggestions().populate()
 
     # This function is what runs the core algorithm code.
     def calculate_compatibility_scores(self) -> None:

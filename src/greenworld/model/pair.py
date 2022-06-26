@@ -1,4 +1,4 @@
-from greenworld.model.suggestion import SuggestionSet
+from greenworld.model.types import SuggestionSet
 from greenworld.model.species import Species
 
 # This class represents a grouping of potential companion species.

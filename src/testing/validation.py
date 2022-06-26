@@ -3,7 +3,7 @@ import sys
 import unittest
 from typing import List
 from testing.data import generate_validation_data
-from greenworld.model.suggestion import Suggestion
+from greenworld.model.types import Suggestion, stringify_suggestion
 from greenworld.algorithm.init import algorithm
 from greenworld.database.test.pair import TestPairData
 from greenworld.database.test.species import TestSpeciesData
@@ -62,10 +62,10 @@ class ValidationTests(unittest.TestCase):
                     actual.remove(s)
                 else:
                     # Raise expected suggestions that were not calculated
-                    local.append(f'• Missing {s}')
+                    local.append(f'• Missing {stringify_suggestion(s)}')
             for s in actual:
                 # Raise calculated suggestions that were not expected
-                local.append(f'• Unexpected {s}')
+                local.append(f'• Unexpected {stringify_suggestion(s)}')
             if len(local) > 0:
                 print(f'{pair.s1.name}, {pair.s2.name}:')
                 print('\n'.join(local) + '\n')

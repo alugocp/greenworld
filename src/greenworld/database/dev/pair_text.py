@@ -1,3 +1,4 @@
+from greenworld.model.types import stringify_suggested_range
 from greenworld.database.pair import PairData
 from greenworld.model.pair import Pair
 
@@ -18,5 +19,5 @@ class TextPairData(PairData):
         with open(self.path, 'a', encoding = 'utf8') as file:
             file.write(f'{pair}\n')
             for suggestion in pair.suggestions:
-                file.write(f'{suggestion[0].display(suggestion[1])}\n')
+                file.write(f'{stringify_suggested_range(suggestion)}\n')
             file.write('\n')

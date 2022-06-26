@@ -1,7 +1,11 @@
-from typing import List
+from typing import Callable, List
 from greenworld.model.species import Species
-from greenworld.model.suggestion import Engine, SuggestionSet
+from greenworld.model.types import SuggestionSet
 
+# Engine type for decorators
+Engine = Callable[[SuggestionSet, Species, Species], None]
+
+# Class that defines the compatibility calculation algorithm
 class Algorithm:
     engines: List[Engine]
 
