@@ -18,6 +18,7 @@
 - [Plant Metabolic Pathways Databases](https://plantcyc.org)
 - [Integrated Taxonomic Information System - Zea Mays](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=42269#null)
 - [The Plant List - All Families](http://theplantlist.org/browse/-/)
+- [The Flavonoid Biosynthesis Network in Plants](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8657439/)
 
 # Allelochemicals and phytotoxicity
 - [Allelochemicals and Signaling Chemicals in Plants](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6695906/)
@@ -29,6 +30,8 @@
 - [Allelochemicals: sources, toxicity and microbial transformation in soil —a review](https://annalsmicrobiology.biomedcentral.com/articles/10.1007/BF03175528)
 - [Toxic Plants – Phytotoxin (TPPT) Database](https://www.agroscope.admin.ch/agroscope/en/home/publications/apps/tppt.html)
 - [Comprehensive Toxic Plants–Phytotoxins Database and Its Application in Assessing Aquatic Micropollution Potential](https://pubs.acs.org/doi/10.1021/acs.jafc.8b01639)
+- [The Allelopathic Effects of Allium Sativum Cloves on Growth and
+Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljournals.org/GJSFR_Volume18/5-The-Allelopathic-Effects-of-Allium.pdf)
 
 # Morphology and Growth Habit
 - [Evolution of the plant body plan](https://pubmed.ncbi.nlm.nih.gov/30612613/)

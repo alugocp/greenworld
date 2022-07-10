@@ -16,28 +16,30 @@ def maximum(s1: Species, s2: Species):
 # Pests, pollinators and diseases
 @algorithm.register('Insect relationship factors')
 def insect_factors(s: SuggestionSet, s1: Species, s2: Species) -> None:
-    # repels_pests
-    # sacrificial_crop
-    # attracts_friends
+    # repels_pests (base on flavonoid synthesis)
+    # sacrificial_crop (base on flavonoid synthesis)
+    # attracts_friends (base on flavonoid synthesis)
     if s1.latin.split(' ')[0] == s2.latin.split(' ')[0]:
+        # Go by taxonomic family for now
         s.append(C.similar_diseases(1.5, maximum(s1, s2)))
+        # Go by flavonoid synthesis
         s.append(C.same_pests(5.0, maximum(s1, s2)))
 
 # Allelopathy
 @algorithm.register('Allelopathy and allelochemical factors')
 def allelopathy_factors(s: SuggestionSet, s1: Species, s2: Species) -> None:
-    # bad_allelopathy
-    # good_allelopathy
+    # bad_allelopathy (figure this section out later)
+    # good_allelopathy (figure this section out later)
     pass
 
 # Growth habit
 @algorithm.register('Growth habit factors')
 def growth_habit_factors(s: SuggestionSet, s1: Species, s2: Species) -> None:
-    # provides_shade
-    # vine_competition
-    # sunlight_competition
-    # overgrowth_competition
-    # supress_weeds
+    # provides_shade (base on sunlight requirements and height difference)
+    # vine_competition (base on vine size and lifecycle data)
+    # sunlight_competition (base on sunlight requirements and height difference)
+    # overgrowth_competition (base on time to seed and lifecycle data)
+    # supress_weeds (base on growth habit for ground cover)
     if s1.duration.value < s2.duration.value and s1.roots[1] > s2.roots[1]:
         s.append(C.root_disruption(s1.roots[1] + s2.roots[1], maximum(s1, s2)))
     if s2.duration.value < s1.duration.value and s2.roots[1] > s1.roots[1]:
@@ -60,6 +62,6 @@ def environment_factors(s: SuggestionSet, s1: Species, s2: Species) -> None:
 # Nutrients
 @algorithm.register('Nutrient use factors')
 def nutrient_factors(s: SuggestionSet, s1: Species, s2: Species) -> None:
-    # nitrogen_fixer
-    # resource_competition
+    # nitrogen_fixer (base on presence of luteolin and chrysin synthesis)
+    # resource_competition (base on heavy feeder data)
     pass

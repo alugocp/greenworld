@@ -15,6 +15,10 @@ class Species:
     latin: str
     name: str
     pH: Range
+    # Also save plant width range (for minimum planting distance)
+    # Save plant family
+    # Lifecycle data (how long it takes the plant to mature or go to seed)
+    # Uptake data (whether it's considered a heavy feeder of N, P or K)
 
     def __init__(self, **kwargs):
         defaults: Dict[str, object] = {

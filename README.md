@@ -45,21 +45,20 @@ There can be multiple interface tools that query the database, such as a command
 - [x] Write some basic companionship rules
 - [x] Write a validation test based on expected companion groups and anti-companion groups
 - [x] Find out where to get biochemical pathway data for crops (to see input/output nutrient forms) (perhaps nutrient uptake and nutrient level data)
-- [ ] Tweak algorithm rules and add data as needed until tests look good
-- [ ] Develop a concrete schema for species data
+- [x] Tweak + develop algorithm logic using test data
 
 ### Expanding on the Algorithm
-- [ ] Connect the data to a database (write new implementations for data output)
+- [ ] Connect the project to a database (write new implementations for data output)
+- [ ] Allow the project to pull from Japan's KEGG database (flavonoid synthesis data)
 - [ ] Implement queries by preferred crop(s)
-- [ ] Investigate taxonomic granularity (maybe some data can be recorded at the genus or family level, for example)
-- [ ] Optimize companion group analysis somehow
+- [ ] Implement queries by preferred soil/environment
+- [ ] Allow users to query the companion groups view through the CLI (using SQL?)
 - [ ] Start expanding the plant data available to the algorithm
 - [ ] Write an outline and rough draft of a paper
 
 ### Ready for Publication
-- [ ] Implement queries by preferred soil/environment
 - [ ] Look for a potential paper publisher
-- [ ] Allow users to query the companion groups view through the CLI (using SQL?)
+- [ ] Write a client that creates images of companion gardens
 - [ ] Reorganize schema and CLI interface for deployment (if needed)
 - [ ] Write second draft of paper with all recent changes in mind
 - [ ] Write a YouTube video outline
