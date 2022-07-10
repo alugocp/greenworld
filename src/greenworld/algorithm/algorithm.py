@@ -21,7 +21,7 @@ class Algorithm:
         suggestions: SuggestionSet = []
         for _, engine in self.engines:
             engine(suggestions, s1, s2)
-        return suggestions
+        return list(filter(lambda x: x is not None, suggestions))
 
     def get_names(self) -> List[str]:
         return list(map(lambda x: x[0], self.engines))

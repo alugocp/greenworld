@@ -2,7 +2,7 @@ import sys
 from greenworld.greenworld import Greenworld
 from greenworld.database.dev.pair_text import TextPairData
 from greenworld.database.dev.species_json import JsonSpeciesData
-from greenworld.algorithm.init import algorithm
+from greenworld.algorithm.logic import algorithm
 from greenworld.injector import Injector
 from greenworld.printer import Printer
 printer = Printer(True)

@@ -4,7 +4,7 @@ import unittest
 from typing import List
 from testing.data import generate_validation_data
 from greenworld.model.types import Suggestion, stringify_suggestion
-from greenworld.algorithm.init import algorithm
+from greenworld.algorithm.logic import algorithm
 from greenworld.database.test.pair import TestPairData
 from greenworld.database.test.species import TestSpeciesData
 from greenworld.greenworld import Greenworld

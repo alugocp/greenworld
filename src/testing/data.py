@@ -1,6 +1,5 @@
 # This file defines expected GreenWorld output for various selected companion plants.
 # Every plant listed here should also be listed in src/testing/plants.txt.
-# TODO remove src/tsting/(anti)*companions.txt when this file is fully implemented.
 from greenworld.algorithm.canonical import CanonicalSuggestions as C
 
 def generate_validation_data():

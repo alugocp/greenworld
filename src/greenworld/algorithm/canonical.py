@@ -35,6 +35,9 @@ class CanonicalSuggestions:
     @classmethod
     def add_method(cls, dimension: Range, label: str) -> None:
         def inner(x: float = -1, y: float = -1) -> SuggestedRange:
+            if x > y:
+                # Ignore this range if it is invalid (lower bound greater than higher bound)
+                return None
             return ((dimension, label), (x, y))
         inner.__doc__ = f'Returns a SuggestedRange with the label \'{label}\''
         inner.__name__ = label.lower().replace(' ', '_')

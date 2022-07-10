@@ -1,4 +1,4 @@
-from typing import Callable, Tuple, List
+from typing import Tuple, List
 from enum import Enum, unique
 from math import floor
 
