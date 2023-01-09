@@ -1,7 +1,0 @@
-#!/bin/bash
-export PYTHONPATH="$PYTHONPATH:$(pwd)/src"
-folder="src/testing"
-files=( $(ls $folder/*.py) )
-for file in "${files[@]}"; do
-    python3 -m unittest "$file"
-done

@@ -53,3 +53,4 @@ There are only 620 plant families in existence.
 - [Modules vs. packages](https://docs.python.org/3/tutorial/modules.html)
 - [Pylint](https://pylint.org/)
 - [Python style guide](https://www.python.org/dev/peps/pep-0008/)
+- [SQLAlchemy schema definition example](https://zetcode.com/db/sqlalchemy/schema/)

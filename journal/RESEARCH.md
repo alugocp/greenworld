@@ -19,6 +19,7 @@
 - [Integrated Taxonomic Information System - Zea Mays](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=42269#null)
 - [The Plant List - All Families](http://theplantlist.org/browse/-/)
 - [The Flavonoid Biosynthesis Network in Plants](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8657439/)
+- [USDA Plants Database](https://plants.usda.gov/)
 
 # Allelochemicals and phytotoxicity
 - [Allelochemicals and Signaling Chemicals in Plants](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6695906/)
@@ -39,6 +40,7 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [USDA Plants Database - Growth Habit Search](https://plants.sc.egov.usda.gov/home/growthHabitSearch)
 - [Growth Habits Codes and Definitions (USDA)](https://plantsorig.sc.egov.usda.gov/growth_habits_def.html)
 - [Habit Growth Form List (Australian Government)](https://www.anbg.gov.au/cpbr/herbarium/collecting/habit-types.html)
+- [The strength of plants: theory and experimental methods to measure the mechanical properties of stems](https://academic.oup.com/jxb/article/68/16/4497/4107595) (Shah et al., 2017)
 
 # Pests and Plant Pathology
 - [Plant Disease Basics and Diagnosis](https://extension.psu.edu/plant-disease-basics-and-diagnosis)
