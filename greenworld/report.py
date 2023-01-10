@@ -3,6 +3,7 @@
 # • Go through each pair of plants starting at the last analyzed pair
 # • Run algorithm modules on them by a database check
 # • Write the report back to the database
+import algorithm
 from schema import (
     init_db,
     reports,
@@ -18,7 +19,13 @@ def get_plants_from(con, start = None):
 
 # Calculates a single companionship report
 def generate_report(plant1, plant2):
-    return {}
+    analysis = {}
+    algorithm.morphology(plant1, plant2, analysis)
+    # algorithm.resource_demand(plant1, plant2, analysis)
+    # algorithm.non_plants(plant1, plant2, analysis)
+    # algorithm.allelopathy(plant1, plant2, analysis)
+    # algorithm.environment(plant1, plant2, analysis)
+    return analysis
 
 # The main loop for companionship reporting
 def main():

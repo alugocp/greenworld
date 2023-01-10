@@ -1,4 +1,5 @@
 import os
+from enums import GrowthHabit
 from sqlalchemy import (
     create_engine,
     ForeignKey,
@@ -36,4 +37,9 @@ reports = Table('reports', meta,
     Column('plant1', Integer, ForeignKey('plants.id')),
     Column('plant2', Integer, ForeignKey('plants.id')),
     Column('report', JSON)
+)
+
+morphology = Table('morphology', meta,
+    Column('plant', Integer, ForeignKey('plants.id')),
+    Column('growth_habit', Integer)
 )

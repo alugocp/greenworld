@@ -11,7 +11,11 @@ def main():
     with db.connect() as con:
         # Clear and recreate the database
         for table in reversed(meta.sorted_tables):
-            con.execute(table.delete())
+            try:
+                con.execute(table.delete())
+                print(f'Dropped table {table}')
+            except:
+                print(f'Skipped table {table}')
         meta.create_all(db)
 
         # Insert seed data from JSON
