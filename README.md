@@ -10,7 +10,10 @@ Pairwise compatibility is determined by growth habit, resource demand, non-plant
 A compatibility report consists of a set of suggested ranges to keep between two planted species.
 
 ## Commands
+- `export GREENWORLD_DB="sqlite:///greenworld.db"` sets the environment variables
 - `python -m pip install -r requirements.txt` installs all Python dependencies
+- `python greenworld/reset.py` hard resets the development database
+- `python greenworld/report.py` generates companionship reports for newly added plant species
 
 ## Todo
 

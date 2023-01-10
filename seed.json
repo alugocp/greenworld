@@ -1,0 +1,7 @@
+{
+    "plants": [
+        {"name": "Corn"},
+        {"name": "Squash"},
+        {"name": "Bean"}
+    ]
+}
