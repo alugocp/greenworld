@@ -21,7 +21,7 @@ def generate_report(plant1, plant2):
     return {}
 
 # The main loop for companionship reporting
-def analyze_plants():
+def main():
     db = init_db()
     with db.connect() as con:
         for plant1 in get_plants_from(con):
@@ -36,4 +36,4 @@ def analyze_plants():
 
 # Run as a script
 if __name__ == '__main__':
-    analyze_plants()
+    main()

@@ -1,3 +1,5 @@
+# This script hard resets the local database used in this project.
+# It then repopulates the database from the `seed.json` file.
 import json
 import schema
 from schema import init_db, meta
