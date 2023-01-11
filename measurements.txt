@@ -1,0 +1,5 @@
+fruit_weight: pounds
+height: inches
+spread: inches
+length: inches
+temperature: fahrenheit

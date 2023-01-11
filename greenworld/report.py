@@ -5,6 +5,7 @@
 # • Write the report back to the database
 import logging
 import algorithm
+import utils
 from schema import (
     init_db,
     reports_table,
@@ -26,11 +27,13 @@ def main():
         for plant1 in get_plants_from(con):
             for plant2 in get_plants_from(con, plant1.id):
                 logging.info(f'Analyzing {plant1.name} x {plant2.name}...')
-                report = algorithm.guild_report(plant1, plant2)
+                utils.new_report()
+                for rule in utils.get_rules():
+                    rule(plant1, plant2)
                 stmt = reports_table.insert().values(
                     plant1 = plant1.id,
                     plant2 = plant2.id,
-                    report = report
+                    report = utils.get_report()
                 )
                 con.execute(stmt)
 

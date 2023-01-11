@@ -5,6 +5,7 @@
             "name": "Corn",
             "species": "zea mays",
             "growth_habit": "GrowthHabit.GRAMINOID",
+            "height": [60, 144],
             "sun": "Sun.FULL_SUN"
         },
         {
@@ -21,8 +22,8 @@
             "species": "phaseolus vulgaris",
             "growth_habit": "GrowthHabit.VINE",
             "fruit_weight": [0.02, 0.02],
-            "height": [60, 72],
             "spread": [3, 5],
+            "length": [60, 72],
             "sun": "Sun.FULL_SUN",
             "temperature": [70, 80]
         }

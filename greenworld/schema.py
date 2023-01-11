@@ -40,6 +40,7 @@ plants_table = Table('plants', meta,
     Column('fruit_weight', NumericRangeType),
     Column('height', NumericRangeType),
     Column('spread', NumericRangeType),
+    Column('length', NumericRangeType),
 
     # Preferred environment
     Column('sun', Integer),
