@@ -13,13 +13,13 @@
 - [International Plant Name Index](https://www.ipni.org/)
 - [Plants For A Future](https://pfaf.org/user/Default.aspx)
 - [NPK nutrient uptake database](https://plantsorig.sc.egov.usda.gov/npk/main)
-- [General USDA plants database](https://plants.sc.egov.usda.gov/home)
 - [KEGG Metabolic Pathways Database](https://www.kegg.jp/kegg/pathway.html)
 - [Plant Metabolic Pathways Databases](https://plantcyc.org)
 - [Integrated Taxonomic Information System - Zea Mays](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=42269#null)
 - [The Plant List - All Families](http://theplantlist.org/browse/-/)
 - [The Flavonoid Biosynthesis Network in Plants](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8657439/)
 - [USDA Plants Database](https://plants.usda.gov/)
+- [Soil Drainage Classes](https://casoilresource.lawr.ucdavis.edu/gmap/help/defn-drainage-class.html)
 
 # Allelochemicals and phytotoxicity
 - [Allelochemicals and Signaling Chemicals in Plants](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6695906/)

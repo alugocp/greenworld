@@ -6,12 +6,19 @@ The purpose of this project is to identify potential companion plant groups (a.k
 
 ## Algorithm design
 The core algorithm looks at every combination of plants and generates a compatibility report for each one.
-Pairwise compatibility is determined by growth habit, resource demand, non-plant relationships, allelopathy, and preferred environment.
+Pairwise compatibility is determined by morphology, nutrients, non-plant relationships, allelopathy, and preferred environment.
 A compatibility report consists of a set of suggested ranges to keep between two planted species.
 
 ## Commands
-- `export GREENWORLD_DB="sqlite:///greenworld.db"` sets the environment variables
-- `python -m pip install -r requirements.txt` installs all Python dependencies
-- `python greenworld/reset.py` hard resets the development database
-- `python greenworld/report.py` generates companionship reports for newly added plant species
-- `python greenworld/invalidate.py` invalidates the reports table so the next report command will iterate through every plant pair
+Use the following code to setup the project for the first time:
+
+```bash
+# Installs all Python dependencies
+python3 -m pip install -r requirements.txt
+```
+
+Then you can use the following commands throughout development:
+
+- `./run reset` hard resets the development database
+- `./run report` generates companionship reports for newly added plant species
+- `./run invalidate` invalidates the reports table so the next report command will iterate through every plant pair

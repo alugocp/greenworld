@@ -1,5 +1,6 @@
 import os
 from defs import GrowthHabit
+from sqlalchemy_utils import NumericRangeType
 from sqlalchemy import (
     create_engine,
     ForeignKey,
@@ -29,17 +30,26 @@ def init_db():
     return db
 
 plants_table = Table('plants', meta,
+    # General
     Column('id', Integer, Identity(), primary_key = True),
-    Column('name', String)
+    Column('name', String),
+
+    # Morphology
+    Column('growth_habit', Integer),
+    Column('fruit_weight', NumericRangeType),
+    Column('height', NumericRangeType),
+    Column('spread', NumericRangeType),
+
+    # Preferred environment
+    Column('sun', Integer),
+    Column('temperature', NumericRangeType),
+    Column('soil', Integer),
+    Column('pH', NumericRangeType),
+    Column('drainage', Integer)
 )
 
 reports_table = Table('reports', meta,
     Column('plant1', Integer, ForeignKey('plants.id')),
     Column('plant2', Integer, ForeignKey('plants.id')),
     Column('report', JSON)
-)
-
-morphology_table = Table('morphology', meta,
-    Column('plant', Integer, ForeignKey('plants.id')),
-    Column('growth_habit', Integer)
 )

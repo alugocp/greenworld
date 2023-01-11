@@ -1,12 +1,19 @@
 {
     "plants": [
-        {"id": 1, "name": "Corn"},
-        {"id": 2, "name": "Squash"},
-        {"id": 3, "name": "Bean"}
-    ],
-    "morphology": [
-        {"plant": 1, "growth_habit": 1},
-        {"plant": 2, "growth_habit": 7},
-        {"plant": 3, "growth_habit": 7}
+        {
+            "id": 1,
+            "name": "Corn",
+            "growth_habit": "GrowthHabit.GRAMINOID"
+        },
+        {
+            "id": 2,
+            "name": "Squash",
+            "growth_habit": "GrowthHabit.VINE"
+        },
+        {
+            "id": 3,
+            "name": "Bean",
+            "growth_habit": "GrowthHabit.VINE"
+        }
     ]
 }

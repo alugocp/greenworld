@@ -1,2 +1,4 @@
 SQLAlchemy
+SQLAlchemy-Utils
+intervals
 pylint
