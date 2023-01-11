@@ -2,7 +2,7 @@ from enum import IntEnum, unique
 
 @unique
 class GrowthHabit(IntEnum):
-    HERB        = 0 # non woody and non grass-like
+    FORB        = 0 # non woody and non grass-like
     GRAMINOID   = 1 # Grass or grass-like
     LICHENOUS   = 2 # Actually two organisms living together
     NONVASCULAR = 3 # Terrestrial, like a moss or something

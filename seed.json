@@ -3,17 +3,28 @@
         {
             "id": 1,
             "name": "Corn",
-            "growth_habit": "GrowthHabit.GRAMINOID"
+            "species": "zea mays",
+            "growth_habit": "GrowthHabit.GRAMINOID",
+            "sun": "Sun.FULL_SUN"
         },
         {
             "id": 2,
-            "name": "Squash",
-            "growth_habit": "GrowthHabit.VINE"
+            "name": "Butternut Squash",
+            "species": "cucurbita moschata",
+            "growth_habit": "GrowthHabit.VINE",
+            "fruit_weight": [1, 3],
+            "sun": "Sun.FULL_SUN"
         },
         {
             "id": 3,
-            "name": "Bean",
-            "growth_habit": "GrowthHabit.VINE"
+            "name": "Succotash Bean",
+            "species": "phaseolus vulgaris",
+            "growth_habit": "GrowthHabit.VINE",
+            "fruit_weight": [0.02, 0.02],
+            "height": [60, 72],
+            "spread": [3, 5],
+            "sun": "Sun.FULL_SUN",
+            "temperature": [70, 80]
         }
     ]
 }

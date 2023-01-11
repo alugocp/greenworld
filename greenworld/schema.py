@@ -33,6 +33,7 @@ plants_table = Table('plants', meta,
     # General
     Column('id', Integer, Identity(), primary_key = True),
     Column('name', String),
+    Column('species', String),
 
     # Morphology
     Column('growth_habit', Integer),
