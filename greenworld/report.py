@@ -3,6 +3,7 @@
 # • Go through each pair of plants starting at the last analyzed pair
 # • Run algorithm modules on them by a database check
 # • Write the report back to the database
+import logging
 import algorithm
 from schema import (
     init_db,
@@ -20,9 +21,11 @@ def get_plants_from(con, start = None):
 # The main loop for companionship reporting
 def main():
     db = init_db()
+    logging.basicConfig(level=logging.NOTSET)
     with db.connect() as con:
         for plant1 in get_plants_from(con):
             for plant2 in get_plants_from(con, plant1.id):
+                logging.info(f'Analyzing {plant1.name} x {plant2.name}...')
                 report = algorithm.guild_report(plant1, plant2)
                 stmt = reports_table.insert().values(
                     plant1 = plant1.id,

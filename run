@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+import logging
+import sys
+import os
+
+def main(args):
+    os.environ['GREENWORLD_DB'] = 'sqlite:///greenworld.db'
+    sys.path.append('./greenworld')
+    logging.basicConfig(level=logging.NOTSET)
+    for arg in args:
+        try:
+            imported = __import__(f'greenworld.{arg}')
+            module = getattr(imported, arg)
+            func = getattr(module, 'main')
+            func()
+        except ModuleNotFoundError as e:
+            logging.warning(f'\'{arg}\' does not exist')
+        except AttributeError as e:
+            logging.warning(f'\'{arg}\' is not a script')
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
