@@ -1,4 +1,4 @@
 # This module contains the core logic for the Greenworld algorithm.
 
-def morphology(plant1, plant2, report):
-    return report
+def guild_report(plant1, plant2):
+    return {}

@@ -1,5 +1,5 @@
 import os
-from enums import GrowthHabit
+from defs import GrowthHabit
 from sqlalchemy import (
     create_engine,
     ForeignKey,
@@ -28,18 +28,18 @@ def init_db():
         db = create_engine(dbstring)
     return db
 
-plants = Table('plants', meta,
+plants_table = Table('plants', meta,
     Column('id', Integer, Identity(), primary_key = True),
     Column('name', String)
 )
 
-reports = Table('reports', meta,
+reports_table = Table('reports', meta,
     Column('plant1', Integer, ForeignKey('plants.id')),
     Column('plant2', Integer, ForeignKey('plants.id')),
     Column('report', JSON)
 )
 
-morphology = Table('morphology', meta,
+morphology_table = Table('morphology', meta,
     Column('plant', Integer, ForeignKey('plants.id')),
     Column('growth_habit', Integer)
 )

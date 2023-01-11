@@ -20,7 +20,7 @@ def main():
 
         # Insert seed data from JSON
         for k, v in data.items():
-            table = getattr(schema, k)
+            table = getattr(schema, f'{k}_table')
             for row in v:
                 stmt = table.insert().values(**row)
                 con.execute(stmt)
