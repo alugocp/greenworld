@@ -22,3 +22,4 @@ Then you can use the following commands throughout development:
 - `./run reset` hard resets the development database
 - `./run report` generates companionship reports for newly added plant species
 - `./run invalidate` invalidates the reports table so the next report command will iterate through every plant pair
+- `./run query` prints a list of reports logged in the database

@@ -18,6 +18,10 @@ def get_report():
 def get_rules():
     return rules
 
+# Returns true if the two intervals overlap or touch at all
+def overlaps(a, b):
+    return min(a.upper, b.upper) - max(a.lower, b.lower) >= 0
+
 # Adds any valid information to the current report
 def rule(func):
     def wrapper(plant1, plant2):

@@ -33,3 +33,9 @@ class Drainage(IntEnum):
     SOMEWHAT_POORLY_DRAINED      = 2 # Water removed slowly, soil is wet at shallow depth for large portions of the season
     POORLY_DRAINED               = 1 # Water removed slowly, soil remains wet for long periods
     VERY_POORLY_DRAINED          = 0 # Water removed so slowly that free water remains at or near surface for most of the season
+
+@unique
+class Nitrogen(IntEnum):
+    FIXER   = 0 # Adds nitrogen to the soil
+    NEUTRAL = 1 # Has no remarkable relationship to soil nitrogen
+    HEAVY   = 2 # Requires relatively high levels of nitrogen

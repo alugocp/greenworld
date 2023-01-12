@@ -42,6 +42,9 @@ plants_table = Table('plants', meta,
     Column('spread', NumericRangeType),
     Column('length', NumericRangeType),
 
+    # Nutrients
+    Column('nitrogen', Integer),
+
     # Preferred environment
     Column('sun', Integer),
     Column('temperature', NumericRangeType),
