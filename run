@@ -9,13 +9,11 @@ def main(args):
     logging.basicConfig(level=logging.NOTSET)
     for arg in args:
         try:
-            imported = __import__(f'greenworld.{arg}')
+            imported = __import__(f'scripts.{arg}')
             module = getattr(imported, arg)
             func = getattr(module, 'main')
             func()
         except ModuleNotFoundError as e:
-            logging.warning(f'\'{arg}\' does not exist')
-        except AttributeError as e:
             logging.warning(f'\'{arg}\' is not a script')
 
 if __name__ == '__main__':

@@ -6,19 +6,18 @@ import json
 import copy
 import defs
 import schema
-from schema import init_db, meta
 
 def main():
-    db = init_db()
+    db = schema.init_db()
     file = open('seed.json', 'r')
     data = json.load(file)
     logging.basicConfig(level=logging.NOTSET)
     with db.connect() as con:
         # Clear and recreate the database
-        meta.reflect(db)
-        meta.drop_all(db)
+        schema.meta.reflect(db)
+        schema.meta.drop_all(db)
         logging.info('Dropped all existing tables')
-        meta.create_all(db)
+        schema.meta.create_all(db)
         logging.info('Recreated new schema')
 
         # Insert seed data from JSON
