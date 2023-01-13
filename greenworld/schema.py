@@ -1,5 +1,4 @@
 import os
-from defs import GrowthHabit
 from sqlalchemy_utils import NumericRangeType
 from sqlalchemy import (
     create_engine,
@@ -17,17 +16,19 @@ from sqlalchemy import (
 meta = MetaData()
 
 # Database connection object
-db = None
+DB = None
 
 # This function initializes or retrieves a singular database connection object
 def init_db():
-    global db
-    if not db:
+    # pylint: disable=global-statement
+    global DB
+    # pylint: enable=global-statement
+    if not DB:
         dbstring = os.getenv('GREENWORLD_DB')
         if not dbstring:
             raise Exception('Please set GREENWORLD_DB environment variable to an ODBC string')
-        db = create_engine(dbstring)
-    return db
+        DB = create_engine(dbstring)
+    return DB
 
 memory_table = Table('memory', meta,
     Column('last_analyzed', Integer)

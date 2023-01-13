@@ -6,13 +6,13 @@ from defs import (
 )
 from utils import (
     overlaps,
-    new_report,
-    get_report,
     taller_first,
     mirrored,
     ensure,
     rule
 )
+
+# pylint: disable=inconsistent-return-statements
 
 @rule
 @mirrored
@@ -27,7 +27,7 @@ def can_vine_climb(plant1, plant2):
 def space_for_sunlight(plant1, plant2):
     if plant2.sun == Sun.FULL_SUN:
         return f'{plant2.name} should be far enough away from {plant1.name} to get direct sunlight'
-    elif plant2.sun == Sun.PARTIAL_SUN:
+    if plant2.sun == Sun.PARTIAL_SUN:
         return f'{plant2.name} should be just far enough from {plant1.name} to get partial sunlight'
     return f'{plant2.name} should be close enough to {plant1.name} to get full shade'
 
@@ -60,7 +60,7 @@ def match_soil(plant1, plant2):
 
 @rule
 @ensure(both = ['pH'])
-def match_pH(plant1, plant2):
+def match_ph(plant1, plant2):
     if not overlaps(plant1.pH, plant2.pH):
         return f'{plant1.name} and {plant2.name} prefer different pH ranges'
 
@@ -69,3 +69,5 @@ def match_pH(plant1, plant2):
 def match_drainage(plant1, plant2):
     if plant1.drainage != plant2.drainage:
         return f'{plant1.name} and {plant2.name} prefer different soil drainage'
+
+# pylint: enable=inconsistent-return-statements

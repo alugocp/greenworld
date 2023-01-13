@@ -4,7 +4,9 @@
 # • Run algorithm modules on them by a database check
 # • Write the report back to the database
 import logging
+# pylint: disable=unused-import
 import algorithm
+# pylint: enable=unused-import
 import utils
 from schema import (
     init_db,
@@ -41,7 +43,7 @@ def main():
         last_analyzed = get_last_analyzed(con)
         for plant1 in get_plants(con, plants_table.c.id > last_analyzed):
             for plant2 in get_plants(con, plants_table.c.id < plant1.id):
-                logging.info(f'Analyzing {plant2.name} x {plant1.name}...')
+                logging.info('Analyzing %s x %s...', plant2.name, plant1.name)
                 utils.new_report()
                 for rule in utils.get_rules():
                     rule(plant2, plant1)

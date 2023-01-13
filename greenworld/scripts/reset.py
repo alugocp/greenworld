@@ -1,16 +1,16 @@
 # This script hard resets the local database used in this project.
 # It then repopulates the database from the `seed.json` file.
-import sqlalchemy
 import logging
 import json
 import copy
+import sqlalchemy
 import defs
 import schema
 
 def main():
     db = schema.init_db()
-    file = open('seed.json', 'r')
-    data = json.load(file)
+    with open('seed.json', 'r', encoding = 'utf-8') as file:
+        data = json.load(file)
     logging.basicConfig(level=logging.NOTSET)
     with db.connect() as con:
         # Clear and recreate the database
@@ -27,7 +27,7 @@ def main():
                 values = copy.deepcopy(row)
                 for col, val in values.items():
                     # Convert enum references to their integer values
-                    if type(table.c[col].type) == sqlalchemy.Integer and type(val) == str:
+                    if isinstance(table.c[col].type, sqlalchemy.Integer) and isinstance(val, str):
                         enum = val.split('.')
                         values[col] = getattr(defs, enum[0])[enum[1]].value
                 stmt = table.insert().values(**values)

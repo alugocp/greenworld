@@ -1,5 +1,5 @@
-from intervals import IntInterval
 import unittest
+from intervals import IntInterval
 import utils
 
 class AlgorithmUtilCase(unittest.TestCase):
