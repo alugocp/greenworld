@@ -29,6 +29,16 @@ def init_db():
         db = create_engine(dbstring)
     return db
 
+memory_table = Table('memory', meta,
+    Column('last_analyzed', Integer)
+)
+
+reports_table = Table('reports', meta,
+    Column('plant1', Integer, ForeignKey('plants.id')),
+    Column('plant2', Integer, ForeignKey('plants.id')),
+    Column('report', JSON)
+)
+
 plants_table = Table('plants', meta,
     # General
     Column('id', Integer, Identity(), primary_key = True),
@@ -51,10 +61,4 @@ plants_table = Table('plants', meta,
     Column('soil', Integer),
     Column('pH', NumericRangeType),
     Column('drainage', Integer)
-)
-
-reports_table = Table('reports', meta,
-    Column('plant1', Integer, ForeignKey('plants.id')),
-    Column('plant2', Integer, ForeignKey('plants.id')),
-    Column('report', JSON)
 )

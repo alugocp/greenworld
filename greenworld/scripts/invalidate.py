@@ -2,13 +2,16 @@
 # Clear the database save state table (which contains the last analyzed pair of plants)
 from schema import (
     init_db,
-    reports_table
+    reports_table,
+    memory_table
 )
 
 def main():
     db = init_db()
     reports_table.drop(db)
     reports_table.create(db)
+    with db.connect() as con:
+        con.execute(memory_table.delete())
 
 if __name__ == '__main__':
     main()
