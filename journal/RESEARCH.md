@@ -99,6 +99,11 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [SOIL REQUIREMENTS FOR GROWING CORN](https://www.ecofarmingdaily.com/grow-crops/grow-corn/soil-requirements)
 - [12 Corn Companion Plants & 4 That Should Be Nowhere Near](https://www.ruralsprout.com/corn-companion-plants/)
 
+### Hopi Turquoise Corn
+- [https://www.rareseeds.com/corn-hopi-turquoise](https://www.rareseeds.com/corn-hopi-turquoise)
+- [https://homeguides.sfgate.com/germination-hopi-blue-maize-74048.html](https://homeguides.sfgate.com/germination-hopi-blue-maize-74048.html)
+- [https://turtletreeseed.org/product/hopi-blue-corn-seeds/](https://turtletreeseed.org/product/hopi-blue-corn-seeds/)
+
 ## Gourds
 - [Corn Stover Removal Effects On Soil Aggregation and Squash Fruit Yield in Cover Cropping Systems](https://scisoc.confex.com/scisoc/2013am/webprogram/Handout/Paper80042/Lance%20Ouellette_Poster_Presentation.pdf)
 - [Squash yield, nutrient content and soil fertility parameters in response to methods of fertilizer application and rates of nitrogen fertigation](https://link.springer.com/article/10.1023/B:FRES.0000019036.64212.9c)
@@ -118,12 +123,19 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [Nutrient evaluation of the seed, pulp, flesh, and peel of spaghetti squash](https://www.researchgate.net/publication/352830278_Nutrient_evaluation_of_the_seed_pulp_flesh_and_peel_of_spaghetti_squash)
 - [Squash Companion Plants (What Not to Grow Near Squash)](https://thehometome.com/squash-companion-plants/)
 
+### Hopi Orange Squash
+- [https://www.wildroseheritageseed.com/store/p255/Squash_-_Hopi_Orange.html](https://www.wildroseheritageseed.com/store/p255/Squash_-_Hopi_Orange.html)
+
 ## Legumes
 - [Nutrient Uptake and Partitioning by Dry Beans in Manitoba](https://umanitoba.ca/faculties/afs/agronomists_conf/media/Heard_drybean_nutrient_uptake-poster.pdf) (Heard and Brolley, 2008)
 - [Genetic and Molecular Mechanisms Underlying Symbiotic Specificity in Legume-Rhizobium Interactions](https://www.frontiersin.org/articles/10.3389/fpls.2018.00313/full)
 - [Interaction and Regulation of Carbon, Nitrogen, and Phosphorus Metabolisms in Root Nodules of Legumes](https://www.frontiersin.org/articles/10.3389/fpls.2018.01860/full)
 - [14 Companion Plants for Beans (And 3 To Avoid)](https://traditionalgardening.com/companion-plants-for-beans/)
 - [Companion Plants For Peas: (Best & Worst)](https://shinyplant.com/companion-plants-for-peas/)
+
+### Hopi Purple String Bean
+- [https://www.backyardgardener.com/plantname/phaseolus-vulgaris-hopi-purple-string-bean/](https://www.backyardgardener.com/plantname/phaseolus-vulgaris-hopi-purple-string-bean/)
+- [https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/green-beans](https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/green-beans#:~:text=A%20total%20of%20100%20seed%20weight%20varied%20between%205.10%20and%2028.80%C2%A0g%20and%20had%20an%20average%20of%2014.55%C2%A0g)
 
 ## Carrot
 - [Carrot Nitrogen Uptake and Partitioning](http://geisseler.ucdavis.edu/Guidelines/N_Carrot.html)

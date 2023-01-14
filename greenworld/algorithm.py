@@ -70,4 +70,11 @@ def match_drainage(plant1, plant2):
     if plant1.drainage != plant2.drainage:
         return f'{plant1.name} and {plant2.name} prefer different soil drainage'
 
+@rule
+@mirrored
+@ensure(fields1 = ['nitrogen', 'growth_habit'])
+def large_vines_shade_weeds(plant1, plant2):
+    if plant1.nitrogen == Nitrogen.HEAVY and plant1.growth_habit == GrowthHabit.VINE:
+        return f'{plant1.name} can shade out weeds around {plant2.name}'
+
 # pylint: enable=inconsistent-return-statements
