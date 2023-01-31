@@ -33,6 +33,8 @@
 - [Comprehensive Toxic Plants–Phytotoxins Database and Its Application in Assessing Aquatic Micropollution Potential](https://pubs.acs.org/doi/10.1021/acs.jafc.8b01639)
 - [The Allelopathic Effects of Allium Sativum Cloves on Growth and
 Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljournals.org/GJSFR_Volume18/5-The-Allelopathic-Effects-of-Allium.pdf)
+- [Mechanism of Action of Allelochemicals](https://link.springer.com/chapter/10.1007/978-3-030-40807-7_7) references several papers that can help identify the limited number of recognized allelochemicals
+- [Screening of Alleopathic Activity of the Leaves of Nicotiana plumbaginifolia Viv. on Some Selected Crops in Aligarh, Uttar Pradesh, India](https://www.sciencepublishinggroup.com/journal/paperinfo?journalid=610&doi=10.11648/j.ijpp.20180201.11) was referenced by the previous paper when it claimed that only few alleochemicals are recognized
 
 # Morphology and Growth Habit
 - [Evolution of the plant body plan](https://pubmed.ncbi.nlm.nih.gov/30612613/)
@@ -42,9 +44,13 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [Habit Growth Form List (Australian Government)](https://www.anbg.gov.au/cpbr/herbarium/collecting/habit-types.html)
 - [The strength of plants: theory and experimental methods to measure the mechanical properties of stems](https://academic.oup.com/jxb/article/68/16/4497/4107595) (Shah et al., 2017)
 
-# Pests and Plant Pathology
+# Pests, Pollinators and Plant Pathology
 - [Plant Disease Basics and Diagnosis](https://extension.psu.edu/plant-disease-basics-and-diagnosis)
-- [EPPO (international plant pest database)](https://gd.eppo.int/)
+- [EPPO (international plant pest database)](https://gd.eppo.int/) has a list of host plant species under each pest species
+- [Interaction Web Database](https://iwdb.nceas.ucsb.edu/resources.html) hosts a number of published datasets listing plant-animal interactions (e.g. plant-pollinator, plant-seed disperser)
+- [CPC Pollinators Of Rare Plants Database](https://saveplants.org/pollinator-search/) allows you to search for pollinators by plant family/genus/species
+- [Pathogen Host Interactions Database](http://www.phi-base.org/) allows you to search for a host or pathogen species and find several interactions
+- [GloBl](https://www.globalbioticinteractions.org/about) curates open access to various interactions data (plant-pathogen, plant-predator, plant-pollinator, etc)
 
 # Nutrients and Metabolic Pathways
 - [Analysis of metabolites and metabolic pathways in three maize (Zea mays L.) varieties from the same origin using GC–MS](https://www.nature.com/articles/s41598-020-73041-z)
@@ -220,10 +226,3 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [Do green beans put nitrogen back into the soil?](https://treehozz.com/do-green-beans-put-nitrogen-back-into-the-soil)
 - [Introducing Nitrogen Fixing Trees: Nature’s Solution to Curing N2 Deficiency](https://www.permaculturenews.org/2015/10/20/introducing-nitrogen-fixing-trees-natures-solution-to-curing-n2-deficiency/)
 - [Legume crop rotation suppressed nitrifying microbial community in a sugarcane cropping soil](https://www.nature.com/articles/s41598-017-17080-z)
-
-# Tech stack
-- [GeographicLib](https://www.npmjs.com/package/geographiclib)
-- [Turf.js](https://turfjs.org/)
-- [Neo4j spatial functions](https://neo4j.com/docs/cypher-manual/current/functions/spatial/)
-- [GraphQL queries](https://graphql.org/learn/queries/)
-- [npmlog](https://github.com/npm/npmlog)
