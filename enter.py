@@ -50,30 +50,56 @@ def enter_data_json(db, filename):
     with open(filename, 'r', encoding = 'utf-8') as file:
         data = json.load(file)
     with db.connect() as con:
-        for k in data.keys() | set(['plants', 'works_cited']):
-            logging.info('Writing to %s table', k)
-            table = getattr(schema, f'{k}_table')
-            for row in data[k]:
-                values = copy.deepcopy(row)
 
-                # Sanitize raw values for database
+        # Map local references to the database (handles if they exist already or not)
+        works_cited_map = {}
+        if 'works_cited' in data:
+            logging.info('Writing to works_cited table')
+            last_reference_id = (con.execute(
+                schema.works_cited_table.select().order_by(schema.works_cited_table.c.id.desc()).limit(1)
+                ).mappings().fetchone() or { 'id': 0 })['id']
+            for row in data['works_cited']:
+                values = copy.deepcopy(row)
+                works_cited_result = con.execute(
+                    schema.works_cited_table.select().where(schema.works_cited_table.c.citation == values['citation'])
+                    ).mappings().fetchone()
+                if works_cited_result is None:
+                    values['id'] = last_reference_id + 1
+                    works_cited_map[row['id']] = values['id']
+                    stmt = schema.works_cited_table.insert().values(**values)
+                    last_reference_id += 1
+                    logging.info(values)
+                    con.execute(stmt)
+                else:
+                    works_cited_map[row['id']] = works_cited_result['id']
+            print('')
+
+        # Sanitize and write plant data to database
+        if 'plants' in data:
+            logging.info('Writing to plants table')
+            last_plant_id = (con.execute(
+                schema.plants_table.select().order_by(schema.plants_table.c.id.desc()).limit(1)
+                ).mappings().fetchone() or { 'id': 0 })['id']
+            for row in data['plants']:
+                values = copy.deepcopy(row)
+                values['id'] = last_plant_id + 1
+                last_plant_id += 1
                 for col, val in values.items():
 
                     # Convert enum references to their integer values
-                    if isinstance(table.c[col].type, sqlalchemy.Integer) and isinstance(val, str):
+                    if isinstance(schema.plants_table.c[col].type, sqlalchemy.Integer) and isinstance(val, str):
                         enum = val.split('.')
                         values[col] = getattr(defs, enum[0])[enum[1]].value
 
                     # Convert nonstandard units to internal standard units
-                    if isinstance(table.c[col].type, NumericRangeType) and isinstance(val[0], str):
+                    if isinstance(schema.plants_table.c[col].type, NumericRangeType) and isinstance(val[0], str):
                         values[col][0] = convert_to_unit(val[0])
                         values[col][1] = convert_to_unit(val[1])
 
                 # Write sanitized values to database
-                stmt = table.insert().values(**values)
+                stmt = schema.plants_table.insert().values(**values)
                 logging.info(values)
                 con.execute(stmt)
-            print('')
         con.commit()
 
 def main(args):
