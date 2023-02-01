@@ -2,6 +2,7 @@
 from defs import (
     GrowthHabit,
     Nitrogen,
+    Drainage,
     Sun
 )
 from utils import (
@@ -76,5 +77,12 @@ def match_drainage(plant1, plant2):
 def large_vines_shade_weeds(plant1, plant2):
     if plant1.nitrogen == Nitrogen.HEAVY and plant1.growth_habit == GrowthHabit.VINE:
         return f'{plant1.name} can shade out weeds around {plant2.name}'
+
+@rule
+@mirrored
+@ensure(both = ['root_depth'], fields2 = ['drainage'])
+def roots_break_up_soil(plant1, plant2):
+    if plant1.root_depth > plant2.root_depth and plant2.drainage >= Drainage.WELL_DRAINED:
+        return f'{plant1.name} can break up the soil for {plant2.name} to get better drainage'
 
 # pylint: enable=inconsistent-return-statements

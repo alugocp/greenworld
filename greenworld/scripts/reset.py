@@ -33,6 +33,7 @@ def main():
                 stmt = table.insert().values(**values)
                 logging.info(values)
                 con.execute(stmt)
+        con.commit()
 
 if __name__ == '__main__':
     main()

@@ -13,6 +13,7 @@ def main(args):
             module = getattr(imported, arg)
             func = getattr(module, 'main')
             func()
+            print("")
         except ModuleNotFoundError as e:
             logging.warning(f'\'{arg}\' is not a script')
 

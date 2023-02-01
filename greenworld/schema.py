@@ -40,6 +40,7 @@ reports_table = Table('reports', meta,
     Column('report', JSON)
 )
 
+# TODO revisit sources for seed data and convert to these official units
 plants_table = Table('plants', meta,
     # General
     Column('id', Integer, Identity(), primary_key = True),
@@ -48,17 +49,19 @@ plants_table = Table('plants', meta,
 
     # Morphology
     Column('growth_habit', Integer),
-    Column('fruit_weight', NumericRangeType),
-    Column('height', NumericRangeType),
-    Column('spread', NumericRangeType),
-    Column('length', NumericRangeType),
+    Column('fruit_weight', NumericRangeType), # Grams
+    Column('height', NumericRangeType), # Meters
+    Column('spread', NumericRangeType), # From one extermity to the other (Meters)
+    Column('length', NumericRangeType), # Meters
+    Column('root_spread', NumericRangeType), # From one extremity to the other (Meters)
+    Column('root_depth', NumericRangeType), # Meters
 
     # Nutrients
     Column('nitrogen', Integer),
 
     # Preferred environment
+    Column('temperature', NumericRangeType), # Celsius
     Column('sun', Integer),
-    Column('temperature', NumericRangeType),
     Column('soil', Integer),
     Column('pH', NumericRangeType),
     Column('drainage', Integer)

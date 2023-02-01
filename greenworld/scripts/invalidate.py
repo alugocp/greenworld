@@ -12,6 +12,7 @@ def main():
     reports_table.create(db)
     with db.connect() as con:
         con.execute(memory_table.delete())
+        con.commit()
 
 if __name__ == '__main__':
     main()

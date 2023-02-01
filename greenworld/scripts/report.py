@@ -41,8 +41,8 @@ def main():
     with db.connect() as con:
         last_plant = None
         last_analyzed = get_last_analyzed(con)
-        for plant1 in get_plants(con, plants_table.c.id > last_analyzed):
-            for plant2 in get_plants(con, plants_table.c.id < plant1.id):
+        for plant1 in get_plants(con, plants_table.c.id > last_analyzed).mappings():
+            for plant2 in get_plants(con, plants_table.c.id < plant1.id).mappings():
                 logging.info('Analyzing %s x %s...', plant2.name, plant1.name)
                 utils.new_report()
                 for rule in utils.get_rules():
@@ -55,6 +55,7 @@ def main():
             last_plant = plant1
         if last_plant:
             set_last_analyzed(con, last_plant.id)
+        con.commit()
 
 # Run as a script
 if __name__ == '__main__':

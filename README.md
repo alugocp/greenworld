@@ -18,6 +18,9 @@ python3 -m pip install -r requirements.txt
 
 # Runs the Python linter
 python3 -m pylint greenworld
+
+# Performs unit tests
+./run test
 ```
 
 Then you can use the following commands while interacting with the database:

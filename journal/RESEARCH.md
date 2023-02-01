@@ -104,6 +104,7 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [Effects of enhanced ammonium nitrogen availability for corn](https://www.crops.org/files/publications/jnrlse/pdfs/jnr018/018-02-0093.pdf)
 - [SOIL REQUIREMENTS FOR GROWING CORN](https://www.ecofarmingdaily.com/grow-crops/grow-corn/soil-requirements)
 - [12 Corn Companion Plants & 4 That Should Be Nowhere Near](https://www.ruralsprout.com/corn-companion-plants/)
+- [The Maize Root](https://link.springer.com/chapter/10.1007/978-1-4612-2694-9_4) gives ranges for corn root spread and depth
 
 ### Hopi Turquoise Corn
 - [https://www.rareseeds.com/corn-hopi-turquoise](https://www.rareseeds.com/corn-hopi-turquoise)
