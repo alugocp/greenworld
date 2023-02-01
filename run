@@ -14,8 +14,8 @@ def main(args):
             func = getattr(module, 'main')
             func()
             print("")
-        except ModuleNotFoundError as e:
-            logging.warning(f'\'{arg}\' is not a script')
+        except ModuleNotFoundError:
+            logging.warning('\'%s\' is not a script', arg)
 
 if __name__ == '__main__':
     main(sys.argv[1:])

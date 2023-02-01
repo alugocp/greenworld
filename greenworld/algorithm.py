@@ -19,7 +19,8 @@ from utils import (
 @mirrored
 @ensure(both = ['sun', 'growth_habit'], fields1 = ['fruit_weight'])
 def can_vine_climb(plant1, plant2):
-    if plant1.sun == Sun.FULL_SUN and plant1.growth_habit == GrowthHabit.VINE and plant1.fruit_weight < 0.1 and plant2.sun == Sun.FULL_SUN and plant2.growth_habit in [GrowthHabit.GRAMINOID, GrowthHabit.FORB]:
+    threshold = 45.359237 # 0.1 lbs
+    if plant1.sun == Sun.FULL_SUN and plant1.growth_habit == GrowthHabit.VINE and plant1.fruit_weight < threshold and plant2.sun == Sun.FULL_SUN and plant2.growth_habit in [GrowthHabit.GRAMINOID, GrowthHabit.FORB]:
         return f'{plant1.name} can climb up {plant2.name} for direct sunlight'
 
 @rule

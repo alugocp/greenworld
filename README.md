@@ -20,7 +20,7 @@ python3 -m pip install -r requirements.txt
 python3 -m pylint greenworld
 
 # Performs unit tests
-./run test
+python3 run test
 ```
 
 Then you can use the following commands while interacting with the database:
@@ -29,3 +29,48 @@ Then you can use the following commands while interacting with the database:
 - `./run report` generates companionship reports for newly added plant species
 - `./run invalidate` invalidates the reports table so the next report command will iterate through every plant pair
 - `./run query` prints a list of reports logged in the database
+
+This command can be used to enter data into the database:
+
+```bash
+python3 enter [file [...]]
+```
+
+`file` arguments will point to files that adhere to one of the following structures.
+Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-z]+` such that it represents a measurement of some specific unit.
+
+```js
+// JSON files
+{
+  "plants": [
+    {
+      "id": number,
+      "name": string,
+      "species": string,
+      "growth_habit": GrowthHabit enum value,
+      "height": [scalar, scalar],
+      "spread": [scalar, scalar],
+      "root_spread": [scalar, scalar],
+      "root_depth": [scalar, scalar],
+      "nitrogen": Nitrogen enum value,
+      "temperature": [scalar, scalar],
+      "sun": Sun enum value,
+      "soil": Soil enum value,
+      "pH": [float, float],
+      "drainage": Drainage enum value,
+      "citations": {
+          works_cited.id: [string, ...],
+          ...
+      }
+    },
+    ...
+  ],
+  "works_cited": [
+    {
+      "id": number,
+      "citation": string
+    },
+    ...
+  ]
+}
+```

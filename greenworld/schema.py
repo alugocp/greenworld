@@ -40,7 +40,6 @@ reports_table = Table('reports', meta,
     Column('report', JSON)
 )
 
-# TODO revisit sources for seed data and convert to these official units
 plants_table = Table('plants', meta,
     # General
     Column('id', Integer, Identity(), primary_key = True),

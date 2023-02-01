@@ -1,7 +1,0 @@
-fruit_weight: pounds
-height: inches
-spread: inches
-length: inches
-root_spread: feet
-root_depth: feet
-temperature: fahrenheit
