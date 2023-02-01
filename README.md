@@ -44,7 +44,7 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
 {
   "plants": [
     {
-      "id": number,
+      "id": integer,
       "name": string,
       "species": string,
       "growth_habit": GrowthHabit enum value,
@@ -61,13 +61,21 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
       "citations": {
           works_cited.id: [string, ...],
           ...
-      }
+      },
+      "allelochemicals": [
+          {"name": string, "relationship": AlleloRelation enum value, "citation": integer},
+          ...
+      ],
+      "interactions": [
+          {"species": string, "relationship": SpeciesRelation enum value, "citation": integer},
+          ...
+      ]
     },
     ...
   ],
   "works_cited": [
     {
-      "id": number,
+      "id": integer,
       "citation": string
     },
     ...

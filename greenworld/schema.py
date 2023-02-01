@@ -30,16 +30,19 @@ def init_db():
         DB = create_engine(dbstring)
     return DB
 
+# Tracks past report progress for data entry optimization
 memory_table = Table('memory', meta,
     Column('last_analyzed', Integer)
 )
 
+# Tracks reports of plant compatibility
 reports_table = Table('reports', meta,
     Column('plant1', Integer, ForeignKey('plants.id')),
     Column('plant2', Integer, ForeignKey('plants.id')),
     Column('report', JSON)
 )
 
+# Tracks plant data
 plants_table = Table('plants', meta,
     # General
     Column('id', Integer, Identity(), primary_key = True),
@@ -69,7 +72,36 @@ plants_table = Table('plants', meta,
     Column('citations', JSON)
 )
 
+# Tracks works cited for any data points
 works_cited_table = Table('works_cited', meta,
     Column('id', Integer, Identity(), primary_key = True),
     Column('citation', String)
+)
+
+# Tracks non-plant species
+other_species_table = Table('other_species', meta,
+    Column('id', Integer, Identity(), primary_key = True),
+    Column('species', String)
+)
+
+# Tracks relationships between plant and non-plant species
+species_interactions_table = Table('species_interactions', meta,
+    Column('plant', Integer, ForeignKey('plants.id')),
+    Column('species', Integer, ForeignKey('other_species.id')),
+    Column('relationship', Integer),
+    Column('citation', Integer, ForeignKey('works_cited.id'))
+)
+
+# Tracks alelochemicals
+allelochemicals_table = Table('allelochemicals', meta,
+    Column('id', Integer, Identity(), primary_key = True),
+    Column('name', String)
+)
+
+# Represents which plants create and/or react to certain allelochemicals
+allelo_interactions_table = Table('allelo_interactions', meta,
+    Column('plant', Integer, ForeignKey('plants.id')),
+    Column('allelochemical', Integer, ForeignKey('allelochemicals.id')),
+    Column('relationship', Integer),
+    Column('citation', Integer, ForeignKey('works_cited.id'))
 )

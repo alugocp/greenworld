@@ -58,3 +58,23 @@ class Nitrogen(IntEnum):
     NEUTRAL = 1
     # Requires relatively high levels of nitrogen
     HEAVY   = 2
+
+@unique
+class SpeciesRelation(IntEnum):
+    # The non-plant species causes some disease in the plant species
+    PATHOGEN       = 0
+    # The non-plant species preys upon the plant species
+    PREDATOR       = 1
+    # The non-plant species spreads the seeds of the plant species
+    SEED_DISPERSER = 2
+    # The non-plant species pollinates the plant species
+    POLLINATOR     = 3
+
+@unique
+class AlleloRelation(IntEnum):
+    # The plant secretes this allelochemical into the rhizosphere
+    SECRETES = 0
+    # The plant is negatively affected by this allelochemical
+    NEGATIVE = 1
+    # The plant is positively affected by this allelochemical
+    POSITIVE = 2
