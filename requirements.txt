@@ -1,4 +1,4 @@
-SQLAlchemy
+SQLAlchemy >= 2.0.0
 SQLAlchemy-Utils
 intervals
 pylint

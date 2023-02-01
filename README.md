@@ -17,7 +17,7 @@ Use the following commands to help you while writing code for this project:
 python3 -m pip install -r requirements.txt
 
 # Runs the Python linter
-python3 -m pylint greenworld
+python3 -m pylint $(git ls-files "*.py")
 
 # Performs unit tests
 python3 run.py test
