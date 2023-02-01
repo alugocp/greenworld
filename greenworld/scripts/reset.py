@@ -16,7 +16,7 @@ def main():
     logging.info('Recreated new schema')
 
     # Seed the database
-    subprocess.run(['python3', 'enter', 'seed.json'], check = True)
+    subprocess.run(['python3', 'enter.py', 'seed.json'], check = True)
 
 if __name__ == '__main__':
     main()

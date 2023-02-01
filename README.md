@@ -20,20 +20,20 @@ python3 -m pip install -r requirements.txt
 python3 -m pylint greenworld
 
 # Performs unit tests
-python3 run test
+python3 run.py test
 ```
 
 Then you can use the following commands while interacting with the database:
 
-- `./run reset` hard resets the development database
-- `./run report` generates companionship reports for newly added plant species
-- `./run invalidate` invalidates the reports table so the next report command will iterate through every plant pair
-- `./run query` prints a list of reports logged in the database
+- `python3 run.py reset` hard resets the development database
+- `python3 run.py report` generates companionship reports for newly added plant species
+- `python3 run.py invalidate` invalidates the reports table so the next report command will iterate through every plant pair
+- `python3 run.py query` prints a list of reports logged in the database
 
 This command can be used to enter data into the database:
 
 ```bash
-python3 enter [file [...]]
+python3 enter.py [file [...]]
 ```
 
 `file` arguments will point to files that adhere to one of the following structures.

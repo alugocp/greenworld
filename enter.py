@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import greenworld.schema as schema
 import greenworld.defs as defs
 from sqlalchemy_utils import NumericRangeType
