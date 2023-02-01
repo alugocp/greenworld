@@ -64,5 +64,13 @@ plants_table = Table('plants', meta,
     Column('sun', Integer),
     Column('soil', Integer),
     Column('pH', NumericRangeType),
-    Column('drainage', Integer)
+    Column('drainage', Integer),
+
+    # Citations
+    Column('citations', JSON)
+)
+
+works_cited_table = Table('works_cited', meta,
+    Column('id', Integer, Identity(), primary_key = True),
+    Column('citation', String)
 )

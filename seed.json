@@ -14,7 +14,13 @@
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
             "pH": [5.8, 6.8],
-            "drainage": "Drainage.WELL_DRAINED"
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "1": ["height", "temperature", "sun"],
+                "2": ["pH", "drainage"],
+                "3": ["spread", "soil"],
+                "4": ["root_spread", "root_depth"]
+            }
         },
         {
             "id": 2,
@@ -28,7 +34,10 @@
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
             "pH": [5.5, 6.5],
-            "drainage": "Drainage.WELL_DRAINED"
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "5": ["fruit_weight", "length", "temperature", "sun", "pH", "drainage"]
+            }
         },
         {
             "id": 3,
@@ -41,7 +50,41 @@
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
             "pH": [5.5, 7.0],
-            "drainage": "Drainage.WELL_DRAINED"
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "6": ["length", "sun", "soil", "pH", "drainage"],
+                "7": ["fruit_weight"]
+            }
+        }
+    ],
+    "works_cited": [
+        {
+            "id": 1,
+            "citation": "https://www.rareseeds.com/corn-hopi-turquoise"
+        },
+        {
+            "id": 2,
+            "citation": "https://homeguides.sfgate.com/germination-hopi-blue-maize-74048.html"
+        },
+        {
+            "id": 3,
+            "citation": "https://turtletreeseed.org/product/hopi-blue-corn-seeds/"
+        },
+        {
+            "id": 4,
+            "citation": "https://link.springer.com/chapter/10.1007/978-1-4612-2694-9_4"
+        },
+        {
+            "id": 5,
+            "citation": "https://www.wildroseheritageseed.com/store/p255/Squash_-_Hopi_Orange.html"
+        },
+        {
+            "id": 6,
+            "citation": "https://www.backyardgardener.com/plantname/phaseolus-vulgaris-hopi-purple-string-bean/"
+        },
+        {
+            "id": 7,
+            "citation": "https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/green-beans#:~:text=A%20total%20of%20100%20seed%20weight%20varied%20between%205.10%20and%2028.80%C2%A0g%20and%20had%20an%20average%20of%2014.55%C2%A0g"
         }
     ]
 }
