@@ -21,7 +21,9 @@ class GrowthHabit(IntEnum):
 
 @unique
 class Sun(IntEnum):
+    # 0 - 2 hours a day
     FULL_SHADE  = 0
+    # 2 - 6 hours a day
     PARTIAL_SUN = 1
     # 6 - 8 hours a day
     FULL_SUN    = 2

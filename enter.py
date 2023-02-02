@@ -27,14 +27,16 @@ def print_help():
 
 # Converts value from unit to the internal standard unit
 def convert_to_unit(value):
+    if not ' ' in value:
+        raise Exception(f'Scalar value \'{value}\' needs a space in between the number and the unit')
     val, unit = value.split(' ')
     val = float(val)
     unit = unit.lower()
     if unit in ['m', 'g', 'c']:
         return val
     if unit not in _conversions:
-        raise Exception(f'Unknown unit {unit}')
-    return _conversions[unit](val)
+        raise Exception(f'Unknown unit \'{unit}\'')
+    return round(_conversions[unit](val), 3)
 
 # Returns the last ID from a table
 def get_last_id(con, table):
@@ -47,7 +49,10 @@ def select_by(con, table, column, value):
 # Parses a string representing an enum into its integer value
 def parse_enum(name):
     enum = name.split('.')
-    return getattr(defs, enum[0])[enum[1]].value
+    try:
+        return getattr(defs, enum[0])[enum[1]].value
+    except:
+        raise Exception(f'Unknown enum \'{name}\'')
 
 # Process plant table bulk data entry
 def enter_data(db, filename):

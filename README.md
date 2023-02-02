@@ -50,6 +50,7 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
       "growth_habit": GrowthHabit enum value,
       "height": [scalar, scalar],
       "spread": [scalar, scalar],
+      "length": [scalar, scalar],
       "root_spread": [scalar, scalar],
       "root_depth": [scalar, scalar],
       "nitrogen": Nitrogen enum value,

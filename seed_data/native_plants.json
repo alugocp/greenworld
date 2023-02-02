@@ -1,0 +1,158 @@
+{
+    "plants": [
+        {
+            "id": 1,
+            "name": "Hopi Black Dye Sunflower",
+            "species": "helianthus annuus",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["7 ft", "11 ft"],
+            "spread": ["2 ft", "2 ft"],
+            "root_spread": ["1 ft", "3 ft"],
+            "root_depth": ["5 ft", "10 ft"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "temperature": ["65 F", "75 F"],
+            "sun": "Sun.FULL_SUN",
+            "pH": [5.5, 7.8],
+            "drainage": "Drainage.SOMEWHAT_EXCESSIVELY_DRAINED",
+            "citations": {
+                "1": ["temperature", "sun"],
+                "2": ["height", "spread"],
+                "3": ["root_depth", "pH"],
+                "4": ["root_spread"]
+            }
+        },
+        {
+            "id": 2,
+            "name": "Purple Passionflower",
+            "species": "passiflora incarnata",
+            "growth_habit": "GrowthHabit.VINE",
+            "spread": ["6 ft", "8 ft"],
+            "length": ["5 ft", "25 ft"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "temperature": ["55 F", "65 F"],
+            "sun": "Sun.PARTIAL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.1, 7.5],
+            "drainage": "Drainage.MODERATELY_WELL_DRAINED",
+            "citations": {
+                "5": ["length", "sun", "soil"],
+                "6": ["drainage"],
+                "7": ["spread"],
+                "8": ["temperature", "pH"]
+            }
+        },
+        {
+            "id": 3,
+            "name": "American Black Elderberry",
+            "species": "sambucus canadensis",
+            "growth_habit": "GrowthHabit.SHRUB",
+            "height": ["5 ft", "12 ft"],
+            "spread": ["3 ft", "6 ft"],
+            "root_spread": ["2 ft", "2 ft"],
+            "root_depth": ["20 in", "20 in"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.PARTIAL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [5.5, 6.5],
+            "drainage": "Drainage.MODERATELY_WELL_DRAINED",
+            "citations": {
+                "9": ["height", "spread", "root_spread", "root_depth", "sun", "soil", "pH", "drainage"]
+            }
+        },
+        {
+            "id": 4,
+            "name": "Ramps",
+            "species": "allium tricoccum",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["6 in", "10 in"],
+            "spread": ["4 in", "8 in"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "temperature": ["70 F", "75 F"],
+            "sun": "Sun.FULL_SHADE",
+            "soil": "Soil.LOAM",
+            "pH": [6.8, 7.2],
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "10": ["height", "sun", "soil", "pH"],
+                "11": ["spread", "drainage"],
+                "12": ["temperature"]
+            }
+        },
+        {
+            "id": 5,
+            "name": "American Pokeweed",
+            "species": "phytolacca americana",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["4 ft", "10 ft"],
+            "spread": ["1 ft", "2 ft"],
+            "root_spread": ["4 in", "4 in"],
+            "root_depth": ["1 ft", "1 ft"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.PARTIAL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.0, 8.0],
+            "citations": {
+                "13": ["height", "nitrogen"],
+                "14": ["spread", "root_spread", "root_depth", "sun", "soil", "pH"]
+            }
+        }
+    ],
+    "works_cited": [
+        {
+            "id": 1,
+            "citation": "https://www.rareseeds.com/hopi-black-dye-sunflower"
+        },
+        {
+            "id": 2,
+            "citation": "https://www.grandprismaticseed.com/dye-plants/hopi-black-dye-sunflower"
+        },
+        {
+            "id": 3,
+            "citation": "https://www.sare.org/publications/manage-weeds-on-your-farm/common-sunflower"
+        },
+        {
+            "id": 4,
+            "citation": "https://homeguides.sfgate.com/kinds-roots-sunflowers-have-60427.html"
+        },
+        {
+            "id": 5,
+            "citation": "https://www.wildflower.org/plants/result.php?id_plant=pain6"
+        },
+        {
+            "id": 6,
+            "citation": "https://plants.ces.ncsu.edu/plants/passiflora-incarnata/"
+        },
+        {
+            "id": 7,
+            "citation": "https://www.gardeningwithcharlie.com/grow-care-for-passion-flower-vine/"
+        },
+        {
+            "id": 8,
+            "citation": "https://www.thespruce.com/passion-flowers-1403114"
+        },
+        {
+            "id": 9,
+            "citation": "https://www.thespruce.com/american-elderberry-sambucus-canadensis-3269208"
+        },
+        {
+            "id": 10,
+            "citation": "https://www.wildflower.org/plants/result.php?id_plant=altr3"
+        },
+        {
+            "id": 11,
+            "citation": "https://www.prairiemoon.com/allium-tricoccum-wild-leek-prairie-moon-nursery.html"
+        },
+        {
+            "id": 12,
+            "citation": "https://www.everwilde.com/store/Allium-tricoccum-WildFlower-Seed.html"
+        },
+        {
+            "id": 13,
+            "citation": "https://www.inaturalist.org/guide_taxa/528789"
+        },
+        {
+            "id": 14,
+            "citation": "https://plants.ces.ncsu.edu/plants/phytolacca-americana/"
+        }
+    ]
+}
