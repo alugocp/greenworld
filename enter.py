@@ -59,110 +59,100 @@ def enter_data(db, filename):
 # Process plant table bulk data entry for a JSON file
 def enter_data_json(db, filename):
     print('')
-    logging.info('Writing data from %s', filename)
+    logging.info('Writing data from %s...', filename)
     with open(filename, 'r', encoding = 'utf-8') as file:
         data = json.load(file)
     with db.connect() as con:
-
-        # Map local references to the database (handles if they exist already or not)
-        works_cited_map = {}
-        if 'works_cited' in data:
-            logging.info('Writing works cited...')
-            last_reference_id = get_last_id(con, schema.works_cited_table)
-            for row in data['works_cited']:
-                values = copy.deepcopy(row)
-                works_cited_result = select_by(con, schema.works_cited_table, 'citation', values['citation'])
-                if works_cited_result:
-                    works_cited_map[row['id']] = works_cited_result['id']
-                else:
-                    values['id'] = last_reference_id + 1
-                    works_cited_map[row['id']] = values['id']
-                    stmt = schema.works_cited_table.insert().values(**values)
-                    last_reference_id += 1
-                    logging.info(values)
-                    con.execute(stmt)
-            print('')
+        works_cited_map = get_works_cited_map(con, data)
 
         # Sanitize and write plant data to database
-        if 'plants' in data:
-            logging.info('Writing plant and interaction data...')
-            last_plant_id = get_last_id(con, schema.plants_table)
-            last_allelochemical_id = get_last_id(con, schema.allelochemicals_table)
-            last_species_id = get_last_id(con, schema.other_species_table)
-            for row in data['plants']:
-                values = copy.deepcopy(row)
-                values['id'] = last_plant_id + 1
-                last_plant_id += 1
-                allelochemicals = values.pop('allelochemicals') if 'allelochemicals' in values else []
-                interactions = values.pop('interactions') if 'interactions' in values else []
+        logging.info('Writing plant and interaction data...')
+        last_plant_id = get_last_id(con, schema.plants_table)
+        for row in (data['plants'] or []):
+            values = copy.deepcopy(row)
+            values['id'] = last_plant_id + 1
+            last_plant_id += 1
+            allelopathy = values.pop('allelopathy') if 'allelopathy' in values else []
+            ecology = values.pop('ecology') if 'ecology' in values else []
 
-                # Map citations 
-                mapped_citations = {}
-                for cite_key in (values['citations'] or {}).keys():
-                    mapped_citations[str(works_cited_map[int(cite_key)])] = values['citations'][cite_key]
-                values['citations'] = mapped_citations
+            # Map citations
+            mapped_citations = {}
+            for cite_key in (values['citations'] or {}).keys():
+                mapped_citations[str(works_cited_map[int(cite_key)])] = values['citations'][cite_key]
+            values['citations'] = mapped_citations
 
-                # Map general properties of plant data
-                for col, val in values.items():
+            # Map general properties of plant data
+            for col, val in values.items():
 
-                    # Convert enum references to their integer values
-                    if isinstance(schema.plants_table.c[col].type, sqlalchemy.Integer) and isinstance(val, str):
-                        values[col] = parse_enum(val)
+                # Convert enum references to their integer values
+                if isinstance(schema.plants_table.c[col].type, sqlalchemy.Integer) and isinstance(val, str):
+                    values[col] = parse_enum(val)
 
-                    # Convert nonstandard units to internal standard units
-                    if isinstance(schema.plants_table.c[col].type, NumericRangeType) and isinstance(val[0], str):
-                        values[col][0] = convert_to_unit(val[0])
-                        values[col][1] = convert_to_unit(val[1])
+                # Convert nonstandard units to internal standard units
+                if isinstance(schema.plants_table.c[col].type, NumericRangeType) and isinstance(val[0], str):
+                    values[col][0] = convert_to_unit(val[0])
+                    values[col][1] = convert_to_unit(val[1])
 
-                # Write sanitized values to database
-                stmt = schema.plants_table.insert().values(**values)
-                logging.info(values)
-                con.execute(stmt)
+            # Write sanitized values to database
+            logging.info(values)
+            con.execute(schema.plants_table.insert().values(**values))
 
-                # Write allelochemical data
-                for chem in allelochemicals:
-                    chem_result = select_by(con, schema.allelochemicals_table, 'name', chem['name'])
-                    if not chem_result:
-                        chem_result = {
-                            'id': last_allelochemical_id + 1,
-                            'name': chem['name']
-                        }
-                        last_allelochemical_id += 1
-                        stmt = schema.allelochemicals_table.insert().values(**chem_result)
-                        logging.info(chem_result)
-                        con.execute(stmt)
-                    chem_interaction = {
-                        'plant': values['id'],
-                        'allelochemical': chem_result['id'],
-                        'relationship': parse_enum(chem['relationship']),
-                        'citation': works_cited_map[chem['citation']]
-                    }
-                    stmt = schema.allelo_interactions_table.insert().values(**chem_interaction)
-                    logging.info(chem_interaction)
-                    con.execute(stmt)
-
-                # Write species interaction data
-                for inter in interactions:
-                    inter_result = select_by(con, schema.other_species_table, 'species', inter['species'])
-                    if not inter_result:
-                        inter_result = {
-                            'id': last_species_id + 1,
-                            'species': inter['species']
-                        }
-                        last_species_id += 1
-                        stmt = schema.other_species_table.insert().values(**inter_result)
-                        logging.info(inter_result)
-                        con.execute(stmt)
-                    inter_interaction = {
-                        'plant': values['id'],
-                        'species': inter_result['id'],
-                        'relationship': parse_enum(inter['relationship']),
-                        'citation': works_cited_map[inter['citation']]
-                    }
-                    stmt = schema.species_interactions_table.insert().values(**inter_interaction)
-                    logging.info(inter_interaction)
-                    con.execute(stmt)
+            # Handle allelochemical and ecology data
+            process_graphed_fields(
+                con, allelopathy,
+                works_cited_map, values['id'], schema.allelochemicals_table,
+                schema.allelopathy_table,
+                'name',
+                'allelochemical'
+            )
+            process_graphed_fields(
+                con, ecology,
+                works_cited_map, values['id'], schema.other_species_table,
+                schema.ecology_table,
+                'species',
+                'species'
+            )
         con.commit()
+
+# Map local references to the database (handles if they exist already or not)
+def get_works_cited_map(con, data):
+    works_cited_map = {}
+    if 'works_cited' in data:
+        logging.info('Writing works cited...')
+        last_id = get_last_id(con, schema.works_cited_table)
+        for row in data['works_cited']:
+            values = copy.deepcopy(row)
+            works_cited_result = select_by(con, schema.works_cited_table, 'citation', values['citation'])
+            if works_cited_result:
+                works_cited_map[row['id']] = works_cited_result['id']
+            else:
+                values['id'] = last_id + 1
+                works_cited_map[row['id']] = values['id']
+                logging.info(values)
+                con.execute(schema.works_cited_table.insert().values(**values))
+                last_id += 1
+        print('')
+    return works_cited_map
+
+# Write data with a many-to-many relationship to the plants table
+def process_graphed_fields(con, data, works_cited_map, plant_id, entity_table, interaction_table, name_col, foreign_id_col):
+    last_id = get_last_id(con, entity_table)
+    for row in data:
+        result = select_by(con, entity_table, name_col, row[name_col])
+        if not result:
+            result = { 'id': last_id + 1 }
+            result[name_col] = row[name_col]
+            last_id += 1
+            logging.info(result)
+            con.execute(entity_table.insert().values(**result))
+        interaction = {
+            'plant': plant_id,
+            'relationship': parse_enum(row['relationship']),
+            'citation': works_cited_map[row['citation']]
+        }
+        interaction[foreign_id_col] = result['id']
+        logging.info(interaction)
+        con.execute(interaction_table.insert().values(**interaction))
 
 def main(args):
     os.environ['GREENWORLD_DB'] = 'sqlite:///greenworld.db'

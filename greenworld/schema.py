@@ -85,7 +85,7 @@ other_species_table = Table('other_species', meta,
 )
 
 # Tracks relationships between plant and non-plant species
-species_interactions_table = Table('species_interactions', meta,
+ecology_table = Table('ecology', meta,
     Column('plant', Integer, ForeignKey('plants.id')),
     Column('species', Integer, ForeignKey('other_species.id')),
     Column('relationship', Integer),
@@ -99,7 +99,7 @@ allelochemicals_table = Table('allelochemicals', meta,
 )
 
 # Represents which plants create and/or react to certain allelochemicals
-allelo_interactions_table = Table('allelo_interactions', meta,
+allelopathy_table = Table('allelopathy', meta,
     Column('plant', Integer, ForeignKey('plants.id')),
     Column('allelochemical', Integer, ForeignKey('allelochemicals.id')),
     Column('relationship', Integer),

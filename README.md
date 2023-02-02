@@ -62,11 +62,11 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
           works_cited.id: [string, ...],
           ...
       },
-      "allelochemicals": [
+      "allelopathy": [
           {"name": string, "relationship": AlleloRelation enum value, "citation": integer},
           ...
       ],
-      "interactions": [
+      "ecology": [
           {"species": string, "relationship": SpeciesRelation enum value, "citation": integer},
           ...
       ]
