@@ -8,6 +8,7 @@ from sqlalchemy import (
     Table,
     Column,
     Integer,
+    Numeric,
     String,
     JSON
 )
@@ -39,6 +40,8 @@ memory_table = Table('memory', meta,
 reports_table = Table('reports', meta,
     Column('plant1', Integer, ForeignKey('plants.id')),
     Column('plant2', Integer, ForeignKey('plants.id')),
+    Column('range_union_min', Numeric), # The close end of the union of ranges associated with this report
+    Column('range_union_max', Numeric), # The far end of the union of ranges associated with this report
     Column('report', JSON)
 )
 
@@ -50,7 +53,7 @@ plants_table = Table('plants', meta,
     Column('species', String),
 
     # Morphology
-    Column('growth_habit', Integer),
+    Column('growth_habit', Integer), # GrowthHabit enum
     Column('fruit_weight', NumericRangeType), # Grams
     Column('height', NumericRangeType), # Meters
     Column('spread', NumericRangeType), # From one extermity to the other (Meters)
@@ -59,14 +62,14 @@ plants_table = Table('plants', meta,
     Column('root_depth', NumericRangeType), # Meters
 
     # Nutrients
-    Column('nitrogen', Integer),
+    Column('nitrogen', Integer), # Nitrogen enum
 
     # Preferred environment
     Column('temperature', NumericRangeType), # Celsius
-    Column('sun', Integer),
-    Column('soil', Integer),
-    Column('pH', NumericRangeType),
-    Column('drainage', Integer),
+    Column('sun', Integer), # Sun enum
+    Column('soil', Integer), # Soil enum
+    Column('pH', NumericRangeType), # Floating point pH scale
+    Column('drainage', Integer), # Drainage enum
 
     # Citations
     Column('citations', JSON)
@@ -88,7 +91,7 @@ other_species_table = Table('other_species', meta,
 ecology_table = Table('ecology', meta,
     Column('plant', Integer, ForeignKey('plants.id')),
     Column('species', Integer, ForeignKey('other_species.id')),
-    Column('relationship', Integer),
+    Column('relationship', Integer), # Ecology enum
     Column('citation', Integer, ForeignKey('works_cited.id'))
 )
 
@@ -102,6 +105,6 @@ allelochemicals_table = Table('allelochemicals', meta,
 allelopathy_table = Table('allelopathy', meta,
     Column('plant', Integer, ForeignKey('plants.id')),
     Column('allelochemical', Integer, ForeignKey('allelochemicals.id')),
-    Column('relationship', Integer),
+    Column('relationship', Integer), # Allelopathy enum
     Column('citation', Integer, ForeignKey('works_cited.id'))
 )

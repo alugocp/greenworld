@@ -59,15 +59,15 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
       "pH": [float, float],
       "drainage": Drainage enum value,
       "citations": {
-          works_cited.id: [string, ...],
+          works_cited.id as a string: [string, ...],
           ...
       },
       "allelopathy": [
-          {"name": string, "relationship": AlleloRelation enum value, "citation": integer},
+          {"name": string, "relationship": Allelopathy enum value, "citation": works_cited.id},
           ...
       ],
       "ecology": [
-          {"species": string, "relationship": SpeciesRelation enum value, "citation": integer},
+          {"species": string, "relationship": Ecology enum value, "citation": works_cited.id},
           ...
       ]
     },

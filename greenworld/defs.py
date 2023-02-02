@@ -60,7 +60,7 @@ class Nitrogen(IntEnum):
     HEAVY   = 2
 
 @unique
-class SpeciesRelation(IntEnum):
+class Ecology(IntEnum):
     # The non-plant species causes some disease in the plant species
     PATHOGEN       = 0
     # The non-plant species preys upon the plant species
@@ -71,7 +71,7 @@ class SpeciesRelation(IntEnum):
     POLLINATOR     = 3
 
 @unique
-class AlleloRelation(IntEnum):
+class Allelopathy(IntEnum):
     # The plant secretes this allelochemical into the rhizosphere
     SECRETES = 0
     # The plant is negatively affected by this allelochemical

@@ -50,6 +50,8 @@ def main():
                 con.execute(reports_table.insert().values(
                     plant1 = plant2.id,
                     plant2 = plant1.id,
+                    range_union_min = 0,
+                    range_union_max = 0,
                     report = utils.get_report()
                 ))
             last_plant = plant1
