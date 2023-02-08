@@ -5,8 +5,8 @@ import sys
 import os
 import sqlalchemy
 from sqlalchemy_utils import NumericRangeType
-import schema
-import defs
+from greenworld import schema
+from greenworld import defs
 
 # Conversions table for internal standard units
 _conversions = {

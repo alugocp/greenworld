@@ -1,6 +1,6 @@
 # Drop the reports table from the database
 # Clear the database save state table (which contains the last analyzed pair of plants)
-from schema import (
+from greenworld.schema import (
     init_db,
     reports_table,
     memory_table

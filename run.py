@@ -8,8 +8,8 @@ def get_script(name):
     if name in scripts:
         return scripts[name]
     try:
-        imported = __import__(f'scripts.{name}')
-        module = getattr(imported, name)
+        imported = __import__(f'greenworld.scripts.{name}')
+        module = getattr(getattr(imported, 'scripts'), name)
         scripts[name] = getattr(module, 'main')
         return scripts[name]
     except ModuleNotFoundError:
@@ -17,7 +17,6 @@ def get_script(name):
 
 def main(args):
     os.environ['GREENWORLD_DB'] = 'sqlite:///greenworld.db'
-    sys.path.append('./greenworld')
     logging.basicConfig(level=logging.NOTSET)
     a = 0
 

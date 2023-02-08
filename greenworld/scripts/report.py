@@ -5,10 +5,10 @@
 # • Write the report back to the database
 import logging
 # pylint: disable=unused-import
-import algorithm
+import greenworld.algorithm
 # pylint: enable=unused-import
-import utils
-from schema import (
+from greenworld import utils
+from greenworld.schema import (
     init_db,
     reports_table,
     memory_table,

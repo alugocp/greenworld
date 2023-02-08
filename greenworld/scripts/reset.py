@@ -1,8 +1,8 @@
 # This script hard resets the local database used in this project.
 # It then repopulates the database from the `seed.json` file.
 import logging
-import schema
-import scripts.enter
+from greenworld import schema
+from greenworld.scripts import enter
 
 def main():
     db = schema.init_db()
@@ -16,7 +16,7 @@ def main():
     logging.info('Recreated new schema')
 
     # Seed the database
-    scripts.enter.main(['seed_data/three_sisters.json'])
+    enter.main(['seed_data/three_sisters.json'])
 
 if __name__ == '__main__':
     main()

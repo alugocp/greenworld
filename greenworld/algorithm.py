@@ -1,11 +1,11 @@
 # This module contains the core logic for the Greenworld algorithm.
-from defs import (
+from greenworld.defs import (
     GrowthHabit,
     Nitrogen,
     Drainage,
     Sun
 )
-from utils import (
+from greenworld.utils import (
     overlaps,
     taller_first,
     mirrored,

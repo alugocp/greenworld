@@ -1,6 +1,6 @@
 import sys
 from sqlalchemy.orm import aliased
-from schema import (
+from greenworld.schema import (
     reports_table,
     plants_table,
     init_db

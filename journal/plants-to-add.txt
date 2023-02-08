@@ -9,6 +9,14 @@ Sedge
 White Sage
 Sweet Grass
 Goldenrod
+Chayote Squash
+Cassava
+Echinacea
+May Apple
+Blood Root
+Peanut
+Dragon Fruit
+Blackberry
 
 # Trees
 Black Gum Oak
@@ -18,3 +26,9 @@ Kentucky Coffee Bean
 Honey Locust
 American Chestnut
 Canepa
+Crepe Myrtle
+Huckleberry
+Rhododendron
+Redbud
+Pawpaw
+Custard Apple
