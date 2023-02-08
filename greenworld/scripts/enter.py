@@ -5,15 +5,15 @@ import sys
 import os
 import sqlalchemy
 from sqlalchemy_utils import NumericRangeType
-from greenworld import schema
-from greenworld import defs
+import schema
+import defs
 
 # Conversions table for internal standard units
 _conversions = {
-    'f':   lambda f:   (f - 32) / 1.8,  # Convert to celsius
-    'lbs': lambda lbs: lbs * 453.59237, # Convert to grams
-    'in':  lambda x:   x * 0.0254,      # Convert to meters
-    'ft':  lambda ft:  ft * 0.3048      # Convert to meters
+    'f':   lambda f:   (f - 32) / 1.8,  # Convert fahrenheit to celsius
+    'lbs': lambda lbs: lbs * 453.59237, # Convert pounds to grams
+    'in':  lambda i:   i * 0.0254,      # Convert inches to meters
+    'ft':  lambda ft:  ft * 0.3048      # Convert feet to meters
 }
 
 # Prints helpful information to the terminal
@@ -160,8 +160,6 @@ def process_graphed_fields(con, data, works_cited_map, plant_id, entity_table, i
         con.execute(interaction_table.insert().values(**interaction))
 
 def main(args):
-    os.environ['GREENWORLD_DB'] = 'sqlite:///greenworld.db'
-    logging.basicConfig(level=logging.NOTSET)
     db = schema.init_db()
     a = 0
     while a < len(args):

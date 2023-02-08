@@ -37,6 +37,7 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [Screening of Alleopathic Activity of the Leaves of Nicotiana plumbaginifolia Viv. on Some Selected Crops in Aligarh, Uttar Pradesh, India](https://www.sciencepublishinggroup.com/journal/paperinfo?journalid=610&doi=10.11648/j.ijpp.20180201.11) was referenced by the previous paper when it claimed that only few alleochemicals are recognized
 - [Allelopathic Plants. 7. Sunflower (Helianthus annuus L.)](https://www.researchgate.net/publication/287761119_Allelopathic_Plants_7_Sunflower_Helianthus_annuus_L) shows that Sunflower allelopathy negatively affects all crops, but has a lesser effect on the Gramineae family
 - [Recent advances in allelopathy for weed control: from knowledge to applications](https://onlinelibrary.wiley.com/doi/abs/10.1002/ps.5355) curates some allelochemical discoveries from the last 10 years and list which classes of molecules they belong to
+- [Plant Allelopathy: 10 Plants That Produce Allelopathic Chemicals](https://luv2garden.com/allelopathic-plants/) gives insight into certain allelopaths' exact relationship to other species
 
 # Morphology and Growth Habit
 - [Evolution of the plant body plan](https://pubmed.ncbi.nlm.nih.gov/30612613/)

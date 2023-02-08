@@ -1,5 +1,20 @@
-Black Locust
-Black Walnut
-Milkweed
-Black Eyed Susan
-American Groundnut
+Lowbush Cranberry
+Highbush Cranberry
+Sumac
+Yaupon Holly
+Amaranth
+Sunchoke
+Ground Cherry
+Sedge
+White Sage
+Sweet Grass
+Goldenrod
+
+# Trees
+Black Gum Oak
+White Oak
+Juniper
+Kentucky Coffee Bean
+Honey Locust
+American Chestnut
+Canepa
