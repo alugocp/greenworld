@@ -71,14 +71,14 @@ def enter_data_json(db, filename):
         works_cited_map = get_works_cited_map(con, data)
 
         # Sanitize and write plant data to database
+        ecology_data = {}
         logging.info('Writing plant and interaction data...')
         last_plant_id = get_last_id(con, schema.plants_table)
         for row in (data['plants'] or []):
             values = copy.deepcopy(row)
             values['id'] = last_plant_id + 1
             last_plant_id += 1
-            allelopathy = values.pop('allelopathy') if 'allelopathy' in values else []
-            ecology = values.pop('ecology') if 'ecology' in values else []
+            ecology_data[values['id']] = values.pop('ecology') if 'ecology' in values else []
 
             # Map citations
             mapped_citations = {}
@@ -102,21 +102,9 @@ def enter_data_json(db, filename):
             logging.info(values)
             con.execute(schema.plants_table.insert().values(**values))
 
-            # Handle allelochemical and ecology data
-            process_graphed_fields(
-                con, allelopathy,
-                works_cited_map, values['id'], schema.allelochemicals_table,
-                schema.allelopathy_table,
-                'name',
-                'allelochemical'
-            )
-            process_graphed_fields(
-                con, ecology,
-                works_cited_map, values['id'], schema.other_species_table,
-                schema.ecology_table,
-                'species',
-                'species'
-            )
+        # Handle ecological data
+        for plant_id, data in ecology_data.items():
+            process_ecological_fields(con, works_cited_map, plant_id, data)
         con.commit()
 
 # Map local references to the database (handles if they exist already or not)
@@ -139,25 +127,34 @@ def get_works_cited_map(con, data):
         print('')
     return works_cited_map
 
-# Write data with a many-to-many relationship to the plants table
-def process_graphed_fields(con, data, works_cited_map, plant_id, entity_table, interaction_table, name_col, foreign_id_col):
-    last_id = get_last_id(con, entity_table)
+# Write ecological data with a many-to-many relationship to the database
+def process_ecological_fields(con, works_cited_map, plant_id, data):
+    last_id = get_last_id(con, schema.other_species_table)
     for row in data:
-        result = select_by(con, entity_table, name_col, row[name_col])
+
+        # Retrieve (and/or create) plant or non-plant species
+        is_plant = True
+        result = select_by(con, schema.plants_table, 'species', row['species'])
         if not result:
-            result = { 'id': last_id + 1 }
-            result[name_col] = row[name_col]
+            is_plant = False
+            result = select_by(con, schema.other_species_table, 'species', row['species'])
+        if not result:
+            result = { 'id': last_id + 1, 'species': row['species'], 'name': '' }
             last_id += 1
             logging.info(result)
-            con.execute(entity_table.insert().values(**result))
+            con.execute(schema.other_species_table.insert().values(**result))
         interaction = {
             'plant': plant_id,
             'relationship': parse_enum(row['relationship']),
             'citation': works_cited_map[row['citation']]
         }
-        interaction[foreign_id_col] = result['id']
+        if is_plant:
+            interaction['target'] = result['id']
+            con.execute(schema.ecology_plant_table.insert().values(**interaction))
+        else:
+            interaction['non_plant'] = result['id']
+            con.execute(schema.ecology_other_table.insert().values(**interaction))
         logging.info(interaction)
-        con.execute(interaction_table.insert().values(**interaction))
 
 def main(args):
     db = schema.init_db()

@@ -20,7 +20,10 @@
                 "3": ["root_depth", "pH"],
                 "4": ["root_spread"]
             },
-            "allelopathy": []
+            "ecology": [
+                { "species": "plantae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 30 },
+                { "species": "zea mays", "relationship": "Ecology.NO_ALLELOPATHY", "citation": 30 }
+            ]
         },
         {
             "id": 2,
@@ -80,7 +83,11 @@
                 "11": ["spread", "drainage"],
                 "12": ["temperature"]
             },
-            "allelopathy": []
+            "ecology": [
+                { "species": "robinia pseudoacacia", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 31 },
+                { "species": "phaseolus vulgaris", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 31 },
+                { "species": "apios americana", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 31 }
+            ]
         },
         {
             "id": 5,
@@ -119,8 +126,7 @@
                 "15": ["height"],
                 "17": ["root_spread", "root_depth", "temperature", "sun", "soil", "pH", "drainage"],
                 "18": ["spread"]
-            },
-            "allelopathy": []
+            }
         },
         {
             "id": 7,
@@ -141,7 +147,9 @@
                 "20": ["root_spread"],
                 "21": ["pH"]
             },
-            "allelopathy": []
+            "ecology": [
+                { "species": "plantae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 19 }
+            ]
         },
         {
             "id": 8,
@@ -197,8 +205,7 @@
                 "27": ["root_depth", "pH"],
                 "28": ["temperature"],
                 "29": ["fruit_weight"]
-            },
-            "allelopathy": []
+            }
         }
     ],
     "works_cited": [
@@ -317,6 +324,14 @@
         {
             "id": 29,
             "citation": "https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/green-beans#:~:text=A%20total%20of%20100%20seed%20weight%20varied%20between%205.10%20and%2028.80%C2%A0g%20and%20had%20an%20average%20of%2014.55%C2%A0g"
+        },
+        {
+            "id": 30,
+            "citation": "https://www.researchgate.net/publication/287761119_Allelopathic_Plants_7_Sunflower_Helianthus_annuus_L"
+        },
+        {
+            "id": 31,
+            "citation": "https://www.epicgardening.com/onion-companion-plants/"
         }
     ]
 }

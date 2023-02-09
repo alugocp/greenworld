@@ -1,8 +1,9 @@
 # This script hard resets the local database used in this project.
 # It then repopulates the database from the `seed.json` file.
 import logging
-from greenworld import schema
 from greenworld.scripts import enter
+from greenworld import schema
+from greenworld import defs
 
 def main():
     db = schema.init_db()
@@ -14,6 +15,16 @@ def main():
     logging.info('Dropped all existing tables')
     schema.meta.create_all(db)
     logging.info('Recreated new schema')
+
+    # Set a plant kingdom value in the other_species table
+    with db.connect() as con:
+        stmt = schema.other_species_table.insert().values(
+            id = defs.PLANTAE,
+            species = 'plantae',
+            name = 'plant kingdom'
+        )
+        con.execute(stmt)
+        con.commit()
 
     # Seed the database
     enter.main([

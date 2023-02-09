@@ -1,5 +1,8 @@
 from enum import IntEnum, unique
 
+# Constant representing the entire plant kingdom
+PLANTAE = 0
+
 @unique
 class GrowthHabit(IntEnum):
     # non woody and non grass-like
@@ -63,20 +66,17 @@ class Nitrogen(IntEnum):
 
 @unique
 class Ecology(IntEnum):
+    # The plant species poisons the target plant or non-plant species
+    NEGATIVE_ALLELOPATHY = 0
+    # The plant species benefits the target plant or non-plant species
+    POSITIVE_ALLELOPATHY = 1
+    # The plant species does not poison nor benefit the target plant or non-plant species
+    NO_ALLELOPATHY       = 2
     # The non-plant species causes some disease in the plant species
-    PATHOGEN       = 0
+    PATHOGEN             = 3
     # The non-plant species preys upon the plant species
-    PREDATOR       = 1
+    PREDATOR             = 4
     # The non-plant species spreads the seeds of the plant species
-    SEED_DISPERSER = 2
+    SEED_DISPERSER       = 5
     # The non-plant species pollinates the plant species
-    POLLINATOR     = 3
-
-@unique
-class Allelopathy(IntEnum):
-    # The plant secretes this allelochemical into the rhizosphere
-    SECRETES = 0
-    # The plant is negatively affected by this allelochemical
-    NEGATIVE = 1
-    # The plant is positively affected by this allelochemical
-    POSITIVE = 2
+    POLLINATOR           = 6

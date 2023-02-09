@@ -47,10 +47,10 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
 {
   "plants": [
     {
-      "id": integer,
-      "name": string,
-      "species": string,
-      "growth_habit": GrowthHabit enum value,
+      "id": integer, // required
+      "name": string, // required
+      "species": string, // required
+      "growth_habit": GrowthHabit enum value, // required
       "fruit_weight": [scalar, scalar],
       "height": [scalar, scalar],
       "spread": [scalar, scalar],
@@ -63,14 +63,10 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
       "soil": Soil enum value,
       "pH": [float, float],
       "drainage": Drainage enum value,
-      "citations": {
-          works_cited.id as a string: [string, ...],
+      "citations": { // required
+          works_cited.id as a string: [plant field, ...],
           ...
       },
-      "allelopathy": [
-          {"name": string, "relationship": Allelopathy enum value, "citation": works_cited.id},
-          ...
-      ],
       "ecology": [
           {"species": string, "relationship": Ecology enum value, "citation": works_cited.id},
           ...
@@ -80,8 +76,8 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
   ],
   "works_cited": [
     {
-      "id": integer,
-      "citation": string
+      "id": integer, // required
+      "citation": string // required
     },
     ...
   ]
