@@ -19,6 +19,7 @@ db = schema.init_db()
 plant_field_labels = {
     'id': 'Internal ID',
     'growth_habit': 'Growth Habit',
+    'fruit_weight': 'Fruit Weight',
     'height': 'Height',
     'spread': 'Spread',
     'length': 'Length',
@@ -59,6 +60,7 @@ plant_enum_values = {
     ]
 }
 
+# Internal transformation functions
 def transform_plant(plant):
     fields = []
     for k, label in plant_field_labels.items():
@@ -71,10 +73,24 @@ def transform_plant(plant):
                 value = str(plant[k])
             else:
                 value = plant_enum_values[k][plant[k]]
-        fields.append('<b>' + label + ':</b> ' + value)
+        field = '<b>' + label + ':</b> ' + value
+        del plant[k]
+        if k in plant['citations']:
+            citation = plant['citations'][k]
+            field += f' <sup><a href="{citation}">citation</a></sup>'
+        fields.append(field)
     plant['fields'] = fields
     return plant
 
+def cite_fields(citations, works_cited):
+    new_citations = {}
+    for k, v in citations.items():
+        citation_link = next(x[1] for x in works_cited if str(x[0]) == k)
+        for field in v:
+            new_citations[field] = citation_link
+    return new_citations
+
+# Endpoints
 @app.route('/')
 def homepage_endpoint():
     return render_template('homepage.html')
@@ -85,10 +101,16 @@ def plant_view_endpoint(species):
     with db.connect() as con:
         stmt = schema.plants_table.select().where(schema.plants_table.c['species'] == species)
         plant = con.execute(stmt).mappings().fetchone()
-    if plant:
-        return render_template('plant.html', plant = transform_plant(dict(plant)))
+        plant = dict(plant) if plant else {}
+        if 'citations' in plant:
+            ids = list(plant['citations'].keys())
+            stmt = schema.works_cited_table.select().where(schema.works_cited_table.c['id'].in_(ids))
+            plant['citations'] = cite_fields(plant['citations'], list(con.execute(stmt).fetchall()))
+    if len(plant.keys()) > 0:
+        return render_template('plant.html', plant = transform_plant(plant))
     return f'Plant \'{species}\' not found', 404
 
+# Main script
 if __name__ == '__main__':
     # TODO this function is not intended for production use, please rewrite before launch
     # https://flask.palletsprojects.com/en/2.2.x/api/#flask.Flask.run
