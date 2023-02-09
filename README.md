@@ -21,6 +21,9 @@ python3 -m pylint $(git ls-files "*.py")
 
 # Performs unit tests
 python3 run.py test
+
+# Starts the web server
+python3 server/app.py
 ```
 
 Then you can use the following commands while interacting with the database:

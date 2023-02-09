@@ -1,0 +1,27 @@
+<!doctype html>
+<title>Greenworld</title>
+
+<h3>
+    Welcome to Greenworld!
+</h3>
+<p>
+    Search for plants and their guilds:
+</p>
+
+<input
+    id = "search-field"
+    type = "text"
+    placeholder = "scientific name"/>
+<button
+    onclick = "search_plant()">
+    Search
+</button>
+
+<script>
+
+function search_plant() {
+    const input = document.getElementById('search-field');
+    window.location = `http://localhost:2017/plant/${input.value}`;
+}
+
+</script>

@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Greenworld</title>
+
+<h3>
+    {{ plant['name'] }}
+</h3>
+<p>
+    <i>{{ plant['species'] }}</i>
+</p>
+
+{% for field in plant['fields']: %}
+<p>
+    {{ field|safe }}
+</p>
+{% endfor %}
