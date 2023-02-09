@@ -99,16 +99,34 @@ def homepage_endpoint():
 def plant_view_endpoint(species):
     species = unquote_plus(species)
     with db.connect() as con:
-        stmt = schema.plants_table.select().where(schema.plants_table.c['species'] == species)
+        stmt = schema.plants_table.select().where(schema.plants_table.c.species == species)
         plant = con.execute(stmt).mappings().fetchone()
         plant = dict(plant) if plant else {}
         if 'citations' in plant:
             ids = list(plant['citations'].keys())
-            stmt = schema.works_cited_table.select().where(schema.works_cited_table.c['id'].in_(ids))
+            stmt = schema.works_cited_table.select().where(schema.works_cited_table.c.id.in_(ids))
             plant['citations'] = cite_fields(plant['citations'], list(con.execute(stmt).fetchall()))
     if len(plant.keys()) > 0:
         return render_template('plant.html', plant = transform_plant(plant))
     return f'Plant \'{species}\' not found', 404
+
+@app.route('/report/<species1>/<species2>')
+def report_view_endpoint(species1, species2):
+    species1 = unquote_plus(species1)
+    species2 = unquote_plus(species2)
+    error_404 = f'No report for plants \'{species1}\' and \'{species2}\''
+    with db.connect() as con:
+        stmt = schema.plants_table.select().where(schema.plants_table.c.species.in_([species1, species2]))
+        plants = list(con.execute(stmt).mappings().fetchall())
+        if len(plants) != 2:
+            return error_404, 404
+        if plants[1].id < plants[0].id:
+            plants = [plants[1], plants[0]]
+        stmt = schema.reports_table.select().where(schema.reports_table.c.plant1 == plants[0].id).where(schema.reports_table.c.plant2 == plants[1].id)
+        report = dict(con.execute(stmt).mappings().fetchone())
+        if not report:
+            return error_404, 404
+        return render_template('report.html', report = report, plant1 = plants[0], plant2 = plants[1])
 
 # Main script
 if __name__ == '__main__':

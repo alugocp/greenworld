@@ -65,6 +65,16 @@ def nitrogen_relationship(plant1, plant2):
         return (dist, dist * 2), f'{plant1.name} and {plant2.name} may compete for soil nitrogen'
 
 @rule
+@mirrored
+@ensure(both = ['root_depth'], fields2 = ['drainage'])
+def roots_break_up_soil(plant1, plant2):
+    if plant1.root_depth > plant2.root_depth and plant2.drainage >= Drainage.WELL_DRAINED:
+        dist1 = reduce_intervals(plant1, plant2, 'spread', 'upper') / 2
+        dist2 = reduce_intervals(plant1, plant2, 'root_spread', 'lower')
+        dist = None if dist1 == 0 and dist2 == 0 else (dist1, dist2)
+        return dist, f'{plant1.name} can break up the soil for {plant2.name} to get better drainage'
+
+@rule
 @ensure(both = ['temperature'])
 def match_temperature(plant1, plant2):
     if not overlaps(plant1.temperature, plant2.temperature):
@@ -94,15 +104,5 @@ def match_drainage(plant1, plant2):
 def large_vines_shade_weeds(plant1, plant2):
     if plant1.nitrogen == Nitrogen.HEAVY and plant1.growth_habit == GrowthHabit.VINE:
         return None, f'{plant1.name} can shade out weeds around {plant2.name}'
-
-@rule
-@mirrored
-@ensure(both = ['root_depth'], fields2 = ['drainage'])
-def roots_break_up_soil(plant1, plant2):
-    if plant1.root_depth > plant2.root_depth and plant2.drainage >= Drainage.WELL_DRAINED:
-        dist1 = reduce_intervals(plant1, plant2, 'spread', 'upper') / 2
-        dist2 = reduce_intervals(plant1, plant2, 'root_spread', 'lower')
-        dist = None if dist1 == 0 and dist2 == 0 else (dist1, dist2)
-        return dist, f'{plant1.name} can break up the soil for {plant2.name} to get better drainage'
 
 # pylint: enable=inconsistent-return-statements

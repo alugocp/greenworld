@@ -1,5 +1,5 @@
 <!doctype html>
-<title>Greenworld</title>
+<title>Greenworld - {{ plant['name'] }}</title>
 
 <h3>
     {{ plant['name'] }}
@@ -8,7 +8,7 @@
     <i>{{ plant['species'] }}</i>
 </p>
 
-{% for field in plant['fields']: %}
+{% for field in plant['fields'] %}
 <p>
     {{ field|safe }}
 </p>

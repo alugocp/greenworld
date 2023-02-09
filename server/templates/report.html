@@ -1,0 +1,59 @@
+<!doctype html>
+<title>Greenworld - {{ plant1['name'] }} x {{ plant2['name'] }}</title>
+
+<h3>
+    {{ plant1['name'] }} x {{ plant2['name'] }}
+</h3>
+
+<p>
+    <b>Suggested range: </b>
+    <span id = "suggested">{{ report['range_union_min']|round(3) }}m - {{ report['range_union_max']|round(3) }}m</span>
+</p>
+
+<table>
+{% for pair in report['report'] %}
+    {% set interval, reason = pair %}
+    <tr>
+        {% if interval %}
+            {% set lower, upper = interval %}
+            <td><input type = "checkbox" onchange = "clicked(event, {{ loop.index0 }})" checked /></td>
+            <td>{{ lower }}m - {{ upper }}m</td>
+        {% else %}
+            <td></td>
+            <td></td>
+        {% endif %}
+        <td>{{ reason }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+<script>
+const intervals = [
+{% for pair in report['report'] %}
+    {% set interval, _ = pair %}
+    {% if interval %}
+        {{ interval }},
+    {% endif %}
+{% endfor %}
+    undefined
+].filter(x => x);
+
+const activated = [];
+for (let a = 0; a < intervals.length; a++) {
+    activated.push(true);
+}
+
+function clicked(e, index) {
+    activated[index] = e.target.checked;
+    let lower = intervals.filter((x, i) => activated[i]).reduce((acc, x) => Math.min(x[0], acc), Number.MAX_VALUE);
+    let upper = intervals.filter((x, i) => activated[i]).reduce((acc, x) => Math.max(x[1], acc), -1);
+    if (lower === Number.MAX_VALUE) {
+        lower = 0;
+    }
+    if (upper === -1) {
+        upper = 0;
+    }
+    document.getElementById('suggested').innerHTML = `${lower}m - ${upper}m`;
+}
+
+</script>
