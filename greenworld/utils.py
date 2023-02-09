@@ -24,12 +24,19 @@ def get_rules():
 def overlaps(a, b):
     return min(a.upper, b.upper) - max(a.lower, b.lower) >= 0
 
+def reduce_intervals(plant1, plant2, field1, field2):
+    return (getattr(plant1[field1], field2) if plant1[field1] else 0) + (getattr(plant2[field1], field2) if plant2[field1] else 0)
+
 # Adds any valid information to the current report
 def rule(func):
     def wrapper(plant1, plant2):
         pair = func(plant1, plant2)
         if pair:
-            REPORT.append(pair)
+            interval, reason = pair
+            if interval:
+                dist1, dist2 = interval
+                interval = (round(float(min(dist1, dist2)), 3), round(float(max(dist1, dist2)), 3))
+            REPORT.append((interval, reason))
     RULES.append(wrapper)
     return wrapper
 

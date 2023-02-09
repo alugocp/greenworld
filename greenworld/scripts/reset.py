@@ -16,7 +16,10 @@ def main():
     logging.info('Recreated new schema')
 
     # Seed the database
-    enter.main(['seed_data/three_sisters.json'])
+    enter.main([
+        'seed-data/three-sisters.json',
+        'seed-data/native-plants.json'
+    ])
 
 if __name__ == '__main__':
     main()

@@ -20,7 +20,8 @@ def main():
         for row in result:
             sys.stdout.write(f'{number}) \033[4m{row[0]} x {row[1]}\033[0m\n')
             for a in row[2]:
-                sys.stdout.write(f'• {a}\n')
+                _, reason = a
+                sys.stdout.write(f'• {reason}\n')
             sys.stdout.write('\n')
             number += 1
 

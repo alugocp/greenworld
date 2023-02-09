@@ -3,6 +3,7 @@
 # • Go through each pair of plants starting at the last analyzed pair
 # • Run algorithm modules on them by a database check
 # • Write the report back to the database
+import math
 import logging
 # pylint: disable=unused-import
 import greenworld.algorithm
@@ -34,6 +35,20 @@ def get_plants(con, where = None):
         stmt = stmt.where(where)
     return con.execute(stmt)
 
+# Calculates the accumulated suggested range from this report
+def get_range_union(report):
+    max_dist = 0
+    min_dist = math.inf
+    for pair in report:
+        interval, _ = pair
+        if interval:
+            dist1, dist2 = interval
+            min_dist = min(min_dist, dist1)
+            max_dist = max(max_dist, dist2)
+    if min_dist == math.inf:
+        min_dist = 0
+    return min_dist, max_dist
+
 # The main loop for companionship reporting
 def main():
     db = init_db()
@@ -47,12 +62,14 @@ def main():
                 utils.new_report()
                 for rule in utils.get_rules():
                     rule(plant2, plant1)
+                report = utils.get_report()
+                union_min, union_max = get_range_union(report)
                 con.execute(reports_table.insert().values(
                     plant1 = plant2.id,
                     plant2 = plant1.id,
-                    range_union_min = 0,
-                    range_union_max = 0,
-                    report = utils.get_report()
+                    range_union_min = union_min,
+                    range_union_max = union_max,
+                    report = report
                 ))
             last_plant = plant1
         if last_plant:
