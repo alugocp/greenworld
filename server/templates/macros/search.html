@@ -1,0 +1,13 @@
+
+{% macro render(command) -%}
+<input
+    id = "search-field"
+    type = "text"
+    onkeyup = "check_enter(event)"
+    placeholder = "scientific name"/>
+<button
+    id = "search-button"
+    onclick = "{{ command }}">
+    Search
+</button>
+{%- endmacro -%}

@@ -11,7 +11,8 @@ sys.path.append('.')
 from greenworld import schema
 app = Flask(
     'Greenworld',
-    template_folder = 'server/templates'
+    template_folder = 'server/templates',
+    static_folder = 'server/static'
 )
 os.environ['GREENWORLD_DB'] = 'sqlite:///greenworld.db'
 db = schema.init_db()
@@ -19,6 +20,7 @@ db = schema.init_db()
 # Helpful values
 plant_field_labels = {
     'id': 'Greenworld ID',
+    'family': 'Family',
     'growth_habit': 'Growth Habit',
     'fruit_weight': 'Fruit Weight',
     'height': 'Height',
@@ -35,6 +37,7 @@ plant_field_labels = {
 }
 
 plant_field_units = {
+    'family': '',
     'fruit_weight': 'g',
     'height': 'm',
     'spread': 'm',
@@ -90,11 +93,11 @@ def transform_plant(plant):
         elif isinstance(plant[k], DecimalInterval):
             value = f'{plant[k].lower}{plant_field_units[k]} - {plant[k].upper}{plant_field_units[k]}'
         else:
-            if k == 'id':
+            if k in ['id', 'family']:
                 value = str(plant[k])
             else:
                 value = plant_enum_values[k][plant[k]]
-        field = '<td><b>' + label + ':</b></td><td>' + value + '<td>'
+        field = '<td><b>' + label + '</b></td><td>' + value + '</td>'
         del plant[k]
         if k in plant['citations']:
             citation = plant['citations'][k]
@@ -177,7 +180,7 @@ def report_view_endpoint(species1, species2):
         report = dict(con.execute(stmt).mappings().fetchone())
         if not report:
             return error_404, 404
-        for plant, i in plants.enumerate():
+        for i, plant in enumerate(plants):
             plants[i] = process_plant_dict(con, plant)
         return render_template('report.html', report = report, plant1 = plants[0], plant2 = plants[1])
 

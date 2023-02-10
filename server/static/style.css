@@ -1,0 +1,72 @@
+
+:root {
+    --background1: #fefefe;
+    --background2: #98b3b2;
+    --background3: #adcccb;
+    --text: #0a0a0a;
+    --link: #fefefe;
+}
+
+/* Tags */
+body {
+    background-color: var(--background1);
+    color: var(--text);
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--link);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--link);
+}
+
+#suggested {
+    text-decoration: underline;
+    font-size: 32px;
+    padding: 0 10px;
+}
+
+/* Plant view */
+.plant-view {
+    display: inline-block;
+    background-color: var(--background2);
+    padding: 15px 10px;
+}
+
+.plant-view h3 {
+    margin: 0 0 10px 0;
+}
+
+.plant-view hr {
+    border: solid 1px var(--text);
+}
+
+.plant-view .ecological:nth-child(2n) {
+    background-color: var(--background3);
+}
+
+/* Ranges table */
+.ranges-table {
+    background-color: var(--background2);
+}
+
+.ranges-table tr:nth-child(2n) {
+    background-color: var(--background3);
+}

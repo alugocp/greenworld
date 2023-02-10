@@ -1,16 +1,18 @@
 <!doctype html>
 <title>Greenworld - {{ plant1['name'] }} x {{ plant2['name'] }}</title>
+<link rel = "stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+<script>{% include 'script.js' %}</script>
 
-<h3>
+<h2>
     {{ plant1['name'] }} x {{ plant2['name'] }}
-</h3>
+</h2>
 
+<!-- Suggested ranges -->
 <p>
-    <b>Suggested range: </b>
+    <b>Suggested range:</b>
     <span id = "suggested">{{ report['range_union_min']|round(3) }}m - {{ report['range_union_max']|round(3) }}m</span>
 </p>
-
-<table>
+<table class = "ranges-table">
 {% for pair in report['report'] %}
     {% set interval, reason = pair %}
     <tr>
@@ -26,6 +28,14 @@
     </tr>
 {% endfor %}
 </table>
+<br>
+<br>
+<br>
+
+<!-- Include plant views -->
+{% import 'macros/plant.html' as plant_view %}
+{{ plant_view.render(plant1, True) }}
+{{ plant_view.render(plant2, True) }}
 
 <script>
 const intervals = [
@@ -57,7 +67,3 @@ function clicked(e, index) {
 }
 
 </script>
-
-{% import 'macros/plant.html' as plant_view %}
-{{ plant_view.render(plant1, True) }}
-{{ plant_view.render(plant2, True) }}

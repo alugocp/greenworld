@@ -1,27 +1,14 @@
 <!doctype html>
 <title>Greenworld</title>
+<link rel = "stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+<script>{% include 'script.js' %}</script>
 
-<h3>
+<h2>
     Welcome to Greenworld!
-</h3>
+</h2>
+
 <p>
     Search for plants and their guilds:
 </p>
-
-<input
-    id = "search-field"
-    type = "text"
-    placeholder = "scientific name"/>
-<button
-    onclick = "search_plant()">
-    Search
-</button>
-
-<script>
-
-function search_plant() {
-    const input = document.getElementById('search-field');
-    window.location = `http://localhost:2017/plant/${input.value}`;
-}
-
-</script>
+{% import 'macros/search.html' as search %}
+{{ search.render('search_plant()') }}
