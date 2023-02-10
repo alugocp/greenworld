@@ -139,7 +139,11 @@ def process_ecological_fields(con, works_cited_map, plant_id, data):
             is_plant = False
             result = select_by(con, schema.other_species_table, 'species', row['species'])
         if not result:
-            result = { 'id': last_id + 1, 'species': row['species'], 'name': '' }
+            result = {
+                'id': last_id + 1,
+                'species': row['species'],
+                'name': row['name'] if 'name' in row else ''
+            }
             last_id += 1
             logging.info(result)
             con.execute(schema.other_species_table.insert().values(**result))

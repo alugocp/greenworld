@@ -69,7 +69,12 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
           ...
       },
       "ecology": [
-          {"species": string, "relationship": Ecology enum value, "citation": works_cited.id},
+          {
+              "species": string, // required
+              "name": string,
+              "relationship": Ecology enum value, // required
+              "citation": works_cited.id // required
+          },
           ...
       ]
     },

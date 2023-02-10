@@ -2,6 +2,7 @@ import os
 import sys
 from urllib.parse import unquote_plus
 from intervals import DecimalInterval
+import sqlalchemy
 from flask import (
     Flask,
     render_template
@@ -17,7 +18,7 @@ db = schema.init_db()
 
 # Helpful values
 plant_field_labels = {
-    'id': 'Internal ID',
+    'id': 'Greenworld ID',
     'growth_habit': 'Growth Habit',
     'fruit_weight': 'Fruit Weight',
     'height': 'Height',
@@ -60,6 +61,16 @@ plant_enum_values = {
     ]
 }
 
+ecology_values = [
+    'Negative allelopathic effect',
+    'Positive allelopathic effect',
+    'No allelopathic effect',
+    'Pathogen',
+    'Predator',
+    'Seed disperser',
+    'Pollinator'
+]
+
 # Internal transformation functions
 def transform_plant(plant):
     fields = []
@@ -73,14 +84,48 @@ def transform_plant(plant):
                 value = str(plant[k])
             else:
                 value = plant_enum_values[k][plant[k]]
-        field = '<b>' + label + ':</b> ' + value
+        field = '<td><b>' + label + ':</b></td><td>' + value + '<td>'
         del plant[k]
         if k in plant['citations']:
             citation = plant['citations'][k]
-            field += f' <sup><a href="{citation}">citation</a></sup>'
+            field += f'<td><a href="{citation}">citation</a></td>'
         fields.append(field)
     plant['fields'] = fields
     return plant
+
+def grab_ecology_data(con, plant_id):
+    ecology = []
+
+    # Aggregate non-plant ecological interactions
+    stmt = sqlalchemy.select(
+        schema.other_species_table.c.name,
+        schema.other_species_table.c.species,
+        schema.ecology_other_table.c.relationship,
+        schema.works_cited_table.c.citation
+    ) \
+    .join(schema.other_species_table, schema.other_species_table.c.id == schema.ecology_other_table.c.non_plant) \
+    .join(schema.works_cited_table, schema.works_cited_table.c.id == schema.ecology_other_table.c.citation) \
+    .where(schema.ecology_other_table.c.plant == plant_id)
+    for row in con.execute(stmt).mappings():
+        row = dict(row)
+        row['relationship'] = ecology_values[row['relationship']]
+        ecology.append(row)
+
+    # Aggregate plant ecological interactions
+    stmt = sqlalchemy.select(
+        schema.plants_table.c.name,
+        schema.plants_table.c.species,
+        schema.ecology_plant_table.c.relationship,
+        schema.works_cited_table.c.citation
+    ) \
+    .join(schema.plants_table, schema.plants_table.c.id == schema.ecology_plant_table.c.target) \
+    .join(schema.works_cited_table, schema.works_cited_table.c.id == schema.ecology_plant_table.c.citation) \
+    .where(schema.ecology_plant_table.c.plant == plant_id)
+    for row in con.execute(stmt).mappings():
+        row = dict(row)
+        row['relationship'] = ecology_values[row['relationship']]
+        ecology.append(row)
+    return ecology
 
 def cite_fields(citations, works_cited):
     new_citations = {}
@@ -102,12 +147,15 @@ def plant_view_endpoint(species):
         stmt = schema.plants_table.select().where(schema.plants_table.c.species == species)
         plant = con.execute(stmt).mappings().fetchone()
         plant = dict(plant) if plant else {}
+        plant_id = plant['id'] if 'id' in plant else 0
         if 'citations' in plant:
             ids = list(plant['citations'].keys())
             stmt = schema.works_cited_table.select().where(schema.works_cited_table.c.id.in_(ids))
             plant['citations'] = cite_fields(plant['citations'], list(con.execute(stmt).fetchall()))
-    if len(plant.keys()) > 0:
-        return render_template('plant.html', plant = transform_plant(plant))
+        if len(plant.keys()) > 0:
+            plant = transform_plant(plant)
+            plant['ecology'] = grab_ecology_data(con, plant_id)
+            return render_template('plant.html', plant = plant)
     return f'Plant \'{species}\' not found', 404
 
 @app.route('/report/<species1>/<species2>')

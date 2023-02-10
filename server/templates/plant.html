@@ -8,8 +8,21 @@
     <i>{{ plant['species'] }}</i>
 </p>
 
+<table>
 {% for field in plant['fields'] %}
-<p>
+<tr>
     {{ field|safe }}
-</p>
+</tr>
 {% endfor %}
+</table>
+
+<p><b>Ecology:</b></p>
+<table>
+{% for interaction in plant['ecology'] %}
+<tr>
+    <td>{{ interaction['name'] }} ({{ interaction['species'] }})</td>
+    <td>{{ interaction['relationship'] }}</td>
+    <td><a href="{{ interaction['citation'] }}">citation</a></td>
+</tr>
+{% endfor %}
+</table>
