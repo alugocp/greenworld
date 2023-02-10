@@ -56,6 +56,7 @@ def main():
     with db.connect() as con:
         last_plant = None
         last_analyzed = get_last_analyzed(con)
+        utils.set_connection(con)
         for plant1 in get_plants(con, plants_table.c.id > last_analyzed).mappings():
             for plant2 in get_plants(con, plants_table.c.id < plant1.id).mappings():
                 logging.info('Analyzing %s x %s...', plant2.name, plant1.name)

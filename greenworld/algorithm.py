@@ -1,13 +1,21 @@
 # This module contains the core logic for the Greenworld algorithm.
 import math
+from greenworld.schema import (
+    other_species_table,
+    ecology_other_table,
+    ecology_plant_table
+)
 from greenworld.defs import (
+    PLANTAE,
     GrowthHabit,
     Nitrogen,
     Drainage,
+    Ecology,
     Sun
 )
 from greenworld.utils import (
     reduce_intervals,
+    get_connection,
     overlaps,
     taller_first,
     mirrored,
@@ -17,6 +25,7 @@ from greenworld.utils import (
 
 # pylint: disable=inconsistent-return-statements
 
+# Rules that will absolutely return a range value
 @rule
 @mirrored
 @ensure(both = ['sun', 'growth_habit'], fields1 = ['fruit_weight'])
@@ -64,6 +73,39 @@ def nitrogen_relationship(plant1, plant2):
         dist = plant1.root_spread.upper + plant2.root_spread.upper
         return (dist, dist * 2), f'{plant1.name} and {plant2.name} may compete for soil nitrogen'
 
+# Rules that may return a range value
+@rule
+@mirrored
+def allelopathy_relationship(plant1, plant2):
+    con = get_connection()
+    relationship = None
+
+    # Grab plant2's family's ID (if it exists)
+    stmt = other_species_table.select().where(other_species_table.c['species'] == plant2.family)
+    plant2_family_id = con.execute(stmt).fetchone()
+    plant2_family_id = plant2_family_id[0] if plant2_family_id else None
+
+    # Calculate exact relationship dynamic
+    stmt = ecology_other_table.select().where(ecology_other_table.c['plant'] == plant1.id)
+    for row in con.execute(stmt).mappings():
+        if (relationship is None and row['non_plant'] == PLANTAE) or row['non_plant'] == plant2_family_id:
+            relationship = row['relationship']
+    stmt = ecology_plant_table.select().where(ecology_plant_table.c['plant'] == plant1.id)
+    for row in con.execute(stmt).mappings():
+        if row['target'] == plant2.id:
+            relationship = row['relationship']
+
+    # Return based on uncovered relationship
+    if relationship == Ecology.POSITIVE_ALLELOPATHY:
+        dist1 = reduce_intervals(plant1, plant2, 'spread', 'upper') / 2
+        dist2 = reduce_intervals(plant1, plant2, 'root_spread', 'lower')
+        dist = None if dist1 == 0 and dist2 == 0 else (dist1, dist2)
+        return dist, f'{plant1.name} is a positive allelopath for {plant2.name}'
+    if relationship == Ecology.NEGATIVE_ALLELOPATHY:
+        dist = reduce_intervals(plant1, plant2, 'root_spread', 'upper')
+        dist = None if dist == 0 else (dist, dist * 2)
+        return dist, f'{plant1.name} is a negative allelopath for {plant2.name}'
+
 @rule
 @mirrored
 @ensure(both = ['root_depth'], fields2 = ['drainage'])
@@ -74,6 +116,7 @@ def roots_break_up_soil(plant1, plant2):
         dist = None if dist1 == 0 and dist2 == 0 else (dist1, dist2)
         return dist, f'{plant1.name} can break up the soil for {plant2.name} to get better drainage'
 
+# Rules that will absolutely not return a range value
 @rule
 @ensure(both = ['temperature'])
 def match_temperature(plant1, plant2):

@@ -51,6 +51,7 @@ plants_table = Table('plants', meta,
     Column('id', Integer, Identity(), primary_key = True),
     Column('name', String, nullable = False),
     Column('species', String, nullable = False),
+    Column('family', String, nullable = False),
 
     # Morphology
     Column('growth_habit', Integer, nullable = False), # GrowthHabit enum

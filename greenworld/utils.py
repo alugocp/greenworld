@@ -1,5 +1,6 @@
 
-# This variable is global for easy module-wide access
+# These variables are global for easy module-wide access
+CONNECTION = None
 REPORT = None
 
 # This variable collects all the algorithm logic methods
@@ -15,6 +16,17 @@ def new_report():
 # Returns the current report to another module
 def get_report():
     return REPORT
+
+# Sets the current SQLAlchemy connection
+def set_connection(con):
+    # pylint: disable=global-statement
+    global CONNECTION
+    # pylint: enable=global-statement
+    CONNECTION = con
+
+# Returns the current SQLAlchemy connection
+def get_connection():
+    return CONNECTION
 
 # Returns the list of rules to another module
 def get_rules():
@@ -40,7 +52,7 @@ def rule(func):
     RULES.append(wrapper)
     return wrapper
 
-# Repeats the decorated function with the tested plants reversed
+# Repeats the decorated function with the tested plants reversed (if nothing was returned the first time)
 def mirrored(func):
     def wrapper(plant1, plant2):
         return func(plant1, plant2) or func(plant2, plant1)

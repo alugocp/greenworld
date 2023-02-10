@@ -4,6 +4,7 @@
             "id": 1,
             "name": "Hopi Black Dye Sunflower",
             "species": "helianthus annuus",
+            "family": "asteraceae",
             "growth_habit": "GrowthHabit.FORB",
             "height": ["7 ft", "11 ft"],
             "spread": ["2 ft", "2 ft"],
@@ -22,13 +23,14 @@
             },
             "ecology": [
                 { "species": "plantae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 30 },
-                { "species": "zea mays", "relationship": "Ecology.NO_ALLELOPATHY", "citation": 30 }
+                { "species": "gramineae", "relationship": "Ecology.NO_ALLELOPATHY", "citation": 30 }
             ]
         },
         {
             "id": 2,
             "name": "Purple Passionflower",
             "species": "passiflora incarnata",
+            "family": "passifloraceae",
             "growth_habit": "GrowthHabit.VINE",
             "fruit_weight": ["35 g", "50 g"],
             "spread": ["6 ft", "8 ft"],
@@ -51,6 +53,7 @@
             "id": 3,
             "name": "American Black Elderberry",
             "species": "sambucus canadensis",
+            "family": "adoxaceae",
             "growth_habit": "GrowthHabit.SHRUB",
             "height": ["5 ft", "12 ft"],
             "spread": ["3 ft", "6 ft"],
@@ -69,6 +72,7 @@
             "id": 4,
             "name": "Ramps",
             "species": "allium tricoccum",
+            "family": "amaryllidaceae",
             "growth_habit": "GrowthHabit.FORB",
             "height": ["6 in", "10 in"],
             "spread": ["4 in", "8 in"],
@@ -84,15 +88,14 @@
                 "12": ["temperature"]
             },
             "ecology": [
-                { "species": "robinia pseudoacacia", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 31 },
-                { "species": "phaseolus vulgaris", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 31 },
-                { "species": "apios americana", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 31 }
+                { "species": "fabaceae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 31 }
             ]
         },
         {
             "id": 5,
             "name": "American Pokeweed",
             "species": "phytolacca americana",
+            "family": "phytolaccaceae",
             "growth_habit": "GrowthHabit.FORB",
             "height": ["4 ft", "10 ft"],
             "spread": ["1 ft", "2 ft"],
@@ -111,6 +114,7 @@
             "id": 6,
             "name": "Black Locust",
             "species": "robinia pseudoacacia",
+            "family": "fabaceae",
             "growth_habit": "GrowthHabit.TREE",
             "height": ["40 ft", "60 ft"],
             "spread": ["20 ft", "20 ft"],
@@ -132,6 +136,7 @@
             "id": 7,
             "name": "Eastern American Black Walnut",
             "species": "juglans nigra",
+            "family": "juglandaceae",
             "growth_habit": "GrowthHabit.TREE",
             "height": ["50 ft", "75 ft"],
             "spread": ["50 ft", "75 ft"],
@@ -155,6 +160,7 @@
             "id": 8,
             "name": "Swamp Milkweed",
             "species": "asclepias incarnata",
+            "family": "apocynaceae",
             "growth_habit": "GrowthHabit.FORB",
             "height": ["3 ft", "4 ft"],
             "spread": ["2 ft", "3 ft"],
@@ -173,6 +179,7 @@
             "id": 9,
             "name": "Black Eyed Susan",
             "species": "rudbeckia hirta",
+            "family": "asteraceae",
             "growth_habit": "GrowthHabit.FORB",
             "height": ["2 ft", "3 ft"],
             "spread": ["1 ft", "2 ft"],
@@ -190,6 +197,7 @@
             "id": 10,
             "name": "American Groundnut",
             "species": "apios americana",
+            "family": "fabaceae",
             "growth_habit": "GrowthHabit.VINE",
             "fruit_weight": ["5.1 g", "28.8 g"],
             "length": ["8 ft", "16 ft"],
