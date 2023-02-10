@@ -12,26 +12,31 @@
     <hr>
 
     <table>
-    {% for field in plant['fields'] %}
-    <tr>
-        {{ field|safe }}
-    </tr>
-    {% endfor %}
+        <tr>
+            <td><b><u>Field</u></b></td>
+            <td><b><u>Value</u></b></td>
+            <td><b><u>Citation</u></b></td>
+        </tr>
+        {% for field in plant['fields'] %}
+            <tr>
+                {{ field|safe }}
+            </tr>
+        {% endfor %}
 
-    <tr><td></td></tr>
-    <tr><td></td></tr>
-    <tr><td></td></tr>
-    <tr><td><b>Ecology</b></td></tr>
-    {% if plant['ecology']|length == 0 %}
-        <tr><td colspan = "3">no ecological interactions</td></tr>
-    {% endif %}
-    {% for interaction in plant['ecology'] %}
-    <tr class = "ecological">
-        <td>{{ interaction['name'] }} ({{ interaction['species'] }})</td>
-        <td>{{ interaction['relationship'] }}</td>
-        <td><a href="{{ interaction['citation'] }}">citation</a></td>
-    </tr>
-    {% endfor %}
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td><b>Ecology</b></td></tr>
+        {% if plant['ecology']|length == 0 %}
+            <tr><td colspan = "3">no ecological interactions</td></tr>
+        {% endif %}
+        {% for interaction in plant['ecology'] %}
+        <tr class = "ecological">
+            <td>{{ interaction['name'] }} ({{ interaction['species'] }})</td>
+            <td>{{ interaction['relationship'] }}</td>
+            <td><a href="{{ interaction['citation'] }}">{{ interaction['citation']|citation_regex }}</a></td>
+        </tr>
+        {% endfor %}
     </table>
 </span>
 {%- endmacro -%}

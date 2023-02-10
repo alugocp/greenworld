@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 from urllib.parse import unquote_plus
 from intervals import DecimalInterval
@@ -101,7 +102,8 @@ def transform_plant(plant):
         del plant[k]
         if k in plant['citations']:
             citation = plant['citations'][k]
-            field += f'<td><a href="{citation}">citation</a></td>'
+            citation_text = citation_regex(citation)
+            field += f'<td><a href="{citation}">{citation_text}</a></td>'
         fields.append(field)
     plant['fields'] = fields
     return plant
@@ -147,6 +149,11 @@ def cite_fields(citations, works_cited):
         for field in v:
             new_citations[field] = citation_link
     return new_citations
+
+# Custom filters
+@app.template_filter()
+def citation_regex(href):
+    return re.search(r'(?:[a-z]+://)?([\w\d]+(\.[\w\d]+)*)/?', href).groups()[0]
 
 # Endpoints
 @app.route('/')
