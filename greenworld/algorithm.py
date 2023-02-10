@@ -38,19 +38,14 @@ def can_vine_climb(plant1, plant2):
 
 @rule
 @taller_first
-@ensure(both = ['spread'], fields1=['height'], fields2 = ['sun'])
+@ensure(fields1=['height'], fields2 = ['sun'])
 def space_for_sunlight(plant1, plant2):
+    middle = float(plant1.spread.upper if plant1.spread else plant1.height.upper / 2)
     if plant2.sun == Sun.FULL_SUN:
-        dist1 = plant1.height.upper
-        dist2 = (plant1.spread.upper + plant2.spread.upper) / 2
-        return (dist1, dist2), f'{plant2.name} should be far enough away from {plant1.name} to get direct sunlight'
+        return (middle * 1.25, middle * 2), f'{plant2.name} should be far enough away from {plant1.name} to get direct sunlight'
     if plant2.sun == Sun.PARTIAL_SUN:
-        dist1 = (plant1.spread.lower + plant1.spread.upper) / 2
-        dist2 = (plant1.spread.lower + plant1.spread.upper + plant2.spread.lower + plant2.spread.upper) / 4
-        return (dist1, dist2), f'{plant2.name} should be just far enough from {plant1.name} to get partial sunlight'
-    dist1 = plant2.spread.upper / 2
-    dist2 = (plant1.spread.lower - plant2.spread.upper) / 2
-    return (dist1, dist2), f'{plant2.name} should be close enough to {plant1.name} to get full shade'
+        return (middle * 0.75, middle * 1.25), f'{plant2.name} should be just far enough from {plant1.name} to get partial sunlight'
+    return (0, middle * 0.75), f'{plant2.name} should be close enough to {plant1.name} to get full shade'
 
 @rule
 @ensure(both = ['growth_habit'])
@@ -61,19 +56,21 @@ def vine_spacing(plant1, plant2):
             dist = (plant1.spread.upper + plant2.spread.upper) / 2
         return (dist, dist * 2), f'{plant1.name} should be placed far enough from {plant2.name} so both vines can spread'
 
+# Rules that may return a range value
 @rule
 @mirrored
-@ensure(both = ['nitrogen', 'root_spread'])
+@ensure(both = ['nitrogen'])
 def nitrogen_relationship(plant1, plant2):
     if plant1.nitrogen == Nitrogen.FIXER and plant2.nitrogen == Nitrogen.HEAVY:
         dist1 = reduce_intervals(plant1, plant2, 'spread', 'upper') / 2
-        dist2 = plant1.root_spread.lower + plant2.root_spread.lower
-        return (dist1, dist2), f'{plant1.name} can fix soil nitrogen for {plant2.name}'
+        dist2 = reduce_intervals(plant1, plant2, 'root_spread', 'lower')
+        dist = None if dist1 == 0 and dist2 == 0 else (dist1, dist2)
+        return dist, f'{plant1.name} can fix soil nitrogen for {plant2.name}'
     if plant1.nitrogen == Nitrogen.HEAVY and plant2.nitrogen == Nitrogen.HEAVY:
-        dist = plant1.root_spread.upper + plant2.root_spread.upper
-        return (dist, dist * 2), f'{plant1.name} and {plant2.name} may compete for soil nitrogen'
+        dist = reduce_intervals(plant1, plant2, 'root_spread', 'upper')
+        dist = None if dist == 0 else (dist, dist * 2)
+        return dist, f'{plant1.name} and {plant2.name} may compete for soil nitrogen'
 
-# Rules that may return a range value
 @rule
 @mirrored
 def allelopathy_relationship(plant1, plant2):
