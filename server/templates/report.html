@@ -57,3 +57,7 @@ function clicked(e, index) {
 }
 
 </script>
+
+{% import 'macros/plant.html' as plant_view %}
+{{ plant_view.render(plant1, True) }}
+{{ plant_view.render(plant2, True) }}

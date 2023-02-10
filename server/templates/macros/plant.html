@@ -1,0 +1,32 @@
+
+{% macro render(plant, link) -%}
+<h3>
+    {% if link %}
+        <a href="http://localhost:2017/plant/{{ plant['species'] }}">{{ plant['name'] }}</a>
+    {% else %}
+        {{ plant['name'] }}
+    {% endif %}
+</h3>
+<p>
+    <i>{{ plant['species'] }}</i>
+</p>
+
+<table>
+{% for field in plant['fields'] %}
+<tr>
+    {{ field|safe }}
+</tr>
+{% endfor %}
+</table>
+
+<p><b>Ecology:</b></p>
+<table>
+{% for interaction in plant['ecology'] %}
+<tr>
+    <td>{{ interaction['name'] }} ({{ interaction['species'] }})</td>
+    <td>{{ interaction['relationship'] }}</td>
+    <td><a href="{{ interaction['citation'] }}">citation</a></td>
+</tr>
+{% endfor %}
+</table>
+{%- endmacro -%}

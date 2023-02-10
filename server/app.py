@@ -72,6 +72,16 @@ ecology_values = [
 ]
 
 # Internal transformation functions
+def process_plant_dict(con, plant):
+    if 'citations' in plant:
+        ids = list(plant['citations'].keys())
+        stmt = schema.works_cited_table.select().where(schema.works_cited_table.c.id.in_(ids))
+        plant['citations'] = cite_fields(plant['citations'], list(con.execute(stmt).fetchall()))
+    plant_id = plant['id'] if 'id' in plant else 0
+    plant = transform_plant(plant)
+    plant['ecology'] = grab_ecology_data(con, plant_id)
+    return plant
+
 def transform_plant(plant):
     fields = []
     for k, label in plant_field_labels.items():
@@ -146,15 +156,8 @@ def plant_view_endpoint(species):
     with db.connect() as con:
         stmt = schema.plants_table.select().where(schema.plants_table.c.species == species)
         plant = con.execute(stmt).mappings().fetchone()
-        plant = dict(plant) if plant else {}
-        plant_id = plant['id'] if 'id' in plant else 0
-        if 'citations' in plant:
-            ids = list(plant['citations'].keys())
-            stmt = schema.works_cited_table.select().where(schema.works_cited_table.c.id.in_(ids))
-            plant['citations'] = cite_fields(plant['citations'], list(con.execute(stmt).fetchall()))
-        if len(plant.keys()) > 0:
-            plant = transform_plant(plant)
-            plant['ecology'] = grab_ecology_data(con, plant_id)
+        if plant:
+            plant = process_plant_dict(con, dict(plant))
             return render_template('plant.html', plant = plant)
     return f'Plant \'{species}\' not found', 404
 
@@ -165,15 +168,17 @@ def report_view_endpoint(species1, species2):
     error_404 = f'No report for plants \'{species1}\' and \'{species2}\''
     with db.connect() as con:
         stmt = schema.plants_table.select().where(schema.plants_table.c.species.in_([species1, species2]))
-        plants = list(con.execute(stmt).mappings().fetchall())
+        plants = list(map(dict, con.execute(stmt).mappings().fetchall()))
         if len(plants) != 2:
             return error_404, 404
-        if plants[1].id < plants[0].id:
+        if plants[1]['id'] < plants[0]['id']:
             plants = [plants[1], plants[0]]
-        stmt = schema.reports_table.select().where(schema.reports_table.c.plant1 == plants[0].id).where(schema.reports_table.c.plant2 == plants[1].id)
+        stmt = schema.reports_table.select().where(schema.reports_table.c.plant1 == plants[0]['id']).where(schema.reports_table.c.plant2 == plants[1]['id'])
         report = dict(con.execute(stmt).mappings().fetchone())
         if not report:
             return error_404, 404
+        for plant, i in plants.enumerate():
+            plants[i] = process_plant_dict(con, plant)
         return render_template('report.html', report = report, plant1 = plants[0], plant2 = plants[1])
 
 # Main script

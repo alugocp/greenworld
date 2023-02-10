@@ -1,28 +1,28 @@
 <!doctype html>
 <title>Greenworld - {{ plant['name'] }}</title>
 
-<h3>
-    {{ plant['name'] }}
-</h3>
+<!-- Navigate to reports page -->
 <p>
-    <i>{{ plant['species'] }}</i>
+    Search for compatibility analysis with another plant:
 </p>
+<input
+    id = "search-field"
+    type = "text"
+    placeholder = "scientific name"/>
+<button
+    onclick = "search_partner()">
+    Search
+</button>
 
-<table>
-{% for field in plant['fields'] %}
-<tr>
-    {{ field|safe }}
-</tr>
-{% endfor %}
-</table>
+<script>
 
-<p><b>Ecology:</b></p>
-<table>
-{% for interaction in plant['ecology'] %}
-<tr>
-    <td>{{ interaction['name'] }} ({{ interaction['species'] }})</td>
-    <td>{{ interaction['relationship'] }}</td>
-    <td><a href="{{ interaction['citation'] }}">citation</a></td>
-</tr>
-{% endfor %}
-</table>
+function search_partner() {
+    const input = document.getElementById('search-field');
+    window.location = `http://localhost:2017/report/{{ plant['species'] }}/${input.value}`;
+}
+
+</script>
+
+<!-- Include plant view -->
+{% import 'macros/plant.html' as plant_view %}
+{{ plant_view.render(plant, False) }}
