@@ -1,20 +1,30 @@
 
 // Triggers the search button if the enter key is pressed
-function check_enter(e) {
+function searchBarOnKeyDown(e, plantToUrl) {
     if (e.keyCode === 13) {
         e.preventDefault();
         document.getElementById('search-button').click();
+    } else {
+        const content = document.getElementById('search-field').value;
+        const results = document.getElementById('search-results');
+        console.log(content);
+        if (content.length >= 3) {
+            fetch(`{{ url_for('homepage_endpoint') }}search/${content}`)
+            .then(r => r.json())
+            .then((data) => {
+                console.log(plantToUrl);
+                results.innerHTML = data
+                    .map(plant => `<a href = "{{ url_for('homepage_endpoint') }}${plantToUrl(plant[0])}">${plant[1]} (${plant[0]})</a>`)
+                    .reduce((acc, x) => acc + x, '');
+            });
+        } else {
+            results.innerHTML = '';
+        }
     }
 }
 
-// Navigates to a plant page by the entered text
-function search_plant() {
+// Navigates to a page page by the entered text
+function navigate(plantToUrl) {
     const input = document.getElementById('search-field');
-    window.location = `{{ url_for('homepage_endpoint') }}plant/${input.value}`;
-}
-
-// Navigates to a report page by the given species and entered text
-function search_partner(first) {
-    const input = document.getElementById('search-field');
-    window.location = `http://localhost:2017/report/${first}/${input.value}`;
+    window.location = `{{ url_for('homepage_endpoint') }}${plantToUrl(input.value)}`;
 }

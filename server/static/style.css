@@ -43,6 +43,18 @@ a:hover {
     padding: 0 10px;
 }
 
+#search-results {
+    display: inline-block;
+    background-color: var(--background2);
+}
+#search-results a {
+    display: block;
+    padding: 10px 5px;
+}
+#search-results a:nth-child(2n) {
+    background-color: var(--background3);
+}
+
 /* Plant view */
 .plant-view {
     display: inline-block;

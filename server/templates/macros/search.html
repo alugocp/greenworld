@@ -1,13 +1,15 @@
 
-{% macro render(command) -%}
+{% macro render(plantToUrl) -%}
 <input
     id = "search-field"
     type = "text"
-    onkeyup = "check_enter(event)"
+    onkeyup = "searchBarOnKeyDown(event, {{ plantToUrl }})"
     placeholder = "scientific name"/>
 <button
     id = "search-button"
-    onclick = "{{ command }}">
+    onclick = "navigate({{ plantToUrl }})">
     Search
 </button>
+<br>
+<span id = "search-results"></span>
 {%- endmacro -%}

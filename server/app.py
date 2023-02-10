@@ -171,6 +171,22 @@ def plant_view_endpoint(species):
             return render_template('plant.html', plant = plant)
     return f'Plant \'{species}\' not found', 404
 
+@app.route('/search/<prefix>')
+def plant_search_endpoint(prefix):
+    prefix = unquote_plus(prefix)
+    if len(prefix) < 3:
+        return []
+    with db.connect() as con:
+        stmt = sqlalchemy.select(
+            schema.plants_table.c.species,
+            schema.plants_table.c.name) \
+        .where(sqlalchemy.or_(
+            schema.plants_table.c.species.like(f'{prefix}%'),
+            schema.plants_table.c.name.like(f'{prefix}%')
+        )) \
+        .limit(10)
+        return list(map(tuple, con.execute(stmt).fetchall()))
+
 @app.route('/report/<species1>/<species2>')
 def report_view_endpoint(species1, species2):
     species1 = unquote_plus(species1)

@@ -8,7 +8,7 @@
     Search for compatibility analysis with another plant:
 </p>
 {% import 'macros/search.html' as search %}
-{{ search.render('search_partner(\'' + plant['species'] + '\')') }}
+{{ search.render('(val) => `report/' + plant['species'] + '/${val}`') }}
 <br>
 <br>
 <br>

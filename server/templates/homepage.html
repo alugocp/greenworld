@@ -11,4 +11,4 @@
     Search for plants and their guilds:
 </p>
 {% import 'macros/search.html' as search %}
-{{ search.render('search_plant()') }}
+{{ search.render('(val) => `plant/${val}`') }}
