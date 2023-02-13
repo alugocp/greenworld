@@ -153,7 +153,7 @@ def cite_fields(citations, works_cited):
 # Custom filters
 @app.template_filter()
 def citation_regex(href):
-    return re.search(r'(?:[a-z]+://)([\w\d]+(\.[\w\d]+)*)/?', href).groups()[0]
+    return re.search(r'(?:[a-z]+://)(?:www\.)?([\w\d]+(\.[\w\d]+)*)/?', href).groups()[0]
 
 # Endpoints
 @app.route('/')
