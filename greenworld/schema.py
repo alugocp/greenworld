@@ -86,7 +86,8 @@ works_cited_table = Table('works_cited', meta,
 other_species_table = Table('other_species', meta,
     Column('id', Integer, Identity(), primary_key = True),
     Column('species', String, nullable = False),
-    Column('name', String, nullable = False)
+    Column('name', String, nullable = False),
+    Column('family', String)
 )
 
 # Tracks relationships between plant and non-plant species

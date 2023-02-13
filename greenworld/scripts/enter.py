@@ -70,11 +70,22 @@ def enter_data_json(db, filename):
     with db.connect() as con:
         works_cited_map = get_works_cited_map(con, data)
 
+        # Write other species data to the database
+        logging.info('Writing other species data...')
+        last_other_id = get_last_id(con, schema.other_species_table)
+        for row in (data['others'] if 'others' in data else []):
+            values = copy.deepcopy(row)
+            values['id'] = last_other_id + 1
+            last_other_id += 1
+            logging.info(values)
+            con.execute(schema.other_species_table.insert().values(**values))
+        print('')
+
         # Sanitize and write plant data to database
         ecology_data = {}
         logging.info('Writing plant and interaction data...')
         last_plant_id = get_last_id(con, schema.plants_table)
-        for row in (data['plants'] or []):
+        for row in (data['plants'] if 'plants' in data else []):
             values = copy.deepcopy(row)
             values['id'] = last_plant_id + 1
             last_plant_id += 1
@@ -110,26 +121,24 @@ def enter_data_json(db, filename):
 # Map local references to the database (handles if they exist already or not)
 def get_works_cited_map(con, data):
     works_cited_map = {}
-    if 'works_cited' in data:
-        logging.info('Writing works cited...')
-        last_id = get_last_id(con, schema.works_cited_table)
-        for row in data['works_cited']:
-            values = copy.deepcopy(row)
-            works_cited_result = select_by(con, schema.works_cited_table, 'citation', values['citation'])
-            if works_cited_result:
-                works_cited_map[row['id']] = works_cited_result['id']
-            else:
-                values['id'] = last_id + 1
-                works_cited_map[row['id']] = values['id']
-                logging.info(values)
-                con.execute(schema.works_cited_table.insert().values(**values))
-                last_id += 1
-        print('')
+    logging.info('Writing works cited...')
+    last_id = get_last_id(con, schema.works_cited_table)
+    for row in (data['works_cited'] if 'works_cited' in data else []):
+        values = copy.deepcopy(row)
+        works_cited_result = select_by(con, schema.works_cited_table, 'citation', values['citation'])
+        if works_cited_result:
+            works_cited_map[row['id']] = works_cited_result['id']
+        else:
+            values['id'] = last_id + 1
+            works_cited_map[row['id']] = values['id']
+            logging.info(values)
+            con.execute(schema.works_cited_table.insert().values(**values))
+            last_id += 1
+    print('')
     return works_cited_map
 
 # Write ecological data with a many-to-many relationship to the database
 def process_ecological_fields(con, works_cited_map, plant_id, data):
-    last_id = get_last_id(con, schema.other_species_table)
     for row in data:
 
         # Retrieve (and/or create) plant or non-plant species
@@ -139,14 +148,8 @@ def process_ecological_fields(con, works_cited_map, plant_id, data):
             is_plant = False
             result = select_by(con, schema.other_species_table, 'species', row['species'])
         if not result:
-            result = {
-                'id': last_id + 1,
-                'species': row['species'],
-                'name': row['name'] if 'name' in row else ''
-            }
-            last_id += 1
-            logging.info(result)
-            con.execute(schema.other_species_table.insert().values(**result))
+            species = row['species']
+            raise Exception(f'Unknown interactive species \'{species}\'')
         interaction = {
             'plant': plant_id,
             'relationship': parse_enum(row['relationship']),

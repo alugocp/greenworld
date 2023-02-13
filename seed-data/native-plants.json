@@ -23,7 +23,7 @@
             },
             "ecology": [
                 { "species": "plantae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 30 },
-                { "species": "gramineae", "relationship": "Ecology.NO_ALLELOPATHY", "citation": 30, "name": "Grass family" }
+                { "species": "gramineae", "relationship": "Ecology.NO_ALLELOPATHY", "citation": 30 }
             ]
         },
         {
@@ -88,7 +88,7 @@
                 "12": ["temperature"]
             },
             "ecology": [
-                { "species": "fabaceae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 31, "name": "Legume family" }
+                { "species": "fabaceae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 31 }
             ]
         },
         {
@@ -215,6 +215,10 @@
                 "29": ["fruit_weight"]
             }
         }
+    ],
+    "others": [
+        { "species": "gramineae", "name": "Grass family" },
+        { "species": "fabaceae", "name": "Legume family" }
     ],
     "works_cited": [
         {
