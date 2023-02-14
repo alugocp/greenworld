@@ -1,12 +1,23 @@
 import logging
 import copy
 import json
+import csv
 import sys
 import os
 import sqlalchemy
 from sqlalchemy_utils import NumericRangeType
 from greenworld import schema
 from greenworld import defs
+
+# CLI options structure for global access
+cli_options = {
+    'headers': None,
+    'range': None,
+    'row-header-file': None,
+    'col-header-file': None,
+    'citation': None,
+    'map': {}
+}
 
 # Conversions table for internal standard units
 _conversions = {
@@ -19,11 +30,19 @@ _conversions = {
 # Prints helpful information to the terminal
 def print_help():
     print(
-        'Usage: python3 enter [file [...]]',
+        'Usage: python3 enter [option [...]] [file [...]]',
         'This command inserts all data from the given files to the Greenworld database, with the following rules:',
         ' • A JSON file must follow the structure defined in README.md',
+        ' • Any matrix file (CSV) can be processed using the following options:',
+        '   --headers = column, row, both, none\t\tdetermines whether to include the first row, column, both or neither as data headers',
+        '   --range = <c0>:<c1>,<r0>:<r1>\t\tdefines the range of data to include (from column 0, row 0 to column 1, row 1 inclusive)',
+        '   --row-header-file = <filename>\t\tfilepath that points to a list of row headers)',
+        '   --col-header-file = <filename>\t\tfilepath that points to a list of column headers)',
+        '   --citation = <filename>\t\t\traw citation text or a filepath that points to a citation file',
+        '   --map <x0>:<x1> <result>\t\t\tmaps any value [x0, x1) into *result* relationship value',
         sep='\n'
     )
+    # Map string or numerical values to different relationship values (include ranges for numerical values)
 
 # Converts value from unit to the internal standard unit
 def convert_to_unit(value):
@@ -59,7 +78,20 @@ def enter_data(db, filename):
     _, ext = os.path.splitext(filename)
     if ext == '.json':
         return enter_data_json(db, filename)
-    raise Exception(f'Data file with extension {ext} is not supported')
+    if ext == '.csv':
+        return enter_data_csv(db, filename)
+    raise Exception(f'Data file with extension \'{ext}\' is not supported')
+
+# Process ecology data from CSV file
+def enter_data_csv(db, filename):
+    col_headers = [] if cli_options['headers'] in ['both', 'column'] else None
+    row_headers = [] if cli_options['headers'] in ['both', 'row'] else None
+    with open(filename, 'r', encoding = 'utf-8') as file:
+        pass
+
+# Parses a line of a CSV file
+def parse_csv_line(line):
+    return list(csv.reader([line]))[0]
 
 # Process plant table bulk data entry for a JSON file
 def enter_data_json(db, filename):
@@ -169,9 +201,20 @@ def main(args):
     while a < len(args):
         if args[a] == '--help':
             print_help()
-            break
-        enter_data(db, args[a])
-        a += 1
+        elif '--' in args[a] and args[a].index('--') == 0:
+            if not len(args) > a + 2:
+                raise Exception('Not enough CLI arguments')
+            key = args[a][2:]
+            if not key in cli_options.keys():
+                raise Exception(f'Unknown CLI option \'{key}\'')
+            if key == 'map':
+                cli_options['map'][args[a + 1]] = args[a + 2]
+            else:
+                cli_options[key] = args[a + 2]
+            a += 3
+        else:
+            enter_data(db, args[a])
+            a += 1
 
 if __name__ == '__main__':
     main(sys.argv[1:])

@@ -36,7 +36,7 @@ Then you can use the following commands while interacting with the database:
 This command can be used to enter data into the database:
 
 ```bash
-python3 run.py enter [file [...]]
+python3 run.py enter [option [...]] [file [...]]
 ```
 
 `file` arguments will point to files that adhere to one of the following structures.
