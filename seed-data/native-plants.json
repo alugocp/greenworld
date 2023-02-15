@@ -217,6 +217,25 @@
         },
         {
             "id": 11,
+            "name": "Chokecherry",
+            "species": "prunus virginiana",
+            "family": "rosaceae",
+            "growth_habit": "GrowthHabit.TREE",
+            "height": ["12 ft", "30 ft"],
+            "spread": ["15 ft", "20 ft"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.PARTIAL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [5.5, 8.0],
+            "drainage": "Drainage.SOMEWHAT_POORLY_DRAINED",
+            "citations": {
+                "32": ["height", "spread", "sun", "soil"],
+                "33": ["pH"],
+                "34": ["drainage"]
+            }
+        },
+        {
+            "id": 12,
             "name": "Western Chokecherry",
             "species": "prunus demissa",
             "family": "rosaceae",
@@ -232,6 +251,23 @@
                 "32": ["height", "spread", "sun", "soil"],
                 "33": ["pH"],
                 "34": ["drainage"]
+            }
+        },
+        {
+            "id": 13,
+            "name": "Fire Cherry",
+            "species": "prunus pennsylvanica",
+            "family": "rosaceae",
+            "growth_habit": "GrowthHabit.TREE",
+            "height": ["15 ft", "40 ft"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.0, 8.0],
+            "drainage": "Drainage.MODERATELY_WELL_DRAINED",
+            "citations": {
+                "35": ["sun", "soil", "pH", "drainage"],
+                "36": ["height"]
             }
         }
     ],
@@ -375,6 +411,14 @@
         {
             "id": 34,
             "citation": "https://www.thespruce.com/chokecherries-profile-5189581"
+        },
+        {
+            "id": 35,
+            "citation": "https://plants.ces.ncsu.edu/plants/prunus-pensylvanica/"
+        },
+        {
+            "id": 36,
+            "citation": "https://www.gardenguides.com/113694-fun-fire-cherry-trees.html"
         }
     ]
 }
