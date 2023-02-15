@@ -3,3 +3,4 @@ SQLAlchemy-Utils
 intervals
 pylint
 flask
+xlrd

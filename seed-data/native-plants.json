@@ -214,6 +214,25 @@
                 "28": ["temperature"],
                 "29": ["fruit_weight"]
             }
+        },
+        {
+            "id": 11,
+            "name": "Western Chokecherry",
+            "species": "prunus demissa",
+            "family": "rosaceae",
+            "growth_habit": "GrowthHabit.TREE",
+            "height": ["12 ft", "30 ft"],
+            "spread": ["15 ft", "20 ft"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.PARTIAL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [5.5, 8.0],
+            "drainage": "Drainage.SOMEWHAT_POORLY_DRAINED",
+            "citations": {
+                "32": ["height", "spread", "sun", "soil"],
+                "33": ["pH"],
+                "34": ["drainage"]
+            }
         }
     ],
     "others": [
@@ -344,6 +363,18 @@
         {
             "id": 31,
             "citation": "https://www.epicgardening.com/onion-companion-plants/"
+        },
+        {
+            "id": 32,
+            "citation": "https://www.prairienursery.com/chokecherry-prunus-virginiana.html"
+        },
+        {
+            "id": 33,
+            "citation": "https://plants.usda.gov/home/plantProfile?symbol=PRVID"
+        },
+        {
+            "id": 34,
+            "citation": "https://www.thespruce.com/chokecherries-profile-5189581"
         }
     ]
 }
