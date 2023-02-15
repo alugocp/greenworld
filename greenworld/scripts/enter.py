@@ -138,7 +138,7 @@ def enter_data_csv(db, filename):
                     mapped = cli_options['map'][point]
                     latin1 = cli_options['row-headers'][a]
                     latin2 = cli_options['col-headers'][b]
-                    logging.info('Visiting %s x %s', (latin2, latin2))
+                    logging.info('Visiting %s x %s', latin2, latin2)
                     species1 = select_by(con, schema.plants_table, 'species', latin1)
                     if species1:
                         species2_latin = latin2

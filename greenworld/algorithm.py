@@ -56,6 +56,12 @@ def vine_spacing(plant1, plant2):
             dist = (plant1.spread.upper + plant2.spread.upper) / 2
         return (dist, dist * 2), f'{plant1.name} should be placed far enough from {plant2.name} so both vines can spread'
 
+@rule
+@ensure(both = ['spread'])
+def add_spread(plant1, plant2):
+    dist = (plant1.spread.lower + plant2.spread.lower, plant1.spread.upper + plant2.spread.upper)
+    return dist, f'{plant1.name} and {plant2.name} should both have enough space to grow horizontally'
+
 # Rules that may return a range value
 @rule
 @mirrored
