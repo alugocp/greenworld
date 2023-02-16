@@ -78,10 +78,13 @@ def nitrogen_relationship(plant1, plant2):
         return dist, f'{plant1.name} and {plant2.name} may compete for soil nitrogen'
 
 @rule
-@mirrored
 def allelopathy_relationship(plant1, plant2):
     con = get_connection()
     relationship = None
+
+    # Hacked mirroring to get up to two results
+    if plant1.id < plant2.id:
+        allelopathy_relationship(plant2, plant1)
 
     # Grab plant2's family's ID (if it exists)
     stmt = other_species_table.select().where(other_species_table.c['species'] == plant2.family)
