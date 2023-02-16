@@ -1,5 +1,6 @@
 # This module contains the core logic for the Greenworld algorithm.
 import math
+import sqlalchemy
 from greenworld.schema import (
     other_species_table,
     ecology_other_table,
@@ -16,6 +17,7 @@ from greenworld.defs import (
 from greenworld.utils import (
     reduce_intervals,
     get_connection,
+    add_to_report,
     overlaps,
     taller_first,
     mirrored,
@@ -153,5 +155,91 @@ def match_drainage(plant1, plant2):
 def large_vines_shade_weeds(plant1, plant2):
     if plant1.nitrogen == Nitrogen.HEAVY and plant1.growth_habit == GrowthHabit.VINE:
         return None, f'{plant1.name} can shade out weeds around {plant2.name}'
+
+@rule
+def ecological_intersection(plant1, plant2):
+    con = get_connection()
+    e1 = ecology_other_table.alias('e1')
+    e2 = ecology_other_table.alias('e2')
+    stmt = sqlalchemy.select(
+        other_species_table.c['name'],
+        e1.c['relationship'].label('r1'),
+        e2.c['relationship'].label('r2')
+    ).\
+        join(e2, e1.c['non_plant'] == e2.c['non_plant']).\
+        join(other_species_table, other_species_table.c['id'] == e1.c['non_plant']).\
+        where(sqlalchemy.and_(e1.c['plant'] == plant1.id, e2.c['plant'] == plant2.id)).\
+        distinct()
+    for result in con.execute(stmt):
+        non_plant, r1, r2 = result
+        p1 = plant1.name
+        p2 = plant2.name
+        pair = {
+            Ecology.NEGATIVE_ALLELOPATHY: {
+                Ecology.NEGATIVE_ALLELOPATHY: f'{p1} and {p2} are both negative allelopaths for {non_plant}',
+                Ecology.POSITIVE_ALLELOPATHY: f'{p1} is a negative allelopath and {p2} is a positive allelopath for {non_plant}',
+                Ecology.NO_ALLELOPATHY: None,
+                Ecology.PATHOGEN: f'{p1} is a negative allelopath for {p2}\'s pathogenic species {non_plant}',
+                Ecology.PREDATOR: f'{p1} is a negative allelopath for {p2}\'s predator species {non_plant}',
+                Ecology.SEED_DISPERSER: f'{p1} is a negative allelopath for {p2}\'s seed disperser species {non_plant}',
+                Ecology.POLLINATOR: f'{p1} is a negative allelopath for {p2}\'s pollinator species {non_plant}'
+            },
+            Ecology.POSITIVE_ALLELOPATHY: {
+                Ecology.NEGATIVE_ALLELOPATHY: f'{p1} is a positive allelopath and {p2} is a negative allelopath for {non_plant}',
+                Ecology.POSITIVE_ALLELOPATHY: f'{p1} and {p2} are both positive allelopaths for {non_plant}',
+                Ecology.NO_ALLELOPATHY: None,
+                Ecology.PATHOGEN: f'{p1} is a positive allelopath for {p2}\'s pathogenic species {non_plant}',
+                Ecology.PREDATOR: f'{p1} is a positive allelopath for {p2}\'s predator species {non_plant}',
+                Ecology.SEED_DISPERSER: f'{p1} is a positive allelopath for {p2}\'s seed disperser species {non_plant}',
+                Ecology.POLLINATOR: f'{p1} is a positive allelopath for {p2}\'s pollinator species {non_plant}'
+            },
+            Ecology.NO_ALLELOPATHY: {
+                Ecology.NEGATIVE_ALLELOPATHY: None,
+                Ecology.POSITIVE_ALLELOPATHY: None,
+                Ecology.NO_ALLELOPATHY: None,
+                Ecology.PATHOGEN: None,
+                Ecology.PREDATOR: None,
+                Ecology.SEED_DISPERSER: None,
+                Ecology.POLLINATOR: None
+            },
+            Ecology.PATHOGEN: {
+                Ecology.NEGATIVE_ALLELOPATHY: f'{p2} is a negative allelopath for {p1}\'s pathogenic species {non_plant}',
+                Ecology.POSITIVE_ALLELOPATHY: f'{p2} is a positive allelopath for {p1}\'s pathogenic species {non_plant}',
+                Ecology.NO_ALLELOPATHY: None,
+                Ecology.PATHOGEN: f'{p1} and {p2} have a common pathogenic species {non_plant}',
+                Ecology.PREDATOR: f'{p1}\'s pathogenic species {non_plant} is a predator for {p2}',
+                Ecology.SEED_DISPERSER: f'{p1}\'s pathogenic species {non_plant} is a seed disperser for {p2}',
+                Ecology.POLLINATOR: f'{p1}\'s pathogenic species {non_plant} is a pollinator for {p2}'
+            },
+            Ecology.PREDATOR: {
+                Ecology.NEGATIVE_ALLELOPATHY: f'{p2} is a negative allelopath for {p1}\'s predator species {non_plant}',
+                Ecology.POSITIVE_ALLELOPATHY: f'{p2} is a positive allelopath for {p1}\'s predator species {non_plant}',
+                Ecology.NO_ALLELOPATHY: None,
+                Ecology.PATHOGEN: f'{p1}\'s predator species {non_plant} is a pathogen for {p2}',
+                Ecology.PREDATOR: f'{p1} and {p2} have a common predator species {non_plant}',
+                Ecology.SEED_DISPERSER: f'{p1}\'s predator species {non_plant} is a seed disperser for {p2}',
+                Ecology.POLLINATOR: f'{p1}\'s predator species {non_plant} is a pollinator for {p2}'
+            },
+            Ecology.SEED_DISPERSER: {
+                Ecology.NEGATIVE_ALLELOPATHY: f'{p2} is a negative allelopath for {p1}\'s seed disperser species {non_plant}',
+                Ecology.POSITIVE_ALLELOPATHY: f'{p2} is a positive allelopath for {p1}\'s seed disperser species {non_plant}',
+                Ecology.NO_ALLELOPATHY: None,
+                Ecology.PATHOGEN: f'{p1}\'s seed disperser species {non_plant} is a pathogen for {p2}',
+                Ecology.PREDATOR: f'{p1}\'s seed disperser species {non_plant} is a predator for {p2}',
+                Ecology.SEED_DISPERSER: f'{p1} and {p2} have a common seed disperser species {non_plant}',
+                Ecology.POLLINATOR: f'{p1}\'s seed disperser species {non_plant} is a pollinator for {p2}'
+            },
+            Ecology.POLLINATOR: {
+                Ecology.NEGATIVE_ALLELOPATHY: f'{p2} is a negative allelopath for {p1}\'s pollinator species {non_plant}',
+                Ecology.POSITIVE_ALLELOPATHY: f'{p2} is a positive allelopath for {p1}\'s pollinator species {non_plant}',
+                Ecology.NO_ALLELOPATHY: None,
+                Ecology.PATHOGEN: f'{p1}\'s pollinator species {non_plant} is a pathogen for {p2}',
+                Ecology.PREDATOR: f'{p1}\'s pollinator species {non_plant} is a predator for {p2}',
+                Ecology.SEED_DISPERSER: f'{p1}\'s pollinator species {non_plant} is a seed disperser for {p2}',
+                Ecology.POLLINATOR: f'{p1} and {p2} have a common pollinator species {non_plant}'
+            }
+        }[r1][r2]
+        if pair:
+            add_to_report((None, pair))
 
 # pylint: enable=inconsistent-return-statements

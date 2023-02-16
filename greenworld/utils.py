@@ -17,6 +17,10 @@ def new_report():
 def get_report():
     return REPORT
 
+# Adds a pair to the current report
+def add_to_report(pair):
+    REPORT.append(pair)
+
 # Sets the current SQLAlchemy connection
 def set_connection(con):
     # pylint: disable=global-statement
@@ -48,7 +52,7 @@ def rule(func):
             if interval:
                 dist1, dist2 = interval
                 interval = (round(float(min(dist1, dist2)), 3), round(float(max(dist1, dist2)), 3))
-            REPORT.append((interval, reason))
+            add_to_report((interval, reason))
     RULES.append(wrapper)
     return wrapper
 
