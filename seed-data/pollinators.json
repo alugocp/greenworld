@@ -1,0 +1,199 @@
+{
+    "others": [
+        {
+            "id": "1",
+            "species": "acmaeops longicornis",
+            "name": "Beetle"
+        },
+        {
+            "id": "2",
+            "species": "acmaeops pratensis",
+            "name": "Beetle"
+        },
+        {
+            "id": "3",
+            "species": "agapostemon sp.",
+            "name": "Metallic Green Sweat Bee"
+        },
+        {
+            "id": "4",
+            "species": "andrena canadensis",
+            "name": "Canada Miner Bee"
+        },
+        {
+            "id": "5",
+            "species": "andrena crataegi",
+            "name": "Hawthorn Miner Bee"
+        },
+        {
+            "id": "6",
+            "species": "andrena edwiniae",
+            "name": "Miner Bee"
+        },
+        {
+            "id": "7",
+            "species": "andrena madronitens",
+            "name": "Western Red-Legged Miner Bee"
+        },
+        {
+            "id": "8",
+            "species": "andrena prunorum",
+            "name": "Purple Miner Bee"
+        },
+        {
+            "id": "9",
+            "species": "andrena sp.",
+            "name": "Miner Bees"
+        },
+        {
+            "id": "10",
+            "species": "andrena vicina",
+            "name": "Neighbouring Miner Bee"
+        },
+        {
+            "id": "11",
+            "species": "bombus flavifrons",
+            "name": "Yellow-Fronted Bumble Bee"
+        },
+        {
+            "id": "12",
+            "species": "bombus occidentalis",
+            "name": "Western Bumble Bee"
+        },
+        {
+            "id": "13",
+            "species": "brachyopa notata",
+            "name": "Black-Banded Sapeater"
+        },
+        {
+            "id": "14",
+            "species": "brenthis triclaris",
+            "name": "Butterfly"
+        },
+        {
+            "id": "15",
+            "species": "calliphora vomitoria",
+            "name": "Blue Bottle Fly"
+        },
+        {
+            "id": "16",
+            "species": "chilosia petulca",
+            "name": "Hoverfly"
+        },
+        {
+            "id": "17",
+            "species": "chilosia tristis",
+            "name": "Hoverfly"
+        },
+        {
+            "id": "18",
+            "species": "colletes kincaidi",
+            "name": "Kincaid's Cellophane Bee"
+        },
+        {
+            "id": "19",
+            "species": "colletes oromontis",
+            "name": "Plasterer Bee"
+        },
+        {
+            "id": "20",
+            "species": "coenonympha pamphiloides",
+            "name": "Small Heath Butterfly"
+        },
+        {
+            "id": "21",
+            "species": "eristalis arbustorum",
+            "name": "European Drone Fly"
+        },
+        {
+            "id": "22",
+            "species": "eristalis dimidiatus",
+            "name": "Black-Shouldered Drone Fly"
+        },
+        {
+            "id": "23",
+            "species": "erebia epipsodea",
+            "name": "Common Alpine Butterfly"
+        },
+        {
+            "id": "24",
+            "species": "eristalis meigeni",
+            "name": "Hoverfly"
+        },
+        {
+            "id": "25",
+            "species": "eristalis temporalis",
+            "name": "Black-Footed Drone Fly"
+        },
+        {
+            "id": "26",
+            "species": "halictus chloralictus",
+            "name": "Bristle Sweat Bee"
+        },
+        {
+            "id": "27",
+            "species": "halictus sp.",
+            "name": "Sweat Bee"
+        },
+        {
+            "id": "28",
+            "species": "halictus pulzenus",
+            "name": "Sweat Bee"
+        },
+        {
+            "id": "29",
+            "species": "microdon cothurnatus",
+            "name": "Orange-Legged Ant Fly"
+        },
+        {
+            "id": "30",
+            "species": "nomada sp.",
+            "name": "Cuckoo Bee"
+        },
+        {
+            "id": "31",
+            "species": "pseudomasaris vespoides",
+            "name": "Pollen Wasp"
+        },
+        {
+            "id": "32",
+            "species": "ptilodexia harpasa",
+            "name": "Bristle Fly"
+        },
+        {
+            "id": "33",
+            "species": "spegina infuscata",
+            "name": "Hoverfly"
+        },
+        {
+            "id": "34",
+            "species": "sphecodes sophiae",
+            "name": "Blood Bee"
+        },
+        {
+            "id": "35",
+            "species": "specomyia vittata",
+            "name": "Long-Horned Yellowjacket"
+        },
+        {
+            "id": "36",
+            "species": "syrphus disgregus",
+            "name": "Hoverfly"
+        },
+        {
+            "id": "37",
+            "species": "syritta pipiens",
+            "name": "Thick-Legged Hoverfly"
+        },
+        {
+            "id": "38",
+            "species": "theventimtia muricatus",
+            "name": "???"
+        },
+        {
+            "id": "39",
+            "species": "zodion pygmaeum",
+            "name": "Thick-Headed Fly"
+        }
+    ]
+}

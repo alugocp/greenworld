@@ -29,7 +29,8 @@ def main():
     # Seed the database
     enter.main([
         'seed-data/three-sisters.json',
-        'seed-data/native-plants.json'
+        'seed-data/native-plants.json',
+        'seed-data/pollinators.json'
     ])
     enter.main(
         '--citation = https://iwdb.nceas.ucsb.edu/html/clements_1923.html --col-headers = 4:100,1:2 --row-headers = 1:2,4:279 --range = 4:100,4:279 --map 1.0 POLLINATOR referenced-data/clements_1923.xls'.split(' ')

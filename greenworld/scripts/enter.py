@@ -81,6 +81,10 @@ def parse_enum(name):
     except:
         raise Exception(f'Unknown enum \'{name}\'')
 
+def parse_species_name(cells):
+    concatenated = ' '.join(cells).lower()
+    return re.sub(r' \([^)]+\)', '', concatenated)
+
 # Process plant table bulk data entry
 def enter_data(db, filename):
     _, ext = os.path.splitext(filename)
@@ -110,10 +114,10 @@ def enter_data_csv(db, filename):
     # Parse row and column headers
     if cli_options['row-headers'] is not None and isinstance(cli_options['row-headers'][0], int):
         cli_options['row-headers'] = extract_range_from_file(filename, cli_options['row-headers'])
-        cli_options['row-headers'] = list(map(lambda x: ' '.join(x).lower(), cli_options['row-headers']))
+        cli_options['row-headers'] = list(map(parse_species_name, cli_options['row-headers']))
     if cli_options['col-headers'] is not None and isinstance(cli_options['col-headers'][0], int):
         cli_options['col-headers'] = extract_range_from_file(filename, cli_options['col-headers'])
-        cli_options['col-headers'] = list(map(lambda x: ' '.join(x).lower(), transposed(cli_options['col-headers'])))
+        cli_options['col-headers'] = list(map(parse_species_name, transposed(cli_options['col-headers'])))
 
     # Extract interaction matrix data
     if not cli_options['range']:
