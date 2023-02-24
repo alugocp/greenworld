@@ -6,7 +6,7 @@ from greenworld.lib import Greenworld
 from greenworld.lib import orm
 from greenworld.lib import defs
 
-def main(gw: Greenworld):
+def main(gw: Greenworld, seed_data = False):
     db = orm.init_db()
 
     # Clear and recreate the database
@@ -27,15 +27,16 @@ def main(gw: Greenworld):
         con.commit()
 
     # Seed the database
-    enter.main(gw, [
-        'seed-data/three-sisters.json',
-        'seed-data/native-plants.json',
-        'seed-data/pollinators.json'
-    ])
-    iweb_xls.main(
-        gw,
-        '--citation = https://iwdb.nceas.ucsb.edu/html/clements_1923.html --col-headers = 4:100,1:2 --row-headers = 1:2,4:279 --range = 4:100,4:279 --map 1.0 POLLINATOR referenced-data/clements_1923.xls'.split(' ')
-    )
+    if seed_data:
+        enter.main(gw, [
+            'seed-data/three-sisters.json',
+            'seed-data/native-plants.json',
+            'seed-data/pollinators.json'
+        ])
+        iweb_xls.main(
+            gw,
+            '--citation = https://iwdb.nceas.ucsb.edu/html/clements_1923.html --col-headers = 4:100,1:2 --row-headers = 1:2,4:279 --range = 4:100,4:279 --map 1.0 POLLINATOR referenced-data/clements_1923.xls'.split(' ')
+        )
 
 if __name__ == '__main__':
-    main(Greenworld())
+    main(Greenworld(), seed_data = True)
