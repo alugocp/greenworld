@@ -128,7 +128,7 @@ def enter_data_csv(gw: Greenworld, db, filename):
 
 # Parses a line of a CSV file
 def parse_csv_line(line):
-    return list(csv.reader([line.rstrip()]))[0]
+    return list(map(lambda x: x.strip(), list(csv.reader([line]))[0]))
 
 # Parse a file range string
 def parse_range(text):

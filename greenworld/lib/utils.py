@@ -39,7 +39,7 @@ def overlaps(a, b):
     return min(a.upper, b.upper) - max(a.lower, b.lower) >= 0
 
 def reduce_intervals(plant1, plant2, field1, field2):
-    return (getattr(plant1[field1], field2) if plant1[field1] else 0) + (getattr(plant2[field1], field2) if plant2[field1] else 0)
+    return (getattr(plant1[field1], field2) if field1 in plant1 and plant1[field1] else 0) + (getattr(plant2[field1], field2) if field1 in plant2 and plant2[field1] else 0)
 
 # Adds any valid information to the current report
 def rule(func):
