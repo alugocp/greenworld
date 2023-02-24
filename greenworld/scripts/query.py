@@ -1,5 +1,6 @@
 import sys
 from sqlalchemy.orm import aliased
+from greenworld import init
 from greenworld.schema import (
     reports_table,
     plants_table,
@@ -7,6 +8,7 @@ from greenworld.schema import (
 )
 
 def main():
+    init.init()
     db = init_db()
     with db.connect() as con:
         p1 = aliased(plants_table)

@@ -10,6 +10,7 @@ import sqlalchemy
 from sqlalchemy_utils import NumericRangeType
 from greenworld import schema
 from greenworld import defs
+from greenworld import init
 
 # CLI options structure for global access
 cli_options = {
@@ -304,6 +305,7 @@ def process_ecological_fields(con, works_cited_map, plant_id, data):
         logging.info(interaction)
 
 def main(args):
+    init.init()
     db = schema.init_db()
     a = 0
     while a < len(args):

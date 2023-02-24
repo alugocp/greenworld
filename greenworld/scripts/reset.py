@@ -4,10 +4,11 @@ import logging
 from greenworld.scripts import enter
 from greenworld import schema
 from greenworld import defs
+from greenworld import init
 
 def main():
+    init.init()
     db = schema.init_db()
-    logging.basicConfig(level = logging.NOTSET)
 
     # Clear and recreate the database
     schema.meta.reflect(db)

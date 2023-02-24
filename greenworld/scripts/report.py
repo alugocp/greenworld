@@ -8,6 +8,7 @@ import logging
 # pylint: disable=unused-import
 import greenworld.algorithm
 # pylint: enable=unused-import
+from greenworld import init
 from greenworld import utils
 from greenworld.schema import (
     init_db,
@@ -51,8 +52,8 @@ def get_range_union(report):
 
 # The main loop for companionship reporting
 def main():
+    init.init()
     db = init_db()
-    logging.basicConfig(level=logging.NOTSET)
     with db.connect() as con:
         last_plant = None
         last_analyzed = get_last_analyzed(con)

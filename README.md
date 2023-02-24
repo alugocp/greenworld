@@ -20,7 +20,7 @@ python3 -m pip install -r requirements.txt
 python3 -m pylint $(git ls-files "*.py")
 
 # Performs unit tests
-python3 run.py test
+make run:test
 
 # Starts the web server
 python3 server/app.py
@@ -28,15 +28,15 @@ python3 server/app.py
 
 Then you can use the following commands while interacting with the database:
 
-- `python3 run.py reset` hard resets the development database
-- `python3 run.py report` generates companionship reports for newly added plant species
-- `python3 run.py invalidate` invalidates the reports table so the next report command will iterate through every plant pair
-- `python3 run.py query` prints a list of reports logged in the database
+- `make run:reset` hard resets the development database
+- `make run:report` generates companionship reports for newly added plant species
+- `make run:invalidate` invalidates the reports table so the next report command will iterate through every plant pair
+- `make run:query` prints a list of reports logged in the database
 
 This command can be used to enter data into the database:
 
 ```bash
-python3 run.py enter [option [...]] [file [...]]
+make run:enter [option [...]] [file [...]]
 ```
 
 `file` arguments will point to files that adhere to one of the following structures.
