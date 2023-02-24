@@ -4,10 +4,9 @@
 # • Run algorithm modules on them by a database check
 # • Write the report back to the database
 import math
-import logging
 # pylint: disable-next=unused-import
 import greenworld.lib.algorithm
-from greenworld.lib import init_greenworld
+from greenworld.lib import Greenworld
 from greenworld.lib import utils
 from greenworld.lib.orm import (
     init_db,
@@ -50,8 +49,7 @@ def get_range_union(report):
     return min_dist, max_dist
 
 # The main loop for companionship reporting
-def main():
-    init_greenworld()
+def main(gw: Greenworld):
     db = init_db()
     with db.connect() as con:
         last_plant = None
@@ -59,7 +57,7 @@ def main():
         utils.set_connection(con)
         for plant1 in get_plants(con, plants_table.c.id > last_analyzed).mappings():
             for plant2 in get_plants(con, plants_table.c.id < plant1.id).mappings():
-                logging.info('Analyzing %s x %s...', plant2.name, plant1.name)
+                gw.log(f'Analyzing {plant2.name} x {plant1.name}...')
                 utils.new_report()
                 for rule in utils.get_rules():
                     rule(plant2, plant1)
@@ -79,4 +77,4 @@ def main():
 
 # Run as a script
 if __name__ == '__main__':
-    main()
+    main(Greenworld())

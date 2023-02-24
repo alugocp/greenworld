@@ -1,10 +1,9 @@
-import logging
 import csv
 import sys
 import re
 import xlrd
 from greenworld.lib.taxonomy import Taxon
-from greenworld.lib import init_greenworld
+from greenworld.lib import Greenworld
 from greenworld.lib import orm
 from greenworld.lib import defs
 
@@ -38,13 +37,13 @@ def get_last_id(con, table):
 def select_by(con, table, column, value):
     return con.execute(table.select().where(table.c[column] == value)).mappings().fetchone()
 
-def retrieve_or_insert(con, table, column, data):
+def retrieve_or_insert(gw: Greenworld, con, table, column, data):
     row = select_by(con, table, column, data[column])
     if row:
         return row
     data['id'] = get_last_id(con, table) + 1
     con.execute(table.insert().values(**data))
-    logging.info(data)
+    gw.log(data)
     return data
 
 # Parses a string representing an enum into its integer value
@@ -60,7 +59,7 @@ def parse_species_name(cells):
     return re.sub(r' \([^)]+\)', '', concatenated)
 
 # Process ecology data from XLS file
-def enter_data_xls(db, filename):
+def enter_data_xls(gw: Greenworld, db, filename):
     csv_filename = filename.replace('.xls', '.csv')
     excel = xlrd.open_workbook(filename)
     sheet = excel.sheet_by_index(0)
@@ -68,10 +67,10 @@ def enter_data_xls(db, filename):
         col = csv.writer(file)
         for a in range(sheet.nrows):
             col.writerow([cell.value for cell in sheet.row(a)])
-    enter_data_csv(db, csv_filename)
+    enter_data_csv(gw, db, csv_filename)
 
 # Process ecology data from CSV file
-def enter_data_csv(db, filename):
+def enter_data_csv(gw: Greenworld, db, filename):
     # Parse row and column headers
     if cli_options['row-headers'] is not None and isinstance(cli_options['row-headers'][0], int):
         cli_options['row-headers'] = extract_range_from_file(filename, cli_options['row-headers'])
@@ -93,7 +92,7 @@ def enter_data_csv(db, filename):
     if not cli_options['citation']:
         raise Exception(f'No citation provided for data file {filename}')
     with db.connect() as con:
-        citation = retrieve_or_insert(con, orm.works_cited_table, 'citation', {
+        citation = retrieve_or_insert(gw, con, orm.works_cited_table, 'citation', {
             'citation': cli_options['citation']
         })
         for a, _ in enumerate(data):
@@ -105,7 +104,7 @@ def enter_data_csv(db, filename):
                     latin2 = cli_options['col-headers'][b]
                     if not Taxon(latin1).species or not Taxon(latin2).species:
                         continue
-                    logging.info('Visiting %s x %s', latin1, latin2)
+                    gw.log(f'Visiting {latin1} x {latin2}')
                     species1 = select_by(con, orm.plants_table, 'species', latin1)
                     if species1:
                         species2_latin = latin2
@@ -113,7 +112,7 @@ def enter_data_csv(db, filename):
                         species1 = select_by(con, orm.plants_table, 'species', latin2)
                         species2_latin = latin1
                     if species1:
-                        species2 = retrieve_or_insert(con, orm.other_species_table, 'species', {
+                        species2 = retrieve_or_insert(gw, con, orm.other_species_table, 'species', {
                             'species': species2_latin,
                             'name': species2_latin
                         })
@@ -124,7 +123,7 @@ def enter_data_csv(db, filename):
                             'citation': citation['id']
                         }
                         con.execute(orm.ecology_other_table.insert().values(**interaction))
-                        logging.info(interaction)
+                        gw.log(interaction)
         con.commit()
 
 # Parses a line of a CSV file
@@ -166,8 +165,7 @@ def transposed(matrix):
             result[b][a] = matrix[a][b]
     return result
 
-def main(args):
-    init_greenworld()
+def main(gw: Greenworld, args):
     db = orm.init_db()
     a = 0
     while a < len(args):
@@ -190,8 +188,8 @@ def main(args):
                 cli_options[key] = args[a + 2]
             a += 3
         else:
-            enter_data_xls(db, args[a])
+            enter_data_xls(gw, db, args[a])
             a += 1
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main(Greenworld(), sys.argv[1:])

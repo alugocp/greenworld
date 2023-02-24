@@ -1,11 +1,10 @@
-import logging
 import copy
 import json
 import sys
 import sqlalchemy
 from schema import Schema, Optional, And, Or
 from sqlalchemy_utils import NumericRangeType
-from greenworld.lib import init_greenworld
+from greenworld.lib import Greenworld
 from greenworld.lib import orm
 from greenworld.lib import defs
 
@@ -97,15 +96,6 @@ def get_last_id(con, table):
 def select_by(con, table, column, value):
     return con.execute(table.select().where(table.c[column] == value)).mappings().fetchone()
 
-def retrieve_or_insert(con, table, column, data):
-    row = select_by(con, table, column, data[column])
-    if row:
-        return row
-    data['id'] = get_last_id(con, table) + 1
-    con.execute(table.insert().values(**data))
-    logging.info(data)
-    return data
-
 # Parses a string representing an enum into its integer value
 def parse_enum(name):
     enum = name.split('.')
@@ -115,29 +105,29 @@ def parse_enum(name):
         raise Exception(f'Unknown enum \'{name}\'') from e
 
 # Process plant table bulk data entry for a JSON file
-def enter_data(db, filename):
+def enter_data(gw: Greenworld, db, filename):
     print('')
-    logging.info('Writing data from %s...', filename)
+    gw.log(f'Writing data from {filename}...')
     with open(filename, 'r', encoding = 'utf-8') as file:
         data = json.load(file)
     assert json_schema.validate(data) == data
     with db.connect() as con:
-        works_cited_map = get_works_cited_map(con, data)
+        works_cited_map = get_works_cited_map(gw, con, data)
 
         # Write other species data to the database
-        logging.info('Writing other species data...')
+        gw.log('Writing other species data...')
         last_other_id = get_last_id(con, orm.other_species_table)
         for row in (data['others'] if 'others' in data else []):
             values = copy.deepcopy(row)
             values['id'] = last_other_id + 1
             last_other_id += 1
-            logging.info(values)
+            gw.log(values)
             con.execute(orm.other_species_table.insert().values(**values))
         print('')
 
         # Sanitize and write plant data to database
         ecology_data = {}
-        logging.info('Writing plant and interaction data...')
+        gw.log('Writing plant and interaction data...')
         last_plant_id = get_last_id(con, orm.plants_table)
         for row in (data['plants'] if 'plants' in data else []):
             values = copy.deepcopy(row)
@@ -164,18 +154,18 @@ def enter_data(db, filename):
                     values[col][1] = convert_to_unit(val[1])
 
             # Write sanitized values to database
-            logging.info(values)
+            gw.log(values)
             con.execute(orm.plants_table.insert().values(**values))
 
         # Handle ecological data
         for plant_id, data in ecology_data.items():
-            process_ecological_fields(con, works_cited_map, plant_id, data)
+            process_ecological_fields(gw, con, works_cited_map, plant_id, data)
         con.commit()
 
 # Map local references to the database (handles if they exist already or not)
-def get_works_cited_map(con, data):
+def get_works_cited_map(gw: Greenworld, con, data):
     works_cited_map = {}
-    logging.info('Writing works cited...')
+    gw.log('Writing works cited...')
     last_id = get_last_id(con, orm.works_cited_table)
     for row in (data['works_cited'] if 'works_cited' in data else []):
         values = copy.deepcopy(row)
@@ -185,14 +175,14 @@ def get_works_cited_map(con, data):
         else:
             values['id'] = last_id + 1
             works_cited_map[row['id']] = values['id']
-            logging.info(values)
+            gw.log(values)
             con.execute(orm.works_cited_table.insert().values(**values))
             last_id += 1
     print('')
     return works_cited_map
 
 # Write ecological data with a many-to-many relationship to the database
-def process_ecological_fields(con, works_cited_map, plant_id, data):
+def process_ecological_fields(gw: Greenworld, con, works_cited_map, plant_id, data):
     for row in data:
 
         # Retrieve (and/or create) plant or non-plant species
@@ -215,16 +205,15 @@ def process_ecological_fields(con, works_cited_map, plant_id, data):
         else:
             interaction['non_plant'] = result['id']
             con.execute(orm.ecology_other_table.insert().values(**interaction))
-        logging.info(interaction)
+        gw.log(interaction)
 
-def main(args):
-    init_greenworld()
+def main(gw: Greenworld, args):
     db = orm.init_db()
     for a, _ in enumerate(args):
         if args[a] == '--help':
             print_help()
             break
-        enter_data(db, args[a])
+        enter_data(gw, db, args[a])
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main(Greenworld(), sys.argv[1:])

@@ -7,13 +7,13 @@ from flask import (
     render_template
 )
 from greenworld.lib import orm
-from greenworld.lib import init_greenworld
+from greenworld.lib import Greenworld
 app = Flask(
     'Greenworld',
     template_folder = 'greenworld/server/templates',
     static_folder = 'greenworld/server/static'
 )
-init_greenworld()
+Greenworld()
 db = orm.init_db()
 
 # Helpful values
