@@ -11,4 +11,4 @@ install:
 	$(PYTHON) -m pip install -r requirements.txt
 
 serve:
-	$(PYTHON) server/app.py
+	$(ENV) $(PYTHON) greenworld/server/app.py

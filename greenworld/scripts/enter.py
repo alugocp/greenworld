@@ -8,9 +8,9 @@ import os
 import xlrd
 import sqlalchemy
 from sqlalchemy_utils import NumericRangeType
-from greenworld import schema
-from greenworld import defs
-from greenworld import init
+from greenworld.lib import init_greenworld
+from greenworld.lib import schema
+from greenworld.lib import defs
 
 # CLI options structure for global access
 cli_options = {
@@ -305,7 +305,7 @@ def process_ecological_fields(con, works_cited_map, plant_id, data):
         logging.info(interaction)
 
 def main(args):
-    init.init()
+    init_greenworld()
     db = schema.init_db()
     a = 0
     while a < len(args):

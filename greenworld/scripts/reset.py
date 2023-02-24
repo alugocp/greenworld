@@ -2,12 +2,12 @@
 # It then repopulates the database from the `seed.json` file.
 import logging
 from greenworld.scripts import enter
-from greenworld import schema
-from greenworld import defs
-from greenworld import init
+from greenworld.lib import init_greenworld
+from greenworld.lib import schema
+from greenworld.lib import defs
 
 def main():
-    init.init()
+    init_greenworld()
     db = schema.init_db()
 
     # Clear and recreate the database

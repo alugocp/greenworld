@@ -23,7 +23,7 @@ make lint
 make run:test
 
 # Starts the web server
-python3 server/app.py
+make serve
 ```
 
 Then you can use the following commands while interacting with the database:

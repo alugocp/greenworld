@@ -1,14 +1,14 @@
 # Drop the reports table from the database.
 # Clear the database save state table (which contains the last analyzed pair of plants).
-from greenworld import init
-from greenworld.schema import (
+from greenworld.lib import init_greenworld
+from greenworld.lib.schema import (
     init_db,
     reports_table,
     memory_table
 )
 
 def main():
-    init.init()
+    init_greenworld()
     db = init_db()
     reports_table.drop(db)
     reports_table.create(db)

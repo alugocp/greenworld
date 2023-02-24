@@ -1,6 +1,4 @@
-import os
 import re
-import sys
 from urllib.parse import unquote_plus
 from intervals import DecimalInterval
 import sqlalchemy
@@ -8,15 +6,14 @@ from flask import (
     Flask,
     render_template
 )
-sys.path.append('.')
-# pylint: disable-next=wrong-import-position
-from greenworld import schema
+from greenworld.lib import schema
+from greenworld.lib import init_greenworld
 app = Flask(
     'Greenworld',
-    template_folder = 'server/templates',
-    static_folder = 'server/static'
+    template_folder = 'greenworld/server/templates',
+    static_folder = 'greenworld/server/static'
 )
-os.environ['GREENWORLD_DB'] = 'sqlite:///greenworld.db'
+init_greenworld()
 db = schema.init_db()
 
 # Helpful values

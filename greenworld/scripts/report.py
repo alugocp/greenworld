@@ -6,10 +6,10 @@
 import math
 import logging
 # pylint: disable-next=unused-import
-import greenworld.algorithm
-from greenworld import init
-from greenworld import utils
-from greenworld.schema import (
+import greenworld.lib.algorithm
+from greenworld.lib import init_greenworld
+from greenworld.lib import utils
+from greenworld.lib.schema import (
     init_db,
     reports_table,
     memory_table,
@@ -51,7 +51,7 @@ def get_range_union(report):
 
 # The main loop for companionship reporting
 def main():
-    init.init()
+    init_greenworld()
     db = init_db()
     with db.connect() as con:
         last_plant = None

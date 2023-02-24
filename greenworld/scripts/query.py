@@ -1,14 +1,14 @@
 import sys
 from sqlalchemy.orm import aliased
-from greenworld import init
-from greenworld.schema import (
+from greenworld.lib import init_greenworld
+from greenworld.lib.schema import (
     reports_table,
     plants_table,
     init_db
 )
 
 def main():
-    init.init()
+    init_greenworld()
     db = init_db()
     with db.connect() as con:
         p1 = aliased(plants_table)

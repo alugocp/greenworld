@@ -1,6 +1,6 @@
 import unittest
 from intervals import IntInterval
-from greenworld import utils
+from greenworld.lib import utils
 
 class AlgorithmUtilsCase(unittest.TestCase):
 
