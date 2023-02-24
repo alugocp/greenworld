@@ -1,6 +1,12 @@
+# Database and types
 SQLAlchemy >= 2.0.0
 SQLAlchemy-Utils
 intervals
+
+# Auxiliary tasks
 pylint
 flask
+
+# Data collection
+schema
 xlrd

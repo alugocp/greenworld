@@ -3,10 +3,61 @@ import copy
 import json
 import sys
 import sqlalchemy
+from schema import Schema, Optional, And, Or
 from sqlalchemy_utils import NumericRangeType
 from greenworld.lib import init_greenworld
 from greenworld.lib import orm
 from greenworld.lib import defs
+
+def expand_enum(e):
+    return Or(*[f'{e.__name__}.{name}' for name, _ in vars(e).items()])
+
+json_schema = Schema({
+    Optional('plants'): [
+        {
+            'id': int,
+            'name': str,
+            'species': str,
+            'family': str,
+            'growth_habit': expand_enum(defs.GrowthHabit),
+            Optional('fruit_weight'): And([str], lambda x: len(x) == 2),
+            Optional('height'): And([str], lambda x: len(x) == 2),
+            Optional('spread'): And([str], lambda x: len(x) == 2),
+            Optional('length'): And([str], lambda x: len(x) == 2),
+            Optional('root_spread'): And([str], lambda x: len(x) == 2),
+            Optional('root_depth'): And([str], lambda x: len(x) == 2),
+            Optional('nitrogen'): expand_enum(defs.Nitrogen),
+            Optional('temperature'): And([str], lambda x: len(x) == 2),
+            Optional('sun'): expand_enum(defs.Sun),
+            Optional('soil'): expand_enum(defs.Soil),
+            Optional('pH'): And([float], lambda x: len(x) == 2 and x[0] >= 0 and x[1] <= 14 and x[0] <= x[1]),
+            Optional('drainage'): expand_enum(defs.Drainage),
+            'citations': {
+                str: [str]
+            },
+            Optional('ecology'): [
+                {
+                    'species': str,
+                    'relationship': expand_enum(defs.Ecology),
+                    'citation': int
+                }
+            ]
+        }
+    ],
+    Optional('others'): [
+        {
+            'species': str,
+            'name': str,
+            Optional('family'): str
+        }
+    ],
+    Optional('works_cited'): [
+        {
+            'id': int,
+            'citation': str
+        }
+    ]
+})
 
 # Conversions table for internal standard units
 _conversions = {
@@ -75,6 +126,7 @@ def enter_data(db, filename):
     logging.info('Writing data from %s...', filename)
     with open(filename, 'r', encoding = 'utf-8') as file:
         data = json.load(file)
+    assert json_schema.validate(data) == data
     with db.connect() as con:
         works_cited_map = get_works_cited_map(con, data)
 

@@ -1,177 +1,142 @@
 {
     "others": [
         {
-            "id": "1",
             "species": "acmaeops longicornis",
             "name": "Beetle"
         },
         {
-            "id": "2",
             "species": "acmaeops pratensis",
             "name": "Beetle"
         },
         {
-            "id": "3",
             "species": "andrena canadensis",
             "name": "Canada Miner Bee"
         },
         {
-            "id": "4",
             "species": "andrena crataegi",
             "name": "Hawthorn Miner Bee"
         },
         {
-            "id": "5",
             "species": "andrena edwiniae",
             "name": "Miner Bee"
         },
         {
-            "id": "6",
             "species": "andrena madronitens",
             "name": "Western Red-Legged Miner Bee"
         },
         {
-            "id": "7",
             "species": "andrena prunorum",
             "name": "Purple Miner Bee"
         },
         {
-            "id": "8",
             "species": "andrena vicina",
             "name": "Neighbouring Miner Bee"
         },
         {
-            "id": "9",
             "species": "bombus flavifrons",
             "name": "Yellow-Fronted Bumble Bee"
         },
         {
-            "id": "10",
             "species": "bombus occidentalis",
             "name": "Western Bumble Bee"
         },
         {
-            "id": "11",
             "species": "brachyopa notata",
             "name": "Black-Banded Sapeater"
         },
         {
-            "id": "12",
             "species": "brenthis triclaris",
             "name": "Butterfly"
         },
         {
-            "id": "13",
             "species": "calliphora vomitoria",
             "name": "Blue Bottle Fly"
         },
         {
-            "id": "14",
             "species": "chilosia petulca",
             "name": "Hoverfly"
         },
         {
-            "id": "15",
             "species": "chilosia tristis",
             "name": "Hoverfly"
         },
         {
-            "id": "16",
             "species": "colletes kincaidi",
             "name": "Kincaid's Cellophane Bee"
         },
         {
-            "id": "17",
             "species": "colletes oromontis",
             "name": "Plasterer Bee"
         },
         {
-            "id": "18",
             "species": "coenonympha pamphiloides",
             "name": "Small Heath Butterfly"
         },
         {
-            "id": "19",
             "species": "eristalis arbustorum",
             "name": "European Drone Fly"
         },
         {
-            "id": "20",
             "species": "eristalis dimidiatus",
             "name": "Black-Shouldered Drone Fly"
         },
         {
-            "id": "21",
             "species": "erebia epipsodea",
             "name": "Common Alpine Butterfly"
         },
         {
-            "id": "22",
             "species": "eristalis meigeni",
             "name": "Hoverfly"
         },
         {
-            "id": "23",
             "species": "eristalis temporalis",
             "name": "Black-Footed Drone Fly"
         },
         {
-            "id": "24",
             "species": "halictus chloralictus",
             "name": "Bristle Sweat Bee"
         },
         {
-            "id": "25",
             "species": "halictus pulzenus",
             "name": "Sweat Bee"
         },
         {
-            "id": "26",
             "species": "microdon cothurnatus",
             "name": "Orange-Legged Ant Fly"
         },
         {
-            "id": "27",
             "species": "pseudomasaris vespoides",
             "name": "Pollen Wasp"
         },
         {
-            "id": "28",
             "species": "ptilodexia harpasa",
             "name": "Bristle Fly"
         },
         {
-            "id": "29",
             "species": "spegina infuscata",
             "name": "Hoverfly"
         },
         {
-            "id": "30",
             "species": "sphecodes sophiae",
             "name": "Blood Bee"
         },
         {
-            "id": "31",
             "species": "specomyia vittata",
             "name": "Long-Horned Yellowjacket"
         },
         {
-            "id": "32",
             "species": "syrphus disgregus",
             "name": "Hoverfly"
         },
         {
-            "id": "33",
             "species": "syritta pipiens",
             "name": "Thick-Legged Hoverfly"
         },
         {
-            "id": "34",
             "species": "theventimtia muricatus",
             "name": "???"
         },
         {
-            "id": "35",
             "species": "zodion pygmaeum",
             "name": "Thick-Headed Fly"
         }
