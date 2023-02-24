@@ -9,5 +9,6 @@ disable=
   C0116, # missing-function-docstring
   R0903, # too-few-public-methods
   R0801,
+  R0914, # too-many-locals
   W0102, # dangerous-default-value
   C0301, # line-too-long
