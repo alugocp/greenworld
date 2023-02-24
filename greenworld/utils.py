@@ -8,9 +8,8 @@ RULES = []
 
 # Sets up a new report instance
 def new_report():
-    # pylint: disable=global-statement
+    # pylint: disable-next=global-statement
     global REPORT
-    # pylint: enable=global-statement
     REPORT = []
 
 # Returns the current report to another module
@@ -23,9 +22,8 @@ def add_to_report(pair):
 
 # Sets the current SQLAlchemy connection
 def set_connection(con):
-    # pylint: disable=global-statement
+    # pylint: disable-next=global-statement
     global CONNECTION
-    # pylint: enable=global-statement
     CONNECTION = con
 
 # Returns the current SQLAlchemy connection

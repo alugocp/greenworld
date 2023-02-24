@@ -86,6 +86,7 @@ def allelopathy_relationship(plant1, plant2):
 
     # Hacked mirroring to get up to two results
     if plant1.id < plant2.id:
+        # pylint: disable-next=arguments-out-of-order
         allelopathy_relationship(plant2, plant1)
 
     # Grab plant2's family's ID (if it exists)

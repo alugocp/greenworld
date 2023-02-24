@@ -9,6 +9,7 @@ from flask import (
     render_template
 )
 sys.path.append('.')
+# pylint: disable-next=wrong-import-position
 from greenworld import schema
 app = Flask(
     'Greenworld',

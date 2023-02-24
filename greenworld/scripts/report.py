@@ -5,9 +5,8 @@
 # • Write the report back to the database
 import math
 import logging
-# pylint: disable=unused-import
+# pylint: disable-next=unused-import
 import greenworld.algorithm
-# pylint: enable=unused-import
 from greenworld import init
 from greenworld import utils
 from greenworld.schema import (

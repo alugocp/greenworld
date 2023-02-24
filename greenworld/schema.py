@@ -21,9 +21,8 @@ DB = None
 
 # This function initializes or retrieves a singular database connection object
 def init_db():
-    # pylint: disable=global-statement
+    # pylint: disable-next=global-statement
     global DB
-    # pylint: enable=global-statement
     if not DB:
         dbstring = os.getenv('GREENWORLD_DB')
         if not dbstring:

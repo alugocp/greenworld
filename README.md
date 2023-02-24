@@ -14,10 +14,10 @@ Use the following commands to help you while writing code for this project:
 
 ```bash
 # Installs all Python dependencies
-python3 -m pip install -r requirements.txt
+make install
 
 # Runs the Python linter
-python3 -m pylint $(git ls-files "*.py")
+make lint
 
 # Performs unit tests
 make run:test
