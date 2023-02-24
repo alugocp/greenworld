@@ -4,23 +4,23 @@ import logging
 from greenworld.collection import iweb_xls
 from greenworld.scripts import enter
 from greenworld.lib import init_greenworld
-from greenworld.lib import schema
+from greenworld.lib import orm
 from greenworld.lib import defs
 
 def main():
     init_greenworld()
-    db = schema.init_db()
+    db = orm.init_db()
 
     # Clear and recreate the database
-    schema.meta.reflect(db)
-    schema.meta.drop_all(db)
+    orm.meta.reflect(db)
+    orm.meta.drop_all(db)
     logging.info('Dropped all existing tables')
-    schema.meta.create_all(db)
+    orm.meta.create_all(db)
     logging.info('Recreated new schema')
 
     # Set a plant kingdom value in the other_species table
     with db.connect() as con:
-        stmt = schema.other_species_table.insert().values(
+        stmt = orm.other_species_table.insert().values(
             id = defs.PLANTAE,
             species = 'plantae',
             name = 'Plant Kingdom'

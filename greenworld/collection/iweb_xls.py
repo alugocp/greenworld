@@ -5,7 +5,7 @@ import re
 import xlrd
 from greenworld.lib.taxonomy import Taxon
 from greenworld.lib import init_greenworld
-from greenworld.lib import schema
+from greenworld.lib import orm
 from greenworld.lib import defs
 
 # CLI options structure for global access
@@ -95,7 +95,7 @@ def enter_data_csv(db, filename):
     if not cli_options['citation']:
         raise Exception(f'No citation provided for data file {filename}')
     with db.connect() as con:
-        citation = retrieve_or_insert(con, schema.works_cited_table, 'citation', {
+        citation = retrieve_or_insert(con, orm.works_cited_table, 'citation', {
             'citation': cli_options['citation']
         })
         for a, _ in enumerate(data):
@@ -108,14 +108,14 @@ def enter_data_csv(db, filename):
                     if not Taxon(latin1).species or not Taxon(latin2).species:
                         continue
                     logging.info('Visiting %s x %s', latin1, latin2)
-                    species1 = select_by(con, schema.plants_table, 'species', latin1)
+                    species1 = select_by(con, orm.plants_table, 'species', latin1)
                     if species1:
                         species2_latin = latin2
                     else:
-                        species1 = select_by(con, schema.plants_table, 'species', latin2)
+                        species1 = select_by(con, orm.plants_table, 'species', latin2)
                         species2_latin = latin1
                     if species1:
-                        species2 = retrieve_or_insert(con, schema.other_species_table, 'species', {
+                        species2 = retrieve_or_insert(con, orm.other_species_table, 'species', {
                             'species': species2_latin,
                             'name': species2_latin
                         })
@@ -125,7 +125,7 @@ def enter_data_csv(db, filename):
                             'relationship': mapped,
                             'citation': citation['id']
                         }
-                        con.execute(schema.ecology_other_table.insert().values(**interaction))
+                        con.execute(orm.ecology_other_table.insert().values(**interaction))
                         logging.info(interaction)
         con.commit()
 
@@ -170,7 +170,7 @@ def transposed(matrix):
 
 def main(args):
     init_greenworld()
-    db = schema.init_db()
+    db = orm.init_db()
     a = 0
     while a < len(args):
         if args[a] == '--help':

@@ -9,7 +9,7 @@ import logging
 import greenworld.lib.algorithm
 from greenworld.lib import init_greenworld
 from greenworld.lib import utils
-from greenworld.lib.schema import (
+from greenworld.lib.orm import (
     init_db,
     reports_table,
     memory_table,

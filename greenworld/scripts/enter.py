@@ -5,7 +5,7 @@ import sys
 import sqlalchemy
 from sqlalchemy_utils import NumericRangeType
 from greenworld.lib import init_greenworld
-from greenworld.lib import schema
+from greenworld.lib import orm
 from greenworld.lib import defs
 
 # Conversions table for internal standard units
@@ -80,19 +80,19 @@ def enter_data(db, filename):
 
         # Write other species data to the database
         logging.info('Writing other species data...')
-        last_other_id = get_last_id(con, schema.other_species_table)
+        last_other_id = get_last_id(con, orm.other_species_table)
         for row in (data['others'] if 'others' in data else []):
             values = copy.deepcopy(row)
             values['id'] = last_other_id + 1
             last_other_id += 1
             logging.info(values)
-            con.execute(schema.other_species_table.insert().values(**values))
+            con.execute(orm.other_species_table.insert().values(**values))
         print('')
 
         # Sanitize and write plant data to database
         ecology_data = {}
         logging.info('Writing plant and interaction data...')
-        last_plant_id = get_last_id(con, schema.plants_table)
+        last_plant_id = get_last_id(con, orm.plants_table)
         for row in (data['plants'] if 'plants' in data else []):
             values = copy.deepcopy(row)
             values['id'] = last_plant_id + 1
@@ -109,17 +109,17 @@ def enter_data(db, filename):
             for col, val in values.items():
 
                 # Convert enum references to their integer values
-                if isinstance(schema.plants_table.c[col].type, sqlalchemy.Integer) and isinstance(val, str):
+                if isinstance(orm.plants_table.c[col].type, sqlalchemy.Integer) and isinstance(val, str):
                     values[col] = parse_enum(val)
 
                 # Convert nonstandard units to internal standard units
-                if isinstance(schema.plants_table.c[col].type, NumericRangeType) and isinstance(val[0], str):
+                if isinstance(orm.plants_table.c[col].type, NumericRangeType) and isinstance(val[0], str):
                     values[col][0] = convert_to_unit(val[0])
                     values[col][1] = convert_to_unit(val[1])
 
             # Write sanitized values to database
             logging.info(values)
-            con.execute(schema.plants_table.insert().values(**values))
+            con.execute(orm.plants_table.insert().values(**values))
 
         # Handle ecological data
         for plant_id, data in ecology_data.items():
@@ -130,17 +130,17 @@ def enter_data(db, filename):
 def get_works_cited_map(con, data):
     works_cited_map = {}
     logging.info('Writing works cited...')
-    last_id = get_last_id(con, schema.works_cited_table)
+    last_id = get_last_id(con, orm.works_cited_table)
     for row in (data['works_cited'] if 'works_cited' in data else []):
         values = copy.deepcopy(row)
-        works_cited_result = select_by(con, schema.works_cited_table, 'citation', values['citation'])
+        works_cited_result = select_by(con, orm.works_cited_table, 'citation', values['citation'])
         if works_cited_result:
             works_cited_map[row['id']] = works_cited_result['id']
         else:
             values['id'] = last_id + 1
             works_cited_map[row['id']] = values['id']
             logging.info(values)
-            con.execute(schema.works_cited_table.insert().values(**values))
+            con.execute(orm.works_cited_table.insert().values(**values))
             last_id += 1
     print('')
     return works_cited_map
@@ -151,10 +151,10 @@ def process_ecological_fields(con, works_cited_map, plant_id, data):
 
         # Retrieve (and/or create) plant or non-plant species
         is_plant = True
-        result = select_by(con, schema.plants_table, 'species', row['species'])
+        result = select_by(con, orm.plants_table, 'species', row['species'])
         if not result:
             is_plant = False
-            result = select_by(con, schema.other_species_table, 'species', row['species'])
+            result = select_by(con, orm.other_species_table, 'species', row['species'])
         if not result:
             species = row['species']
             raise Exception(f'Unknown interactive species \'{species}\'')
@@ -165,15 +165,15 @@ def process_ecological_fields(con, works_cited_map, plant_id, data):
         }
         if is_plant:
             interaction['target'] = result['id']
-            con.execute(schema.ecology_plant_table.insert().values(**interaction))
+            con.execute(orm.ecology_plant_table.insert().values(**interaction))
         else:
             interaction['non_plant'] = result['id']
-            con.execute(schema.ecology_other_table.insert().values(**interaction))
+            con.execute(orm.ecology_other_table.insert().values(**interaction))
         logging.info(interaction)
 
 def main(args):
     init_greenworld()
-    db = schema.init_db()
+    db = orm.init_db()
     for a, _ in enumerate(args):
         if args[a] == '--help':
             print_help()

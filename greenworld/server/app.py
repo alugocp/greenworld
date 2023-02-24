@@ -6,7 +6,7 @@ from flask import (
     Flask,
     render_template
 )
-from greenworld.lib import schema
+from greenworld.lib import orm
 from greenworld.lib import init_greenworld
 app = Flask(
     'Greenworld',
@@ -14,7 +14,7 @@ app = Flask(
     static_folder = 'greenworld/server/static'
 )
 init_greenworld()
-db = schema.init_db()
+db = orm.init_db()
 
 # Helpful values
 plant_field_labels = {
@@ -77,7 +77,7 @@ ecology_values = [
 def process_plant_dict(con, plant):
     if 'citations' in plant:
         ids = list(plant['citations'].keys())
-        stmt = schema.works_cited_table.select().where(schema.works_cited_table.c.id.in_(ids))
+        stmt = orm.works_cited_table.select().where(orm.works_cited_table.c.id.in_(ids))
         plant['citations'] = cite_fields(plant['citations'], list(con.execute(stmt).fetchall()))
     plant_id = plant['id'] if 'id' in plant else 0
     plant = transform_plant(plant)
@@ -111,14 +111,14 @@ def grab_ecology_data(con, plant_id):
 
     # Aggregate non-plant ecological interactions
     stmt = sqlalchemy.select(
-        schema.other_species_table.c.name,
-        schema.other_species_table.c.species,
-        schema.ecology_other_table.c.relationship,
-        schema.works_cited_table.c.citation
+        orm.other_species_table.c.name,
+        orm.other_species_table.c.species,
+        orm.ecology_other_table.c.relationship,
+        orm.works_cited_table.c.citation
     ) \
-    .join(schema.other_species_table, schema.other_species_table.c.id == schema.ecology_other_table.c.non_plant) \
-    .join(schema.works_cited_table, schema.works_cited_table.c.id == schema.ecology_other_table.c.citation) \
-    .where(schema.ecology_other_table.c.plant == plant_id)
+    .join(orm.other_species_table, orm.other_species_table.c.id == orm.ecology_other_table.c.non_plant) \
+    .join(orm.works_cited_table, orm.works_cited_table.c.id == orm.ecology_other_table.c.citation) \
+    .where(orm.ecology_other_table.c.plant == plant_id)
     for row in con.execute(stmt).mappings():
         row = dict(row)
         row['relationship'] = ecology_values[row['relationship']]
@@ -126,14 +126,14 @@ def grab_ecology_data(con, plant_id):
 
     # Aggregate plant ecological interactions
     stmt = sqlalchemy.select(
-        schema.plants_table.c.name,
-        schema.plants_table.c.species,
-        schema.ecology_plant_table.c.relationship,
-        schema.works_cited_table.c.citation
+        orm.plants_table.c.name,
+        orm.plants_table.c.species,
+        orm.ecology_plant_table.c.relationship,
+        orm.works_cited_table.c.citation
     ) \
-    .join(schema.plants_table, schema.plants_table.c.id == schema.ecology_plant_table.c.target) \
-    .join(schema.works_cited_table, schema.works_cited_table.c.id == schema.ecology_plant_table.c.citation) \
-    .where(schema.ecology_plant_table.c.plant == plant_id)
+    .join(orm.plants_table, orm.plants_table.c.id == orm.ecology_plant_table.c.target) \
+    .join(orm.works_cited_table, orm.works_cited_table.c.id == orm.ecology_plant_table.c.citation) \
+    .where(orm.ecology_plant_table.c.plant == plant_id)
     for row in con.execute(stmt).mappings():
         row = dict(row)
         row['relationship'] = ecology_values[row['relationship']]
@@ -162,7 +162,7 @@ def homepage_endpoint():
 def plant_view_endpoint(species):
     species = unquote_plus(species)
     with db.connect() as con:
-        stmt = schema.plants_table.select().where(schema.plants_table.c.species == species)
+        stmt = orm.plants_table.select().where(orm.plants_table.c.species == species)
         plant = con.execute(stmt).mappings().fetchone()
         if plant:
             plant = process_plant_dict(con, dict(plant))
@@ -176,11 +176,11 @@ def plant_search_endpoint(prefix):
         return []
     with db.connect() as con:
         stmt = sqlalchemy.select(
-            schema.plants_table.c.species,
-            schema.plants_table.c.name) \
+            orm.plants_table.c.species,
+            orm.plants_table.c.name) \
         .where(sqlalchemy.or_(
-            schema.plants_table.c.species.like(f'{prefix}%'),
-            schema.plants_table.c.name.like(f'{prefix}%')
+            orm.plants_table.c.species.like(f'{prefix}%'),
+            orm.plants_table.c.name.like(f'{prefix}%')
         )) \
         .limit(10)
         return list(map(tuple, con.execute(stmt).fetchall()))
@@ -191,13 +191,13 @@ def report_view_endpoint(species1, species2):
     species2 = unquote_plus(species2)
     error_404 = f'No report for plants \'{species1}\' and \'{species2}\''
     with db.connect() as con:
-        stmt = schema.plants_table.select().where(schema.plants_table.c.species.in_([species1, species2]))
+        stmt = orm.plants_table.select().where(orm.plants_table.c.species.in_([species1, species2]))
         plants = list(map(dict, con.execute(stmt).mappings().fetchall()))
         if len(plants) != 2:
             return error_404, 404
         if plants[1]['id'] < plants[0]['id']:
             plants = [plants[1], plants[0]]
-        stmt = schema.reports_table.select().where(schema.reports_table.c.plant1 == plants[0]['id']).where(schema.reports_table.c.plant2 == plants[1]['id'])
+        stmt = orm.reports_table.select().where(orm.reports_table.c.plant1 == plants[0]['id']).where(orm.reports_table.c.plant2 == plants[1]['id'])
         report = dict(con.execute(stmt).mappings().fetchone())
         if not report:
             return error_404, 404

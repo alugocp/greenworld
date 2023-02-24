@@ -1,7 +1,7 @@
 # This module contains the core logic for the Greenworld algorithm.
 import math
 import sqlalchemy
-from greenworld.lib.schema import (
+from greenworld.lib.orm import (
     other_species_table,
     ecology_other_table,
     ecology_plant_table
