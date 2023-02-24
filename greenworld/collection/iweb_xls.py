@@ -21,14 +21,12 @@ cli_options = {
 def print_help():
     print(
         'Usage: python3 enter [option [...]] [file [...]]',
-        'This command inserts all data from the given files to the Greenworld database, with the following rules:',
-        ' • A JSON file must follow the structure defined in README.md',
-        ' • Any matrix file (CSV) can be processed using the following options:',
-        '   --range = <c0>:<c1>,<r0>:<r1>\t\t\tdefines the range of data to include (from c0, r0 to c1, r1 inclusive)',
-        '   --row-headers = <filename> | <c0>:<c1>,<r0>:<r1>\tfilepath or range that points to a list of row headers)',
-        '   --col-headers = <filename> | <c0>:<c1>,<r0>:<r1>\tfilepath or range that points to a list of column headers)',
-        '   --citation = <filename>\t\t\t\traw citation text or a filepath that points to a citation file',
-        '   --map <x> <Ecology enum field>\t\t\t\tmaps any value x into an Ecology enum value',
+        'This command inserts all data from the given XLS file(s) from IWeb into the Greenworld database, with the following rules:',
+        ' --range = <c0>:<c1>,<r0>:<r1>\t\t\tdefines the range of data to include (from c0, r0 to c1, r1 inclusive)',
+        ' --row-headers = <filename> | <c0>:<c1>,<r0>:<r1>\tfilepath or range that points to a list of row headers)',
+        ' --col-headers = <filename> | <c0>:<c1>,<r0>:<r1>\tfilepath or range that points to a list of column headers)',
+        ' --citation = <filename>\t\t\t\traw citation text or a filepath that points to a citation file',
+        ' --map <x> <Ecology enum field>\t\t\t\tmaps any value x into an Ecology enum value',
         sep='\n'
     )
 

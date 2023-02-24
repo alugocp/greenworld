@@ -20,7 +20,7 @@ make install
 make lint
 
 # Performs unit tests
-make run:test
+make test
 
 # Starts the web server
 make serve
@@ -28,15 +28,15 @@ make serve
 
 Then you can use the following commands while interacting with the database:
 
-- `make run:reset` hard resets the development database
-- `make run:report` generates companionship reports for newly added plant species
-- `make run:invalidate` invalidates the reports table so the next report command will iterate through every plant pair
-- `make run:query` prints a list of reports logged in the database
+- `make reset` hard resets the development database
+- `make report` generates companionship reports for newly added plant species
+- `make invalidate` invalidates the reports table so the next report command will iterate through every plant pair
+- `make query` prints a list of reports logged in the database
 
 This command can be used to enter data into the database:
 
 ```bash
-make run:enter [option [...]] [file [...]]
+PYTHONPATH=. python3 greenworld/scripts/enter.py [option [...]] [file [...]]
 ```
 
 `file` arguments will point to files that adhere to one of the following structures.
