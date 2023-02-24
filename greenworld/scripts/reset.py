@@ -23,7 +23,7 @@ def main():
         stmt = schema.other_species_table.insert().values(
             id = defs.PLANTAE,
             species = 'plantae',
-            name = 'Plant kingdom'
+            name = 'Plant Kingdom'
         )
         con.execute(stmt)
         con.commit()

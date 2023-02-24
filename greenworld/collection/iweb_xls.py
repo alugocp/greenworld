@@ -3,6 +3,7 @@ import csv
 import sys
 import re
 import xlrd
+from greenworld.lib.taxonomy import Taxon
 from greenworld.lib import init_greenworld
 from greenworld.lib import schema
 from greenworld.lib import defs
@@ -104,6 +105,8 @@ def enter_data_csv(db, filename):
                     mapped = cli_options['map'][point]
                     latin1 = cli_options['row-headers'][a]
                     latin2 = cli_options['col-headers'][b]
+                    if not Taxon(latin1).species or not Taxon(latin2).species:
+                        continue
                     logging.info('Visiting %s x %s', latin1, latin2)
                     species1 = select_by(con, schema.plants_table, 'species', latin1)
                     if species1:

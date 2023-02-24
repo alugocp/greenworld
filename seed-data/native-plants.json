@@ -272,8 +272,8 @@
         }
     ],
     "others": [
-        { "species": "gramineae", "name": "Grass family" },
-        { "species": "fabaceae", "name": "Legume family" }
+        { "species": "gramineae", "name": "Grass Family" },
+        { "species": "fabaceae", "name": "Legume Family" }
     ],
     "works_cited": [
         {
