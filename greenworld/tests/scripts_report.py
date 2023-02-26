@@ -22,7 +22,10 @@ class ScriptsReportCase(unittest.TestCase):
         logs.clear()
         report.main(gw)
         self.assertEqual(logs, [
+            'Analyzing Hopi Turquoise Corn x Hopi Turquoise Corn...',
             'Analyzing Hopi Turquoise Corn x Hopi Orange Squash...',
+            'Analyzing Hopi Orange Squash x Hopi Orange Squash...',
             'Analyzing Hopi Turquoise Corn x Hopi Purple String Bean...',
-            'Analyzing Hopi Orange Squash x Hopi Purple String Bean...'
+            'Analyzing Hopi Orange Squash x Hopi Purple String Bean...',
+            'Analyzing Hopi Purple String Bean x Hopi Purple String Bean...'
         ])

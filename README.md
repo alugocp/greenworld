@@ -36,14 +36,13 @@ Then you can use the following commands while interacting with the database:
 This command can be used to enter data into the database:
 
 ```bash
-PYTHONPATH=. python3 greenworld/scripts/enter.py [option [...]] [file [...]]
+PYTHONPATH=. python3 greenworld/scripts/enter.py [file [...]]
 ```
 
 `file` arguments will point to files that adhere to one of the following structures.
 Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-z]+` such that it represents a measurement of some specific unit.
 
 ```js
-// JSON files
 {
   "plants": [
     {

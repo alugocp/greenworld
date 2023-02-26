@@ -1,4 +1,5 @@
 import re
+import copy
 from urllib.parse import unquote_plus
 from intervals import DecimalInterval
 import sqlalchemy
@@ -194,7 +195,10 @@ def report_view_endpoint(species1, species2):
         stmt = orm.plants_table.select().where(orm.plants_table.c.species.in_([species1, species2]))
         plants = list(map(dict, con.execute(stmt).mappings().fetchall()))
         if len(plants) != 2:
-            return error_404, 404
+            if species1 == species2:
+                plants.append(copy.deepcopy(plants[0]))
+            else:
+                return error_404, 404
         if plants[1]['id'] < plants[0]['id']:
             plants = [plants[1], plants[0]]
         stmt = orm.reports_table.select().where(orm.reports_table.c.plant1 == plants[0]['id']).where(orm.reports_table.c.plant2 == plants[1]['id'])

@@ -45,7 +45,9 @@
 <!-- Include plant views -->
 {% import 'macros/plant.html' as plant_view %}
 {{ plant_view.render(plant1, True) }}
-{{ plant_view.render(plant2, True) }}
+{% if plant2.species != plant1.species %}
+    {{ plant_view.render(plant2, True) }}
+{% endif %}
 
 <script>
 const intervals = [

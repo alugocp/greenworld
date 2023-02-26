@@ -162,6 +162,8 @@ def large_vines_shade_weeds(plant1, plant2):
 
 @rule()
 def ecological_intersection(plant1, plant2):
+    if plant1.species == plant2.species:
+        return None
     con = get_connection()
     e1 = ecology_other_table.alias('e1')
     e2 = ecology_other_table.alias('e2')

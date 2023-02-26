@@ -57,7 +57,7 @@ def main(gw: Greenworld):
         last_analyzed = get_last_analyzed(con)
         utils.set_connection(con)
         for plant1 in get_plants(con, plants_table.c.id > last_analyzed).mappings():
-            for plant2 in get_plants(con, plants_table.c.id < plant1.id).mappings():
+            for plant2 in get_plants(con, plants_table.c.id <= plant1.id).mappings():
                 gw.log(f'Analyzing {plant2.name} x {plant1.name}...')
                 utils.new_report()
                 for rule in utils.get_rules():
