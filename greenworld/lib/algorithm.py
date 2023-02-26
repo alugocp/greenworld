@@ -32,12 +32,15 @@ from greenworld.lib.utils import (
 # Rules that will absolutely return a range value
 @rule('can_vine_climb')
 @mirrored
-@ensure(both = ['sun', 'growth_habit'], fields1 = ['fruit_weight'])
+@ensure(both = ['sun', 'growth_habit'])
 def can_vine_climb(plant1, plant2):
     threshold = 45.359237 # 0.1 lbs
     dist = 6 * 0.0254 / math.sqrt(2) # 45 degree angle with 6 inch hypotenuse
-    if plant1.sun == Sun.FULL_SUN and plant1.growth_habit == GrowthHabit.VINE and plant1.fruit_weight < threshold and plant2.sun == Sun.FULL_SUN and plant2.growth_habit in [GrowthHabit.GRAMINOID, GrowthHabit.FORB]:
-        return (0, dist), f'{plant1.name} can climb up {plant2.name} for direct sunlight'
+    if plant1.growth_habit == GrowthHabit.VINE and plant2.sun == Sun.FULL_SUN:
+        if plant1.sun == Sun.FULL_SUN and plant1.fruit_weight and plant1.fruit_weight < threshold and plant2.growth_habit in [GrowthHabit.GRAMINOID, GrowthHabit.FORB]:
+            return (0, dist), f'{plant1.name} can climb up {plant2.name} for direct sunlight'
+        if plant1.sun == Sun.PARTIAL_SUN and plant2.growth_habit == GrowthHabit.TREE:
+            return (0, dist), f'{plant1.name} can climb up {plant2.name} for indirect sunlight'
 
 @rule()
 @taller_first
