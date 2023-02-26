@@ -34,10 +34,9 @@ from greenworld.lib.utils import (
 @ensure(both = ['sun', 'growth_habit'], fields1 = ['fruit_weight'])
 def can_vine_climb(plant1, plant2):
     threshold = 45.359237 # 0.1 lbs
-    dist1 = 3 * 0.0254 / math.sqrt(2) # 45 degree angle with 3 inch hypotenuse
-    dist2 = 6 * 0.0254 / math.sqrt(2) # 45 degree angle with 6 inch hypotenuse
+    dist = 6 * 0.0254 / math.sqrt(2) # 45 degree angle with 6 inch hypotenuse
     if plant1.sun == Sun.FULL_SUN and plant1.growth_habit == GrowthHabit.VINE and plant1.fruit_weight < threshold and plant2.sun == Sun.FULL_SUN and plant2.growth_habit in [GrowthHabit.GRAMINOID, GrowthHabit.FORB]:
-        return (dist1, dist2), f'{plant1.name} can climb up {plant2.name} for direct sunlight'
+        return (0, dist), f'{plant1.name} can climb up {plant2.name} for direct sunlight'
 
 @rule
 @taller_first
@@ -71,9 +70,8 @@ def add_spread(plant1, plant2):
 @ensure(both = ['nitrogen'])
 def nitrogen_relationship(plant1, plant2):
     if plant1.nitrogen == Nitrogen.FIXER and plant2.nitrogen == Nitrogen.HEAVY:
-        dist1 = reduce_intervals(plant1, plant2, 'spread', 'upper') / 2
-        dist2 = reduce_intervals(plant1, plant2, 'root_spread', 'lower')
-        dist = None if dist1 == 0 and dist2 == 0 else (dist1, dist2)
+        dist = reduce_intervals(plant1, plant2, 'root_spread', 'lower')
+        dist = None if dist == 0 else (0, dist)
         return dist, f'{plant1.name} can fix soil nitrogen for {plant2.name}'
     if plant1.nitrogen == Nitrogen.HEAVY and plant2.nitrogen == Nitrogen.HEAVY:
         dist = reduce_intervals(plant1, plant2, 'root_spread', 'upper')
@@ -107,9 +105,8 @@ def allelopathy_relationship(plant1, plant2):
 
     # Return based on uncovered relationship
     if relationship == Ecology.POSITIVE_ALLELOPATHY:
-        dist1 = reduce_intervals(plant1, plant2, 'spread', 'upper') / 2
-        dist2 = reduce_intervals(plant1, plant2, 'root_spread', 'lower')
-        dist = None if dist1 == 0 and dist2 == 0 else (dist1, dist2)
+        dist = reduce_intervals(plant1, plant2, 'root_spread', 'lower')
+        dist = None if dist == 0 else (0, dist)
         return dist, f'{plant1.name} is a positive allelopath for {plant2.name}'
     if relationship == Ecology.NEGATIVE_ALLELOPATHY:
         dist = reduce_intervals(plant1, plant2, 'root_spread', 'upper')
@@ -121,9 +118,8 @@ def allelopathy_relationship(plant1, plant2):
 @ensure(both = ['root_depth'], fields2 = ['drainage'])
 def roots_break_up_soil(plant1, plant2):
     if plant1.root_depth > plant2.root_depth and plant2.drainage >= Drainage.WELL_DRAINED:
-        dist1 = reduce_intervals(plant1, plant2, 'spread', 'upper') / 2
-        dist2 = reduce_intervals(plant1, plant2, 'root_spread', 'lower')
-        dist = None if dist1 == 0 and dist2 == 0 else (dist1, dist2)
+        dist = reduce_intervals(plant1, plant2, 'root_spread', 'lower')
+        dist = None if dist == 0 else (0, dist)
         return dist, f'{plant1.name} can break up the soil for {plant2.name} to get better drainage'
 
 # Rules that will absolutely not return a range value

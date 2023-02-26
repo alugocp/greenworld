@@ -65,13 +65,10 @@ for (let a = 0; a < intervals.length; a++) {
 
 function clicked(e, index) {
     activated[index] = e.target.checked;
-    let lower = intervals.filter((x, i) => activated[i]).reduce((acc, x) => Math.min(x[0], acc), Number.MAX_VALUE);
-    let upper = intervals.filter((x, i) => activated[i]).reduce((acc, x) => Math.max(x[1], acc), -1);
-    if (lower === Number.MAX_VALUE) {
-        lower = 0;
-    }
-    if (upper === -1) {
-        upper = 0;
+    let lower = intervals.filter((x, i) => activated[i]).reduce((acc, x) => Math.max(x[0], acc), 0);
+    let upper = intervals.filter((x, i) => activated[i]).reduce((acc, x) => Math.min(x[1], acc), {{ MAX_PLANTING_RANGE }});
+    if (lower > upper) {
+        upper = lower;
     }
     document.getElementById('suggested').innerHTML = (upper === {{ MAX_PLANTING_RANGE }})
         ? `${lower}+ m`
