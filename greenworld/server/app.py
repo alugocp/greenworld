@@ -203,7 +203,13 @@ def report_view_endpoint(species1, species2):
             return error_404, 404
         for i, plant in enumerate(plants):
             plants[i] = process_plant_dict(con, plant)
-        return render_template('report.html', report = report, plant1 = plants[0], plant2 = plants[1])
+        return render_template(
+            'report.html',
+            report = report,
+            plant1 = plants[0],
+            plant2 = plants[1],
+            MAX_PLANTING_RANGE = orm.MAX_PLANTING_RANGE
+        )
 
 # Main script
 if __name__ == '__main__':

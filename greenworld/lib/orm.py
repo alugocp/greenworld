@@ -13,6 +13,9 @@ from sqlalchemy import (
     JSON
 )
 
+# Min and max values for planting ranges
+MAX_PLANTING_RANGE = 10000
+
 # Metadata object for SQLAlchemy
 meta = MetaData()
 

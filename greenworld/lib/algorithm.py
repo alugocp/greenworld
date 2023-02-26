@@ -4,7 +4,8 @@ import sqlalchemy
 from greenworld.lib.orm import (
     other_species_table,
     ecology_other_table,
-    ecology_plant_table
+    ecology_plant_table,
+    MAX_PLANTING_RANGE
 )
 from greenworld.lib.defs import (
     PLANTAE,
@@ -44,7 +45,7 @@ def can_vine_climb(plant1, plant2):
 def space_for_sunlight(plant1, plant2):
     middle = float(plant1.spread.upper if plant1.spread else plant1.height.upper / 2)
     if plant2.sun == Sun.FULL_SUN:
-        return (middle * 1.25, middle * 2), f'{plant2.name} should be far enough away from {plant1.name} to get direct sunlight'
+        return (middle * 1.25, MAX_PLANTING_RANGE), f'{plant2.name} should be far enough away from {plant1.name} to get direct sunlight'
     if plant2.sun == Sun.PARTIAL_SUN:
         return (middle * 0.75, middle * 1.25), f'{plant2.name} should be just far enough from {plant1.name} to get partial sunlight'
     return (0, middle * 0.75), f'{plant2.name} should be close enough to {plant1.name} to get full shade'
@@ -56,12 +57,12 @@ def vine_spacing(plant1, plant2):
         dist = math.sqrt(math.pow(24 / math.sqrt(2), 2) + math.pow(12, 2)) * 0.0254 # Distance between beans and squash in three sisters
         if plant1['spread'] and plant2['spread']:
             dist = (plant1.spread.upper + plant2.spread.upper) / 2
-        return (dist, dist * 2), f'{plant1.name} should be placed far enough from {plant2.name} so both vines can spread'
+        return (dist, MAX_PLANTING_RANGE), f'{plant1.name} should be placed far enough from {plant2.name} so both vines can spread'
 
 @rule
 @ensure(both = ['spread'])
 def add_spread(plant1, plant2):
-    dist = (plant1.spread.lower + plant2.spread.lower, plant1.spread.upper + plant2.spread.upper)
+    dist = (plant1.spread.lower + plant2.spread.lower, MAX_PLANTING_RANGE)
     return dist, f'{plant1.name} and {plant2.name} should both have enough space to grow horizontally'
 
 # Rules that may return a range value
@@ -76,7 +77,7 @@ def nitrogen_relationship(plant1, plant2):
         return dist, f'{plant1.name} can fix soil nitrogen for {plant2.name}'
     if plant1.nitrogen == Nitrogen.HEAVY and plant2.nitrogen == Nitrogen.HEAVY:
         dist = reduce_intervals(plant1, plant2, 'root_spread', 'upper')
-        dist = None if dist == 0 else (dist, dist * 2)
+        dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
         return dist, f'{plant1.name} and {plant2.name} may compete for soil nitrogen'
 
 @rule
@@ -112,7 +113,7 @@ def allelopathy_relationship(plant1, plant2):
         return dist, f'{plant1.name} is a positive allelopath for {plant2.name}'
     if relationship == Ecology.NEGATIVE_ALLELOPATHY:
         dist = reduce_intervals(plant1, plant2, 'root_spread', 'upper')
-        dist = None if dist == 0 else (dist, dist * 2)
+        dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
         return dist, f'{plant1.name} is a negative allelopath for {plant2.name}'
 
 @rule

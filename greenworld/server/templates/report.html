@@ -10,7 +10,13 @@
 <!-- Suggested ranges -->
 <p>
     <b>Suggested range:</b>
-    <span id = "suggested">{{ report['range_union_min']|round(3) }}m - {{ report['range_union_max']|round(3) }}m</span>
+    <span id = "suggested">
+        {% if report['range_union_max'] == MAX_PLANTING_RANGE %}
+            {{ report['range_union_min']|round(3) }}+ m
+        {% else %}
+            {{ report['range_union_min']|round(3) }}m - {{ report['range_union_max']|round(3) }}m
+        {% endif %}
+    </span>
 </p>
 <table class = "ranges-table">
 {% for pair in report['report'] %}
@@ -19,7 +25,11 @@
         {% if interval %}
             {% set lower, upper = interval %}
             <td><input type = "checkbox" onchange = "clicked(event, {{ loop.index0 }})" checked /></td>
-            <td>{{ lower }}m - {{ upper }}m</td>
+            {% if upper == MAX_PLANTING_RANGE %}
+                <td>{{ lower }}+ m</td>
+            {% else %}
+                <td>{{ lower }}m - {{ upper }}m</td>
+            {% endif %}
         {% else %}
             <td></td>
             <td></td>
@@ -63,7 +73,9 @@ function clicked(e, index) {
     if (upper === -1) {
         upper = 0;
     }
-    document.getElementById('suggested').innerHTML = `${lower}m - ${upper}m`;
+    document.getElementById('suggested').innerHTML = (upper === {{ MAX_PLANTING_RANGE }})
+        ? `${lower}+ m`
+        : `${lower}m - ${upper}m`;
 }
 
 </script>
