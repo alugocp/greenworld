@@ -16,6 +16,7 @@ from greenworld.lib.defs import (
     Sun
 )
 from greenworld.lib.utils import (
+    is_rule_included,
     reduce_intervals,
     get_connection,
     add_to_report,
@@ -29,7 +30,7 @@ from greenworld.lib.utils import (
 # pylint: disable=inconsistent-return-statements
 
 # Rules that will absolutely return a range value
-@rule
+@rule('can_vine_climb')
 @mirrored
 @ensure(both = ['sun', 'growth_habit'], fields1 = ['fruit_weight'])
 def can_vine_climb(plant1, plant2):
@@ -38,10 +39,12 @@ def can_vine_climb(plant1, plant2):
     if plant1.sun == Sun.FULL_SUN and plant1.growth_habit == GrowthHabit.VINE and plant1.fruit_weight < threshold and plant2.sun == Sun.FULL_SUN and plant2.growth_habit in [GrowthHabit.GRAMINOID, GrowthHabit.FORB]:
         return (0, dist), f'{plant1.name} can climb up {plant2.name} for direct sunlight'
 
-@rule
+@rule()
 @taller_first
 @ensure(fields1=['height'], fields2 = ['sun'])
 def space_for_sunlight(plant1, plant2):
+    if is_rule_included('can_vine_climb'):
+        return None
     middle = float(plant1.spread.upper if plant1.spread else plant1.height.upper / 2)
     if plant2.sun == Sun.FULL_SUN:
         return (middle * 1.25, MAX_PLANTING_RANGE), f'{plant2.name} should be far enough away from {plant1.name} to get direct sunlight'
@@ -49,7 +52,7 @@ def space_for_sunlight(plant1, plant2):
         return (middle * 0.75, middle * 1.25), f'{plant2.name} should be just far enough from {plant1.name} to get partial sunlight'
     return (0, middle * 0.75), f'{plant2.name} should be close enough to {plant1.name} to get full shade'
 
-@rule
+@rule()
 @ensure(both = ['growth_habit'])
 def vine_spacing(plant1, plant2):
     if plant1.growth_habit == GrowthHabit.VINE and plant2.growth_habit == GrowthHabit.VINE:
@@ -58,14 +61,14 @@ def vine_spacing(plant1, plant2):
             dist = (plant1.spread.upper + plant2.spread.upper) / 2
         return (dist, MAX_PLANTING_RANGE), f'{plant1.name} should be placed far enough from {plant2.name} so both vines can spread'
 
-@rule
+@rule()
 @ensure(both = ['spread'])
 def add_spread(plant1, plant2):
     dist = (plant1.spread.lower + plant2.spread.lower, MAX_PLANTING_RANGE)
     return dist, f'{plant1.name} and {plant2.name} should both have enough space to grow horizontally'
 
 # Rules that may return a range value
-@rule
+@rule()
 @mirrored
 @ensure(both = ['nitrogen'])
 def nitrogen_relationship(plant1, plant2):
@@ -78,7 +81,7 @@ def nitrogen_relationship(plant1, plant2):
         dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
         return dist, f'{plant1.name} and {plant2.name} may compete for soil nitrogen'
 
-@rule
+@rule()
 def allelopathy_relationship(plant1, plant2):
     con = get_connection()
     relationship = None
@@ -113,7 +116,7 @@ def allelopathy_relationship(plant1, plant2):
         dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
         return dist, f'{plant1.name} is a negative allelopath for {plant2.name}'
 
-@rule
+@rule()
 @mirrored
 @ensure(both = ['root_depth'], fields2 = ['drainage'])
 def roots_break_up_soil(plant1, plant2):
@@ -123,38 +126,38 @@ def roots_break_up_soil(plant1, plant2):
         return dist, f'{plant1.name} can break up the soil for {plant2.name} to get better drainage'
 
 # Rules that will absolutely not return a range value
-@rule
+@rule()
 @ensure(both = ['temperature'])
 def match_temperature(plant1, plant2):
     if not overlaps(plant1.temperature, plant2.temperature):
         return None, f'{plant1.name} and {plant2.name} prefer different temperature ranges'
 
-@rule
+@rule()
 @ensure(both = ['soil'])
 def match_soil(plant1, plant2):
     if plant1.soil != plant2.soil:
         return None, f'{plant1.name} and {plant2.name} prefer different types of soil'
 
-@rule
+@rule()
 @ensure(both = ['pH'])
 def match_ph(plant1, plant2):
     if not overlaps(plant1.pH, plant2.pH):
         return None, f'{plant1.name} and {plant2.name} prefer different pH ranges'
 
-@rule
+@rule()
 @ensure(both = ['drainage'])
 def match_drainage(plant1, plant2):
     if plant1.drainage != plant2.drainage:
         return None, f'{plant1.name} and {plant2.name} prefer different soil drainage'
 
-@rule
+@rule()
 @mirrored
 @ensure(fields1 = ['nitrogen', 'growth_habit'])
 def large_vines_shade_weeds(plant1, plant2):
     if plant1.nitrogen == Nitrogen.HEAVY and plant1.growth_habit == GrowthHabit.VINE:
         return None, f'{plant1.name} can shade out weeds around {plant2.name}'
 
-@rule
+@rule()
 def ecological_intersection(plant1, plant2):
     con = get_connection()
     e1 = ecology_other_table.alias('e1')
