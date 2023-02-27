@@ -9,7 +9,7 @@ from greenworld.lib import orm
 from greenworld.lib import defs
 
 def expand_enum(e):
-    return Or(*[f'{e.__name__}.{name}' for name, _ in vars(e).items()])
+    return Or(*[f'{e.__name__}.{name}' for name in e.__members__.keys()])
 
 json_schema = Schema({
     Optional('plants'): [
@@ -32,7 +32,7 @@ json_schema = Schema({
             Optional('pH'): And([float], lambda x: len(x) == 2 and x[0] >= 0 and x[1] <= 14 and x[0] <= x[1]),
             Optional('drainage'): expand_enum(defs.Drainage),
             'citations': {
-                str: [str]
+                Optional(str): [str]
             },
             Optional('ecology'): [
                 {
