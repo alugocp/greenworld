@@ -119,10 +119,18 @@ def enter_data(gw: Greenworld, db, filename):
         last_other_id = get_last_id(con, orm.other_species_table)
         for row in (data['others'] if 'others' in data else []):
             values = copy.deepcopy(row)
-            values['id'] = last_other_id + 1
-            last_other_id += 1
-            gw.log(values)
-            con.execute(orm.other_species_table.insert().values(**values))
+            result = select_by(con, orm.other_species_table, 'species', values['species'])
+            if result:
+                new_values = {}
+                new_values.update(result)
+                new_values.update(values)
+                gw.log(f'UPDATE {new_values}')
+                con.execute(orm.other_species_table.update().where(orm.other_species_table.c['id'] == result['id']).values(**new_values))
+            else:
+                values['id'] = last_other_id + 1
+                last_other_id += 1
+                gw.log(f'INSERT {values}')
+                con.execute(orm.other_species_table.insert().values(**values))
         print('')
 
         # Sanitize and write plant data to database
@@ -131,9 +139,7 @@ def enter_data(gw: Greenworld, db, filename):
         last_plant_id = get_last_id(con, orm.plants_table)
         for row in (data['plants'] if 'plants' in data else []):
             values = copy.deepcopy(row)
-            values['id'] = last_plant_id + 1
-            last_plant_id += 1
-            ecology_data[values['id']] = values.pop('ecology') if 'ecology' in values else []
+            local_ecology_data = values.pop('ecology') if 'ecology' in values else []
 
             # Map citations
             mapped_citations = {}
@@ -154,8 +160,20 @@ def enter_data(gw: Greenworld, db, filename):
                     values[col][1] = convert_to_unit(val[1])
 
             # Write sanitized values to database
-            gw.log(values)
-            con.execute(orm.plants_table.insert().values(**values))
+            result = select_by(con, orm.plants_table, 'species', values['species'])
+            if result:
+                new_values = {}
+                new_values.update(result)
+                new_values.update(values)
+                ecology_data[result['id']] = local_ecology_data
+                gw.log(f'UPDATE {new_values}')
+                con.execute(orm.plants_table.update().where(orm.plants_table.c['id'] == result['id']).values(**new_values))
+            else:
+                values['id'] = last_plant_id + 1
+                last_plant_id += 1
+                ecology_data[values['id']] = local_ecology_data
+                gw.log(f'INSERT {values}')
+                con.execute(orm.plants_table.insert().values(**values))
 
         # Handle ecological data
         for plant_id, data in ecology_data.items():
@@ -175,7 +193,7 @@ def get_works_cited_map(gw: Greenworld, con, data):
         else:
             values['id'] = last_id + 1
             works_cited_map[row['id']] = values['id']
-            gw.log(values)
+            gw.log(f'INSERT {values}')
             con.execute(orm.works_cited_table.insert().values(**values))
             last_id += 1
     print('')
@@ -199,13 +217,34 @@ def process_ecological_fields(gw: Greenworld, con, works_cited_map, plant_id, da
             'relationship': parse_enum(row['relationship']),
             'citation': works_cited_map[row['citation']]
         }
+
+        # Insert or update in database
         if is_plant:
             interaction['target'] = result['id']
-            con.execute(orm.ecology_plant_table.insert().values(**interaction))
+            and_clause = sqlalchemy.and_(
+                orm.ecology_plant_table.c['plant'] == plant_id,
+                orm.ecology_plant_table.c['target'] == result['id']
+            )
+            existing = con.execute(orm.ecology_plant_table.select().where(and_clause)).fetchone()
+            if existing:
+                gw.log(f'UPDATE {interaction}')
+                con.execute(orm.ecology_plant_table.update().where(and_clause).values(**interaction))
+            else:
+                gw.log(f'INSERT {interaction}')
+                con.execute(orm.ecology_plant_table.insert().values(**interaction))
         else:
             interaction['non_plant'] = result['id']
-            con.execute(orm.ecology_other_table.insert().values(**interaction))
-        gw.log(interaction)
+            and_clause = sqlalchemy.and_(
+                orm.ecology_other_table.c['plant'] == plant_id,
+                orm.ecology_other_table.c['non_plant'] == result['id']
+            )
+            existing = con.execute(orm.ecology_other_table.select().where(and_clause)).fetchone()
+            if existing:
+                gw.log(f'UPDATE {interaction}')
+                con.execute(orm.ecology_other_table.update().where(and_clause).values(**interaction))
+            else:
+                gw.log(f'INSERT {interaction}')
+                con.execute(orm.ecology_other_table.insert().values(**interaction))
 
 def main(gw: Greenworld, args):
     db = orm.init_db()
