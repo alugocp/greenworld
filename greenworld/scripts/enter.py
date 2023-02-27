@@ -18,7 +18,7 @@ json_schema = Schema({
             'name': str,
             'species': str,
             'family': str,
-            'growth_habit': expand_enum(defs.GrowthHabit),
+            Optional('growth_habit'): expand_enum(defs.GrowthHabit),
             Optional('fruit_weight'): And([str], lambda x: len(x) == 2),
             Optional('height'): And([str], lambda x: len(x) == 2),
             Optional('spread'): And([str], lambda x: len(x) == 2),

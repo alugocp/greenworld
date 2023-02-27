@@ -103,7 +103,7 @@ def enter_data_csv(gw: Greenworld, db, filename):
                     mapped = cli_options['map'][point]
                     latin1 = cli_options['row-headers'][a]
                     latin2 = cli_options['col-headers'][b]
-                    if not Taxon(latin1).species or not Taxon(latin2).species:
+                    if not Taxon().parse_species(latin1).species or not Taxon().parse_species(latin2).species:
                         continue
                     gw.log(f'Visiting {latin1} x {latin2}')
                     species1 = select_by(con, orm.plants_table, 'species', latin1)

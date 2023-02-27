@@ -8,5 +8,6 @@ pylint
 flask
 
 # Data collection
+requests
 schema
 xlrd

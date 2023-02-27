@@ -76,15 +76,15 @@ def find_by_species(ls: List[dict], species: str) -> Optional[dict]:
     return None
 
 class IwebXlsDataCollector(BaseDataCollector):
-    def matches_input(self, filename: str) -> bool:
-        return filename == 'referenced-data/clements_1923.xls'
+    def matches_input(self, key: str) -> bool:
+        return key == 'referenced-data/clements_1923.xls'
 
-    def collect_data(self, filename: str) -> dict:
+    def collect_data(self, key: str) -> dict:
         gw = Greenworld()
 
         # Convert to CSV file
-        csv_filename = filename.replace('.xls', '.csv')
-        excel = xlrd.open_workbook(filename)
+        csv_filename = key.replace('.xls', '.csv')
+        excel = xlrd.open_workbook(key)
         sheet = excel.sheet_by_index(0)
         with open(csv_filename, 'w', encoding = 'utf-8') as file:
             col = csv.writer(file)
@@ -124,26 +124,27 @@ class IwebXlsDataCollector(BaseDataCollector):
                     mapped = cli_options['map'][point]
                     latin1 = cli_options['row-headers'][a] # Non-plant
                     latin2 = cli_options['col-headers'][b] # Plant
-                    if not Taxon(latin1).species or not Taxon(latin2).species:
+                    if not Taxon().parse_species(latin1).species or not Taxon().parse_species(latin2).species:
                         continue
                     gw.log(f'Visiting {latin1} x {latin2}')
                     plant = find_by_species(output['plants'], latin2)
                     nonplant = find_by_species(output['others'], latin1)
                     if not plant:
+                        plant_id = len(output['plants'])
                         plant = {
-                            'id': len(output['plants']) + 1,
+                            'id': plant_id + 1,
                             'name': '',
                             'species': latin2,
                             'family': '',
-                            'growth_habit': 'GrowthHabit.FORB',
                             'citations': {},
                             'ecology': []
                         }
                         output['plants'].append(plant)
+                        self.request_data(f'plants.{plant_id}')
                     if not nonplant:
                         nonplant = {
                             'species': latin1,
-                            'name': ''
+                            'name': '???'
                         }
                         output['others'].append(nonplant)
                     plant['ecology'].append({
