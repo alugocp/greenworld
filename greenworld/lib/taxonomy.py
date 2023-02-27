@@ -14,7 +14,11 @@ class Taxon:
             self.species = None
         return self
 
+    def pretty_species(self) -> str:
+        return f'{self.genus} {self.species}'
+
     def parse_family(self, text: str):
+        self.family = None
         match = re.search(r'[a-z]+eae', text, flags = re.I)
         if match:
             self.family = match.group().lower()

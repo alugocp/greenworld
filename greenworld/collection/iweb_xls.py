@@ -142,11 +142,13 @@ class IwebXlsDataCollector(BaseDataCollector):
                         output['plants'].append(plant)
                         self.request_data(f'plants.{plant_id}')
                     if not nonplant:
+                        nonplant_index = len(output['others'])
                         nonplant = {
                             'species': latin1,
-                            'name': '???'
+                            'name': ''
                         }
                         output['others'].append(nonplant)
+                        self.request_data(f'others.{nonplant_index}(insect)')
                     plant['ecology'].append({
                         'species': nonplant['species'],
                         'relationship': mapped,

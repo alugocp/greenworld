@@ -221,6 +221,7 @@ def process_ecological_fields(gw: Greenworld, con, works_cited_map, plant_id, da
         # Insert or update in database
         if is_plant:
             interaction['target'] = result['id']
+            # pylint: disable-next=assignment-from-no-return
             and_clause = sqlalchemy.and_(
                 orm.ecology_plant_table.c['plant'] == plant_id,
                 orm.ecology_plant_table.c['target'] == result['id']
@@ -234,6 +235,7 @@ def process_ecological_fields(gw: Greenworld, con, works_cited_map, plant_id, da
                 con.execute(orm.ecology_plant_table.insert().values(**interaction))
         else:
             interaction['non_plant'] = result['id']
+            # pylint: disable-next=assignment-from-no-return
             and_clause = sqlalchemy.and_(
                 orm.ecology_other_table.c['plant'] == plant_id,
                 orm.ecology_other_table.c['non_plant'] == result['id']
