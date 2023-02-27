@@ -36,7 +36,7 @@ Then you can use the following commands while interacting with the database:
 This command can be used to enter data into the database:
 
 ```bash
-PYTHONPATH=. python3 greenworld/scripts/enter.py [file [...]]
+make enter FILES=file,...
 ```
 
 `file` arguments will point to files that adhere to one of the following structures.

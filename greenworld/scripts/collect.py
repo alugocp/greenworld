@@ -46,5 +46,4 @@ def main(args):
             file.write(pretty_json)
 
 if __name__ == '__main__':
-    # main(sys.argv[1:])
-    main(['referenced-data/clements_1923.xls'])
+    main(sys.argv[1:])

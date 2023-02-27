@@ -1,5 +1,8 @@
-ENV = PYTHONPATH=.
-PYTHON = python3
+ENV := PYTHONPATH=.
+PYTHON := python3
+COMMA:= ,
+EMPTY:=
+SPACE:= $(EMPTY) $(EMPTY)
 
 lint:
 	$(ENV) $(PYTHON) -m pylint $(shell git ls-files "*.py")
@@ -11,4 +14,4 @@ serve:
 	$(ENV) $(PYTHON) greenworld/server/app.py
 
 %:
-	$(ENV) $(PYTHON) greenworld/scripts/$@.py
+	$(ENV) $(PYTHON) greenworld/scripts/$@.py $(subst $(COMMA),$(SPACE),$(FILES))
