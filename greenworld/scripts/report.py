@@ -42,10 +42,15 @@ def get_range_union(report):
         interval, _ = pair
         if interval:
             dist1, dist2 = interval
-            min_dist = max(min_dist, dist1)
-            max_dist = min(max_dist, dist2)
-    if min_dist > max_dist:
-        max_dist = min_dist
+            if dist1 > min_dist:
+                min_dist = dist1
+                max_dist = dist2
+    for pair in report:
+        interval, _ = pair
+        if interval:
+            _, dist2 = interval
+            if min_dist < dist2 < max_dist:
+                max_dist = dist2
     return min_dist, max_dist
 
 # The main loop for companionship reporting

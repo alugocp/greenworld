@@ -67,14 +67,22 @@ for (let a = 0; a < intervals.length; a++) {
 
 function clicked(e, index) {
     activated[index] = e.target.checked;
-    let lower = intervals.filter((x, i) => activated[i]).reduce((acc, x) => Math.max(x[0], acc), 0);
-    let upper = intervals.filter((x, i) => activated[i]).reduce((acc, x) => Math.min(x[1], acc), {{ MAX_PLANTING_RANGE }});
-    if (lower > upper) {
-        upper = lower;
+    let max_dist = {{ MAX_PLANTING_RANGE }};
+    let min_dist = 0;
+    for (const interval of intervals.filter((_, i) => activated[i])) {
+        if (interval[0] > min_dist) {
+            min_dist = interval[0]
+            max_dist = interval[1]
+        }
     }
-    document.getElementById('suggested').innerHTML = (upper === {{ MAX_PLANTING_RANGE }})
-        ? `${lower}+ m`
-        : `${lower}m - ${upper}m`;
+    for (const interval of intervals.filter((_, i) => activated[i])) {
+        if (interval[1] > min_dist && interval[1] < max_dist) {
+            max_dist = interval[1]
+        }
+    }
+    document.getElementById('suggested').innerHTML = (max_dist === {{ MAX_PLANTING_RANGE }})
+        ? `${min_dist}+ m`
+        : `${min_dist}m - ${max_dist}m`;
 }
 
 </script>
