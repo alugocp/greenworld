@@ -3,7 +3,7 @@
 # • Go through each pair of plants starting at the last analyzed pair
 # • Run algorithm modules on them by a database check
 # • Write the report back to the database
-
+import sqlalchemy
 from greenworld.lib.utils import AlgorithmUtils
 from greenworld.lib import Greenworld
 from greenworld.lib import algorithm
@@ -14,6 +14,12 @@ from greenworld.lib.orm import (
     memory_table,
     plants_table
 )
+
+# Retrieves the highest plant ID in the database
+def get_last_plant(con):
+    stmt = sqlalchemy.select(plants_table.c.id).order_by(plants_table.c.id.desc()).limit(1)
+    result = con.execute(stmt).fetchone()
+    return result[0] if result else 0
 
 # Retrieves the last analyzed plant from storage
 def get_last_analyzed(con):
@@ -53,6 +59,10 @@ def get_range_union(report):
                 max_dist = dist2
     return min_dist, max_dist
 
+# Calculates how many reports will be needed given the number of old and new plants
+def get_analysis_total(num_new, num_old):
+    return int(((num_new + 1) * (num_new / 2)) + (num_new * num_old))
+
 # The main loop for companionship reporting
 def main(gw: Greenworld):
     db = init_db()
@@ -61,10 +71,14 @@ def main(gw: Greenworld):
     with db.connect() as con:
         last_plant = None
         last_analyzed = get_last_analyzed(con)
+        number_plants = get_last_plant(con)
         utils.set_connection(con)
+        analysis_current = 0
+        analysis_total = get_analysis_total(number_plants - last_analyzed, last_analyzed)
         for plant1 in get_plants(con, plants_table.c.id > last_analyzed).mappings():
             for plant2 in get_plants(con, plants_table.c.id <= plant1.id).mappings():
-                gw.log(f'Analyzing {plant2.name} x {plant1.name}...')
+                analysis_current += 1
+                gw.log(f'{analysis_current}/{analysis_total}: {plant2.name} ({plant2.species}) x {plant1.name} ({plant1.species})')
                 utils.new_report()
                 for rule in utils.get_rules():
                     rule(plant2, plant1)

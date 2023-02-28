@@ -21,7 +21,7 @@ class UsdaPlantsLocalDataCollector(BaseDataCollector):
             if line.startswith(species):
                 row = list(csv.reader([f'"{line}']))[0]
                 return {
-                    'name': row[1].title(),
+                    'name': row[1].title().replace('\'S', '\'s'),
                     'family': row[2]
                 }
         return None
