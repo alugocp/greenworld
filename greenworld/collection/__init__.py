@@ -1,7 +1,12 @@
 from typing import List, Union
+from greenworld.lib import Greenworld
 
 class BaseDataCollector:
     __missing_paths: List[str] = []
+    gw: Greenworld
+
+    def __init__(self, gw: Greenworld):
+        self.gw = gw
 
     # Should return True if this subclass is designed to handle the given input
     def matches_input(self, key: str) -> bool:

@@ -139,6 +139,7 @@ def enter_data(gw: Greenworld, db, filename):
         last_plant_id = get_last_id(con, orm.plants_table)
         for row in (data['plants'] if 'plants' in data else []):
             values = copy.deepcopy(row)
+            del values['id']
             local_ecology_data = values.pop('ecology') if 'ecology' in values else []
 
             # Map citations

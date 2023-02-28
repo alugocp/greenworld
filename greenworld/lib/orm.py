@@ -56,7 +56,7 @@ plants_table = Table('plants', meta,
     Column('family', String, nullable = False),
 
     # Morphology
-    Column('growth_habit', Integer, nullable = False), # GrowthHabit enum
+    Column('growth_habit', Integer), # GrowthHabit enum
     Column('fruit_weight', NumericRangeType), # Grams
     Column('height', NumericRangeType), # Meters
     Column('spread', NumericRangeType), # From one extermity to the other (Meters)

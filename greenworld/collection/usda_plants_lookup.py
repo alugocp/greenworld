@@ -3,7 +3,6 @@ import json
 import requests
 from greenworld.collection import BaseDataCollector
 from greenworld.lib.taxonomy import Taxon
-from greenworld.lib import Greenworld
 
 habits_map = {
     'Lichenous': 'GrowthHabit.LICHENOUS',
@@ -31,15 +30,15 @@ def grab_family(data):
     return None
 
 class UsdaPlantsLookupDataCollector(BaseDataCollector):
+
     def matches_input(self, key: str) -> bool:
         return re.match(r'^plants.[0-9]+$', key)
 
     def collect_data(self, key: dict) -> dict:
-        gw = Greenworld()
         species = key['species']
 
         # Make initial query to USDA (search by scientific name)
-        gw.log(f'Querying USDA Plants Database for {species}...')
+        self.gw.log(f'Querying USDA Plants Database for {species}...')
         r1 = requests.post(
             url = 'https://plantsservices.sc.egov.usda.gov/api/PlantSearch',
             data = {
@@ -78,7 +77,7 @@ class UsdaPlantsLookupDataCollector(BaseDataCollector):
         symbol = match['Symbol']
 
         # Make second query to USDA (grab family name and growth habit)
-        gw.log(f'Querying USDA Plants Database for {symbol}...')
+        self.gw.log(f'Querying USDA Plants Database for {symbol}...')
         r2 = requests.get(
             url = f'https://plantsservices.sc.egov.usda.gov/api/PlantProfile?symbol={symbol}'
         )
@@ -93,5 +92,5 @@ class UsdaPlantsLookupDataCollector(BaseDataCollector):
         if not output['growth_habit']:
             del output['growth_habit']
             habit = output['growth_habit']
-            gw.log(f'Encountered unknown growth habit \'{habit}\'')
+            self.gw.log(f'Encountered unknown growth habit \'{habit}\'')
         return output

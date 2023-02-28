@@ -1,16 +1,13 @@
 import json
 import sys
 import re
+from greenworld.lib import Greenworld
 from greenworld.scripts.enter import json_schema
 from greenworld.collection.iweb_xls import IwebXlsDataCollector
 from greenworld.collection.usda_plants_local import UsdaPlantsLocalDataCollector
 from greenworld.collection.insects_local import InsectsLocalDataCollector
 
-__collectors = [
-    IwebXlsDataCollector(),
-    UsdaPlantsLocalDataCollector(),
-    InsectsLocalDataCollector()
-]
+__collectors = []
 
 # Grabs the appropriate data collector for the requested data
 def get_data_collector(key):
@@ -30,7 +27,13 @@ def fill_missing_path(data, missing):
     if collected:
         old.update(collected)
 
-def main(args):
+def main(gw, args):
+    # Initialize collectors
+    __collectors.append(IwebXlsDataCollector(gw))
+    __collectors.append(UsdaPlantsLocalDataCollector(gw))
+    __collectors.append(InsectsLocalDataCollector(gw))
+
+    # Collect data
     for arg in args:
         collector = get_data_collector(arg)
         if not collector:
@@ -49,4 +52,4 @@ def main(args):
             file.write(pretty_json)
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main(Greenworld(), sys.argv[1:])

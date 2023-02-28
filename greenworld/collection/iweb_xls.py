@@ -4,10 +4,10 @@ import re
 import xlrd
 from greenworld.collection import BaseDataCollector
 from greenworld.lib.taxonomy import Taxon
-from greenworld.lib import Greenworld
 from greenworld.lib import defs
 
 # CLI options structure for global access
+# TODO design a way to auto-detect these or have them passed in
 cli_options = {
     'range': [4, 100, 4, 279],
     'row-headers': [1, 2, 4, 279],
@@ -76,11 +76,11 @@ def find_by_species(ls: List[dict], species: str) -> Optional[dict]:
     return None
 
 class IwebXlsDataCollector(BaseDataCollector):
+
     def matches_input(self, key: str) -> bool:
         return key == 'referenced-data/clements_1923.xls'
 
     def collect_data(self, key: str) -> dict:
-        gw = Greenworld()
 
         # Convert to CSV file
         csv_filename = key.replace('.xls', '.csv')
@@ -126,7 +126,7 @@ class IwebXlsDataCollector(BaseDataCollector):
                     latin2 = cli_options['col-headers'][b] # Plant
                     if not Taxon().parse_species(latin1).species or not Taxon().parse_species(latin2).species:
                         continue
-                    gw.log(f'Visiting {latin1} x {latin2}')
+                    self.gw.log(f'Visiting {latin1} x {latin2}')
                     plant = find_by_species(output['plants'], latin2)
                     nonplant = find_by_species(output['others'], latin1)
                     if not plant:

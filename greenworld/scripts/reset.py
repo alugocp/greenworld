@@ -1,6 +1,6 @@
 # This script hard resets the local database used in this project.
 # It then repopulates the database from the `seed.json` file.
-from greenworld.collection import iweb_xls_script
+from greenworld.scripts import collect
 from greenworld.scripts import enter
 from greenworld.lib import Greenworld
 from greenworld.lib import orm
@@ -28,15 +28,15 @@ def main(gw: Greenworld, seed_data = False):
 
     # Seed the database
     if seed_data:
+        collect.main(gw, [
+            'referenced-data/clements_1923.xls'
+        ])
         enter.main(gw, [
+            'seed-data/tmp.json',
             'seed-data/three-sisters.json',
             'seed-data/native-plants.json',
             'seed-data/pollinators.json'
         ])
-        iweb_xls_script.main(
-            gw,
-            '--citation = https://iwdb.nceas.ucsb.edu/html/clements_1923.html --col-headers = 4:100,1:2 --row-headers = 1:2,4:279 --range = 4:100,4:279 --map 1.0 POLLINATOR referenced-data/clements_1923.xls'.split(' ')
-        )
 
 if __name__ == '__main__':
     main(Greenworld(), seed_data = True)

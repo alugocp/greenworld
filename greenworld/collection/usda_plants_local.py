@@ -7,7 +7,8 @@ from greenworld.lib import Greenworld
 class UsdaPlantsLocalDataCollector(BaseDataCollector):
     __database: List[str] = []
 
-    def __init__(self):
+    def __init__(self, gw: Greenworld):
+        super().__init__(gw)
         with open('referenced-data/usda_plants_database.txt', 'r', encoding = 'utf-8') as file:
             for line in file.readlines():
                 sanitized = re.fullmatch(r'^"[A-Z0-9]*","[A-Z0-9]*","([^\n]+)\n?$', line)
@@ -29,9 +30,8 @@ class UsdaPlantsLocalDataCollector(BaseDataCollector):
         return re.match(r'^plants.[0-9]+$', key)
 
     def collect_data(self, key: dict) -> dict:
-        gw = Greenworld()
         species = key['species']
 
         # Query cached USDA plants database
-        gw.log(f'Searching cached USDA Plants Database for {species}...')
+        self.gw.log(f'Searching cached USDA Plants Database for {species}...')
         return self.find_match(species)

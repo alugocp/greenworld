@@ -8,7 +8,8 @@ from greenworld.lib import Greenworld
 class InsectsLocalDataCollector(BaseDataCollector):
     __database: Dict[str, dict] = {}
 
-    def __init__(self):
+    def __init__(self, gw: Greenworld):
+        super().__init__(gw)
         taxon = Taxon()
         wb = load_workbook(filename = 'referenced-data/Common_names_list_01-18-23.xlsx')
         for i, row in enumerate(wb.active.rows):
@@ -27,9 +28,8 @@ class InsectsLocalDataCollector(BaseDataCollector):
         return re.match(r'^others.[0-9]+\(insect\)$', key)
 
     def collect_data(self, key: dict) -> dict:
-        gw = Greenworld()
         species = key['species']
 
         # Query cached USDA plants database
-        gw.log(f'Searching cached Entomological Society of America\'s Common Names of Insects Database for {species}...')
+        self.gw.log(f'Searching cached Entomological Society of America\'s Common Names of Insects Database for {species}...')
         return self.find_match(species)
