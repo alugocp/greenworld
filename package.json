@@ -1,0 +1,18 @@
+{
+  "name": "greenworld",
+  "version": "1.0.0",
+  "description": "The purpose of this project is to identify potential companion plant groups.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alugocp/greenworld.git"
+  },
+  "author": "Alex Lugo <http://alexlugo.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alugocp/greenworld/issues"
+  },
+  "homepage": "https://github.com/alugocp/greenworld#readme",
+  "dependencies": {
+    "typescript": "^5.0.3"
+  }
+}

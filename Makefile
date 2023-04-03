@@ -1,5 +1,6 @@
 ENV := PYTHONPATH=.
 PYTHON := python3
+NPM_BIN := ./node_modules/.bin
 COMMA:= ,
 EMPTY:=
 SPACE:= $(EMPTY) $(EMPTY)
@@ -10,7 +11,10 @@ lint:
 install:
 	$(PYTHON) -m pip install -r requirements.txt
 
-serve:
+ui:
+	$(NPM_BIN)/tsc -p greenworld/server/tsconfig.json
+
+serve: ui
 	$(ENV) $(PYTHON) greenworld/server/app.py
 
 %:

@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "outFile": "templates/script.js"
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/*.ts"
+    ]
+}

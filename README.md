@@ -22,6 +22,9 @@ make lint
 # Performs unit tests
 make test
 
+# Builds the frontend app code
+make ui
+
 # Starts the web server
 make serve
 ```

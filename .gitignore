@@ -1,5 +1,8 @@
+/greenworld/server/templates/script.js
+node_modules
 .DS_Store
 __pycache__
+*.js.map
 *.pyc
 *.db
 tmp.*
