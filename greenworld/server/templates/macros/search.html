@@ -3,11 +3,11 @@
 <input
     id="search-field"
     type="text"
-    onkeyup="gw.script.searchBarOnKeyDown(event, {{ plantToUrl }})"
+    onkeyup="gw.navigation.searchBarOnKeyDown(event, {{ plantToUrl }})"
     placeholder="scientific name"/>
 <button
     id="search-button"
-    onclick="gw.script.navigate({{ plantToUrl }})">
+    onclick="gw.navigation.navigate({{ plantToUrl }})">
     Search
 </button>
 <br/>

@@ -1,0 +1,11 @@
+<!doctype html>
+<title>Greenworld - Guild finder</title>
+<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}"/>
+{% import 'macros/scripting.html' as scripting %}
+{{ scripting.render() }}
+
+<script>
+    function greenworld_init() {
+        gw.guild.init();
+    }
+</script>

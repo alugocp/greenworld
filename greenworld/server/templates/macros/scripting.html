@@ -4,14 +4,20 @@
 <script src="{{ url_for('static', filename = 'script.js') }}"></script>
 <script>
     require([
-        'script'
+        'navigation',
+        'guild'
     ], function (
-        script
+        navigation,
+        guild
     ) {
         window.gw = {
             base_url: '{{ url_for('homepage_endpoint') }}',
-            script
+            navigation,
+            guild
         };
+        if (greenworld_init) {
+            greenworld_init();
+        }
     });
 </script>
 {%- endmacro -%}

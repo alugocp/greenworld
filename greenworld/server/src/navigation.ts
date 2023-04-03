@@ -1,7 +1,8 @@
+import type { PlantHandle } from './defs';
 
-const cachedData = {
-    greenworld_cached_html: '',
-    greenworld_content: ''
+const cachedSearchData = {
+    html: '',
+    term: ''
 };
 
 // Triggers the search button if the enter key is pressed
@@ -11,23 +12,23 @@ export function searchBarOnKeyDown(e: KeyboardEvent, plantToUrl: (_: string) => 
         e.preventDefault();
         document.getElementById('search-button')?.click();
     } else {
-        const content: string = (document.getElementById('search-field') as HTMLInputElement).value;
+        const term: string = (document.getElementById('search-field') as HTMLInputElement).value;
         const results: HTMLElement | null = document.getElementById('search-results');
         if (results === null) {
             return;
         }
-        if (content.length >= 3) {
-            if (cachedData.greenworld_content === content) {
-                results.innerHTML = cachedData.greenworld_cached_html;
+        if (term.length >= 3) {
+            if (cachedSearchData.term === term) {
+                results.innerHTML = cachedSearchData.html;
             } else {
-                cachedData.greenworld_content = content;
-                void fetch(`${baseUrl}search/${content}`)
+                cachedSearchData.term = term;
+                void fetch(`${baseUrl}search/${term}`)
                     .then((r) => r.json())
                     .then((data) => {
-                        cachedData.greenworld_cached_html = data
-                            .map((plant: any): string => `<a href = "${baseUrl}${plantToUrl(plant[0] as string)}">${plant[1] as string} (${plant[0] as string})</a>`)
+                        cachedSearchData.html = data
+                            .map((plant: PlantHandle): string => `<a href = "${baseUrl}${plantToUrl(plant.species)}">${plant.name} (${plant.species})</a>`)
                             .reduce((acc: string, x: string): string => acc + x, '');
-                        results.innerHTML = cachedData.greenworld_cached_html;
+                        results.innerHTML = cachedSearchData.html;
                     });
             }
         } else {

@@ -184,7 +184,7 @@ def plant_search_endpoint(prefix):
             orm.plants_table.c.name.like(f'{prefix}%')
         )) \
         .limit(10)
-        return list(map(tuple, con.execute(stmt).fetchall()))
+        return list(map(dict, con.execute(stmt).mappings().fetchall()))
 
 @app.route('/report/<species1>/<species2>')
 def report_view_endpoint(species1, species2):
@@ -214,6 +214,10 @@ def report_view_endpoint(species1, species2):
             plant2 = plants[1],
             MAX_PLANTING_RANGE = orm.MAX_PLANTING_RANGE
         )
+
+@app.route('/guild')
+def guild_finder_endpoint():
+    return render_template('guild.html')
 
 # Main script
 if __name__ == '__main__':
