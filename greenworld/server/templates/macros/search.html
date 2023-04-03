@@ -1,15 +1,15 @@
 
 {% macro render(plantToUrl) -%}
 <input
-    id = "search-field"
-    type = "text"
-    onkeyup = "gw.script.searchBarOnKeyDown(event, {{ plantToUrl }})"
-    placeholder = "scientific name"/>
+    id="search-field"
+    type="text"
+    onkeyup="gw.script.searchBarOnKeyDown(event, {{ plantToUrl }})"
+    placeholder="scientific name"/>
 <button
-    id = "search-button"
-    onclick = "gw.script.navigate({{ plantToUrl }})">
+    id="search-button"
+    onclick="gw.script.navigate({{ plantToUrl }})">
     Search
 </button>
-<br>
-<span id = "search-results"></span>
+<br/>
+<span id="search-results"></span>
 {%- endmacro -%}

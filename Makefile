@@ -5,13 +5,16 @@ COMMA:= ,
 EMPTY:=
 SPACE:= $(EMPTY) $(EMPTY)
 
-lint: lint-py lint-ts
+lint: lint-py lint-ts lint-jinja
 
 lint-py:
 	$(ENV) $(PYTHON) -m pylint $(shell git ls-files "*.py")
 
 lint-ts:
 	$(NPM_BIN)/eslint greenworld/server/src
+
+lint-jinja:
+	$(ENV) $(PYTHON) -m djlint greenworld/server/templates --profile=jinja
 
 install:
 	$(PYTHON) -m pip install -r requirements.txt

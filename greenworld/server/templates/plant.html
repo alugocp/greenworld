@@ -1,6 +1,6 @@
 <!doctype html>
 <title>Greenworld - {{ plant['name'] }}</title>
-<link rel = "stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}"/>
 {% import 'macros/scripting.html' as scripting %}
 {{ scripting.render() }}
 
@@ -10,9 +10,9 @@
 </p>
 {% import 'macros/search.html' as search %}
 {{ search.render('(val) => `report/' + plant['species'] + '/${val}`') }}
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 <!-- Include plant view -->
 {% import 'macros/plant.html' as plant_view %}

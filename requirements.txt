@@ -5,6 +5,7 @@ intervals
 
 # Auxiliary tasks
 pylint
+djlint
 flask
 
 # Data collection

@@ -1,6 +1,6 @@
 <!doctype html>
 <title>Greenworld - {{ plant1['name'] }} x {{ plant2['name'] }}</title>
-<link rel = "stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}"/>
 {% import 'macros/scripting.html' as scripting %}
 {{ scripting.render() }}
 
@@ -11,7 +11,7 @@
 <!-- Suggested ranges -->
 <p>
     <b>Suggested range:</b>
-    <span id = "suggested">
+    <span id="suggested">
         {% if report['range_union_max'] == MAX_PLANTING_RANGE %}
             {{ report['range_union_min']|round(3) }}+ m
         {% else %}
@@ -19,13 +19,13 @@
         {% endif %}
     </span>
 </p>
-<table class = "ranges-table">
+<table class="ranges-table">
 {% for pair in report['report'] %}
     {% set interval, reason = pair %}
     <tr>
         {% if interval %}
             {% set lower, upper = interval %}
-            <td><input type = "checkbox" onchange = "clicked(event, {{ loop.index0 }})" checked /></td>
+            <td><input type="checkbox" onchange="clicked(event, {{ loop.index0 }})" checked /></td>
             {% if upper == MAX_PLANTING_RANGE %}
                 <td>{{ lower }}+ m</td>
             {% else %}
@@ -39,9 +39,9 @@
     </tr>
 {% endfor %}
 </table>
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 <!-- Include plant views -->
 {% import 'macros/plant.html' as plant_view %}
