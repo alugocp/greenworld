@@ -5,7 +5,8 @@ from intervals import DecimalInterval
 import sqlalchemy
 from flask import (
     Flask,
-    render_template
+    render_template,
+    request
 )
 from greenworld.lib import orm
 from greenworld.lib import Greenworld
@@ -177,6 +178,7 @@ def plant_search_endpoint(prefix):
         return []
     with db.connect() as con:
         stmt = sqlalchemy.select(
+            orm.plants_table.c.id,
             orm.plants_table.c.species,
             orm.plants_table.c.name) \
         .where(sqlalchemy.or_(
@@ -214,6 +216,19 @@ def report_view_endpoint(species1, species2):
             plant2 = plants[1],
             MAX_PLANTING_RANGE = orm.MAX_PLANTING_RANGE
         )
+
+@app.route('/reports')
+def grab_reports_endpoint():
+    if 'species_list' not in request.args:
+        return []
+    species_list = request.args.get('species_list').split(',')
+    stmt = orm.reports_table.select() \
+    .where(sqlalchemy.or_(
+        orm.reports_table.c.plant1.in_(species_list),
+        orm.reports_table.c.plant2.in_(species_list)
+    ))
+    with db.connect() as con:
+        return list(map(dict, con.execute(stmt).mappings().fetchall()))
 
 @app.route('/guild')
 def guild_finder_endpoint():
