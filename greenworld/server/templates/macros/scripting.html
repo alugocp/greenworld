@@ -1,0 +1,17 @@
+
+{% macro render() -%}
+<script src="{{ url_for('static', filename = 'require.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'script.js') }}"></script>
+<script>
+    require([
+        'script'
+    ], function (
+        script
+    ) {
+        window.gw = {
+            base_url: '{{ url_for('homepage_endpoint') }}',
+            script
+        };
+    });
+</script>
+{%- endmacro -%}

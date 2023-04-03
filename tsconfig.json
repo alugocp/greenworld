@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "module": "amd",
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "outFile": "greenworld/server/static/script.js"
+    },
+    "include": [
+        "greenworld/server/src/**/*.ts",
+        "greenworld/server/src/*.ts"
+    ]
+}
