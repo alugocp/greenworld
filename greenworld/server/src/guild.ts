@@ -164,9 +164,9 @@ function findTriangle(plants: PlantHandle[], p12: Report, p23: Report, p13: Repo
     }
 
     // Pick the min value of each range
-    const l1: number = r1.range_union_min;
-    let l2: number = r2.range_union_min;
-    let l3: number = r3.range_union_min;
+    const l1: number = r1.range_union_min ? r1.range_union_min : Math.min(0.16, r1.range_union_max);
+    let l2: number = r2.range_union_min ? r2.range_union_min : Math.min(0.16, r2.range_union_max);
+    let l3: number = r3.range_union_min ? r3.range_union_min : Math.min(0.16, r3.range_union_max);
 
     // If it's already a triangle then return that
     if (l2 + l3 > l1) {
@@ -180,11 +180,21 @@ function findTriangle(plants: PlantHandle[], p12: Report, p23: Report, p13: Repo
         );
     }
 
-    // Change shorter sides to try and make a triangle
-    l2 = Math.min(r2.range_union_max, l1);
-    l3 = Math.min(r3.range_union_max, l1);
+    // Change a shorter side to try and make a triangle
+    l2 = Math.min(r2.range_union_max, l1 - l3 + 0.033);
+    if (l2 + l3 > l1) {
+        return buildTriangle(
+            getPlantHandle(plants, commonPlant(r3, r1)),
+            getPlantHandle(plants, commonPlant(r1, r2)),
+            getPlantHandle(plants, commonPlant(r2, r3)),
+            l1,
+            l2,
+            l3
+        );
+    }
 
-    // If it satisfies a triangle then return that
+    // Change a shorter side to try and make a triangle
+    l3 = Math.min(r3.range_union_max, l1 - l2 + 0.033);
     if (l2 + l3 > l1) {
         return buildTriangle(
             getPlantHandle(plants, commonPlant(r3, r1)),
