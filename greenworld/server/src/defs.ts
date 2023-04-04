@@ -14,7 +14,7 @@ export interface Report {
     report: any[]
 }
 
-interface Point {
+export interface Point {
     x: number
     y: number
 }

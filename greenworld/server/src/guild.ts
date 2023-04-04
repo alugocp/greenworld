@@ -1,4 +1,4 @@
-import type { PlantHandle, Report, Guild } from './defs';
+import type { PlantHandle, Report, Point, Guild } from './defs';
 
 // Grab report between two plant species
 function getReport(reports: Report[], plant1: PlantHandle, plant2: PlantHandle): Report {
@@ -65,37 +65,51 @@ function draw(canvas: HTMLCanvasElement, guild: Guild | null): void {
     if (ctx === null) {
         return;
     }
-    canvas.width = 500;
+    canvas.width = 1000;
     canvas.height = 500;
-    ctx.lineWidth = 0.025;
     ctx.fillStyle = '#00ff00';
     ctx.strokeStyle = '#000000';
+    ctx.font = '20px sans-serif';
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     if (guild === null) {
         return;
     }
+    const labels: Array<Point & { text: string }> = [];
+    const dx = -guild.bounds.upperLeft.x;
+    const dy = -guild.bounds.upperLeft.y;
     const scale = Math.min(
         canvas.width / (guild.bounds.lowerRight.x - guild.bounds.upperLeft.x),
         canvas.height / (guild.bounds.lowerRight.y - guild.bounds.upperLeft.y)
     );
-    ctx.scale(scale, scale);
-    ctx.translate(-guild.bounds.upperLeft.x, -guild.bounds.upperLeft.y);
+    ctx.lineWidth = scale / 320;
     for (const e of guild.edges) {
         const p1 = getPlantHandle(guild.plants, e.p1);
         const p2 = getPlantHandle(guild.plants, e.p2);
         ctx.beginPath();
-        ctx.moveTo(p1.x, p1.y);
-        ctx.lineTo(p2.x, p2.y);
+        ctx.moveTo((p1.x + dx) * scale, (p1.y + dy) * scale);
+        ctx.lineTo((p2.x + dx) * scale, (p2.y + dy) * scale);
         ctx.stroke();
+        labels.push({
+            text: `${e.dist}m`,
+            x: (p1.x + dx + p2.x + dx) * scale / 2,
+            y: (p1.y + dy + p2.y + dy) * scale / 2
+        });
     }
     for (const p of guild.plants) {
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.arc((p.x + dx) * scale, (p.y + dy) * scale, p.r * scale, 0, Math.PI * 2);
         ctx.fill();
         ctx.stroke();
+        labels.push({
+            text: p.name,
+            x: (p.x + dx) * scale,
+            y: (p.y + dy) * scale
+        });
     }
-    ctx.translate(guild.bounds.upperLeft.x, guild.bounds.upperLeft.y);
-    ctx.scale(1 / scale, 1 / scale);
+    ctx.fillStyle = '#000000';
+    for (const l of labels) {
+        ctx.fillText(l.text, l.x, l.y);
+    }
 }
 
 // Pythagorean distance formula
@@ -105,7 +119,7 @@ function distance(x: number, y: number): number {
 
 // Builds a triangle guild from the three plants and side lengths
 function buildTriangle(p1: PlantHandle, p2: PlantHandle, p3: PlantHandle, _a: number, _b: number, _c: number): Guild {
-    const buffer = 0.1;
+    const buffer = 0.025;
     const theta = Math.acos((Math.pow(_a, 2) + Math.pow(_c, 2) - Math.pow(_b, 2)) / (2 * _a * _c));
     const x = Math.round(Math.cos(theta) * _c * 1000) / 1000;
     const y = Math.round(Math.sin(theta) * _c * 1000) / 1000;
