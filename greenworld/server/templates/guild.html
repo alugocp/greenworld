@@ -4,8 +4,10 @@
 {% import 'macros/scripting.html' as scripting %}
 {{ scripting.render() }}
 
+<canvas id="canvas"></canvas>
+
 <script>
     function greenworld_init() {
-        gw.guild.init();
+        gw.guild.init(document.getElementById('canvas'));
     }
 </script>
