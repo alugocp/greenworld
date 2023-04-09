@@ -2,10 +2,10 @@ import type { PlantHandle, Guild } from './defs';
 import type { GuildAlgorithm } from './guild/algorithm';
 import { Reports } from './guild/algorithm';
 import { geometricAlgorithm } from './guild/geometric';
-import { draw } from './guild/renderer';
+import { resetRender, drawGuild, listPlants } from './guild/renderer';
 
 // Initializes the guild finder module
-export async function init(canvas: HTMLCanvasElement): Promise<void> {
+export async function init(canvas: HTMLCanvasElement, plantList: HTMLDivElement): Promise<void> {
     const plants: PlantHandle[] = [
         {
             id: 95,
@@ -31,6 +31,11 @@ export async function init(canvas: HTMLCanvasElement): Promise<void> {
             id: 99,
             name: 'Purple Passionflower',
             species: 'passiflora incarnata'
+        },
+        {
+            id: 100,
+            name: 'American Black Elderberry',
+            species: 'sambucus canadensis'
         }
     ];
 
@@ -38,7 +43,9 @@ export async function init(canvas: HTMLCanvasElement): Promise<void> {
     await reports.populate(plants);
     const algorithm: GuildAlgorithm = geometricAlgorithm;
     const guild: Guild | null = algorithm(plants, reports);
+    resetRender(canvas, plantList);
     if (guild !== null) {
-        draw(canvas, guild);
+        listPlants(plantList, guild);
+        drawGuild(canvas, guild);
     }
 }
