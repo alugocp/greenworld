@@ -45,10 +45,10 @@ export function draw(canvas: HTMLCanvasElement, guild: Guild): void {
     }
 
     // Draw lines
-    for (let x = 0; x < VIEW_X; x += scale) {
-        ctx.fillRect(BUFFER_X + x, BUFFER_Y, 1, VIEW_Y);
+    for (let x = 0; x < guild.bounds.lowerRight.x; x++) {
+        ctx.fillRect((x + dx) * scale + BUFFER_X, BUFFER_Y, 1, VIEW_Y);
     }
-    for (let y = 0; y < VIEW_Y; y += scale) {
-        ctx.fillRect(BUFFER_X, BUFFER_Y + y, VIEW_X, 1);
+    for (let y = 0; y < guild.bounds.lowerRight.y; y++) {
+        ctx.fillRect(BUFFER_X, (y + dy) * scale + BUFFER_Y, VIEW_X, 1);
     }
 }

@@ -40,7 +40,6 @@ function buildTriangle(p1: PlantHandle, p2: PlantHandle, p3: PlantHandle, _a: nu
     const theta = Math.acos((Math.pow(_a, 2) + Math.pow(_c, 2) - Math.pow(_b, 2)) / (2 * _a * _c));
     const x = Math.round(Math.cos(theta) * _c * 1000) / 1000;
     const y = Math.round(Math.sin(theta) * _c * 1000) / 1000;
-    console.log(`(0, 0) -> ${_a} = ${distance(_a, 0)} -> (${_a}, 0) -> ${_b} = ${distance(x - _a, y)} -> (${x}, ${y}) -> ${_c} = ${distance(x, y)}`);
     return {
         plants: [
             { ...p1, x: 0, y: 0, r: buffer },
@@ -127,8 +126,8 @@ function findTriangle(plants: PlantHandle[], p12: Report, p23: Report, p13: Repo
     return null;
 }
 
-// Geometry-based algorithm to plan a guild
-export function geometricAlgorithm(plants: PlantHandle[], reports: Reports): Guild | null {
+// subalgorithm for n > 2 guild
+export function triangulationAlgorithm(plants: PlantHandle[], reports: Reports): Guild | null {
     const guild: Guild | null = findTriangle(
         plants,
         reports.getReport(plants[0], plants[1]),
@@ -138,7 +137,6 @@ export function geometricAlgorithm(plants: PlantHandle[], reports: Reports): Gui
     if (guild === null) {
         return null;
     }
-    console.log(guild);
     for (let a = 3; a < plants.length; a++) {
         const plantC = plants[a];
         for (const e of guild.edges) {
@@ -166,24 +164,11 @@ export function geometricAlgorithm(plants: PlantHandle[], reports: Reports): Gui
             const b2y = getPlantHandle(newGuild.plants, plantB.id).y + dy;
             const l = commonEdge.dist;
             const theta = Math.acos((2 * Math.pow(l, 2) - Math.pow(distance(b1x - b2x, b1y - b2y), 2)) / (2 * Math.pow(l, 2)));
-            console.log({
-                commonEdge,
-                dx,
-                dy,
-                b1x,
-                b1y,
-                b2x,
-                b2y,
-                l,
-                theta,
-                almost: (2 * Math.pow(l, 2) - Math.pow(distance(b1x - b2x, b1y - b2y), 2)) / (2 * Math.pow(l, 2))
-            });
             const result: Point = rotateAbout(
                 { x: plantPoint.x + dx, y: plantPoint.y + dy },
                 getPlantHandle(guild.plants, plantA.id),
                 theta
             );
-            console.log(result);
             let tooClose = false;
             const edgesToAdd: Edge[] = [];
             for (const p of guild.plants) {
@@ -216,4 +201,70 @@ export function geometricAlgorithm(plants: PlantHandle[], reports: Reports): Gui
         }
     }
     return guild;
+}
+
+// Geometry-based algorithm to plan a guild
+export function geometricAlgorithm(plants: PlantHandle[], reports: Reports): Guild | null {
+    if (plants.length === 0) {
+        return null;
+    }
+    if (plants.length === 1) {
+        return {
+            plants: [
+                {
+                    ...plants[0],
+                    x: 0,
+                    y: 0,
+                    r: 0.025
+                }
+            ],
+            bounds: {
+                upperLeft: {
+                    x: -0.05,
+                    y: -0.05
+                },
+                lowerRight: {
+                    x: 0.05,
+                    y: 0.05
+                }
+            },
+            edges: []
+        };
+    }
+    if (plants.length === 2) {
+        const report: Report = reports.getReport(plants[0], plants[1]);
+        const dist = report.range_union_min !== 0 ? report.range_union_min : 0.16;
+        return {
+            plants: [
+                {
+                    ...plants[0],
+                    x: 0,
+                    y: 0,
+                    r: 0.025
+                },
+                {
+                    ...plants[1],
+                    x: dist,
+                    y: 0,
+                    r: 0.025
+                }
+            ],
+            bounds: {
+                upperLeft: {
+                    x: -0.05,
+                    y: -0.05
+                },
+                lowerRight: {
+                    x: dist + 0.05,
+                    y: 0.05
+                }
+            },
+            edges: [{
+                p1: plants[0].id,
+                p2: plants[1].id,
+                dist
+            }]
+        };
+    }
+    return triangulationAlgorithm(plants, reports);
 }
