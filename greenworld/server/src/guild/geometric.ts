@@ -29,6 +29,32 @@ function rotateAbout(p: Point, origin: Point, dtheta: number): Point {
     };
 }
 
+// Reflects point P about the line A -> B
+function reflectAbout(p: Point, l1: Point, l2: Point): Point {
+    if (l1.y === l2.y) {
+        return {
+            x: p.x,
+            y: 2 * l1.y - p.y
+        };
+    }
+    if (l1.x === l2.x) {
+        return {
+            x: 2 * l1.x - p.x,
+            y: p.y
+        };
+    }
+    const m = (l2.y - l1.y) / (l2.x - l1.x);
+    const b = l1.y - l1.x * m;
+    const m1 = -1 / m;
+    const b1 = p.y - p.x * m1;
+    const lx = (b1 - b) / (m - m1);
+    const ly = b + lx * m;
+    return {
+        x: 2 * lx - p.x,
+        y: 2 * ly - p.y
+    };
+}
+
 // Grabs a common edge between two guilds
 function grabCommonEdge(g1: Guild, g2: Guild): Edge | null {
     for (const e1 of g1.edges) {
@@ -136,6 +162,21 @@ function findTriangle(plants: PlantHandle[], reports: Reports, p1: PlantHandle, 
     return null;
 }
 
+function checkOtherPlants(reports: Reports, guild: Guild, result: Point, plantA: PlantHandle, plantB: PlantHandle, plantC: PlantHandle): Edge[] | null {
+    const edgesToAdd: Edge[] = [];
+    for (const p of guild.plants) {
+        if (p === plantA || p === plantB) {
+            continue;
+        }
+        const d = distance(result.x - p.x, result.y - p.y);
+        if (d < reports.getReport(p, plantC).range_union_min) {
+            return null;
+        }
+        edgesToAdd.push({ p1: plantC.uid, p2: p.uid, dist: d });
+    }
+    return edgesToAdd;
+}
+
 // subalgorithm for n > 2 guild
 export function triangulationAlgorithm(plants: PlantHandle[], reports: Reports): Guild | null {
     const guild: Guild | null = findTriangle(
@@ -163,83 +204,38 @@ export function triangulationAlgorithm(plants: PlantHandle[], reports: Reports):
             if (newGuild === null) {
                 continue;
             }
-            const commonEdge: Edge | null = grabCommonEdge(guild, newGuild);
-            if (commonEdge === null) {
+            if (grabCommonEdge(guild, newGuild) === null) {
                 continue;
             }
+
+            // Rotate onto cumulative guild structure
             const plantPoint = getPlantHandle(newGuild.plants, plantC.uid);
-            const dx = getPlantHandle(guild.plants, plantA.uid).x - getPlantHandle(newGuild.plants, plantA.uid).x;
-            const dy = getPlantHandle(guild.plants, plantA.uid).y - getPlantHandle(newGuild.plants, plantA.uid).y;
+            const ax = getPlantHandle(guild.plants, plantA.uid).x;
+            const ay = getPlantHandle(guild.plants, plantA.uid).y;
+            const dx = ax - getPlantHandle(newGuild.plants, plantA.uid).x;
+            const dy = ay - getPlantHandle(newGuild.plants, plantA.uid).y;
             const b1x = getPlantHandle(guild.plants, plantB.uid).x;
             const b1y = getPlantHandle(guild.plants, plantB.uid).y;
             const b2x = getPlantHandle(newGuild.plants, plantB.uid).x + dx;
             const b2y = getPlantHandle(newGuild.plants, plantB.uid).y + dy;
-            const l = commonEdge.dist;
-            const theta = Math.acos((2 * Math.pow(l, 2) - Math.pow(distance(b1x - b2x, b1y - b2y), 2)) / (2 * Math.pow(l, 2)));
+            const theta = Math.atan2(b1y - ay, b1x - ax) - Math.atan2(b2y - ay, b2x - ax);
             let result: Point = rotateAbout(
                 { x: plantPoint.x + dx, y: plantPoint.y + dy },
                 getPlantHandle(guild.plants, plantA.uid),
-                -theta
+                theta
             );
-            let resultB: Point = rotateAbout(
-                { x: b2x, y: b2y },
-                getPlantHandle(guild.plants, plantA.uid),
-                -theta
-            );
-            /* console.log([
-                { x: b1x, y: b1y },
-                resultB
-            ]); */
-            if (round(b1x, 2) !== round(resultB.x, 2) || round(b1y, 2) !== round(resultB.y, 2)) {
-                result = rotateAbout(
-                    { x: plantPoint.x + dx, y: plantPoint.y + dy },
-                    getPlantHandle(guild.plants, plantA.uid),
-                    theta
-                );
-                resultB = rotateAbout(
-                    { x: b2x, y: b2y },
-                    getPlantHandle(guild.plants, plantA.uid),
-                    theta
-                );
-                /* console.log([
-                    { x: b1x, y: b1y },
-                    resultB
-                ]);
-                if (round(b1x, 2) !== round(resultB.x, 2) || round(b1y, 2) !== round(resultB.y, 2)) {
-                    console.log('Nope, not here');
-                    continue;
-                } */
-            }
-            /* if (
-                distance(getPlantHandle(newGuild.plants, plantC.uid).x - getPlantHandle(newGuild.plants, plantB.uid).x, getPlantHandle(newGuild.plants, plantC.uid).y - getPlantHandle(newGuild.plants, plantB.uid).y, 2) !==
-                distance(result.x - getPlantHandle(guild.plants, plantB.uid).x, result.y - getPlantHandle(guild.plants, plantB.uid).y, 2)
-            ) {
-                console.log(`Geometry error between ${plantC.uid} and ${plantB.uid}`);
-                continue;
-            }
-            if (
-                distance(getPlantHandle(newGuild.plants, plantA.uid).x - getPlantHandle(newGuild.plants, plantC.uid).x, getPlantHandle(newGuild.plants, plantA.uid).y - getPlantHandle(newGuild.plants, plantC.uid).y, 2) !==
-                distance(getPlantHandle(guild.plants, plantA.uid).x - result.x, getPlantHandle(guild.plants, plantA.uid).y - result.y, 2)
-            ) {
-                console.log(`Geometry error between ${plantC.uid} and ${plantA.uid}`);
-                continue;
-            } */
-            let tooClose = false;
-            const edgesToAdd: Edge[] = [];
-            for (const p of guild.plants) {
-                if (p === plantA || p === plantB) {
+
+            // If new plant is too close then check its reflection
+            let edgesToAdd = checkOtherPlants(reports, guild, result, plantA, plantB, plantC);
+            if (edgesToAdd === null) {
+                result = reflectAbout(result, { x: ax, y: ay }, { x: b1x, y: b1y });
+                edgesToAdd = checkOtherPlants(reports, guild, result, plantA, plantB, plantC);
+                if (edgesToAdd === null) {
                     continue;
                 }
-                const d = distance(result.x - p.x, result.y - p.y);
-                if (d < reports.getReport(p, plantC).range_union_min) {
-                    tooClose = true;
-                    break;
-                }
-                edgesToAdd.push({ p1: plantC.uid, p2: p.uid, dist: d });
             }
-            if (tooClose) {
-                continue;
-            }
+
+            // Update the guild
             guild.plants.push({ ...plantC, ...result, r: 0.025 });
             guild.edges = guild.edges.concat(newGuild.edges.filter((e: Edge) => e.p1 === plantC.uid || e.p2 === plantC.uid)).concat(edgesToAdd);
             guild.bounds = collapseBounds(guild.bounds, {
