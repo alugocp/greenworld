@@ -8,34 +8,64 @@ import { resetRender, drawGuild, listPlants } from './guild/renderer';
 export async function init(canvas: HTMLCanvasElement, plantList: HTMLDivElement): Promise<void> {
     const plants: PlantHandle[] = [
         {
+            uid: 1,
             id: 95,
             name: 'Hopi Turquoise Corn',
             species: 'zea mays'
         },
         {
+            uid: 2,
             id: 96,
             name: 'Hopi Orange Squash',
             species: 'cucurbita maxima'
         },
         {
+            uid: 3,
             id: 97,
             name: 'Hopi Purple String Bean',
             species: 'phaseolus vulgaris'
         },
         {
+            uid: 4,
             id: 98,
             name: 'Hopi Black Dye Sunflower',
             species: 'helianthus annuus'
         },
         {
+            uid: 5,
             id: 99,
             name: 'Purple Passionflower',
             species: 'passiflora incarnata'
         },
         {
+            uid: 6,
             id: 100,
             name: 'American Black Elderberry',
             species: 'sambucus canadensis'
+        },
+        {
+            uid: 7,
+            id: 95,
+            name: 'Hopi Turquoise Corn',
+            species: 'zea mays'
+        },
+        {
+            uid: 8,
+            id: 99,
+            name: 'Purple Passionflower',
+            species: 'passiflora incarnata'
+        },
+        {
+            uid: 9,
+            id: 100,
+            name: 'American Black Elderberry',
+            species: 'sambucus canadensis'
+        },
+        {
+            uid: 10,
+            id: 95,
+            name: 'Hopi Turquoise Corn',
+            species: 'zea mays'
         }
     ];
 

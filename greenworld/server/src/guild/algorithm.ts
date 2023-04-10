@@ -21,6 +21,7 @@ export class Report {
     range_union_min: number;
     range_union_max: number;
     report: any[];
+    uids?: [number, number];
 
     constructor(plant1: number, plant2: number, rangeUnionMin: number, rangeUnionMax: number, report: any[]) {
         this.plant1 = plant1;
@@ -32,7 +33,29 @@ export class Report {
 
     // Returns the ID of the common plant between two reports
     commonPlant(other: Report): number {
-        return this.plant1 === other.plant1 || this.plant1 === other.plant2 ? this.plant1 : this.plant2;
+        if (this.uids === undefined || other.uids === undefined) {
+            throw new Error('UIDs are not set');
+        }
+        return this.uids[0] === other.uids[0] || this.uids[0] === other.uids[1] ? this.uids[0] : this.uids[1];
+    }
+
+    clone(): Report {
+        return new Report(
+            this.plant1,
+            this.plant2,
+            this.range_union_min,
+            this.range_union_max,
+            this.report
+        );
+    }
+
+    setUids(p1: PlantHandle, p2: PlantHandle): Report {
+        if (p1.id === this.plant1) {
+            this.uids = [p1.uid, p2.uid];
+        } else {
+            this.uids = [p2.uid, p1.uid];
+        }
+        return this;
     }
 }
 
@@ -57,7 +80,7 @@ export class Reports {
     // Request a list of relevant reports from the server
     async populate(plants: PlantHandle[]): Promise<void> {
         const baseUrl: string = (window as any).gw.base_url as string;
-        const speciesList: string = plants.map((x: PlantHandle): number => x.id).join(',');
+        const speciesList: string = [...new Set(plants.map((x: PlantHandle): number => x.id))].join(',');
         const results: Report[] = await fetch(`${baseUrl}reports?species_list=${speciesList}`)
             .then((res) => res.json())
             .then((reports: any[]) => reports.map((r: any) => new Report(

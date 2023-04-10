@@ -2,14 +2,21 @@ import type { PlantHandle, Point, Guild, Edge } from '../defs';
 import type { Report, Reports } from './algorithm';
 import { collapseBounds } from './algorithm';
 
-// Grabs a plant handle from a list of plant handles given the ID
-function getPlantHandle<T extends PlantHandle>(plants: T[], id: number): T {
-    return plants.filter((x: T): boolean => x.id === id)[0];
+// Grabs a plant handle from a list of plant handles given the unique ID
+function getPlantHandle<T extends PlantHandle>(plants: T[], uid: number): T {
+    return plants.filter((x: T): boolean => x.uid === uid)[0];
+}
+
+// Rounds the number n to a given place
+function round(n: number, place: number): number {
+    const coeff = Math.pow(10, place);
+    return Math.round(n * coeff) / coeff;
 }
 
 // Pythagorean distance formula
-function distance(x: number, y: number): number {
-    return Math.round(Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)) * 1000) / 1000;
+function distance(x: number, y: number, place: number | null = null): number {
+    const dist: number = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+    return place === null ? dist : round(dist, place);
 }
 
 // Rotates point p about origin by theta
@@ -17,8 +24,8 @@ function rotateAbout(p: Point, origin: Point, dtheta: number): Point {
     const theta = Math.atan2(p.y - origin.y, p.x - origin.x) + dtheta;
     const dist = distance(p.x - origin.x, p.y - origin.y);
     return {
-        x: origin.x + Math.cos(theta) * dist,
-        y: origin.y + Math.sin(theta) * dist
+        x: Math.round((origin.x + Math.cos(theta) * dist) * 1000) / 1000,
+        y: Math.round((origin.y + Math.sin(theta) * dist) * 1000) / 1000
     };
 }
 
@@ -47,9 +54,9 @@ function buildTriangle(p1: PlantHandle, p2: PlantHandle, p3: PlantHandle, _a: nu
             { ...p3, x, y, r: buffer }
         ],
         edges: [
-            { p1: p1.id, p2: p2.id, dist: _a },
-            { p1: p2.id, p2: p3.id, dist: _b },
-            { p1: p3.id, p2: p1.id, dist: _c }
+            { p1: p1.uid, p2: p2.uid, dist: _a },
+            { p1: p2.uid, p2: p3.uid, dist: _b },
+            { p1: p3.uid, p2: p1.uid, dist: _c }
         ],
         bounds: {
             upperLeft: { x: -buffer * 2, y: -buffer * 2 },
@@ -59,7 +66,10 @@ function buildTriangle(p1: PlantHandle, p2: PlantHandle, p3: PlantHandle, _a: nu
 }
 
 // Returns a guild if the 3 provided reports can be made into a triangle
-function findTriangle(plants: PlantHandle[], p12: Report, p23: Report, p13: Report): Guild | null {
+function findTriangle(plants: PlantHandle[], reports: Reports, p1: PlantHandle, p2: PlantHandle, p3: PlantHandle): Guild | null {
+    const p12 = reports.getReport(p1, p2).clone().setUids(p1, p2);
+    const p23 = reports.getReport(p2, p3).clone().setUids(p2, p3);
+    const p13 = reports.getReport(p1, p3).clone().setUids(p1, p3);
     let r1: Report;
     let r2: Report;
     let r3: Report;
@@ -130,9 +140,10 @@ function findTriangle(plants: PlantHandle[], p12: Report, p23: Report, p13: Repo
 export function triangulationAlgorithm(plants: PlantHandle[], reports: Reports): Guild | null {
     const guild: Guild | null = findTriangle(
         plants,
-        reports.getReport(plants[0], plants[1]),
-        reports.getReport(plants[1], plants[2]),
-        reports.getReport(plants[0], plants[2])
+        reports,
+        plants[0],
+        plants[1],
+        plants[2]
     );
     if (guild === null) {
         return null;
@@ -144,9 +155,10 @@ export function triangulationAlgorithm(plants: PlantHandle[], reports: Reports):
             const plantB: PlantHandle = getPlantHandle(plants, e.p2);
             const newGuild: Guild | null = findTriangle(
                 plants,
-                reports.getReport(plantA, plantB),
-                reports.getReport(plantA, plantC),
-                reports.getReport(plantB, plantC)
+                reports,
+                plantA,
+                plantB,
+                plantC
             );
             if (newGuild === null) {
                 continue;
@@ -155,20 +167,63 @@ export function triangulationAlgorithm(plants: PlantHandle[], reports: Reports):
             if (commonEdge === null) {
                 continue;
             }
-            const plantPoint = getPlantHandle(newGuild.plants, plantC.id);
-            const dx = getPlantHandle(guild.plants, plantA.id).x - getPlantHandle(newGuild.plants, plantA.id).x;
-            const dy = getPlantHandle(guild.plants, plantA.id).y - getPlantHandle(newGuild.plants, plantA.id).y;
-            const b1x = getPlantHandle(guild.plants, plantB.id).x;
-            const b1y = getPlantHandle(guild.plants, plantB.id).y;
-            const b2x = getPlantHandle(newGuild.plants, plantB.id).x + dx;
-            const b2y = getPlantHandle(newGuild.plants, plantB.id).y + dy;
+            const plantPoint = getPlantHandle(newGuild.plants, plantC.uid);
+            const dx = getPlantHandle(guild.plants, plantA.uid).x - getPlantHandle(newGuild.plants, plantA.uid).x;
+            const dy = getPlantHandle(guild.plants, plantA.uid).y - getPlantHandle(newGuild.plants, plantA.uid).y;
+            const b1x = getPlantHandle(guild.plants, plantB.uid).x;
+            const b1y = getPlantHandle(guild.plants, plantB.uid).y;
+            const b2x = getPlantHandle(newGuild.plants, plantB.uid).x + dx;
+            const b2y = getPlantHandle(newGuild.plants, plantB.uid).y + dy;
             const l = commonEdge.dist;
             const theta = Math.acos((2 * Math.pow(l, 2) - Math.pow(distance(b1x - b2x, b1y - b2y), 2)) / (2 * Math.pow(l, 2)));
-            const result: Point = rotateAbout(
+            let result: Point = rotateAbout(
                 { x: plantPoint.x + dx, y: plantPoint.y + dy },
-                getPlantHandle(guild.plants, plantA.id),
-                theta
+                getPlantHandle(guild.plants, plantA.uid),
+                -theta
             );
+            let resultB: Point = rotateAbout(
+                { x: b2x, y: b2y },
+                getPlantHandle(guild.plants, plantA.uid),
+                -theta
+            );
+            /* console.log([
+                { x: b1x, y: b1y },
+                resultB
+            ]); */
+            if (round(b1x, 2) !== round(resultB.x, 2) || round(b1y, 2) !== round(resultB.y, 2)) {
+                result = rotateAbout(
+                    { x: plantPoint.x + dx, y: plantPoint.y + dy },
+                    getPlantHandle(guild.plants, plantA.uid),
+                    theta
+                );
+                resultB = rotateAbout(
+                    { x: b2x, y: b2y },
+                    getPlantHandle(guild.plants, plantA.uid),
+                    theta
+                );
+                /* console.log([
+                    { x: b1x, y: b1y },
+                    resultB
+                ]);
+                if (round(b1x, 2) !== round(resultB.x, 2) || round(b1y, 2) !== round(resultB.y, 2)) {
+                    console.log('Nope, not here');
+                    continue;
+                } */
+            }
+            /* if (
+                distance(getPlantHandle(newGuild.plants, plantC.uid).x - getPlantHandle(newGuild.plants, plantB.uid).x, getPlantHandle(newGuild.plants, plantC.uid).y - getPlantHandle(newGuild.plants, plantB.uid).y, 2) !==
+                distance(result.x - getPlantHandle(guild.plants, plantB.uid).x, result.y - getPlantHandle(guild.plants, plantB.uid).y, 2)
+            ) {
+                console.log(`Geometry error between ${plantC.uid} and ${plantB.uid}`);
+                continue;
+            }
+            if (
+                distance(getPlantHandle(newGuild.plants, plantA.uid).x - getPlantHandle(newGuild.plants, plantC.uid).x, getPlantHandle(newGuild.plants, plantA.uid).y - getPlantHandle(newGuild.plants, plantC.uid).y, 2) !==
+                distance(getPlantHandle(guild.plants, plantA.uid).x - result.x, getPlantHandle(guild.plants, plantA.uid).y - result.y, 2)
+            ) {
+                console.log(`Geometry error between ${plantC.uid} and ${plantA.uid}`);
+                continue;
+            } */
             let tooClose = false;
             const edgesToAdd: Edge[] = [];
             for (const p of guild.plants) {
@@ -180,13 +235,13 @@ export function triangulationAlgorithm(plants: PlantHandle[], reports: Reports):
                     tooClose = true;
                     break;
                 }
-                edgesToAdd.push({ p1: Math.min(plantC.id, p.id), p2: Math.max(plantC.id, p.id), dist: d });
+                edgesToAdd.push({ p1: plantC.uid, p2: p.uid, dist: d });
             }
             if (tooClose) {
                 continue;
             }
             guild.plants.push({ ...plantC, ...result, r: 0.025 });
-            guild.edges = guild.edges.concat(newGuild.edges.filter((e: Edge) => e.p1 === plantC.id || e.p2 === plantC.id)).concat(edgesToAdd);
+            guild.edges = guild.edges.concat(newGuild.edges.filter((e: Edge) => e.p1 === plantC.uid || e.p2 === plantC.uid)).concat(edgesToAdd);
             guild.bounds = collapseBounds(guild.bounds, {
                 upperLeft: {
                     x: result.x - 0.05,
@@ -260,8 +315,8 @@ export function geometricAlgorithm(plants: PlantHandle[], reports: Reports): Gui
                 }
             },
             edges: [{
-                p1: plants[0].id,
-                p2: plants[1].id,
+                p1: plants[0].uid,
+                p2: plants[1].uid,
                 dist
             }]
         };

@@ -1,7 +1,8 @@
 
 // Type defining a plant's scientific and common name, and its database identifier
 export interface PlantHandle {
-    id: number
+    uid: number // Unique ID
+    id: number // Greenworld database ID
     species: string
     name: string
 }
@@ -19,9 +20,9 @@ export interface Bounds {
 
 // Represents an edge of a graph connecting two plants between a certain distance
 export interface Edge {
-    p1: number
-    p2: number
-    dist: number
+    p1: number // Plant unique ID
+    p2: number // Plant unique ID
+    dist: number // Cartesian distance
 }
 
 // A network of plants that can exist within a certain distance of each other
