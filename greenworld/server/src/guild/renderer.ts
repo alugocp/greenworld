@@ -36,11 +36,21 @@ export function drawGuild(canvas: HTMLCanvasElement, guild: Guild): void {
     // Draw lines
     for (let x = Math.floor(guild.bounds.upperLeft.x); x < Math.ceil(guild.bounds.lowerRight.x); x++) {
         ctx.fillStyle = x === 0 ? '#000000' : '#cccccc';
-        ctx.fillRect((x + dx) * scale + BUFFER_X, BUFFER_Y, 1, VIEW_Y);
+        const pos = (x + dx) * scale + BUFFER_X;
+        if (pos < BUFFER_X || pos > VIEW_X + BUFFER_X) {
+            continue;
+        }
+        const h = (Math.ceil(guild.bounds.lowerRight.y) + dy) * scale;
+        ctx.fillRect(pos, BUFFER_Y, 1, h);
     }
     for (let y = Math.floor(guild.bounds.upperLeft.y); y < Math.ceil(guild.bounds.lowerRight.y); y++) {
         ctx.fillStyle = y === 0 ? '#000000' : '#cccccc';
-        ctx.fillRect(BUFFER_X, (y + dy) * scale + BUFFER_Y, VIEW_X, 1);
+        const pos = (y + dy) * scale + BUFFER_Y;
+        if (pos < BUFFER_Y || pos > VIEW_Y + BUFFER_Y) {
+            continue;
+        }
+        const w = (Math.ceil(guild.bounds.lowerRight.x) + dx) * scale;
+        ctx.fillRect(BUFFER_X, pos, w, 1);
     }
 
     // Draw plants
@@ -49,7 +59,7 @@ export function drawGuild(canvas: HTMLCanvasElement, guild: Guild): void {
         const x = (p.x + dx) * scale + BUFFER_X;
         const y = (p.y + dy) * scale + BUFFER_Y;
         ctx.beginPath();
-        ctx.arc(x, y, p.r * scale, 0, Math.PI * 2);
+        ctx.arc(x, y, 10, 0, Math.PI * 2);
         ctx.fill();
         labels.push({ text: p.name, x, y });
     }
@@ -63,9 +73,17 @@ export function drawGuild(canvas: HTMLCanvasElement, guild: Guild): void {
 }
 
 export function listPlants(plantList: HTMLDivElement, guild: Guild): void {
+    const items: [number, string][] = [];
     for (const p of guild.plants) {
         const x = Math.round(p.x * 100) / 100;
         const y = Math.round(p.y * 100) / 100;
-        plantList.innerHTML += `<p>${p.name} (${p.species}) at (${x}m, ${y}m)</p>`;
+        items.push([p.uid, `<p>${p.uid}) ${p.name} (${p.species}) at (${x}m, ${y}m)</p>`]);
     }
+    for (const p of guild.excluded) {
+        items.push([p.uid, `<p>${p.uid}) <s>${p.name} (${p.species})</s></p>`]);
+    }
+    plantList.innerHTML += items
+        .sort((x: [number, string], y: [number, string]) => x[0] - y[0])
+        .map((x: [number, string]): string => x[1])
+        .join('');
 }
