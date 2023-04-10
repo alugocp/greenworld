@@ -27,6 +27,7 @@ export interface Edge {
 
 // A network of plants that can exist within a certain distance of each other
 export interface Guild {
+    excluded: PlantHandle[]
     plants: Array<PlantHandle & Point & { r: number }>
     bounds: Bounds
     edges: Edge[]

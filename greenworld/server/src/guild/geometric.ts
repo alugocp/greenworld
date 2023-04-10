@@ -74,6 +74,7 @@ function buildTriangle(p1: PlantHandle, p2: PlantHandle, p3: PlantHandle, _a: nu
     const x = Math.round(Math.cos(theta) * _c * 1000) / 1000;
     const y = Math.round(Math.sin(theta) * _c * 1000) / 1000;
     return {
+        excluded: [],
         plants: [
             { ...p1, x: 0, y: 0, r: buffer },
             { ...p2, x: _a, y: 0, r: buffer },
@@ -189,68 +190,84 @@ export function triangulationAlgorithm(plants: PlantHandle[], reports: Reports):
     if (guild === null) {
         return null;
     }
+    let previousLength = 0;
+    let tryAgain: PlantHandle[] = [];
     for (let a = 3; a < plants.length; a++) {
-        const plantC = plants[a];
-        for (const e of guild.edges) {
-            const plantA: PlantHandle = getPlantHandle(plants, e.p1);
-            const plantB: PlantHandle = getPlantHandle(plants, e.p2);
-            const newGuild: Guild | null = findTriangle(
-                plants,
-                reports,
-                plantA,
-                plantB,
-                plantC
-            );
-            if (newGuild === null) {
-                continue;
-            }
-            if (grabCommonEdge(guild, newGuild) === null) {
-                continue;
-            }
-
-            // Rotate onto cumulative guild structure
-            const plantPoint = getPlantHandle(newGuild.plants, plantC.uid);
-            const ax = getPlantHandle(guild.plants, plantA.uid).x;
-            const ay = getPlantHandle(guild.plants, plantA.uid).y;
-            const dx = ax - getPlantHandle(newGuild.plants, plantA.uid).x;
-            const dy = ay - getPlantHandle(newGuild.plants, plantA.uid).y;
-            const b1x = getPlantHandle(guild.plants, plantB.uid).x;
-            const b1y = getPlantHandle(guild.plants, plantB.uid).y;
-            const b2x = getPlantHandle(newGuild.plants, plantB.uid).x + dx;
-            const b2y = getPlantHandle(newGuild.plants, plantB.uid).y + dy;
-            const theta = Math.atan2(b1y - ay, b1x - ax) - Math.atan2(b2y - ay, b2x - ax);
-            let result: Point = rotateAbout(
-                { x: plantPoint.x + dx, y: plantPoint.y + dy },
-                getPlantHandle(guild.plants, plantA.uid),
-                theta
-            );
-
-            // If new plant is too close then check its reflection
-            let edgesToAdd = checkOtherPlants(reports, guild, result, plantA, plantB, plantC);
-            if (edgesToAdd === null) {
-                result = reflectAbout(result, { x: ax, y: ay }, { x: b1x, y: b1y });
-                edgesToAdd = checkOtherPlants(reports, guild, result, plantA, plantB, plantC);
-                if (edgesToAdd === null) {
+        tryAgain.push(plants[a]);
+    }
+    while (tryAgain.length !== previousLength) {
+        const plantsToTry = [...tryAgain];
+        previousLength = tryAgain.length;
+        tryAgain = [];
+        for (let a = 0; a < plantsToTry.length; a++) {
+            const plantC = plantsToTry[a];
+            let success = false;
+            for (const e of guild.edges) {
+                const plantA: PlantHandle = getPlantHandle(plants, e.p1);
+                const plantB: PlantHandle = getPlantHandle(plants, e.p2);
+                const newGuild: Guild | null = findTriangle(
+                    plants,
+                    reports,
+                    plantA,
+                    plantB,
+                    plantC
+                );
+                if (newGuild === null) {
                     continue;
                 }
-            }
-
-            // Update the guild
-            guild.plants.push({ ...plantC, ...result, r: 0.025 });
-            guild.edges = guild.edges.concat(newGuild.edges.filter((e: Edge) => e.p1 === plantC.uid || e.p2 === plantC.uid)).concat(edgesToAdd);
-            guild.bounds = collapseBounds(guild.bounds, {
-                upperLeft: {
-                    x: result.x - 0.05,
-                    y: result.y - 0.05
-                },
-                lowerRight: {
-                    x: result.x + 0.05,
-                    y: result.y + 0.05
+                if (grabCommonEdge(guild, newGuild) === null) {
+                    continue;
                 }
-            });
-            break;
+
+                // Rotate onto cumulative guild structure
+                const plantPoint = getPlantHandle(newGuild.plants, plantC.uid);
+                const ax = getPlantHandle(guild.plants, plantA.uid).x;
+                const ay = getPlantHandle(guild.plants, plantA.uid).y;
+                const dx = ax - getPlantHandle(newGuild.plants, plantA.uid).x;
+                const dy = ay - getPlantHandle(newGuild.plants, plantA.uid).y;
+                const b1x = getPlantHandle(guild.plants, plantB.uid).x;
+                const b1y = getPlantHandle(guild.plants, plantB.uid).y;
+                const b2x = getPlantHandle(newGuild.plants, plantB.uid).x + dx;
+                const b2y = getPlantHandle(newGuild.plants, plantB.uid).y + dy;
+                const theta = Math.atan2(b1y - ay, b1x - ax) - Math.atan2(b2y - ay, b2x - ax);
+                let result: Point = rotateAbout(
+                    { x: plantPoint.x + dx, y: plantPoint.y + dy },
+                    getPlantHandle(guild.plants, plantA.uid),
+                    theta
+                );
+
+                // If new plant is too close then check its reflection
+                let edgesToAdd = checkOtherPlants(reports, guild, result, plantA, plantB, plantC);
+                if (edgesToAdd === null) {
+                    result = reflectAbout(result, { x: ax, y: ay }, { x: b1x, y: b1y });
+                    edgesToAdd = checkOtherPlants(reports, guild, result, plantA, plantB, plantC);
+                    if (edgesToAdd === null) {
+                        continue;
+                    }
+                }
+
+                // Update the guild
+                guild.plants.push({ ...plantC, ...result, r: 0.025 });
+                guild.edges = guild.edges.concat(newGuild.edges.filter((e: Edge) => e.p1 === plantC.uid || e.p2 === plantC.uid)).concat(edgesToAdd);
+                guild.bounds = collapseBounds(guild.bounds, {
+                    upperLeft: {
+                        x: result.x - 0.05,
+                        y: result.y - 0.05
+                    },
+                    lowerRight: {
+                        x: result.x + 0.05,
+                        y: result.y + 0.05
+                    }
+                });
+                success = true;
+                break;
+            }
+            if (!success) {
+                tryAgain.push(plantC);
+            }
         }
     }
+    guild.excluded = tryAgain;
     return guild;
 }
 
@@ -261,6 +278,7 @@ export function geometricAlgorithm(plants: PlantHandle[], reports: Reports): Gui
     }
     if (plants.length === 1) {
         return {
+            excluded: [],
             plants: [
                 {
                     ...plants[0],
@@ -286,6 +304,7 @@ export function geometricAlgorithm(plants: PlantHandle[], reports: Reports): Gui
         const report: Report = reports.getReport(plants[0], plants[1]);
         const dist = report.range_union_min !== 0 ? report.range_union_min : 0.16;
         return {
+            excluded: [],
             plants: [
                 {
                     ...plants[0],
