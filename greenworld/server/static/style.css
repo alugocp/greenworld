@@ -37,6 +37,10 @@ a:hover {
     color: var(--link);
 }
 
+canvas {
+    border: solid 1px var(--text);
+}
+
 #suggested {
     text-decoration: underline;
     font-size: 32px;

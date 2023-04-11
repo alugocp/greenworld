@@ -40,7 +40,7 @@ export function drawGuild(canvas: HTMLCanvasElement, guild: Guild): void {
         if (pos < BUFFER_X || pos > VIEW_X + BUFFER_X) {
             continue;
         }
-        const h = (Math.ceil(guild.bounds.lowerRight.y) + dy) * scale;
+        const h = Math.min((Math.ceil(guild.bounds.lowerRight.y) + dy) * scale, VIEW_Y);
         ctx.fillRect(pos, BUFFER_Y, 1, h);
     }
     for (let y = Math.floor(guild.bounds.upperLeft.y); y < Math.ceil(guild.bounds.lowerRight.y); y++) {
@@ -49,7 +49,7 @@ export function drawGuild(canvas: HTMLCanvasElement, guild: Guild): void {
         if (pos < BUFFER_Y || pos > VIEW_Y + BUFFER_Y) {
             continue;
         }
-        const w = (Math.ceil(guild.bounds.lowerRight.x) + dx) * scale;
+        const w = Math.min((Math.ceil(guild.bounds.lowerRight.x) + dx) * scale, VIEW_X);
         ctx.fillRect(BUFFER_X, pos, w, 1);
     }
 
@@ -61,7 +61,7 @@ export function drawGuild(canvas: HTMLCanvasElement, guild: Guild): void {
         ctx.beginPath();
         ctx.arc(x, y, 10, 0, Math.PI * 2);
         ctx.fill();
-        labels.push({ text: p.name, x, y });
+        labels.push({ text: `${p.uid}`, x, y: y + 5 });
     }
 
     // Draw labels
@@ -73,7 +73,7 @@ export function drawGuild(canvas: HTMLCanvasElement, guild: Guild): void {
 }
 
 export function listPlants(plantList: HTMLDivElement, guild: Guild): void {
-    const items: [number, string][] = [];
+    const items: Array<[number, string]> = [];
     for (const p of guild.plants) {
         const x = Math.round(p.x * 100) / 100;
         const y = Math.round(p.y * 100) / 100;
