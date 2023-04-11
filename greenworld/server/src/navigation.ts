@@ -5,8 +5,14 @@ const cachedSearchData = {
     term: ''
 };
 
+// Returns a link to some plant
+export function plantLink(plantToUrl: (_: string) => string): (plant: PlantHandle) => string {
+    const baseUrl: string = (window as any).gw.base_url as string;
+    return (plant: PlantHandle): string => `<a href = "${baseUrl}${plantToUrl(plant.species)}">${plant.name} (${plant.species})</a>`;
+}
+
 // Triggers the search button if the enter key is pressed
-export function searchBarOnKeyDown(e: KeyboardEvent, plantToUrl: (_: string) => string): void {
+export function searchBarOnKeyDown(e: KeyboardEvent, linkTransform: (plant: PlantHandle) => string): void {
     const baseUrl: string = (window as any).gw.base_url as string;
     if (e.keyCode === 13) {
         e.preventDefault();
@@ -26,7 +32,7 @@ export function searchBarOnKeyDown(e: KeyboardEvent, plantToUrl: (_: string) => 
                     .then((r) => r.json())
                     .then((data) => {
                         cachedSearchData.html = data
-                            .map((plant: PlantHandle): string => `<a href = "${baseUrl}${plantToUrl(plant.species)}">${plant.name} (${plant.species})</a>`)
+                            .map(linkTransform)
                             .reduce((acc: string, x: string): string => acc + x, '');
                         results.innerHTML = cachedSearchData.html;
                     });
