@@ -77,13 +77,13 @@ export function listPlants(plantList: HTMLDivElement, guild: Guild): void {
     for (const p of guild.plants) {
         const x = Math.round(p.x * 100) / 100;
         const y = Math.round(p.y * 100) / 100;
-        items.push([p.uid, `<p>${p.uid}) ${p.name} (${p.species}) at (${x}m, ${y}m)</p>`]);
+        items.push([p.uid, `${p.uid}) ${p.name} (${p.species}) at (${x}m, ${y}m)`]);
     }
     for (const p of guild.excluded) {
-        items.push([p.uid, `<p>${p.uid}) <s>${p.name} (${p.species})</s></p>`]);
+        items.push([p.uid, `${p.uid}) <s>${p.name} (${p.species})</s>`]);
     }
     plantList.innerHTML += items
         .sort((x: [number, string], y: [number, string]) => x[0] - y[0])
-        .map((x: [number, string]): string => x[1])
+        .map((x: [number, string]): string => `<p><button onclick='greenworld_drop_plant(${x[0]})'>Drop</button> ${x[1]}</p>`)
         .join('');
 }

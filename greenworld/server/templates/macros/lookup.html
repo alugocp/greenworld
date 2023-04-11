@@ -1,0 +1,10 @@
+
+{% macro render(linkTransform) -%}
+<input
+    id="search-field"
+    type="text"
+    onkeyup="gw.navigation.searchBarOnKeyDown(event, {{ linkTransform }})"
+    placeholder="scientific name"/>
+<br/>
+<span id="search-results"></span>
+{%- endmacro -%}

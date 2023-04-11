@@ -5,13 +5,26 @@
 {{ scripting.render() }}
 
 <canvas id="canvas"></canvas>
+<br/>
+{% import 'macros/lookup.html' as lookup %}
+{{ lookup.render('(plant) => `<a onclick=\"greenworld_add_plant(\'${plant.id}\', \'${plant.name}\', \'${plant.species}\')\">${plant.name} (${plant.species})</a>`') }}
 <div id="plants"></div>
 
 <script>
     function greenworld_init() {
-        gw.guild.init(
+        gw.guild.calculate(
             document.getElementById('canvas'),
             document.getElementById('plants')
         );
+    }
+
+    function greenworld_add_plant(id, name, species) {
+        gw.guild.addPlant({ id, name, species, uid: 0 });
+        greenworld_init();
+    }
+
+    function greenworld_drop_plant(uid) {
+        gw.guild.dropPlant(uid);
+        greenworld_init();
     }
 </script>
