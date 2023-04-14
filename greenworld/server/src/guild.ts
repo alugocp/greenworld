@@ -2,7 +2,13 @@ import type { PlantHandle, Guild } from './defs';
 import type { GuildAlgorithm } from './guild/algorithm';
 import { Reports } from './guild/algorithm';
 import { geometricAlgorithm } from './guild/geometric';
+import { dynamicAlgorithm } from './guild/dynamic';
 import { resetRender, drawGuild, listPlants } from './guild/renderer';
+
+const algorithms: Record<string, GuildAlgorithm> = {
+    geometric: geometricAlgorithm,
+    dynamic: dynamicAlgorithm
+};
 
 let plants: PlantHandle[] = [
     {
@@ -68,10 +74,13 @@ let plants: PlantHandle[] = [
 ];
 
 // Calculates and renders guild plant positions
-export async function calculate(canvas: HTMLCanvasElement, plantList: HTMLDivElement): Promise<void> {
+export async function calculate(canvas: HTMLCanvasElement, plantList: HTMLDivElement, algorithmType: string): Promise<void> {
+    let algorithm: GuildAlgorithm = geometricAlgorithm;
+    if (algorithms[algorithmType] !== undefined) {
+        algorithm = algorithms[algorithmType];
+    }
     const reports: Reports = new Reports();
     await reports.populate(plants);
-    const algorithm: GuildAlgorithm = geometricAlgorithm;
     const guild: Guild | null = algorithm(plants, reports);
     resetRender(canvas, plantList);
     if (guild !== null) {

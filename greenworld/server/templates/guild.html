@@ -6,6 +6,11 @@
 
 <canvas id="canvas"></canvas>
 <br/>
+<select id="algorithm" onchange="greenworld_init()">
+    <option value="geometric">Triangulation</option>
+    <option value="dynamic">Force Graph</option>
+</select>
+<br/>
 {% import 'macros/lookup.html' as lookup %}
 {{ lookup.render('(plant) => `<a onclick=\"greenworld_add_plant(\'${plant.id}\', \'${plant.name}\', \'${plant.species}\')\">${plant.name} (${plant.species})</a>`') }}
 <div id="plants"></div>
@@ -14,7 +19,8 @@
     function greenworld_init() {
         gw.guild.calculate(
             document.getElementById('canvas'),
-            document.getElementById('plants')
+            document.getElementById('plants'),
+            document.getElementById('algorithm').value
         );
     }
 
