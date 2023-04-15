@@ -24,7 +24,7 @@ def parse_enum(name):
     try:
         return getattr(defs, enum[0])[enum[1]].value
     except Exception as e:
-        raise Exception(f'Unknown enum \'{name}\'') from e
+        raise ValueError(f'Unknown enum \'{name}\'') from e
 
 def parse_species_name(cells):
     concatenated = ' '.join(cells).lower()
@@ -102,9 +102,9 @@ class IwebXlsDataCollector(BaseDataCollector):
         # Extract interaction matrix data
         data = extract_range_from_file(csv_filename, cli_options['range'])
         if len(data) != len(cli_options['row-headers']):
-            raise Exception('Mismatched row headers length with number of data rows')
+            raise ValueError('Mismatched row headers length with number of data rows')
         if len(data[0]) != len(cli_options['col-headers']):
-            raise Exception('Mismatched column headers length with number of data columns')
+            raise ValueError('Mismatched column headers length with number of data columns')
 
         # Write data object
         output = {
@@ -117,9 +117,9 @@ class IwebXlsDataCollector(BaseDataCollector):
                 }
             ]
         }
-        for a, _ in enumerate(data):
-            for b, _ in enumerate(data[a]):
-                point = data[a][b]
+        for a, sublist in enumerate(data):
+            for b, _ in enumerate(sublist):
+                point = sublist[b]
                 if point in cli_options['map']:
                     mapped = cli_options['map'][point]
                     latin1 = cli_options['row-headers'][a] # Non-plant

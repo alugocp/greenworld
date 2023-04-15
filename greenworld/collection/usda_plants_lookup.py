@@ -40,6 +40,7 @@ class UsdaPlantsLookupDataCollector(BaseDataCollector):
         # Make initial query to USDA (search by scientific name)
         self.gw.log(f'Querying USDA Plants Database for {species}...')
         r1 = requests.post(
+            timeout = 30,
             url = 'https://plantsservices.sc.egov.usda.gov/api/PlantSearch',
             data = {
                 'Text': species,
@@ -79,6 +80,7 @@ class UsdaPlantsLookupDataCollector(BaseDataCollector):
         # Make second query to USDA (grab family name and growth habit)
         self.gw.log(f'Querying USDA Plants Database for {symbol}...')
         r2 = requests.get(
+            timeout = 30,
             url = f'https://plantsservices.sc.egov.usda.gov/api/PlantProfile?symbol={symbol}'
         )
         result2 = json.loads(r2.text)

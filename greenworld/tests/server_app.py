@@ -7,11 +7,15 @@ SERVER = None
 
 class ServerAppCase(unittest.TestCase):
 
+    @staticmethod
     def setUpClass():
-        global SERVER
-        SERVER = subprocess.Popen(['python3','greenworld/server/app.py'])
+        with subprocess.Popen(['python3','greenworld/server/app.py']) as p:
+            # pylint: disable-next=global-statement
+            global SERVER
+            SERVER = p
         time.sleep(5)
 
+    @staticmethod
     def tearDownClass():
         SERVER.kill()
 

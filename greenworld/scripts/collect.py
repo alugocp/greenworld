@@ -37,7 +37,7 @@ def main(gw, args):
     for arg in args:
         collector = get_data_collector(arg)
         if not collector:
-            raise Exception(f'No data collector for input \'{arg}\'')
+            raise ValueError(f'No data collector for input \'{arg}\'')
 
         # Aggregate data from collectors
         data = collector.collect_data(arg)

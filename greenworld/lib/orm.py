@@ -29,7 +29,7 @@ def init_db():
     if not DB:
         dbstring = os.getenv('GREENWORLD_DB')
         if not dbstring:
-            raise Exception('Please set GREENWORLD_DB environment variable to an ODBC string')
+            raise ValueError('Please set GREENWORLD_DB environment variable to an ODBC string')
         DB = create_engine(dbstring)
     return DB
 

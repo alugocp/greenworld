@@ -78,14 +78,14 @@ def print_help():
 # Converts value from unit to the internal standard unit
 def convert_to_unit(value):
     if not ' ' in value:
-        raise Exception(f'Scalar value \'{value}\' needs a space in between the number and the unit')
+        raise ValueError(f'Scalar value \'{value}\' needs a space in between the number and the unit')
     val, unit = value.split(' ')
     val = float(val)
     unit = unit.lower()
     if unit in ['m', 'g', 'c']:
         return val
     if unit not in _conversions:
-        raise Exception(f'Unknown unit \'{unit}\'')
+        raise ValueError(f'Unknown unit \'{unit}\'')
     return round(_conversions[unit](val), 3)
 
 # Returns the last ID from a table
@@ -102,7 +102,7 @@ def parse_enum(name):
     try:
         return getattr(defs, enum[0])[enum[1]].value
     except Exception as e:
-        raise Exception(f'Unknown enum \'{name}\'') from e
+        raise ValueError(f'Unknown enum \'{name}\'') from e
 
 # Process plant table bulk data entry for a JSON file
 def enter_data(gw: Greenworld, db, filename):
@@ -212,7 +212,7 @@ def process_ecological_fields(gw: Greenworld, con, works_cited_map, plant_id, da
             result = select_by(con, orm.other_species_table, 'species', row['species'])
         if not result:
             species = row['species']
-            raise Exception(f'Unknown interactive species \'{species}\'')
+            raise ValueError(f'Unknown interactive species \'{species}\'')
         interaction = {
             'plant': plant_id,
             'relationship': parse_enum(row['relationship']),

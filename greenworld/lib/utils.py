@@ -39,11 +39,9 @@ class AlgorithmUtils:
         return self.__rules
 
     # Returns true if the two intervals overlap or touch at all
-    # pylint: disable-next=no-self-use
     def overlaps(self, a, b):
         return min(a.upper, b.upper) - max(a.lower, b.lower) >= 0
 
-    # pylint: disable-next=no-self-use
     def reduce_intervals(self, plant1, plant2, field1, field2):
         return (getattr(plant1[field1], field2) if field1 in plant1 and plant1[field1] else 0) + (getattr(plant2[field1], field2) if field1 in plant2 and plant2[field1] else 0)
 
@@ -64,7 +62,6 @@ class AlgorithmUtils:
         return decorate_wrapper
 
     # Repeats the decorated function with the tested plants reversed (if nothing was returned the first time)
-    # pylint: disable-next=no-self-use
     def mirrored(self):
         def decorate_wrapper(func):
             def func_wrapper(plant1, plant2):
@@ -74,7 +71,6 @@ class AlgorithmUtils:
         return decorate_wrapper
 
     # Does not run the decorated function if the tested plants do not have certain fields
-    # pylint: disable-next=no-self-use
     def ensure(self, both = [], fields1 = [], fields2 = []):
         def decorate_wrapper(func):
             def func_wrapper(plant1, plant2):
@@ -90,7 +86,6 @@ class AlgorithmUtils:
         return decorate_wrapper
 
     # Runs the decorated function with the taller of the tested plants first
-    # pylint: disable-next=no-self-use
     def taller_first(self):
         def decorate_wrapper(func):
             def func_wrapper(plant1, plant2):
