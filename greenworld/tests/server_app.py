@@ -9,15 +9,15 @@ class ServerAppCase(unittest.TestCase):
 
     @staticmethod
     def setUpClass():
-        with subprocess.Popen(['python3','greenworld/server/app.py']) as p:
-            # pylint: disable-next=global-statement
-            global SERVER
-            SERVER = p
+        # pylint: disable-next=global-statement
+        global SERVER
+        # pylint: disable-next=consider-using-with
+        SERVER = subprocess.Popen(['python3','greenworld/server/app.py'])
         time.sleep(5)
 
     @staticmethod
     def tearDownClass():
-        SERVER.kill()
+        SERVER.terminate()
 
     def test_reports(self):
         self.assertEqual(
@@ -29,4 +29,8 @@ class ServerAppCase(unittest.TestCase):
         self.assertEqual(
             requests.get(url = f'{BASE}/search/zea', timeout = 5).json(),
             [{'id':1,'name':'Hopi Turquoise Corn','species':'zea mays'}]
+        )
+        self.assertEqual(
+            requests.get(url = f'{BASE}/search/z', timeout = 5).json(),
+            []
         )
