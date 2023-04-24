@@ -9,6 +9,28 @@ The core algorithm looks at every combination of plants and generates a compatib
 Pairwise compatibility is determined by morphology, nutrients, non-plant relationships, allelopathy, and preferred environment.
 A compatibility report consists of a set of suggested ranges to keep between two planted species.
 
+## Setup
+This project uses a Postgres database hosted in Docker.
+You must do the following in order to set it up:
+```bash
+# Record a database password
+echo "PASSWORD=<SOME PASSWORD HERE>" > .env
+
+# Spin up the database
+docker-compose up -d
+
+# Stop the database
+docker-compose down -v
+
+# Access the database from the command line
+psql -h localhost -p 5432 -U postgres -d greenworld
+```
+
+You can also use SQLite3 instead:
+```bash
+echo "DRIVER=sqlite" > .env
+```
+
 ## Commands
 Use the following commands to help you while writing code for this project:
 
