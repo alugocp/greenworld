@@ -238,4 +238,4 @@ def guild_finder_endpoint():
 if __name__ == '__main__':
     # TODO this function is not intended for production use, please rewrite before launch
     # https://flask.palletsprojects.com/en/2.2.x/api/#flask.Flask.run
-    app.run(port = 2017)
+    app.run(host = '0.0.0.0', port = 2017)

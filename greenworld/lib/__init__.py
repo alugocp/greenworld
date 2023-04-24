@@ -24,7 +24,8 @@ class Greenworld:
             os.environ['GREENWORLD_DB'] = 'sqlite:///greenworld.db'
         else:
             password = env['PASSWORD']
-            os.environ['GREENWORLD_DB'] = f'postgresql://postgres:{password}@localhost:5432/greenworld'
+            host = 'database' if os.environ['PYTHONPATH'] == '/srv' else 'localhost'
+            os.environ['GREENWORLD_DB'] = f'postgresql://postgres:{password}@{host}:5432/greenworld'
         logging.basicConfig(level = logging.NOTSET)
         self.__log = log_func
 

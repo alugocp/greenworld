@@ -1,6 +1,7 @@
 # Database and types
 SQLAlchemy >= 2.0.0
 SQLAlchemy-Utils
+psycopg2-binary
 intervals
 
 # Auxiliary tasks
