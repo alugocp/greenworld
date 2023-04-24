@@ -38,6 +38,14 @@ a:hover {
     color: var(--link);
 }
 
+a.on-white {
+    color: var(--background2);
+}
+
+a.on-white:hover {
+    color: var(--background2);
+}
+
 canvas {
     border: solid 1px var(--text);
 }

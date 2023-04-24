@@ -8,8 +8,12 @@
     Welcome to Greenworld!
 </h2>
 
+<h3>
+    Explore {{ num_plants }} plant species and their {{ num_reports }} interactions
+</h3>
+
 <p>
-    Search for plants and their guilds:
+    Search for plants, or use the <a class="on-white" href="{{ url_for('guild_finder_endpoint') }}">guild finder</a>:
 </p>
 {% import 'macros/search.html' as search %}
 {{ search.render('(val) => `plant/${val}`') }}

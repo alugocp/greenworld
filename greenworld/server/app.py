@@ -158,7 +158,12 @@ def citation_regex(href):
 # Endpoints
 @app.route('/')
 def homepage_endpoint():
-    return render_template('homepage.html')
+    plant_stmt = sqlalchemy.select(sqlalchemy.func.count()).select_from(orm.plants_table)
+    report_stmt = sqlalchemy.select(sqlalchemy.func.count()).select_from(orm.reports_table)
+    with db.connect() as con:
+        num_plants = con.execute(plant_stmt).fetchone()[0]
+        num_reports = con.execute(report_stmt).fetchone()[0]
+    return render_template('homepage.html', num_plants = num_plants, num_reports = num_reports)
 
 @app.route('/plant/<species>')
 def plant_view_endpoint(species):
@@ -169,7 +174,7 @@ def plant_view_endpoint(species):
         if plant:
             plant = process_plant_dict(con, dict(plant))
             return render_template('plant.html', plant = plant)
-    return f'Plant \'{species}\' not found', 404
+    return render_template('404.html'), 404
 
 @app.route('/search/<prefix>')
 def plant_search_endpoint(prefix):
@@ -192,7 +197,6 @@ def plant_search_endpoint(prefix):
 def report_view_endpoint(species1, species2):
     species1 = unquote_plus(species1)
     species2 = unquote_plus(species2)
-    error_404 = f'No report for plants \'{species1}\' and \'{species2}\''
     with db.connect() as con:
         stmt = orm.plants_table.select().where(orm.plants_table.c.species.in_([species1, species2]))
         plants = list(map(dict, con.execute(stmt).mappings().fetchall()))
@@ -200,13 +204,13 @@ def report_view_endpoint(species1, species2):
             if species1 == species2:
                 plants.append(copy.deepcopy(plants[0]))
             else:
-                return error_404, 404
+                return render_template('404.html'), 404
         if plants[1]['id'] < plants[0]['id']:
             plants = [plants[1], plants[0]]
         stmt = orm.reports_table.select().where(orm.reports_table.c.plant1 == plants[0]['id']).where(orm.reports_table.c.plant2 == plants[1]['id'])
         report = dict(con.execute(stmt).mappings().fetchone())
         if not report:
-            return error_404, 404
+            return render_template('404.html'), 404
         for i, plant in enumerate(plants):
             plants[i] = process_plant_dict(con, plant)
         return render_template(
@@ -233,6 +237,10 @@ def grab_reports_endpoint():
 @app.route('/guild')
 def guild_finder_endpoint():
     return render_template('guild.html')
+
+@app.errorhandler(404)
+def not_found_endpoint(_):
+    return render_template('404.html')
 
 # Main script
 if __name__ == '__main__':
