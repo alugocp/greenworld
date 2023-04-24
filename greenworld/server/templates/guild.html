@@ -1,8 +1,8 @@
 <!doctype html>
 <title>Greenworld - Guild finder</title>
 <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}"/>
-{% import 'macros/scripting.html' as scripting %}
-{{ scripting.render() }}
+{% include "macros/scripting.html" %}
+{% include "macros/header.html" %}
 
 <canvas id="canvas"></canvas>
 <br/>

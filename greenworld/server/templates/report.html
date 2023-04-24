@@ -1,8 +1,8 @@
 <!doctype html>
 <title>Greenworld - {{ plant1['name'] }} x {{ plant2['name'] }}</title>
 <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}"/>
-{% import 'macros/scripting.html' as scripting %}
-{{ scripting.render() }}
+{% include "macros/scripting.html" %}
+{% include "macros/header.html" %}
 
 <h2>
     {{ plant1['name'] }} x {{ plant2['name'] }}

@@ -1,8 +1,8 @@
 <!doctype html>
 <title>Greenworld</title>
 <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}"/>
-{% import 'macros/scripting.html' as scripting %}
-{{ scripting.render() }}
+{% include "macros/scripting.html" %}
+{% include "macros/header.html" %}
 
 <h2>
     Welcome to Greenworld!

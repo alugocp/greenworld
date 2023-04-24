@@ -13,6 +13,7 @@ body {
     color: var(--text);
     font-family: sans-serif;
     font-size: 16px;
+    margin: 0;
 }
 
 input[type="checkbox"] {
@@ -57,6 +58,12 @@ canvas {
 }
 #search-results a:nth-child(2n) {
     background-color: var(--background3);
+}
+
+/* Header */
+.header {
+    background-color: var(--background2);
+    padding: 5px 10px;
 }
 
 /* Plant view */
