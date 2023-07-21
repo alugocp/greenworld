@@ -20,7 +20,7 @@ install:
 	$(PYTHON) -m pip install -r requirements.txt
 
 ui:
-	$(NPM_BIN)/tsc -p tsconfig.json
+	$(NPM_BIN)/tsc -p server/tsconfig.json
 
 serve: ui
 	$(ENV) $(PYTHON) server/app.py

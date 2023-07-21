@@ -2,6 +2,7 @@ server/static/script.js
 node_modules
 .DS_Store
 __pycache__
+.pytest_cache
 *.js.map
 *.pyc
 *.db

@@ -8,10 +8,10 @@
         "preserveConstEnums": true,
         "sourceMap": true,
         "downlevelIteration": true,
-        "outFile": "server/static/script.js"
+        "outFile": "static/script.js"
     },
     "include": [
-        "server/src/**/*.ts",
-        "server/src/*.ts"
+        "../frontend/**/*.ts",
+        "../frontend/*.ts"
     ]
 }
