@@ -3,19 +3,10 @@
 <script src="{{ url_for('static', filename = 'script.js') }}"></script>
 <script>
     require([
-        'navigation',
-        'guild'
+        'greenworld',
     ], function (
-        navigation,
-        guild
+        greenworld
     ) {
-        window.gw = {
-            base_url: '{{ url_for('homepage_endpoint') }}',
-            navigation,
-            guild
-        };
-        if (window.greenworld_init) {
-            greenworld_init();
-        }
+        window.gw = new greenworld.Greenworld('{{ url_for('homepage_endpoint') }}');
     });
 </script>

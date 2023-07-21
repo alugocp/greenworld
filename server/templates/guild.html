@@ -11,8 +11,8 @@
     <option value="dynamic">Force Graph</option>
 </select>
 <br/>
-{% import 'macros/lookup.html' as lookup %}
-{{ lookup.render('(plant) => `<a onclick=\"greenworld_add_plant(\'${plant.id}\', \'${plant.name}\', \'${plant.species}\')\">${plant.name} (${plant.species})</a>`') }}
+{% import 'macros/search.html' as lookup %}
+{{ search.render(None, '(plant) => `<a onclick=\"greenworld_add_plant(\'${plant.id}\', \'${plant.name}\', \'${plant.species}\')\">${plant.name} (${plant.species})</a>`') }}
 <div id="plants"></div>
 
 <script>

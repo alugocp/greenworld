@@ -1,15 +1,58 @@
 
-{% macro render(plantToUrl) -%}
+{% macro render(currentPlant, linkTransform) -%}
 <input
     id="search-field"
     type="text"
-    onkeyup="gw.navigation.searchBarOnKeyDown(event, gw.navigation.plantLink({{ plantToUrl }}))"
+    {% if linkTransform %}
+    onkeyup="searchBarOnKeyDown(event, {{ linkTransform }})"
+    {% else %}
+    onkeyup="searchBarOnKeyDown(event, (x) => `<a href='${gw.getPlantsUrl(x.species, '{{ currentPlant }}' || undefined)}'>${x.name} (<i>${x.species}</i>)</a>`)"
+    {% endif %}
     placeholder="scientific name"/>
+{% if not linkTransform %}
 <button
     id="search-button"
-    onclick="gw.navigation.navigate({{ plantToUrl }})">
+    onclick="window.location.assign(gw.getPlantsUrl(document.getElementById('search-field').value, '{{ currentPlant }}' || undefined))">
     Search
 </button>
+{% endif %}
 <br/>
 <span id="search-results"></span>
+
+<script>
+const cachedSearchData = {
+    html: '',
+    term: '',
+};
+function searchBarOnKeyDown(e, linkTransform) {
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        document.getElementById('search-button')?.click();
+    } else {
+        const term = document.getElementById('search-field').value;
+        const results= document.getElementById('search-results');
+        if (results === null) {
+            return;
+        }
+        if (term.length >= 3) {
+            if (cachedSearchData.term === term) {
+                results.innerHTML = cachedSearchData.html;
+            } else {
+                cachedSearchData.term = term;
+                void fetch(`{{ url_for('homepage_endpoint') }}search/${term}`)
+                    .then((r) => r.json())
+                    .then((data) => {
+                        console.log(data)
+                        cachedSearchData.html = data
+                            .map(linkTransform)
+                            .reduce((acc, x) => acc + x, '');
+                        results.innerHTML = cachedSearchData.html;
+                    });
+            }
+        } else {
+            results.innerHTML = '';
+        }
+    }
+}
+</script>
 {%- endmacro -%}

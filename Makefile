@@ -11,10 +11,10 @@ lint-py:
 	$(ENV) $(PYTHON) -m pylint $(shell git ls-files "*.py")
 
 lint-ts:
-	$(NPM_BIN)/eslint greenworld/server/src
+	$(NPM_BIN)/eslint frontend
 
 lint-jinja:
-	$(ENV) $(PYTHON) -m djlint greenworld/server/templates --profile=jinja
+	$(ENV) $(PYTHON) -m djlint server/templates --profile=jinja
 
 install:
 	$(PYTHON) -m pip install -r requirements.txt
