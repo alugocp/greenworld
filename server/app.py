@@ -12,8 +12,8 @@ from greenworld.lib import orm
 from greenworld.lib import Greenworld
 app = Flask(
     'Greenworld',
-    template_folder = 'greenworld/server/templates',
-    static_folder = 'greenworld/server/static'
+    template_folder = 'server/templates',
+    static_folder = 'server/static'
 )
 Greenworld()
 db = orm.init_db()

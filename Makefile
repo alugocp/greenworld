@@ -23,7 +23,7 @@ ui:
 	$(NPM_BIN)/tsc -p tsconfig.json
 
 serve: ui
-	$(ENV) $(PYTHON) greenworld/server/app.py
+	$(ENV) $(PYTHON) server/app.py
 
 test:
 	$(PYTHON) -m pytest
