@@ -25,5 +25,8 @@ ui:
 serve: ui
 	$(ENV) $(PYTHON) greenworld/server/app.py
 
+test:
+	$(PYTHON) -m pytest
+
 %:
 	$(ENV) $(PYTHON) greenworld/scripts/$@.py $(subst $(COMMA),$(SPACE),$(FILES))

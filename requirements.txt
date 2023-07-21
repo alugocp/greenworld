@@ -5,6 +5,7 @@ psycopg2-binary
 intervals
 
 # Auxiliary tasks
+pytest
 pylint
 djlint
 flask
