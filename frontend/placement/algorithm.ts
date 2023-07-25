@@ -99,5 +99,5 @@ export class Reports {
     }
 }
 
-// Implement algorithms for the guild finder
+// Implement algorithms for the guild placement
 export type GuildAlgorithm = (plants: PlantHandle[], reports: Reports) => Guild | null;

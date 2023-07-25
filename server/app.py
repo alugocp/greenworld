@@ -234,9 +234,9 @@ def grab_reports_endpoint():
     with db.connect() as con:
         return list(map(dict, con.execute(stmt).mappings().fetchall()))
 
-@app.route('/guild')
-def guild_finder_endpoint():
-    return render_template('guild.html')
+@app.route('/placement')
+def guild_placement_endpoint():
+    return render_template('placement.html')
 
 @app.errorhandler(404)
 def not_found_endpoint(_):

@@ -1,10 +1,10 @@
-import GuildPlacement from './guild';
+import GuildPlacement from './placement/placement';
 
 export class Greenworld {
-    guild: GuildPlacement;
+    placement: GuildPlacement;
 
     constructor(private readonly baseUrl: string) {
-        this.guild = new GuildPlacement(baseUrl);
+        this.placement = new GuildPlacement(baseUrl);
     }
 
     /**

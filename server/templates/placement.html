@@ -1,5 +1,5 @@
 <!doctype html>
-<title>Greenworld - Guild finder</title>
+<title>Greenworld - Guild placement</title>
 <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}"/>
 {% include "macros/scripting.html" %}
 {% include "macros/header.html" %}
@@ -27,12 +27,12 @@
     }
 
     function add_plant(id, name, species) {
-        gw.guild.addPlant({ id, name, species, uid: 0 });
+        gw.placement.addPlant({ id, name, species, uid: 0 });
         calculate();
     }
 
     function drop_plant(uid) {
-        gw.guild.dropPlant(uid);
+        gw.placement.dropPlant(uid);
         calculate();
     }
 
@@ -41,7 +41,7 @@
         const canvas = document.getElementById('canvas');
         const plantList = document.getElementById('plants');
         const algorithmType = document.getElementById('algorithm').value;
-        const guild = await gw.guild.calculate(algorithmType);
+        const guild = await gw.placement.calculate(algorithmType);
         resetRender(canvas, plantList);
         if (guild !== null) {
             listPlants(plantList, guild);

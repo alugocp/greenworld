@@ -1,8 +1,8 @@
-import type { PlantHandle, Guild } from './defs';
-import type { GuildAlgorithm } from './guild/algorithm';
-import { Reports } from './guild/algorithm';
-import { geometricAlgorithm } from './guild/geometric';
-import { dynamicAlgorithm } from './guild/dynamic';
+import type { PlantHandle, Guild } from '../defs';
+import type { GuildAlgorithm } from './algorithm';
+import { Reports } from './algorithm';
+import { geometricAlgorithm } from './geometric';
+import { dynamicAlgorithm } from './dynamic';
 
 const algorithms: Record<string, GuildAlgorithm> = {
     geometric: geometricAlgorithm,
