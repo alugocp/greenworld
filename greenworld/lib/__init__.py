@@ -18,7 +18,7 @@ def read_env() -> Dict[str, str]:
 class Greenworld:
     __log: Callable[[str], None]
 
-    def __init__(self, log_func = logging.info):
+    def __init__(self, filename = None, log_func = logging.info):
         env = read_env()
         if 'DRIVER' in env and env['DRIVER'] == 'sqlite':
             os.environ['GREENWORLD_DB'] = 'sqlite:///greenworld.db'
@@ -26,8 +26,13 @@ class Greenworld:
             password = env['PASSWORD']
             host = 'database' if os.environ['PYTHONPATH'] == '/srv' else 'localhost'
             os.environ['GREENWORLD_DB'] = f'postgresql://postgres:{password}@{host}:5432/greenworld'
-        logging.basicConfig(level = logging.NOTSET)
+        logging.basicConfig(
+            filename = filename,
+            encoding = 'utf-8',
+            level = logging.NOTSET
+        )
         self.__log = log_func
+        self.log('Greenworld script initialized')
 
     def log(self, msg: str) -> None:
         self.__log(msg)
