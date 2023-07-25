@@ -8,5 +8,8 @@
         greenworld
     ) {
         window.gw = new greenworld.Greenworld('{{ url_for('homepage_endpoint') }}');
+        if (window.gw_init) {
+            window.gw_init();
+        }
     });
 </script>

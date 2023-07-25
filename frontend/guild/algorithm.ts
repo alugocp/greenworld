@@ -78,8 +78,7 @@ export class Reports {
     }
 
     // Request a list of relevant reports from the server
-    async populate(plants: PlantHandle[]): Promise<void> {
-        const baseUrl: string = (window as any).gw.base_url as string;
+    async populate(baseUrl: string, plants: PlantHandle[]): Promise<void> {
         const speciesList: string = [...new Set(plants.map((x: PlantHandle): number => x.id))].join(',');
         const results: Report[] = await fetch(`${baseUrl}reports?species_list=${speciesList}`)
             .then((res) => res.json())

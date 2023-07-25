@@ -5,7 +5,7 @@ COMMA:= ,
 EMPTY:=
 SPACE:= $(EMPTY) $(EMPTY)
 
-lint: lint-ts lint-jinja lint-py
+lint: lint-ts lint-py lint-jinja
 
 lint-py:
 	$(ENV) $(PYTHON) -m pylint $(shell git ls-files "*.py")
