@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "lib": ["es2015"],
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "downlevelIteration": true,
+        "outFile": "../../server/static/script.js"
+    },
+    "include": [
+        "../greenworld.ts"
+    ]
+}

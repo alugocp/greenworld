@@ -25,7 +25,12 @@ ui:
 serve: ui
 	$(ENV) $(PYTHON) server/app.py
 
-test:
+test: test-ts test-py
+
+test-ts:
+	npx ts-mocha -p frontend/tests/tsconfig.json frontend/tests/*.ts
+
+test-py:
 	$(PYTHON) -m pytest
 
 %:
