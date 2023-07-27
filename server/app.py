@@ -213,12 +213,22 @@ def grab_neighborhood_endpoint(thresh):
     ))
     def postprocess(x):
         x = dict(x)
-        return {
-            'p1': x['plant1'],
-            'p2': x['plant2']
-        }
+        return [ x['plant1'], x['plant2'] ]
     with db.connect() as con:
         return list(map(postprocess, con.execute(stmt).mappings().fetchall()))
+
+@app.route('/handlers')
+def grab_handlers_endpoint():
+    if 'ids' not in request.args:
+        return []
+    ids = request.args.get('ids').split(',')
+    stmt = sqlalchemy.select(
+        orm.plants_table.c.id,
+        orm.plants_table.c.species,
+        orm.plants_table.c.name
+    ).where(orm.plants_table.c.id.in_(ids))
+    with db.connect() as con:
+        return list(map(dict, con.execute(stmt).mappings().fetchall()))
 
 # HTML template endpoints
 @app.route('/')
