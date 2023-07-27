@@ -42,7 +42,6 @@ function searchBarOnKeyDown(e, linkTransform) {
                 void fetch(`{{ url_for('homepage_endpoint') }}search/${term}`)
                     .then((r) => r.json())
                     .then((data) => {
-                        console.log(data)
                         cachedSearchData.html = data
                             .map(linkTransform)
                             .reduce((acc, x) => acc + x, '');

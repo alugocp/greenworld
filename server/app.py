@@ -155,7 +155,72 @@ def cite_fields(citations, works_cited):
 def citation_regex(href):
     return re.search(r'(?:[a-z]+://)(?:www\.)?([\w\d]+(\.[\w\d]+)*)/?', href).groups()[0]
 
-# Endpoints
+# API endpoints
+@app.route('/search/<prefix>')
+def plant_search_endpoint(prefix):
+    prefix = unquote_plus(prefix)
+    if len(prefix) < 3:
+        return []
+    with db.connect() as con:
+        stmt = sqlalchemy.select(
+            orm.plants_table.c.id,
+            orm.plants_table.c.species,
+            orm.plants_table.c.name) \
+        .where(sqlalchemy.or_(
+            orm.plants_table.c.species.like(f'{prefix}%'),
+            orm.plants_table.c.name.like(f'{prefix}%')
+        )) \
+        .limit(10)
+        return list(map(dict, con.execute(stmt).mappings().fetchall()))
+
+@app.route('/reports')
+def grab_reports_endpoint():
+    if 'species_list' not in request.args:
+        return []
+    species_list = request.args.get('species_list').split(',')
+    stmt = orm.reports_table.select() \
+    .where(sqlalchemy.or_(
+        orm.reports_table.c.plant1.in_(species_list),
+        orm.reports_table.c.plant2.in_(species_list)
+    ))
+    with db.connect() as con:
+        return list(map(dict, con.execute(stmt).mappings().fetchall()))
+
+@app.route('/neighbors/<int:id>/<float:thresh>')
+def grab_neighbors_endpoint(id, thresh):
+    stmt = orm.reports_table.select().where(sqlalchemy.and_(
+        sqlalchemy.or_(
+            orm.reports_table.c.plant1 == id,
+            orm.reports_table.c.plant2 == id,
+        ),
+        orm.reports_table.c.range_union_min <= thresh
+    ))
+    def postprocess(x):
+        x = dict(x)
+        return x['plant1'] if x['plant2'] == id else x['plant2']
+    with db.connect() as con:
+        return list(map(postprocess, con.execute(stmt).mappings().fetchall()))
+
+@app.route('/neighborhood/<float:thresh>')
+def grab_neighborhood_endpoint(thresh):
+    if 'ids' not in request.args:
+        return []
+    ids = request.args.get('ids').split(',')
+    stmt = orm.reports_table.select().where(sqlalchemy.and_(
+        orm.reports_table.c.plant1.in_(ids),
+        orm.reports_table.c.plant2.in_(ids),
+        orm.reports_table.c.range_union_min <= thresh
+    ))
+    def postprocess(x):
+        x = dict(x)
+        return {
+            'p1': x['plant1'],
+            'p2': x['plant2']
+        }
+    with db.connect() as con:
+        return list(map(postprocess, con.execute(stmt).mappings().fetchall()))
+
+# HTML template endpoints
 @app.route('/')
 def homepage_endpoint():
     plant_stmt = sqlalchemy.select(sqlalchemy.func.count()).select_from(orm.plants_table)
@@ -175,23 +240,6 @@ def plant_view_endpoint(species):
             plant = process_plant_dict(con, dict(plant))
             return render_template('plant.html', plant = plant)
     return render_template('404.html'), 404
-
-@app.route('/search/<prefix>')
-def plant_search_endpoint(prefix):
-    prefix = unquote_plus(prefix)
-    if len(prefix) < 3:
-        return []
-    with db.connect() as con:
-        stmt = sqlalchemy.select(
-            orm.plants_table.c.id,
-            orm.plants_table.c.species,
-            orm.plants_table.c.name) \
-        .where(sqlalchemy.or_(
-            orm.plants_table.c.species.like(f'{prefix}%'),
-            orm.plants_table.c.name.like(f'{prefix}%')
-        )) \
-        .limit(10)
-        return list(map(dict, con.execute(stmt).mappings().fetchall()))
 
 @app.route('/report/<species1>/<species2>')
 def report_view_endpoint(species1, species2):
@@ -221,22 +269,13 @@ def report_view_endpoint(species1, species2):
             MAX_PLANTING_RANGE = orm.MAX_PLANTING_RANGE
         )
 
-@app.route('/reports')
-def grab_reports_endpoint():
-    if 'species_list' not in request.args:
-        return []
-    species_list = request.args.get('species_list').split(',')
-    stmt = orm.reports_table.select() \
-    .where(sqlalchemy.or_(
-        orm.reports_table.c.plant1.in_(species_list),
-        orm.reports_table.c.plant2.in_(species_list)
-    ))
-    with db.connect() as con:
-        return list(map(dict, con.execute(stmt).mappings().fetchall()))
-
 @app.route('/placement')
 def guild_placement_endpoint():
     return render_template('placement.html')
+
+@app.route('/finder')
+def guild_finder_endpoint():
+    return render_template('finder.html')
 
 @app.errorhandler(404)
 def not_found_endpoint(_):

@@ -1,0 +1,32 @@
+<!doctype html>
+<title>Greenworld - Guild Finder</title>
+<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}"/>
+{% include "macros/scripting.html" %}
+{% include "macros/header.html" %}
+
+<p>
+    Search a plant to discover novel guilds
+</p>
+
+{% import 'macros/search.html' as lookup %}
+{{ lookup.render(None, '(plant) => `<a onclick=\"renderGuilds(${plant.id})\">${plant.name} (<i>${plant.species}</i>)</a>`') }}
+
+<div id="results"></div>
+
+<script>
+async function renderGuilds(id) {
+    const thresh = 0.2;
+    const results = document.getElementById('results');
+    results.innerHTML = '<p>Discovering guilds...</p>';
+    const guilds = await gw.guilds.discover(id, thresh);
+    results.innerHTML = `<p>${guilds.length} guilds found within ${thresh} meters</p>`;
+    return;
+    for (const a in guilds) {
+        results.innerHTML += `Guild ${a + 1}<br>`;
+        for (const plant of guilds[a]) {
+            results.innerHTML += `<a>${plant.name} (<i>${plant.species}</i>)</a><br>`;
+        }
+        results.innerHTML += '<br>';
+    }
+}
+</script>

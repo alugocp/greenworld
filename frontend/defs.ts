@@ -1,10 +1,14 @@
 
 // Type defining a plant's scientific and common name, and its database identifier
-export interface PlantHandle {
-    uid: number // Unique ID
+export interface Plant {
     id: number // Greenworld database ID
     species: string
     name: string
+}
+
+// Plant with a unique identifier (differentiates between instances of the same species)
+export type PlantHandle = Plant & {
+    uid: number // Unique ID
 }
 
 // A cartesian point (x, y)
