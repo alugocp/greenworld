@@ -42,7 +42,7 @@ export default class GuildFinder {
 
         // Discover clusters within the graph (maximal subgraphs) and return
         await this.updatePlantHandlers([...neighbors, id]);
-        return this.bronKerbosch(id, graph, [], [...neighbors, id], [], []);
+        return this.bronKerbosch(id, graph, [id], neighbors.filter((u) => this.neighbors(graph, u, id)), [], []);
     }
 
     // Returns true if the two nodes share an edge in the graph

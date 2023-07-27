@@ -11,22 +11,23 @@
 {% import 'macros/search.html' as lookup %}
 {{ lookup.render(None, '(plant) => `<a onclick=\"renderGuilds(${plant.id})\">${plant.name} (<i>${plant.species}</i>)</a>`') }}
 
-<div id="search-results"></div>
+<div id="finder-results"></div>
 
 <script>
 async function renderGuilds(id) {
     const thresh = 0.2;
-    const results = document.getElementById('search-results');
+    const results = document.getElementById('finder-results');
     results.innerHTML = '<p>Discovering guilds...</p>';
     const guilds = await gw.guilds.discover(id, thresh);
-    results.innerHTML = `<p>${guilds.length} guilds found within ${thresh} meters</p>`;
+    let html = `<p>${guilds.length} guilds found within ${thresh} meters</p>`;
     for (const a in guilds) {
-        results.innerHTML += `Guild ${parseInt(a) + 1}<br>`;
+        html += `<div class="guild"><h3>Guild ${parseInt(a) + 1}</h3><p>${guilds[a].length} members</p><ul>`;
         for (const b of guilds[a]) {
             const plant = gw.guilds.plantHandlers[b];
-            results.innerHTML += `<a>${plant.name} (<i>${plant.species}</i>)</a><br>`;
+            html += `<li><a href="${gw.getPlantsUrl(plant.species)}">${plant.name} (<i>${plant.species}</i>)</a></li>`;
         }
-        results.innerHTML += '<br>';
+        html += '</ul></div>';
     }
+    results.innerHTML = html;
 }
 </script>
