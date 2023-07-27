@@ -16,10 +16,13 @@ You must do the following in order to set it up:
 # Record a database password
 echo "PASSWORD=<SOME PASSWORD HERE>" > .env
 
-# Spin up the database
+# Run this if you've made recent Dockerfile changes
+docker-compose build --no-cache
+
+# Spin up the database and server
 docker-compose up -d
 
-# Stop the database
+# Stop the database and server
 docker-compose down -v
 
 # Access the database from the command line

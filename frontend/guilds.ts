@@ -29,7 +29,7 @@ export default class GuildFinder {
             .then((res) => res.json());
 
         // Retrieve a graph of plants within the threshold
-        const graph: [number, number][] = await fetch(`${this.baseUrl}neighborhood/${threshFixed}?ids=${neighbors.join(',')},${id}`)
+        const graph: [number, number][] = await fetch(`${this.baseUrl}neighborhood/${threshFixed}?ids=${[...neighbors, id].join(',')}`)
             .then((res) => res.json())
             .then((res) => res.filter((x: [number, number]) => x[0] !== x[1]));
 
