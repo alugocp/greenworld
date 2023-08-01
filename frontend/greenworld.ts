@@ -1,13 +1,13 @@
 import GuildPlacement from './placement/placement';
-import GuildFinder from './guilds';
+import CompanionSearch from './companions';
 
 export class Greenworld {
     placement: GuildPlacement;
-    guilds: GuildFinder;
+    companions: CompanionSearch;
 
     constructor(private readonly baseUrl: string) {
         this.placement = new GuildPlacement(baseUrl);
-        this.guilds = new GuildFinder(baseUrl);
+        this.companions = new CompanionSearch(baseUrl);
     }
 
     /**

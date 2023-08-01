@@ -1,28 +1,44 @@
 <!doctype html>
-<title>Greenworld - Guild Finder</title>
+<title>Greenworld - Companion Search</title>
 <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}"/>
 {% include "macros/scripting.html" %}
 {% include "macros/header.html" %}
 
 <p>
-    Search a plant to discover novel guilds
+    Find a plant's companions by various query options
 </p>
 
-{% import 'macros/search.html' as lookup %}
-{{ lookup.render(None, '(plant) => `<a onclick=\"renderGuilds(${plant.id})\">${plant.name} (<i>${plant.species}</i>)</a>`') }}
+<div>
+    Threshold:
+    <input id="threshold" type="number" value="0.2"></input>
+    m
+</div>
 
-<div id="finder-results"></div>
+<div>
+    Plant:
+    {% import 'macros/search.html' as lookup %}
+    {{ lookup.render(None, '(plant) => `<a onclick="renderCompanions(${plant.id}, \'${plant.name}\', \'${plant.species}\')">${plant.name} (<i>${plant.species}</i>)</a>`') }}
+</div>
+
+<div id="companion-results"></div>
+
+</br>
 
 <script>
-async function renderGuilds(id) {
-    const thresh = 0.2;
-    const results = document.getElementById('finder-results');
+async function renderCompanions(id, name, species) {
+    const thresh = parseFloat(document.getElementById('threshold').value);
+    const results = document.getElementById('companion-results');
     results.innerHTML = '<p>Retrieving suitable companions...</p>';
-    const guilds = await gw.guilds.discover(id, thresh);
-    let html = `<p>${guilds.length} companions found within ${thresh} meters</p>`;
-    for (const plant of guilds) {
-        html += `<a href="${gw.getPlantsUrl(plant.species)}">${plant.name} (<i>${plant.species}</i>)</a></br>`;
+    const companions = await gw.companions.discover({
+        id,
+        thresh
+    });
+    let html = `<p>${companions.length} companions found for ${name} (<i>${species}</i>)</p>`;
+    for (const plant of companions) {
+        html += `<a onclick="renderCompanions(${plant.id}, '${plant.name}', '${plant.species}')">${plant.name} (<i>${plant.species}</i>)</a></br>`;
     }
     results.innerHTML = html;
+    document.getElementById('search-field').value = species;
+    document.getElementById('search-results').innerHTML = '';
 }
 </script>

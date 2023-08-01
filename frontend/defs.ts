@@ -36,3 +36,9 @@ export interface Guild {
     bounds: Bounds
     edges: Edge[]
 }
+
+// Query options for the companion search app
+export interface CompanionSearchQuery {
+    id: number
+    thresh: number
+}

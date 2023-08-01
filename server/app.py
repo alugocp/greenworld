@@ -267,9 +267,9 @@ def report_view_endpoint(species1, species2):
 def guild_placement_endpoint():
     return render_template('placement.html')
 
-@app.route('/finder')
-def guild_finder_endpoint():
-    return render_template('finder.html')
+@app.route('/companions')
+def companion_search_endpoint():
+    return render_template('companions.html')
 
 @app.errorhandler(404)
 def not_found_endpoint(_):

@@ -1,15 +1,15 @@
-import { Plant } from './defs';
+import { Plant, CompanionSearchQuery } from './defs';
 
-export default class GuildFinder {
+export default class CompanionSearch {
 
     constructor(private baseUrl: string) {}
 
-    // Guild finder algorithm from a given plant ID and desired threshold
-    async discover(id: number, thresh: number): Promise<Plant[]> {
-        const threshFixed: string = thresh.toFixed(3);
+    // Companion search algorithm from a given plant ID and desired threshold
+    async discover(query: CompanionSearchQuery): Promise<Plant[]> {
+        const threshFixed: string = query.thresh.toFixed(3);
 
         // Grab neighbor IDs
-        const ids: number[] = await fetch(`${this.baseUrl}neighbors/${id}/${threshFixed}`)
+        const ids: number[] = await fetch(`${this.baseUrl}neighbors/${query.id}/${threshFixed}`)
             .then((res) => res.json());
 
         // Return handlers for these IDs

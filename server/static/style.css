@@ -102,7 +102,7 @@ canvas {
     background-color: var(--background3);
 }
 
-/* Guild Finder */
-#finder-results a {
+/* Companion search */
+#companion-results a {
     color: var(--background2);
 }
