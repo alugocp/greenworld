@@ -39,7 +39,7 @@ function searchBarOnKeyDown(e, linkTransform) {
                 results.innerHTML = cachedSearchData.html;
             } else {
                 cachedSearchData.term = term;
-                void fetch(`{{ url_for('homepage_endpoint') }}search/${term}`)
+                fetch(`{{ url_for('homepage_endpoint') }}search/${term}`)
                     .then((r) => r.json())
                     .then((data) => {
                         cachedSearchData.html = data

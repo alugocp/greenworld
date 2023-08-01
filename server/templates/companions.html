@@ -17,7 +17,7 @@
 <div>
     Plant:
     {% import 'macros/search.html' as lookup %}
-    {{ lookup.render(None, '(plant) => plantLink(plant)') }}
+    {{ lookup.render(None, '(plant) => gw.companions.getLink(plant)') }}
 </div>
 
 <div id="companion-results"></div>
@@ -25,10 +25,6 @@
 </br>
 
 <script>
-function plantLink(plant) {
-    return `<a onclick="renderCompanions(${plant.id}, \`${plant.name}\`, '${plant.species}')">${plant.name} (<i>${plant.species}</i>)</a></br>`;
-}
-
 async function renderCompanions(id, name, species) {
     const thresh = parseFloat(document.getElementById('threshold').value);
     const results = document.getElementById('companion-results');
@@ -39,7 +35,7 @@ async function renderCompanions(id, name, species) {
     });
     let html = `<p>${companions.length} companions found for ${name} (<i>${species}</i>)</p>`;
     for (const plant of companions) {
-        html += plantLink(plant);
+        html += `${gw.companions.getLink(plant)}</br>`;
     }
     results.innerHTML = html;
     document.getElementById('search-field').value = species;

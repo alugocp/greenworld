@@ -1,13 +1,16 @@
 import GuildPlacement from './placement/placement';
 import CompanionSearch from './companions';
+import UiWrapper from './wrapper';
 
 export class Greenworld {
     placement: GuildPlacement;
     companions: CompanionSearch;
+    wrapper: UiWrapper;
 
     constructor(private readonly baseUrl: string) {
+        this.wrapper = new UiWrapper();
         this.placement = new GuildPlacement(baseUrl);
-        this.companions = new CompanionSearch(baseUrl);
+        this.companions = new CompanionSearch(baseUrl, this.wrapper);
     }
 
     /**
