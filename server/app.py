@@ -201,22 +201,6 @@ def grab_neighbors_endpoint(id, thresh):
     with db.connect() as con:
         return list(map(postprocess, con.execute(stmt).mappings().fetchall()))
 
-@app.route('/neighborhood/<float:thresh>')
-def grab_neighborhood_endpoint(thresh):
-    if 'ids' not in request.args:
-        return []
-    ids = request.args.get('ids').split(',')
-    stmt = orm.reports_table.select().where(sqlalchemy.and_(
-        orm.reports_table.c.plant1.in_(ids),
-        orm.reports_table.c.plant2.in_(ids),
-        orm.reports_table.c.range_union_min <= thresh
-    ))
-    def postprocess(x):
-        x = dict(x)
-        return [ x['plant1'], x['plant2'] ]
-    with db.connect() as con:
-        return list(map(postprocess, con.execute(stmt).mappings().fetchall()))
-
 @app.route('/handlers')
 def grab_handlers_endpoint():
     if 'ids' not in request.args:

@@ -103,16 +103,6 @@ canvas {
 }
 
 /* Guild Finder */
-#finder-results .guild {
-    background-color: var(--background2);
-    margin: 16px 0;
-    padding: 16px;
-}
-
-#finder-results .guild h3 {
-    text-decoration: underline;
-}
-
-#finder-results .guild li {
-    padding: 2px 0;
+#finder-results a {
+    color: var(--background2);
 }
