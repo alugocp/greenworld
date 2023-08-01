@@ -1,13 +1,11 @@
 Lowbush Cranberry
 Highbush Cranberry
-Sumac
+Smooth Sumac
 Yaupon Holly
 Amaranth
 Sunchoke
 Ground Cherry
-Sedge
 White Sage
-Sweet Grass
 Goldenrod
 Chayote Squash
 Cassava
@@ -15,11 +13,24 @@ Echinacea
 May Apple
 Blood Root
 Peanut
-Dragon Fruit
 Blackberry
+Black Cohosh
+Robin's Plantain
+Kinnikinnick
+Phlox
+Butterfly Bush
+
+# Cacti
+Dragon Fruit
+Eastern Prickly Pear Cactus
+
+# Grasses
+Sweet Grass
+Yellow Indian Grass
+Little Bluestem
 
 # Trees
-Black Gum Oak
+Sycamore
 White Oak
 Juniper
 Kentucky Coffee Bean
@@ -32,3 +43,4 @@ Rhododendron
 Redbud
 Pawpaw
 Custard Apple
+Cacao
