@@ -1,4 +1,5 @@
 server/static/script.js
+/referenced-data
 node_modules
 .DS_Store
 __pycache__

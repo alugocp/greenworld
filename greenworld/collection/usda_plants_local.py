@@ -10,7 +10,7 @@ class UsdaPlantsLocalDataCollector(BaseDataCollector):
 
     def __init__(self, gw: Greenworld):
         super().__init__(gw)
-        with open('referenced-data/usda_plants_database.txt', 'r', encoding = 'utf-8') as file:
+        with open('referenced-data/usda_plants_database.csv', 'r', encoding = 'utf-8') as file:
             for line in file.readlines():
                 sanitized = list(csv.reader([line]))[0]
                 common = sanitized[3]
