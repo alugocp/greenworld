@@ -1,3 +1,4 @@
+SCRIPTS := $(patsubst greenworld/scripts/%.py, %, $(shell ls greenworld/scripts/*.py))
 ENV := PYTHONPATH=.
 PYTHON := python3
 NPM_BIN := ./node_modules/.bin
@@ -33,5 +34,5 @@ test-ts:
 test-py:
 	$(PYTHON) -m pytest
 
-%:
+$(SCRIPTS):
 	$(ENV) $(PYTHON) greenworld/scripts/$@.py $(subst $(COMMA),$(SPACE),$(FILES))
