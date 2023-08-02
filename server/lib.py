@@ -1,16 +1,8 @@
 import re
-import copy
-from urllib.parse import unquote_plus
 from intervals import DecimalInterval
 import sqlalchemy
-from flask import (
-    Flask,
-    render_template,
-    request
-)
-from greenworld.lib import orm
-from greenworld.lib import Greenworld
 import consts
+from greenworld.lib import orm
 
 def citation_regex(href):
     return re.search(r'(?:[a-z]+://)(?:www\.)?([\w\d]+(\.[\w\d]+)*)/?', href).groups()[0]

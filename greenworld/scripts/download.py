@@ -1,14 +1,14 @@
 import urllib.request
-import pandas as pd
 import shutil
 import ssl
 import re
 import os
+import pandas as pd
 from greenworld.lib import Greenworld
 
 # Convert some Excel file into CSV form
 def excel_to_csv(filepath):
-    dest = re.sub('\.[a-z]+$', '.csv', filepath)
+    dest = re.sub(r'\.[a-z]+$', '.csv', filepath)
     data = pd.read_excel(filepath)
     data.to_csv(dest, header = False, index = False)
 
@@ -17,9 +17,9 @@ def download(filepath, url):
     context = ssl.create_default_context()
     context.check_hostname = False
     context.verify_mode = ssl.CERT_NONE
-    data = urllib.request.urlopen(url, context = context).read()
-    with open(filepath, 'wb') as file:
-        file.write(data)
+    with urllib.request.urlopen(url, context = context) as data:
+        with open(filepath, 'wb') as file:
+            file.write(data.read())
 
 def main(gw):
     shutil.rmtree('referenced-data')

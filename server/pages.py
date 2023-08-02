@@ -1,16 +1,9 @@
-import re
 import copy
 from urllib.parse import unquote_plus
-from intervals import DecimalInterval
 import sqlalchemy
-from flask import (
-    Flask,
-    render_template,
-    request
-)
-from greenworld.lib import orm
-from greenworld.lib import Greenworld
+from flask import render_template
 import lib
+from greenworld.lib import orm
 
 def main(app, db):
     @app.route('/')
