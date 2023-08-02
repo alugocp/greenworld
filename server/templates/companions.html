@@ -25,20 +25,51 @@
 </br>
 
 <script>
+let previous;
+
 async function renderCompanions(id, name, species) {
     const thresh = parseFloat(document.getElementById('threshold').value);
     const results = document.getElementById('companion-results');
     results.innerHTML = '<p>Retrieving suitable companions...</p>';
+    previous = null;
     const companions = await gw.companions.discover({
         id,
-        thresh
+        thresh,
+        previous
     });
-    let html = `<p>${companions.length} companions found for ${name} (<i>${species}</i>)</p>`;
+    let html = `<p><span id="companion-number">${companions.length}</span> companions found for ${name} (<i>${species}</i>)</p>`;
     for (const plant of companions) {
         html += `${gw.companions.getLink(plant)}</br>`;
+        if (previous === null || plant.id > previous) {
+            previous = plant.id;
+        }
     }
     results.innerHTML = html;
+    results.innerHTML += `<a id="render-more" onclick="renderMore(${id})"><b>Render more</b></a>`;
     document.getElementById('search-field').value = species;
     document.getElementById('search-results').innerHTML = '';
+}
+
+async function renderMore(id) {
+    const thresh = parseFloat(document.getElementById('threshold').value);
+    const results = document.getElementById('companion-results');
+    const companions = await gw.companions.discover({
+        id,
+        thresh,
+        previous
+    });
+    let html = '';
+    for (const plant of companions) {
+        html += `${gw.companions.getLink(plant)}</br>`;
+        if (previous === null || plant.id > previous) {
+            previous = plant.id;
+        }
+    }
+    results.innerHTML += html;
+    document.getElementById('companion-number').innerHTML = parseInt(document.getElementById('companion-number').innerHTML) + companions.length;
+    document.getElementById('render-more').outerHTML = '';
+    if (companions.length > 0) {
+        results.innerHTML += `<a id="render-more" onclick="renderMore(${id})"><b>Render more</b></a>`;
+    }
 }
 </script>

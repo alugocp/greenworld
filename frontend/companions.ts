@@ -14,7 +14,11 @@ export default class CompanionSearch {
         const threshFixed: string = query.thresh.toFixed(3);
 
         // Grab neighbor IDs, then get handlers for these IDs
-        const ids: number[] = await this.wrapper.fetch(`${this.baseUrl}neighbors/${query.id}/${threshFixed}`);
+        let neighborsUrl: string = `${this.baseUrl}neighbors/${query.id}/${threshFixed}`;
+        if (query.previous !== null) {
+            neighborsUrl += `/${query.previous}`;
+        }
+        const ids: number[] = await this.wrapper.fetch(neighborsUrl);
         const handlers: Plant[] = await this.wrapper.fetch(`${this.baseUrl}handlers?ids=${ids.join(',')}`);
         return handlers;
     }

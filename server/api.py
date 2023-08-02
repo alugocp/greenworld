@@ -34,18 +34,25 @@ def main(app, db):
         with db.connect() as con:
             return list(map(dict, con.execute(stmt).mappings().fetchall()))
 
-    @app.route('/neighbors/<int:id>/<float:thresh>')
-    def grab_neighbors_endpoint(id, thresh):
+    @app.route('/neighbors/<int:id_>/<float:thresh>', defaults = { 'prev': 0 })
+    @app.route('/neighbors/<int:id_>/<float:thresh>/<int:prev>')
+    def grab_neighbors_endpoint(id_, thresh, prev):
         stmt = orm.reports_table.select().where(sqlalchemy.and_(
             sqlalchemy.or_(
-                orm.reports_table.c.plant1 == id,
-                orm.reports_table.c.plant2 == id,
+                sqlalchemy.and_(
+                    orm.reports_table.c.plant1 == id_,
+                    orm.reports_table.c.plant2 > prev,
+                ),
+                sqlalchemy.and_(
+                    orm.reports_table.c.plant2 == id_,
+                    orm.reports_table.c.plant1 > prev,
+                )
             ),
             orm.reports_table.c.range_union_min <= thresh
-        ))
+        )).limit(50)
         def postprocess(x):
             x = dict(x)
-            return x['plant1'] if x['plant2'] == id else x['plant2']
+            return x['plant1'] if x['plant2'] == id_ else x['plant2']
         with db.connect() as con:
             return list(map(postprocess, con.execute(stmt).mappings().fetchall()))
 

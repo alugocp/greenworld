@@ -41,4 +41,5 @@ export interface Guild {
 export interface CompanionSearchQuery {
     id: number
     thresh: number
+    previous: number | null
 }

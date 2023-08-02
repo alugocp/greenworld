@@ -41,11 +41,14 @@ Use the following commands to help you while writing code for this project:
 # Installs all Python dependencies
 make install
 
-# Runs the Python linter
+# Runs the linters
 make lint
 
 # Performs unit tests
 make test
+
+# Initial download for external referenced data
+make download
 
 # Builds the frontend app code
 make ui
