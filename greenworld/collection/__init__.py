@@ -16,6 +16,10 @@ class BaseDataCollector:
     def collect_data(self, key: Union[str, dict]) -> dict:
         raise NotImplementedError()
 
+    # De-initialize, if necessary
+    def destroy(self):
+        pass
+
     # Requests some missing data
     def request_data(self, path: str):
         self.__missing_paths.append(path)

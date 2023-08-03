@@ -47,9 +47,6 @@ make lint
 # Performs unit tests
 make test
 
-# Initial download for external referenced data
-make download
-
 # Builds the frontend app code
 make ui
 
@@ -59,7 +56,8 @@ make serve
 
 Then you can use the following commands while interacting with the database:
 
-- `make reset` hard resets the development database
+- `make download` downloads all external data used by the database reset script
+- `make reset` resets and reseeds the development database
 - `make report` generates companionship reports for newly added plant species
 - `make invalidate` invalidates the reports table so the next report command will iterate through every plant pair
 - `make query` prints a list of reports logged in the database

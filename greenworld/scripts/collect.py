@@ -18,14 +18,15 @@ def get_data_collector(key):
 
 # Aggregates secondary missing data to output dicts
 def fill_missing_path(data, missing):
-    collector = get_data_collector(missing)
-    if not collector:
-        return
-    keys = re.search(r'([a-z]+)\.([0-9]+)', missing).groups()
-    old = data[keys[0]][int(keys[1])]
-    collected = collector.collect_data(old)
-    if collected:
-        old.update(collected)
+    for collector in __collectors:
+        if not collector.matches_input(missing):
+            continue
+        keys = re.search(r'([a-z]+)\.([0-9]+)', missing).groups()
+        old = data[keys[0]][int(keys[1])]
+        collected = collector.collect_data(old)
+        if collected:
+            old.update(collected)
+            break
 
 def main(gw, args):
     # Initialize collectors
@@ -50,6 +51,9 @@ def main(gw, args):
         pretty_json = json.dumps(data, indent = 4)
         with open('seed-data/tmp.json', 'w', encoding = 'utf-8') as file:
             file.write(pretty_json)
+
+    for collector in __collectors:
+        collector.destroy()
 
 if __name__ == '__main__':
     main(Greenworld(), sys.argv[1:])

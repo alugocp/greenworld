@@ -23,7 +23,6 @@ class UsdaPlantsLocalDataCollector(BaseDataCollector):
                         self.__genera[genus] = []
                     self.__genera[genus].append([sanitized[2].lower(), common])
 
-    # TODO rewrite this function with binary search algorithm (data is in alphabetical order)
     def find_match(self, species: str) -> dict:
         genus = species.split(' ')[0]
         if genus in self.__genera:

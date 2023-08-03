@@ -45,7 +45,7 @@ async function renderCompanions(id, name, species) {
         }
     }
     results.innerHTML = html;
-    results.innerHTML += `<a id="render-more" onclick="renderMore(${id})"><b>Render more</b></a>`;
+    results.innerHTML += `<a id="render-more" onclick="renderMore(${id})"><b>Load more</b></a>`;
     document.getElementById('search-field').value = species;
     document.getElementById('search-results').innerHTML = '';
 }
@@ -69,7 +69,7 @@ async function renderMore(id) {
     document.getElementById('companion-number').innerHTML = parseInt(document.getElementById('companion-number').innerHTML) + companions.length;
     document.getElementById('render-more').outerHTML = '';
     if (companions.length > 0) {
-        results.innerHTML += `<a id="render-more" onclick="renderMore(${id})"><b>Render more</b></a>`;
+        results.innerHTML += `<a id="render-more" onclick="renderMore(${id})"><b>Load more</b></a>`;
     }
 }
 </script>
