@@ -19,6 +19,7 @@ lint-jinja:
 
 install:
 	$(PYTHON) -m pip install -r requirements.txt
+	# Rscript scripts/packages.r
 
 ui:
 	$(NPM_BIN)/tsc -p server/tsconfig.json

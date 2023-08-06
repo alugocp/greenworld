@@ -1,3 +1,4 @@
+import re
 from typing import List, Union
 from greenworld.lib import Greenworld
 
@@ -18,6 +19,19 @@ class BaseDataCollector:
 
     # De-initialize, if necessary
     def destroy(self):
+        pass
+
+    # Gets a value from the data at the given path
+    def get(self, data, path):
+        keys = re.search(r'([a-z]+)\.([0-9]+)', path).groups()
+        return data[keys[0]][int(keys[1])]
+
+    # Updates some missing data at the given path
+    def fill(self, data, path, value):
+        self.get(data, path).update(value)
+
+    # Last call for missing data
+    def final_fill(self, data):
         pass
 
     # Requests some missing data

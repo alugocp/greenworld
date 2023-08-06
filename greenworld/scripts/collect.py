@@ -1,11 +1,11 @@
 import json
 import sys
-import re
 from greenworld.lib import Greenworld
 from greenworld.scripts.enter import json_schema
 from greenworld.collection.iweb_xls import IwebXlsDataCollector
 from greenworld.collection.usda_plants_local import UsdaPlantsLocalDataCollector
 from greenworld.collection.insects_local import InsectsLocalDataCollector
+from greenworld.collection.taxize import TaxizeDataCollector
 
 __collectors = []
 
@@ -21,11 +21,10 @@ def fill_missing_path(data, missing):
     for collector in __collectors:
         if not collector.matches_input(missing):
             continue
-        keys = re.search(r'([a-z]+)\.([0-9]+)', missing).groups()
-        old = data[keys[0]][int(keys[1])]
+        old = collector.get(data, missing)
         collected = collector.collect_data(old)
         if collected:
-            old.update(collected)
+            collector.fill(data, missing, collected)
             break
 
 def main(gw, args):
@@ -33,6 +32,7 @@ def main(gw, args):
     __collectors.append(IwebXlsDataCollector(gw))
     __collectors.append(UsdaPlantsLocalDataCollector(gw))
     __collectors.append(InsectsLocalDataCollector(gw))
+    # __collectors.append(TaxizeDataCollector(gw))
 
     # Collect data
     for arg in args:
@@ -45,6 +45,8 @@ def main(gw, args):
         for missing in collector.get_missing_paths():
             fill_missing_path(data, missing)
         collector.clear_missing_paths()
+        for other in __collectors:
+            other.final_fill(data)
 
         # Assert and write to file
         assert json_schema.validate(data) == data
