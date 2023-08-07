@@ -6,13 +6,9 @@
 
 <canvas id="canvas"></canvas>
 <br/>
-<select id="algorithm" onchange="calculate()">
-    <option value="geometric">Triangulation</option>
-    <option value="dynamic">Force Graph</option>
-</select>
-<br/>
 {% import 'macros/search.html' as lookup %}
-{{ lookup.render(None, '(plant) => `<a onclick=\"add_plant(\'${plant.id}\', \'${plant.name}\', \'${plant.species}\')\">${plant.name} (${plant.species})</a>`') }}
+{{ lookup.render(None, '(plant) => `<a onclick=\"gw.placement.addPlant(\'${plant.id}\', \'${plant.name}\', \'${plant.species}\')\">${plant.name} (${plant.species})</a>`') }}
+<button onclick="gw.placement.calculate()">Place Guild</button>
 <div id="plants"></div>
 
 <script>
@@ -26,14 +22,13 @@
         calculate();
     }
 
-    function add_plant(id, name, species) {
-        gw.placement.addPlant({ id, name, species, uid: 0 });
-        calculate();
-    }
-
-    function drop_plant(uid) {
-        gw.placement.dropPlant(uid);
-        calculate();
+    gw.wrapper.refreshPlantList = function() {
+        let html = '';
+        for (const a in gw.placement.plants) {
+            const plant = gw.placement.plants[a];
+            html += `<p>${a + 1}) ${plant.name} (${plant.species}) <button onclick='gw.placement.dropPlant(${a})'>Drop</button></p>`;
+        }
+        document.getElementById('plants').innerHTML = html;
     }
 
     // Calculates and renders guild plant positions
@@ -115,21 +110,5 @@
             const metrics = ctx.measureText(l.text);
             ctx.fillText(l.text, l.x - metrics.width / 2, l.y);
         }
-    }
-
-    function listPlants(plantList, guild) {
-        const items = [];
-        for (const p of guild.plants) {
-            const x = Math.round(p.x * 100) / 100;
-            const y = Math.round(p.y * 100) / 100;
-            items.push([p.uid, `${p.uid}) ${p.name} (${p.species}) at (${x}m, ${y}m)`]);
-        }
-        for (const p of guild.excluded) {
-            items.push([p.uid, `${p.uid}) <s>${p.name} (${p.species})</s>`]);
-        }
-        plantList.innerHTML += items
-            .sort((x, y) => x[0] - y[0])
-            .map((x) => `<p><button onclick='drop_plant(${x[0]})'>Drop</button> ${x[1]}</p>`)
-            .join('');
     }
 </script>

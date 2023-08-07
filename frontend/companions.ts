@@ -1,5 +1,12 @@
-import { Plant, CompanionSearchQuery } from './defs';
+import { Plant } from './defs';
 import UiWrapper from './wrapper';
+
+// Query options for the companion search app
+type CompanionSearchQuery = {
+    id: number;
+    thresh: number;
+    previous: number | null;
+}
 
 export default class CompanionSearch {
 
