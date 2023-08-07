@@ -1,10 +1,10 @@
-import type { Plant, Point } from './defs';
+import type { PlantHandle, Point } from './defs';
 import UiWrapper from './wrapper';
 
 type ReportsTable = Record<number, Record<number, [number, number]>>;
 
 export default class GuildPlacement {
-    readonly plants: Plant[] = [
+    readonly plants: PlantHandle[] = [
         {
             id: 95,
             name: 'Hopi Turquoise Corn',
@@ -87,7 +87,7 @@ export default class GuildPlacement {
     // Generate a reports table for the user-selected plant species
     private async pullReports(): Promise<ReportsTable> {
         const table: ReportsTable = {};
-        const speciesList: string = [...new Set(this.plants.map((x: Plant): number => x.id))].join(',');
+        const speciesList: string = [...new Set(this.plants.map((x: PlantHandle): number => x.id))].join(',');
         await fetch(`${this.baseUrl}reports?species_list=${speciesList}`)
             .then((res) => res.json())
             .then((reports: any[]): void[] => reports.map((r: any): void => {
