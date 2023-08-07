@@ -1,11 +1,11 @@
 import type { PlantHandle, Point } from './defs';
-import UiWrapper from './wrapper';
+import type UiWrapper from './wrapper';
 const DT = 0.05;
 
 type ReportsTable = Record<number, Record<number, [number, number]>>;
 type Node = Point & {
-    vx: number;
-    vy: number;
+    vx: number
+    vy: number
 };
 
 export default class GuildPlacement {
@@ -67,7 +67,7 @@ export default class GuildPlacement {
 
     // Adds a plant to the guild list
     addPlant(id: number, name: string, species: string): void {
-        this.plants.push({id, name, species});
+        this.plants.push({ id, name, species });
         this.wrapper.refreshPlantList();
     }
 
@@ -93,11 +93,12 @@ export default class GuildPlacement {
         const speciesList: string = [...new Set(this.plants.map((x: PlantHandle): number => x.id))].join(',');
         await fetch(`${this.baseUrl}reports?species_list=${speciesList}`)
             .then((res) => res.json())
-            .then((reports: any[]): void[] => reports.map((r: any): void => {
-                table[r.plant1] = table[r.plant1] || [];
-                table[r.plant2] = table[r.plant2] || [];
+            .then((reports: any[]): null[] => reports.map((r: any): null => {
+                table[r.plant1] = (table[r.plant1] === undefined) ? [] : table[r.plant1];
+                table[r.plant2] = (table[r.plant2] === undefined) ? [] : table[r.plant2];
                 table[r.plant1][r.plant2] = [r.range_union_min, r.range_union_max];
                 table[r.plant2][r.plant1] = [r.range_union_min, r.range_union_max];
+                return null;
             }));
         return table;
     }
@@ -136,7 +137,7 @@ class Simulation {
         // Inter-nodal spring forces
         for (let a = 0; a < this.nodes.length - 1; a++) {
             for (let b = a + 1; b < this.nodes.length; b++) {
-                let accel: number = this.diffFromRange(this.nodes[a], this.nodes[b], this.ids[a], this.ids[b]) / 10;
+                const accel: number = this.diffFromRange(this.nodes[a], this.nodes[b], this.ids[a], this.ids[b]) / 10;
                 const angle: number = Math.atan2(this.nodes[b].y - this.nodes[a].y, this.nodes[b].x - this.nodes[a].x);
                 const dvx: number = Math.cos(angle) * accel * DT;
                 const dvy: number = Math.sin(angle) * accel * DT;
@@ -183,7 +184,7 @@ class Simulation {
         let energy: number = 0;
         for (let a = 0; a < this.nodes.length - 1; a++) {
             for (let b = a + 1; b < this.nodes.length; b++) {
-                let diff: number = this.diffFromRange(this.nodes[a], this.nodes[b], this.ids[a], this.ids[b]);
+                const diff: number = this.diffFromRange(this.nodes[a], this.nodes[b], this.ids[a], this.ids[b]);
                 energy += Math.pow(diff, 2) / 20;
             }
         }

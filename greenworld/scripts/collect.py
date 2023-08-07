@@ -5,7 +5,7 @@ from greenworld.scripts.enter import json_schema
 from greenworld.collection.iweb_xls import IwebXlsDataCollector
 from greenworld.collection.usda_plants_local import UsdaPlantsLocalDataCollector
 from greenworld.collection.insects_local import InsectsLocalDataCollector
-from greenworld.collection.taxize import TaxizeDataCollector
+# from greenworld.collection.taxize import TaxizeDataCollector
 
 __collectors = []
 

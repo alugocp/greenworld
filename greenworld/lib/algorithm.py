@@ -157,7 +157,7 @@ def build(utils: AlgorithmUtils) -> None:
     def large_vines_shade_weeds(plant1, plant2):
         if plant1.nitrogen == Nitrogen.HEAVY and plant1.growth_habit == GrowthHabit.VINE:
             dist = None
-            if plant1.length != None:
+            if plant1.length is not None:
                 dist = (plant1.length.lower / 2, plant1.length.lower)
             return dist, f'{plant1.name} can shade out weeds around {plant2.name}'
 

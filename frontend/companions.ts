@@ -1,16 +1,15 @@
-import { PlantHandle } from './defs';
-import UiWrapper from './wrapper';
+import type { PlantHandle } from './defs';
+import type UiWrapper from './wrapper';
 
 // Query options for the companion search app
-type CompanionSearchQuery = {
-    id: number;
-    thresh: number;
-    previous: number | null;
-}
+interface CompanionSearchQuery {
+    id: number
+    thresh: number
+    previous: number | null
+};
 
 export default class CompanionSearch {
-
-    constructor(private baseUrl: string, private wrapper: UiWrapper) {}
+    constructor(private readonly baseUrl: string, private readonly wrapper: UiWrapper) {}
 
     getLink(plant: PlantHandle): string {
         return `<a onclick="renderCompanions(${plant.id}, \`${plant.name}\`, '${plant.species}')">${plant.name} (<i>${plant.species}</i>)</a>`;

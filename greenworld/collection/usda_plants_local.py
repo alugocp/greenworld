@@ -2,7 +2,6 @@ from typing import Dict, List
 import re
 import csv
 from greenworld.collection import BaseDataCollector
-from greenworld.lib.defs import GrowthHabit
 from greenworld.lib import Greenworld
 growth_habits_map = {
     'Forb/herb': 'GrowthHabit.FORB',
