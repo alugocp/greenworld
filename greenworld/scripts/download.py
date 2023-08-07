@@ -1,8 +1,6 @@
 import urllib.request
-import shutil
 import ssl
 import re
-import os
 import pandas as pd
 from greenworld.lib import Greenworld
 
@@ -22,8 +20,6 @@ def download(filepath, url):
             file.write(data.read())
 
 def main(gw):
-    shutil.rmtree('referenced-data')
-    os.mkdir('referenced-data')
 
     # Clements & Long (1923) - https://iwdb.nceas.ucsb.edu/html/clements_1923.html
     gw.log('Downloading from Clements & Long (1923)...')

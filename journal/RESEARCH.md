@@ -20,6 +20,7 @@
 - [The Flavonoid Biosynthesis Network in Plants](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8657439/)
 - [USDA Plants Database](https://plants.usda.gov/)
 - [Soil Drainage Classes](https://casoilresource.lawr.ucdavis.edu/gmap/help/defn-drainage-class.html)
+- [Native Plants Journal](https://npj.uwpress.org/)
 
 # Allelochemicals and phytotoxicity
 - [Allelochemicals and Signaling Chemicals in Plants](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6695906/)

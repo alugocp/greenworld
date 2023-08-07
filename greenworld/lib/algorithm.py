@@ -131,26 +131,35 @@ def build(utils: AlgorithmUtils) -> None:
     @utils.ensure(both = ['soil'])
     def match_soil(plant1, plant2):
         if plant1.soil != plant2.soil:
-            return None, f'{plant1.name} and {plant2.name} prefer different types of soil'
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper')
+            dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
+            return dist, f'{plant1.name} and {plant2.name} prefer different types of soil'
 
     @utils.rule()
     @utils.ensure(both = ['pH'])
     def match_ph(plant1, plant2):
         if not utils.overlaps(plant1.pH, plant2.pH):
-            return None, f'{plant1.name} and {plant2.name} prefer different pH ranges'
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper')
+            dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
+            return dist, f'{plant1.name} and {plant2.name} prefer different pH ranges'
 
     @utils.rule()
     @utils.ensure(both = ['drainage'])
     def match_drainage(plant1, plant2):
         if plant1.drainage != plant2.drainage:
-            return None, f'{plant1.name} and {plant2.name} prefer different soil drainage'
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper')
+            dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
+            return dist, f'{plant1.name} and {plant2.name} prefer different soil drainage'
 
     @utils.rule()
     @utils.mirrored()
     @utils.ensure(fields1 = ['nitrogen', 'growth_habit'])
     def large_vines_shade_weeds(plant1, plant2):
         if plant1.nitrogen == Nitrogen.HEAVY and plant1.growth_habit == GrowthHabit.VINE:
-            return None, f'{plant1.name} can shade out weeds around {plant2.name}'
+            dist = None
+            if plant1.length != None:
+                dist = (plant1.length.lower / 2, plant1.length.lower)
+            return dist, f'{plant1.name} can shade out weeds around {plant2.name}'
 
     @utils.rule()
     def ecological_intersection(plant1, plant2):
@@ -172,24 +181,28 @@ def build(utils: AlgorithmUtils) -> None:
             non_plant, r1, r2 = result
             p1 = plant1.name
             p2 = plant2.name
+            lower_bound = float(utils.reduce_intervals(plant1, plant2, 'spread', 'lower'))
+            upper_bound = float(utils.reduce_intervals(plant1, plant2, 'spread', 'upper'))
+            close = None if upper_bound == 0 else (lower_bound, upper_bound)
+            far = None if upper_bound == 0 else (upper_bound * 2, MAX_PLANTING_RANGE)
             pair = {
                 Ecology.NEGATIVE_ALLELOPATHY: {
-                    Ecology.NEGATIVE_ALLELOPATHY: f'{p1} and {p2} are both negative allelopaths for {non_plant}',
-                    Ecology.POSITIVE_ALLELOPATHY: f'{p1} is a negative allelopath and {p2} is a positive allelopath for {non_plant}',
+                    Ecology.NEGATIVE_ALLELOPATHY: (None, f'{p1} and {p2} are both negative allelopaths for {non_plant}'),
+                    Ecology.POSITIVE_ALLELOPATHY: (far, f'{p1} is a negative allelopath and {p2} is a positive allelopath for {non_plant}'),
                     Ecology.NO_ALLELOPATHY: None,
-                    Ecology.PATHOGEN: f'{p1} is a negative allelopath for {p2}\'s pathogenic species {non_plant}',
-                    Ecology.PREDATOR: f'{p1} is a negative allelopath for {p2}\'s predator species {non_plant}',
-                    Ecology.SEED_DISPERSER: f'{p1} is a negative allelopath for {p2}\'s seed disperser species {non_plant}',
-                    Ecology.POLLINATOR: f'{p1} is a negative allelopath for {p2}\'s pollinator species {non_plant}'
+                    Ecology.PATHOGEN: (close, f'{p1} is a negative allelopath for {p2}\'s pathogenic species {non_plant}'),
+                    Ecology.PREDATOR: (close, f'{p1} is a negative allelopath for {p2}\'s predator species {non_plant}'),
+                    Ecology.SEED_DISPERSER: (far, f'{p1} is a negative allelopath for {p2}\'s seed disperser species {non_plant}'),
+                    Ecology.POLLINATOR: (far, f'{p1} is a negative allelopath for {p2}\'s pollinator species {non_plant}')
                 },
                 Ecology.POSITIVE_ALLELOPATHY: {
-                    Ecology.NEGATIVE_ALLELOPATHY: f'{p1} is a positive allelopath and {p2} is a negative allelopath for {non_plant}',
-                    Ecology.POSITIVE_ALLELOPATHY: f'{p1} and {p2} are both positive allelopaths for {non_plant}',
+                    Ecology.NEGATIVE_ALLELOPATHY: (far, f'{p1} is a positive allelopath and {p2} is a negative allelopath for {non_plant}'),
+                    Ecology.POSITIVE_ALLELOPATHY: (close, f'{p1} and {p2} are both positive allelopaths for {non_plant}'),
                     Ecology.NO_ALLELOPATHY: None,
-                    Ecology.PATHOGEN: f'{p1} is a positive allelopath for {p2}\'s pathogenic species {non_plant}',
-                    Ecology.PREDATOR: f'{p1} is a positive allelopath for {p2}\'s predator species {non_plant}',
-                    Ecology.SEED_DISPERSER: f'{p1} is a positive allelopath for {p2}\'s seed disperser species {non_plant}',
-                    Ecology.POLLINATOR: f'{p1} is a positive allelopath for {p2}\'s pollinator species {non_plant}'
+                    Ecology.PATHOGEN: (far, f'{p1} is a positive allelopath for {p2}\'s pathogenic species {non_plant}'),
+                    Ecology.PREDATOR: (far, f'{p1} is a positive allelopath for {p2}\'s predator species {non_plant}'),
+                    Ecology.SEED_DISPERSER: (close, f'{p1} is a positive allelopath for {p2}\'s seed disperser species {non_plant}'),
+                    Ecology.POLLINATOR: (close, f'{p1} is a positive allelopath for {p2}\'s pollinator species {non_plant}')
                 },
                 Ecology.NO_ALLELOPATHY: {
                     Ecology.NEGATIVE_ALLELOPATHY: None,
@@ -201,43 +214,43 @@ def build(utils: AlgorithmUtils) -> None:
                     Ecology.POLLINATOR: None
                 },
                 Ecology.PATHOGEN: {
-                    Ecology.NEGATIVE_ALLELOPATHY: f'{p2} is a negative allelopath for {p1}\'s pathogenic species {non_plant}',
-                    Ecology.POSITIVE_ALLELOPATHY: f'{p2} is a positive allelopath for {p1}\'s pathogenic species {non_plant}',
+                    Ecology.NEGATIVE_ALLELOPATHY: (close, f'{p2} is a negative allelopath for {p1}\'s pathogenic species {non_plant}'),
+                    Ecology.POSITIVE_ALLELOPATHY: (far, f'{p2} is a positive allelopath for {p1}\'s pathogenic species {non_plant}'),
                     Ecology.NO_ALLELOPATHY: None,
-                    Ecology.PATHOGEN: f'{p1} and {p2} have a common pathogenic species {non_plant}',
-                    Ecology.PREDATOR: f'{p1}\'s pathogenic species {non_plant} is a predator for {p2}',
-                    Ecology.SEED_DISPERSER: f'{p1}\'s pathogenic species {non_plant} is a seed disperser for {p2}',
-                    Ecology.POLLINATOR: f'{p1}\'s pathogenic species {non_plant} is a pollinator for {p2}'
+                    Ecology.PATHOGEN: (far, f'{p1} and {p2} have a common pathogenic species {non_plant}'),
+                    Ecology.PREDATOR: (far, f'{p1}\'s pathogenic species {non_plant} is a predator for {p2}'),
+                    Ecology.SEED_DISPERSER: (far, f'{p1}\'s pathogenic species {non_plant} is a seed disperser for {p2}'),
+                    Ecology.POLLINATOR: (far, f'{p1}\'s pathogenic species {non_plant} is a pollinator for {p2}')
                 },
                 Ecology.PREDATOR: {
-                    Ecology.NEGATIVE_ALLELOPATHY: f'{p2} is a negative allelopath for {p1}\'s predator species {non_plant}',
-                    Ecology.POSITIVE_ALLELOPATHY: f'{p2} is a positive allelopath for {p1}\'s predator species {non_plant}',
+                    Ecology.NEGATIVE_ALLELOPATHY: (close, f'{p2} is a negative allelopath for {p1}\'s predator species {non_plant}'),
+                    Ecology.POSITIVE_ALLELOPATHY: (far, f'{p2} is a positive allelopath for {p1}\'s predator species {non_plant}'),
                     Ecology.NO_ALLELOPATHY: None,
-                    Ecology.PATHOGEN: f'{p1}\'s predator species {non_plant} is a pathogen for {p2}',
-                    Ecology.PREDATOR: f'{p1} and {p2} have a common predator species {non_plant}',
-                    Ecology.SEED_DISPERSER: f'{p1}\'s predator species {non_plant} is a seed disperser for {p2}',
-                    Ecology.POLLINATOR: f'{p1}\'s predator species {non_plant} is a pollinator for {p2}'
+                    Ecology.PATHOGEN: (far, f'{p1}\'s predator species {non_plant} is a pathogen for {p2}'),
+                    Ecology.PREDATOR: (close, f'{p1} and {p2} have a common predator species {non_plant}'),
+                    Ecology.SEED_DISPERSER: (close, f'{p1}\'s predator species {non_plant} is a seed disperser for {p2}'),
+                    Ecology.POLLINATOR: (close, f'{p1}\'s predator species {non_plant} is a pollinator for {p2}')
                 },
                 Ecology.SEED_DISPERSER: {
-                    Ecology.NEGATIVE_ALLELOPATHY: f'{p2} is a negative allelopath for {p1}\'s seed disperser species {non_plant}',
-                    Ecology.POSITIVE_ALLELOPATHY: f'{p2} is a positive allelopath for {p1}\'s seed disperser species {non_plant}',
+                    Ecology.NEGATIVE_ALLELOPATHY: (far, f'{p2} is a negative allelopath for {p1}\'s seed disperser species {non_plant}'),
+                    Ecology.POSITIVE_ALLELOPATHY: (close, f'{p2} is a positive allelopath for {p1}\'s seed disperser species {non_plant}'),
                     Ecology.NO_ALLELOPATHY: None,
-                    Ecology.PATHOGEN: f'{p1}\'s seed disperser species {non_plant} is a pathogen for {p2}',
-                    Ecology.PREDATOR: f'{p1}\'s seed disperser species {non_plant} is a predator for {p2}',
-                    Ecology.SEED_DISPERSER: f'{p1} and {p2} have a common seed disperser species {non_plant}',
-                    Ecology.POLLINATOR: f'{p1}\'s seed disperser species {non_plant} is a pollinator for {p2}'
+                    Ecology.PATHOGEN: (far, f'{p1}\'s seed disperser species {non_plant} is a pathogen for {p2}'),
+                    Ecology.PREDATOR: (close, f'{p1}\'s seed disperser species {non_plant} is a predator for {p2}'),
+                    Ecology.SEED_DISPERSER: (close, f'{p1} and {p2} have a common seed disperser species {non_plant}'),
+                    Ecology.POLLINATOR: (close, f'{p1}\'s seed disperser species {non_plant} is a pollinator for {p2}')
                 },
                 Ecology.POLLINATOR: {
-                    Ecology.NEGATIVE_ALLELOPATHY: f'{p2} is a negative allelopath for {p1}\'s pollinator species {non_plant}',
-                    Ecology.POSITIVE_ALLELOPATHY: f'{p2} is a positive allelopath for {p1}\'s pollinator species {non_plant}',
+                    Ecology.NEGATIVE_ALLELOPATHY: (far, f'{p2} is a negative allelopath for {p1}\'s pollinator species {non_plant}'),
+                    Ecology.POSITIVE_ALLELOPATHY: (close, f'{p2} is a positive allelopath for {p1}\'s pollinator species {non_plant}'),
                     Ecology.NO_ALLELOPATHY: None,
-                    Ecology.PATHOGEN: f'{p1}\'s pollinator species {non_plant} is a pathogen for {p2}',
-                    Ecology.PREDATOR: f'{p1}\'s pollinator species {non_plant} is a predator for {p2}',
-                    Ecology.SEED_DISPERSER: f'{p1}\'s pollinator species {non_plant} is a seed disperser for {p2}',
-                    Ecology.POLLINATOR: f'{p1} and {p2} have a common pollinator species {non_plant}'
+                    Ecology.PATHOGEN: (far, f'{p1}\'s pollinator species {non_plant} is a pathogen for {p2}'),
+                    Ecology.PREDATOR: (close, f'{p1}\'s pollinator species {non_plant} is a predator for {p2}'),
+                    Ecology.SEED_DISPERSER: (close, f'{p1}\'s pollinator species {non_plant} is a seed disperser for {p2}'),
+                    Ecology.POLLINATOR: (close, f'{p1} and {p2} have a common pollinator species {non_plant}')
                 }
             }[r1][r2]
             if pair:
-                utils.add_to_report((None, pair))
+                utils.add_to_report(pair)
 
 # pylint: enable=inconsistent-return-statements

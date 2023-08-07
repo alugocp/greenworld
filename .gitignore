@@ -1,5 +1,5 @@
+# Generated files
 server/static/script.js
-/referenced-data
 node_modules
 .DS_Store
 __pycache__
@@ -9,3 +9,7 @@ __pycache__
 *.db
 tmp.*
 /.env
+
+# Referenced data
+/referenced-data/*
+!/referenced-data/usda_plants_database_growth_habit.csv
