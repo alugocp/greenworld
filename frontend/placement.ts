@@ -75,7 +75,13 @@ export default class GuildPlacement {
     async calculate(): Promise<void> {
         const reports: ReportsTable = await this.pullReports();
         // Calculate using FDG
-        this.wrapper.drawGuildPlacement([]);
+        this.wrapper.drawGuildPlacement([
+            { x: 0, y: 0 },
+            { x: 1, y: 0 },
+            { x: 0, y: 1 },
+            { x: -1, y: 0 },
+            { x: 0, y: -1 }
+        ]);
     }
 
     // Generate a reports table for the user-selected plant species
