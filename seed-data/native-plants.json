@@ -11,12 +11,11 @@
             "root_spread": ["1 ft", "3 ft"],
             "root_depth": ["5 ft", "10 ft"],
             "nitrogen": "Nitrogen.NEUTRAL",
-            "temperature": ["65 F", "75 F"],
             "sun": "Sun.FULL_SUN",
             "pH": [5.5, 7.8],
             "drainage": "Drainage.SOMEWHAT_EXCESSIVELY_DRAINED",
             "citations": {
-                "1": ["temperature", "sun"],
+                "1": ["sun"],
                 "2": ["height", "spread"],
                 "3": ["root_depth", "pH"],
                 "4": ["root_spread"]
@@ -36,7 +35,6 @@
             "spread": ["6 ft", "8 ft"],
             "length": ["5 ft", "25 ft"],
             "nitrogen": "Nitrogen.NEUTRAL",
-            "temperature": ["55 F", "65 F"],
             "sun": "Sun.PARTIAL_SUN",
             "soil": "Soil.LOAM",
             "pH": [6.1, 7.5],
@@ -45,7 +43,7 @@
                 "5": ["length", "sun", "soil"],
                 "6": ["drainage"],
                 "7": ["spread"],
-                "8": ["temperature", "pH"],
+                "8": ["pH"],
                 "16": ["fruit_weight"]
             }
         },
@@ -77,15 +75,13 @@
             "height": ["6 in", "10 in"],
             "spread": ["4 in", "8 in"],
             "nitrogen": "Nitrogen.NEUTRAL",
-            "temperature": ["70 F", "75 F"],
             "sun": "Sun.FULL_SHADE",
             "soil": "Soil.LOAM",
             "pH": [6.8, 7.2],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
                 "10": ["height", "sun", "soil", "pH"],
-                "11": ["spread", "drainage"],
-                "12": ["temperature"]
+                "11": ["spread", "drainage"]
             },
             "ecology": [
                 { "species": "fabaceae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 31 }
@@ -121,14 +117,13 @@
             "root_spread": ["40 ft", "90 ft"],
             "root_depth": ["6.1 m", "7.6 m"],
             "nitrogen": "Nitrogen.FIXER",
-            "temperature": ["18 C", "27 C"],
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
             "pH": [4.6, 8.2],
             "drainage": "Drainage.MODERATELY_WELL_DRAINED",
             "citations": {
                 "15": ["height"],
-                "17": ["root_spread", "root_depth", "temperature", "sun", "soil", "pH", "drainage"],
+                "17": ["root_spread", "root_depth", "sun", "soil", "pH", "drainage"],
                 "18": ["spread"]
             }
         },
@@ -142,7 +137,6 @@
             "spread": ["50 ft", "75 ft"],
             "root_spread": ["50 ft", "75 ft"],
             "nitrogen": "Nitrogen.NEUTRAL",
-            "temperature": ["50 F", "60 F"],
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
             "pH": [6.5, 7.2],
@@ -184,13 +178,12 @@
             "height": ["2 ft", "3 ft"],
             "spread": ["1 ft", "2 ft"],
             "nitrogen": "Nitrogen.NEUTRAL",
-            "temperature": ["60 F", "70 F"],
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
             "pH": [6.8, 6.8],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
-                "24": ["height", "spread", "temperature", "sun", "soil", "pH", "drainage"]
+                "24": ["height", "spread", "sun", "soil", "pH", "drainage"]
             }
         },
         {
@@ -203,7 +196,6 @@
             "length": ["8 ft", "16 ft"],
             "root_depth": ["8 in", "8 in"],
             "nitrogen": "Nitrogen.FIXER",
-            "temperature": ["9.9 C", "20.3 C"],
             "sun": "Sun.PARTIAL_SUN",
             "soil": "Soil.LOAM",
             "pH": [6.0, 7.5],
@@ -211,7 +203,6 @@
             "citations": {
                 "26": ["length", "sun", "soil", "drainage"],
                 "27": ["root_depth", "pH"],
-                "28": ["temperature"],
                 "29": ["fruit_weight"]
             }
         },
@@ -338,10 +329,6 @@
             "citation": "https://www.prairiemoon.com/allium-tricoccum-wild-leek-prairie-moon-nursery.html"
         },
         {
-            "id": 12,
-            "citation": "https://www.everwilde.com/store/Allium-tricoccum-WildFlower-Seed.html"
-        },
-        {
             "id": 13,
             "citation": "https://www.inaturalist.org/guide_taxa/528789"
         },
@@ -400,10 +387,6 @@
         {
             "id": 27,
             "citation": "https://plants.usda.gov/home/plantProfile?symbol=APAM"
-        },
-        {
-            "id": 28,
-            "citation": "https://pfaf.org/plants/groundnut-wild-potato-apios-americana/"
         },
         {
             "id": 29,

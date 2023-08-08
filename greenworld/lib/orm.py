@@ -68,7 +68,6 @@ plants_table = Table('plants', meta,
     Column('nitrogen', Integer), # Nitrogen enum
 
     # Preferred environment
-    Column('temperature', NumericRangeType), # Celsius
     Column('sun', Integer), # Sun enum
     Column('soil', Integer), # Soil enum
     Column('pH', NumericRangeType), # Floating point pH scale

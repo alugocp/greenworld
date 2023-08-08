@@ -11,13 +11,12 @@
             "root_spread": ["6 ft", "8 ft"],
             "root_depth": ["5 ft", "6 ft"],
             "nitrogen": "Nitrogen.HEAVY",
-            "temperature": ["75 F", "80 F"],
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
             "pH": [5.8, 6.8],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
-                "1": ["height", "temperature", "sun"],
+                "1": ["height", "sun"],
                 "2": ["pH", "drainage"],
                 "3": ["spread", "soil"],
                 "4": ["root_spread", "root_depth"]
@@ -32,13 +31,12 @@
             "fruit_weight": ["10 lbs", "15 lbs"],
             "length": ["10 ft", "15 ft"],
             "nitrogen": "Nitrogen.HEAVY",
-            "temperature": ["60 F", "70 F"],
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
             "pH": [5.5, 6.5],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
-                "5": ["fruit_weight", "length", "temperature", "sun", "pH", "drainage"]
+                "5": ["fruit_weight", "length", "sun", "pH", "drainage"]
             }
         },
         {

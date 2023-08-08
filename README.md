@@ -87,7 +87,6 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
       "root_spread": [scalar, scalar],
       "root_depth": [scalar, scalar],
       "nitrogen": Nitrogen enum value,
-      "temperature": [scalar, scalar],
       "sun": Sun enum value,
       "soil": Soil enum value,
       "pH": [float, float],

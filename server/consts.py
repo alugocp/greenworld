@@ -9,7 +9,6 @@ plant_field_labels = {
     'root_spread': 'Root Spread',
     'root_depth': 'Root Depth',
     'nitrogen': 'Nitrogen',
-    'temperature': 'Temperature',
     'sun': 'Sun',
     'soil': 'Soil Type',
     'pH': 'pH',
@@ -24,7 +23,6 @@ plant_field_units = {
     'length': 'm',
     'root_spread': 'm',
     'root_depth': 'm',
-    'temperature': '° C',
     'pH': ''
 }
 
