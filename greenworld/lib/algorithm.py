@@ -27,7 +27,7 @@ def build(utils: AlgorithmUtils) -> None:
     @utils.ensure(both = ['sun', 'growth_habit'])
     def can_vine_climb(plant1, plant2):
         threshold = 45.359237 # 0.1 lbs
-        dist = 6 * 0.0254 / math.sqrt(2) # 45 degree angle with 6 inch hypotenuse
+        dist = 6 * 0.0254 / math.sqrt(2) # 45 degree angle with 6 inch hypotenuse (based on three sisters)
         if plant1.growth_habit == GrowthHabit.VINE and plant2.sun == Sun.FULL_SUN:
             if plant1.sun == Sun.FULL_SUN and plant1.fruit_weight and plant1.fruit_weight < threshold and plant2.growth_habit in [GrowthHabit.GRAMINOID, GrowthHabit.FORB]:
                 return (0, dist), f'{plant1.name} can climb up {plant2.name} for direct sunlight'
@@ -57,10 +57,11 @@ def build(utils: AlgorithmUtils) -> None:
             return (dist, MAX_PLANTING_RANGE), f'{plant1.name} should be placed far enough from {plant2.name} so both vines can spread'
 
     @utils.rule()
-    @utils.ensure(both = ['spread'])
+    @utils.ensure(both = ['spread', 'height'])
     def add_spread(plant1, plant2):
-        dist = (plant1.spread.lower + plant2.spread.lower, MAX_PLANTING_RANGE)
-        return dist, f'{plant1.name} and {plant2.name} should both have enough space to grow horizontally'
+        if utils.overlaps(plant1.height, plant2.height):
+            dist = ((plant1.spread.upper + plant2.spread.upper) / 2, MAX_PLANTING_RANGE)
+            return dist, f'{plant1.name} and {plant2.name} should both have enough space to grow horizontally'
 
     # Rules that may return a range value
     @utils.rule()
@@ -68,11 +69,11 @@ def build(utils: AlgorithmUtils) -> None:
     @utils.ensure(both = ['nitrogen'])
     def nitrogen_relationship(plant1, plant2):
         if plant1.nitrogen == Nitrogen.FIXER and plant2.nitrogen == Nitrogen.HEAVY:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower')
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower') / 2
             dist = None if dist == 0 else (0, dist)
             return dist, f'{plant1.name} can fix soil nitrogen for {plant2.name}'
         if plant1.nitrogen == Nitrogen.HEAVY and plant2.nitrogen == Nitrogen.HEAVY:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper')
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 2
             dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
             return dist, f'{plant1.name} and {plant2.name} may compete for soil nitrogen'
 
@@ -103,35 +104,19 @@ def build(utils: AlgorithmUtils) -> None:
 
         # Return based on uncovered relationship
         if relationship == Ecology.POSITIVE_ALLELOPATHY:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower')
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower') / 2
             dist = None if dist == 0 else (0, dist)
             return dist, f'{plant1.name} is a positive allelopath for {plant2.name}'
         if relationship == Ecology.NEGATIVE_ALLELOPATHY:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper')
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 2
             dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
             return dist, f'{plant1.name} is a negative allelopath for {plant2.name}'
-
-    @utils.rule()
-    @utils.mirrored()
-    @utils.ensure(both = ['root_depth'], fields2 = ['drainage'])
-    def roots_break_up_soil(plant1, plant2):
-        if plant1.root_depth > plant2.root_depth and plant2.drainage >= Drainage.WELL_DRAINED:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower')
-            dist = None if dist == 0 else (0, dist)
-            return dist, f'{plant1.name} can break up the soil for {plant2.name} to get better drainage'
-
-    # Rules that will absolutely not return a range value
-    @utils.rule()
-    @utils.ensure(both = ['temperature'])
-    def match_temperature(plant1, plant2):
-        if not utils.overlaps(plant1.temperature, plant2.temperature):
-            return None, f'{plant1.name} and {plant2.name} prefer different temperature ranges'
 
     @utils.rule()
     @utils.ensure(both = ['soil'])
     def match_soil(plant1, plant2):
         if plant1.soil != plant2.soil:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper')
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 2
             dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
             return dist, f'{plant1.name} and {plant2.name} prefer different types of soil'
 
@@ -139,7 +124,7 @@ def build(utils: AlgorithmUtils) -> None:
     @utils.ensure(both = ['pH'])
     def match_ph(plant1, plant2):
         if not utils.overlaps(plant1.pH, plant2.pH):
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper')
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 2
             dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
             return dist, f'{plant1.name} and {plant2.name} prefer different pH ranges'
 
@@ -147,7 +132,7 @@ def build(utils: AlgorithmUtils) -> None:
     @utils.ensure(both = ['drainage'])
     def match_drainage(plant1, plant2):
         if plant1.drainage != plant2.drainage:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper')
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 2
             dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
             return dist, f'{plant1.name} and {plant2.name} prefer different soil drainage'
 
@@ -181,8 +166,8 @@ def build(utils: AlgorithmUtils) -> None:
             non_plant, r1, r2 = result
             p1 = plant1.name
             p2 = plant2.name
-            lower_bound = float(utils.reduce_intervals(plant1, plant2, 'spread', 'lower'))
-            upper_bound = float(utils.reduce_intervals(plant1, plant2, 'spread', 'upper'))
+            lower_bound = float(utils.reduce_intervals(plant1, plant2, 'spread', 'lower')) / 2
+            upper_bound = float(utils.reduce_intervals(plant1, plant2, 'spread', 'upper')) / 2
             close = None if upper_bound == 0 else (lower_bound, upper_bound)
             far = None if upper_bound == 0 else (upper_bound * 2, MAX_PLANTING_RANGE)
             pair = {

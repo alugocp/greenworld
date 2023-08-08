@@ -278,7 +278,7 @@
             "growth_habit": "GrowthHabit.VINE",
             "spread": ["5 ft", "10 ft"],
             "length": ["25 ft", "40 ft"],
-            "nitrogen": "Nitrogen.FIXER",
+            "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.PARTIAL_SUN",
             "soil": "Soil.LOAM",
             "pH": [6.0, 8.0],
