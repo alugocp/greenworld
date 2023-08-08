@@ -9,7 +9,6 @@
             "height": ["7 ft", "11 ft"],
             "spread": ["2 ft", "2 ft"],
             "root_spread": ["1 ft", "3 ft"],
-            "root_depth": ["5 ft", "10 ft"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
             "pH": [5.5, 7.8],
@@ -17,7 +16,7 @@
             "citations": {
                 "1": ["sun"],
                 "2": ["height", "spread"],
-                "3": ["root_depth", "pH"],
+                "3": ["pH"],
                 "4": ["root_spread"]
             },
             "ecology": [
@@ -56,14 +55,13 @@
             "height": ["5 ft", "12 ft"],
             "spread": ["3 ft", "6 ft"],
             "root_spread": ["2 ft", "2 ft"],
-            "root_depth": ["20 in", "20 in"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.PARTIAL_SUN",
             "soil": "Soil.LOAM",
             "pH": [5.5, 6.5],
             "drainage": "Drainage.MODERATELY_WELL_DRAINED",
             "citations": {
-                "9": ["height", "spread", "root_spread", "root_depth", "sun", "soil", "pH", "drainage"]
+                "9": ["height", "spread", "root_spread", "sun", "soil", "pH", "drainage"]
             }
         },
         {
@@ -96,14 +94,13 @@
             "height": ["4 ft", "10 ft"],
             "spread": ["1 ft", "2 ft"],
             "root_spread": ["4 in", "4 in"],
-            "root_depth": ["1 ft", "1 ft"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.PARTIAL_SUN",
             "soil": "Soil.LOAM",
             "pH": [6.0, 8.0],
             "citations": {
                 "13": ["height", "nitrogen"],
-                "14": ["spread", "root_spread", "root_depth", "sun", "soil", "pH"]
+                "14": ["spread", "root_spread", "sun", "soil", "pH"]
             }
         },
         {
@@ -115,7 +112,6 @@
             "height": ["40 ft", "60 ft"],
             "spread": ["20 ft", "20 ft"],
             "root_spread": ["40 ft", "90 ft"],
-            "root_depth": ["6.1 m", "7.6 m"],
             "nitrogen": "Nitrogen.FIXER",
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
@@ -123,7 +119,7 @@
             "drainage": "Drainage.MODERATELY_WELL_DRAINED",
             "citations": {
                 "15": ["height"],
-                "17": ["root_spread", "root_depth", "sun", "soil", "pH", "drainage"],
+                "17": ["root_spread", "sun", "soil", "pH", "drainage"],
                 "18": ["spread"]
             }
         },
@@ -158,14 +154,13 @@
             "growth_habit": "GrowthHabit.FORB",
             "height": ["3 ft", "4 ft"],
             "spread": ["2 ft", "3 ft"],
-            "root_depth": ["18 in", "18 in"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.CLAY",
             "pH": [5.0, 8.0],
             "drainage": "Drainage.SOMEWHAT_POORLY_DRAINED",
             "citations": {
-                "22": ["root_depth", "sun", "pH"],
+                "22": ["sun", "pH"],
                 "23": ["height", "spread", "soil", "drainage"]
             }
         },
@@ -194,7 +189,6 @@
             "growth_habit": "GrowthHabit.VINE",
             "fruit_weight": ["5.1 g", "28.8 g"],
             "length": ["8 ft", "16 ft"],
-            "root_depth": ["8 in", "8 in"],
             "nitrogen": "Nitrogen.FIXER",
             "sun": "Sun.PARTIAL_SUN",
             "soil": "Soil.LOAM",
@@ -202,7 +196,7 @@
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
                 "26": ["length", "sun", "soil", "drainage"],
-                "27": ["root_depth", "pH"],
+                "27": ["pH"],
                 "29": ["fruit_weight"]
             }
         },

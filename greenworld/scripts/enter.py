@@ -24,7 +24,6 @@ json_schema = Schema({
             Optional('spread'): And([str], lambda x: len(x) == 2),
             Optional('length'): And([str], lambda x: len(x) == 2),
             Optional('root_spread'): And([str], lambda x: len(x) == 2),
-            Optional('root_depth'): And([str], lambda x: len(x) == 2),
             Optional('nitrogen'): expand_enum(defs.Nitrogen),
             Optional('sun'): expand_enum(defs.Sun),
             Optional('soil'): expand_enum(defs.Soil),

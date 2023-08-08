@@ -9,7 +9,6 @@
             "height": ["4 ft", "7 ft"],
             "spread": ["8 in", "12 in"],
             "root_spread": ["6 ft", "8 ft"],
-            "root_depth": ["5 ft", "6 ft"],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
@@ -19,7 +18,7 @@
                 "1": ["height", "sun"],
                 "2": ["pH", "drainage"],
                 "3": ["spread", "soil"],
-                "4": ["root_spread", "root_depth"]
+                "4": ["root_spread"]
             }
         },
         {

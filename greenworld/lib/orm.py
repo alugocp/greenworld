@@ -62,7 +62,6 @@ plants_table = Table('plants', meta,
     Column('spread', NumericRangeType), # From one extermity to the other (Meters)
     Column('length', NumericRangeType), # Meters
     Column('root_spread', NumericRangeType), # From one extremity to the other (Meters)
-    Column('root_depth', NumericRangeType), # Meters
 
     # Nutrients
     Column('nitrogen', Integer), # Nitrogen enum
