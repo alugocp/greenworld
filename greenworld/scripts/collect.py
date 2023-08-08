@@ -5,7 +5,7 @@ from greenworld.scripts.enter import json_schema
 from greenworld.collection.iweb_xls import IwebXlsDataCollector
 from greenworld.collection.usda_plants_local import UsdaPlantsLocalDataCollector
 from greenworld.collection.insects_local import InsectsLocalDataCollector
-# from greenworld.collection.taxize import TaxizeDataCollector
+from greenworld.collection.nitrogen_fixers import NitrogenFixersDataCollector
 
 __collectors = []
 
@@ -32,7 +32,7 @@ def main(gw, args):
     __collectors.append(IwebXlsDataCollector(gw))
     __collectors.append(UsdaPlantsLocalDataCollector(gw))
     __collectors.append(InsectsLocalDataCollector(gw))
-    # __collectors.append(TaxizeDataCollector(gw))
+    __collectors.append(NitrogenFixersDataCollector(gw))
 
     # Collect data
     for arg in args:

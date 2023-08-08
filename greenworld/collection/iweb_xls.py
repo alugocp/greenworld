@@ -141,6 +141,7 @@ class IwebXlsDataCollector(BaseDataCollector):
                         }
                         output['plants'].append(plant)
                         self.request_data(f'plants.{plant_id}')
+                        self.request_data(f'plants.{plant_id}.nitrogen')
                     if not nonplant:
                         nonplant_index = len(output['others'])
                         nonplant = {

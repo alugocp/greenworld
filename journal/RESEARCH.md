@@ -231,3 +231,14 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [Do green beans put nitrogen back into the soil?](https://treehozz.com/do-green-beans-put-nitrogen-back-into-the-soil)
 - [Introducing Nitrogen Fixing Trees: Nature’s Solution to Curing N2 Deficiency](https://www.permaculturenews.org/2015/10/20/introducing-nitrogen-fixing-trees-natures-solution-to-curing-n2-deficiency/)
 - [Legume crop rotation suppressed nitrifying microbial community in a sugarcane cropping soil](https://www.nature.com/articles/s41598-017-17080-z)
+
+### Nitrogen-fixing plants
+- [Nitrogen-fixing clade (Wikipedia)](https://en.wikipedia.org/wiki/List_of_nitrogen-fixing-clade_families)
+- [Actinorhizal plants (Wikipedia)](https://en.wikipedia.org/wiki/Actinorhizal_plant)
+- [Actinorhizal plants (Wayback machine)](https://web.archive.org/web/20180806064343/http://web.uconn.edu/mcbstaff/benson/Frankia/FrankiaHome.htm)
+- [Fabales order (Wikipedia)](https://en.wikipedia.org/wiki/Fabales)
+- [Nitrogen in litterfall and precipitation and its release during litter decomposition in the Chilean piedmont matorral](https://link.springer.com/chapter/10.1007/978-94-009-7639-9_33)
+- [Symbiotic association between Frankia and actinorhizal plants](https://link.springer.com/chapter/10.1007/978-94-011-5232-7_38)
+- [Biology of actinorhizal symbiosis from genomics to
+ecology: the 20th International Meeting on Frankia
+and Actinorhizal Plants](https://www.tandfonline.com/doi/pdf/10.1080/13416979.2022.2036417)

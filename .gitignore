@@ -13,3 +13,4 @@ tmp.*
 # Referenced data
 /referenced-data/*
 !/referenced-data/usda_plants_database_growth_habit.csv
+!/referenced-data/leguminous_genera.txt
