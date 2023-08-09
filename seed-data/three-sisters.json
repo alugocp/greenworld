@@ -27,7 +27,6 @@
             "species": "cucurbita maxima",
             "family": "cucurbitaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "fruit_weight": ["10 lbs", "15 lbs"],
             "length": ["10 ft", "15 ft"],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
@@ -35,7 +34,7 @@
             "pH": [5.5, 6.5],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
-                "5": ["fruit_weight", "length", "sun", "pH", "drainage"]
+                "5": ["length", "sun", "pH", "drainage"]
             }
         },
         {
@@ -44,16 +43,15 @@
             "species": "phaseolus vulgaris",
             "family": "fabaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "fruit_weight": ["5.1 g", "28.8 g"],
             "length": ["1.5 ft", "2 ft"],
+            "lightweight": true,
             "nitrogen": "Nitrogen.FIXER",
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
             "pH": [5.5, 7.0],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
-                "6": ["length", "sun", "soil", "pH", "drainage"],
-                "7": ["fruit_weight"]
+                "6": ["length", "sun", "soil", "pH", "drainage"]
             }
         }
     ],
@@ -81,10 +79,6 @@
         {
             "id": 6,
             "citation": "https://www.backyardgardener.com/plantname/phaseolus-vulgaris-hopi-purple-string-bean/"
-        },
-        {
-            "id": 7,
-            "citation": "https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/green-beans#:~:text=A%20total%20of%20100%20seed%20weight%20varied%20between%205.10%20and%2028.80%C2%A0g%20and%20had%20an%20average%20of%2014.55%C2%A0g"
         }
     ]
 }

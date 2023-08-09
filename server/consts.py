@@ -2,7 +2,6 @@ plant_field_labels = {
     'id': 'Greenworld ID',
     'family': 'Family',
     'growth_habit': 'Growth Habit',
-    'fruit_weight': 'Fruit Weight',
     'height': 'Height',
     'spread': 'Spread',
     'length': 'Length',
@@ -16,7 +15,6 @@ plant_field_labels = {
 
 plant_field_units = {
     'family': '',
-    'fruit_weight': 'g',
     'height': 'm',
     'spread': 'm',
     'length': 'm',

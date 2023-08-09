@@ -7,6 +7,7 @@ from sqlalchemy import (
     Identity,
     Table,
     Column,
+    Boolean,
     Integer,
     Numeric,
     String,
@@ -57,10 +58,10 @@ plants_table = Table('plants', meta,
 
     # Morphology
     Column('growth_habit', Integer), # GrowthHabit enum
-    Column('fruit_weight', NumericRangeType), # Grams
     Column('height', NumericRangeType), # Meters
     Column('spread', NumericRangeType), # From one extermity to the other (Meters)
     Column('length', NumericRangeType), # Meters
+    Column('lightweight', Boolean),
     Column('root_spread', NumericRangeType), # From one extremity to the other (Meters)
 
     # Nutrients

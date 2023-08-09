@@ -80,10 +80,10 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
       "species": string, // required
       "family": string, // required
       "growth_habit": GrowthHabit enum value,
-      "fruit_weight": [scalar, scalar],
       "height": [scalar, scalar],
       "spread": [scalar, scalar],
       "length": [scalar, scalar],
+      "lightweight": boolean,
       "root_spread": [scalar, scalar],
       "nitrogen": Nitrogen enum value,
       "sun": Sun enum value,

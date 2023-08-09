@@ -24,28 +24,37 @@ def build(utils: AlgorithmUtils) -> None:
     # Rules that will absolutely return a range value
     @utils.rule()
     @utils.mirrored()
-    @utils.ensure(both = ['sun', 'growth_habit'])
+    @utils.ensure(both = ['sun', 'growth_habit'], fields1 = ['length'], fields2 = ['height'])
     def can_vine_climb(plant1, plant2):
-        threshold = 45.359237 # 0.1 lbs
         dist = 6 * 0.0254 / math.sqrt(2) # 45 degree angle with 6 inch hypotenuse (based on three sisters)
-        if plant1.growth_habit == GrowthHabit.VINE and plant2.sun == Sun.FULL_SUN:
-            if plant1.sun == Sun.FULL_SUN and plant1.fruit_weight and plant1.fruit_weight < threshold and plant2.growth_habit in [GrowthHabit.GRAMINOID, GrowthHabit.FORB]:
-                return (0, dist), f'{plant1.name} can climb up {plant2.name} for direct sunlight'
-            if plant1.sun == Sun.PARTIAL_SUN and plant2.growth_habit == GrowthHabit.TREE:
-                return (0, dist), f'{plant1.name} can climb up {plant2.name} for indirect sunlight'
+        direct = f'{plant1.name} can climb up {plant2.name} for direct sunlight'
+        indirect = f'{plant1.name} can climb up {plant2.name} for indirect sunlight'
+        if plant1.growth_habit == GrowthHabit.VINE and plant1.length.lower <= plant2.height.upper:
+            if (plant1.lightweight and plant2.growth_habit in [GrowthHabit.GRAMINOID, GrowthHabit.FORB]):
+                if plant1.sun == Sun.FULL_SUN and plant2.sun == Sun.FULL_SUN:
+                    return (0, dist), direct
+                if plant1.sun == Sun.PARTIAL_SUN and plant2.sun == Sun.PARTIAL_SUN:
+                    return (0, dist), indirect
+
+            if (plant2.growth_habit == GrowthHabit.TREE and plant1.sun == Sun.PARTIAL_SUN and plant2.sun == Sun.FULL_SUN) or \
+            (plant2.growth_habit in [GrowthHabit.SHRUB, GrowthHabit.SUBSHRUB] and plant1.sun == plant2.sun):
+                close = float(plant1.spread.lower / 2 if plant1.spread else dist) + float(plant2.spread.upper / 2 if plant2.spread else dist) + dist
+                far = float(plant1.spread.upper / 2 if plant1.spread else dist) + float(plant2.spread.upper / 2 if plant2.spread else dist) + dist
+                return (close, far), indirect
 
     @utils.rule()
     @utils.taller_first()
-    @utils.ensure(fields1=['height'], fields2 = ['sun'])
+    @utils.ensure(fields1 = ['height'], fields2 = ['sun'])
     def space_for_sunlight(plant1, plant2):
         if utils.is_rule_included('can_vine_climb'):
             return None
-        middle = float(plant1.spread.upper if plant1.spread else plant1.height.upper / 2)
-        if plant2.sun == Sun.FULL_SUN:
-            return (middle * 1.25, MAX_PLANTING_RANGE), f'{plant2.name} should be far enough away from {plant1.name} to get direct sunlight'
-        if plant2.sun == Sun.PARTIAL_SUN:
-            return (middle * 0.75, middle * 1.25), f'{plant2.name} should be just far enough from {plant1.name} to get partial sunlight'
-        return (0, middle * 0.75), f'{plant2.name} should be close enough to {plant1.name} to get full shade'
+        if plant1.height.lower > 1/3:
+            middle = float(plant1.spread.upper if plant1.spread else plant1.height.upper / 2)
+            if plant2.sun == Sun.FULL_SUN:
+                return (middle * 1.25, MAX_PLANTING_RANGE), f'{plant2.name} should be far enough away from {plant1.name} to get direct sunlight'
+            if plant2.sun == Sun.PARTIAL_SUN:
+                return (middle * 0.75, middle * 1.25), f'{plant2.name} should be just far enough from {plant1.name} to get partial sunlight'
+            return (0, middle * 0.75), f'{plant2.name} should be close enough to {plant1.name} to get full shade'
 
     @utils.rule()
     @utils.ensure(both = ['growth_habit'])

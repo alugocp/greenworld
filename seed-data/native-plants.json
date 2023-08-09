@@ -30,7 +30,6 @@
             "species": "passiflora incarnata",
             "family": "passifloraceae",
             "growth_habit": "GrowthHabit.VINE",
-            "fruit_weight": ["35 g", "50 g"],
             "spread": ["6 ft", "8 ft"],
             "length": ["5 ft", "25 ft"],
             "nitrogen": "Nitrogen.NEUTRAL",
@@ -42,8 +41,7 @@
                 "5": ["length", "sun", "soil"],
                 "6": ["drainage"],
                 "7": ["spread"],
-                "8": ["pH"],
-                "16": ["fruit_weight"]
+                "8": ["pH"]
             }
         },
         {
@@ -187,8 +185,8 @@
             "species": "apios americana",
             "family": "fabaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "fruit_weight": ["5.1 g", "28.8 g"],
             "length": ["8 ft", "16 ft"],
+            "lightweight": true,
             "nitrogen": "Nitrogen.FIXER",
             "sun": "Sun.PARTIAL_SUN",
             "soil": "Soil.LOAM",
@@ -196,8 +194,7 @@
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
                 "26": ["length", "sun", "soil", "drainage"],
-                "27": ["pH"],
-                "29": ["fruit_weight"]
+                "27": ["pH"]
             }
         },
         {
@@ -335,10 +332,6 @@
             "citation": "https://nursery.dnr.maryland.gov/product-p/blacklocust.htm"
         },
         {
-            "id": 16,
-            "citation": "https://agrotexglobal.com/passion-fruit/"
-        },
-        {
             "id": 17,
             "citation": "https://www.srs.fs.usda.gov/pubs/misc/ag_654/volume_2/robinia/pseudoacacia.htm"
         },
@@ -381,10 +374,6 @@
         {
             "id": 27,
             "citation": "https://plants.usda.gov/home/plantProfile?symbol=APAM"
-        },
-        {
-            "id": 29,
-            "citation": "https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/green-beans#:~:text=A%20total%20of%20100%20seed%20weight%20varied%20between%205.10%20and%2028.80%C2%A0g%20and%20had%20an%20average%20of%2014.55%C2%A0g"
         },
         {
             "id": 30,

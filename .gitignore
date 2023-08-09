@@ -4,6 +4,7 @@ node_modules
 .DS_Store
 __pycache__
 .pytest_cache
+*.db-journal
 *.js.map
 *.pyc
 *.db
