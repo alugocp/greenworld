@@ -8,16 +8,11 @@
     Find a plant's companions by various query options
 </p>
 
-<div>
-    Threshold:
-    <input id="threshold" type="number" value="0.2"></input>
-    m
-</div>
 
 <div>
     Plant:
     {% import 'macros/search.html' as lookup %}
-    {{ lookup.render(None, '(plant) => gw.companions.getLink(plant)') }}
+    {{ lookup.render(None, '(plant) => gw.companions.getSearchLink(plant)') }}
 </div>
 
 <div id="companion-results"></div>
@@ -26,20 +21,19 @@
 
 <script>
 let previous;
+let searched;
 
 async function renderCompanions(id, name, species) {
-    const thresh = parseFloat(document.getElementById('threshold').value);
     const results = document.getElementById('companion-results');
     results.innerHTML = '<p>Retrieving suitable companions...</p>';
     previous = null;
     const companions = await gw.companions.discover({
         id,
-        thresh,
         previous
     });
     let html = `<p><span id="companion-number">${companions.length}</span> companions found for ${name} (<i>${species}</i>)</p>`;
     for (const plant of companions) {
-        html += `${gw.companions.getLink(plant)}</br>`;
+        html += `${gw.companions.getLink(plant, species)}</br>`;
         if (previous === null || plant.id > previous) {
             previous = plant.id;
         }
@@ -48,19 +42,18 @@ async function renderCompanions(id, name, species) {
     results.innerHTML += `<a id="render-more" onclick="renderMore(${id})"><b>Load more</b></a>`;
     document.getElementById('search-field').value = species;
     document.getElementById('search-results').innerHTML = '';
+    searched = species;
 }
 
 async function renderMore(id) {
-    const thresh = parseFloat(document.getElementById('threshold').value);
     const results = document.getElementById('companion-results');
     const companions = await gw.companions.discover({
         id,
-        thresh,
         previous
     });
     let html = '';
     for (const plant of companions) {
-        html += `${gw.companions.getLink(plant)}</br>`;
+        html += `${gw.companions.getLink(plant, searched)}</br>`;
         if (previous === null || plant.id > previous) {
             previous = plant.id;
         }

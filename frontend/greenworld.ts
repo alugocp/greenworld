@@ -10,7 +10,7 @@ export class Greenworld {
     constructor(private readonly baseUrl: string) {
         this.wrapper = new UiWrapper();
         this.placement = new GuildPlacement(baseUrl, this.wrapper);
-        this.companions = new CompanionSearch(baseUrl, this.wrapper);
+        this.companions = new CompanionSearch(this, baseUrl, this.wrapper);
     }
 
     /**
