@@ -59,6 +59,11 @@ def get_range_union(report):
                 max_dist = dist2
     return min_dist, max_dist
 
+# Calculate the overall compatibility score
+def calculate_compatibility_score(range, plant1, plant2):
+    if plant1.spread and plant2.spread:
+        return (2 * range / float(plant1.spread.lower + plant2.spread.lower)) - 1
+
 # Calculates how many reports will be needed given the number of old and new plants
 def get_analysis_total(num_new, num_old):
     return int(((num_new + 1) * (num_new / 2)) + (num_new * num_old))
@@ -87,6 +92,7 @@ def main(gw: Greenworld):
                 con.execute(reports_table.insert().values(
                     plant1 = plant2.id,
                     plant2 = plant1.id,
+                    score = calculate_compatibility_score(union_min, plant1, plant2),
                     range_union_min = union_min,
                     range_union_max = union_max,
                     report = report

@@ -8,6 +8,18 @@
     {{ plant1['name'] }} x {{ plant2['name'] }}
 </h2>
 
+<!-- Compatibility score -->
+<p>
+    <b>Compatibility score:</b>
+    <span id="compatibility">
+        {% if report['score'] == None %}
+            N/A
+        {% else %}
+            {{ report['score']|round(3) }}
+        {% endif %}
+    </span>
+</p>
+
 <!-- Suggested ranges -->
 <p>
     <b>Suggested range:</b>
@@ -19,6 +31,7 @@
         {% endif %}
     </span>
 </p>
+
 <table class="ranges-table">
 {% for pair in report['report'] %}
     {% set interval, reason = pair %}

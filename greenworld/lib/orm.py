@@ -43,6 +43,7 @@ memory_table = Table('memory', meta,
 reports_table = Table('reports', meta,
     Column('plant1', Integer, ForeignKey('plants.id'), nullable = False),
     Column('plant2', Integer, ForeignKey('plants.id'), nullable = False),
+    Column('score', Numeric),
     Column('range_union_min', Numeric, nullable = False), # The close end of the union of ranges associated with this report
     Column('range_union_max', Numeric, nullable = False), # The far end of the union of ranges associated with this report
     Column('report', JSON, nullable = False)
