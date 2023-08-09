@@ -34,26 +34,22 @@ def main(app, db):
         with db.connect() as con:
             return list(map(dict, con.execute(stmt).mappings().fetchall()))
 
-    @app.route('/neighbors/<int:id_>', defaults = { 'prev': 0 })
-    @app.route('/neighbors/<int:id_>/<int:prev>')
-    def grab_neighbors_endpoint(id_, prev):
+    @app.route('/neighbors/<int:id_>', defaults = { 'size': 50 })
+    @app.route('/neighbors/<int:id_>/<int:size>')
+    def grab_neighbors_endpoint(id_, size):
+        if size not in [50, 100]:
+            return 'Invalid size provided', 500
         stmt = sqlalchemy.select(
             orm.reports_table.c.plant1,
             orm.reports_table.c.plant2,
             orm.reports_table.c.score
         ).where(sqlalchemy.and_(
             sqlalchemy.or_(
-                sqlalchemy.and_(
-                    orm.reports_table.c.plant1 == id_,
-                    orm.reports_table.c.plant2 > prev,
-                ),
-                sqlalchemy.and_(
-                    orm.reports_table.c.plant2 == id_,
-                    orm.reports_table.c.plant1 > prev,
-                )
+                orm.reports_table.c.plant1 == id_,
+                orm.reports_table.c.plant2 == id_,
             ),
             orm.reports_table.c.score != None
-        )).order_by(orm.reports_table.c.score).limit(50)
+        )).order_by(orm.reports_table.c.score).limit(size)
         def remove_query_species(x):
             x = dict(x)
             return [x['plant1'], x['score']] if x['plant2'] == id_ else [x['plant2'], x['score']]
