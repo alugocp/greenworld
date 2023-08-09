@@ -8,6 +8,8 @@ interface CompanionSearchQuery {
     previous: number | null
 };
 
+type ScoredPlantHandle = PlantHandle & { score: number };
+
 export default class CompanionSearch {
     constructor(private readonly gw: Greenworld, private readonly baseUrl: string, private readonly wrapper: UiWrapper) {}
 
@@ -15,20 +17,24 @@ export default class CompanionSearch {
         return `<a onclick="renderCompanions(${plant.id}, \`${plant.name}\`, '${plant.species}')">${plant.name} (<i>${plant.species}</i>)</a>`;
     }
 
-    getLink(plant: PlantHandle, species: string): string {
-        return `${plant.name} (<i>${plant.species}</i>) - <a onclick="renderCompanions(${plant.id}, \`${plant.name}\`, '${plant.species}')">Find companions</a>, <a href="${this.gw.getPlantsUrl(plant.species, species)}">View report</a>`;
+    getResultLink(plant: ScoredPlantHandle, species: string, score: number): string {
+        return `<tr><td>${plant.name}</td><td><i>${plant.species}</i></td><td>${Math.round(plant.score * 1000) / 1000}</td><td><a onclick="renderCompanions(${plant.id}, \`${plant.name}\`, '${plant.species}')">Find companions</a></td><td><a href="${this.gw.getPlantsUrl(plant.species, species)}">View report</a></td></tr>`;
     }
 
     // Companion search algorithm from a given plant ID
-    async discover(query: CompanionSearchQuery): Promise<PlantHandle[]> {
+    async discover(query: CompanionSearchQuery): Promise<ScoredPlantHandle[]> {
 
         // Grab neighbor IDs, then get handlers for these IDs
         let neighborsUrl: string = `${this.baseUrl}neighbors/${query.id}`;
         if (query.previous !== null) {
             neighborsUrl += `/${query.previous}`;
         }
-        const ids: number[] = await this.wrapper.fetch(neighborsUrl);
-        const handlers: PlantHandle[] = await this.wrapper.fetch(`${this.baseUrl}handlers?ids=${ids.join(',')}`);
+        const idsAndScores: [number, number][] = await this.wrapper.fetch(neighborsUrl);
+        const ids = idsAndScores.map((x) => x[0]);
+        const handlers: ScoredPlantHandle[] = await this.wrapper.fetch(`${this.baseUrl}handlers?ids=${ids.join(',')}`);
+        for (const handler of handlers) {
+            handler.score = idsAndScores[ids.indexOf(handler.id)][1];
+        }
         return handlers.sort((a, b) => ids.indexOf(a.id) - ids.indexOf(b.id));
     }
 }

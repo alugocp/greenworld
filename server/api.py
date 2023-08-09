@@ -37,7 +37,11 @@ def main(app, db):
     @app.route('/neighbors/<int:id_>', defaults = { 'prev': 0 })
     @app.route('/neighbors/<int:id_>/<int:prev>')
     def grab_neighbors_endpoint(id_, prev):
-        stmt = orm.reports_table.select().where(sqlalchemy.and_(
+        stmt = sqlalchemy.select(
+            orm.reports_table.c.plant1,
+            orm.reports_table.c.plant2,
+            orm.reports_table.c.score
+        ).where(sqlalchemy.and_(
             sqlalchemy.or_(
                 sqlalchemy.and_(
                     orm.reports_table.c.plant1 == id_,
@@ -50,11 +54,11 @@ def main(app, db):
             ),
             orm.reports_table.c.score != None
         )).order_by(orm.reports_table.c.score).limit(50)
-        def postprocess(x):
+        def remove_query_species(x):
             x = dict(x)
-            return x['plant1'] if x['plant2'] == id_ else x['plant2']
+            return [x['plant1'], x['score']] if x['plant2'] == id_ else [x['plant2'], x['score']]
         with db.connect() as con:
-            return list(map(postprocess, con.execute(stmt).mappings().fetchall()))
+            return list(map(remove_query_species, con.execute(stmt).mappings().fetchall()))
 
     @app.route('/handlers')
     def grab_handlers_endpoint():

@@ -31,13 +31,14 @@ async function renderCompanions(id, name, species) {
         id,
         previous
     });
-    let html = `<p><span id="companion-number">${companions.length}</span> companions found for ${name} (<i>${species}</i>)</p>`;
+    let html = `<p><span id="companion-number">${companions.length}</span> companions found for ${name} (<i>${species}</i>)</p><table>`;
     for (const plant of companions) {
-        html += `${gw.companions.getLink(plant, species)}</br>`;
+        html += gw.companions.getResultLink(plant, species);
         if (previous === null || plant.id > previous) {
             previous = plant.id;
         }
     }
+    html += '</table>';
     results.innerHTML = html;
     results.innerHTML += `<a id="render-more" onclick="renderMore(${id})"><b>Load more</b></a>`;
     document.getElementById('search-field').value = species;
@@ -51,13 +52,14 @@ async function renderMore(id) {
         id,
         previous
     });
-    let html = '';
+    let html = '<table>';
     for (const plant of companions) {
-        html += `${gw.companions.getLink(plant, searched)}</br>`;
+        html += gw.companions.getResultLink(plant, searched);
         if (previous === null || plant.id > previous) {
             previous = plant.id;
         }
     }
+    html += '</table>';
     results.innerHTML += html;
     document.getElementById('companion-number').innerHTML = parseInt(document.getElementById('companion-number').innerHTML) + companions.length;
     document.getElementById('render-more').outerHTML = '';
