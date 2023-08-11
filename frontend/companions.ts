@@ -16,7 +16,7 @@ export default class CompanionSearch {
         return `<a onclick="renderCompanions(${plant.id}, \`${plant.name}\`, '${plant.species}')">${plant.name} (<i>${plant.species}</i>)</a>`;
     }
 
-    getResultLink(plant: ScoredPlantHandle, species: string, score: number): string {
+    getResultLink(plant: ScoredPlantHandle, species: string): string {
         return `<tr><td>${plant.name}</td><td><i>${plant.species}</i></td><td>${Math.round(plant.score * 1000) / 1000}</td><td><a onclick="renderCompanions(${plant.id}, \`${plant.name}\`, '${plant.species}')">Find companions</a></td><td><a href="${this.gw.getPlantsUrl(plant.species, species)}">View report</a></td></tr>`;
     }
 
