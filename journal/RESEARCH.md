@@ -201,6 +201,14 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 ## Peppers
 - [35 Companion Plants For Peppers (& 4 Plants To Avoid)](https://www.ruralsprout.com/pepper-companion-plants/)
 
+## Black walnut tree
+- [Growing vegetable gardens near black walnut trees](https://www.canr.msu.edu/news/growing_vegetable_gardens_near_black_walnut_trees)
+- [Allelopathy in black walnut (Juglans nigra L.) alley cropping. I. Spatio-temporal variation in soil juglone in a black walnut-corn (Zea mays L.) alley cropping system in the midwestern USA
+](https://www.researchgate.net/publication/225979920_Allelopathy_in_black_walnut_Juglans_nigra_L_alley_cropping_I_Spatio-temporal_variation_in_soil_juglone_in_a_black_walnut-corn_Zea_mays_L_alley_cropping_system_in_the_midwestern_USA)
+- [Seasonal patterns of juglone in soil beneath Juglans nigra (Black Walnut) and influence of J. nigra on understory vegetation](https://www.researchgate.net/publication/258829160_Seasonal_patterns_of_juglone_in_soil_beneath_Juglans_nigra_Black_Walnut_and_influence_of_J_nigra_on_understory_vegetation)
+- [Juglone concentration in soil beneath black walnut interplanted with nitrogen-fixing species](https://www.researchgate.net/publication/259206324_Juglone_concentration_in_soil_beneath_black_walnut_interplanted_with_nitrogen-fixing_species)
+- [Allelopathic effects of juglone on germination and growth of several herbaceous and woody species](https://www.researchgate.net/publication/227266885_Allelopathic_effects_of_juglone_on_germination_and_growth_of_several_herbaceous_and_woody_species)
+
 # Nutrient cycle
 - [Understanding Soil Microbes and Nutrient Recycling](https://ohioline.osu.edu/factsheet/sag-16)
 - [Autophagy, plant senescence, and nutrient recycling](https://pubmed.ncbi.nlm.nih.gov/24687977/)
