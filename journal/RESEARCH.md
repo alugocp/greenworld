@@ -90,6 +90,7 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [Mushroom Garden](https://northspore.com/pages/mushroom-garden)
 - [COMPANION PLANTING STRAWBERRIES WITH MUSHROOMS](https://practicalselfreliance.com/companion-planting-strawberries-mushrooms)
 - [Six Steps to Mushroom Farming](https://www.mushroomcouncil.com/growing-mushrooms/six-steps-to-mushroom-farming/)
+- [The Three Sisters of Indigenous American Agriculture](# https://www.nal.usda.gov/collections/stories/three-sisters)
 
 # Plant studies
 ## Corn
@@ -133,6 +134,8 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [Metabolic pathways - Cucurbita maxima (winter squash)](https://www.kegg.jp/pathway/cmax01100)
 - [Nutrient evaluation of the seed, pulp, flesh, and peel of spaghetti squash](https://www.researchgate.net/publication/352830278_Nutrient_evaluation_of_the_seed_pulp_flesh_and_peel_of_spaghetti_squash)
 - [Squash Companion Plants (What Not to Grow Near Squash)](https://thehometome.com/squash-companion-plants/)
+- [CABI Digital Library - Cucurbita (pumpkin)](https://www.cabidigitallibrary.org/doi/10.1079/cabicompendium.17064)
+- [Smart Gardener - Hopi Winter Squash](https://www.smartgardener.com/plants/1139-squash-winter-hopi/overview)
 
 ### Hopi Orange Squash
 - [https://www.wildroseheritageseed.com/store/p255/Squash_-_Hopi_Orange.html](https://www.wildroseheritageseed.com/store/p255/Squash_-_Hopi_Orange.html)

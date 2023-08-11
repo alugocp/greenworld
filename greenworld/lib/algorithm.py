@@ -60,16 +60,18 @@ def build(utils: AlgorithmUtils) -> None:
     @utils.ensure(both = ['growth_habit'])
     def vine_spacing(plant1, plant2):
         if plant1.growth_habit == GrowthHabit.VINE and plant2.growth_habit == GrowthHabit.VINE:
-            dist = math.sqrt(math.pow(24 / math.sqrt(2), 2) + math.pow(12, 2)) * 0.0254 # Distance between beans and squash in three sisters
+            close = math.sqrt(math.pow(24 / math.sqrt(2), 2) + math.pow(12, 2)) * 0.0254 # Distance between beans and squash in three sisters
+            far = MAX_PLANTING_RANGE
             if plant1['spread'] and plant2['spread']:
-                dist = (plant1.spread.upper + plant2.spread.upper) / 2
-            return (dist, MAX_PLANTING_RANGE), f'{plant1.name} should be placed far enough from {plant2.name} so both vines can spread'
+                close = (plant1.spread.lower + plant2.spread.lower) / 2
+                far = (plant1.spread.upper + plant2.spread.upper) / 2
+            return (close, far), f'{plant1.name} should be placed far enough from {plant2.name} so both vines can spread'
 
     @utils.rule()
     @utils.ensure(both = ['spread', 'height'])
     def add_spread(plant1, plant2):
         if utils.overlaps(plant1.height, plant2.height):
-            dist = ((plant1.spread.upper + plant2.spread.upper) / 2, MAX_PLANTING_RANGE)
+            dist = ((plant1.spread.lower + plant2.spread.lower) / 2, MAX_PLANTING_RANGE)
             return dist, f'{plant1.name} and {plant2.name} should both have enough space to grow horizontally'
 
     # Rules that may return a range value
@@ -78,11 +80,11 @@ def build(utils: AlgorithmUtils) -> None:
     @utils.ensure(both = ['nitrogen'])
     def nitrogen_relationship(plant1, plant2):
         if plant1.nitrogen == Nitrogen.FIXER and plant2.nitrogen == Nitrogen.HEAVY:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower') / 2
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower') / 4
             dist = None if dist == 0 else (0, dist)
             return dist, f'{plant1.name} can fix soil nitrogen for {plant2.name}'
         if plant1.nitrogen == Nitrogen.HEAVY and plant2.nitrogen == Nitrogen.HEAVY:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 2
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower') / 4
             dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
             return dist, f'{plant1.name} and {plant2.name} may compete for soil nitrogen'
 
@@ -147,12 +149,14 @@ def build(utils: AlgorithmUtils) -> None:
 
     @utils.rule()
     @utils.mirrored()
-    @utils.ensure(fields1 = ['nitrogen', 'growth_habit'])
+    @utils.ensure(both = ['growth_habit'], fields1 = ['nitrogen'])
     def large_vines_shade_weeds(plant1, plant2):
-        if plant1.nitrogen == Nitrogen.HEAVY and plant1.growth_habit == GrowthHabit.VINE:
+        if plant1.nitrogen == Nitrogen.HEAVY and plant1.growth_habit == GrowthHabit.VINE and plant2.growth_habit != GrowthHabit.VINE:
             dist = None
-            if plant1.length is not None:
-                dist = (plant1.length.lower / 2, plant1.length.lower)
+            if plant1.length is not None and plant1.spread is not None:
+                value1 = plant1.spread.lower
+                value2 = plant1.length.lower / 4
+                dist = (value1 if value1 < value2 else value2, value1 if value1 > value2 else value2)
             return dist, f'{plant1.name} can shade out weeds around {plant2.name}'
 
     @utils.rule()

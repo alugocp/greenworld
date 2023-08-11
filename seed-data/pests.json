@@ -1,0 +1,56 @@
+{
+    "others": [
+        {
+            "species": "myzus persicae",
+            "name": "Peach Aphid"
+        },
+        {
+            "species": "Aphis gossypii",
+            "name": "Melon Aphid"
+        },
+        {
+            "species": "spodoptera exigua",
+            "name": "Beet Armyworm"
+        },
+        {
+            "species": "spodoptera praefica",
+            "name": "Western Striped Armyworm"
+        },
+        {
+            "species": "trichoplusia ni",
+            "name": "Cabbage Looper"
+        },
+        {
+            "species": "acalymma vittata",
+            "name": "Western Striped Cucumber Beetle"
+        },
+        {
+            "species": "diabrotica undecimpunctata",
+            "name": "Western Spotted Cucumber Beetle"
+        },
+        {
+            "species": "diabrotica balteata",
+            "name": "Banded Cucumber Beetle"
+        },
+        {
+            "species": "peridroma saucia",
+            "name": "Cutworms"
+        },
+        {
+            "species": "nephelodes minians",
+            "name": "Cutworms"
+        },
+        {
+            "species": "anasa tristis",
+            "name": "Squash Bug"
+        },
+        {
+            "species": "melittia cucurbitae",
+            "name": "Squash Vine Borer"
+        },
+        {
+            "species": "frankliniella occidentalis",
+            "name": "Thrips"
+        }
+    ]
+}

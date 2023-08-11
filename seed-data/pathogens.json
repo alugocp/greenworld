@@ -1,0 +1,64 @@
+{
+    "others": [
+        {
+            "species": "alternaria cucumerina",
+            "name": "Alternaria leaf blight"
+        },
+        {
+            "species": "alternaria alternata",
+            "name": "Alternaria leaf spot (Brown spot)"
+        },
+        {
+            "species": "cercospora citrullina",
+            "name": "Cercospora leaf spot"
+        },
+        {
+            "species": "pseudoperonospora cubensis",
+            "name": "Downy mildew"
+        },
+        {
+            "species": "fusarium solani",
+            "name": "Fusarium crown and foot rot"
+        },
+        {
+            "species": "didymella bryoniae",
+            "name": "Gummy stem blight"
+        },
+        {
+            "species": "erysiphe cichoracearum",
+            "name": "Powdery mildew"
+        },
+        {
+            "species": "sphaerotheca fuliginea",
+            "name": "Powdery mildew"
+        },
+        {
+            "species": "podosphaera xanthii",
+            "name": "Powdery mildew"
+        },
+        {
+            "species": "septoria cucurbitacearum",
+            "name": "Septoria leaf spot"
+        },
+        {
+            "species": "verticillium dahliae",
+            "name": "Verticillium wilt"
+        },
+        {
+            "species": "pseudomonas syringae",
+            "name": "Angular leaf spot"
+        },
+        {
+            "species": "xanthomonas campestris",
+            "name": "Bacterial leaf spot"
+        },
+        {
+            "species": "erwinia tracheiphila",
+            "name": "Bacterial wilt"
+        },
+        {
+            "species": "phytophthora capsici",
+            "name": "Phytophthora crown and root rot"
+        }
+    ]
+}

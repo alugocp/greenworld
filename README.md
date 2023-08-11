@@ -62,6 +62,7 @@ Then you can use the following commands while interacting with the database:
 - `make invalidate` invalidates the reports table so the next report command will iterate through every plant pair
 - `make query` prints a list of reports logged in the database
 
+### Data entry
 This command can be used to enter data into the database:
 
 ```bash
@@ -122,3 +123,8 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
   ]
 }
 ```
+
+### Validation
+These commands generate statistical values that validate the algorithm's accuracy:
+
+- `make validate/three-sisters` generate error values for various traditional three sisters configurations

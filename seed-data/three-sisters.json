@@ -8,7 +8,7 @@
             "growth_habit": "GrowthHabit.GRAMINOID",
             "height": ["4 ft", "7 ft"],
             "spread": ["8 in", "12 in"],
-            "root_spread": ["6 ft", "8 ft"],
+            "root_spread": ["3 ft", "4 ft"],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
@@ -27,14 +27,49 @@
             "species": "cucurbita maxima",
             "family": "cucurbitaceae",
             "growth_habit": "GrowthHabit.VINE",
+            "height": ["8 in", "24 in"],
+            "spread": ["24 in", "36 in"],
             "length": ["10 ft", "15 ft"],
+            "root_spread": ["20 cm", "80 cm"],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
             "pH": [5.5, 6.5],
             "drainage": "Drainage.WELL_DRAINED",
+            "ecology": [
+                { "species": "myzus persicae", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "Aphis gossypii", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "spodoptera exigua", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "spodoptera praefica", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "trichoplusia ni", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "acalymma vittata", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "diabrotica undecimpunctata", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "diabrotica balteata", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "peridroma saucia", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "nephelodes minians", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "anasa tristis", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "melittia cucurbitae", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "frankliniella occidentalis", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "alternaria cucumerina", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "alternaria alternata", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "cercospora citrullina", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "pseudoperonospora cubensis", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "fusarium solani", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "didymella bryoniae", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "erysiphe cichoracearum", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "sphaerotheca fuliginea", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "podosphaera xanthii", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "septoria cucurbitacearum", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "verticillium dahliae", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "pseudomonas syringae", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "xanthomonas campestris", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "erwinia tracheiphila", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "phytophthora capsici", "relationship": "Ecology.PATHOGEN", "citation": 8 }
+            ],
             "citations": {
-                "5": ["length", "sun", "pH", "drainage"]
+                "5": ["length", "sun", "pH", "drainage"],
+                "7": ["root_spread"],
+                "9": ["height", "spread"]
             }
         },
         {
@@ -43,15 +78,20 @@
             "species": "phaseolus vulgaris",
             "family": "fabaceae",
             "growth_habit": "GrowthHabit.VINE",
+            "height": ["16 in", "22 in"],
+            "spread": ["12 in", "18 in"],
             "length": ["1.5 ft", "2 ft"],
             "lightweight": true,
+            "root_spread": ["18 in", "24 in"],
             "nitrogen": "Nitrogen.FIXER",
             "sun": "Sun.FULL_SUN",
             "soil": "Soil.LOAM",
             "pH": [5.5, 7.0],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
-                "6": ["length", "sun", "soil", "pH", "drainage"]
+                "6": ["length", "sun", "soil", "pH", "drainage"],
+                "10": ["spread"],
+                "11": ["root_spread"]
             }
         }
     ],
@@ -79,6 +119,26 @@
         {
             "id": 6,
             "citation": "https://www.backyardgardener.com/plantname/phaseolus-vulgaris-hopi-purple-string-bean/"
+        },
+        {
+            "id": 7,
+            "citation": "https://www.sweetfarmprofits.com/2022/11/02/how-deep-do-pumpkin-roots-grow-explained/"
+        },
+        {
+            "id": 8,
+            "citation": "https://plantvillage.psu.edu/topics/squash/infos"
+        },
+        {
+            "id": 9,
+            "citation": "https://www.smartgardener.com/plants/1139-squash-winter-hopi/overview"
+        },
+        {
+            "id": 10,
+            "citation": "https://www.smartgardener.com/plants/5372-bean-fortex-pole-bean-phaseolus-vulgaris/overview"
+        },
+        {
+            "id": 11,
+            "citation": "https://www.garden.eco/bean-roots"
         }
     ]
 }

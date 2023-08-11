@@ -1,4 +1,5 @@
-SCRIPTS := $(patsubst greenworld/scripts/%.py, %, $(shell ls greenworld/scripts/*.py))
+SCRIPTS := $(patsubst greenworld/scripts/%.py,%,$(shell ls greenworld/scripts/*.py))
+VALIDATIONS := $(patsubst validation/%.py,validate/%,$(shell ls validation/*.py))
 ENV := PYTHONPATH=.
 PYTHON := python3
 NPM_BIN := ./node_modules/.bin
@@ -37,3 +38,6 @@ test-py:
 
 $(SCRIPTS):
 	$(ENV) $(PYTHON) greenworld/scripts/$@.py $(subst $(COMMA),$(SPACE),$(FILES))
+
+$(VALIDATIONS):
+	$(ENV) $(PYTHON) $(patsubst validate/%, validation/%.py, $@)

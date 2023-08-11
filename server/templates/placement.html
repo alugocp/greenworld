@@ -8,6 +8,7 @@
 <br/>
 {% import 'macros/search.html' as lookup %}
 {{ lookup.render(None, '(plant) => `<a onclick=\"gw.placement.addPlant(\'${plant.id}\', \'${plant.name}\', \'${plant.species}\')\">${plant.name} (${plant.species})</a>`') }}
+<br/>
 <button onclick="gw.placement.calculate()">Place Guild</button>
 <div id="plants"></div>
 
@@ -81,6 +82,13 @@
                 ctx.beginPath();
                 ctx.arc(cx, cy, 0.166 * scale, 0, Math.PI * 2);
                 ctx.fill();
+            }
+
+            // Draw labels
+            for (let a = 0; a < points.length; a++) {
+                const p = points[a];
+                const cx = (p.x * scale) + dx;
+                const cy = (p.y * scale) + dy;
                 ctx.fillStyle = '#000000';
                 ctx.fillText(a + 1, cx - 10, cy);
             }

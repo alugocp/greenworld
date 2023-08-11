@@ -60,6 +60,7 @@ json_schema = Schema({
 _conversions = {
     'f':   lambda f:   (f - 32) / 1.8,  # Convert fahrenheit to celsius
     'lbs': lambda lbs: lbs * 453.59237, # Convert pounds to grams
+    'cm':  lambda i:   i / 100,         # Convert centimeters to meters
     'in':  lambda i:   i * 0.0254,      # Convert inches to meters
     'ft':  lambda ft:  ft * 0.3048      # Convert feet to meters
 }
