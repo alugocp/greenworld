@@ -101,8 +101,8 @@ for matrix in control_matrices:
             error = (r['range_union_max'] - value) / value
         elif value < r['range_union_min']:
             error = (r['range_union_min'] - value) / value
-        sys.stdout.write('%s x %s: \u001b[31m%s \u001b[0m\n' % (r['species1'], r['species2'], round(error * 100, 3)))
+        sys.stdout.write('%s x %s: \u001b[31m%s \u001b[0m%%\n' % (r['species1'], r['species2'], round(error * 100, 3)))
         total_error += abs(error)
         n += 1
-    sys.stdout.write('\u001b[1mTotal error:\u001b[0m \u001b[31m%s\u001b[0m\n' % (round(total_error * 100, 3)))
-    sys.stdout.write('\u001b[1mAverage error:\u001b[0m \u001b[31m%s\u001b[0m\n' % (round(total_error * 100 / n, 3)))
+    sys.stdout.write('\u001b[1mTotal error:\u001b[0m \u001b[31m%s\u001b[0m%%\n' % (round(total_error * 100, 3)))
+    sys.stdout.write('\u001b[1mAverage error:\u001b[0m \u001b[31m%s\u001b[0m%%\n' % (round(total_error * 100 / n, 3)))

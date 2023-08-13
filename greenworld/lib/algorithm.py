@@ -115,11 +115,11 @@ def build(utils: AlgorithmUtils) -> None:
 
         # Return based on uncovered relationship
         if relationship == Ecology.POSITIVE_ALLELOPATHY:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower') / 2
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower') / 4
             dist = None if dist == 0 else (0, dist)
             return dist, f'{plant1.name} is a positive allelopath for {plant2.name}'
         if relationship == Ecology.NEGATIVE_ALLELOPATHY:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 2
+            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 4
             dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
             return dist, f'{plant1.name} is a negative allelopath for {plant2.name}'
 

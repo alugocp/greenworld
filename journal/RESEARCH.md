@@ -208,6 +208,7 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [Seasonal patterns of juglone in soil beneath Juglans nigra (Black Walnut) and influence of J. nigra on understory vegetation](https://www.researchgate.net/publication/258829160_Seasonal_patterns_of_juglone_in_soil_beneath_Juglans_nigra_Black_Walnut_and_influence_of_J_nigra_on_understory_vegetation)
 - [Juglone concentration in soil beneath black walnut interplanted with nitrogen-fixing species](https://www.researchgate.net/publication/259206324_Juglone_concentration_in_soil_beneath_black_walnut_interplanted_with_nitrogen-fixing_species)
 - [Allelopathic effects of juglone on germination and growth of several herbaceous and woody species](https://www.researchgate.net/publication/227266885_Allelopathic_effects_of_juglone_on_germination_and_growth_of_several_herbaceous_and_woody_species)
+- [Landscaping Near Black Walnut Trees](https://www.johnson.k-state.edu/docs/lawn-and-garden/in-house-publications/trees-shrubs/Landscaping%20Near%20Black%20Walnut%20Trees.pdf)
 
 # Nutrient cycle
 - [Understanding Soil Microbes and Nutrient Recycling](https://ohioline.osu.edu/factsheet/sag-16)
