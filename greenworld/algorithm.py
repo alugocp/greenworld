@@ -1,14 +1,14 @@
 # This module contains the core logic for the Greenworld algorithm.
 import math
 import sqlalchemy
-from greenworld.lib.utils import AlgorithmUtils
-from greenworld.lib.orm import (
+from greenworld.utils import AlgorithmUtils
+from greenworld.orm import (
     other_species_table,
     ecology_other_table,
     ecology_plant_table,
     MAX_PLANTING_RANGE
 )
-from greenworld.lib.defs import (
+from greenworld.defs import (
     PLANTAE,
     GrowthHabit,
     Nitrogen,

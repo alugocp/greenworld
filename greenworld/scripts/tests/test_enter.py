@@ -1,6 +1,6 @@
 import unittest
 from greenworld.scripts import enter
-from greenworld.lib import defs
+from greenworld import defs
 
 class ScriptsEnterCase(unittest.TestCase):
 

@@ -1,7 +1,7 @@
 # Drop the reports table from the database.
 # Clear the database save state table (which contains the last analyzed pair of plants).
-from greenworld.lib import Greenworld
-from greenworld.lib.orm import (
+from greenworld import Greenworld
+from greenworld.orm import (
     init_db,
     reports_table,
     memory_table

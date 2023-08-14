@@ -1,6 +1,6 @@
 import re
 from typing import List, Union
-from greenworld.lib import Greenworld
+from greenworld import Greenworld
 
 class BaseDataCollector:
     __missing_paths: List[str] = []

@@ -2,7 +2,7 @@ import re
 from intervals import DecimalInterval
 import sqlalchemy
 import consts
-from greenworld.lib import orm
+from greenworld import orm
 
 def citation_regex(href):
     return re.search(r'(?:[a-z]+://)(?:www\.)?([\w\d]+(\.[\w\d]+)*)/?', href).groups()[0]

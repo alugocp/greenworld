@@ -2,9 +2,9 @@
 # It then repopulates the database from the `seed.json` file.
 from greenworld.scripts import collect
 from greenworld.scripts import enter
-from greenworld.lib import Greenworld
-from greenworld.lib import orm
-from greenworld.lib import defs
+from greenworld import Greenworld
+from greenworld import orm
+from greenworld import defs
 
 def main(gw: Greenworld, seed_data = False):
     db = orm.init_db()

@@ -4,9 +4,9 @@ import sys
 import sqlalchemy
 from schema import Schema, Optional, And, Or
 from sqlalchemy_utils import NumericRangeType
-from greenworld.lib import Greenworld
-from greenworld.lib import orm
-from greenworld.lib import defs
+from greenworld import Greenworld
+from greenworld import orm
+from greenworld import defs
 
 def expand_enum(e):
     return Or(*[f'{e.__name__}.{name}' for name in e.__members__.keys()])

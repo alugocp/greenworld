@@ -1,7 +1,7 @@
 from typing import Set
 import re
 from greenworld.collection import BaseDataCollector
-from greenworld.lib import Greenworld
+from greenworld import Greenworld
 
 class NitrogenFixersDataCollector(BaseDataCollector):
     __genera: Set[str]

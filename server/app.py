@@ -2,8 +2,8 @@ from flask import Flask
 import pages
 import api
 import lib
-from greenworld.lib import orm
-from greenworld.lib import Greenworld
+from greenworld import orm
+from greenworld import Greenworld
 
 app = Flask(
     'Greenworld',

@@ -3,7 +3,7 @@ from urllib.parse import unquote_plus
 import sqlalchemy
 from flask import render_template
 import lib
-from greenworld.lib import orm
+from greenworld import orm
 
 def main(app, db):
     @app.route('/')

@@ -2,7 +2,7 @@ import urllib.request
 import ssl
 import re
 import pandas as pd
-from greenworld.lib import Greenworld
+from greenworld import Greenworld
 
 # Convert some Excel file into CSV form
 def excel_to_csv(filepath):

@@ -2,8 +2,8 @@ from typing import Dict
 import re
 from openpyxl import load_workbook
 from greenworld.collection import BaseDataCollector
-from greenworld.lib.taxonomy import Taxon
-from greenworld.lib import Greenworld
+from greenworld.taxonomy import Taxon
+from greenworld import Greenworld
 
 class InsectsLocalDataCollector(BaseDataCollector):
     __database: Dict[str, dict] = {}

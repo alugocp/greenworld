@@ -1,7 +1,7 @@
 from urllib.parse import unquote_plus
 import sqlalchemy
 from flask import request
-from greenworld.lib import orm
+from greenworld import orm
 
 def main(app, db):
     @app.route('/search/<prefix>')

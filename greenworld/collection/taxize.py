@@ -2,7 +2,7 @@ from typing import Dict, List
 import re
 import json
 from greenworld.collection import BaseDataCollector
-from greenworld.lib import Greenworld
+from greenworld import Greenworld
 TAXIZE_BATCH_SIZE = 100
 
 # https://docs.ropensci.org/taxize/reference/index.html

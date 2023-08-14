@@ -1,6 +1,6 @@
 import json
 import sys
-from greenworld.lib import Greenworld
+from greenworld import Greenworld
 from greenworld.scripts.enter import json_schema
 from greenworld.collection.iweb_xls import IwebXlsDataCollector
 from greenworld.collection.usda_plants_local import UsdaPlantsLocalDataCollector

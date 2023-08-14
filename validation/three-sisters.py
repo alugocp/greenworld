@@ -1,12 +1,12 @@
+import sys
+import sqlalchemy
 from greenworld.scripts import report
 from greenworld.scripts import reset
 from greenworld.scripts import enter
-from greenworld.lib import Greenworld
-from greenworld.lib.orm import reports_table
-from greenworld.lib.orm import plants_table
-from greenworld.lib.orm import init_db
-import sqlalchemy
-import sys
+from greenworld import Greenworld
+from greenworld.orm import reports_table
+from greenworld.orm import plants_table
+from greenworld.orm import init_db
 
 # https://www.nativeseeds.org/blogs/blog-news/how-to-grow-a-three-sisters-garden
 control_matrices = [

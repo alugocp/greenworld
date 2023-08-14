@@ -3,8 +3,8 @@ import csv
 import re
 import xlrd
 from greenworld.collection import BaseDataCollector
-from greenworld.lib.taxonomy import Taxon
-from greenworld.lib import defs
+from greenworld.taxonomy import Taxon
+from greenworld import defs
 
 # CLI options structure for global access
 # TODO design a way to auto-detect these or have them passed in

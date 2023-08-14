@@ -2,7 +2,7 @@ import unittest
 from greenworld.scripts import report
 from greenworld.scripts import reset
 from greenworld.scripts import enter
-from greenworld.lib import Greenworld
+from greenworld import Greenworld
 
 class ScriptsReportCase(unittest.TestCase):
 
@@ -29,7 +29,11 @@ class ScriptsReportCase(unittest.TestCase):
         logs = []
         gw = Greenworld(log_func = logs.append)
         reset.main(gw, seed_data = False)
-        enter.main(gw, ['seed-data/three-sisters.json'])
+        enter.main(gw, [
+            'seed-data/pests.json',
+            'seed-data/pathogens.json',
+            'seed-data/three-sisters.json'
+        ])
         logs.clear()
         report.main(gw)
         self.assertEqual(logs, [

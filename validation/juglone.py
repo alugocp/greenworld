@@ -1,12 +1,12 @@
+import sys
+import sqlalchemy
 from greenworld.scripts import report
 from greenworld.scripts import reset
 from greenworld.scripts import enter
-from greenworld.lib import Greenworld
-from greenworld.lib.orm import reports_table
-from greenworld.lib.orm import plants_table
-from greenworld.lib.orm import init_db
-import sqlalchemy
-import sys
+from greenworld import Greenworld
+from greenworld.orm import reports_table
+from greenworld.orm import plants_table
+from greenworld.orm import init_db
 
 # https://www.researchgate.net/publication/225979920_Allelopathy_in_black_walnut_Juglans_nigra_L_alley_cropping_I_Spatio-temporal_variation_in_soil_juglone_in_a_black_walnut-corn_Zea_mays_L_alley_cropping_system_in_the_midwestern_USA
 # Allelopathy in black walnut (Juglans nigra L.) alley cropping. I. Spatio-temporal variation in soil juglone in a black walnut-corn (Zea mays L.) alley cropping system in the midwestern USA
