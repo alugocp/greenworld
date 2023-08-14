@@ -59,7 +59,7 @@ stmt = sqlalchemy.select(
 
 db = init_db()
 with db.connect() as con:
-    results = list(map(dict, con.execute(stmt).fetchall().mapping()))
+    results = list(map(dict, con.execute(stmt).mappings().fetchall()))
 
 # Create the distributions
 neutral_dist = []
@@ -78,7 +78,7 @@ def place_distribution(s1, s2, score):
     neutral_dist.append(score)
 
 for r in results:
-    place_distribution(r['species1'], r['species2'], r['score'])
+    place_distribution(r['species1'], r['species2'], float(r['score']))
 
 # Statistical comparison between distributions
 print(good_dist)

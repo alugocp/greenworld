@@ -127,4 +127,6 @@ Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-
 ### Validation
 These commands generate statistical values that validate the algorithm's accuracy:
 
-- `make validate/three-sisters` generate error values for various traditional three sisters configurations
+- `make validate/sisters` generates error values for various traditional three sisters configurations
+- `make validate/juglone` calculates error for walnut allelopathic range suggestion
+- `make validate/garden` compares distributions for expected good, bad and neutral companions
