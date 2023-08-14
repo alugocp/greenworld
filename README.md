@@ -69,60 +69,9 @@ This command can be used to enter data into the database:
 make enter FILES=file,...
 ```
 
-`file` arguments will point to files that adhere to one of the following structures.
-Note that `scalar` refers to a string matching the pattern `[0-9](\.[0-9]+)? [a-z]+` such that it represents a measurement of some specific unit.
-
-```js
-{
-  "plants": [
-    {
-      "id": integer, // required
-      "name": string, // required
-      "species": string, // required
-      "family": string, // required
-      "growth_habit": GrowthHabit enum value,
-      "height": [scalar, scalar],
-      "spread": [scalar, scalar],
-      "length": [scalar, scalar],
-      "lightweight": boolean,
-      "root_spread": [scalar, scalar],
-      "nitrogen": Nitrogen enum value,
-      "sun": Sun enum value,
-      "soil": Soil enum value,
-      "pH": [float, float],
-      "drainage": Drainage enum value,
-      "citations": { // required
-          works_cited.id as a string: [plant field, ...],
-          ...
-      },
-      "ecology": [
-          {
-              "species": string, // required
-              "relationship": Ecology enum value, // required
-              "citation": works_cited.id // required
-          },
-          ...
-      ]
-    },
-    ...
-  ],
-  "others": [
-    {
-        "species": "string", // required
-        "name": "string", // required
-        "family": "string"
-    },
-    ...
-  ]
-  "works_cited": [
-    {
-      "id": integer, // required
-      "citation": string // required
-    },
-    ...
-  ]
-}
-```
+`file` arguments will point to files that adhere to a specific schema.
+This schema can be found in the file [greenworld/schema.py](./greenworld/schema.py).
+Example files can be found in the [seed-data](./seed-data) folder.
 
 ### Validation
 These commands generate statistical values that validate the algorithm's accuracy:

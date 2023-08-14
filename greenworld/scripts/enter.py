@@ -2,65 +2,19 @@ import copy
 import json
 import sys
 import sqlalchemy
-from schema import Schema, Optional, And, Or
 from sqlalchemy_utils import NumericRangeType
+from greenworld.schema import json_schema
 from greenworld import Greenworld
 from greenworld import orm
 from greenworld import defs
-
-def expand_enum(e):
-    return Or(*[f'{e.__name__}.{name}' for name in e.__members__.keys()])
-
-json_schema = Schema({
-    Optional('plants'): [
-        {
-            'id': int,
-            'name': str,
-            'species': str,
-            'family': str,
-            Optional('growth_habit'): expand_enum(defs.GrowthHabit),
-            Optional('height'): And([str], lambda x: len(x) == 2),
-            Optional('spread'): And([str], lambda x: len(x) == 2),
-            Optional('length'): And([str], lambda x: len(x) == 2),
-            Optional('lightweight'): bool,
-            Optional('root_spread'): And([str], lambda x: len(x) == 2),
-            Optional('nitrogen'): expand_enum(defs.Nitrogen),
-            Optional('sun'): expand_enum(defs.Sun),
-            Optional('soil'): expand_enum(defs.Soil),
-            Optional('pH'): And([float], lambda x: len(x) == 2 and x[0] >= 0 and x[1] <= 14 and x[0] <= x[1]),
-            Optional('drainage'): expand_enum(defs.Drainage),
-            'citations': {
-                Optional(str): [str]
-            },
-            Optional('ecology'): [
-                {
-                    'species': str,
-                    'relationship': expand_enum(defs.Ecology),
-                    'citation': int
-                }
-            ]
-        }
-    ],
-    Optional('others'): [
-        {
-            'species': str,
-            'name': str,
-            Optional('family'): str
-        }
-    ],
-    Optional('works_cited'): [
-        {
-            'id': int,
-            'citation': str
-        }
-    ]
-})
 
 # Conversions table for internal standard units
 _conversions = {
     'f':   lambda f:   (f - 32) / 1.8,  # Convert fahrenheit to celsius
     'lbs': lambda lbs: lbs * 453.59237, # Convert pounds to grams
-    'cm':  lambda i:   i / 100,         # Convert centimeters to meters
+    'oz': lambda oz:   oz * 28.3495,    # Convert ounces to grams
+    'cm':  lambda cm:  cm / 100,        # Convert centimeters to meters
+    'mm':  lambda mm:  mm / 1000,       # Convert millimeters to meters
     'in':  lambda i:   i * 0.0254,      # Convert inches to meters
     'ft':  lambda ft:  ft * 0.3048      # Convert feet to meters
 }
