@@ -18,22 +18,21 @@ BAD = [
 
 # Species companion data to add
 '''
-tomato
-sweet potato
-potato
-broccoli
-basil
-garlic
-onion
-dill
-fennel
-watermelon
-mint
-kohlrabi
-nasturtium
-marigold
-cucumber
-cilantro
+https://www.thespruce.com/companion-plants-for-tomatoes-1403289
+Tomato good: calendula, chives, black-eyed peas, radishes, sage, french marigold, nasturtium, cilantro, oregano, parsley, crimson clover, lavendar, sunflower, zinnia, asparagus, basil, borage, carrot, garlic, sweet allysum, thyme
+Tomato bad: Broccoli (any brassicaceae species), Fennel, Dill, Potato (any solanaceae species), Cucumbers, Corn, Rosemary
+
+https://borealbloomhomestead.com/sweet-potato-companion-plants/#best-sweet-potato-companion-plants
+Sweet potato good: alliums, allysum, thyme, dill, basil, legumes, marigolds, nasturtium, radishes, spinach, yarrow
+Sweet potato bad: squash, tomato, sunflower
+
+https://www.thespruce.com/companion-plants-for-potatoes-2540039
+Potato good: Alyssum, Basil, Beans, Cabbage, Catnip, Chamomile, Coriander, Corn, Horseradish, Lettuce, Marigolds, Nasturtium, Parsley, Peas, Petunias, Radishes, Scallions, Spinach, Tansy, Thyme, Yarrow
+Potato bad: Carrots, Cucumbers, Eggplant, Fennel, Okra, Onions, Peppers, Pumpkins, Raspberries, Squash, Sunflowers, Tomatoes, Tomatillos, Turnips
+
+https://borealbloomhomestead.com/broccoli-companion-plants/
+Broccoli good: alliums, beets, celery, nasturtiums, french marigolds, dill ,basil, mint, chamomile, rosemary, lettuce, spinach, potato
+Broccoli bad: brassica species, strawberries, tomato, peppers, pumpkin
 '''
 
 # Generate report data

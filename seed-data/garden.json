@@ -1,0 +1,459 @@
+{
+    "plants": [
+        {
+            "id": 1,
+            "name": "Tomato",
+            "species": "solanum lycopersicum",
+            "family": "solanaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["3 ft", "5 ft"],
+            "spread": ["2 ft", "2 ft"],
+            "root_spread": ["12 in", "12 in"],
+            "nitrogen": "Nitrogen.HEAVY",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [5.5, 7.0],
+            "drainage": "Drainage.WELL_DRAINED",
+            "ecology": [
+                { "species": "septoria lycopersici", "relationship": "Ecology.PATHOGEN", "citation": 1 },
+                { "species": "alternaria linariae", "relationship": "Ecology.PATHOGEN", "citation": 1 },
+                { "species": "xanthomonas vesicatoria", "relationship": "Ecology.PATHOGEN", "citation": 1 },
+                { "species": "pseudomonas syringae", "relationship": "Ecology.PATHOGEN", "citation": 1 }
+            ],
+            "citations": {
+                "1": ["height"],
+                "2": ["growth_habit", "nitrogen", "sun"],
+                "3": ["spread", "soil", "drainage"],
+                "4": ["root_spread"]
+            }
+        },
+        {
+            "id": 2,
+            "name": "Sweet Potato",
+            "species": "ipomoea batatas",
+            "family": "convolvulaceae",
+            "growth_habit": "GrowthHabit.VINE",
+            "spread": ["5 in", "12 in"],
+            "length": ["8 ft", "10 ft"],
+            "root_spread": ["18 in", "18 in"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.0, 6.5],
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "5": ["growth_habit", "nitrogen", "sun", "soil", "drainage"],
+                "6": ["spread", "length"],
+                "7": ["pH"]
+            }
+        },
+        {
+            "id": 3,
+            "name": "Potato",
+            "species": "solanum tuberosum",
+            "family": "solanaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["1.5 ft", "3 ft"],
+            "spread": ["1.5 ft", "3 ft"],
+            "root_spread": ["8 in", "12 in"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [5.8, 6.5],
+            "drainage": "Drainage.WELL_DRAINED",
+            "ecology": [
+                { "species": "aphidoidea", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "alternaria solani", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "phytophthora infestans", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "leptinotarsa decemlineata", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "alticini", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "cicadellidae", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "streptomyces scabies", "relationship": "Ecology.PATHOGEN", "citation": 8 },
+                { "species": "manduca quinquemaculata", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "aleyrodidae", "relationship": "Ecology.PREDATOR", "citation": 8 },
+                { "species": "elateridae", "relationship": "Ecology.PREDATOR", "citation": 8 }
+            ],
+            "citations": {
+                "8": ["sun", "pH"],
+                "9": ["height", "spread", "root_spread", "nitrogen", "soil", "drainage"]
+            }
+        },
+        {
+            "id": 4,
+            "name": "Broccoli",
+            "species": "brassica oleracea var. italica",
+            "family": "brassicaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["18 in", "36 in"],
+            "spread": ["18 in", "18 in"],
+            "root_spread": ["12 in", "18 in"],
+            "nitrogen": "Nitrogen.HEAVY",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.0, 7.0],
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "10": ["spread", "sun", "soil", "pH", "drainage"],
+                "11": ["height", "root_spread", "nitrogen"]
+            }
+        },
+        {
+            "id": 5,
+            "name": "Basil",
+            "species": "ocimum basilicum",
+            "family": "lamiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["12 in", "24 in"],
+            "spread": ["10 in", "12 in"],
+            "root_spread": ["8 in", "12 in"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.0, 7.5],
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "12": ["height", "spread", "nitrogen", "sun", "soil", "pH", "drainage"],
+                "13": ["root_spread"]
+            }
+        },
+        {
+            "id": 6,
+            "name": "Garlic",
+            "species": "allium sativum",
+            "family": "amaryllidaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["18 in", "24 in"],
+            "spread": ["4 in", "8 in"],
+            "root_spread": ["12 in", "12 in"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.0, 7.5],
+            "drainage": "Drainage.WELL_DRAINED",
+            "ecology": [
+                { "species": "delia antiqua", "relationship": "Ecology.PREDATOR", "citation": 14 },
+                { "species": "thrips tabaci", "relationship": "Ecology.PREDATOR", "citation": 14 },
+                { "species": "frankliniella occidentalis", "relationship": "Ecology.PREDATOR", "citation": 15 }
+            ],
+            "citations": {
+                "14": ["spread", "nitrogen", "sun", "soil", "drainage"],
+                "15": ["height", "root_spread", "pH"]
+            }
+        },
+        {
+            "id": 7,
+            "name": "Onion",
+            "species": "allium cepa",
+            "family": "amaryllidaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["12 in", "18 in"],
+            "spread": ["6 in", "12 in"],
+            "root_spread": ["6 in", "12 in"],
+            "nitrogen": "Nitrogen.HEAVY",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.0, 7.0],
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "16": ["height", "spread", "root_spread", "nitrogen", "sun", "soil", "drainage"],
+                "17": ["pH"]
+            }
+        },
+        {
+            "id": 8,
+            "name": "Dill",
+            "species": "anethum graveolens",
+            "family": "apiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["2 ft", "4 ft"],
+            "spread": ["10 in", "12 in"],
+            "root_spread": ["12 in", "18 in"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.5, 7.0],
+            "drainage": "Drainage.WELL_DRAINED",
+            "ecology": [
+                { "species": "septoria lycopersici", "relationship": "Ecology.PATHOGEN", "citation": 18 }
+            ],
+            "citations": {
+                "18": ["spread", "sun", "soil", "pH", "drainage"],
+                "19": ["height", "root_spread", "nitrogen"]
+            }
+        },
+        {
+            "id": 9,
+            "name": "Fennel",
+            "species": "",
+            "family": "",
+            "growth_habit": "GrowthHabit.",
+            "height": ["", ""],
+            "spread": ["", ""],
+            "root_spread": ["", ""],
+            "nitrogen": "Nitrogen.",
+            "sun": "Sun.",
+            "soil": "Soil.",
+            "pH": [0, 0],
+            "drainage": "Drainage.",
+            "citations": {}
+        },
+        {
+            "id": 10,
+            "name": "Watermelon",
+            "species": "",
+            "family": "",
+            "growth_habit": "GrowthHabit.",
+            "height": ["", ""],
+            "spread": ["", ""],
+            "root_spread": ["", ""],
+            "nitrogen": "Nitrogen.",
+            "sun": "Sun.",
+            "soil": "Soil.",
+            "pH": [0, 0],
+            "drainage": "Drainage.",
+            "citations": {}
+        },
+        {
+            "id": 11,
+            "name": "Mint",
+            "species": "",
+            "family": "",
+            "growth_habit": "GrowthHabit.",
+            "height": ["", ""],
+            "spread": ["", ""],
+            "root_spread": ["", ""],
+            "nitrogen": "Nitrogen.",
+            "sun": "Sun.",
+            "soil": "Soil.",
+            "pH": [0, 0],
+            "drainage": "Drainage.",
+            "citations": {}
+        },
+        {
+            "id": 12,
+            "name": "Kohlrabi",
+            "species": "",
+            "family": "",
+            "growth_habit": "GrowthHabit.",
+            "height": ["", ""],
+            "spread": ["", ""],
+            "root_spread": ["", ""],
+            "nitrogen": "Nitrogen.",
+            "sun": "Sun.",
+            "soil": "Soil.",
+            "pH": [0, 0],
+            "drainage": "Drainage.",
+            "citations": {}
+        },
+        {
+            "id": 13,
+            "name": "Nasturtium",
+            "species": "",
+            "family": "",
+            "growth_habit": "GrowthHabit.",
+            "height": ["", ""],
+            "spread": ["", ""],
+            "root_spread": ["", ""],
+            "nitrogen": "Nitrogen.",
+            "sun": "Sun.",
+            "soil": "Soil.",
+            "pH": [0, 0],
+            "drainage": "Drainage.",
+            "citations": {}
+        },
+        {
+            "id": 14,
+            "name": "Marigold",
+            "species": "",
+            "family": "",
+            "growth_habit": "GrowthHabit.",
+            "height": ["", ""],
+            "spread": ["", ""],
+            "root_spread": ["", ""],
+            "nitrogen": "Nitrogen.",
+            "sun": "Sun.",
+            "soil": "Soil.",
+            "pH": [0, 0],
+            "drainage": "Drainage.",
+            "citations": {}
+        },
+        {
+            "id": 15,
+            "name": "Cucumber",
+            "species": "",
+            "family": "",
+            "growth_habit": "GrowthHabit.",
+            "height": ["", ""],
+            "spread": ["", ""],
+            "root_spread": ["", ""],
+            "nitrogen": "Nitrogen.",
+            "sun": "Sun.",
+            "soil": "Soil.",
+            "pH": [0, 0],
+            "drainage": "Drainage.",
+            "citations": {}
+        },
+        {
+            "id": 16,
+            "name": "Cilantro",
+            "species": "",
+            "family": "",
+            "growth_habit": "GrowthHabit.",
+            "height": ["", ""],
+            "spread": ["", ""],
+            "root_spread": ["", ""],
+            "nitrogen": "Nitrogen.",
+            "sun": "Sun.",
+            "soil": "Soil.",
+            "pH": [0, 0],
+            "drainage": "Drainage.",
+            "citations": {}
+        }
+    ],
+    "others": [
+        {
+            "species": "septoria lycopersici",
+            "name": "Septoria Leaf Spot"
+        },
+        {
+            "species": "alternaria linariae",
+            "name": "Early Blight of Tomato"
+        },
+        {
+            "species": "xanthomonas vesicatoria",
+            "name": "Bacterial Leaf Spot"
+        },
+        {
+            "species": "pseudomonas syringae",
+            "name": "Bacterial Speck of Tomato"
+        },
+        {
+            "species": "aphidoidea",
+            "name": "Aphid"
+        },
+        {
+            "species": "alternaria solani",
+            "name": "Blight (early)"
+        },
+        {
+            "species": "phytophthora infestans",
+            "name": "Blight (late)"
+        },
+        {
+            "species": "leptinotarsa decemlineata",
+            "name": "Colorado Potato Beetle"
+        },
+        {
+            "species": "alticini",
+            "name": "Flea Beetle"
+        },
+        {
+            "species": "cicadellidae",
+            "name": "Leafhopper"
+        },
+        {
+            "species": "streptomyces scabies",
+            "name": "Potato Scab"
+        },
+        {
+            "species": "manduca quinquemaculata",
+            "name": "Tomato Hornworm"
+        },
+        {
+            "species": "aleyrodidae",
+            "name": "Whitefly"
+        },
+        {
+            "species": "elateridae",
+            "name": "Wireworm"
+        }
+        ,
+        {
+            "species": "delia antiqua",
+            "name": "Onion Maggots"
+        },
+        {
+            "species": "thrips tabaci",
+            "name": "Onion Thrips"
+        }
+    ],
+    "works_cited": [
+        {
+            "id": 1,
+            "citation": "https://www.gardenguides.com/127360-height-average-tomato-plant.html"
+        },
+        {
+            "id": 2,
+            "citation": "https://plants.usda.gov/home/plantProfile?symbol=SOLYL"
+        },
+        {
+            "id": 3,
+            "citation": "https://www.planetnatural.com/tomato-gardening"
+        },
+        {
+            "id": 4,
+            "citation": "https://www.weekand.com/home-garden/article/deep-wide-fullgrown-tomato-plant-grow-18023841.php"
+        },
+        {
+            "id": 5,
+            "citation": "https://www.almanac.com/plant/sweet-potatoes"
+        },
+        {
+            "id": 6,
+            "citation": "https://www.thespruce.com/sweet-potato-vines-4120149"
+        },
+        {
+            "id": 7,
+            "citation": "https://extension.uga.edu/publications/detail.html?number=C1014&title=home-garden-sweet-potatoes"
+        },
+        {
+            "id": 8,
+            "citation": "https://www.almanac.com/plant/potatoes"
+        },
+        {
+            "id": 9,
+            "citation": "http://www.gardening.cornell.edu/homegardening/scenec6be.html"
+        },
+        {
+            "id": 10,
+            "citation": "https://bonnieplants.com/blogs/how-to-grow/growing-broccoli"
+        },
+        {
+            "id": 11,
+            "citation": "https://www.gardeningchannel.com/how-to-grow-broccoli"
+        },
+        {
+            "id": 12,
+            "citation": "https://www.almanac.com/plant/basil"
+        },
+        {
+            "id": 13,
+            "citation": "https://veggieharvest.com/herbs/basil-growing-and-harvest-information/"
+        },
+        {
+            "id": 14,
+            "citation": "https://www.almanac.com/plant/garlic"
+        },
+        {
+            "id": 15,
+            "citation": "https://gardenerspath.com/plants/vegetables/growing-garlic"
+        },
+        {
+            "id": 16,
+            "citation": "https://www.thespruce.com/growing-onions-1403447"
+        },
+        {
+            "id": 17,
+            "citation": "https://extension.umn.edu/vegetables/growing-onions"
+        },
+        {
+            "id": 18,
+            "citation": "https://www.almanac.com/plant/dill"
+        }
+        ,
+        {
+            "id": 19,
+            "citation": "https://patiogardenlife.com/how-to-grow-dill-in-a-pot"
+        }
+    ]
+}
