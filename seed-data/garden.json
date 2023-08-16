@@ -184,18 +184,26 @@
         {
             "id": 9,
             "name": "Fennel",
-            "species": "",
-            "family": "",
-            "growth_habit": "GrowthHabit.",
-            "height": ["", ""],
-            "spread": ["", ""],
-            "root_spread": ["", ""],
-            "nitrogen": "Nitrogen.",
-            "sun": "Sun.",
-            "soil": "Soil.",
-            "pH": [0, 0],
-            "drainage": "Drainage.",
-            "citations": {}
+            "species": "foeniculum vulgare",
+            "family": "apiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["4 ft", "6 ft"],
+            "spread": ["1.5 ft", "3 ft"],
+            "root_spread": ["12 in", "14 in"],
+            "nitrogen": "Nitrogen.HEAVY",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [5.5, 6.8],
+            "drainage": "Drainage.WELL_DRAINED",
+            "ecology": [
+                { "species": "plantae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 23 },
+                { "species": "anethum graveolens", "relationship": "Ecology.NO_ALLELOPATHY", "citation": 23 }
+            ],
+            "citations": {
+                "20": ["nitrogen", "sun", "soil", "drainage"],
+                "21": ["height", "spread", "pH"],
+                "22": ["root_spread"]
+            }
         },
         {
             "id": 10,
@@ -454,6 +462,22 @@
         {
             "id": 19,
             "citation": "https://patiogardenlife.com/how-to-grow-dill-in-a-pot"
+        },
+        {
+            "id": 20,
+            "citation": "https://bonnieplants.com/blogs/how-to-grow/growing-fennel"
+        },
+        {
+            "id": 21,
+            "citation": "https://www.thespruce.com/grow-organic-fennel-in-your-garden-2539637"
+        },
+        {
+            "id": 22,
+            "citation": "https://balconygardenweb.com/growing-fennel-in-container-how-to-grow-a-pot/"
+        },
+        {
+            "id": 23,
+            "citation": "https://www.shopterrain.com/blog_entries/companion-planting-guide"
         }
     ]
 }
