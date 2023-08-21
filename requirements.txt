@@ -5,6 +5,7 @@ psycopg2-binary
 intervals
 
 # Auxiliary tasks
+matplotlib
 pytest
 pylint
 djlint

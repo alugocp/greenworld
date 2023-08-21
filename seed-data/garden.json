@@ -131,6 +131,7 @@
             "pH": [6.0, 7.5],
             "drainage": "Drainage.WELL_DRAINED",
             "ecology": [
+                { "species": "fabaceae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 14 },
                 { "species": "delia antiqua", "relationship": "Ecology.PREDATOR", "citation": 14 },
                 { "species": "thrips tabaci", "relationship": "Ecology.PREDATOR", "citation": 14 },
                 { "species": "frankliniella occidentalis", "relationship": "Ecology.PREDATOR", "citation": 15 }
@@ -154,6 +155,9 @@
             "soil": "Soil.LOAM",
             "pH": [6.0, 7.0],
             "drainage": "Drainage.WELL_DRAINED",
+            "ecology": [
+                { "species": "fabaceae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 16 }
+            ],
             "citations": {
                 "16": ["height", "spread", "root_spread", "nitrogen", "sun", "soil", "drainage"],
                 "17": ["pH"]
@@ -208,114 +212,133 @@
         {
             "id": 10,
             "name": "Watermelon",
-            "species": "",
-            "family": "",
-            "growth_habit": "GrowthHabit.",
-            "height": ["", ""],
-            "spread": ["", ""],
-            "root_spread": ["", ""],
-            "nitrogen": "Nitrogen.",
-            "sun": "Sun.",
-            "soil": "Soil.",
-            "pH": [0, 0],
-            "drainage": "Drainage.",
-            "citations": {}
+            "species": "citrullus lanatus",
+            "family": "cucurbitaceae",
+            "growth_habit": "GrowthHabit.VINE",
+            "spread": ["2 ft", "3 ft"],
+            "length": ["15 ft", "18 ft"],
+            "root_spread": ["18 ft", "21 ft"],
+            "nitrogen": "Nitrogen.HEAVY",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.0, 7.5],
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "24": ["spread", "nitrogen", "sun", "soil", "pH", "drainage"],
+                "25": ["length", "root_spread"]
+            }
         },
         {
             "id": 11,
             "name": "Mint",
-            "species": "",
-            "family": "",
-            "growth_habit": "GrowthHabit.",
-            "height": ["", ""],
-            "spread": ["", ""],
-            "root_spread": ["", ""],
-            "nitrogen": "Nitrogen.",
-            "sun": "Sun.",
-            "soil": "Soil.",
-            "pH": [0, 0],
-            "drainage": "Drainage.",
-            "citations": {}
+            "species": "mentha spp.",
+            "family": "lamiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["12 in", "18 in"],
+            "spread": ["18 in", "24 in"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.PARTIAL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.0, 7.5],
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "26": ["height", "spread", "nitrogen", "sun", "soil", "drainage"],
+                "27": ["pH"]
+            }
         },
         {
             "id": 12,
             "name": "Kohlrabi",
-            "species": "",
-            "family": "",
-            "growth_habit": "GrowthHabit.",
-            "height": ["", ""],
-            "spread": ["", ""],
-            "root_spread": ["", ""],
-            "nitrogen": "Nitrogen.",
-            "sun": "Sun.",
-            "soil": "Soil.",
-            "pH": [0, 0],
-            "drainage": "Drainage.",
-            "citations": {}
+            "species": "brassica oleracea var. gongylodes",
+            "family": "brassicaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["6 in", "18 in"],
+            "spread": ["12 in", "18 in"],
+            "root_spread": ["16 in", "24 in"],
+            "nitrogen": "Nitrogen.HEAVY",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.5, 6.8],
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "28": ["sun", "soil", "pH", "drainage"],
+                "29": ["height", "spread"],
+                "30": ["nitrogen"],
+                "31": ["root_spread"]
+            }
         },
         {
             "id": 13,
             "name": "Nasturtium",
-            "species": "",
-            "family": "",
-            "growth_habit": "GrowthHabit.",
-            "height": ["", ""],
-            "spread": ["", ""],
-            "root_spread": ["", ""],
-            "nitrogen": "Nitrogen.",
-            "sun": "Sun.",
-            "soil": "Soil.",
-            "pH": [0, 0],
-            "drainage": "Drainage.",
-            "citations": {}
+            "species": "tropaeolum majus",
+            "family": "tropaeolaceae",
+            "growth_habit": "GrowthHabit.VINE",
+            "spread": ["10 cm", "30 cm"],
+            "length": ["1 ft", "10 ft"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.SAND",
+            "pH": [6.0, 7.5],
+            "drainage": "Drainage.SOMEWHAT_EXCESSIVELY_DRAINED",
+            "citations": {
+                "32": ["spread", "nitrogen", "sun", "soil", "drainage"],
+                "33": ["pH"]
+            }
         },
         {
             "id": 14,
             "name": "Marigold",
-            "species": "",
-            "family": "",
-            "growth_habit": "GrowthHabit.",
-            "height": ["", ""],
-            "spread": ["", ""],
-            "root_spread": ["", ""],
-            "nitrogen": "Nitrogen.",
-            "sun": "Sun.",
-            "soil": "Soil.",
-            "pH": [0, 0],
-            "drainage": "Drainage.",
-            "citations": {}
+            "species": "tagetes spp.",
+            "family": "asteraceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["4 in", "48 in"],
+            "spread": ["6 in", "24 in"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.SAND",
+            "pH": [6.0, 7.0],
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "34": ["height", "spread", "nitrogen", "sun", "soil", "pH", "drainage"]
+            }
         },
         {
             "id": 15,
             "name": "Cucumber",
-            "species": "",
-            "family": "",
-            "growth_habit": "GrowthHabit.",
-            "height": ["", ""],
-            "spread": ["", ""],
-            "root_spread": ["", ""],
-            "nitrogen": "Nitrogen.",
-            "sun": "Sun.",
-            "soil": "Soil.",
-            "pH": [0, 0],
-            "drainage": "Drainage.",
-            "citations": {}
+            "species": "cucumis sativus",
+            "family": "cucurbitaceae",
+            "growth_habit": "GrowthHabit.VINE",
+            "spread": ["3 ft", "5 ft"],
+            "length": ["4 ft", "6 ft"],
+            "root_spread": ["4 ft", "7 ft"],
+            "nitrogen": "Nitrogen.HEAVY",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.5, 7.0],
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "35": ["spread", "nitrogen", "sun", "soil", "pH", "drainage"],
+                "36": ["length", "root_spread"]
+            }
         },
         {
             "id": 16,
             "name": "Cilantro",
-            "species": "",
-            "family": "",
-            "growth_habit": "GrowthHabit.",
-            "height": ["", ""],
-            "spread": ["", ""],
-            "root_spread": ["", ""],
-            "nitrogen": "Nitrogen.",
-            "sun": "Sun.",
-            "soil": "Soil.",
-            "pH": [0, 0],
-            "drainage": "Drainage.",
-            "citations": {}
+            "species": "coriandrum sativum",
+            "family": "apiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "height": ["12 in", "24 in"],
+            "spread": ["6 in", "12 in"],
+            "root_spread": ["8 in", "18 in"],
+            "nitrogen": "Nitrogen.NEUTRAL",
+            "sun": "Sun.FULL_SUN",
+            "soil": "Soil.LOAM",
+            "pH": [6.2, 6.8],
+            "drainage": "Drainage.WELL_DRAINED",
+            "citations": {
+                "37": ["nitrogen", "sun", "soil", "pH", "drainage"],
+                "38": ["height", "spread"]
+            }
         }
     ],
     "others": [
@@ -478,6 +501,66 @@
         {
             "id": 23,
             "citation": "https://www.shopterrain.com/blog_entries/companion-planting-guide"
+        },
+        {
+            "id": 24,
+            "citation": "https://www.almanac.com/plant/watermelons"
+        },
+        {
+            "id": 25,
+            "citation": "https://vegcropshotline.org/article/re-visiting-late-season-watermelon-vine-decline-in-indiana"
+        },
+        {
+            "id": 26,
+            "citation": "https://www.thespruce.com/growing-mint-1402628"
+        },
+        {
+            "id": 27,
+            "citation": "https://www.dpi.nsw.gov.au/agriculture/horticulture/vegetables/commodity-growing-guides/mint-growing"
+        },
+        {
+            "id": 28,
+            "citation": "https://bonnieplants.com/blogs/how-to-grow/growing-kohlrabi"
+        },
+        {
+            "id": 29,
+            "citation": "https://gardenerspath.com/plants/vegetables/plant-kohlrabi-seeds"
+        },
+        {
+            "id": 30,
+            "citation": "https://www.epicgardening.com/growing-kohlrabi"
+        },
+        {
+            "id": 31,
+            "citation": "https://www.thebuddingplanter.com/how-to-grow-kohlrabi"
+        },
+        {
+            "id": 32,
+            "citation": "https://www.gardenersworld.com/how-to/grow-plants/how-to-grow-nasturtiums/"
+        },
+        {
+            "id": 33,
+            "citation": "https://www.almanac.com/plant/nasturtiums"
+        },
+        {
+            "id": 34,
+            "citation": "https://www.thespruce.com/how-to-grow-marigolds-1402909"
+        },
+        {
+            "id": 35,
+            "citation": "https://www.almanac.com/plant/cucumbers"
+        },
+        {
+            "id": 36,
+            "citation": "https://soilandhealth.org/wp-content/uploads/01aglibrary/010137veg.roots/010137ch29.html"
+        },
+        {
+            "id": 37,
+            "citation": "https://bonnieplants.com/blogs/how-to-grow/growing-cilantro"
+        },
+        {
+            "id": 38,
+            "citation": "https://veggieharvest.com/herbs/cilantro-growing-and-harvest-information"
         }
     ]
 }

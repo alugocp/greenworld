@@ -37,7 +37,8 @@ def main(gw: Greenworld, seed_data = False):
             'seed-data/pathogens.json',
             'seed-data/pollinators.json',
             'seed-data/three-sisters.json',
-            'seed-data/native-plants.json'
+            'seed-data/native-plants.json',
+            'seed-data/garden.json',
         ])
 
 if __name__ == '__main__':
