@@ -158,11 +158,10 @@ for r in results:
     score = float(r['score'])
     if (s1 in GOOD and s2 in GOOD[s1]) or (s2 in GOOD and s1 in GOOD[s2]):
         good_dist.append(score)
-        continue
-    if (s1 in BAD and s2 in BAD[s1]) or (s2 in BAD and s1 in BAD[s2]):
+    elif (s1 in BAD and s2 in BAD[s1]) or (s2 in BAD and s1 in BAD[s2]):
         bad_dist.append(score)
-        continue
-    neutral_dist.append(score)
+    elif (s1 in GOOD or s1 in BAD) and (s2 in GOOD or s2 in BAD):
+        neutral_dist.append(score)
 
 # Statistical comparison between distributions (Wilcoxon rank-sum tests)
 sys.stdout.write('\u001b[1mp-values\u001b[0m\n')
