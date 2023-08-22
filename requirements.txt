@@ -5,15 +5,20 @@ psycopg2-binary
 intervals
 
 # Auxiliary tasks
-matplotlib
 pytest
 pylint
 djlint
+
+# Server
 flask
 
 # Data collection
 openpyxl
 requests
 schema
-pandas
 xlrd
+
+# Data science
+matplotlib
+pandas
+scipy

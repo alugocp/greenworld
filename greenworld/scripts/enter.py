@@ -59,7 +59,7 @@ def parse_enum(name):
 
 # Process plant table bulk data entry for a JSON file
 def enter_data(gw: Greenworld, db, filename):
-    print('')
+    gw.log('')
     gw.log(f'Writing data from {filename}...')
     with open(filename, 'r', encoding = 'utf-8') as file:
         data = json.load(file)
@@ -84,7 +84,7 @@ def enter_data(gw: Greenworld, db, filename):
                 last_other_id += 1
                 gw.log(f'INSERT {values}')
                 con.execute(orm.other_species_table.insert().values(**values))
-        print('')
+        gw.log('')
 
         # Sanitize and write plant data to database
         ecology_data = {}
@@ -150,7 +150,7 @@ def get_works_cited_map(gw: Greenworld, con, data):
             gw.log(f'INSERT {values}')
             con.execute(orm.works_cited_table.insert().values(**values))
             last_id += 1
-    print('')
+    gw.log('')
     return works_cited_map
 
 # Write ecological data with a many-to-many relationship to the database
