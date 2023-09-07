@@ -10,6 +10,11 @@ from greenworld.orm import reports_table
 from greenworld.orm import plants_table
 from greenworld.orm import init_db
 
+# Potential sources of error:
+#  - Certain good or bad pairs are missing from this data set
+#  - Plant data is missing or inaccurate
+#  - The algorithm needs tweaks
+
 # Expected companion results
 GOOD = {
     'zea mays': [
@@ -100,7 +105,7 @@ BAD = {
 }
 
 # Generate report data
-gw = Greenworld('/dev/null')
+gw = Greenworld()
 reset.main(gw, seed_data = False)
 enter.main(gw, [
     'seed-data/pests.json',
@@ -163,10 +168,18 @@ for r in results:
     elif (s1 in GOOD or s1 in BAD) and (s2 in GOOD or s2 in BAD):
         neutral_dist.append(score)
 
+# Percentage of "good" identified companions within a distribution
+def percent_good(dist):
+    percent = len(list(filter(lambda x: x <= 1.0, dist))) / len(dist)
+    return round(percent * 10000) / 100
+
 # Statistical comparison between distributions (Wilcoxon rank-sum tests)
 sys.stdout.write('\u001b[1mp-values\u001b[0m\n')
 sys.stdout.write('Good companions vs neutral: \u001b[31m%s\u001b[0m\n' % (stats.ranksums(good_dist, neutral_dist, alternative = 'greater').pvalue))
 sys.stdout.write('Bad companions vs neutral: \u001b[31m%s\u001b[0m\n' % (stats.ranksums(bad_dist, neutral_dist, alternative = 'less').pvalue))
+sys.stdout.write('Good companions percentage of good companions: \u001b[31m%s\u001b[0m%%\n' % (percent_good(good_dist)))
+sys.stdout.write('Good companions percentage of neutral companions: \u001b[31m%s\u001b[0m%%\n' % (percent_good(neutral_dist)))
+sys.stdout.write('Good companions percentage of bad companions: \u001b[31m%s\u001b[0m%%\n' % (percent_good(bad_dist)))
 
 # Plot distributions and save to image
 common = {
