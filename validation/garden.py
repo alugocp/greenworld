@@ -15,6 +15,30 @@ from greenworld.orm import init_db
 #  - Plant data is missing or inaccurate
 #  - The algorithm needs tweaks
 
+# Tested species list
+# Corn - zea mays
+# Squash - cucurbita maxima
+# Beans - phaseolus vulgaris
+# Sunflower - helianthus annuus
+# Ramps - allium tricoccum
+# Groundnut - apios americana
+# Tomato - solanum lycopersicum
+# Sweet potato - ipomoea batatas
+# Potato - solanum tuberosum
+# Broccoli - brassica oleracea var. italica
+# Basil - ocimum basilicum
+# Garlic - allium sativum
+# Onion - allium cepa
+# Dill - anethum graveolens
+# Fennel - foeniculum vulgare
+# Watermelon - citrullus lanatus
+# Mint - mentha spp.
+# Kohlrabi - brassica oleracea var. gongylodes
+# Nasturtium - tropaeolum majus
+# Marigold - tagetes spp.
+# Cucumber - cucumis sativus
+# Cilantro - coriandrum sativum
+
 # Expected companion results
 GOOD = {
     'zea mays': [
@@ -66,6 +90,92 @@ GOOD = {
         'tagetes spp.',
         'solanum lycopersicum',
         'solanum tuberosum'
+    ],
+    'allium sativum': [
+        'anethum graveolens',
+        'solanum lycopersicum',
+        'solanum tuberosum',
+        'brassica oleracea var. italica',
+        'brassica oleracea var. gongylodes',
+        'tropaeolum majus',
+        'tagetes spp.'
+    ],
+    'allium cepa': [
+        'allium cepa',
+        'allium sativum',
+        'allium tricoccum',
+        'brassica oleracea var. italica',
+        'brassica oleracea var. gongylodes',
+        'solanum lycopersicum',
+        'solanum tuberosum',
+        'anethum graveolens',
+        'tagetes spp.'
+    ],
+    'anethum graveolens': [
+        'zea mays',
+        'cucumis sativus',
+        'allium cepa',
+        'brassica oleracea var. italica',
+        'brassica oleracea var. gongylodes'
+    ],
+    'foeniculum vulgare': [
+        'anethum graveolens',
+        'cucumis sativus'
+    ],
+    'citrullus lanatus': [
+        'zea mays',
+        'phaseolus vulgaris',
+        'anethum graveolens',
+        'tagetes spp.',
+        'tropaeolum majus',
+        'allium sativum',
+        'mentha spp.',
+        'brassica oleracea var. italica'
+    ],
+    'mentha spp.': [
+        'cucurbita maxima',
+        'brassica oleracea var. italica',
+        'allium cepa',
+        'phaseolus vulgaris',
+        'solanum lycopersicum',
+        'tagetes spp.'
+    ],
+    'brassica oleracea var. gongylodes': [
+        'phaseolus vulgaris',
+        'cucumis sativus',
+        'allium cepa',
+        'solanum tuberosum'
+    ],
+    'tropaeolum majus': [
+        'phaseolus vulgaris',
+        'cucumis sativus',
+        'cucurbita maxima',
+        'brassica oleracea var. italica'
+    ],
+    'tagetes spp.': [
+        'cucumis sativus',
+        'cucurbita maxima',
+        'citrullus lanatus',
+        'solanum lycopersicum',
+        'solanum tuberosum',
+        'phaseolus vulgaris',
+        'brassica oleracea var. italica',
+        'allium cepa'
+    ],
+    'cucumis sativus': [
+        'phaseolus vulgaris',
+        'zea mays',
+        'anethum graveolens',
+        'tropaeolum majus',
+        'tagetes spp.',
+        'helianthus annuus',
+        'allium sativum',
+        'apios americana'
+    ],
+    'coriandrum sativum': [
+        'phaseolus vulgaris',
+        'apios americana',
+        'helianthus annuus'
     ]
 }
 BAD = {
@@ -100,6 +210,40 @@ BAD = {
     ],
     'ocimum basilicum': [
         'cucumis sativus',
+        'foeniculum vulgare'
+    ],
+    'allium sativum': [
+        'phaseolus vulgaris'
+    ],
+    'allium cepa': [
+        'phaseolus vulgaris'
+    ],
+    'foeniculum vulgare': [
+        'phaseolus vulgaris',
+        'solanum lycopersicum',
+        'solanum tuberosum'
+    ],
+    'citrullus lanatus': [
+        'solanum tuberosum',
+        'cucurbita maxima',
+        'cucumis sativus'
+    ],
+    'brassica oleracea var. gongylodes': [
+        'brassica oleracea var. gongylodes',
+        'brassica oleracea var. italica',
+        'solanum lycopersicum'
+    ],
+    'tropaeolum majus': [
+        'mentha spp.',
+        'solanum lycopersicum'
+    ],
+    'cucumis sativus': [
+        'mentha spp.',
+        'solanum tuberosum',
+        'citrullus lanatus',
+        'foeniculum vulgare'
+    ],
+    'coriandrum sativum': [
         'foeniculum vulgare'
     ]
 }
@@ -214,25 +358,47 @@ https://borealbloomhomestead.com/basil-companion-plants/
 Basil good: asparagus, borage, chamomile, cilantro, oregano, marigolds, peppers, radishes, carrots, turnips, beets, potatoes, tomatoes
 Basil bad: cucumber, fennel, sage, rosemary
 
-Garlic
+https://www.gardeningknowhow.com/edible/herbs/garlic/companions-for-garlic.htm
+Garlic good: Dill, Beets, Kale, Spinach, Potatoes, Carrots, Eggplants, Tomatoes, Peppers, Cabbage, Cauliflower, Broccoli, Kohlrabi, Roses, Geraniums, Marigolds, Nasturtiums
+Garlic bad: asparagus, peas, beans, sage, parsley
 
-Onion
+https://www.thespruce.com/onion-companion-plants-7368901
+Onion good: beets, spinach, alliums, brassicas, tomatoes, peppers, eggplant, strawberries, potatoes, lettuce, parsnips, carrots, chamomile, parsley, dill, savory, marigolds, roses
+Onion bad: peas, beans, asparagus, sage
 
-Dill
+https://www.gardeningknowhow.com/edible/herbs/dill/dill-companion-plants.htm
+Dill good: Asparagus, Corn, Cucumbers, Onion, Lettuce, Brassicas, Basil
+Dill bad: Carrot
 
-Fennel
+https://plantura.garden/uk/vegetables/fennel/planting-fennel
+Fennel good: Peas, Lettuce, Cucumber, Sage
+Fennel bad: Nightshades, Beans
 
-Watermelon
+https://www.thespruce.com/companion-plants-for-watermelons-5069542
+Watermelon good: Garlic, Catnip, Dill, Mint, Nasturtiums, Corn, Broccoli, Radishes, Tansies, Marigold, Lavender, Borage, Beans
+Watermelon bad: Cucumbers, Summer squash/zucchini, Pumpkins, Winter squash, Potato
 
-Mint
+https://www.gardenia.net/guide/best-worst-companions-for-mint
+Mint good: onion, beet, cauliflower, cabbage, broccoli, pumpkin, zucchini, carrot, lettuce, pea, radish, tomato, eggplant, beans, corn, marigold
+Mint bad: chamomile, oregano, parsley, rosemary
 
-Kohlrabi
+https://www.gardeningknowhow.com/edible/vegetables/kohlrabi/kohlrabi-companion-plants.htm
+Kohlrabi good: Bush beans, Beets, Celery, Cucumbers, Lettuce, Onions, Potatoes
+Kohlrabi bad: Brassicas, Tomatoes
 
-Nasturtium
+https://garden-housing.com/gardening/nasturtium-companion-plants/
+Nasturtium good: Beans, Broccoli, Cabbage, Cucumber, Radish, Squash, Strawberry
+Nasturtium bad: Mint, Sage, Thyme, Tomato
 
-Marigold
+https://www.bunnysgarden.com/marigold-companion-plants/
+Marigold good: Asparagus, Basil, Beans, Broccoli, Cabbage, Cucumbers, Eggplant, Gourds, Kale, Lettuce, Melons, Onions, Peppers, Potatoes, Pumpkins, Radish, Squash, Tomatoes
+Marigold bad: N/A
 
-Cucumber
+https://www.thespruce.com/companion-plants-for-cucumbers-2540044
+Cucumber good: legumes, corn, radishes, beets, carrots, garlic, marigolds, nasturtiums, sunflowers, dill, oregano
+Cucumber bad: potatoes, sage, mint, melon, fennel
 
-Cilantro
+https://www.thespruce.com/companion-plants-for-cilantro-5074346
+Cilantro good: Chervil, Sweet alyssum, Coreopsis, Legumes, Cosmos, Zinnias, Sunflowers
+Cilantro bad: Lavender, Thyme, Rosemary, Fennel
 '''
