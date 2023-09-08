@@ -48,6 +48,10 @@ def build(utils: AlgorithmUtils) -> None:
     def space_for_sunlight(plant1, plant2):
         if utils.is_rule_included('can_vine_climb'):
             return None
+        if plant1.growth_habit == GrowthHabit.VINE:
+            return None
+        if plant2.growth_habit == GrowthHabit.VINE and plant1.growth_habit not in [None, GrowthHabit.SUBSHRUB, GrowthHabit.SHRUB, GrowthHabit.TREE]:
+            return None
         if plant1.height.lower > 1/3:
             middle = float(plant1.spread.upper if plant1.spread else plant1.height.upper / 2)
             if plant2.sun == Sun.FULL_SUN:
@@ -72,6 +76,8 @@ def build(utils: AlgorithmUtils) -> None:
     def add_spread(plant1, plant2):
         if utils.overlaps(plant1.height, plant2.height):
             dist = ((plant1.spread.lower + plant2.spread.lower) / 2, MAX_PLANTING_RANGE)
+            if plant1.id == plant2.id:
+                dist = ((plant1.spread.upper + plant2.spread.upper) / 2, MAX_PLANTING_RANGE)
             return dist, f'{plant1.name} and {plant2.name} should both have enough space to grow horizontally'
 
     # Rules that may return a range value

@@ -1,4 +1,5 @@
 import sys
+import json
 import sqlalchemy
 import matplotlib.pyplot as plt
 from scipy import stats
@@ -286,6 +287,7 @@ plant_1_table = sqlalchemy.alias(plants_table)
 plant_2_table = sqlalchemy.alias(plants_table)
 stmt = sqlalchemy.select(
     reports_table.c.score,
+    reports_table.c.report,
     plant_1_table.c.species.label('species1'),
     plant_2_table.c.species.label('species2')
 ) \
@@ -295,32 +297,48 @@ stmt = sqlalchemy.select(
 with db.connect() as con:
     results = list(map(dict, con.execute(stmt).mappings().fetchall()))
 
-# Create the distributions
+# Create the distributions and reports
+neutral_reports = []
 neutral_dist = []
+good_reports = []
 good_dist = []
+bad_reports = []
 bad_dist = []
 for r in results:
-    if r['score'] is None:
+    if r['score'] is None or len(r['report']) == 0:
         continue
+    r['score'] = float(r['score'])
     s1 = r['species1']
     s2 = r['species2']
     score = float(r['score'])
     if (s1 in GOOD and s2 in GOOD[s1]) or (s2 in GOOD and s1 in GOOD[s2]):
         good_dist.append(score)
+        good_reports.append(r)
     elif (s1 in BAD and s2 in BAD[s1]) or (s2 in BAD and s1 in BAD[s2]):
         bad_dist.append(score)
+        bad_reports.append(r)
     elif (s1 in GOOD or s1 in BAD) and (s2 in GOOD or s2 in BAD):
         neutral_dist.append(score)
+        neutral_reports.append(r)
+
+# Write report files
+with open('validation/garden-neutral-reports.txt', 'w', encoding = 'utf-8') as file:
+    file.write(json.dumps(neutral_reports, indent = 4))
+with open('validation/garden-good-reports.txt', 'w', encoding = 'utf-8') as file:
+    file.write(json.dumps(good_reports, indent = 4))
+with open('validation/garden-bad-reports.txt', 'w', encoding = 'utf-8') as file:
+    file.write(json.dumps(bad_reports, indent = 4))
 
 # Percentage of "good" identified companions within a distribution
 def percent_good(dist):
-    percent = len(list(filter(lambda x: x <= 1.0, dist))) / len(dist)
+    percent = len(list(filter(lambda x: x <= 0, dist))) / len(dist)
     return round(percent * 10000) / 100
 
 # Statistical comparison between distributions (Wilcoxon rank-sum tests)
 sys.stdout.write('\u001b[1mp-values\u001b[0m\n')
 sys.stdout.write('Good companions vs neutral: \u001b[31m%s\u001b[0m\n' % (stats.ranksums(good_dist, neutral_dist, alternative = 'greater').pvalue))
 sys.stdout.write('Bad companions vs neutral: \u001b[31m%s\u001b[0m\n' % (stats.ranksums(bad_dist, neutral_dist, alternative = 'less').pvalue))
+sys.stdout.write('Bad companions vs good: \u001b[31m%s\u001b[0m\n' % (stats.ranksums(bad_dist, good_dist, alternative = 'less').pvalue))
 sys.stdout.write('Good companions percentage of good companions: \u001b[31m%s\u001b[0m%%\n' % (percent_good(good_dist)))
 sys.stdout.write('Good companions percentage of neutral companions: \u001b[31m%s\u001b[0m%%\n' % (percent_good(neutral_dist)))
 sys.stdout.write('Good companions percentage of bad companions: \u001b[31m%s\u001b[0m%%\n' % (percent_good(bad_dist)))
