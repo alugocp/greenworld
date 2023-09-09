@@ -292,7 +292,8 @@ stmt = sqlalchemy.select(
     plant_2_table.c.species.label('species2')
 ) \
 .join(plant_1_table, reports_table.c.plant1 == plant_1_table.c.id) \
-.join(plant_2_table, reports_table.c.plant2 == plant_2_table.c.id)
+.join(plant_2_table, reports_table.c.plant2 == plant_2_table.c.id) \
+.where(reports_table.c.score != None)
 
 with db.connect() as con:
     results = list(map(dict, con.execute(stmt).mappings().fetchall()))
@@ -305,8 +306,6 @@ good_dist = []
 bad_reports = []
 bad_dist = []
 for r in results:
-    if r['score'] is None or len(r['report']) == 0:
-        continue
     r['score'] = float(r['score'])
     s1 = r['species1']
     s2 = r['species2']

@@ -59,6 +59,15 @@ def get_range_union(report):
                 max_dist = dist2
     return min_dist, max_dist
 
+# Checks if the report has enough information to provide a compatibility score
+def is_valid_report(report):
+    if report is not None:
+        for r in report:
+            suggestion, _ = r
+            if suggestion is not None:
+                return True
+    return False
+
 # Calculate the overall compatibility score
 def calculate_compatibility_score(x, plant1, plant2):
     if plant1.spread and plant2.spread:
@@ -89,10 +98,11 @@ def main(gw: Greenworld):
                     rule(plant2, plant1)
                 report = utils.get_report()
                 union_min, union_max = get_range_union(report)
+                score = calculate_compatibility_score(union_min, plant1, plant2) if is_valid_report(report) else None
                 con.execute(reports_table.insert().values(
                     plant1 = plant2.id,
                     plant2 = plant1.id,
-                    score = calculate_compatibility_score(union_min, plant1, plant2),
+                    score = score,
                     range_union_min = union_min,
                     range_union_max = union_max,
                     report = report
