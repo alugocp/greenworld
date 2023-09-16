@@ -1,6 +1,7 @@
 # This module contains the core logic for the Greenworld algorithm.
 import math
 import sqlalchemy
+from greenworld.serial import deserialize_enum_list
 from greenworld.utils import AlgorithmUtils
 from greenworld.orm import (
     other_species_table,
@@ -132,7 +133,9 @@ def build(utils: AlgorithmUtils) -> None:
     @utils.rule()
     @utils.ensure(both = ['soil'])
     def match_soil(plant1, plant2):
-        if plant1.soil != plant2.soil:
+        soils1 = deserialize_enum_list(plant1.soil)
+        soils2 = deserialize_enum_list(plant2.soil)
+        if not any(s1 in soils2 for s1 in soils1):
             dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 2
             dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
             return dist, f'{plant1.name} and {plant2.name} prefer different types of soil'

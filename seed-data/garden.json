@@ -11,7 +11,7 @@
             "root_spread": ["12 in", "12 in"],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [5.5, 7.0],
             "drainage": "Drainage.WELL_DRAINED",
             "ecology": [
@@ -38,7 +38,7 @@
             "root_spread": ["18 in", "18 in"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [6.0, 6.5],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
@@ -58,7 +58,7 @@
             "root_spread": ["8 in", "12 in"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [5.8, 6.5],
             "drainage": "Drainage.WELL_DRAINED",
             "ecology": [
@@ -89,7 +89,7 @@
             "root_spread": ["12 in", "18 in"],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [6.0, 7.0],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
@@ -108,7 +108,7 @@
             "root_spread": ["8 in", "12 in"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [6.0, 7.5],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
@@ -127,7 +127,7 @@
             "root_spread": ["12 in", "12 in"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [6.0, 7.5],
             "drainage": "Drainage.WELL_DRAINED",
             "ecology": [
@@ -152,7 +152,7 @@
             "root_spread": ["6 in", "12 in"],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [6.0, 7.0],
             "drainage": "Drainage.WELL_DRAINED",
             "ecology": [
@@ -174,7 +174,7 @@
             "root_spread": ["12 in", "18 in"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [6.5, 7.0],
             "drainage": "Drainage.WELL_DRAINED",
             "ecology": [
@@ -196,7 +196,7 @@
             "root_spread": ["12 in", "14 in"],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [5.5, 6.8],
             "drainage": "Drainage.WELL_DRAINED",
             "ecology": [
@@ -220,7 +220,7 @@
             "root_spread": ["18 ft", "21 ft"],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [6.0, 7.5],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
@@ -238,7 +238,7 @@
             "spread": ["18 in", "24 in"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.PARTIAL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [6.0, 7.5],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
@@ -257,7 +257,7 @@
             "root_spread": ["16 in", "24 in"],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [6.5, 6.8],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
@@ -277,7 +277,7 @@
             "length": ["1 ft", "10 ft"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.SAND",
+            "soil": ["Soil.SAND"],
             "pH": [6.0, 7.5],
             "drainage": "Drainage.SOMEWHAT_EXCESSIVELY_DRAINED",
             "citations": {
@@ -295,7 +295,7 @@
             "spread": ["6 in", "24 in"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.SAND",
+            "soil": ["Soil.SAND"],
             "pH": [6.0, 7.0],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
@@ -313,7 +313,7 @@
             "root_spread": ["4 ft", "7 ft"],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [6.5, 7.0],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
@@ -332,7 +332,7 @@
             "root_spread": ["8 in", "18 in"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": "Soil.LOAM",
+            "soil": ["Soil.LOAM"],
             "pH": [6.2, 6.8],
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {

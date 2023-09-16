@@ -51,7 +51,7 @@ json_schema = Schema({
             Optional('sun'): expand_enum(defs.Sun),
 
             # Python enum value from greenworld/defs.py's Soil
-            Optional('soil'): expand_enum(defs.Soil),
+            Optional('soil'): [expand_enum(defs.Soil)],
 
             # Range of two values where each one is a valid pH value (a decimal)
             Optional('pH'): And([float], lambda x: len(x) == 2 and x[0] >= 0 and x[1] <= 14 and x[0] <= x[1]),

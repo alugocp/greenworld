@@ -33,10 +33,10 @@ class Sun(IntEnum):
 
 @unique
 class Soil(IntEnum):
-    SAND = 0
-    CLAY = 1
-    SILT = 2
-    LOAM = 3
+    SAND = 1
+    CLAY = 2
+    SILT = 4
+    LOAM = 8
 
 @unique
 class Drainage(IntEnum):

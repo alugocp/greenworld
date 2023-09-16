@@ -57,6 +57,13 @@ def parse_enum(name):
     except Exception as e:
         raise ValueError(f'Unknown enum \'{name}\'') from e
 
+# Parses a list of enums into their summation value
+def parse_enum_range(enums):
+    sum = 0
+    for name in enums:
+        sum += parse_enum(name)
+    return sum
+
 # Process plant table bulk data entry for a JSON file
 def enter_data(gw: Greenworld, db, filename):
     gw.log('')
@@ -104,12 +111,16 @@ def enter_data(gw: Greenworld, db, filename):
             # Map general properties of plant data
             for col, val in values.items():
 
-                # Convert enum references to their integer values
+                # Convert singular enum references to their integer values
                 if isinstance(orm.plants_table.c[col].type, sqlalchemy.Integer) and isinstance(val, str):
                     values[col] = parse_enum(val)
 
+                # Convert multiple enum references to their summed integer values
+                if isinstance(orm.plants_table.c[col].type, sqlalchemy.Integer) and isinstance(val, list) and isinstance(val[0], str):
+                    values[col] = parse_enum_range(val)
+
                 # Convert nonstandard units to internal standard units
-                if isinstance(orm.plants_table.c[col].type, NumericRangeType) and isinstance(val[0], str):
+                if isinstance(orm.plants_table.c[col].type, NumericRangeType) and isinstance(val, list) and isinstance(val[0], str):
                     values[col][0] = convert_to_unit(val[0])
                     values[col][1] = convert_to_unit(val[1])
 
