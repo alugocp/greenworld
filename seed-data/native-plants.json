@@ -185,6 +185,7 @@
             "species": "apios americana",
             "family": "fabaceae",
             "growth_habit": "GrowthHabit.VINE",
+            "spread": ["12 in", "18 in"],
             "length": ["8 ft", "16 ft"],
             "lightweight": true,
             "nitrogen": "Nitrogen.FIXER",
@@ -194,7 +195,8 @@
             "drainage": "Drainage.WELL_DRAINED",
             "citations": {
                 "26": ["length", "sun", "soil", "drainage"],
-                "27": ["pH"]
+                "27": ["pH"],
+                "38": ["spread"]
             }
         },
         {
@@ -406,6 +408,10 @@
         {
             "id": 37,
             "citation": "https://www.thespruce.com/stop-spreading-of-trumpet-vines-2132896"
+        },
+        {
+            "id": 38,
+            "citation": "https://www.smartgardener.com/plants/5372-bean-fortex-pole-bean-phaseolus-vulgaris/overview"
         }
     ]
 }
