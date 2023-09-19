@@ -13,7 +13,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [5.8, 6.8],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "citations": {
                 "1": ["height", "sun"],
                 "2": ["pH", "drainage"],
@@ -35,7 +35,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [5.5, 6.5],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "ecology": [
                 { "species": "myzus persicae", "relationship": "Ecology.PREDATOR", "citation": 8 },
                 { "species": "Aphis gossypii", "relationship": "Ecology.PREDATOR", "citation": 8 },
@@ -87,7 +87,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [5.5, 7.0],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "citations": {
                 "6": ["length", "sun", "soil", "pH", "drainage"],
                 "10": ["spread"],

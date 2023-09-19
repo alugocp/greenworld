@@ -151,7 +151,9 @@ def build(utils: AlgorithmUtils) -> None:
     @utils.rule()
     @utils.ensure(both = ['drainage'])
     def match_drainage(plant1, plant2):
-        if plant1.drainage != plant2.drainage:
+        drainages1 = deserialize_enum_list(plant1.drainage)
+        drainages2 = deserialize_enum_list(plant2.drainage)
+        if not any(d1 in drainages2 for d1 in drainages1):
             dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 2
             dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
             return dist, f'{plant1.name} and {plant2.name} prefer different soil drainage'

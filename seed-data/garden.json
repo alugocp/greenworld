@@ -13,7 +13,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [5.5, 7.0],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "ecology": [
                 { "species": "septoria lycopersici", "relationship": "Ecology.PATHOGEN", "citation": 1 },
                 { "species": "alternaria linariae", "relationship": "Ecology.PATHOGEN", "citation": 1 },
@@ -40,7 +40,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [6.0, 6.5],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "citations": {
                 "5": ["growth_habit", "nitrogen", "sun", "soil", "drainage"],
                 "6": ["spread", "length"],
@@ -60,7 +60,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [5.8, 6.5],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "ecology": [
                 { "species": "aphidoidea", "relationship": "Ecology.PREDATOR", "citation": 8 },
                 { "species": "alternaria solani", "relationship": "Ecology.PATHOGEN", "citation": 8 },
@@ -91,7 +91,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [6.0, 7.0],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "citations": {
                 "10": ["spread", "sun", "soil", "pH", "drainage"],
                 "11": ["height", "root_spread", "nitrogen"]
@@ -110,7 +110,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [6.0, 7.5],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "citations": {
                 "12": ["height", "spread", "nitrogen", "sun", "soil", "pH", "drainage"],
                 "13": ["root_spread"]
@@ -129,7 +129,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [6.0, 7.5],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "ecology": [
                 { "species": "fabaceae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 14 },
                 { "species": "delia antiqua", "relationship": "Ecology.PREDATOR", "citation": 14 },
@@ -154,7 +154,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [6.0, 7.0],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "ecology": [
                 { "species": "fabaceae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 16 }
             ],
@@ -176,7 +176,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [6.5, 7.0],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "ecology": [
                 { "species": "septoria lycopersici", "relationship": "Ecology.PATHOGEN", "citation": 18 }
             ],
@@ -198,7 +198,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [5.5, 6.8],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "ecology": [
                 { "species": "plantae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 23 },
                 { "species": "anethum graveolens", "relationship": "Ecology.NO_ALLELOPATHY", "citation": 23 }
@@ -220,9 +220,9 @@
             "root_spread": ["18 ft", "21 ft"],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
+            "soil": ["Soil.LOAM", "Soil.SAND"],
             "pH": [6.0, 7.5],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED", "Drainage.SOMEWHAT_EXCESSIVELY_DRAINED"],
             "citations": {
                 "24": ["spread", "nitrogen", "sun", "soil", "pH", "drainage"],
                 "25": ["length", "root_spread"]
@@ -240,7 +240,7 @@
             "sun": "Sun.PARTIAL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [6.0, 7.5],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "citations": {
                 "26": ["height", "spread", "nitrogen", "sun", "soil", "drainage"],
                 "27": ["pH"]
@@ -259,7 +259,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [6.5, 6.8],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "citations": {
                 "28": ["sun", "soil", "pH", "drainage"],
                 "29": ["height", "spread"],
@@ -277,9 +277,9 @@
             "length": ["1 ft", "10 ft"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.SAND"],
+            "soil": ["Soil.SAND", "Soil.LOAM"],
             "pH": [6.0, 7.5],
-            "drainage": "Drainage.SOMEWHAT_EXCESSIVELY_DRAINED",
+            "drainage": ["Drainage.SOMEWHAT_EXCESSIVELY_DRAINED"],
             "citations": {
                 "32": ["spread", "nitrogen", "sun", "soil", "drainage"],
                 "33": ["pH"]
@@ -295,9 +295,9 @@
             "spread": ["6 in", "24 in"],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.SAND"],
+            "soil": ["Soil.SAND", "Soil.LOAM"],
             "pH": [6.0, 7.0],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "citations": {
                 "34": ["height", "spread", "nitrogen", "sun", "soil", "pH", "drainage"]
             }
@@ -315,7 +315,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [6.5, 7.0],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "citations": {
                 "35": ["spread", "nitrogen", "sun", "soil", "pH", "drainage"],
                 "36": ["length", "root_spread"]
@@ -334,7 +334,7 @@
             "sun": "Sun.FULL_SUN",
             "soil": ["Soil.LOAM"],
             "pH": [6.2, 6.8],
-            "drainage": "Drainage.WELL_DRAINED",
+            "drainage": ["Drainage.WELL_DRAINED"],
             "citations": {
                 "37": ["nitrogen", "sun", "soil", "pH", "drainage"],
                 "38": ["height", "spread"]

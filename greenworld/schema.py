@@ -57,7 +57,7 @@ json_schema = Schema({
             Optional('pH'): And([float], lambda x: len(x) == 2 and x[0] >= 0 and x[1] <= 14 and x[0] <= x[1]),
 
             # Python enum value from greenworld/defs.py's Drainage
-            Optional('drainage'): expand_enum(defs.Drainage),
+            Optional('drainage'): [expand_enum(defs.Drainage)],
 
             # Maps the works_cited list to data within this plant entry
             'citations': {
