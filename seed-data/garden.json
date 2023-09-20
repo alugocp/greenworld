@@ -6,25 +6,234 @@
             "species": "solanum lycopersicum",
             "family": "solanaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["3 ft", "5 ft"],
-            "spread": ["2 ft", "2 ft"],
-            "root_spread": ["12 in", "12 in"],
+            "height": [
+                "3 ft",
+                "5 ft"
+            ],
+            "spread": [
+                "2 ft",
+                "2 ft"
+            ],
+            "root_spread": [
+                "12 in",
+                "12 in"
+            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [5.5, 7.0],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                5.5,
+                7.0
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "ecology": [
-                { "species": "septoria lycopersici", "relationship": "Ecology.PATHOGEN", "citation": 1 },
-                { "species": "alternaria linariae", "relationship": "Ecology.PATHOGEN", "citation": 1 },
-                { "species": "xanthomonas vesicatoria", "relationship": "Ecology.PATHOGEN", "citation": 1 },
-                { "species": "pseudomonas syringae", "relationship": "Ecology.PATHOGEN", "citation": 1 }
+                {
+                    "species": "alternaria alternata",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "alternaria solani",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "clavibacter michiganensis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "colletotrichum acutatum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "colletotrichum coccodes",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "colletotrichum gloeosporioides",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "fulvia fulva",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "fusarium fujikuroi",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "fusarium graminearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "globodera rostochiensis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "hyaloperonospora arabidopsidis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "macrosiphum euphorbiae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "meloidogyne javanica",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "phytophthora cactorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "phytophthora capsici",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "phytophthora infestans",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "phytophthora parasitica",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pseudocercospora fijiensis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pseudocercospora fuligena",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pseudomonas cichorii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pseudomonas savastanoi",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pseudomonas syringae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pseudopyrenochaeta lycopersici",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pythium aphanidermatum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "radopholus similis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "ralstonia solanacearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "salmonella enterica",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "septoria lycopersici",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "trichoderma virens",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "verticillium dahliae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "verticillium longisporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "xanthomonas campestris",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "xanthomonas euvesicatoria",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "xanthomonas perforans",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                }
             ],
             "citations": {
-                "1": ["height"],
-                "2": ["growth_habit", "nitrogen", "sun"],
-                "3": ["spread", "soil", "drainage"],
-                "4": ["root_spread"]
+                "1": [
+                    "height"
+                ],
+                "2": [
+                    "growth_habit",
+                    "nitrogen",
+                    "sun"
+                ],
+                "3": [
+                    "spread",
+                    "soil",
+                    "drainage"
+                ],
+                "4": [
+                    "root_spread"
+                ]
             }
         },
         {
@@ -33,18 +242,45 @@
             "species": "ipomoea batatas",
             "family": "convolvulaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "spread": ["5 in", "12 in"],
-            "length": ["8 ft", "10 ft"],
-            "root_spread": ["18 in", "18 in"],
+            "spread": [
+                "5 in",
+                "12 in"
+            ],
+            "length": [
+                "8 ft",
+                "10 ft"
+            ],
+            "root_spread": [
+                "18 in",
+                "18 in"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.0, 6.5],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.0,
+                6.5
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "5": ["growth_habit", "nitrogen", "sun", "soil", "drainage"],
-                "6": ["spread", "length"],
-                "7": ["pH"]
+                "5": [
+                    "growth_habit",
+                    "nitrogen",
+                    "sun",
+                    "soil",
+                    "drainage"
+                ],
+                "6": [
+                    "spread",
+                    "length"
+                ],
+                "7": [
+                    "pH"
+                ]
             }
         },
         {
@@ -53,29 +289,140 @@
             "species": "solanum tuberosum",
             "family": "solanaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["1.5 ft", "3 ft"],
-            "spread": ["1.5 ft", "3 ft"],
-            "root_spread": ["8 in", "12 in"],
+            "height": [
+                "1.5 ft",
+                "3 ft"
+            ],
+            "spread": [
+                "1.5 ft",
+                "3 ft"
+            ],
+            "root_spread": [
+                "8 in",
+                "12 in"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [5.8, 6.5],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                5.8,
+                6.5
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "ecology": [
-                { "species": "aphidoidea", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "alternaria solani", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "phytophthora infestans", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "leptinotarsa decemlineata", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "alticini", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "cicadellidae", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "streptomyces scabies", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "manduca quinquemaculata", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "aleyrodidae", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "elateridae", "relationship": "Ecology.PREDATOR", "citation": 8 }
+                {
+                    "species": "agrobacterium tumefaciens",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "alternaria solani",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "burkholderia glumae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "dickeya dadantii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "dickeya solani",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "fusarium sambucinum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "globodera pallida",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pectobacterium atrosepticum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pectobacterium brasiliense",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pectobacterium carotovorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pectobacterium wasabiae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "phytophthora infestans",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "phytophthora sojae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "ralstonia solanacearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "streptomyces scabiei",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "synchytrium endobioticum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "verticillium dahliae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                }
             ],
             "citations": {
-                "8": ["sun", "pH"],
-                "9": ["height", "spread", "root_spread", "nitrogen", "soil", "drainage"]
+                "8": [
+                    "sun",
+                    "pH"
+                ],
+                "9": [
+                    "height",
+                    "spread",
+                    "root_spread",
+                    "nitrogen",
+                    "soil",
+                    "drainage"
+                ]
             }
         },
         {
@@ -84,17 +431,43 @@
             "species": "brassica oleracea var. italica",
             "family": "brassicaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["18 in", "36 in"],
-            "spread": ["18 in", "18 in"],
-            "root_spread": ["12 in", "18 in"],
+            "height": [
+                "18 in",
+                "36 in"
+            ],
+            "spread": [
+                "18 in",
+                "18 in"
+            ],
+            "root_spread": [
+                "12 in",
+                "18 in"
+            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.0, 7.0],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.0,
+                7.0
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "10": ["spread", "sun", "soil", "pH", "drainage"],
-                "11": ["height", "root_spread", "nitrogen"]
+                "10": [
+                    "spread",
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ],
+                "11": [
+                    "height",
+                    "root_spread",
+                    "nitrogen"
+                ]
             }
         },
         {
@@ -103,17 +476,43 @@
             "species": "ocimum basilicum",
             "family": "lamiaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["12 in", "24 in"],
-            "spread": ["10 in", "12 in"],
-            "root_spread": ["8 in", "12 in"],
+            "height": [
+                "12 in",
+                "24 in"
+            ],
+            "spread": [
+                "10 in",
+                "12 in"
+            ],
+            "root_spread": [
+                "8 in",
+                "12 in"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.0, 7.5],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.0,
+                7.5
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "12": ["height", "spread", "nitrogen", "sun", "soil", "pH", "drainage"],
-                "13": ["root_spread"]
+                "12": [
+                    "height",
+                    "spread",
+                    "nitrogen",
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ],
+                "13": [
+                    "root_spread"
+                ]
             }
         },
         {
@@ -122,23 +521,65 @@
             "species": "allium sativum",
             "family": "amaryllidaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["18 in", "24 in"],
-            "spread": ["4 in", "8 in"],
-            "root_spread": ["12 in", "12 in"],
+            "height": [
+                "18 in",
+                "24 in"
+            ],
+            "spread": [
+                "4 in",
+                "8 in"
+            ],
+            "root_spread": [
+                "12 in",
+                "12 in"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.0, 7.5],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.0,
+                7.5
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "ecology": [
-                { "species": "fabaceae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 14 },
-                { "species": "delia antiqua", "relationship": "Ecology.PREDATOR", "citation": 14 },
-                { "species": "thrips tabaci", "relationship": "Ecology.PREDATOR", "citation": 14 },
-                { "species": "frankliniella occidentalis", "relationship": "Ecology.PREDATOR", "citation": 15 }
+                {
+                    "species": "fabaceae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 14
+                },
+                {
+                    "species": "delia antiqua",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 14
+                },
+                {
+                    "species": "thrips tabaci",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 14
+                },
+                {
+                    "species": "frankliniella occidentalis",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 15
+                }
             ],
             "citations": {
-                "14": ["spread", "nitrogen", "sun", "soil", "drainage"],
-                "15": ["height", "root_spread", "pH"]
+                "14": [
+                    "spread",
+                    "nitrogen",
+                    "sun",
+                    "soil",
+                    "drainage"
+                ],
+                "15": [
+                    "height",
+                    "root_spread",
+                    "pH"
+                ]
             }
         },
         {
@@ -147,20 +588,75 @@
             "species": "allium cepa",
             "family": "amaryllidaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["12 in", "18 in"],
-            "spread": ["6 in", "12 in"],
-            "root_spread": ["6 in", "12 in"],
+            "height": [
+                "12 in",
+                "18 in"
+            ],
+            "spread": [
+                "6 in",
+                "12 in"
+            ],
+            "root_spread": [
+                "6 in",
+                "12 in"
+            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.0, 7.0],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.0,
+                7.0
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "ecology": [
-                { "species": "fabaceae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 16 }
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "burkholderia cenocepacia",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "burkholderia glumae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "magnaporthe oryzae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pantoea ananatis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                }
             ],
             "citations": {
-                "16": ["height", "spread", "root_spread", "nitrogen", "sun", "soil", "drainage"],
-                "17": ["pH"]
+                "16": [
+                    "height",
+                    "spread",
+                    "root_spread",
+                    "nitrogen",
+                    "sun",
+                    "soil",
+                    "drainage"
+                ],
+                "17": [
+                    "pH"
+                ]
             }
         },
         {
@@ -169,20 +665,50 @@
             "species": "anethum graveolens",
             "family": "apiaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["2 ft", "4 ft"],
-            "spread": ["10 in", "12 in"],
-            "root_spread": ["12 in", "18 in"],
+            "height": [
+                "2 ft",
+                "4 ft"
+            ],
+            "spread": [
+                "10 in",
+                "12 in"
+            ],
+            "root_spread": [
+                "12 in",
+                "18 in"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.5, 7.0],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.5,
+                7.0
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "ecology": [
-                { "species": "septoria lycopersici", "relationship": "Ecology.PATHOGEN", "citation": 18 }
+                {
+                    "species": "septoria lycopersici",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 18
+                }
             ],
             "citations": {
-                "18": ["spread", "sun", "soil", "pH", "drainage"],
-                "19": ["height", "root_spread", "nitrogen"]
+                "18": [
+                    "spread",
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ],
+                "19": [
+                    "height",
+                    "root_spread",
+                    "nitrogen"
+                ]
             }
         },
         {
@@ -191,22 +717,57 @@
             "species": "foeniculum vulgare",
             "family": "apiaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["4 ft", "6 ft"],
-            "spread": ["1.5 ft", "3 ft"],
-            "root_spread": ["12 in", "14 in"],
+            "height": [
+                "4 ft",
+                "6 ft"
+            ],
+            "spread": [
+                "1.5 ft",
+                "3 ft"
+            ],
+            "root_spread": [
+                "12 in",
+                "14 in"
+            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [5.5, 6.8],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                5.5,
+                6.8
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "ecology": [
-                { "species": "plantae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 23 },
-                { "species": "anethum graveolens", "relationship": "Ecology.NO_ALLELOPATHY", "citation": 23 }
+                {
+                    "species": "plantae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 23
+                },
+                {
+                    "species": "anethum graveolens",
+                    "relationship": "Ecology.NO_ALLELOPATHY",
+                    "citation": 23
+                }
             ],
             "citations": {
-                "20": ["nitrogen", "sun", "soil", "drainage"],
-                "21": ["height", "spread", "pH"],
-                "22": ["root_spread"]
+                "20": [
+                    "nitrogen",
+                    "sun",
+                    "soil",
+                    "drainage"
+                ],
+                "21": [
+                    "height",
+                    "spread",
+                    "pH"
+                ],
+                "22": [
+                    "root_spread"
+                ]
             }
         },
         {
@@ -215,18 +776,58 @@
             "species": "citrullus lanatus",
             "family": "cucurbitaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "spread": ["2 ft", "3 ft"],
-            "length": ["15 ft", "18 ft"],
-            "root_spread": ["18 ft", "21 ft"],
+            "spread": [
+                "2 ft",
+                "3 ft"
+            ],
+            "length": [
+                "15 ft",
+                "18 ft"
+            ],
+            "root_spread": [
+                "18 ft",
+                "21 ft"
+            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM", "Soil.SAND"],
-            "pH": [6.0, 7.5],
-            "drainage": ["Drainage.WELL_DRAINED", "Drainage.SOMEWHAT_EXCESSIVELY_DRAINED"],
+            "soil": [
+                "Soil.LOAM",
+                "Soil.SAND"
+            ],
+            "pH": [
+                6.0,
+                7.5
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED",
+                "Drainage.SOMEWHAT_EXCESSIVELY_DRAINED"
+            ],
             "citations": {
-                "24": ["spread", "nitrogen", "sun", "soil", "pH", "drainage"],
-                "25": ["length", "root_spread"]
-            }
+                "24": [
+                    "spread",
+                    "nitrogen",
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ],
+                "25": [
+                    "length",
+                    "root_spread"
+                ]
+            },
+            "ecology": [
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "verticillium dahliae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                }
+            ]
         },
         {
             "id": 11,
@@ -234,16 +835,38 @@
             "species": "mentha spp.",
             "family": "lamiaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["12 in", "18 in"],
-            "spread": ["18 in", "24 in"],
+            "height": [
+                "12 in",
+                "18 in"
+            ],
+            "spread": [
+                "18 in",
+                "24 in"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.PARTIAL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.0, 7.5],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.0,
+                7.5
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "26": ["height", "spread", "nitrogen", "sun", "soil", "drainage"],
-                "27": ["pH"]
+                "26": [
+                    "height",
+                    "spread",
+                    "nitrogen",
+                    "sun",
+                    "soil",
+                    "drainage"
+                ],
+                "27": [
+                    "pH"
+                ]
             }
         },
         {
@@ -252,19 +875,47 @@
             "species": "brassica oleracea var. gongylodes",
             "family": "brassicaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["6 in", "18 in"],
-            "spread": ["12 in", "18 in"],
-            "root_spread": ["16 in", "24 in"],
+            "height": [
+                "6 in",
+                "18 in"
+            ],
+            "spread": [
+                "12 in",
+                "18 in"
+            ],
+            "root_spread": [
+                "16 in",
+                "24 in"
+            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.5, 6.8],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.5,
+                6.8
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "28": ["sun", "soil", "pH", "drainage"],
-                "29": ["height", "spread"],
-                "30": ["nitrogen"],
-                "31": ["root_spread"]
+                "28": [
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ],
+                "29": [
+                    "height",
+                    "spread"
+                ],
+                "30": [
+                    "nitrogen"
+                ],
+                "31": [
+                    "root_spread"
+                ]
             }
         },
         {
@@ -273,16 +924,38 @@
             "species": "tropaeolum majus",
             "family": "tropaeolaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "spread": ["10 cm", "30 cm"],
-            "length": ["1 ft", "10 ft"],
+            "spread": [
+                "10 cm",
+                "30 cm"
+            ],
+            "length": [
+                "1 ft",
+                "10 ft"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.SAND", "Soil.LOAM"],
-            "pH": [6.0, 7.5],
-            "drainage": ["Drainage.SOMEWHAT_EXCESSIVELY_DRAINED"],
+            "soil": [
+                "Soil.SAND",
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.0,
+                7.5
+            ],
+            "drainage": [
+                "Drainage.SOMEWHAT_EXCESSIVELY_DRAINED"
+            ],
             "citations": {
-                "32": ["spread", "nitrogen", "sun", "soil", "drainage"],
-                "33": ["pH"]
+                "32": [
+                    "spread",
+                    "nitrogen",
+                    "sun",
+                    "soil",
+                    "drainage"
+                ],
+                "33": [
+                    "pH"
+                ]
             }
         },
         {
@@ -291,15 +964,37 @@
             "species": "tagetes spp.",
             "family": "asteraceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["4 in", "48 in"],
-            "spread": ["6 in", "24 in"],
+            "height": [
+                "4 in",
+                "48 in"
+            ],
+            "spread": [
+                "6 in",
+                "24 in"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.SAND", "Soil.LOAM"],
-            "pH": [6.0, 7.0],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.SAND",
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.0,
+                7.0
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "34": ["height", "spread", "nitrogen", "sun", "soil", "pH", "drainage"]
+                "34": [
+                    "height",
+                    "spread",
+                    "nitrogen",
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ]
             }
         },
         {
@@ -308,18 +1003,76 @@
             "species": "cucumis sativus",
             "family": "cucurbitaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "spread": ["3 ft", "5 ft"],
-            "length": ["4 ft", "6 ft"],
-            "root_spread": ["4 ft", "7 ft"],
+            "spread": [
+                "3 ft",
+                "5 ft"
+            ],
+            "length": [
+                "4 ft",
+                "6 ft"
+            ],
+            "root_spread": [
+                "4 ft",
+                "7 ft"
+            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.5, 7.0],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.5,
+                7.0
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "35": ["spread", "nitrogen", "sun", "soil", "pH", "drainage"],
-                "36": ["length", "root_spread"]
-            }
+                "35": [
+                    "spread",
+                    "nitrogen",
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ],
+                "36": [
+                    "length",
+                    "root_spread"
+                ]
+            },
+            "ecology": [
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "colletotrichum lagenaria",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "colletotrichum orbiculare",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "pseudomonas cichorii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                }
+            ]
         },
         {
             "id": 16,
@@ -327,17 +1080,42 @@
             "species": "coriandrum sativum",
             "family": "apiaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["12 in", "24 in"],
-            "spread": ["6 in", "12 in"],
-            "root_spread": ["8 in", "18 in"],
+            "height": [
+                "12 in",
+                "24 in"
+            ],
+            "spread": [
+                "6 in",
+                "12 in"
+            ],
+            "root_spread": [
+                "8 in",
+                "18 in"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.2, 6.8],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.2,
+                6.8
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "37": ["nitrogen", "sun", "soil", "pH", "drainage"],
-                "38": ["height", "spread"]
+                "37": [
+                    "nitrogen",
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ],
+                "38": [
+                    "height",
+                    "spread"
+                ]
             }
         }
     ],
@@ -397,8 +1175,7 @@
         {
             "species": "elateridae",
             "name": "Wireworm"
-        }
-        ,
+        },
         {
             "species": "delia antiqua",
             "name": "Onion Maggots"
@@ -406,6 +1183,210 @@
         {
             "species": "thrips tabaci",
             "name": "Onion Thrips"
+        },
+        {
+            "species": "alternaria alternata",
+            "name": "unknown"
+        },
+        {
+            "species": "botrytis cinerea",
+            "name": "unknown"
+        },
+        {
+            "species": "clavibacter michiganensis",
+            "name": "unknown"
+        },
+        {
+            "species": "colletotrichum acutatum",
+            "name": "unknown"
+        },
+        {
+            "species": "colletotrichum coccodes",
+            "name": "unknown"
+        },
+        {
+            "species": "colletotrichum gloeosporioides",
+            "name": "unknown"
+        },
+        {
+            "species": "fulvia fulva",
+            "name": "unknown"
+        },
+        {
+            "species": "fusarium fujikuroi",
+            "name": "unknown"
+        },
+        {
+            "species": "fusarium graminearum",
+            "name": "unknown"
+        },
+        {
+            "species": "fusarium oxysporum",
+            "name": "unknown"
+        },
+        {
+            "species": "globodera rostochiensis",
+            "name": "unknown"
+        },
+        {
+            "species": "hyaloperonospora arabidopsidis",
+            "name": "unknown"
+        },
+        {
+            "species": "macrosiphum euphorbiae",
+            "name": "unknown"
+        },
+        {
+            "species": "meloidogyne javanica",
+            "name": "unknown"
+        },
+        {
+            "species": "phytophthora cactorum",
+            "name": "unknown"
+        },
+        {
+            "species": "phytophthora capsici",
+            "name": "unknown"
+        },
+        {
+            "species": "phytophthora parasitica",
+            "name": "unknown"
+        },
+        {
+            "species": "pseudocercospora fijiensis",
+            "name": "unknown"
+        },
+        {
+            "species": "pseudocercospora fuligena",
+            "name": "unknown"
+        },
+        {
+            "species": "pseudomonas cichorii",
+            "name": "unknown"
+        },
+        {
+            "species": "pseudomonas savastanoi",
+            "name": "unknown"
+        },
+        {
+            "species": "pseudopyrenochaeta lycopersici",
+            "name": "unknown"
+        },
+        {
+            "species": "pythium aphanidermatum",
+            "name": "unknown"
+        },
+        {
+            "species": "radopholus similis",
+            "name": "unknown"
+        },
+        {
+            "species": "ralstonia solanacearum",
+            "name": "unknown"
+        },
+        {
+            "species": "salmonella enterica",
+            "name": "unknown"
+        },
+        {
+            "species": "sclerotinia sclerotiorum",
+            "name": "unknown"
+        },
+        {
+            "species": "trichoderma virens",
+            "name": "unknown"
+        },
+        {
+            "species": "verticillium dahliae",
+            "name": "unknown"
+        },
+        {
+            "species": "verticillium longisporum",
+            "name": "unknown"
+        },
+        {
+            "species": "xanthomonas campestris",
+            "name": "unknown"
+        },
+        {
+            "species": "xanthomonas euvesicatoria",
+            "name": "unknown"
+        },
+        {
+            "species": "xanthomonas perforans",
+            "name": "unknown"
+        },
+        {
+            "species": "agrobacterium tumefaciens",
+            "name": "unknown"
+        },
+        {
+            "species": "burkholderia glumae",
+            "name": "unknown"
+        },
+        {
+            "species": "dickeya dadantii",
+            "name": "unknown"
+        },
+        {
+            "species": "dickeya solani",
+            "name": "unknown"
+        },
+        {
+            "species": "fusarium sambucinum",
+            "name": "unknown"
+        },
+        {
+            "species": "globodera pallida",
+            "name": "unknown"
+        },
+        {
+            "species": "pectobacterium atrosepticum",
+            "name": "unknown"
+        },
+        {
+            "species": "pectobacterium brasiliense",
+            "name": "unknown"
+        },
+        {
+            "species": "pectobacterium carotovorum",
+            "name": "unknown"
+        },
+        {
+            "species": "pectobacterium wasabiae",
+            "name": "unknown"
+        },
+        {
+            "species": "phytophthora sojae",
+            "name": "unknown"
+        },
+        {
+            "species": "streptomyces scabiei",
+            "name": "unknown"
+        },
+        {
+            "species": "synchytrium endobioticum",
+            "name": "unknown"
+        },
+        {
+            "species": "burkholderia cenocepacia",
+            "name": "unknown"
+        },
+        {
+            "species": "magnaporthe oryzae",
+            "name": "unknown"
+        },
+        {
+            "species": "pantoea ananatis",
+            "name": "unknown"
+        },
+        {
+            "species": "colletotrichum lagenaria",
+            "name": "unknown"
+        },
+        {
+            "species": "colletotrichum orbiculare",
+            "name": "unknown"
         }
     ],
     "works_cited": [
@@ -480,8 +1461,7 @@
         {
             "id": 18,
             "citation": "https://www.almanac.com/plant/dill"
-        }
-        ,
+        },
         {
             "id": 19,
             "citation": "https://patiogardenlife.com/how-to-grow-dill-in-a-pot"
@@ -561,6 +1541,10 @@
         {
             "id": 38,
             "citation": "https://veggieharvest.com/herbs/cilantro-growing-and-harvest-information"
+        },
+        {
+            "id": 39,
+            "citation": "http://www.phi-base.org/searchFacet.htm?queryTerm="
         }
     ]
 }

@@ -79,3 +79,13 @@ These commands generate statistical values that validate the algorithm's accurac
 - `make validate/sisters` generates error values for various traditional three sisters configurations
 - `make validate/juglone` calculates error for walnut allelopathic range suggestion
 - `make validate/garden` compares distributions for expected good, bad and neutral companions
+
+### Project Navigation
+- `frontend`: TypeScript code for the Greenworld browser-based UI
+- `greenworld`: Greenworld code and maintenance scripts
+- `journal`: Notes used to aid development
+- `referenced-data`: Datasets used to feed `seed-data`
+- `scripts`: Miscellaneous scripts that don't fit anywhere else
+- `seed-data`: Data used to seed Greenworld instances
+- `server`: Greenworld web server
+- `validation`: Statistical validation tests

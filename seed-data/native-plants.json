@@ -6,22 +6,58 @@
             "species": "helianthus annuus",
             "family": "asteraceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["7 ft", "11 ft"],
-            "spread": ["2 ft", "2 ft"],
-            "root_spread": ["1 ft", "3 ft"],
+            "height": [
+                "7 ft",
+                "11 ft"
+            ],
+            "spread": [
+                "2 ft",
+                "2 ft"
+            ],
+            "root_spread": [
+                "1 ft",
+                "3 ft"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "pH": [5.5, 7.8],
-            "drainage": ["Drainage.SOMEWHAT_EXCESSIVELY_DRAINED"],
+            "pH": [
+                5.5,
+                7.8
+            ],
+            "drainage": [
+                "Drainage.SOMEWHAT_EXCESSIVELY_DRAINED"
+            ],
             "citations": {
-                "1": ["sun"],
-                "2": ["height", "spread"],
-                "3": ["pH"],
-                "4": ["root_spread"]
+                "1": [
+                    "sun"
+                ],
+                "2": [
+                    "height",
+                    "spread"
+                ],
+                "3": [
+                    "pH"
+                ],
+                "4": [
+                    "root_spread"
+                ]
             },
             "ecology": [
-                { "species": "plantae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 30 },
-                { "species": "gramineae", "relationship": "Ecology.NO_ALLELOPATHY", "citation": 30 }
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                },
+                {
+                    "species": "verticillium dahliae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 39
+                }
             ]
         },
         {
@@ -30,18 +66,41 @@
             "species": "passiflora incarnata",
             "family": "passifloraceae",
             "growth_habit": "GrowthHabit.VINE",
-            "spread": ["6 ft", "8 ft"],
-            "length": ["5 ft", "25 ft"],
+            "spread": [
+                "6 ft",
+                "8 ft"
+            ],
+            "length": [
+                "5 ft",
+                "25 ft"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.PARTIAL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.1, 7.5],
-            "drainage": ["Drainage.MODERATELY_WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.1,
+                7.5
+            ],
+            "drainage": [
+                "Drainage.MODERATELY_WELL_DRAINED"
+            ],
             "citations": {
-                "5": ["length", "sun", "soil"],
-                "6": ["drainage"],
-                "7": ["spread"],
-                "8": ["pH"]
+                "5": [
+                    "length",
+                    "sun",
+                    "soil"
+                ],
+                "6": [
+                    "drainage"
+                ],
+                "7": [
+                    "spread"
+                ],
+                "8": [
+                    "pH"
+                ]
             }
         },
         {
@@ -50,16 +109,40 @@
             "species": "sambucus canadensis",
             "family": "adoxaceae",
             "growth_habit": "GrowthHabit.SHRUB",
-            "height": ["5 ft", "12 ft"],
-            "spread": ["3 ft", "6 ft"],
-            "root_spread": ["2 ft", "2 ft"],
+            "height": [
+                "5 ft",
+                "12 ft"
+            ],
+            "spread": [
+                "3 ft",
+                "6 ft"
+            ],
+            "root_spread": [
+                "2 ft",
+                "2 ft"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.PARTIAL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [5.5, 6.5],
-            "drainage": ["Drainage.MODERATELY_WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                5.5,
+                6.5
+            ],
+            "drainage": [
+                "Drainage.MODERATELY_WELL_DRAINED"
+            ],
             "citations": {
-                "9": ["height", "spread", "root_spread", "sun", "soil", "pH", "drainage"]
+                "9": [
+                    "height",
+                    "spread",
+                    "root_spread",
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ]
             }
         },
         {
@@ -68,19 +151,44 @@
             "species": "allium tricoccum",
             "family": "amaryllidaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["6 in", "10 in"],
-            "spread": ["4 in", "8 in"],
+            "height": [
+                "6 in",
+                "10 in"
+            ],
+            "spread": [
+                "4 in",
+                "8 in"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SHADE",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.8, 7.2],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.8,
+                7.2
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "10": ["height", "sun", "soil", "pH"],
-                "11": ["spread", "drainage"]
+                "10": [
+                    "height",
+                    "sun",
+                    "soil",
+                    "pH"
+                ],
+                "11": [
+                    "spread",
+                    "drainage"
+                ]
             },
             "ecology": [
-                { "species": "fabaceae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 31 }
+                {
+                    "species": "fabaceae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 31
+                }
             ]
         },
         {
@@ -89,16 +197,39 @@
             "species": "phytolacca americana",
             "family": "phytolaccaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["4 ft", "10 ft"],
-            "spread": ["1 ft", "2 ft"],
-            "root_spread": ["4 in", "4 in"],
+            "height": [
+                "4 ft",
+                "10 ft"
+            ],
+            "spread": [
+                "1 ft",
+                "2 ft"
+            ],
+            "root_spread": [
+                "4 in",
+                "4 in"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.PARTIAL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.0, 8.0],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.0,
+                8.0
+            ],
             "citations": {
-                "13": ["height", "nitrogen"],
-                "14": ["spread", "root_spread", "sun", "soil", "pH"]
+                "13": [
+                    "height",
+                    "nitrogen"
+                ],
+                "14": [
+                    "spread",
+                    "root_spread",
+                    "sun",
+                    "soil",
+                    "pH"
+                ]
             }
         },
         {
@@ -107,18 +238,44 @@
             "species": "robinia pseudoacacia",
             "family": "fabaceae",
             "growth_habit": "GrowthHabit.TREE",
-            "height": ["40 ft", "60 ft"],
-            "spread": ["20 ft", "20 ft"],
-            "root_spread": ["40 ft", "90 ft"],
+            "height": [
+                "40 ft",
+                "60 ft"
+            ],
+            "spread": [
+                "20 ft",
+                "20 ft"
+            ],
+            "root_spread": [
+                "40 ft",
+                "90 ft"
+            ],
             "nitrogen": "Nitrogen.FIXER",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [4.6, 8.2],
-            "drainage": ["Drainage.MODERATELY_WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                4.6,
+                8.2
+            ],
+            "drainage": [
+                "Drainage.MODERATELY_WELL_DRAINED"
+            ],
             "citations": {
-                "15": ["height"],
-                "17": ["root_spread", "sun", "soil", "pH", "drainage"],
-                "18": ["spread"]
+                "15": [
+                    "height"
+                ],
+                "17": [
+                    "root_spread",
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ],
+                "18": [
+                    "spread"
+                ]
             }
         },
         {
@@ -127,21 +284,51 @@
             "species": "juglans nigra",
             "family": "juglandaceae",
             "growth_habit": "GrowthHabit.TREE",
-            "height": ["50 ft", "75 ft"],
-            "spread": ["50 ft", "75 ft"],
-            "root_spread": ["50 ft", "75 ft"],
+            "height": [
+                "50 ft",
+                "75 ft"
+            ],
+            "spread": [
+                "50 ft",
+                "75 ft"
+            ],
+            "root_spread": [
+                "50 ft",
+                "75 ft"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.5, 7.2],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.5,
+                7.2
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "19": ["height", "spread", "sun", "soil", "drainage"],
-                "20": ["root_spread"],
-                "21": ["pH"]
+                "19": [
+                    "height",
+                    "spread",
+                    "sun",
+                    "soil",
+                    "drainage"
+                ],
+                "20": [
+                    "root_spread"
+                ],
+                "21": [
+                    "pH"
+                ]
             },
             "ecology": [
-                { "species": "plantae", "relationship": "Ecology.NEGATIVE_ALLELOPATHY", "citation": 19 }
+                {
+                    "species": "plantae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 19
+                }
             ]
         },
         {
@@ -150,16 +337,39 @@
             "species": "asclepias incarnata",
             "family": "apocynaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["3 ft", "4 ft"],
-            "spread": ["2 ft", "3 ft"],
+            "height": [
+                "3 ft",
+                "4 ft"
+            ],
+            "spread": [
+                "2 ft",
+                "3 ft"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.CLAY", "Soil.LOAM", "Soil.SAND"],
-            "pH": [5.0, 8.0],
-            "drainage": ["Drainage.SOMEWHAT_POORLY_DRAINED"],
+            "soil": [
+                "Soil.CLAY",
+                "Soil.LOAM",
+                "Soil.SAND"
+            ],
+            "pH": [
+                5.0,
+                8.0
+            ],
+            "drainage": [
+                "Drainage.SOMEWHAT_POORLY_DRAINED"
+            ],
             "citations": {
-                "22": ["sun", "pH"],
-                "23": ["height", "spread", "soil", "drainage"]
+                "22": [
+                    "sun",
+                    "pH"
+                ],
+                "23": [
+                    "height",
+                    "spread",
+                    "soil",
+                    "drainage"
+                ]
             }
         },
         {
@@ -168,15 +378,35 @@
             "species": "rudbeckia hirta",
             "family": "asteraceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": ["2 ft", "3 ft"],
-            "spread": ["1 ft", "2 ft"],
+            "height": [
+                "2 ft",
+                "3 ft"
+            ],
+            "spread": [
+                "1 ft",
+                "2 ft"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.8, 6.8],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.8,
+                6.8
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "24": ["height", "spread", "sun", "soil", "pH", "drainage"]
+                "24": [
+                    "height",
+                    "spread",
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ]
             }
         },
         {
@@ -185,18 +415,40 @@
             "species": "apios americana",
             "family": "fabaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "spread": ["12 in", "18 in"],
-            "length": ["8 ft", "16 ft"],
+            "spread": [
+                "12 in",
+                "18 in"
+            ],
+            "length": [
+                "8 ft",
+                "16 ft"
+            ],
             "lightweight": true,
             "nitrogen": "Nitrogen.FIXER",
             "sun": "Sun.PARTIAL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.0, 7.5],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.0,
+                7.5
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "26": ["length", "sun", "soil", "drainage"],
-                "27": ["pH"],
-                "38": ["spread"]
+                "26": [
+                    "length",
+                    "sun",
+                    "soil",
+                    "drainage"
+                ],
+                "27": [
+                    "pH"
+                ],
+                "38": [
+                    "spread"
+                ]
             }
         },
         {
@@ -205,17 +457,39 @@
             "species": "prunus virginiana",
             "family": "rosaceae",
             "growth_habit": "GrowthHabit.TREE",
-            "height": ["12 ft", "30 ft"],
-            "spread": ["15 ft", "20 ft"],
+            "height": [
+                "12 ft",
+                "30 ft"
+            ],
+            "spread": [
+                "15 ft",
+                "20 ft"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.PARTIAL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [5.5, 8.0],
-            "drainage": ["Drainage.SOMEWHAT_POORLY_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                5.5,
+                8.0
+            ],
+            "drainage": [
+                "Drainage.SOMEWHAT_POORLY_DRAINED"
+            ],
             "citations": {
-                "32": ["height", "spread", "sun", "soil"],
-                "33": ["pH"],
-                "34": ["drainage"]
+                "32": [
+                    "height",
+                    "spread",
+                    "sun",
+                    "soil"
+                ],
+                "33": [
+                    "pH"
+                ],
+                "34": [
+                    "drainage"
+                ]
             }
         },
         {
@@ -224,17 +498,39 @@
             "species": "prunus demissa",
             "family": "rosaceae",
             "growth_habit": "GrowthHabit.TREE",
-            "height": ["12 ft", "30 ft"],
-            "spread": ["15 ft", "20 ft"],
+            "height": [
+                "12 ft",
+                "30 ft"
+            ],
+            "spread": [
+                "15 ft",
+                "20 ft"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.PARTIAL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [5.5, 8.0],
-            "drainage": ["Drainage.SOMEWHAT_POORLY_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                5.5,
+                8.0
+            ],
+            "drainage": [
+                "Drainage.SOMEWHAT_POORLY_DRAINED"
+            ],
             "citations": {
-                "32": ["height", "spread", "sun", "soil"],
-                "33": ["pH"],
-                "34": ["drainage"]
+                "32": [
+                    "height",
+                    "spread",
+                    "sun",
+                    "soil"
+                ],
+                "33": [
+                    "pH"
+                ],
+                "34": [
+                    "drainage"
+                ]
             }
         },
         {
@@ -243,15 +539,32 @@
             "species": "prunus pennsylvanica",
             "family": "rosaceae",
             "growth_habit": "GrowthHabit.TREE",
-            "height": ["15 ft", "40 ft"],
+            "height": [
+                "15 ft",
+                "40 ft"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.0, 8.0],
-            "drainage": ["Drainage.MODERATELY_WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.0,
+                8.0
+            ],
+            "drainage": [
+                "Drainage.MODERATELY_WELL_DRAINED"
+            ],
             "citations": {
-                "35": ["sun", "soil", "pH", "drainage"],
-                "36": ["height"]
+                "35": [
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ],
+                "36": [
+                    "height"
+                ]
             }
         },
         {
@@ -260,21 +573,59 @@
             "species": "campsis radicans",
             "family": "bignoniaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "spread": ["5 ft", "10 ft"],
-            "length": ["25 ft", "40 ft"],
+            "spread": [
+                "5 ft",
+                "10 ft"
+            ],
+            "length": [
+                "25 ft",
+                "40 ft"
+            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.PARTIAL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [6.0, 8.0],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                6.0,
+                8.0
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "37": ["spread", "length", "sun", "soil", "pH", "drainage"]
+                "37": [
+                    "spread",
+                    "length",
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ]
             }
         }
     ],
     "others": [
-        { "species": "gramineae", "name": "Grass Family" },
-        { "species": "fabaceae", "name": "Legume Family" }
+        {
+            "species": "gramineae",
+            "name": "Grass Family"
+        },
+        {
+            "species": "fabaceae",
+            "name": "Legume Family"
+        },
+        {
+            "species": "botrytis cinerea",
+            "name": "unknown"
+        },
+        {
+            "species": "sclerotinia sclerotiorum",
+            "name": "unknown"
+        },
+        {
+            "species": "verticillium dahliae",
+            "name": "unknown"
+        }
     ],
     "works_cited": [
         {
@@ -412,6 +763,10 @@
         {
             "id": 38,
             "citation": "https://www.smartgardener.com/plants/5372-bean-fortex-pole-bean-phaseolus-vulgaris/overview"
+        },
+        {
+            "id": 39,
+            "citation": "http://www.phi-base.org/searchFacet.htm?queryTerm="
         }
     ]
 }

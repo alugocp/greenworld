@@ -6,20 +6,114 @@
             "species": "zea mays",
             "family": "gramineae",
             "growth_habit": "GrowthHabit.GRAMINOID",
-            "height": ["4 ft", "7 ft"],
-            "spread": ["8 in", "12 in"],
-            "root_spread": ["3 ft", "4 ft"],
+            "height": [
+                "4 ft",
+                "7 ft"
+            ],
+            "spread": [
+                "8 in",
+                "12 in"
+            ],
+            "root_spread": [
+                "3 ft",
+                "4 ft"
+            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [5.8, 6.8],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                5.8,
+                6.8
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "1": ["height", "sun"],
-                "2": ["pH", "drainage"],
-                "3": ["spread", "soil"],
-                "4": ["root_spread"]
-            }
+                "1": [
+                    "height",
+                    "sun"
+                ],
+                "2": [
+                    "pH",
+                    "drainage"
+                ],
+                "3": [
+                    "spread",
+                    "soil"
+                ],
+                "4": [
+                    "root_spread"
+                ]
+            },
+            "ecology": [
+                {
+                    "species": "aspergillus flavus",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "bipolaris maydis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "bipolaris zeicola",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "colletotrichum graminicola",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "curvularia lunata",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "exserohilum turcicum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "fusarium fujikuroi",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "fusarium graminearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "fusarium verticillioides",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "pantoea stewartii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "trichoderma virens",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "ustilago maydis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                }
+            ]
         },
         {
             "id": 2,
@@ -27,49 +121,55 @@
             "species": "cucurbita maxima",
             "family": "cucurbitaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "height": ["8 in", "24 in"],
-            "spread": ["24 in", "36 in"],
-            "length": ["10 ft", "15 ft"],
-            "root_spread": ["20 cm", "80 cm"],
+            "height": [
+                "8 in",
+                "24 in"
+            ],
+            "spread": [
+                "24 in",
+                "36 in"
+            ],
+            "length": [
+                "10 ft",
+                "15 ft"
+            ],
+            "root_spread": [
+                "20 cm",
+                "80 cm"
+            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [5.5, 6.5],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                5.5,
+                6.5
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "ecology": [
-                { "species": "myzus persicae", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "Aphis gossypii", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "spodoptera exigua", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "spodoptera praefica", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "trichoplusia ni", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "acalymma vittata", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "diabrotica undecimpunctata", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "diabrotica balteata", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "peridroma saucia", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "nephelodes minians", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "anasa tristis", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "melittia cucurbitae", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "frankliniella occidentalis", "relationship": "Ecology.PREDATOR", "citation": 8 },
-                { "species": "alternaria cucumerina", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "alternaria alternata", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "cercospora citrullina", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "pseudoperonospora cubensis", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "fusarium solani", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "didymella bryoniae", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "erysiphe cichoracearum", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "sphaerotheca fuliginea", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "podosphaera xanthii", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "septoria cucurbitacearum", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "verticillium dahliae", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "pseudomonas syringae", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "xanthomonas campestris", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "erwinia tracheiphila", "relationship": "Ecology.PATHOGEN", "citation": 8 },
-                { "species": "phytophthora capsici", "relationship": "Ecology.PATHOGEN", "citation": 8 }
+                {
+                    "species": "fusarium solani",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                }
             ],
             "citations": {
-                "5": ["length", "sun", "pH", "drainage"],
-                "7": ["root_spread"],
-                "9": ["height", "spread"]
+                "5": [
+                    "length",
+                    "sun",
+                    "pH",
+                    "drainage"
+                ],
+                "7": [
+                    "root_spread"
+                ],
+                "9": [
+                    "height",
+                    "spread"
+                ]
             }
         },
         {
@@ -78,21 +178,87 @@
             "species": "phaseolus vulgaris",
             "family": "fabaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "height": ["16 in", "22 in"],
-            "spread": ["12 in", "18 in"],
-            "length": ["1.5 ft", "2 ft"],
+            "height": [
+                "16 in",
+                "22 in"
+            ],
+            "spread": [
+                "12 in",
+                "18 in"
+            ],
+            "length": [
+                "1.5 ft",
+                "2 ft"
+            ],
             "lightweight": true,
-            "root_spread": ["18 in", "24 in"],
+            "root_spread": [
+                "18 in",
+                "24 in"
+            ],
             "nitrogen": "Nitrogen.FIXER",
             "sun": "Sun.FULL_SUN",
-            "soil": ["Soil.LOAM"],
-            "pH": [5.5, 7.0],
-            "drainage": ["Drainage.WELL_DRAINED"],
+            "soil": [
+                "Soil.LOAM"
+            ],
+            "pH": [
+                5.5,
+                7.0
+            ],
+            "drainage": [
+                "Drainage.WELL_DRAINED"
+            ],
             "citations": {
-                "6": ["length", "sun", "soil", "pH", "drainage"],
-                "10": ["spread"],
-                "11": ["root_spread"]
-            }
+                "6": [
+                    "length",
+                    "sun",
+                    "soil",
+                    "pH",
+                    "drainage"
+                ],
+                "10": [
+                    "spread"
+                ],
+                "11": [
+                    "root_spread"
+                ]
+            },
+            "ecology": [
+                {
+                    "species": "beauveria bassiana",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "colletotrichum lindemuthianum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "pseudomonas amygdali",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "pseudomonas syringae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                }
+            ]
         }
     ],
     "works_cited": [
@@ -139,6 +305,92 @@
         {
             "id": 11,
             "citation": "https://www.garden.eco/bean-roots"
+        },
+        {
+            "id": 12,
+            "citation": "http://www.phi-base.org/searchFacet.htm?queryTerm="
+        }
+    ],
+    "others": [
+        {
+            "species": "aspergillus flavus",
+            "name": "unknown"
+        },
+        {
+            "species": "bipolaris maydis",
+            "name": "unknown"
+        },
+        {
+            "species": "bipolaris zeicola",
+            "name": "unknown"
+        },
+        {
+            "species": "colletotrichum graminicola",
+            "name": "unknown"
+        },
+        {
+            "species": "curvularia lunata",
+            "name": "unknown"
+        },
+        {
+            "species": "exserohilum turcicum",
+            "name": "unknown"
+        },
+        {
+            "species": "fusarium fujikuroi",
+            "name": "unknown"
+        },
+        {
+            "species": "fusarium graminearum",
+            "name": "unknown"
+        },
+        {
+            "species": "fusarium oxysporum",
+            "name": "unknown"
+        },
+        {
+            "species": "fusarium verticillioides",
+            "name": "unknown"
+        },
+        {
+            "species": "pantoea stewartii",
+            "name": "unknown"
+        },
+        {
+            "species": "trichoderma virens",
+            "name": "unknown"
+        },
+        {
+            "species": "ustilago maydis",
+            "name": "unknown"
+        },
+        {
+            "species": "fusarium solani",
+            "name": "unknown"
+        },
+        {
+            "species": "beauveria bassiana",
+            "name": "unknown"
+        },
+        {
+            "species": "botrytis cinerea",
+            "name": "unknown"
+        },
+        {
+            "species": "colletotrichum lindemuthianum",
+            "name": "unknown"
+        },
+        {
+            "species": "pseudomonas amygdali",
+            "name": "unknown"
+        },
+        {
+            "species": "pseudomonas syringae",
+            "name": "unknown"
+        },
+        {
+            "species": "sclerotinia sclerotiorum",
+            "name": "unknown"
         }
     ]
 }
