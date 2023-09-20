@@ -1,11 +1,13 @@
 import re
+from math import log
 from intervals import DecimalInterval
 import sqlalchemy
 import consts
 from greenworld import orm
+from greenworld.serial import deserialize_enum_list
 
 def citation_regex(href):
-    return re.search(r'(?:[a-z]+://)(?:www\.)?([\w\d]+(\.[\w\d]+)*)/?', href).groups()[0]
+    return re.search(r'(?:[a-z]+://)(?:www\.)?([\w\d\-]+(\.[\w\d\-]+)*)/?', href).groups()[0]
 
 def process_plant_dict(con, plant):
     if 'citations' in plant:
@@ -27,6 +29,9 @@ def transform_plant(plant):
         else:
             if k in ['id', 'family']:
                 value = str(plant[k])
+            elif k in ['soil', 'drainage']:
+                indices = list(map(lambda x: int(log(x) / log(2)), deserialize_enum_list(plant[k])))
+                value = ', '.join(list(map(lambda x: consts.plant_enum_values[k][x], indices)))
             else:
                 value = consts.plant_enum_values[k][plant[k]]
         field = '<td><b>' + label + '</b></td><td>' + value + '</td>'
