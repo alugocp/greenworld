@@ -4,6 +4,7 @@
 # • Run algorithm modules on them by a database check
 # • Write the report back to the database
 import sqlalchemy
+from greenworld.serial import serialize_report
 from greenworld.utils import AlgorithmUtils
 from greenworld import Greenworld
 from greenworld import algorithm
@@ -44,17 +45,15 @@ def get_plants(con, where = None):
 def get_range_union(report):
     max_dist = MAX_PLANTING_RANGE
     min_dist = 0
-    for pair in report:
-        interval, _ = pair
-        if interval:
-            dist1, dist2 = interval
+    for factor in report:
+        if factor.interval:
+            dist1, dist2 = factor.interval
             if dist1 > min_dist:
                 min_dist = dist1
                 max_dist = dist2
-    for pair in report:
-        interval, _ = pair
-        if interval:
-            _, dist2 = interval
+    for factor in report:
+        if factor.interval:
+            _, dist2 = factor.interval
             if min_dist < dist2 < max_dist:
                 max_dist = dist2
     return min_dist, max_dist
@@ -62,9 +61,8 @@ def get_range_union(report):
 # Checks if the report has enough information to provide a compatibility score
 def is_valid_report(report):
     if report is not None:
-        for r in report:
-            suggestion, _ = r
-            if suggestion is not None:
+        for factor in report:
+            if factor.interval is not None:
                 return True
     return False
 
@@ -105,7 +103,7 @@ def main(gw: Greenworld):
                     score = score,
                     range_union_min = union_min,
                     range_union_max = union_max,
-                    report = report
+                    report = serialize_report(report)
                 ))
             last_plant = plant1
         if last_plant:

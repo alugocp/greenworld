@@ -1,9 +1,10 @@
-from typing import Optional
+from typing import Optional, List
+from greenworld.factor import Factor
 
 class AlgorithmUtils:
+    __report: List[Factor] = []
     __included_rules = None
     __connection = None
-    __report = None
     __rules = []
 
     # Sets up a new report instance
@@ -12,14 +13,14 @@ class AlgorithmUtils:
         self.__report = []
 
     # Returns the current report to another module
-    def get_report(self):
+    def get_report(self) -> List[Factor]:
         return self.__report
 
     # Adds a pair to the current report
-    def add_to_report(self, pair, rule_name: Optional[str] = None) -> None:
+    def add_to_report(self, factor: Factor, rule_name: Optional[str] = None) -> None:
         if rule_name:
             self.__included_rules.append(rule_name)
-        self.__report.append(pair)
+        self.__report.append(factor)
 
     # Returns true if the given rule has been hit
     def is_rule_included(self, rule_name: str) -> bool:
@@ -49,13 +50,12 @@ class AlgorithmUtils:
     def rule(self):
         def decorate_wrapper(func):
             def func_wrapper(plant1, plant2):
-                pair = func(plant1, plant2)
-                if pair:
-                    interval, reason = pair
-                    if interval:
-                        dist1, dist2 = interval
-                        interval = (round(float(min(dist1, dist2)), 3), round(float(max(dist1, dist2)), 3))
-                    self.add_to_report((interval, reason), func.__name__)
+                factor = func(plant1, plant2)
+                if factor:
+                    if factor.interval:
+                        dist1, dist2 = factor.interval
+                        factor.interval = (round(float(min(dist1, dist2)), 3), round(float(max(dist1, dist2)), 3))
+                    self.add_to_report(factor, func.__name__)
             self.__rules.append(func_wrapper)
             func_wrapper.__name__ = func.__name__
             return func_wrapper
