@@ -42,4 +42,6 @@ with db.connect() as con:
 
 # Calculate error value
 error = (result - EXPECTED) / EXPECTED
+# pylint: disable=consider-using-f-string
 sys.stdout.write('\u001b[1mError:\u001b[0m \u001b[31m%s\u001b[0m%%\n' % (round(error * 100, 3)))
+# pylint: enable=consider-using-f-string

@@ -20,7 +20,7 @@ def get_pathogen_species(species):
 # Process a single seed data file
 def process_data_file(filepath):
     print(f'Reading {filepath}...')
-    with open(filepath, 'r') as file:
+    with open(filepath, 'r', encoding = 'utf8') as file:
         data = json.loads(file.read())
 
     # Set up the citations
@@ -46,11 +46,11 @@ def process_data_file(filepath):
     data['others'] = other_species
 
     # Write changed data back to the original file
-    with open(filepath, 'w') as file:
+    with open(filepath, 'w', encoding = 'utf8') as file:
         file.write(json.dumps(data, indent = 4))
 
 # Iterate through the list of requested files' plant species,
 # request data from PHI Base, and write back to those files
 if __name__ == '__main__':
-    for filepath in sys.argv[1:]:
-        process_data_file(filepath)
+    for requested in sys.argv[1:]:
+        process_data_file(requested)

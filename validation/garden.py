@@ -263,14 +263,14 @@ report.main(gw)
 
 # Double check the companion data species names
 species_names = set()
-for k in GOOD:
+for k, v in GOOD.items():
     species_names.add(k)
-    for k1 in GOOD[k]:
+    for k1 in v:
         species_names.add(k1)
 
-for k in BAD:
+for k, v in BAD.items():
     species_names.add(k)
-    for k1 in BAD[k]:
+    for k1 in v:
         species_names.add(k1)
 
 db = init_db()
@@ -293,7 +293,7 @@ stmt = sqlalchemy.select(
 ) \
 .join(plant_1_table, reports_table.c.plant1 == plant_1_table.c.id) \
 .join(plant_2_table, reports_table.c.plant2 == plant_2_table.c.id) \
-.where(reports_table.c.score != None)
+.where(reports_table.c.score is not None)
 
 with db.connect() as con:
     results = list(map(dict, con.execute(stmt).mappings().fetchall()))
@@ -334,6 +334,7 @@ def percent_good(dist):
     return round(percent * 10000) / 100
 
 # Statistical comparison between distributions (Wilcoxon rank-sum tests)
+# pylint: disable=consider-using-f-string
 sys.stdout.write('\u001b[1mp-values\u001b[0m\n')
 sys.stdout.write('Good companions vs neutral: \u001b[31m%s\u001b[0m\n' % (stats.ranksums(good_dist, neutral_dist, alternative = 'greater').pvalue))
 sys.stdout.write('Bad companions vs neutral: \u001b[31m%s\u001b[0m\n' % (stats.ranksums(bad_dist, neutral_dist, alternative = 'less').pvalue))
@@ -341,6 +342,7 @@ sys.stdout.write('Bad companions vs good: \u001b[31m%s\u001b[0m\n' % (stats.rank
 sys.stdout.write('Good companions percentage of good companions: \u001b[31m%s\u001b[0m%%\n' % (percent_good(good_dist)))
 sys.stdout.write('Good companions percentage of neutral companions: \u001b[31m%s\u001b[0m%%\n' % (percent_good(neutral_dist)))
 sys.stdout.write('Good companions percentage of bad companions: \u001b[31m%s\u001b[0m%%\n' % (percent_good(bad_dist)))
+# pylint: enable=consider-using-f-string
 
 # Plot distributions and save to image
 common = {
@@ -354,6 +356,7 @@ plt.hist(bad_dist, **common, color = 'red')
 plt.savefig('validation/garden.png')
 
 # Species companion data with references
+# pylint: disable=pointless-string-statement
 '''
 https://www.thespruce.com/companion-plants-for-tomatoes-1403289
 Tomato good: calendula, chives, black-eyed peas, radishes, sage, french marigold, nasturtium, cilantro, oregano, parsley, crimson clover, lavendar, sunflower, zinnia, asparagus, basil, borage, carrot, garlic, sweet allysum, thyme
@@ -419,3 +422,4 @@ https://www.thespruce.com/companion-plants-for-cilantro-5074346
 Cilantro good: Chervil, Sweet alyssum, Coreopsis, Legumes, Cosmos, Zinnias, Sunflowers
 Cilantro bad: Lavender, Thyme, Rosemary, Fennel
 '''
+# pylint: enable=pointless-string-statement

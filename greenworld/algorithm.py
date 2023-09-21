@@ -14,7 +14,6 @@ from greenworld.defs import (
     PLANTAE,
     GrowthHabit,
     Nitrogen,
-    Drainage,
     Ecology,
     Sun
 )

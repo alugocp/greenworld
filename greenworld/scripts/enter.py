@@ -59,10 +59,10 @@ def parse_enum(name):
 
 # Parses a list of enums into their summation value
 def parse_enum_range(enums):
-    sum = 0
+    sum_total = 0
     for name in enums:
-        sum += parse_enum(name)
-    return sum
+        sum_total += parse_enum(name)
+    return sum_total
 
 # Process plant table bulk data entry for a JSON file
 def enter_data(gw: Greenworld, db, filename):

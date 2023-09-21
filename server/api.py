@@ -45,7 +45,7 @@ def main(app, db):
                 orm.reports_table.c.plant1 == id_,
                 orm.reports_table.c.plant2 == id_,
             ),
-            orm.reports_table.c.score != None
+            orm.reports_table.c.score is not None
         )).order_by(orm.reports_table.c.score).limit(100)
         def remove_query_species(x):
             x = dict(x)

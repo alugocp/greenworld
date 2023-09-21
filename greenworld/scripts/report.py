@@ -70,6 +70,7 @@ def is_valid_report(report):
 def calculate_compatibility_score(x, plant1, plant2):
     if plant1.spread and plant2.spread:
         return (2 * x / float(plant1.spread.lower + plant2.spread.lower)) - 1
+    return None
 
 # Calculates how many reports will be needed given the number of old and new plants
 def get_analysis_total(num_new, num_old):

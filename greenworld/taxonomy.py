@@ -16,7 +16,6 @@ class Taxon:
     extra: str
 
     def parse_species(self, text: str):
-        parts = text.lower().split(' ')
         state = TaxonParseState.GENUS
         self.species = None
         self.genus = None

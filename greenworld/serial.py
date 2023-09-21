@@ -20,4 +20,4 @@ def serialize_report(report: List[Factor]) -> list:
             x, y = factor.interval
             return [[x, y], factor.reason]
         return [None, factor.reason]
-    return list(map(lambda x: serialize_factor(x), report))
+    return list(map(serialize_factor, report))
