@@ -1,180 +1,180 @@
-# This module contains the core logic for the Greenworld algorithm.
-import math
 import sqlalchemy
 from greenworld.serial import deserialize_enum_list
-from greenworld.utils import AlgorithmUtils
-from greenworld.factor import Factor
-from greenworld.orm import (
-    other_species_table,
-    ecology_other_table,
-    ecology_plant_table,
-    MAX_PLANTING_RANGE
-)
-from greenworld.defs import (
-    PLANTAE,
-    GrowthHabit,
-    Nitrogen,
-    Ecology,
-    Sun
-)
+from greenworld.orm import other_species_table
+from greenworld.orm import ecology_other_table
+from greenworld.orm import ecology_plant_table
+from greenworld.utils import CompanionAlgorithm
+from greenworld.utils import Factor
+from greenworld.utils import Rule
+from greenworld.defs import PLANTAE
+from greenworld.defs import GrowthHabit
+from greenworld.defs import Nitrogen
+from greenworld.defs import Ecology
+from greenworld.defs import Sun
 
-# pylint: disable=inconsistent-return-statements
+class GreenworldAlgorithm(CompanionAlgorithm):
 
-def build(utils: AlgorithmUtils) -> None:
+    def __init__(self):
+        super().__init__([
+            NitrogenRule(),
+            EnvironmentRule(),
+            SunlightRule(),
+            EcologyRule()
+        ])
 
-    # Rules that will absolutely return a range value
-    @utils.rule()
-    @utils.mirrored()
-    @utils.ensure(both = ['sun', 'growth_habit'], fields1 = ['length'], fields2 = ['height'])
-    def can_vine_climb(plant1, plant2):
-        dist = 6 * 0.0254 / math.sqrt(2) # 45 degree angle with 6 inch hypotenuse (based on three sisters)
-        direct = f'{plant1.name} can climb up {plant2.name} for direct sunlight'
-        indirect = f'{plant1.name} can climb up {plant2.name} for indirect sunlight'
-        if plant1.growth_habit == GrowthHabit.VINE and plant1.length.lower <= plant2.height.upper:
-            if (plant1.lightweight and plant2.growth_habit in [GrowthHabit.GRAMINOID, GrowthHabit.FORB]):
-                if plant1.sun == Sun.FULL_SUN and plant2.sun == Sun.FULL_SUN:
-                    return Factor((0, dist), direct)
-                if plant1.sun == Sun.PARTIAL_SUN and plant2.sun == Sun.PARTIAL_SUN:
-                    return Factor((0, dist), indirect)
+# Returns true if the two intervals overlap or touch at all
+def overlaps(a, b):
+    return min(a.upper, b.upper) - max(a.lower, b.lower) >= 0
 
-            if (plant2.growth_habit == GrowthHabit.TREE and plant1.sun == Sun.PARTIAL_SUN and plant2.sun == Sun.FULL_SUN) or \
-            (plant2.growth_habit in [GrowthHabit.SHRUB, GrowthHabit.SUBSHRUB] and plant1.sun == plant2.sun):
-                close = float(plant1.spread.lower / 2 if plant1.spread else dist) + float(plant2.spread.upper / 2 if plant2.spread else dist) + dist
-                far = float(plant1.spread.upper / 2 if plant1.spread else dist) + float(plant2.spread.upper / 2 if plant2.spread else dist) + dist
-                return Factor((close, far), indirect)
+class NitrogenRule(Rule):
 
-    @utils.rule()
-    @utils.taller_first()
-    @utils.ensure(fields1 = ['height'], fields2 = ['sun'])
-    def space_for_sunlight(plant1, plant2):
-        if utils.is_rule_included('can_vine_climb'):
+    def generate_factor(self, _con, p1, p2) -> Factor:
+        # p1 is a nitrogen fixer and p2 is a heavy feeder
+        if p1.nitrogen == Nitrogen.FIXER and p2.nitrogen == Nitrogen.HEAVY:
+            return Factor(1.0, f'{p1.name} can fix nitrogen for ' + p2.name)
+
+        # p2 is a nitrogen fixer and p1 is a heavy feeder
+        if p2.nitrogen == Nitrogen.FIXER and p1.nitrogen == Nitrogen.HEAVY:
+            return Factor(1.0, p2.name + ' can fix nitrogen for ' + p1.name)
+
+        # Both p1 and p2 are heavy feeders
+        if p1.nitrogen == Nitrogen.HEAVY and p2.nitrogen == Nitrogen.HEAVY:
+            return Factor(-1.0, p1.name + ' and ' + p2.name + ' are both heavy feeders')
+        return None
+
+class EnvironmentRule(Rule):
+
+    def generate_factor(self, _con, p1, p2) -> Factor:
+        mismatches = []
+
+        # Check soil mismatch
+        if p1.soil is not None and p2.soil is not None:
+            soils1 = deserialize_enum_list(p1.soil)
+            soils2 = deserialize_enum_list(p2.soil)
+            if not any(s1 in soils2 for s1 in soils1):
+                mismatches.append('soil')
+
+        # Check drainage mismatch
+        if p1.drainage is not None and p2.drainage is not None:
+            drainages1 = deserialize_enum_list(p1.drainage)
+            drainages2 = deserialize_enum_list(p2.drainage)
+            if not any(d1 in drainages2 for d1 in drainages1):
+                mismatches.append('drainage')
+
+        # Check pH mismatch
+        if p1.pH is not None and p2.pH is not None:
+            if not overlaps(p1.pH, p2.pH):
+                mismatches.append('pH')
+
+        # Return any mismatches as a single factor
+        if len(mismatches) > 0:
+            suffix = ' and '.join(mismatches)
+            return Factor(-len(mismatches) / 3, f'{p1.name} and {p2.name} require different {suffix}')
+        return None
+
+class SunlightRule(Rule):
+
+    HEIGHT_CLASSES = {
+        GrowthHabit.LICHENOUS: 0,
+        GrowthHabit.NONVASCULAR: 0,
+        GrowthHabit.VINE: 0,
+        GrowthHabit.FORB: 0,
+        GrowthHabit.GRAMINOID: 0,
+        GrowthHabit.SUBSHRUB: 2,
+        GrowthHabit.SHRUB: 3,
+        GrowthHabit.TREE: 4,
+    }
+
+    def generate_factor(self, _con, p1, p2) -> Factor:
+        # Check that required attributes exist
+        if p1.growth_habit is None or p2.growth_habit is None or p1.sun is None or p2.sun is None:
             return None
-        if plant1.growth_habit == GrowthHabit.VINE:
+
+        # Lookup height classes
+        h1 = self.HEIGHT_CLASSES[p1.growth_habit]
+        h2 = self.HEIGHT_CLASSES[p2.growth_habit]
+        if h1 == h2:
             return None
-        if plant2.growth_habit == GrowthHabit.VINE and plant1.growth_habit not in [None, GrowthHabit.SUBSHRUB, GrowthHabit.SHRUB, GrowthHabit.TREE]:
+
+        # Check the dynamics between a taller and shorter plant
+        taller = p2 if h2 > h1 else p1
+        shorter = p1 if h2 > h1 else p2
+        if shorter.sun == Sun.FULL_SUN:
+            return Factor(-1.0, f'{taller.name} may shade out {shorter.name}')
+        return Factor(1.0, f'{taller.name} can provide shade for {shorter.name}')
+
+class EcologyRule(Rule):
+
+    def generate_factor(self, con, p1, p2):
+        if p1.species == p2.species:
             return None
-        if plant1.height.lower > 1/3:
-            middle = float(plant1.spread.upper if plant1.spread else plant1.height.upper / 2)
-            if plant2.sun == Sun.FULL_SUN:
-                return Factor((middle * 1.25, MAX_PLANTING_RANGE), f'{plant2.name} should be far enough away from {plant1.name} to get direct sunlight')
-            if plant2.sun == Sun.PARTIAL_SUN:
-                return Factor((middle * 0.75, middle * 1.25), f'{plant2.name} should be just far enough from {plant1.name} to get partial sunlight')
-            return Factor((0, middle * 0.75), f'{plant2.name} should be close enough to {plant1.name} to get full shade')
+        factors = list(filter(lambda x: x is not None, [
+            self.allelopathy_check(con, p1, p2),
+            self.ecology_check(con, p1, p2)
+        ]))
+        return Factor.union(factors)
 
-    @utils.rule()
-    @utils.ensure(both = ['growth_habit'])
-    def vine_spacing(plant1, plant2):
-        if plant1.growth_habit == GrowthHabit.VINE and plant2.growth_habit == GrowthHabit.VINE:
-            close = math.sqrt(math.pow(24 / math.sqrt(2), 2) + math.pow(12, 2)) * 0.0254 # Distance between beans and squash in three sisters
-            far = MAX_PLANTING_RANGE
-            if plant1['spread'] and plant2['spread']:
-                close = (plant1.spread.lower + plant2.spread.lower) / 2
-                far = (plant1.spread.upper + plant2.spread.upper) / 2
-            return Factor((close, far), f'{plant1.name} should be placed far enough from {plant2.name} so both vines can spread')
+    def allelopathy_check(self, con, p1, p2):
+        p1_to_p2_relationship = None
+        p2_to_p1_relationship = None
 
-    @utils.rule()
-    @utils.ensure(both = ['spread', 'height'])
-    def add_spread(plant1, plant2):
-        if utils.overlaps(plant1.height, plant2.height):
-            dist = ((plant1.spread.lower + plant2.spread.lower) / 2, MAX_PLANTING_RANGE)
-            if plant1.id == plant2.id:
-                dist = ((plant1.spread.upper + plant2.spread.upper) / 2, MAX_PLANTING_RANGE)
-            return Factor(dist, f'{plant1.name} and {plant2.name} should both have enough space to grow horizontally')
-
-    # Rules that may return a range value
-    @utils.rule()
-    @utils.mirrored()
-    @utils.ensure(both = ['nitrogen'])
-    def nitrogen_relationship(plant1, plant2):
-        if plant1.nitrogen == Nitrogen.FIXER and plant2.nitrogen == Nitrogen.HEAVY:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower') / 4
-            dist = None if dist == 0 else (0, dist)
-            return Factor(dist, f'{plant1.name} can fix soil nitrogen for {plant2.name}')
-        if plant1.nitrogen == Nitrogen.HEAVY and plant2.nitrogen == Nitrogen.HEAVY:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower') / 4
-            dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
-            return Factor(dist, f'{plant1.name} and {plant2.name} may compete for soil nitrogen')
-
-    @utils.rule()
-    def allelopathy_relationship(plant1, plant2):
-        con = utils.get_connection()
-        relationship = None
-
-        # Hacked mirroring to get up to two results
-        if plant1.id < plant2.id:
-            # pylint: disable-next=arguments-out-of-order
-            allelopathy_relationship(plant2, plant1)
-
-        # Grab plant2's family's ID (if it exists)
-        stmt = other_species_table.select().where(other_species_table.c['species'] == plant2.family)
-        plant2_family_id = con.execute(stmt).fetchone()
-        plant2_family_id = plant2_family_id[0] if plant2_family_id else None
-
-        # Calculate exact relationship dynamic
-        stmt = ecology_other_table.select().where(ecology_other_table.c['plant'] == plant1.id)
+        # Grab both plant families' IDs (if they exist in the other species table)
+        family_ids = {
+            p1.family: -1,
+            p2.family: -1
+        }
+        stmt = other_species_table.select().where(
+            other_species_table.c['species'] == p1.family or other_species_table.c['species'] == p2.family
+        )
         for row in con.execute(stmt).mappings():
-            if (relationship is None and row['non_plant'] == PLANTAE) or row['non_plant'] == plant2_family_id:
-                relationship = row['relationship']
-        stmt = ecology_plant_table.select().where(ecology_plant_table.c['plant'] == plant1.id)
+            family_ids[row['species']] = row['id']
+
+        # Check non-species level allelopathy
+        stmt = ecology_other_table.select().where(
+            ecology_other_table.c['plant'] == p1.id or ecology_other_table.c['plant'] == p2.id
+        )
         for row in con.execute(stmt).mappings():
-            if row['target'] == plant2.id:
-                relationship = row['relationship']
+            # Plant1 has some relationship to Plantae or plant2's family
+            if row['plant'] == p1.id and ((row['non_plant'] == PLANTAE and p1_to_p2_relationship is None) or row['non_plant'] == family_ids[p2.family]):
+                p1_to_p2_relationship = row['relationship']
 
-        # Return based on uncovered relationship
-        if relationship == Ecology.POSITIVE_ALLELOPATHY:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'lower') / 4
-            dist = None if dist == 0 else (0, dist)
-            return Factor(dist, f'{plant1.name} is a positive allelopath for {plant2.name}')
-        if relationship == Ecology.NEGATIVE_ALLELOPATHY:
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 4
-            dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
-            return Factor(dist, f'{plant1.name} is a negative allelopath for {plant2.name}')
+            # Plant2 has some relationship to Plantae or plant1's family
+            if row['plant'] == p2.id and ((row['non_plant'] == PLANTAE and p2_to_p1_relationship is None) or row['non_plant'] == family_ids[p1.family]):
+                p2_to_p1_relationship = row['relationship']
 
-    @utils.rule()
-    @utils.ensure(both = ['soil'])
-    def match_soil(plant1, plant2):
-        soils1 = deserialize_enum_list(plant1.soil)
-        soils2 = deserialize_enum_list(plant2.soil)
-        if not any(s1 in soils2 for s1 in soils1):
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 2
-            dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
-            return Factor(dist, f'{plant1.name} and {plant2.name} prefer different types of soil')
+        # Check on species-level allelopathy
+        stmt = ecology_plant_table.select().where(
+            ecology_plant_table.c['plant'] == p1.id or ecology_plant_table.c['plant'] == p2.id
+        )
+        for row in con.execute(stmt).mappings():
+            # Plant1 has some relationship to plant2
+            if row['plant'] == p1.id and row['target'] == p2.id:
+                p1_to_p2_relationship = row['relationship']
 
-    @utils.rule()
-    @utils.ensure(both = ['pH'])
-    def match_ph(plant1, plant2):
-        if not utils.overlaps(plant1.pH, plant2.pH):
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 2
-            dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
-            return Factor(dist, f'{plant1.name} and {plant2.name} prefer different pH ranges')
+            # Plant2 has some relationship to plant1
+            if row['plant'] == p2.id and row['target'] == p1.id:
+                p2_to_p1_relationship = row['relationship']
 
-    @utils.rule()
-    @utils.ensure(both = ['drainage'])
-    def match_drainage(plant1, plant2):
-        drainages1 = deserialize_enum_list(plant1.drainage)
-        drainages2 = deserialize_enum_list(plant2.drainage)
-        if not any(d1 in drainages2 for d1 in drainages1):
-            dist = utils.reduce_intervals(plant1, plant2, 'root_spread', 'upper') / 2
-            dist = None if dist == 0 else (dist, MAX_PLANTING_RANGE)
-            return Factor(dist, f'{plant1.name} and {plant2.name} prefer different soil drainage')
+        # Convert the relationship pair into a Factor
+        return {
+            Ecology.POSITIVE_ALLELOPATHY: {
+                Ecology.POSITIVE_ALLELOPATHY: Factor(1.0, f'{p1.name} and {p2.name} are positive allelopaths for each other'),
+                Ecology.NEGATIVE_ALLELOPATHY: Factor(0.0, f'{p1.name} is a positive allelopath for {p2.name} but {p2.name} is a negative allelopath for {p1.name}'),
+                'None': Factor(1.0, f'{p1.name} is a positive allelopath for {p2.name}')
+            },
+            Ecology.NEGATIVE_ALLELOPATHY: {
+                Ecology.POSITIVE_ALLELOPATHY: Factor(0.0, f'{p2.name} is a positive allelopath for {p1.name} but {p1.name} is a negative allelopath for {p2.name}'),
+                Ecology.NEGATIVE_ALLELOPATHY: Factor(-1.0, f'{p1.name} and {p2.name} are negative allelopaths for each other'),
+                'None': Factor(-1.0, f'{p1.name} is a negative allelopath for {p2.name}')
+            },
+            'None': {
+                Ecology.POSITIVE_ALLELOPATHY: Factor(1.0, f'{p2.name} is a positive allelopath for {p1.name}'),
+                Ecology.NEGATIVE_ALLELOPATHY: Factor(-1.0, f'{p2.name} is a negative allelopath for {p1.name}'),
+                'None': None
+            }
+        }[p1_to_p2_relationship or 'None'][p2_to_p1_relationship or 'None']
 
-    @utils.rule()
-    @utils.mirrored()
-    @utils.ensure(both = ['growth_habit'], fields1 = ['nitrogen'])
-    def large_vines_shade_weeds(plant1, plant2):
-        if plant1.nitrogen == Nitrogen.HEAVY and plant1.growth_habit == GrowthHabit.VINE and plant2.growth_habit != GrowthHabit.VINE:
-            dist = None
-            if plant1.length is not None and plant1.spread is not None:
-                value1 = plant1.spread.lower
-                value2 = plant1.length.lower / 4
-                dist = (value1 if value1 < value2 else value2, value1 if value1 > value2 else value2)
-            return Factor(dist, f'{plant1.name} can shade out weeds around {plant2.name}')
-
-    @utils.rule()
-    def ecological_intersection(plant1, plant2):
-        if plant1.species == plant2.species:
-            return None
-        con = utils.get_connection()
+    def ecology_check(self, con, p1, p2):
         e1 = ecology_other_table.alias('e1')
         e2 = ecology_other_table.alias('e2')
         stmt = sqlalchemy.select(
@@ -184,34 +184,29 @@ def build(utils: AlgorithmUtils) -> None:
         ).\
             join(e2, e1.c['non_plant'] == e2.c['non_plant']).\
             join(other_species_table, other_species_table.c['id'] == e1.c['non_plant']).\
-            where(sqlalchemy.and_(e1.c['plant'] == plant1.id, e2.c['plant'] == plant2.id)).\
+            where(sqlalchemy.and_(e1.c['plant'] == p1.id, e2.c['plant'] == p2.id)).\
             distinct()
+        factors = []
         for result in con.execute(stmt):
             non_plant, r1, r2 = result
-            p1 = plant1.name
-            p2 = plant2.name
-            lower_bound = float(utils.reduce_intervals(plant1, plant2, 'spread', 'lower')) / 2
-            upper_bound = float(utils.reduce_intervals(plant1, plant2, 'spread', 'upper')) / 2
-            close = None if upper_bound == 0 else (lower_bound, upper_bound)
-            far = None if upper_bound == 0 else (upper_bound * 2, MAX_PLANTING_RANGE)
-            factor = {
+            factors.append({
                 Ecology.NEGATIVE_ALLELOPATHY: {
-                    Ecology.NEGATIVE_ALLELOPATHY: Factor(None, f'{p1} and {p2} are both negative allelopaths for {non_plant}'),
-                    Ecology.POSITIVE_ALLELOPATHY: Factor(far, f'{p1} is a negative allelopath and {p2} is a positive allelopath for {non_plant}'),
+                    Ecology.NEGATIVE_ALLELOPATHY: Factor(1.0, f'{p1.name} and {p2.name} are both negative allelopaths for {non_plant}'),
+                    Ecology.POSITIVE_ALLELOPATHY: Factor(-1.0, f'{p1.name} is a negative allelopath and {p2.name} is a positive allelopath for {non_plant}'),
                     Ecology.NO_ALLELOPATHY: None,
-                    Ecology.PATHOGEN: Factor(close, f'{p1} is a negative allelopath for {p2}\'s pathogenic species {non_plant}'),
-                    Ecology.PREDATOR: Factor(close, f'{p1} is a negative allelopath for {p2}\'s predator species {non_plant}'),
-                    Ecology.SEED_DISPERSER: Factor(far, f'{p1} is a negative allelopath for {p2}\'s seed disperser species {non_plant}'),
-                    Ecology.POLLINATOR: Factor(far, f'{p1} is a negative allelopath for {p2}\'s pollinator species {non_plant}')
+                    Ecology.PATHOGEN: Factor(1.0, f'{p1.name} is a negative allelopath for {p2.name}\'s pathogenic species {non_plant}'),
+                    Ecology.PREDATOR: Factor(1.0, f'{p1.name} is a negative allelopath for {p2.name}\'s predator species {non_plant}'),
+                    Ecology.SEED_DISPERSER: Factor(-1.0, f'{p1.name} is a negative allelopath for {p2.name}\'s seed disperser species {non_plant}'),
+                    Ecology.POLLINATOR: Factor(-1.0, f'{p1.name} is a negative allelopath for {p2.name}\'s pollinator species {non_plant}')
                 },
                 Ecology.POSITIVE_ALLELOPATHY: {
-                    Ecology.NEGATIVE_ALLELOPATHY: Factor(far, f'{p1} is a positive allelopath and {p2} is a negative allelopath for {non_plant}'),
-                    Ecology.POSITIVE_ALLELOPATHY: Factor(close, f'{p1} and {p2} are both positive allelopaths for {non_plant}'),
+                    Ecology.NEGATIVE_ALLELOPATHY: Factor(-1.0, f'{p1.name} is a positive allelopath and {p2.name} is a negative allelopath for {non_plant}'),
+                    Ecology.POSITIVE_ALLELOPATHY: Factor(1.0, f'{p1.name} and {p2.name} are both positive allelopaths for {non_plant}'),
                     Ecology.NO_ALLELOPATHY: None,
-                    Ecology.PATHOGEN: Factor(far, f'{p1} is a positive allelopath for {p2}\'s pathogenic species {non_plant}'),
-                    Ecology.PREDATOR: Factor(far, f'{p1} is a positive allelopath for {p2}\'s predator species {non_plant}'),
-                    Ecology.SEED_DISPERSER: Factor(close, f'{p1} is a positive allelopath for {p2}\'s seed disperser species {non_plant}'),
-                    Ecology.POLLINATOR: Factor(close, f'{p1} is a positive allelopath for {p2}\'s pollinator species {non_plant}')
+                    Ecology.PATHOGEN: Factor(-1.0, f'{p1.name} is a positive allelopath for {p2.name}\'s pathogenic species {non_plant}'),
+                    Ecology.PREDATOR: Factor(-1.0, f'{p1.name} is a positive allelopath for {p2.name}\'s predator species {non_plant}'),
+                    Ecology.SEED_DISPERSER: Factor(1.0, f'{p1.name} is a positive allelopath for {p2.name}\'s seed disperser species {non_plant}'),
+                    Ecology.POLLINATOR: Factor(1.0, f'{p1.name} is a positive allelopath for {p2.name}\'s pollinator species {non_plant}')
                 },
                 Ecology.NO_ALLELOPATHY: {
                     Ecology.NEGATIVE_ALLELOPATHY: None,
@@ -223,43 +218,40 @@ def build(utils: AlgorithmUtils) -> None:
                     Ecology.POLLINATOR: None
                 },
                 Ecology.PATHOGEN: {
-                    Ecology.NEGATIVE_ALLELOPATHY: Factor(close, f'{p2} is a negative allelopath for {p1}\'s pathogenic species {non_plant}'),
-                    Ecology.POSITIVE_ALLELOPATHY: Factor(far, f'{p2} is a positive allelopath for {p1}\'s pathogenic species {non_plant}'),
+                    Ecology.NEGATIVE_ALLELOPATHY: Factor(1.0, f'{p2.name} is a negative allelopath for {p1.name}\'s pathogenic species {non_plant}'),
+                    Ecology.POSITIVE_ALLELOPATHY: Factor(-1.0, f'{p2.name} is a positive allelopath for {p1.name}\'s pathogenic species {non_plant}'),
                     Ecology.NO_ALLELOPATHY: None,
-                    Ecology.PATHOGEN: Factor(far, f'{p1} and {p2} have a common pathogenic species {non_plant}'),
-                    Ecology.PREDATOR: Factor(far, f'{p1}\'s pathogenic species {non_plant} is a predator for {p2}'),
-                    Ecology.SEED_DISPERSER: Factor(far, f'{p1}\'s pathogenic species {non_plant} is a seed disperser for {p2}'),
-                    Ecology.POLLINATOR: Factor(far, f'{p1}\'s pathogenic species {non_plant} is a pollinator for {p2}')
+                    Ecology.PATHOGEN: Factor(-1.0, f'{p1.name} and {p2.name} have a common pathogenic species {non_plant}'),
+                    Ecology.PREDATOR: Factor(-1.0, f'{p1.name}\'s pathogenic species {non_plant} is a predator for {p2.name}'),
+                    Ecology.SEED_DISPERSER: Factor(-1.0, f'{p1.name}\'s pathogenic species {non_plant} is a seed disperser for {p2.name}'),
+                    Ecology.POLLINATOR: Factor(-1.0, f'{p1.name}\'s pathogenic species {non_plant} is a pollinator for {p2.name}')
                 },
                 Ecology.PREDATOR: {
-                    Ecology.NEGATIVE_ALLELOPATHY: Factor(close, f'{p2} is a negative allelopath for {p1}\'s predator species {non_plant}'),
-                    Ecology.POSITIVE_ALLELOPATHY: Factor(far, f'{p2} is a positive allelopath for {p1}\'s predator species {non_plant}'),
+                    Ecology.NEGATIVE_ALLELOPATHY: Factor(1.0, f'{p2.name} is a negative allelopath for {p1.name}\'s predator species {non_plant}'),
+                    Ecology.POSITIVE_ALLELOPATHY: Factor(-1.0, f'{p2.name} is a positive allelopath for {p1.name}\'s predator species {non_plant}'),
                     Ecology.NO_ALLELOPATHY: None,
-                    Ecology.PATHOGEN: Factor(far, f'{p1}\'s predator species {non_plant} is a pathogen for {p2}'),
-                    Ecology.PREDATOR: Factor(close, f'{p1} and {p2} have a common predator species {non_plant}'),
-                    Ecology.SEED_DISPERSER: Factor(close, f'{p1}\'s predator species {non_plant} is a seed disperser for {p2}'),
-                    Ecology.POLLINATOR: Factor(close, f'{p1}\'s predator species {non_plant} is a pollinator for {p2}')
+                    Ecology.PATHOGEN: Factor(-1.0, f'{p1.name}\'s predator species {non_plant} is a pathogen for {p2.name}'),
+                    Ecology.PREDATOR: Factor(1.0, f'{p1.name} and {p2.name} have a common predator species {non_plant}'),
+                    Ecology.SEED_DISPERSER: Factor(1.0, f'{p1.name}\'s predator species {non_plant} is a seed disperser for {p2.name}'),
+                    Ecology.POLLINATOR: Factor(1.0, f'{p1.name}\'s predator species {non_plant} is a pollinator for {p2.name}')
                 },
                 Ecology.SEED_DISPERSER: {
-                    Ecology.NEGATIVE_ALLELOPATHY: Factor(far, f'{p2} is a negative allelopath for {p1}\'s seed disperser species {non_plant}'),
-                    Ecology.POSITIVE_ALLELOPATHY: Factor(close, f'{p2} is a positive allelopath for {p1}\'s seed disperser species {non_plant}'),
+                    Ecology.NEGATIVE_ALLELOPATHY: Factor(-1.0, f'{p2.name} is a negative allelopath for {p1.name}\'s seed disperser species {non_plant}'),
+                    Ecology.POSITIVE_ALLELOPATHY: Factor(1.0, f'{p2.name} is a positive allelopath for {p1.name}\'s seed disperser species {non_plant}'),
                     Ecology.NO_ALLELOPATHY: None,
-                    Ecology.PATHOGEN: Factor(far, f'{p1}\'s seed disperser species {non_plant} is a pathogen for {p2}'),
-                    Ecology.PREDATOR: Factor(close, f'{p1}\'s seed disperser species {non_plant} is a predator for {p2}'),
-                    Ecology.SEED_DISPERSER: Factor(close, f'{p1} and {p2} have a common seed disperser species {non_plant}'),
-                    Ecology.POLLINATOR: Factor(close, f'{p1}\'s seed disperser species {non_plant} is a pollinator for {p2}')
+                    Ecology.PATHOGEN: Factor(-1.0, f'{p1.name}\'s seed disperser species {non_plant} is a pathogen for {p2.name}'),
+                    Ecology.PREDATOR: Factor(1.0, f'{p1.name}\'s seed disperser species {non_plant} is a predator for {p2.name}'),
+                    Ecology.SEED_DISPERSER: Factor(1.0, f'{p1.name} and {p2.name} have a common seed disperser species {non_plant}'),
+                    Ecology.POLLINATOR: Factor(1.0, f'{p1.name}\'s seed disperser species {non_plant} is a pollinator for {p2.name}')
                 },
                 Ecology.POLLINATOR: {
-                    Ecology.NEGATIVE_ALLELOPATHY: Factor(far, f'{p2} is a negative allelopath for {p1}\'s pollinator species {non_plant}'),
-                    Ecology.POSITIVE_ALLELOPATHY: Factor(close, f'{p2} is a positive allelopath for {p1}\'s pollinator species {non_plant}'),
+                    Ecology.NEGATIVE_ALLELOPATHY: Factor(-1.0, f'{p2.name} is a negative allelopath for {p1.name}\'s pollinator species {non_plant}'),
+                    Ecology.POSITIVE_ALLELOPATHY: Factor(1.0, f'{p2.name} is a positive allelopath for {p1.name}\'s pollinator species {non_plant}'),
                     Ecology.NO_ALLELOPATHY: None,
-                    Ecology.PATHOGEN: Factor(far, f'{p1}\'s pollinator species {non_plant} is a pathogen for {p2}'),
-                    Ecology.PREDATOR: Factor(close, f'{p1}\'s pollinator species {non_plant} is a predator for {p2}'),
-                    Ecology.SEED_DISPERSER: Factor(close, f'{p1}\'s pollinator species {non_plant} is a seed disperser for {p2}'),
-                    Ecology.POLLINATOR: Factor(close, f'{p1} and {p2} have a common pollinator species {non_plant}')
+                    Ecology.PATHOGEN: Factor(-1.0, f'{p1.name}\'s pollinator species {non_plant} is a pathogen for {p2.name}'),
+                    Ecology.PREDATOR: Factor(-1.0, f'{p1.name}\'s pollinator species {non_plant} is a predator for {p2.name}'),
+                    Ecology.SEED_DISPERSER: Factor(1.0, f'{p1.name}\'s pollinator species {non_plant} is a seed disperser for {p2.name}'),
+                    Ecology.POLLINATOR: Factor(1.0, f'{p1.name} and {p2.name} have a common pollinator species {non_plant}')
                 }
-            }[r1][r2]
-            if factor:
-                utils.add_to_report(factor)
-
-# pylint: enable=inconsistent-return-statements
+            }[r1][r2])
+        return Factor.union(factors)

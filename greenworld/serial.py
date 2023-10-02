@@ -21,3 +21,6 @@ def serialize_report(report: List[Factor]) -> list:
             return [[x, y], factor.reason]
         return [None, factor.reason]
     return list(map(serialize_factor, report))
+
+def serialize_factors(factors):
+    return list(map(lambda x: [None, x.label], factors))

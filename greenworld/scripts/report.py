@@ -4,10 +4,9 @@
 # • Run algorithm modules on them by a database check
 # • Write the report back to the database
 import sqlalchemy
-from greenworld.serial import serialize_report
-from greenworld.utils import AlgorithmUtils
+from greenworld.serial import serialize_factors
+from greenworld.algorithm import GreenworldAlgorithm
 from greenworld import Greenworld
-from greenworld import algorithm
 from greenworld.orm import (
     MAX_PLANTING_RANGE,
     init_db,
@@ -79,32 +78,25 @@ def get_analysis_total(num_new, num_old):
 # The main loop for companionship reporting
 def main(gw: Greenworld):
     db = init_db()
-    utils = AlgorithmUtils()
-    algorithm.build(utils)
+    algorithm = GreenworldAlgorithm()
     with db.connect() as con:
         last_plant = None
         last_analyzed = get_last_analyzed(con)
         number_plants = get_last_plant(con)
-        utils.set_connection(con)
         analysis_current = 0
         analysis_total = get_analysis_total(number_plants - last_analyzed, last_analyzed)
         for plant1 in get_plants(con, plants_table.c.id > last_analyzed).mappings():
             for plant2 in get_plants(con, plants_table.c.id <= plant1.id).mappings():
                 analysis_current += 1
                 gw.log(f'{analysis_current}/{analysis_total}: {plant2.name} ({plant2.species}) x {plant1.name} ({plant1.species})')
-                utils.new_report()
-                for rule in utils.get_rules():
-                    rule(plant2, plant1)
-                report = utils.get_report()
-                union_min, union_max = get_range_union(report)
-                score = calculate_compatibility_score(union_min, plant1, plant2) if is_valid_report(report) else None
+                report = algorithm.generate_report(con, plant1, plant2)
                 con.execute(reports_table.insert().values(
                     plant1 = plant2.id,
                     plant2 = plant1.id,
-                    score = score,
-                    range_union_min = union_min,
-                    range_union_max = union_max,
-                    report = serialize_report(report)
+                    score = report.score,
+                    range_union_min = 0,
+                    range_union_max = 0,
+                    report = serialize_factors(report.factors)
                 ))
             last_plant = plant1
         if last_plant:
