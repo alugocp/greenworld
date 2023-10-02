@@ -2,18 +2,19 @@ import unittest
 from greenworld.scripts import report
 from greenworld.scripts import reset
 from greenworld.scripts import enter
+from greenworld.factor import Factor
 from greenworld import Greenworld
 
 class ScriptsReportCase(unittest.TestCase):
 
     def test_get_range_union(self):
-        self.assertEqual(report.get_range_union([((0, 1), None), ((9, 10), None)]), (9, 10))
-        self.assertEqual(report.get_range_union([((0, 1), None), ((0, 2), None)]), (0, 1))
-        self.assertEqual(report.get_range_union([((0, 2), None), ((1, 2), None)]), (1, 2))
-        self.assertEqual(report.get_range_union([((0, 1), None), ((1, 2), None)]), (1, 2))
-        self.assertEqual(report.get_range_union([((1, 4), None), ((2, 3), None)]), (2, 3))
-        self.assertEqual(report.get_range_union([((1, 2), None), ((3, 4), None), ((5, 6), None)]), (5, 6))
-        self.assertEqual(report.get_range_union([((1, 6), None), ((5, 7), None)]), (5, 6))
+        self.assertEqual(report.get_range_union([Factor((0, 1), None), Factor((9, 10), None)]), (9, 10))
+        self.assertEqual(report.get_range_union([Factor((0, 1), None), Factor((0, 2), None)]), (0, 1))
+        self.assertEqual(report.get_range_union([Factor((0, 2), None), Factor((1, 2), None)]), (1, 2))
+        self.assertEqual(report.get_range_union([Factor((0, 1), None), Factor((1, 2), None)]), (1, 2))
+        self.assertEqual(report.get_range_union([Factor((1, 4), None), Factor((2, 3), None)]), (2, 3))
+        self.assertEqual(report.get_range_union([Factor((1, 2), None), Factor((3, 4), None), Factor((5, 6), None)]), (5, 6))
+        self.assertEqual(report.get_range_union([Factor((1, 6), None), Factor((5, 7), None)]), (5, 6))
 
     def test_get_analysis_total(self):
         self.assertEqual(report.get_analysis_total(3, 0), 6)

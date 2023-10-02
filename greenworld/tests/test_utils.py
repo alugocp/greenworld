@@ -1,5 +1,6 @@
 import unittest
 from intervals import IntInterval
+from greenworld.factor import Factor
 from greenworld.utils import AlgorithmUtils
 
 class LibUtilsCase(unittest.TestCase):
@@ -29,7 +30,7 @@ class LibUtilsCase(unittest.TestCase):
         utils = AlgorithmUtils()
         utils.new_report()
         self.assertEqual(len(utils.get_report()), 0)
-        utils.rule()(lambda x, y: (None, x))(True, False)
+        utils.rule()(lambda x, y: Factor(None, x))(True, False)
         self.assertEqual(len(utils.get_report()), 1)
         self.assertEqual(len(utils.get_rules()), 1)
         utils.rule()(lambda x, y: None)(True, False)

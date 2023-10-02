@@ -2,10 +2,12 @@ from typing import Optional, List
 from greenworld.factor import Factor
 
 class AlgorithmUtils:
-    __report: List[Factor] = []
-    __included_rules = None
-    __connection = None
-    __rules = []
+
+    def __init__(self):
+        self.__report = []
+        self.__included_rules = None
+        self.__connection = None
+        self.__rules = []
 
     # Sets up a new report instance
     def new_report(self):
