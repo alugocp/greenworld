@@ -66,7 +66,7 @@ class Nitrogen(IntEnum):
 
 @unique
 class Ecology(IntEnum):
-    # The plant species poisons the target plant or non-plant species
+    # The plant species thwarts the target plant or non-plant species
     NEGATIVE_ALLELOPATHY = 0
     # The plant species benefits the target plant or non-plant species
     POSITIVE_ALLELOPATHY = 1

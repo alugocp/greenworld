@@ -90,7 +90,24 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [Mushroom Garden](https://northspore.com/pages/mushroom-garden)
 - [COMPANION PLANTING STRAWBERRIES WITH MUSHROOMS](https://practicalselfreliance.com/companion-planting-strawberries-mushrooms)
 - [Six Steps to Mushroom Farming](https://www.mushroomcouncil.com/growing-mushrooms/six-steps-to-mushroom-farming/)
-- [The Three Sisters of Indigenous American Agriculture](# https://www.nal.usda.gov/collections/stories/three-sisters)
+- [The Three Sisters of Indigenous American Agriculture](https://www.nal.usda.gov/collections/stories/three-sisters)
+
+# Companion planting papers
+- [Companion planting with French marigolds
+protects tomato plants from glasshouse
+whiteflies through the emission of airborne
+limonene](https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0213071&type=printable)
+- [Removing constraints to sustainable food production: new ways to exploit secondary metabolism from companion planting and GM](https://gettheresearch.org/search?q=companion_plant&zoom=10.1002%2Fps.5508)
+- [Companion Plants for Aphid Pest Management](https://gettheresearch.org/search?q=companion_plant&zoom=10.3390%2Finsects8040112)
+- [THE EFFECT OF COMPANIONATE PLANTING ON LEPIDOPTERAN PESTS OF CABBAGE](https://gettheresearch.org/search?q=companion_plant&zoom=10.4039%2Fent111863-7)
+- [Suaeda salsa, A Desalinating Companion Plant for Greenhouse Tomato](https://gettheresearch.org/search?q=companion_plant&zoom=10.21273%2Fhortsci.35.4.620)
+- [634A PB 527 INSECT PEST MANAGEMENT THROUGH A CABBAGE-INDIAN MUSTARD COMPANION PLANTING](https://gettheresearch.org/search?q=companion_plant&zoom=10.21273%2Fhortsci.29.5.523d)
+- [Companion planting with white yarrow or with feverfew for squash bug, Anasa tristis (Hemiptera: Coreidae), management on summer squash](https://gettheresearch.org/search?q=companion_plant&zoom=10.1002%2Fps.4427)
+- [Sweet Corn, Explored as a Companion Plant, Mitigates Sucking Insects in Industrial Tomato Plants, Pre-flowering Stage](https://gettheresearch.org/search?q=companion_plant&page=2&zoom=10.5539%2Fjas.v10n11p451)
+- [Companion Crop and Planting Configuration Effect on Onion](https://gettheresearch.org/search?q=companion_plant&page=2&zoom=10.21273%2Fhorttech.16.1.0012)
+- [Influence of Suaeda salsa as a Companion Crop with Tomato Plant in a Closed Root System](https://gettheresearch.org/search?q=companion_plant&page=2&zoom=10.21273%2Fhortsci.32.3.463f)
+- [Indigenous Knowledge for Biodiversity Conservation](https://www.researchgate.net/publication/240046204_Indigenous_Knowledge_for_Biodiversity_Conservation)
+- [Traditional knowledge and pest management in the guatemalan highlands](https://www.researchgate.net/publication/30842544_Traditional_knowledge_and_pest_management_in_the_Guatemalan_highlands)
 
 # Plant studies
 ## Corn
