@@ -306,18 +306,17 @@ good_dist = []
 bad_reports = []
 bad_dist = []
 for r in results:
-    r['score'] = float(r['score'])
+    r['score'] = 0.0 if r['score'] is None else float(r['score'])
     s1 = r['species1']
     s2 = r['species2']
-    score = float(r['score'])
     if (s1 in GOOD and s2 in GOOD[s1]) or (s2 in GOOD and s1 in GOOD[s2]):
-        good_dist.append(score)
+        good_dist.append(r['score'])
         good_reports.append(r)
     elif (s1 in BAD and s2 in BAD[s1]) or (s2 in BAD and s1 in BAD[s2]):
-        bad_dist.append(score)
+        bad_dist.append(r['score'])
         bad_reports.append(r)
     elif (s1 in GOOD or s1 in BAD) and (s2 in GOOD or s2 in BAD):
-        neutral_dist.append(score)
+        neutral_dist.append(r['score'])
         neutral_reports.append(r)
 
 # Write report files
@@ -330,7 +329,7 @@ with open('validation/garden-bad-reports.txt', 'w', encoding = 'utf-8') as file:
 
 # Percentage of "good" identified companions within a distribution
 def percent_good(dist):
-    percent = len(list(filter(lambda x: x <= 0, dist))) / len(dist)
+    percent = len(list(filter(lambda x: x > 0, dist))) / len(dist)
     return round(percent * 10000) / 100
 
 # Statistical comparison between distributions (Wilcoxon rank-sum tests)
