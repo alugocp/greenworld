@@ -965,8 +965,8 @@
         },
         {
             "id": 14,
-            "name": "Marigold",
-            "species": "tagetes spp.",
+            "name": "French Marigold",
+            "species": "tagetes patula",
             "family": "asteraceae",
             "growth_habit": "GrowthHabit.FORB",
             "height": [

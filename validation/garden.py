@@ -36,7 +36,7 @@ from greenworld.orm import init_db
 # Mint - mentha spp.
 # Kohlrabi - brassica oleracea var. gongylodes
 # Nasturtium - tropaeolum majus
-# Marigold - tagetes spp.
+# Marigold - tagetes patula
 # Cucumber - cucumis sativus
 # Cilantro - coriandrum sativum
 
@@ -50,7 +50,7 @@ GOOD = {
         'phaseolus vulgaris'
     ],
     'solanum lycopersicum': [
-        'tagetes spp.',
+        'tagetes patula',
         'tropaeolum majus',
         'coriandrum sativum',
         'helianthus annuus',
@@ -64,7 +64,7 @@ GOOD = {
         'anethum graveolens',
         'ocimum basilicum',
         'phaseolus vulgaris',
-        'tagetes spp.',
+        'tagetes patula',
         'tropaeolum majus'
     ],
     'solanum tuberosum': [
@@ -72,7 +72,7 @@ GOOD = {
         'phaseolus vulgaris',
         'coriandrum sativum',
         'zea mays',
-        'tagetes spp.',
+        'tagetes patula',
         'tropaeolum majus'
     ],
     'brassica oleracea var. italica': [
@@ -80,7 +80,7 @@ GOOD = {
         'allium cepa',
         'allium sativum',
         'tropaeolum majus',
-        'tagetes spp.',
+        'tagetes patula',
         'anethum graveolens',
         'ocimum basilicum',
         'mentha spp.',
@@ -88,7 +88,7 @@ GOOD = {
     ],
     'ocimum basilicum': [
         'coriandrum sativum',
-        'tagetes spp.',
+        'tagetes patula',
         'solanum lycopersicum',
         'solanum tuberosum'
     ],
@@ -99,7 +99,7 @@ GOOD = {
         'brassica oleracea var. italica',
         'brassica oleracea var. gongylodes',
         'tropaeolum majus',
-        'tagetes spp.'
+        'tagetes patula'
     ],
     'allium cepa': [
         'allium cepa',
@@ -110,7 +110,7 @@ GOOD = {
         'solanum lycopersicum',
         'solanum tuberosum',
         'anethum graveolens',
-        'tagetes spp.'
+        'tagetes patula'
     ],
     'anethum graveolens': [
         'zea mays',
@@ -127,7 +127,7 @@ GOOD = {
         'zea mays',
         'phaseolus vulgaris',
         'anethum graveolens',
-        'tagetes spp.',
+        'tagetes patula',
         'tropaeolum majus',
         'allium sativum',
         'mentha spp.',
@@ -139,7 +139,7 @@ GOOD = {
         'allium cepa',
         'phaseolus vulgaris',
         'solanum lycopersicum',
-        'tagetes spp.'
+        'tagetes patula'
     ],
     'brassica oleracea var. gongylodes': [
         'phaseolus vulgaris',
@@ -153,7 +153,7 @@ GOOD = {
         'cucurbita maxima',
         'brassica oleracea var. italica'
     ],
-    'tagetes spp.': [
+    'tagetes patula': [
         'cucumis sativus',
         'cucurbita maxima',
         'citrullus lanatus',
@@ -168,7 +168,7 @@ GOOD = {
         'zea mays',
         'anethum graveolens',
         'tropaeolum majus',
-        'tagetes spp.',
+        'tagetes patula',
         'helianthus annuus',
         'allium sativum',
         'apios americana'
@@ -214,10 +214,12 @@ BAD = {
         'foeniculum vulgare'
     ],
     'allium sativum': [
-        'phaseolus vulgaris'
+        'phaseolus vulgaris',
+        'apios americana'
     ],
     'allium cepa': [
-        'phaseolus vulgaris'
+        'phaseolus vulgaris',
+        'apios americana'
     ],
     'foeniculum vulgare': [
         'phaseolus vulgaris',

@@ -3,10 +3,11 @@ We generate reports for pairs of plants and then calculate compatibility scores 
 Report generation runs through a set of rules, where applicable rules are added to the report.
 
 ## Rules
-There are 4 categories of rules:
+There are 5 categories of rules:
 - Compare nitrogen usage/fixation
-- Check for ecological interactions between other species or each other
-- Make sure the preferred environments overlap (pH, drainage, soil type)
+- Check for ecological interactions between other species
+- Check for allelopathic interactions between the two plants
+- Make sure the preferred environments overlap (soil pH, drainage, and type)
 - Compare the plants' sun/shade inputs (requirements) and outputs (provisions)
 
 These are derived from literature on companion planting.

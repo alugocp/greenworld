@@ -133,7 +133,7 @@ class IwebXlsDataCollector(BaseDataCollector):
                         plant_id = len(output['plants'])
                         plant = {
                             'id': plant_id + 1,
-                            'name': '',
+                            'name': '???',
                             'species': latin2,
                             'family': '',
                             'citations': {},
@@ -146,7 +146,7 @@ class IwebXlsDataCollector(BaseDataCollector):
                         nonplant_index = len(output['others'])
                         nonplant = {
                             'species': latin1,
-                            'name': ''
+                            'name': '???'
                         }
                         output['others'].append(nonplant)
                         self.request_data(f'others.{nonplant_index}(insect)')
