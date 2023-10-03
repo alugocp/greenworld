@@ -1,5 +1,7 @@
 import unittest
 from greenworld.serial import deserialize_enum_list
+from greenworld.serial import serialize_factors
+from greenworld.utils import Factor
 
 class SerialCase(unittest.TestCase):
 
@@ -12,3 +14,17 @@ class SerialCase(unittest.TestCase):
         self.assertEqual(deserialize_enum_list(3), [2, 1])
         self.assertEqual(deserialize_enum_list(2), [2])
         self.assertEqual(deserialize_enum_list(1), [1])
+
+    def test_serialize_factors(self):
+        self.assertEqual(
+            serialize_factors([
+                Factor(1.0, 'factor 1'),
+                Factor(-1.0, 'factor 2'),
+                Factor(0.0, 'factor 3')
+            ]),
+            [
+                [1.0, 'factor 1'],
+                [-1.0, 'factor 2'],
+                [0.0, 'factor 3']
+            ]
+        )

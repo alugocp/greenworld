@@ -1,38 +1,80 @@
 import unittest
-from intervals import IntInterval
-from greenworld.factor import Factor
-from greenworld.utils import AlgorithmUtils
+from greenworld.utils import CompanionAlgorithm
+from greenworld.utils import Factor
+from greenworld.utils import Report
+from greenworld.utils import Rule
+
+class DotDict(dict):
+    __getattr__ = dict.get
 
 class LibUtilsCase(unittest.TestCase):
 
-    def test_overlaps(self):
-        utils = AlgorithmUtils()
-        self.assertTrue(utils.overlaps(IntInterval([0, 5]), IntInterval([1, 6])))
-        self.assertTrue(utils.overlaps(IntInterval([0, 5]), IntInterval([5, 6])))
-        self.assertTrue(utils.overlaps(IntInterval([0, 5]), IntInterval([-1, 6])))
-        self.assertTrue(utils.overlaps(IntInterval([2, 5]), IntInterval([1, 6])))
-        self.assertFalse(utils.overlaps(IntInterval([0, 5]), IntInterval([6, 10])))
-        self.assertFalse(utils.overlaps(IntInterval([6, 10]), IntInterval([0, 5])))
+    def test_factor_union(self):
+        self.assertEqual(
+            Factor.union([
+                Factor(0.4, 'factor 1'),
+                Factor(0.1, 'factor 2'),
+                Factor(0.1, 'factor 3'),
+            ]),
+            Factor(0.2, 'factor 1 and factor 2 and factor 3')
+        )
 
-    def test_reduce_intervals(self):
-        utils = AlgorithmUtils()
-        self.assertEqual(utils.reduce_intervals({'spread': IntInterval([1, 2])}, {'spread': IntInterval([1, 2])}, 'spread', 'upper'), 4)
-        self.assertEqual(utils.reduce_intervals({'spread': IntInterval([1, 2])}, {'spread': IntInterval([0, 1])}, 'spread', 'upper'), 3)
-        self.assertEqual(utils.reduce_intervals({'spread': IntInterval([1, 2])}, {'spread': IntInterval([1, 2])}, 'spread', 'lower'), 2)
-        self.assertEqual(utils.reduce_intervals({'spread': IntInterval([1, 2])}, {'spread': IntInterval([0, 1])}, 'spread', 'lower'), 1)
-        self.assertEqual(utils.reduce_intervals({'spread': IntInterval([1, 2])}, {'spread': None}, 'spread', 'upper'), 2)
-        self.assertEqual(utils.reduce_intervals({'spread': None}, {'spread': IntInterval([1, 2])}, 'spread', 'upper'), 2)
-        self.assertEqual(utils.reduce_intervals({'spread': IntInterval([1, 2])}, {}, 'spread', 'upper'), 2)
-        self.assertEqual(utils.reduce_intervals({}, {'spread': IntInterval([1, 2])}, 'spread', 'upper'), 2)
-        self.assertEqual(utils.reduce_intervals({}, {}, 'spread', 'upper'), 0)
+    def test_generate_report(self):
+        p1 = DotDict({ 'species': 'plant1' })
+        p2 = DotDict({ 'species': 'plant2' })
+        p3 = DotDict({ 'species': 'plant3' })
+        mock = MockAlgorithm()
+        self.assertEqual(
+            mock.generate_report(None, p1, p2),
+            Report(0.0, [
+                Factor(1.0, 'rule 1 is here'),
+                Factor(-1.0, 'rule 2 is here'),
+                Factor(0.0, 'rule 3 is here')
+            ])
+        )
+        self.assertEqual(
+            mock.generate_report(None, p1, p3),
+            Report(-1.0, [
+                Factor(-1.0, 'rule 2 is here')
+            ])
+        )
+        self.assertEqual(
+            mock.generate_report(None, p3, p2),
+            Report(0.0, [
+                Factor(0.0, 'rule 3 is here')
+            ])
+        )
+        self.assertEqual(
+            mock.generate_report(None, p3, p3),
+            Report(None, [])
+        )
 
-    def test_rule(self):
-        utils = AlgorithmUtils()
-        utils.new_report()
-        self.assertEqual(len(utils.get_report()), 0)
-        utils.rule()(lambda x, y: Factor(None, x))(True, False)
-        self.assertEqual(len(utils.get_report()), 1)
-        self.assertEqual(len(utils.get_rules()), 1)
-        utils.rule()(lambda x, y: None)(True, False)
-        self.assertEqual(len(utils.get_report()), 1)
-        self.assertEqual(len(utils.get_rules()), 2)
+class MockAlgorithm(CompanionAlgorithm):
+
+    def __init__(self):
+        super().__init__([
+            Rule1(),
+            Rule2(),
+            Rule3(),
+        ])
+
+class Rule1(Rule):
+
+    def generate_factor(self, _con, p1, p2):
+        if p1.species == 'plant1' and p2.species == 'plant2':
+            return Factor(1.0, 'rule 1 is here')
+        return None
+
+class Rule2(Rule):
+
+    def generate_factor(self, _con, p1, p2):
+        if p1.species == 'plant1':
+            return Factor(-1.0, 'rule 2 is here')
+        return None
+
+class Rule3(Rule):
+
+    def generate_factor(self, _con, p1, p2):
+        if p2.species == 'plant2':
+            return Factor(0.0, 'rule 3 is here')
+        return None

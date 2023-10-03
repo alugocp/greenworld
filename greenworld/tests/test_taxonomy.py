@@ -11,3 +11,18 @@ class TaxonomyCase(unittest.TestCase):
         self.assertEqual(taxon.parse_species('zea mays var. Oaxacan cv. Green').pretty_species(), 'zea mays var. oaxacan cv. green')
         self.assertEqual(taxon.parse_species('zea mays var. Oaxacan L. cv. Green').pretty_species(), 'zea mays var. oaxacan cv. green')
         self.assertEqual(taxon.parse_species('zea mays nope. Oaxacan').pretty_species(), 'zea mays')
+
+    def test_parse_family(self):
+        taxon = Taxon()
+        self.assertEqual(
+            taxon.parse_family('Fabaceae').family,
+            'fabaceae'
+        )
+        self.assertEqual(
+            taxon.parse_family('asparagaceae').family,
+            'asparagaceae'
+        )
+        self.assertEqual(
+            taxon.parse_family('leguminosae').family,
+            None
+        )

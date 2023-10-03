@@ -11,7 +11,7 @@ class Factor:
         if len(factors) == 0:
             return None
         return Factor(
-            sum(list(map(lambda x: x.value, factors))) / len(factors),
+            round(sum(list(map(lambda x: x.value, factors))) / len(factors), 3),
             ' and '.join(list(map(lambda x: x.label, factors)))
         )
 

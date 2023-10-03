@@ -19,6 +19,7 @@ class GreenworldAlgorithm(CompanionAlgorithm):
             NitrogenRule(),
             EnvironmentRule(),
             SunlightRule(),
+            AllelopathyRule(),
             EcologyRule()
         ])
 
@@ -31,15 +32,15 @@ class NitrogenRule(Rule):
     def generate_factor(self, _con, p1, p2) -> Factor:
         # p1 is a nitrogen fixer and p2 is a heavy feeder
         if p1.nitrogen == Nitrogen.FIXER and p2.nitrogen == Nitrogen.HEAVY:
-            return Factor(1.0, f'{p1.name} can fix nitrogen for ' + p2.name)
+            return Factor(1.0, f'{p1.name} can fix nitrogen for {p2.name}')
 
         # p2 is a nitrogen fixer and p1 is a heavy feeder
         if p2.nitrogen == Nitrogen.FIXER and p1.nitrogen == Nitrogen.HEAVY:
-            return Factor(1.0, p2.name + ' can fix nitrogen for ' + p1.name)
+            return Factor(1.0, f'{p2.name} can fix nitrogen for {p1.name}')
 
         # Both p1 and p2 are heavy feeders
         if p1.nitrogen == Nitrogen.HEAVY and p2.nitrogen == Nitrogen.HEAVY:
-            return Factor(-1.0, p1.name + ' and ' + p2.name + ' are both heavy feeders')
+            return Factor(-1.0, f'{p1.name} and {p2.name} are both heavy feeders')
         return None
 
 class EnvironmentRule(Rule):
@@ -69,7 +70,7 @@ class EnvironmentRule(Rule):
         # Return any mismatches as a single factor
         if len(mismatches) > 0:
             suffix = ' and '.join(mismatches)
-            return Factor(-len(mismatches) / 3, f'{p1.name} and {p2.name} require different {suffix}')
+            return Factor(round(-len(mismatches) / 3, 3), f'{p1.name} and {p2.name} require different {suffix}')
         return None
 
 class SunlightRule(Rule):
@@ -103,18 +104,11 @@ class SunlightRule(Rule):
             return Factor(-1.0, f'{taller.name} may shade out {shorter.name}')
         return Factor(1.0, f'{taller.name} can provide shade for {shorter.name}')
 
-class EcologyRule(Rule):
+class AllelopathyRule(Rule):
 
     def generate_factor(self, con, p1, p2):
         if p1.species == p2.species:
             return None
-        factors = list(filter(lambda x: x is not None, [
-            self.allelopathy_check(con, p1, p2),
-            self.ecology_check(con, p1, p2)
-        ]))
-        return Factor.union(factors)
-
-    def allelopathy_check(self, con, p1, p2):
         p1_to_p2_relationship = None
         p2_to_p1_relationship = None
 
@@ -174,7 +168,11 @@ class EcologyRule(Rule):
             }
         }[p1_to_p2_relationship or 'None'][p2_to_p1_relationship or 'None']
 
-    def ecology_check(self, con, p1, p2):
+class EcologyRule(Rule):
+
+    def generate_factor(self, con, p1, p2):
+        if p1.species == p2.species:
+            return None
         e1 = ecology_other_table.alias('e1')
         e2 = ecology_other_table.alias('e2')
         stmt = sqlalchemy.select(
