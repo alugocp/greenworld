@@ -4,7 +4,10 @@ from greenworld.utils import Factor
 from greenworld.algorithm import overlaps
 from greenworld.algorithm import NitrogenRule
 from greenworld.algorithm import EnvironmentRule
+from greenworld.algorithm import SunlightRule
+from greenworld.defs import GrowthHabit
 from greenworld.defs import Nitrogen
+from greenworld.defs import Sun
 
 class DotDict(dict):
     __getattr__ = dict.get
@@ -159,3 +162,158 @@ class AlgorithmCase(unittest.TestCase):
             ),
             Factor(-1.0, 'mismatched soil type and mismatched soil drainage and mismatched soil pH')
         )
+
+    def test_sunlight(self):
+        data = [
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.TREE }),
+                Factor(-1.0, 'P2 may shade out P1')
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SHRUB }),
+                Factor(-1.0, 'P2 may shade out P1')
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SUBSHRUB }),
+                Factor(-1.0, 'P2 may shade out P1')
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.GRAMINOID }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.FORB }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.LICHENOUS }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.NONVASCULAR }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.VINE }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SUBSHRUB }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SHRUB }),
+                Factor(-1.0, 'P2 may shade out P1')
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SUBSHRUB }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.TREE }),
+                Factor(-1.0, 'P2 may shade out P1')
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SHRUB }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.TREE }),
+                Factor(-1.0, 'P2 may shade out P1')
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SUBSHRUB }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SUBSHRUB }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SHRUB }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SHRUB }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.TREE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.TREE }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.TREE }),
+                Factor(1.0, 'P2 can provide shade for P1')
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SHRUB }),
+                Factor(1.0, 'P2 can provide shade for P1')
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SUBSHRUB }),
+                Factor(1.0, 'P2 can provide shade for P1')
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.GRAMINOID }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.FORB }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.LICHENOUS }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.NONVASCULAR }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.VINE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.VINE }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.SUBSHRUB }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SHRUB }),
+                Factor(1.0, 'P2 can provide shade for P1')
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.SUBSHRUB }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.TREE }),
+                Factor(1.0, 'P2 can provide shade for P1')
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.SHRUB }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.TREE }),
+                Factor(1.0, 'P2 can provide shade for P1')
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.SUBSHRUB }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SUBSHRUB }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.SHRUB }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.SHRUB }),
+                None
+            ],
+            [
+                DotDict({ 'name': 'P1', 'sun': Sun.FULL_SHADE, 'growth_habit': GrowthHabit.TREE }),
+                DotDict({ 'name': 'P2', 'sun': Sun.FULL_SUN, 'growth_habit': GrowthHabit.TREE }),
+                None
+            ]
+        ]
+
+        rule = SunlightRule()
+        for pair in data:
+            self.assertEqual(
+                rule.generate_factor(
+                    None,
+                    pair[0],
+                    pair[1]
+                ),
+                pair[2]
+            )
