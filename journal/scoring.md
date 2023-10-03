@@ -31,3 +31,6 @@ Neutral companions (with no applicable rules) are given a null score.
     - *Brassica napus* with *Allium cepa* and *Allium sativum*
     - *Rosa chinensis* with *Tagetes patula*
     - *Hordeum vulgare* with *Cirsium vulgare*
+
+- [Companion planting with French marigolds protects tomato plants from glasshouse whiteflies through the emission of airborne limonene](https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0213071&type=printable)
+    - *Solanum lycopersicum* with *Tagetes patula*

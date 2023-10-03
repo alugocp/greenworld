@@ -46,32 +46,30 @@ class NitrogenRule(Rule):
 class EnvironmentRule(Rule):
 
     def generate_factor(self, _con, p1, p2) -> Factor:
-        mismatches = []
+        factors = []
 
         # Check soil mismatch
         if p1.soil is not None and p2.soil is not None:
             soils1 = deserialize_enum_list(p1.soil)
             soils2 = deserialize_enum_list(p2.soil)
             if not any(s1 in soils2 for s1 in soils1):
-                mismatches.append('soil')
+                factors.append(Factor(-1.0, 'mismatched soil type'))
 
         # Check drainage mismatch
         if p1.drainage is not None and p2.drainage is not None:
             drainages1 = deserialize_enum_list(p1.drainage)
             drainages2 = deserialize_enum_list(p2.drainage)
             if not any(d1 in drainages2 for d1 in drainages1):
-                mismatches.append('drainage')
+                factors.append(Factor(-1.0, 'mismatched soil drainage'))
 
         # Check pH mismatch
         if p1.pH is not None and p2.pH is not None:
             if not overlaps(p1.pH, p2.pH):
-                mismatches.append('pH')
+                factors.append(Factor(-1.0, 'mismatched soil pH'))
 
-        # Return any mismatches as a single factor
-        if len(mismatches) > 0:
-            suffix = ' and '.join(mismatches)
-            return Factor(round(-len(mismatches) / 3, 3), f'{p1.name} and {p2.name} require different {suffix}')
-        return None
+        while len(factors) < 3:
+            factors.append(None)
+        return Factor.union(factors, False)
 
 class SunlightRule(Rule):
 
@@ -118,14 +116,20 @@ class AllelopathyRule(Rule):
             p2.family: -1
         }
         stmt = other_species_table.select().where(
-            other_species_table.c['species'] == p1.family or other_species_table.c['species'] == p2.family
+            sqlalchemy.or_(
+                other_species_table.c['species'] == p1.family,
+                other_species_table.c['species'] == p2.family
+            )
         )
         for row in con.execute(stmt).mappings():
             family_ids[row['species']] = row['id']
 
         # Check non-species level allelopathy
         stmt = ecology_other_table.select().where(
-            ecology_other_table.c['plant'] == p1.id or ecology_other_table.c['plant'] == p2.id
+            sqlalchemy.or_(
+                ecology_other_table.c['plant'] == p1.id,
+                ecology_other_table.c['plant'] == p2.id
+            )
         )
         for row in con.execute(stmt).mappings():
             # Plant1 has some relationship to Plantae or plant2's family
@@ -138,7 +142,10 @@ class AllelopathyRule(Rule):
 
         # Check on species-level allelopathy
         stmt = ecology_plant_table.select().where(
-            ecology_plant_table.c['plant'] == p1.id or ecology_plant_table.c['plant'] == p2.id
+            sqlalchemy.or_(
+                ecology_plant_table.c['plant'] == p1.id,
+                ecology_plant_table.c['plant'] == p2.id
+            )
         )
         for row in con.execute(stmt).mappings():
             # Plant1 has some relationship to plant2
@@ -154,19 +161,19 @@ class AllelopathyRule(Rule):
             Ecology.POSITIVE_ALLELOPATHY: {
                 Ecology.POSITIVE_ALLELOPATHY: Factor(1.0, f'{p1.name} and {p2.name} are positive allelopaths for each other'),
                 Ecology.NEGATIVE_ALLELOPATHY: Factor(0.0, f'{p1.name} is a positive allelopath for {p2.name} but {p2.name} is a negative allelopath for {p1.name}'),
-                'None': Factor(1.0, f'{p1.name} is a positive allelopath for {p2.name}')
+                Ecology.NO_ALLELOPATHY: Factor(1.0, f'{p1.name} is a positive allelopath for {p2.name}')
             },
             Ecology.NEGATIVE_ALLELOPATHY: {
                 Ecology.POSITIVE_ALLELOPATHY: Factor(0.0, f'{p2.name} is a positive allelopath for {p1.name} but {p1.name} is a negative allelopath for {p2.name}'),
                 Ecology.NEGATIVE_ALLELOPATHY: Factor(-1.0, f'{p1.name} and {p2.name} are negative allelopaths for each other'),
-                'None': Factor(-1.0, f'{p1.name} is a negative allelopath for {p2.name}')
+                Ecology.NO_ALLELOPATHY: Factor(-1.0, f'{p1.name} is a negative allelopath for {p2.name}')
             },
-            'None': {
+            Ecology.NO_ALLELOPATHY: {
                 Ecology.POSITIVE_ALLELOPATHY: Factor(1.0, f'{p2.name} is a positive allelopath for {p1.name}'),
                 Ecology.NEGATIVE_ALLELOPATHY: Factor(-1.0, f'{p2.name} is a negative allelopath for {p1.name}'),
-                'None': None
+                Ecology.NO_ALLELOPATHY: None
             }
-        }[p1_to_p2_relationship or 'None'][p2_to_p1_relationship or 'None']
+        }[Ecology.NO_ALLELOPATHY if p1_to_p2_relationship is None else p1_to_p2_relationship][Ecology.NO_ALLELOPATHY if p2_to_p1_relationship is None else p2_to_p1_relationship]
 
 class EcologyRule(Rule):
 
@@ -252,4 +259,12 @@ class EcologyRule(Rule):
                     Ecology.POLLINATOR: Factor(1.0, f'{p1.name} and {p2.name} have a common pollinator species {non_plant}')
                 }
             }[r1][r2])
-        return Factor.union(factors)
+        union = Factor.union(factors)
+        if union is None:
+            return None
+        return Factor(self.calculate_total(factors), union.label)
+
+    def calculate_total(self, factors):
+        x = sum(list(map(lambda x: x.value, factors)))
+        coeff = -1 if x < 0 else 1
+        return round(coeff * (1 - (1 / (((0.6 * x) ** 2) + 1))), 3)

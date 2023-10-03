@@ -19,6 +19,19 @@ class LibUtilsCase(unittest.TestCase):
             Factor(0.2, 'factor 1 and factor 2 and factor 3')
         )
 
+        self.assertEqual(
+            Factor.union([
+                Factor(0.4, 'factor 1'),
+                None
+            ]),
+            Factor(0.4, 'factor 1')
+        )
+
+        self.assertEqual(
+            Factor.union([]),
+            None
+        )
+
     def test_generate_report(self):
         p1 = DotDict({ 'species': 'plant1' })
         p2 = DotDict({ 'species': 'plant2' })

@@ -93,10 +93,7 @@ Yield of Helianthus Annuus Plants Associating Cyperus Rotundus](https://globaljo
 - [The Three Sisters of Indigenous American Agriculture](https://www.nal.usda.gov/collections/stories/three-sisters)
 
 # Companion planting papers
-- [Companion planting with French marigolds
-protects tomato plants from glasshouse
-whiteflies through the emission of airborne
-limonene](https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0213071&type=printable)
+- [Companion planting with French marigolds protects tomato plants from glasshouse whiteflies through the emission of airborne limonene](https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0213071&type=printable)
 - [Removing constraints to sustainable food production: new ways to exploit secondary metabolism from companion planting and GM](https://gettheresearch.org/search?q=companion_plant&zoom=10.1002%2Fps.5508)
 - [Companion Plants for Aphid Pest Management](https://gettheresearch.org/search?q=companion_plant&zoom=10.3390%2Finsects8040112)
 - [THE EFFECT OF COMPANIONATE PLANTING ON LEPIDOPTERAN PESTS OF CABBAGE](https://gettheresearch.org/search?q=companion_plant&zoom=10.4039%2Fent111863-7)

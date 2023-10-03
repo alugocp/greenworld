@@ -109,7 +109,7 @@ class AlgorithmCase(unittest.TestCase):
                 DotDict({ 'name': 'Plant 1', 'pH': IntInterval([0, 7]), 'drainage': 3, 'soil': 2 }),
                 DotDict({ 'name': 'Plant 2', 'pH': IntInterval([7, 14]), 'drainage': 1, 'soil': 1 })
             ),
-            Factor(-0.333, 'Plant 1 and Plant 2 require different soil')
+            Factor(-0.333, 'mismatched soil type')
         )
         self.assertEqual(
             EnvironmentRule().generate_factor(
@@ -117,7 +117,7 @@ class AlgorithmCase(unittest.TestCase):
                 DotDict({ 'name': 'Plant 1', 'pH': IntInterval([0, 7]), 'drainage': 2, 'soil': 3 }),
                 DotDict({ 'name': 'Plant 2', 'pH': IntInterval([7, 14]), 'drainage': 1, 'soil': 1 })
             ),
-            Factor(-0.333, 'Plant 1 and Plant 2 require different drainage')
+            Factor(-0.333, 'mismatched soil drainage')
         )
         self.assertEqual(
             EnvironmentRule().generate_factor(
@@ -125,7 +125,7 @@ class AlgorithmCase(unittest.TestCase):
                 DotDict({ 'name': 'Plant 1', 'pH': IntInterval([0, 6]), 'drainage': 3, 'soil': 3 }),
                 DotDict({ 'name': 'Plant 2', 'pH': IntInterval([7, 14]), 'drainage': 1, 'soil': 1 })
             ),
-            Factor(-0.333, 'Plant 1 and Plant 2 require different pH')
+            Factor(-0.333, 'mismatched soil pH')
         )
         self.assertEqual(
             EnvironmentRule().generate_factor(
@@ -133,7 +133,7 @@ class AlgorithmCase(unittest.TestCase):
                 DotDict({ 'name': 'Plant 1', 'pH': IntInterval([0, 7]), 'drainage': 2, 'soil': 2 }),
                 DotDict({ 'name': 'Plant 2', 'pH': IntInterval([7, 14]), 'drainage': 1, 'soil': 1 })
             ),
-            Factor(-0.667, 'Plant 1 and Plant 2 require different soil and drainage')
+            Factor(-0.667, 'mismatched soil type and mismatched soil drainage')
         )
         self.assertEqual(
             EnvironmentRule().generate_factor(
@@ -141,7 +141,7 @@ class AlgorithmCase(unittest.TestCase):
                 DotDict({ 'name': 'Plant 1', 'pH': IntInterval([0, 6]), 'drainage': 2, 'soil': 3 }),
                 DotDict({ 'name': 'Plant 2', 'pH': IntInterval([7, 14]), 'drainage': 1, 'soil': 1 })
             ),
-            Factor(-0.667, 'Plant 1 and Plant 2 require different drainage and pH')
+            Factor(-0.667, 'mismatched soil drainage and mismatched soil pH')
         )
         self.assertEqual(
             EnvironmentRule().generate_factor(
@@ -149,7 +149,7 @@ class AlgorithmCase(unittest.TestCase):
                 DotDict({ 'name': 'Plant 1', 'pH': IntInterval([0, 6]), 'drainage': 3, 'soil': 2 }),
                 DotDict({ 'name': 'Plant 2', 'pH': IntInterval([7, 14]), 'drainage': 1, 'soil': 1 })
             ),
-            Factor(-0.667, 'Plant 1 and Plant 2 require different soil and pH')
+            Factor(-0.667, 'mismatched soil type and mismatched soil pH')
         )
         self.assertEqual(
             EnvironmentRule().generate_factor(
@@ -157,5 +157,5 @@ class AlgorithmCase(unittest.TestCase):
                 DotDict({ 'name': 'Plant 1', 'pH': IntInterval([0, 6]), 'drainage': 2, 'soil': 2 }),
                 DotDict({ 'name': 'Plant 2', 'pH': IntInterval([7, 14]), 'drainage': 1, 'soil': 1 })
             ),
-            Factor(-1.0, 'Plant 1 and Plant 2 require different soil and drainage and pH')
+            Factor(-1.0, 'mismatched soil type and mismatched soil drainage and mismatched soil pH')
         )

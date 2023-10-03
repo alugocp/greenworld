@@ -614,6 +614,11 @@
             ],
             "ecology": [
                 {
+                    "species": "fabaceae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 14
+                },
+                {
                     "species": "botrytis cinerea",
                     "relationship": "Ecology.PATHOGEN",
                     "citation": 39
