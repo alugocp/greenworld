@@ -1,9 +1,16 @@
+"""
+Scientific species name parsing logic
+"""
 from enum import IntEnum, unique
 from typing import Optional
 
 
 @unique
 class TaxonParseState(IntEnum):
+    """
+    States used in the Taxon parsing algorithm
+    """
+
     GENUS = 0
     SPECIES = 1
     EXTRA = 2
@@ -11,12 +18,18 @@ class TaxonParseState(IntEnum):
 
 
 class Taxon:
-    family: Optional[str]
+    """
+    Class that can parse and pretty print scientific names
+    """
+
     genus: Optional[str]
     species: Optional[str]
     extra: str
 
     def parse_species(self, text: str):
+        """
+        Parses a raw string species name so Greenworld knows what it's dealing with
+        """
         state = TaxonParseState.GENUS
         self.species = None
         self.genus = None
@@ -48,4 +61,7 @@ class Taxon:
         return self
 
     def pretty_species(self) -> str:
+        """
+        Return the parsed species name in the Greenworld standard format
+        """
         return f"{self.genus} {self.species} {self.extra}".strip()

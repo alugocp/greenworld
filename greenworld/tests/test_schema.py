@@ -1,3 +1,6 @@
+"""
+This module tests code from the schema module
+"""
 import unittest
 from schema import SchemaError
 from greenworld.schema import json_schema
@@ -6,7 +9,14 @@ from greenworld.defs import GrowthHabit
 
 
 class SchemaCase(unittest.TestCase):
+    """
+    unittest class
+    """
+
     def test_expand_enum(self):
+        """
+        Tests the expand_enum function
+        """
         schema = expand_enum(GrowthHabit)
         self.assertEqual(schema.validate("GrowthHabit.FORB"), "GrowthHabit.FORB")
         self.assertEqual(
@@ -26,14 +36,23 @@ class SchemaCase(unittest.TestCase):
         self.assertEqual(schema.validate("GrowthHabit.VINE"), "GrowthHabit.VINE")
 
     def test_expand_enum_exceptions(self):
+        """
+        Tests the expand_enum function when it handles errors
+        """
         schema = expand_enum(GrowthHabit)
         with self.assertRaises(SchemaError) as _:
             schema.validate("GrowthHabit.HELLO")
 
     def test_json_schema_empty(self):
+        """
+        Tests the json_schema object when given an empty object
+        """
         self.assertEqual(json_schema.validate({}), {})
 
     def test_json_schema(self):
+        """
+        Tests the json_schema object
+        """
         data = {
             "plants": [
                 {
@@ -73,6 +92,9 @@ class SchemaCase(unittest.TestCase):
         self.assertEqual(json_schema.validate(data), data)
 
     def test_json_schema_without_options(self):
+        """
+        Tests the json_schema object without the optional fields
+        """
         data = {
             "plants": [
                 {
@@ -87,6 +109,9 @@ class SchemaCase(unittest.TestCase):
         self.assertEqual(json_schema.validate(data), data)
 
     def test_json_schema_without_citations(self):
+        """
+        Tests the json_schema object without any plant citations
+        """
         data = {
             "plants": [
                 {

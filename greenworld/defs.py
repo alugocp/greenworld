@@ -1,3 +1,6 @@
+"""
+This module houses the constant values used throughout Greenworld
+"""
 from enum import IntEnum, unique
 
 # Constant representing the entire plant kingdom
@@ -6,6 +9,10 @@ PLANTAE = 0
 
 @unique
 class GrowthHabit(IntEnum):
+    """
+    All the different morphologies a plant can take
+    """
+
     # non woody and non grass-like
     FORB = 0
     # Grass or grass-like
@@ -26,6 +33,10 @@ class GrowthHabit(IntEnum):
 
 @unique
 class Sun(IntEnum):
+    """
+    A plant's preferred levels of sunlight
+    """
+
     # 0 - 2 hours a day
     FULL_SHADE = 0
     # 2 - 6 hours a day
@@ -36,6 +47,10 @@ class Sun(IntEnum):
 
 @unique
 class Soil(IntEnum):
+    """
+    A plant's preferred soil type
+    """
+
     SAND = 1
     CLAY = 2
     SILT = 4
@@ -44,6 +59,10 @@ class Soil(IntEnum):
 
 @unique
 class Drainage(IntEnum):
+    """
+    A plant's preferred soil drainage
+    """
+
     # Water removed very rapidly, soil has a coarse texture
     EXCESSIVELY_DRAINED = 6
     # Water removed rapidly, internal water is very deep in the soil
@@ -62,6 +81,10 @@ class Drainage(IntEnum):
 
 @unique
 class Nitrogen(IntEnum):
+    """
+    A plant's interaction with nitrogen
+    """
+
     # Adds nitrogen to the soil
     FIXER = 0
     # Has no remarkable relationship to soil nitrogen
@@ -72,6 +95,10 @@ class Nitrogen(IntEnum):
 
 @unique
 class Ecology(IntEnum):
+    """
+    All the ways Greenworld models ecological relationships
+    """
+
     # The plant species thwarts the target plant or non-plant species
     NEGATIVE_ALLELOPATHY = 0
     # The plant species benefits the target plant or non-plant species

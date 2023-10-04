@@ -1,5 +1,7 @@
-# This script hard resets the local database used in this project.
-# It then repopulates the database from the `seed.json` file.
+"""
+This script hard resets the local database used in this project.
+It then repopulates the database from the `seed.json` file.
+"""
 from greenworld.scripts import collect
 from greenworld.scripts import enter
 from greenworld import Greenworld
@@ -8,6 +10,9 @@ from greenworld import defs
 
 
 def main(gw: Greenworld, seed_data=False):
+    """
+    Script entry point
+    """
     db = orm.init_db()
 
     # Clear and recreate the database

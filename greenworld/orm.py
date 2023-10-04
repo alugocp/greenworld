@@ -1,3 +1,6 @@
+"""
+This module defines the SQLAlchemy ORM database schema
+"""
 import os
 from sqlalchemy_utils import NumericRangeType
 from sqlalchemy import (
@@ -22,6 +25,9 @@ DB = None
 
 # This function initializes or retrieves a singular database connection object
 def init_db():
+    """
+    Initializes the database object to be used throughout this process
+    """
     # pylint: disable-next=global-statement
     global DB
     if not DB:

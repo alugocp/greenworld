@@ -1,3 +1,6 @@
+"""
+This module defines the Greenworld core algorithm and its rules
+"""
 import sqlalchemy
 from greenworld.serial import deserialize_enum_list
 from greenworld.orm import other_species_table
@@ -14,7 +17,14 @@ from greenworld.defs import Sun
 
 
 class GreenworldAlgorithm(CompanionAlgorithm):
+    """
+    Implementation for the official Greenworld core algorithm
+    """
+
     def __init__(self):
+        """
+        Include the five rules defined in this file
+        """
         super().__init__(
             [
                 NitrogenRule(),
@@ -26,13 +36,22 @@ class GreenworldAlgorithm(CompanionAlgorithm):
         )
 
 
-# Returns true if the two intervals overlap or touch at all
 def overlaps(a, b):
+    """
+    Returns true if the two intervals overlap or touch at all
+    """
     return min(a.upper, b.upper) - max(a.lower, b.lower) >= 0
 
 
 class NitrogenRule(Rule):
+    """
+    Accounts for interactions in two input plants' relationship to soil nitrogen
+    """
+
     def generate_factor(self, _con, p1, p2) -> Factor:
+        """
+        Generates a factor for the nitrogen rule
+        """
         # p1 is a nitrogen fixer and p2 is a heavy feeder
         if p1.nitrogen == Nitrogen.FIXER and p2.nitrogen == Nitrogen.HEAVY:
             return Factor(1.0, f"{p1.name} can fix nitrogen for {p2.name}")
@@ -48,7 +67,14 @@ class NitrogenRule(Rule):
 
 
 class EnvironmentRule(Rule):
+    """
+    Accounts for mismatches between two input plants' preferred soil environment
+    """
+
     def generate_factor(self, _con, p1, p2) -> Factor:
+        """
+        Generates a factor for the environment rule
+        """
         factors = []
 
         # Check soil mismatch
@@ -76,6 +102,10 @@ class EnvironmentRule(Rule):
 
 
 class SunlightRule(Rule):
+    """
+    Accounts for the interaction between two input plants' growth habit and desired sunlight
+    """
+
     HEIGHT_CLASSES = {
         GrowthHabit.LICHENOUS: 0,
         GrowthHabit.NONVASCULAR: 0,
@@ -88,6 +118,9 @@ class SunlightRule(Rule):
     }
 
     def generate_factor(self, _con, p1, p2) -> Factor:
+        """
+        Generates a factor for the sunlight rule
+        """
         # Check that required attributes exist
         if (
             p1.growth_habit is None
@@ -112,7 +145,14 @@ class SunlightRule(Rule):
 
 
 class AllelopathyRule(Rule):
+    """
+    Accounts for allelochemicals shared between two input plants
+    """
+
     def generate_factor(self, con, p1, p2):
+        """
+        Generates a factor for the allelopathy rule
+        """
         if p1.species == p2.species:
             return None
         p1_to_p2_relationship = None
@@ -216,7 +256,14 @@ class AllelopathyRule(Rule):
 
 
 class EcologyRule(Rule):
+    """
+    Accounts for ecological bisections between two input plants
+    """
+
     def generate_factor(self, con, p1, p2):
+        """
+        Generates a factor for the ecology rule
+        """
         if p1.species == p2.species:
             return None
         e1 = ecology_other_table.alias("e1")
@@ -416,6 +463,9 @@ class EcologyRule(Rule):
         return Factor(self.calculate_total(factors), union.label)
 
     def calculate_total(self, factors):
+        """
+        Uses an asymptotic function to calculate the value of a factor from the ecology rule
+        """
         x = sum(list(map(lambda x: x.value, factors)))
         coeff = -1 if x < 0 else 1
         return round(coeff * (1 - (1 / (((0.6 * x) ** 2) + 1))), 3)

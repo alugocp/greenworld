@@ -4,8 +4,10 @@ import os
 import re
 
 
-# Imports key-value pairs from .env file
 def read_env() -> Dict[str, str]:
+    """
+    Imports key-value pairs from .env file
+    """
     env = {}
     with open(".env", "r", encoding="utf-8") as file:
         lines = file.readlines()
@@ -16,11 +18,17 @@ def read_env() -> Dict[str, str]:
     return env
 
 
-# Top-level class for the Greenworld companion planting algorithm
 class Greenworld:
+    """
+    Top-level class for the Greenworld companion planting algorithm
+    """
+
     __log: Callable[[str], None]
 
     def __init__(self, filename=None, log_func=logging.info):
+        """
+        Initializes this process's Greenworld instance
+        """
         env = read_env()
         if "DRIVER" in env and env["DRIVER"] == "sqlite":
             os.environ["GREENWORLD_DB"] = "sqlite:///greenworld.db"
@@ -35,4 +43,7 @@ class Greenworld:
         self.log("Greenworld script initialized")
 
     def log(self, msg: str) -> None:
+        """
+        Print a message to Greenworld's log output
+        """
         self.__log(msg)

@@ -1,3 +1,6 @@
+"""
+Entry point module for the Greenworld server
+"""
 from flask import Flask
 import pages
 import api
@@ -13,11 +16,17 @@ app = Flask(
 # Custom filters
 @app.template_filter()
 def citation_regex(href):
+    """
+    Provides the citation_regex function as a Flask/Jinja filter
+    """
     return lib.citation_regex(href)
 
 
 # Initialization method
 def main():
+    """
+    Main method, entry for the Greenworld server
+    """
     Greenworld()
     db = orm.init_db()
 

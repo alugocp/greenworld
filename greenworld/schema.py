@@ -1,8 +1,14 @@
+"""
+Schema validation for Greenworld seed data
+"""
 from schema import Schema, Optional, And, Or
 from greenworld import defs
 
 
 def expand_enum(e):
+    """
+    Returns a validation rule that matches any value in a given enum
+    """
     return Or(*[f"{e.__name__}.{name}" for name in e.__members__.keys()])
 
 

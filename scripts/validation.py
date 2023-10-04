@@ -1,3 +1,6 @@
+"""
+This script validates that the Greenworld algorithm is indeed accurate
+"""
 import sys
 import json
 import sqlalchemy
@@ -307,8 +310,10 @@ with open("scripts/garden-bad-reports.txt", "w", encoding="utf-8") as file:
     file.write(json.dumps(bad_reports, indent=4))
 
 
-# Percentage of "good" identified companions within a distribution
 def percent_good(dist):
+    """
+    Percentage of "good" identified companions within a distribution
+    """
     percent = len(list(filter(lambda x: x > 0, dist))) / len(dist)
     return round(percent * 10000) / 100
 

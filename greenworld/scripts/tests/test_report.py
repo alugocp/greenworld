@@ -1,3 +1,6 @@
+"""
+This module tests the report script
+"""
 import unittest
 import sqlalchemy
 from greenworld import Greenworld
@@ -19,6 +22,9 @@ db = init_db()
 
 
 def get_report(id1, id2):
+    """
+    Grabs a report from the database by the given IDs
+    """
     with db.connect() as con:
         data = con.execute(
             reports_table.select().where(
@@ -31,8 +37,15 @@ def get_report(id1, id2):
 
 
 class ScriptsReportCase(unittest.TestCase):
+    """
+    unittest class
+    """
+
     @classmethod
     def setUpClass(cls):
+        """
+        Seed the data for these tests
+        """
         reset.main(gw)
 
         # Manually enter plant data
@@ -217,8 +230,10 @@ class ScriptsReportCase(unittest.TestCase):
         # Run report code
         report.main(gw)
 
-    # Test interaction between nitrogen values
     def test_nitrogen(self):
+        """
+        Test interaction between nitrogen values
+        """
         self.assertEqual(get_report(1, 2), ["Bean can fix nitrogen for Pumpkin"])
 
         self.assertEqual(
@@ -229,8 +244,10 @@ class ScriptsReportCase(unittest.TestCase):
 
         self.assertEqual(get_report(3, 3), [])
 
-    # Test allelopathy logic paths
     def test_allelopathy(self):
+        """
+        Test allelopathy logic paths
+        """
         self.assertEqual(get_report(1, 3), ["Onion is a negative allelopath for Bean"])
 
         self.assertEqual(
@@ -255,8 +272,10 @@ class ScriptsReportCase(unittest.TestCase):
             ],
         )
 
-    # Test ecology logic paths
     def test_ecology(self):
+        """
+        Test ecology logic paths
+        """
         self.assertEqual(
             get_report(6, 7),
             [

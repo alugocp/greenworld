@@ -5,9 +5,6 @@ attr-rgx=[a-z][a-z0-9]*(_[a-z0-9]+)*$
 disable=
   E1101, # no-member
   C0103, # invalid-name
-  C0114, # missing-module-docstring
-  C0115, # missing-class-docstring
-  C0116, # missing-function-docstring
   C0301, # line-too-long
   R0801, # duplicate-code
   R0903, # too-few-public-methods

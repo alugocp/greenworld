@@ -1,3 +1,6 @@
+"""
+This module houses all the API endpoint code for the Greenworld server
+"""
 from urllib.parse import unquote_plus
 import sqlalchemy
 from flask import request
@@ -5,6 +8,10 @@ from greenworld import orm
 
 
 def main(app, db):
+    """
+    Registers API endpoints for the Flask app
+    """
+
     @app.route("/search/<prefix>")
     def plant_search_endpoint(prefix):
         prefix = unquote_plus(prefix)

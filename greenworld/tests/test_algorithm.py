@@ -1,3 +1,6 @@
+"""
+This module tests code from the algorithm module
+"""
 import unittest
 from intervals import IntInterval
 from greenworld.utils import Factor
@@ -11,11 +14,20 @@ from greenworld.defs import Sun
 
 
 class DotDict(dict):
+    """
+    Gives dict objects a dot accessor
+    """
     __getattr__ = dict.get
 
 
 class AlgorithmCase(unittest.TestCase):
+    """
+    unittest class
+    """
     def test_overlaps(self):
+        """
+        Tests the overlaps function
+        """
         self.assertTrue(overlaps(IntInterval([0, 5]), IntInterval([1, 6])))
         self.assertTrue(overlaps(IntInterval([0, 5]), IntInterval([5, 6])))
         self.assertTrue(overlaps(IntInterval([0, 5]), IntInterval([-1, 6])))
@@ -25,6 +37,9 @@ class AlgorithmCase(unittest.TestCase):
         self.assertFalse(overlaps(IntInterval([6, 10]), IntInterval([0, 5])))
 
     def test_nitrogen(self):
+        """
+        Tests the nitrogen rule
+        """
         self.assertEqual(
             NitrogenRule().generate_factor(
                 None,
@@ -99,6 +114,9 @@ class AlgorithmCase(unittest.TestCase):
         )
 
     def test_environment(self):
+        """
+        Tests the environment rule
+        """
         self.assertEqual(
             EnvironmentRule().generate_factor(
                 None,
@@ -280,6 +298,9 @@ class AlgorithmCase(unittest.TestCase):
         )
 
     def test_sunlight(self):
+        """
+        Tests the sunlight rule
+        """
         data = [
             [
                 DotDict(

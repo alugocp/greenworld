@@ -1,3 +1,6 @@
+"""
+This module tests code from the utils module
+"""
 import unittest
 from greenworld.utils import CompanionAlgorithm
 from greenworld.utils import Factor
@@ -6,11 +9,21 @@ from greenworld.utils import Rule
 
 
 class DotDict(dict):
+    """
+    Gives dict objects a dot accessor
+    """
     __getattr__ = dict.get
 
 
 class LibUtilsCase(unittest.TestCase):
+    """
+    unittest class
+    """
+
     def test_factor_union(self):
+        """
+        Tests the Factor.union function
+        """
         self.assertEqual(
             Factor.union(
                 [
@@ -29,6 +42,9 @@ class LibUtilsCase(unittest.TestCase):
         self.assertEqual(Factor.union([]), None)
 
     def test_generate_report(self):
+        """
+        Tests the generate_report function
+        """
         p1 = DotDict({"species": "plant1"})
         p2 = DotDict({"species": "plant2"})
         p3 = DotDict({"species": "plant3"})
@@ -56,7 +72,14 @@ class LibUtilsCase(unittest.TestCase):
 
 
 class MockAlgorithm(CompanionAlgorithm):
+    """
+    An algorithm for testing
+    """
+
     def __init__(self):
+        """
+        Collect the rules for testing
+        """
         super().__init__(
             [
                 Rule1(),
@@ -67,21 +90,42 @@ class MockAlgorithm(CompanionAlgorithm):
 
 
 class Rule1(Rule):
+    """
+    A rule for testing
+    """
+
     def generate_factor(self, _con, p1, p2):
+        """
+        Generate a factor for testing
+        """
         if p1.species == "plant1" and p2.species == "plant2":
             return Factor(1.0, "rule 1 is here")
         return None
 
 
 class Rule2(Rule):
+    """
+    A rule for testing
+    """
+
     def generate_factor(self, _con, p1, p2):
+        """
+        Generate a factor for testing
+        """
         if p1.species == "plant1":
             return Factor(-1.0, "rule 2 is here")
         return None
 
 
 class Rule3(Rule):
+    """
+    A rule for testing
+    """
+
     def generate_factor(self, _con, p1, p2):
+        """
+        Generate a factor for testing
+        """
         if p2.species == "plant2":
             return Factor(0.0, "rule 3 is here")
         return None

@@ -1,10 +1,20 @@
+"""
+This module tests the enter script
+"""
 import unittest
 from greenworld.scripts import enter
 from greenworld import defs
 
 
 class ScriptsEnterCase(unittest.TestCase):
+    """
+    unittest class
+    """
+
     def test_parse_enum(self):
+        """
+        Tests the parse_enum function
+        """
         self.assertEqual(
             enter.parse_enum("Ecology.NEGATIVE_ALLELOPATHY"),
             defs.Ecology.NEGATIVE_ALLELOPATHY,

@@ -1,3 +1,6 @@
+"""
+Helpers for the Greenworld server to help render the frontend
+"""
 import re
 from math import log
 from intervals import DecimalInterval
@@ -8,12 +11,18 @@ from greenworld.serial import deserialize_enum_list
 
 
 def citation_regex(href):
+    """
+    Regex to return the hostname from a URL
+    """
     return re.search(
         r"(?:[a-z]+://)(?:www\.)?([\w\d\-]+(\.[\w\d\-]+)*)/?", href
     ).groups()[0]
 
 
 def process_plant_dict(con, plant):
+    """
+    Kicks off all of the code to fully convert some plant data into UI elements
+    """
     if "citations" in plant:
         ids = list(plant["citations"].keys())
         stmt = orm.works_cited_table.select().where(orm.works_cited_table.c.id.in_(ids))
@@ -27,6 +36,9 @@ def process_plant_dict(con, plant):
 
 
 def transform_plant(plant):
+    """
+    Converts a plant entry into an HTML element
+    """
     fields = []
     for k, label in consts.plant_field_labels.items():
         if plant[k] is None:
@@ -40,7 +52,9 @@ def transform_plant(plant):
                 indices = list(
                     map(lambda x: int(log(x) / log(2)), deserialize_enum_list(plant[k]))
                 )
-                value = ", ".join(list(map(lambda x: consts.plant_enum_values[k][x], indices)))
+                value = ", ".join(
+                    list(map(lambda x: consts.plant_enum_values[k][x], indices))
+                )
             else:
                 value = consts.plant_enum_values[k][plant[k]]
             if k == "family":
@@ -57,6 +71,10 @@ def transform_plant(plant):
 
 
 def grab_ecology_data(con, plant_id):
+    """
+    Remaps a plant's ecololgy field entries into user-facing ecology data
+    (complete with the target species's display name and relationship)
+    """
     ecology = []
 
     # Aggregate non-plant ecological interactions
@@ -107,6 +125,10 @@ def grab_ecology_data(con, plant_id):
 
 
 def cite_fields(citations, works_cited):
+    """
+    Remaps a plant's citation field (works_cited IDs to lists of plant fields) into a
+    field -> ID map (much easier to work with in the UI)
+    """
     new_citations = {}
     for k, v in citations.items():
         citation_link = next(x[1] for x in works_cited if str(x[0]) == k)

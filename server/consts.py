@@ -1,3 +1,7 @@
+"""
+Important constants used by the Greenworld server
+"""
+
 plant_field_labels = {
     "id": "Greenworld ID",
     "family": "Family",

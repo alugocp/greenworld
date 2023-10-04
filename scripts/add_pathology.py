@@ -1,3 +1,6 @@
+"""
+This script queries and inserts relevant pathogen species into a seed data file
+"""
 import urllib.request
 import json
 import ssl
@@ -7,6 +10,9 @@ import re
 
 # Extract the pathogen species list for a given species
 def get_pathogen_species(species):
+    """
+    Retrieves a list of pathogens for a single plant species
+    """
     print(f"• Retrieving pathogens for {species}...")
     context = ssl.create_default_context()
     context.check_hostname = False
@@ -24,6 +30,9 @@ def get_pathogen_species(species):
 
 # Process a single seed data file
 def process_data_file(filepath):
+    """
+    Goes through the process of adding pathology data to a given file
+    """
     print(f"Reading {filepath}...")
     with open(filepath, "r", encoding="utf8") as file:
         data = json.loads(file.read())

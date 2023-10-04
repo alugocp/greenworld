@@ -1,3 +1,6 @@
+"""
+This module registers page routes for the Flask app
+"""
 import copy
 from urllib.parse import unquote_plus
 import sqlalchemy
@@ -7,6 +10,10 @@ from greenworld import orm
 
 
 def main(app, db):
+    """
+    Sets up page routes for the Flask app
+    """
+
     @app.route("/")
     def homepage_endpoint():
         plant_stmt = sqlalchemy.select(sqlalchemy.func.count()).select_from(

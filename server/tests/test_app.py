@@ -1,3 +1,6 @@
+"""
+Pytest/unittest module to cover the Greenworld server
+"""
 import subprocess
 import unittest
 import time
@@ -12,6 +15,10 @@ SERVER = None
 
 
 class ServerAppCase(unittest.TestCase):
+    """
+    Test class for the Greenworld server
+    """
+
     # Infinite diff length in the logs
     maxDiff = None
 
@@ -49,6 +56,9 @@ class ServerAppCase(unittest.TestCase):
         SERVER.terminate()
 
     def test_search(self):
+        """
+        Tests the /search endpoint
+        """
         self.assertEqual(
             requests.get(url=f"{BASE}/search/zea", timeout=5).json(),
             [{"id": 1, "name": "Hopi Turquoise Corn", "species": "zea mays"}],
@@ -56,12 +66,18 @@ class ServerAppCase(unittest.TestCase):
         self.assertEqual(requests.get(url=f"{BASE}/search/z", timeout=5).json(), [])
 
     def test_neighbors(self):
+        """
+        Tests the /neighbors endpoint
+        """
         self.assertEqual(
             requests.get(url=f"{BASE}/neighbors/1", timeout=5).json(),
             [[3, 0.367], [1, -1.0], [2, -1.0]],
         )
 
     def test_handlers(self):
+        """
+        Tests the /handlers endpoint
+        """
         self.assertEqual(
             requests.get(url=f"{BASE}/handlers?ids=1,2", timeout=5).json(),
             [
