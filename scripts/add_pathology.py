@@ -40,7 +40,7 @@ def process_data_file(filepath):
             if not any(pathogen == partner['species'] for partner in ecology):
                 ecology.append({ 'species': pathogen, 'relationship': 'Ecology.PATHOGEN', 'citation': citation_id })
             if not any(pathogen == species['species'] for species in other_species):
-                other_species.append({ 'species': pathogen, 'name': 'unknown' })
+                other_species.append({ 'species': pathogen, 'name': '???' })
         if len(ecology) > 0:
             plant['ecology'] = ecology
     data['others'] = other_species

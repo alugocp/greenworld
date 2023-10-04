@@ -23,8 +23,8 @@ class SerialCase(unittest.TestCase):
                 Factor(0.0, 'factor 3')
             ]),
             [
-                [1.0, 'factor 1'],
-                [-1.0, 'factor 2'],
-                [0.0, 'factor 3']
+                'factor 1',
+                'factor 2',
+                'factor 3'
             ]
         )

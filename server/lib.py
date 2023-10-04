@@ -34,6 +34,8 @@ def transform_plant(plant):
                 value = ', '.join(list(map(lambda x: consts.plant_enum_values[k][x], indices)))
             else:
                 value = consts.plant_enum_values[k][plant[k]]
+            if k == 'family':
+                value = value.capitalize()
         field = '<td><b>' + label + '</b></td><td>' + value + '</td>'
         del plant[k]
         if k in plant['citations']:

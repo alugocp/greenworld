@@ -219,12 +219,12 @@ class ScriptsReportCase(unittest.TestCase):
     def test_nitrogen(self):
         self.assertEqual(
             get_report(1, 2),
-            [[1.0, 'Bean can fix nitrogen for Pumpkin']]
+            ['Bean can fix nitrogen for Pumpkin']
         )
 
         self.assertEqual(
             get_report(2, 2),
-            [[-1.0, 'Pumpkin and Pumpkin are both heavy feeders']]
+            ['Pumpkin and Pumpkin are both heavy feeders']
         )
 
         self.assertEqual(
@@ -241,42 +241,42 @@ class ScriptsReportCase(unittest.TestCase):
     def test_allelopathy(self):
         self.assertEqual(
             get_report(1, 3),
-            [[-1.0, 'Onion is a negative allelopath for Bean']]
+            ['Onion is a negative allelopath for Bean']
         )
 
         self.assertEqual(
             get_report(3, 4),
-            [[-1.0, 'Anti-Onion Bean and Onion are negative allelopaths for each other']]
+            ['Anti-Onion Bean and Onion are negative allelopaths for each other']
         )
 
         self.assertEqual(
             get_report(1, 5),
-            [[1.0, 'Walnut That Likes Beans And Onions is a positive allelopath for Bean']]
+            ['Walnut That Likes Beans And Onions is a positive allelopath for Bean']
         )
 
         self.assertEqual(
             get_report(2, 5),
-            [[-1.0, 'Walnut That Likes Beans And Onions is a negative allelopath for Pumpkin']]
+            ['Walnut That Likes Beans And Onions is a negative allelopath for Pumpkin']
         )
 
         self.assertEqual(
             get_report(3, 5),
-            [[-0.265, 'Walnut That Likes Beans And Onions is a positive allelopath and Onion is a negative allelopath for Bean Family']]
+            ['Walnut That Likes Beans And Onions is a positive allelopath and Onion is a negative allelopath for Bean Family']
         )
 
     # Test ecology logic paths
     def test_ecology(self):
         self.assertEqual(
             get_report(6, 7),
-            [[0.265, 'Aster 2\'s predator species Bee is a pollinator for Aster 1 and Aster 2 and Aster 1 have a common pollinator species Butterfly and Aster 2 and Aster 1 have a common pathogenic species Mushroom']]
+            ['Aster 2\'s predator species Bee is a pollinator for Aster 1 and Aster 2 and Aster 1 have a common pollinator species Butterfly and Aster 2 and Aster 1 have a common pathogenic species Mushroom']
         )
 
         self.assertEqual(
             get_report(7, 8),
-            [[0.59, 'Aster 3 is a negative allelopath for Aster 2\'s predator species Bee and Aster 3 is a positive allelopath for Aster 2\'s pollinator species Butterfly']]
+            ['Aster 3 is a negative allelopath for Aster 2\'s predator species Bee and Aster 3 is a positive allelopath for Aster 2\'s pollinator species Butterfly']
         )
 
         self.assertEqual(
             get_report(6, 8),
-            [[0.0, 'Aster 3 is a negative allelopath for Aster 1\'s pollinator species Bee and Aster 3 is a positive allelopath for Aster 1\'s pollinator species Butterfly']]
+            ['Aster 3 is a negative allelopath for Aster 1\'s pollinator species Bee and Aster 3 is a positive allelopath for Aster 1\'s pollinator species Butterfly']
         )

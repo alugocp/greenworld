@@ -22,14 +22,9 @@
 
 <table class="ranges-table">
 {% for factor in report['report'] %}
-    {% set value, label = factor %}
     <tr>
-        {% if value %}
-            <td>{{ value }}</td>
-        {% else %}
-            <td></td>
-        {% endif %}
-        <td>{{ label }}</td>
+        <td>▶</td>
+        <td>{{ factor }}</td>
     </tr>
 {% endfor %}
 </table>

@@ -12,4 +12,4 @@ def deserialize_enum_list(val):
     return values
 
 def serialize_factors(factors):
-    return list(map(lambda x: [x.value, x.label], factors))
+    return list(map(lambda x: x.label, factors))
