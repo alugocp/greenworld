@@ -20,35 +20,16 @@
     </span>
 </p>
 
-<!-- Suggested ranges -->
-<p>
-    <b>Suggested range:</b>
-    <span id="suggested">
-        {% if report['range_union_max'] == MAX_PLANTING_RANGE %}
-            {{ report['range_union_min']|round(3) }}+ m
-        {% else %}
-            {{ report['range_union_min']|round(3) }}m - {{ report['range_union_max']|round(3) }}m
-        {% endif %}
-    </span>
-</p>
-
 <table class="ranges-table">
-{% for pair in report['report'] %}
-    {% set interval, reason = pair %}
+{% for factor in report['report'] %}
+    {% set value, label = factor %}
     <tr>
-        {% if interval %}
-            {% set lower, upper = interval %}
-            <td><input type="checkbox" onchange="clicked(event, {{ loop.index0 }})" checked /></td>
-            {% if upper == MAX_PLANTING_RANGE %}
-                <td>{{ lower }}+ m</td>
-            {% else %}
-                <td>{{ lower }}m - {{ upper }}m</td>
-            {% endif %}
+        {% if value %}
+            <td>{{ value }}</td>
         {% else %}
             <td></td>
-            <td></td>
         {% endif %}
-        <td>{{ reason }}</td>
+        <td>{{ label }}</td>
     </tr>
 {% endfor %}
 </table>
@@ -62,41 +43,3 @@
 {% if plant2.species != plant1.species %}
     {{ plant_view.render(plant2, True) }}
 {% endif %}
-
-<script>
-const intervals = [
-{% for pair in report['report'] %}
-    {% set interval, _ = pair %}
-    {% if interval %}
-        {{ interval }},
-    {% endif %}
-{% endfor %}
-    undefined
-].filter(x => x);
-
-const activated = [];
-for (let a = 0; a < intervals.length; a++) {
-    activated.push(true);
-}
-
-function clicked(e, index) {
-    activated[index] = e.target.checked;
-    let max_dist = {{ MAX_PLANTING_RANGE }};
-    let min_dist = 0;
-    for (const interval of intervals.filter((_, i) => activated[i])) {
-        if (interval[0] > min_dist) {
-            min_dist = interval[0]
-            max_dist = interval[1]
-        }
-    }
-    for (const interval of intervals.filter((_, i) => activated[i])) {
-        if (interval[1] > min_dist && interval[1] < max_dist) {
-            max_dist = interval[1]
-        }
-    }
-    document.getElementById('suggested').innerHTML = (max_dist === {{ MAX_PLANTING_RANGE }})
-        ? `${min_dist}+ m`
-        : `${min_dist}m - ${max_dist}m`;
-}
-
-</script>

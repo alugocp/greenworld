@@ -25,25 +25,6 @@ json_schema = Schema({
             # Python enum value from greenworld/defs.py's GrowthHabit
             Optional('growth_habit'): expand_enum(defs.GrowthHabit),
 
-            # Range of two values where each one is a string containing a decimal and a unit
-            # Check greenworld/scripts/enter.py's _conversions for a list of supported units
-            Optional('height'): And([str], lambda x: len(x) == 2),
-
-            # Range of two values where each one is a string containing a decimal and a unit
-            # Check greenworld/scripts/enter.py's _conversions for a list of supported units
-            Optional('spread'): And([str], lambda x: len(x) == 2),
-
-            # Range of two values where each one is a string containing a decimal and a unit
-            # Check greenworld/scripts/enter.py's _conversions for a list of supported units
-            Optional('length'): And([str], lambda x: len(x) == 2),
-
-            # Set to true if the vine has fruit that's small enough to grow up forbs and graminoids (i.e. beans)
-            Optional('lightweight'): bool,
-
-            # Range of two values where each one is a string containing a decimal and a unit
-            # Check greenworld/scripts/enter.py's _conversions for a list of supported units
-            Optional('root_spread'): And([str], lambda x: len(x) == 2),
-
             # Python enum value from greenworld/defs.py's Nitrogen
             Optional('nitrogen'): expand_enum(defs.Nitrogen),
 

@@ -25,7 +25,7 @@ def transform_plant(plant):
         if plant[k] is None:
             value = '-'
         elif isinstance(plant[k], DecimalInterval):
-            value = f'{plant[k].lower}{consts.plant_field_units[k]} - {plant[k].upper}{consts.plant_field_units[k]}'
+            value = f'{plant[k].lower} - {plant[k].upper}'
         else:
             if k in ['id', 'family']:
                 value = str(plant[k])

@@ -6,18 +6,6 @@
             "species": "solanum lycopersicum",
             "family": "solanaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": [
-                "3 ft",
-                "5 ft"
-            ],
-            "spread": [
-                "2 ft",
-                "2 ft"
-            ],
-            "root_spread": [
-                "12 in",
-                "12 in"
-            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -218,21 +206,14 @@
                 }
             ],
             "citations": {
-                "1": [
-                    "height"
-                ],
                 "2": [
                     "growth_habit",
                     "nitrogen",
                     "sun"
                 ],
                 "3": [
-                    "spread",
                     "soil",
                     "drainage"
-                ],
-                "4": [
-                    "root_spread"
                 ]
             }
         },
@@ -242,18 +223,6 @@
             "species": "ipomoea batatas",
             "family": "convolvulaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "spread": [
-                "5 in",
-                "12 in"
-            ],
-            "length": [
-                "8 ft",
-                "10 ft"
-            ],
-            "root_spread": [
-                "18 in",
-                "18 in"
-            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -274,10 +243,6 @@
                     "soil",
                     "drainage"
                 ],
-                "6": [
-                    "spread",
-                    "length"
-                ],
                 "7": [
                     "pH"
                 ]
@@ -289,18 +254,6 @@
             "species": "solanum tuberosum",
             "family": "solanaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": [
-                "1.5 ft",
-                "3 ft"
-            ],
-            "spread": [
-                "1.5 ft",
-                "3 ft"
-            ],
-            "root_spread": [
-                "8 in",
-                "12 in"
-            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -416,9 +369,6 @@
                     "pH"
                 ],
                 "9": [
-                    "height",
-                    "spread",
-                    "root_spread",
                     "nitrogen",
                     "soil",
                     "drainage"
@@ -431,18 +381,6 @@
             "species": "brassica oleracea var. italica",
             "family": "brassicaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": [
-                "18 in",
-                "36 in"
-            ],
-            "spread": [
-                "18 in",
-                "18 in"
-            ],
-            "root_spread": [
-                "12 in",
-                "18 in"
-            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -457,15 +395,12 @@
             ],
             "citations": {
                 "10": [
-                    "spread",
                     "sun",
                     "soil",
                     "pH",
                     "drainage"
                 ],
                 "11": [
-                    "height",
-                    "root_spread",
                     "nitrogen"
                 ]
             }
@@ -476,18 +411,6 @@
             "species": "ocimum basilicum",
             "family": "lamiaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": [
-                "12 in",
-                "24 in"
-            ],
-            "spread": [
-                "10 in",
-                "12 in"
-            ],
-            "root_spread": [
-                "8 in",
-                "12 in"
-            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -502,16 +425,11 @@
             ],
             "citations": {
                 "12": [
-                    "height",
-                    "spread",
                     "nitrogen",
                     "sun",
                     "soil",
                     "pH",
                     "drainage"
-                ],
-                "13": [
-                    "root_spread"
                 ]
             }
         },
@@ -521,18 +439,6 @@
             "species": "allium sativum",
             "family": "amaryllidaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": [
-                "18 in",
-                "24 in"
-            ],
-            "spread": [
-                "4 in",
-                "8 in"
-            ],
-            "root_spread": [
-                "12 in",
-                "12 in"
-            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -569,15 +475,12 @@
             ],
             "citations": {
                 "14": [
-                    "spread",
                     "nitrogen",
                     "sun",
                     "soil",
                     "drainage"
                 ],
                 "15": [
-                    "height",
-                    "root_spread",
                     "pH"
                 ]
             }
@@ -588,18 +491,6 @@
             "species": "allium cepa",
             "family": "amaryllidaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": [
-                "12 in",
-                "18 in"
-            ],
-            "spread": [
-                "6 in",
-                "12 in"
-            ],
-            "root_spread": [
-                "6 in",
-                "12 in"
-            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -651,9 +542,6 @@
             ],
             "citations": {
                 "16": [
-                    "height",
-                    "spread",
-                    "root_spread",
                     "nitrogen",
                     "sun",
                     "soil",
@@ -670,18 +558,6 @@
             "species": "anethum graveolens",
             "family": "apiaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": [
-                "2 ft",
-                "4 ft"
-            ],
-            "spread": [
-                "10 in",
-                "12 in"
-            ],
-            "root_spread": [
-                "12 in",
-                "18 in"
-            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -703,15 +579,12 @@
             ],
             "citations": {
                 "18": [
-                    "spread",
                     "sun",
                     "soil",
                     "pH",
                     "drainage"
                 ],
                 "19": [
-                    "height",
-                    "root_spread",
                     "nitrogen"
                 ]
             }
@@ -722,18 +595,6 @@
             "species": "foeniculum vulgare",
             "family": "apiaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": [
-                "4 ft",
-                "6 ft"
-            ],
-            "spread": [
-                "1.5 ft",
-                "3 ft"
-            ],
-            "root_spread": [
-                "12 in",
-                "14 in"
-            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -766,12 +627,7 @@
                     "drainage"
                 ],
                 "21": [
-                    "height",
-                    "spread",
                     "pH"
-                ],
-                "22": [
-                    "root_spread"
                 ]
             }
         },
@@ -781,18 +637,6 @@
             "species": "citrullus lanatus",
             "family": "cucurbitaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "spread": [
-                "2 ft",
-                "3 ft"
-            ],
-            "length": [
-                "15 ft",
-                "18 ft"
-            ],
-            "root_spread": [
-                "18 ft",
-                "21 ft"
-            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -809,16 +653,11 @@
             ],
             "citations": {
                 "24": [
-                    "spread",
                     "nitrogen",
                     "sun",
                     "soil",
                     "pH",
                     "drainage"
-                ],
-                "25": [
-                    "length",
-                    "root_spread"
                 ]
             },
             "ecology": [
@@ -840,14 +679,6 @@
             "species": "mentha spp.",
             "family": "lamiaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": [
-                "12 in",
-                "18 in"
-            ],
-            "spread": [
-                "18 in",
-                "24 in"
-            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.PARTIAL_SUN",
             "soil": [
@@ -862,8 +693,6 @@
             ],
             "citations": {
                 "26": [
-                    "height",
-                    "spread",
                     "nitrogen",
                     "sun",
                     "soil",
@@ -880,18 +709,6 @@
             "species": "brassica oleracea var. gongylodes",
             "family": "brassicaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": [
-                "6 in",
-                "18 in"
-            ],
-            "spread": [
-                "12 in",
-                "18 in"
-            ],
-            "root_spread": [
-                "16 in",
-                "24 in"
-            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -911,15 +728,8 @@
                     "pH",
                     "drainage"
                 ],
-                "29": [
-                    "height",
-                    "spread"
-                ],
                 "30": [
                     "nitrogen"
-                ],
-                "31": [
-                    "root_spread"
                 ]
             }
         },
@@ -929,14 +739,6 @@
             "species": "tropaeolum majus",
             "family": "tropaeolaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "spread": [
-                "10 cm",
-                "30 cm"
-            ],
-            "length": [
-                "1 ft",
-                "10 ft"
-            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -952,7 +754,6 @@
             ],
             "citations": {
                 "32": [
-                    "spread",
                     "nitrogen",
                     "sun",
                     "soil",
@@ -969,14 +770,6 @@
             "species": "tagetes patula",
             "family": "asteraceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": [
-                "4 in",
-                "48 in"
-            ],
-            "spread": [
-                "6 in",
-                "24 in"
-            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -992,8 +785,6 @@
             ],
             "citations": {
                 "34": [
-                    "height",
-                    "spread",
                     "nitrogen",
                     "sun",
                     "soil",
@@ -1008,18 +799,6 @@
             "species": "cucumis sativus",
             "family": "cucurbitaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "spread": [
-                "3 ft",
-                "5 ft"
-            ],
-            "length": [
-                "4 ft",
-                "6 ft"
-            ],
-            "root_spread": [
-                "4 ft",
-                "7 ft"
-            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -1034,16 +813,11 @@
             ],
             "citations": {
                 "35": [
-                    "spread",
                     "nitrogen",
                     "sun",
                     "soil",
                     "pH",
                     "drainage"
-                ],
-                "36": [
-                    "length",
-                    "root_spread"
                 ]
             },
             "ecology": [
@@ -1085,18 +859,6 @@
             "species": "coriandrum sativum",
             "family": "apiaceae",
             "growth_habit": "GrowthHabit.FORB",
-            "height": [
-                "12 in",
-                "24 in"
-            ],
-            "spread": [
-                "6 in",
-                "12 in"
-            ],
-            "root_spread": [
-                "8 in",
-                "18 in"
-            ],
             "nitrogen": "Nitrogen.NEUTRAL",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -1116,10 +878,6 @@
                     "soil",
                     "pH",
                     "drainage"
-                ],
-                "38": [
-                    "height",
-                    "spread"
                 ]
             }
         }

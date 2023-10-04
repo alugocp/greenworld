@@ -50,8 +50,7 @@ def main(app, db):
                 'report.html',
                 report = report,
                 plant1 = plants[0],
-                plant2 = plants[1],
-                MAX_PLANTING_RANGE = orm.MAX_PLANTING_RANGE
+                plant2 = plants[1]
             )
 
     @app.route('/placement')

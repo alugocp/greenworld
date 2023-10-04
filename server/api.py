@@ -21,19 +21,6 @@ def main(app, db):
             .limit(10)
             return list(map(dict, con.execute(stmt).mappings().fetchall()))
 
-    @app.route('/reports')
-    def grab_reports_endpoint():
-        if 'species_list' not in request.args:
-            return []
-        species_list = request.args.get('species_list').split(',')
-        stmt = orm.reports_table.select() \
-        .where(sqlalchemy.or_(
-            orm.reports_table.c.plant1.in_(species_list),
-            orm.reports_table.c.plant2.in_(species_list)
-        ))
-        with db.connect() as con:
-            return list(map(dict, con.execute(stmt).mappings().fetchall()))
-
     @app.route('/neighbors/<int:id_>')
     def grab_neighbors_endpoint(id_):
         stmt = sqlalchemy.select(
@@ -45,11 +32,12 @@ def main(app, db):
                 orm.reports_table.c.plant1 == id_,
                 orm.reports_table.c.plant2 == id_,
             ),
-            orm.reports_table.c.score is not None
-        )).order_by(orm.reports_table.c.score).limit(100)
+            orm.reports_table.c.score != None
+        )).order_by(orm.reports_table.c.score.desc()).limit(100)
         def remove_query_species(x):
             x = dict(x)
-            return [x['plant1'], x['score']] if x['plant2'] == id_ else [x['plant2'], x['score']]
+            score = None if x['score'] is None else float(x['score'])
+            return [x['plant1'], score] if x['plant2'] == id_ else [x['plant2'], score]
         with db.connect() as con:
             return list(map(remove_query_species, con.execute(stmt).mappings().fetchall()))
 

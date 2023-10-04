@@ -8,17 +8,6 @@ from greenworld import Greenworld
 from greenworld import orm
 from greenworld import defs
 
-# Conversions table for internal standard units
-_conversions = {
-    'f':   lambda f:   (f - 32) / 1.8,  # Convert fahrenheit to celsius
-    'lbs': lambda lbs: lbs * 453.59237, # Convert pounds to grams
-    'oz': lambda oz:   oz * 28.3495,    # Convert ounces to grams
-    'cm':  lambda cm:  cm / 100,        # Convert centimeters to meters
-    'mm':  lambda mm:  mm / 1000,       # Convert millimeters to meters
-    'in':  lambda i:   i * 0.0254,      # Convert inches to meters
-    'ft':  lambda ft:  ft * 0.3048      # Convert feet to meters
-}
-
 # Prints helpful information to the terminal
 def print_help():
     print(
@@ -27,19 +16,6 @@ def print_help():
         'Each file must follow the structure defined in README.md',
         sep='\n'
     )
-
-# Converts value from unit to the internal standard unit
-def convert_to_unit(value):
-    if not ' ' in value:
-        raise ValueError(f'Scalar value \'{value}\' needs a space in between the number and the unit')
-    val, unit = value.split(' ')
-    val = float(val)
-    unit = unit.lower()
-    if unit in ['m', 'g', 'c']:
-        return val
-    if unit not in _conversions:
-        raise ValueError(f'Unknown unit \'{unit}\'')
-    return round(_conversions[unit](val), 3)
 
 # Returns the last ID from a table
 def get_last_id(con, table):
@@ -116,13 +92,8 @@ def enter_data(gw: Greenworld, db, filename):
                     values[col] = parse_enum(val)
 
                 # Convert multiple enum references to their summed integer values
-                if isinstance(orm.plants_table.c[col].type, sqlalchemy.Integer) and isinstance(val, list) and isinstance(val[0], str):
+                if isinstance(orm.plants_table.c[col].type, sqlalchemy.Integer) and isinstance(val, list):
                     values[col] = parse_enum_range(val)
-
-                # Convert nonstandard units to internal standard units
-                if isinstance(orm.plants_table.c[col].type, NumericRangeType) and isinstance(val, list) and isinstance(val[0], str):
-                    values[col][0] = convert_to_unit(val[0])
-                    values[col][1] = convert_to_unit(val[1])
 
             # Write sanitized values to database
             result = select_by(con, orm.plants_table, 'species', values['species'])

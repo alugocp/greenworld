@@ -1,5 +1,4 @@
 SCRIPTS := $(patsubst greenworld/scripts/%.py,%,$(shell ls greenworld/scripts/*.py))
-VALIDATIONS := $(patsubst validation/%.py,validate/%,$(shell ls validation/*.py))
 ENV := PYTHONPATH=.
 PYTHON := python3
 NPM_BIN := ./node_modules/.bin
@@ -34,10 +33,10 @@ test-ts:
 	npx ts-mocha -p frontend/tests/tsconfig.json frontend/tests/*.ts
 
 test-py:
-	$(PYTHON) -m pytest
+	$(PYTHON) -m pytest --capture=no
+
+validate:
+	$(ENV) $(PYTHON) scripts/validation.py
 
 $(SCRIPTS):
 	$(ENV) $(PYTHON) greenworld/scripts/$@.py $(subst $(COMMA),$(SPACE),$(FILES))
-
-$(VALIDATIONS):
-	$(ENV) $(PYTHON) $(patsubst validate/%, validation/%.py, $@)

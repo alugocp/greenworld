@@ -6,18 +6,6 @@
             "species": "zea mays",
             "family": "gramineae",
             "growth_habit": "GrowthHabit.GRAMINOID",
-            "height": [
-                "4 ft",
-                "7 ft"
-            ],
-            "spread": [
-                "8 in",
-                "12 in"
-            ],
-            "root_spread": [
-                "3 ft",
-                "4 ft"
-            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -32,7 +20,6 @@
             ],
             "citations": {
                 "1": [
-                    "height",
                     "sun"
                 ],
                 "2": [
@@ -40,11 +27,7 @@
                     "drainage"
                 ],
                 "3": [
-                    "spread",
                     "soil"
-                ],
-                "4": [
-                    "root_spread"
                 ]
             },
             "ecology": [
@@ -121,22 +104,6 @@
             "species": "cucurbita maxima",
             "family": "cucurbitaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "height": [
-                "8 in",
-                "24 in"
-            ],
-            "spread": [
-                "24 in",
-                "36 in"
-            ],
-            "length": [
-                "10 ft",
-                "15 ft"
-            ],
-            "root_spread": [
-                "20 cm",
-                "80 cm"
-            ],
             "nitrogen": "Nitrogen.HEAVY",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -158,17 +125,9 @@
             ],
             "citations": {
                 "5": [
-                    "length",
                     "sun",
                     "pH",
                     "drainage"
-                ],
-                "7": [
-                    "root_spread"
-                ],
-                "9": [
-                    "height",
-                    "spread"
                 ]
             }
         },
@@ -178,23 +137,6 @@
             "species": "phaseolus vulgaris",
             "family": "fabaceae",
             "growth_habit": "GrowthHabit.VINE",
-            "height": [
-                "16 in",
-                "22 in"
-            ],
-            "spread": [
-                "12 in",
-                "18 in"
-            ],
-            "length": [
-                "1.5 ft",
-                "2 ft"
-            ],
-            "lightweight": true,
-            "root_spread": [
-                "18 in",
-                "24 in"
-            ],
             "nitrogen": "Nitrogen.FIXER",
             "sun": "Sun.FULL_SUN",
             "soil": [
@@ -209,17 +151,10 @@
             ],
             "citations": {
                 "6": [
-                    "length",
                     "sun",
                     "soil",
                     "pH",
                     "drainage"
-                ],
-                "10": [
-                    "spread"
-                ],
-                "11": [
-                    "root_spread"
                 ]
             },
             "ecology": [

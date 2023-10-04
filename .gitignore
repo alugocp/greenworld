@@ -1,7 +1,7 @@
 # Generated files
 server/static/script.js
-validation/*.png
-validation/*.txt
+scripts/*.png
+scripts/*.txt
 node_modules
 .DS_Store
 __pycache__

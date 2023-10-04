@@ -14,9 +14,6 @@ from sqlalchemy import (
     JSON
 )
 
-# Min and max values for planting ranges
-MAX_PLANTING_RANGE = 10000
-
 # Metadata object for SQLAlchemy
 meta = MetaData()
 
@@ -44,8 +41,6 @@ reports_table = Table('reports', meta,
     Column('plant1', Integer, ForeignKey('plants.id'), nullable = False),
     Column('plant2', Integer, ForeignKey('plants.id'), nullable = False),
     Column('score', Numeric),
-    Column('range_union_min', Numeric, nullable = False), # The close end of the union of ranges associated with this report
-    Column('range_union_max', Numeric, nullable = False), # The far end of the union of ranges associated with this report
     Column('report', JSON, nullable = False)
 )
 
@@ -59,11 +54,6 @@ plants_table = Table('plants', meta,
 
     # Morphology
     Column('growth_habit', Integer), # GrowthHabit enum
-    Column('height', NumericRangeType), # Meters
-    Column('spread', NumericRangeType), # From one extermity to the other (Meters)
-    Column('length', NumericRangeType), # Meters
-    Column('lightweight', Boolean),
-    Column('root_spread', NumericRangeType), # From one extremity to the other (Meters)
 
     # Nutrients
     Column('nitrogen', Integer), # Nitrogen enum

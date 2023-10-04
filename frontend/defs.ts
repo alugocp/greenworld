@@ -5,9 +5,3 @@ export interface PlantHandle {
     species: string
     name: string
 }
-
-// Cartesian point type
-export interface Point {
-    x: number
-    y: number
-};

@@ -47,6 +47,9 @@ make lint
 # Performs unit tests
 make test
 
+# Performs the statistical validation test
+make validate
+
 # Builds the frontend app code
 make ui
 
@@ -60,7 +63,6 @@ Then you can use the following commands while interacting with the database:
 - `make reset` resets and reseeds the development database
 - `make report` generates companionship reports for newly added plant species
 - `make invalidate` invalidates the reports table so the next report command will iterate through every plant pair
-- `make query` prints a list of reports logged in the database
 
 ### Data entry
 This command can be used to enter data into the database:
@@ -73,13 +75,6 @@ make enter FILES=file,...
 This schema can be found in the file [greenworld/schema.py](./greenworld/schema.py).
 Example files can be found in the [seed-data](./seed-data) folder.
 
-### Validation
-These commands generate statistical values that validate the algorithm's accuracy:
-
-- `make validate/sisters` generates error values for various traditional three sisters configurations
-- `make validate/juglone` calculates error for walnut allelopathic range suggestion
-- `make validate/garden` compares distributions for expected good, bad and neutral companions
-
 ### Project Navigation
 - `frontend`: TypeScript code for the Greenworld browser-based UI
 - `greenworld`: Greenworld code and maintenance scripts
@@ -88,4 +83,3 @@ These commands generate statistical values that validate the algorithm's accurac
 - `scripts`: Miscellaneous scripts that don't fit anywhere else
 - `seed-data`: Data used to seed Greenworld instances
 - `server`: Greenworld web server
-- `validation`: Statistical validation tests

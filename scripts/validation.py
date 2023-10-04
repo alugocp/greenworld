@@ -322,11 +322,11 @@ for r in results:
         neutral_reports.append(r)
 
 # Write report files
-with open('validation/garden-neutral-reports.txt', 'w', encoding = 'utf-8') as file:
+with open('scripts/garden-neutral-reports.txt', 'w', encoding = 'utf-8') as file:
     file.write(json.dumps(neutral_reports, indent = 4))
-with open('validation/garden-good-reports.txt', 'w', encoding = 'utf-8') as file:
+with open('scripts/garden-good-reports.txt', 'w', encoding = 'utf-8') as file:
     file.write(json.dumps(good_reports, indent = 4))
-with open('validation/garden-bad-reports.txt', 'w', encoding = 'utf-8') as file:
+with open('scripts/garden-bad-reports.txt', 'w', encoding = 'utf-8') as file:
     file.write(json.dumps(bad_reports, indent = 4))
 
 # Percentage of "good" identified companions within a distribution
@@ -354,7 +354,7 @@ plt.set_loglevel(level = 'warning')
 plt.hist(good_dist, **common, color = 'green')
 plt.hist(neutral_dist, **common, color = 'blue')
 plt.hist(bad_dist, **common, color = 'red')
-plt.savefig('validation/garden.png')
+plt.savefig('scripts/garden.png')
 
 # Species companion data with references
 # pylint: disable=pointless-string-statement

@@ -2,24 +2,11 @@ plant_field_labels = {
     'id': 'Greenworld ID',
     'family': 'Family',
     'growth_habit': 'Growth Habit',
-    'height': 'Height',
-    'spread': 'Spread',
-    'length': 'Length',
-    'root_spread': 'Root Spread',
     'nitrogen': 'Nitrogen',
     'sun': 'Sun',
     'soil': 'Soil Type',
     'pH': 'pH',
     'drainage': 'Soil Drainage'
-}
-
-plant_field_units = {
-    'family': '',
-    'height': 'm',
-    'spread': 'm',
-    'length': 'm',
-    'root_spread': 'm',
-    'pH': ''
 }
 
 plant_enum_values = {
