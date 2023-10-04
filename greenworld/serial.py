@@ -1,5 +1,6 @@
 import math
 
+
 # Converts a sum value from the database into a list of integers (corresponds to some enum class)
 def deserialize_enum_list(val):
     values = []
@@ -10,6 +11,7 @@ def deserialize_enum_list(val):
             val -= check
         check /= 2
     return values
+
 
 def serialize_factors(factors):
     return list(map(lambda x: x.label, factors))

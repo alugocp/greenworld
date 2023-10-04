@@ -42,225 +42,200 @@ from greenworld.orm import init_db
 
 # Expected companion results
 GOOD = {
-    'zea mays': [
-        'cucurbita maxima',
-        'phaseolus vulgaris'
+    "zea mays": ["cucurbita maxima", "phaseolus vulgaris"],
+    "cucurbita maxima": ["phaseolus vulgaris"],
+    "solanum lycopersicum": [
+        "tagetes patula",
+        "tropaeolum majus",
+        "coriandrum sativum",
+        "helianthus annuus",
+        "ocimum basilicum",
+        "allium sativum",
     ],
-    'cucurbita maxima': [
-        'phaseolus vulgaris'
+    "ipomoea batatas": [
+        "allium tricoccum",
+        "allium cepa",
+        "allium sativum",
+        "anethum graveolens",
+        "ocimum basilicum",
+        "phaseolus vulgaris",
+        "tagetes patula",
+        "tropaeolum majus",
     ],
-    'solanum lycopersicum': [
-        'tagetes patula',
-        'tropaeolum majus',
-        'coriandrum sativum',
-        'helianthus annuus',
-        'ocimum basilicum',
-        'allium sativum'
+    "solanum tuberosum": [
+        "ocimum basilicum",
+        "phaseolus vulgaris",
+        "coriandrum sativum",
+        "zea mays",
+        "tagetes patula",
+        "tropaeolum majus",
     ],
-    'ipomoea batatas': [
-        'allium tricoccum',
-        'allium cepa',
-        'allium sativum',
-        'anethum graveolens',
-        'ocimum basilicum',
-        'phaseolus vulgaris',
-        'tagetes patula',
-        'tropaeolum majus'
+    "brassica oleracea var. italica": [
+        "allium tricoccum",
+        "allium cepa",
+        "allium sativum",
+        "tropaeolum majus",
+        "tagetes patula",
+        "anethum graveolens",
+        "ocimum basilicum",
+        "mentha spp.",
+        "solanum tuberosum",
     ],
-    'solanum tuberosum': [
-        'ocimum basilicum',
-        'phaseolus vulgaris',
-        'coriandrum sativum',
-        'zea mays',
-        'tagetes patula',
-        'tropaeolum majus'
+    "ocimum basilicum": [
+        "coriandrum sativum",
+        "tagetes patula",
+        "solanum lycopersicum",
+        "solanum tuberosum",
     ],
-    'brassica oleracea var. italica': [
-        'allium tricoccum',
-        'allium cepa',
-        'allium sativum',
-        'tropaeolum majus',
-        'tagetes patula',
-        'anethum graveolens',
-        'ocimum basilicum',
-        'mentha spp.',
-        'solanum tuberosum'
+    "allium sativum": [
+        "anethum graveolens",
+        "solanum lycopersicum",
+        "solanum tuberosum",
+        "brassica oleracea var. italica",
+        "brassica oleracea var. gongylodes",
+        "tropaeolum majus",
+        "tagetes patula",
     ],
-    'ocimum basilicum': [
-        'coriandrum sativum',
-        'tagetes patula',
-        'solanum lycopersicum',
-        'solanum tuberosum'
+    "allium cepa": [
+        "allium cepa",
+        "allium sativum",
+        "allium tricoccum",
+        "brassica oleracea var. italica",
+        "brassica oleracea var. gongylodes",
+        "solanum lycopersicum",
+        "solanum tuberosum",
+        "anethum graveolens",
+        "tagetes patula",
     ],
-    'allium sativum': [
-        'anethum graveolens',
-        'solanum lycopersicum',
-        'solanum tuberosum',
-        'brassica oleracea var. italica',
-        'brassica oleracea var. gongylodes',
-        'tropaeolum majus',
-        'tagetes patula'
+    "anethum graveolens": [
+        "zea mays",
+        "cucumis sativus",
+        "allium cepa",
+        "brassica oleracea var. italica",
+        "brassica oleracea var. gongylodes",
     ],
-    'allium cepa': [
-        'allium cepa',
-        'allium sativum',
-        'allium tricoccum',
-        'brassica oleracea var. italica',
-        'brassica oleracea var. gongylodes',
-        'solanum lycopersicum',
-        'solanum tuberosum',
-        'anethum graveolens',
-        'tagetes patula'
+    "foeniculum vulgare": ["anethum graveolens", "cucumis sativus"],
+    "citrullus lanatus": [
+        "zea mays",
+        "phaseolus vulgaris",
+        "anethum graveolens",
+        "tagetes patula",
+        "tropaeolum majus",
+        "allium sativum",
+        "mentha spp.",
+        "brassica oleracea var. italica",
     ],
-    'anethum graveolens': [
-        'zea mays',
-        'cucumis sativus',
-        'allium cepa',
-        'brassica oleracea var. italica',
-        'brassica oleracea var. gongylodes'
+    "mentha spp.": [
+        "cucurbita maxima",
+        "brassica oleracea var. italica",
+        "allium cepa",
+        "phaseolus vulgaris",
+        "solanum lycopersicum",
+        "tagetes patula",
     ],
-    'foeniculum vulgare': [
-        'anethum graveolens',
-        'cucumis sativus'
+    "brassica oleracea var. gongylodes": [
+        "phaseolus vulgaris",
+        "cucumis sativus",
+        "allium cepa",
+        "solanum tuberosum",
     ],
-    'citrullus lanatus': [
-        'zea mays',
-        'phaseolus vulgaris',
-        'anethum graveolens',
-        'tagetes patula',
-        'tropaeolum majus',
-        'allium sativum',
-        'mentha spp.',
-        'brassica oleracea var. italica'
+    "tropaeolum majus": [
+        "phaseolus vulgaris",
+        "cucumis sativus",
+        "cucurbita maxima",
+        "brassica oleracea var. italica",
     ],
-    'mentha spp.': [
-        'cucurbita maxima',
-        'brassica oleracea var. italica',
-        'allium cepa',
-        'phaseolus vulgaris',
-        'solanum lycopersicum',
-        'tagetes patula'
+    "tagetes patula": [
+        "cucumis sativus",
+        "cucurbita maxima",
+        "citrullus lanatus",
+        "solanum lycopersicum",
+        "solanum tuberosum",
+        "phaseolus vulgaris",
+        "brassica oleracea var. italica",
+        "allium cepa",
     ],
-    'brassica oleracea var. gongylodes': [
-        'phaseolus vulgaris',
-        'cucumis sativus',
-        'allium cepa',
-        'solanum tuberosum'
+    "cucumis sativus": [
+        "phaseolus vulgaris",
+        "zea mays",
+        "anethum graveolens",
+        "tropaeolum majus",
+        "tagetes patula",
+        "helianthus annuus",
+        "allium sativum",
+        "apios americana",
     ],
-    'tropaeolum majus': [
-        'phaseolus vulgaris',
-        'cucumis sativus',
-        'cucurbita maxima',
-        'brassica oleracea var. italica'
+    "coriandrum sativum": [
+        "phaseolus vulgaris",
+        "apios americana",
+        "helianthus annuus",
     ],
-    'tagetes patula': [
-        'cucumis sativus',
-        'cucurbita maxima',
-        'citrullus lanatus',
-        'solanum lycopersicum',
-        'solanum tuberosum',
-        'phaseolus vulgaris',
-        'brassica oleracea var. italica',
-        'allium cepa'
-    ],
-    'cucumis sativus': [
-        'phaseolus vulgaris',
-        'zea mays',
-        'anethum graveolens',
-        'tropaeolum majus',
-        'tagetes patula',
-        'helianthus annuus',
-        'allium sativum',
-        'apios americana'
-    ],
-    'coriandrum sativum': [
-        'phaseolus vulgaris',
-        'apios americana',
-        'helianthus annuus'
-    ]
 }
 BAD = {
-    'zea mays': [
-        'solanum lycopersicum'
+    "zea mays": ["solanum lycopersicum"],
+    "solanum lycopersicum": [
+        "brassica oleracea var. italica",
+        "foeniculum vulgare",
+        "anethum graveolens",
+        "solanum tuberosum",
+        "cucumis sativus",
+        "zea mays",
     ],
-    'solanum lycopersicum': [
-        'brassica oleracea var. italica',
-        'foeniculum vulgare',
-        'anethum graveolens',
-        'solanum tuberosum',
-        'cucumis sativus',
-        'zea mays'
+    "ipomoea batatas": [
+        "cucurbita maxima",
+        "solanum lycopersicum",
+        "helianthus annuus",
     ],
-    'ipomoea batatas': [
-        'cucurbita maxima',
-        'solanum lycopersicum',
-        'helianthus annuus'
+    "solanum tuberosum": [
+        "cucumis sativus",
+        "foeniculum vulgare",
+        "allium cepa",
+        "cucurbita maxima",
+        "helianthus annuus",
+        "solanum lycopersicum",
     ],
-    'solanum tuberosum': [
-        'cucumis sativus',
-        'foeniculum vulgare',
-        'allium cepa',
-        'cucurbita maxima',
-        'helianthus annuus',
-        'solanum lycopersicum'
+    "brassica oleracea var. italica": [
+        "brassica oleracea var. gongylodes",
+        "solanum lycopersicum",
+        "cucurbita maxima",
     ],
-    'brassica oleracea var. italica': [
-        'brassica oleracea var. gongylodes',
-        'solanum lycopersicum',
-        'cucurbita maxima'
+    "ocimum basilicum": ["cucumis sativus", "foeniculum vulgare"],
+    "allium sativum": ["phaseolus vulgaris", "apios americana"],
+    "allium cepa": ["phaseolus vulgaris", "apios americana"],
+    "foeniculum vulgare": [
+        "phaseolus vulgaris",
+        "solanum lycopersicum",
+        "solanum tuberosum",
     ],
-    'ocimum basilicum': [
-        'cucumis sativus',
-        'foeniculum vulgare'
+    "citrullus lanatus": ["solanum tuberosum", "cucurbita maxima", "cucumis sativus"],
+    "brassica oleracea var. gongylodes": [
+        "brassica oleracea var. gongylodes",
+        "brassica oleracea var. italica",
+        "solanum lycopersicum",
     ],
-    'allium sativum': [
-        'phaseolus vulgaris',
-        'apios americana'
+    "tropaeolum majus": ["mentha spp.", "solanum lycopersicum"],
+    "cucumis sativus": [
+        "mentha spp.",
+        "solanum tuberosum",
+        "citrullus lanatus",
+        "foeniculum vulgare",
     ],
-    'allium cepa': [
-        'phaseolus vulgaris',
-        'apios americana'
-    ],
-    'foeniculum vulgare': [
-        'phaseolus vulgaris',
-        'solanum lycopersicum',
-        'solanum tuberosum'
-    ],
-    'citrullus lanatus': [
-        'solanum tuberosum',
-        'cucurbita maxima',
-        'cucumis sativus'
-    ],
-    'brassica oleracea var. gongylodes': [
-        'brassica oleracea var. gongylodes',
-        'brassica oleracea var. italica',
-        'solanum lycopersicum'
-    ],
-    'tropaeolum majus': [
-        'mentha spp.',
-        'solanum lycopersicum'
-    ],
-    'cucumis sativus': [
-        'mentha spp.',
-        'solanum tuberosum',
-        'citrullus lanatus',
-        'foeniculum vulgare'
-    ],
-    'coriandrum sativum': [
-        'foeniculum vulgare'
-    ]
+    "coriandrum sativum": ["foeniculum vulgare"],
 }
 
 # Generate report data
 gw = Greenworld()
-reset.main(gw, seed_data = False)
-enter.main(gw, [
-    'seed-data/pests.json',
-    'seed-data/pathogens.json',
-    'seed-data/three-sisters.json',
-    'seed-data/native-plants.json',
-    'seed-data/garden.json'
-])
+reset.main(gw, seed_data=False)
+enter.main(
+    gw,
+    [
+        "seed-data/pests.json",
+        "seed-data/pathogens.json",
+        "seed-data/three-sisters.json",
+        "seed-data/native-plants.json",
+        "seed-data/garden.json",
+    ],
+)
 report.main(gw)
 
 # Double check the companion data species names
@@ -287,15 +262,17 @@ for name in species_names:
 # Retrieve compatibility scores
 plant_1_table = sqlalchemy.alias(plants_table)
 plant_2_table = sqlalchemy.alias(plants_table)
-stmt = sqlalchemy.select(
-    reports_table.c.score,
-    reports_table.c.report,
-    plant_1_table.c.species.label('species1'),
-    plant_2_table.c.species.label('species2')
-) \
-.join(plant_1_table, reports_table.c.plant1 == plant_1_table.c.id) \
-.join(plant_2_table, reports_table.c.plant2 == plant_2_table.c.id) \
-.where(reports_table.c.score is not None)
+stmt = (
+    sqlalchemy.select(
+        reports_table.c.score,
+        reports_table.c.report,
+        plant_1_table.c.species.label("species1"),
+        plant_2_table.c.species.label("species2"),
+    )
+    .join(plant_1_table, reports_table.c.plant1 == plant_1_table.c.id)
+    .join(plant_2_table, reports_table.c.plant2 == plant_2_table.c.id)
+    .where(reports_table.c.score is not None)
+)
 
 with db.connect() as con:
     results = list(map(dict, con.execute(stmt).mappings().fetchall()))
@@ -308,57 +285,74 @@ good_dist = []
 bad_reports = []
 bad_dist = []
 for r in results:
-    r['score'] = 0.0 if r['score'] is None else float(r['score'])
-    s1 = r['species1']
-    s2 = r['species2']
+    r["score"] = 0.0 if r["score"] is None else float(r["score"])
+    s1 = r["species1"]
+    s2 = r["species2"]
     if (s1 in GOOD and s2 in GOOD[s1]) or (s2 in GOOD and s1 in GOOD[s2]):
-        good_dist.append(r['score'])
+        good_dist.append(r["score"])
         good_reports.append(r)
     elif (s1 in BAD and s2 in BAD[s1]) or (s2 in BAD and s1 in BAD[s2]):
-        bad_dist.append(r['score'])
+        bad_dist.append(r["score"])
         bad_reports.append(r)
     elif (s1 in GOOD or s1 in BAD) and (s2 in GOOD or s2 in BAD):
-        neutral_dist.append(r['score'])
+        neutral_dist.append(r["score"])
         neutral_reports.append(r)
 
 # Write report files
-with open('scripts/garden-neutral-reports.txt', 'w', encoding = 'utf-8') as file:
-    file.write(json.dumps(neutral_reports, indent = 4))
-with open('scripts/garden-good-reports.txt', 'w', encoding = 'utf-8') as file:
-    file.write(json.dumps(good_reports, indent = 4))
-with open('scripts/garden-bad-reports.txt', 'w', encoding = 'utf-8') as file:
-    file.write(json.dumps(bad_reports, indent = 4))
+with open("scripts/garden-neutral-reports.txt", "w", encoding="utf-8") as file:
+    file.write(json.dumps(neutral_reports, indent=4))
+with open("scripts/garden-good-reports.txt", "w", encoding="utf-8") as file:
+    file.write(json.dumps(good_reports, indent=4))
+with open("scripts/garden-bad-reports.txt", "w", encoding="utf-8") as file:
+    file.write(json.dumps(bad_reports, indent=4))
+
 
 # Percentage of "good" identified companions within a distribution
 def percent_good(dist):
     percent = len(list(filter(lambda x: x > 0, dist))) / len(dist)
     return round(percent * 10000) / 100
 
+
 # Statistical comparison between distributions (Wilcoxon rank-sum tests)
 # pylint: disable=consider-using-f-string
-sys.stdout.write('\u001b[1mp-values\u001b[0m\n')
-sys.stdout.write('Good companions vs neutral: \u001b[31m%s\u001b[0m\n' % (stats.ranksums(good_dist, neutral_dist, alternative = 'greater').pvalue))
-sys.stdout.write('Bad companions vs neutral: \u001b[31m%s\u001b[0m\n' % (stats.ranksums(bad_dist, neutral_dist, alternative = 'less').pvalue))
-sys.stdout.write('Bad companions vs good: \u001b[31m%s\u001b[0m\n' % (stats.ranksums(bad_dist, good_dist, alternative = 'less').pvalue))
-sys.stdout.write('Good companions percentage of good companions: \u001b[31m%s\u001b[0m%%\n' % (percent_good(good_dist)))
-sys.stdout.write('Good companions percentage of neutral companions: \u001b[31m%s\u001b[0m%%\n' % (percent_good(neutral_dist)))
-sys.stdout.write('Good companions percentage of bad companions: \u001b[31m%s\u001b[0m%%\n' % (percent_good(bad_dist)))
+sys.stdout.write("\u001b[1mp-values\u001b[0m\n")
+sys.stdout.write(
+    "Good companions vs neutral: \u001b[31m%s\u001b[0m\n"
+    % (stats.ranksums(good_dist, neutral_dist, alternative="greater").pvalue)
+)
+sys.stdout.write(
+    "Bad companions vs neutral: \u001b[31m%s\u001b[0m\n"
+    % (stats.ranksums(bad_dist, neutral_dist, alternative="less").pvalue)
+)
+sys.stdout.write(
+    "Bad companions vs good: \u001b[31m%s\u001b[0m\n"
+    % (stats.ranksums(bad_dist, good_dist, alternative="less").pvalue)
+)
+sys.stdout.write(
+    "Good companions percentage of good companions: \u001b[31m%s\u001b[0m%%\n"
+    % (percent_good(good_dist))
+)
+sys.stdout.write(
+    "Good companions percentage of neutral companions: \u001b[31m%s\u001b[0m%%\n"
+    % (percent_good(neutral_dist))
+)
+sys.stdout.write(
+    "Good companions percentage of bad companions: \u001b[31m%s\u001b[0m%%\n"
+    % (percent_good(bad_dist))
+)
 # pylint: enable=consider-using-f-string
 
 # Plot distributions and save to image
-common = {
-    'histtype': 'step',
-    'bins': 100
-}
-plt.set_loglevel(level = 'warning')
-plt.hist(good_dist, **common, color = 'green')
-plt.hist(neutral_dist, **common, color = 'blue')
-plt.hist(bad_dist, **common, color = 'red')
-plt.savefig('scripts/garden.png')
+common = {"histtype": "step", "bins": 100}
+plt.set_loglevel(level="warning")
+plt.hist(good_dist, **common, color="green")
+plt.hist(neutral_dist, **common, color="blue")
+plt.hist(bad_dist, **common, color="red")
+plt.savefig("scripts/garden.png")
 
 # Species companion data with references
 # pylint: disable=pointless-string-statement
-'''
+"""
 https://www.thespruce.com/companion-plants-for-tomatoes-1403289
 Tomato good: calendula, chives, black-eyed peas, radishes, sage, french marigold, nasturtium, cilantro, oregano, parsley, crimson clover, lavendar, sunflower, zinnia, asparagus, basil, borage, carrot, garlic, sweet allysum, thyme
 Tomato bad: Broccoli (any brassicaceae species), Fennel, Dill, Potato (any solanaceae species), Cucumbers, Corn, Rosemary
@@ -422,5 +416,5 @@ Cucumber bad: potatoes, sage, mint, melon, fennel
 https://www.thespruce.com/companion-plants-for-cilantro-5074346
 Cilantro good: Chervil, Sweet alyssum, Coreopsis, Legumes, Cosmos, Zinnias, Sunflowers
 Cilantro bad: Lavender, Thyme, Rosemary, Fennel
-'''
+"""
 # pylint: enable=pointless-string-statement

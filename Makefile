@@ -9,10 +9,11 @@ SPACE:= $(EMPTY) $(EMPTY)
 lint: lint-ts lint-py lint-jinja
 
 lint-py:
+	$(PYTHON) -m black ./**/*.py
 	$(ENV) $(PYTHON) -m pylint $(shell git ls-files "*.py")
 
 lint-ts:
-	$(NPM_BIN)/eslint frontend
+	$(NPM_BIN)/eslint frontend/*.ts
 
 lint-jinja:
 	$(ENV) $(PYTHON) -m djlint server/templates --profile=jinja

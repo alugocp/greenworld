@@ -9,12 +9,14 @@ from greenworld.collection.nitrogen_fixers import NitrogenFixersDataCollector
 
 __collectors = []
 
+
 # Grabs the appropriate data collector for the requested data
 def get_data_collector(key):
     for collector in __collectors:
         if collector.matches_input(key):
             return collector
     return None
+
 
 # Aggregates secondary missing data to output dicts
 def fill_missing_path(data, missing):
@@ -27,6 +29,7 @@ def fill_missing_path(data, missing):
             collector.fill(data, missing, collected)
             break
 
+
 def main(gw, args):
     # Initialize collectors
     __collectors.append(IwebXlsDataCollector(gw))
@@ -38,7 +41,7 @@ def main(gw, args):
     for arg in args:
         collector = get_data_collector(arg)
         if not collector:
-            raise ValueError(f'No data collector for input \'{arg}\'')
+            raise ValueError(f"No data collector for input '{arg}'")
 
         # Aggregate data from collectors
         data = collector.collect_data(arg)
@@ -50,12 +53,13 @@ def main(gw, args):
 
         # Assert and write to file
         assert json_schema.validate(data) == data
-        pretty_json = json.dumps(data, indent = 4)
-        with open('seed-data/tmp.json', 'w', encoding = 'utf-8') as file:
+        pretty_json = json.dumps(data, indent=4)
+        with open("seed-data/tmp.json", "w", encoding="utf-8") as file:
             file.write(pretty_json)
 
     for collector in __collectors:
         collector.destroy()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main(Greenworld(), sys.argv[1:])

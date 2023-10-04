@@ -2,6 +2,7 @@ import re
 from typing import List, Union
 from greenworld import Greenworld
 
+
 class BaseDataCollector:
     __missing_paths: List[str] = []
     gw: Greenworld
@@ -23,7 +24,7 @@ class BaseDataCollector:
 
     # Gets a value from the data at the given path
     def get(self, data, path):
-        keys = re.search(r'([a-z]+)\.([0-9]+)', path).groups()
+        keys = re.search(r"([a-z]+)\.([0-9]+)", path).groups()
         return data[keys[0]][int(keys[1])]
 
     # Updates some missing data at the given path

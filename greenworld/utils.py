@@ -1,13 +1,14 @@
 from dataclasses import dataclass
 from typing import List
 
+
 @dataclass
 class Factor:
     value: float
     label: str
 
     @staticmethod
-    def union(factors, apply_filter = True):
+    def union(factors, apply_filter=True):
         if len(factors) == 0:
             return None
         filtered = list(filter(lambda x: x is not None, factors))
@@ -16,22 +17,28 @@ class Factor:
         if apply_filter:
             factors = filtered
         return Factor(
-            round(sum(list(map(lambda x: 0.0 if x is None else x.value, factors))) / len(factors), 3),
-            ' and '.join(list(map(lambda x: x.label, filtered)))
+            round(
+                sum(list(map(lambda x: 0.0 if x is None else x.value, factors)))
+                / len(factors),
+                3,
+            ),
+            " and ".join(list(map(lambda x: x.label, filtered))),
         )
+
 
 @dataclass
 class Report:
     score: float
     factors: List[Factor]
 
+
 class Rule:
     def generate_factor(self, con, p1, p2) -> Factor:
         pass
 
-class CompanionAlgorithm:
 
-    def __init__(self, rules = []):
+class CompanionAlgorithm:
+    def __init__(self, rules=[]):
         self.__rules = rules
 
     def generate_report(self, con, p1, p2):
@@ -42,5 +49,5 @@ class CompanionAlgorithm:
         union = Factor.union(factors)
         return Report(
             None if union is None else union.value,
-            list(filter(lambda x: x is not None, factors))
+            list(filter(lambda x: x is not None, factors)),
         )

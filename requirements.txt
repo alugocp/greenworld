@@ -8,6 +8,7 @@ intervals
 pytest
 pylint
 djlint
+black
 
 # Server
 flask
