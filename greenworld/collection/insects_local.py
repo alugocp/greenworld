@@ -16,8 +16,8 @@ class InsectsLocalDataCollector(BaseDataCollector):
         for i, row in enumerate(wb.active.rows):
             if i < 4:
                 continue
-            if taxon.parse_species(row[1].value).species:
-                self.__database[taxon.pretty_species()] = {
+            if taxon.parse(row[1].value).species:
+                self.__database[taxon.format()] = {
                     "name": row[0].value.title(),
                     "family": row[3].value.lower(),
                 }

@@ -26,15 +26,19 @@ class Taxon:
     species: Optional[str]
     extra: str
 
-    def parse_species(self, text: str):
+    def parse(self, text: str):
         """
-        Parses a raw string species name so Greenworld knows what it's dealing with
+        Parses a raw string species name so Greenworld knows what it's dealing with.
+        Will throw an error if the argument is an invalid species name.
         """
         state = TaxonParseState.GENUS
         self.species = None
         self.genus = None
         self.extra = ""
         for part in text.lower().split(" "):
+            if part == "":
+                break
+
             # Add an extra identifier (variety or cultivar, etc)
             if state == TaxonParseState.EXTRA:
                 self.extra = f"{self.extra} {part}"
@@ -48,20 +52,36 @@ class Taxon:
 
             # Parse the species name
             if state == TaxonParseState.SPECIES:
-                if part not in ["sp.", "spp."]:
+                if part in ["sp.", "spp."]:
+                    self.species = "spp."
+                else:
                     self.species = part
                 state = TaxonParseState.SEARCHING
 
             # Parse the genus name
             if state == TaxonParseState.GENUS:
-                self.genus = part
+                self.genus = part.capitalize()
                 state = TaxonParseState.SPECIES
 
+        # Clean up the extra field and check for invalid arguments
         self.extra = self.extra.strip()
+        if self.genus is None:
+            raise Exception(f"Species name '{text}' is invalid")
         return self
 
-    def pretty_species(self) -> str:
+    def format(self) -> str:
         """
         Return the parsed species name in the Greenworld standard format
         """
-        return f"{self.genus} {self.species} {self.extra}".strip()
+        return " ".join(
+            list(
+                filter(
+                    lambda x: x is not None and len(x) > 0,
+                    [
+                        self.genus,
+                        self.species,
+                        self.extra,
+                    ],
+                )
+            )
+        )

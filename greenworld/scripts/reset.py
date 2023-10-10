@@ -25,7 +25,7 @@ def main(gw: Greenworld, seed_data=False):
     # Set a plant kingdom value in the other_species table
     with db.connect() as con:
         stmt = orm.other_species_table.insert().values(
-            id=defs.PLANTAE, species="plantae", name="Plant Kingdom"
+            id=defs.PLANTAE, species="Plantae", name="Plant Kingdom"
         )
         con.execute(stmt)
         con.commit()

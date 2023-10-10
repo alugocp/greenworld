@@ -61,7 +61,7 @@ class ServerAppCase(unittest.TestCase):
         """
         self.assertEqual(
             requests.get(url=f"{BASE}/search/zea", timeout=5).json(),
-            [{"id": 1, "name": "Hopi Turquoise Corn", "species": "zea mays"}],
+            [{"id": 1, "name": "Hopi Turquoise Corn", "species": "Zea mays"}],
         )
         self.assertEqual(requests.get(url=f"{BASE}/search/z", timeout=5).json(), [])
 
@@ -81,7 +81,7 @@ class ServerAppCase(unittest.TestCase):
         self.assertEqual(
             requests.get(url=f"{BASE}/handlers?ids=1,2", timeout=5).json(),
             [
-                {"id": 1, "name": "Hopi Turquoise Corn", "species": "zea mays"},
-                {"id": 2, "name": "Hopi Orange Squash", "species": "cucurbita maxima"},
+                {"id": 1, "name": "Hopi Turquoise Corn", "species": "Zea mays"},
+                {"id": 2, "name": "Hopi Orange Squash", "species": "Cucurbita maxima"},
             ],
         )

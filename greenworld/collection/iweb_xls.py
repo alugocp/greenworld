@@ -139,8 +139,8 @@ class IwebXlsDataCollector(BaseDataCollector):
                     latin1 = cli_options["row-headers"][a]  # Non-plant
                     latin2 = cli_options["col-headers"][b]  # Plant
                     if (
-                        not Taxon().parse_species(latin1).species
-                        or not Taxon().parse_species(latin2).species
+                        not Taxon().parse(latin1).species
+                        or not Taxon().parse(latin2).species
                     ):
                         continue
                     self.gw.log(f"Visiting {latin1} x {latin2}")

@@ -3,6 +3,7 @@ import json
 import sys
 import sqlalchemy
 from greenworld.schema import json_schema
+from greenworld.taxonomy import Taxon
 from greenworld import Greenworld
 from greenworld import orm
 from greenworld import defs
@@ -61,6 +62,8 @@ def enter_data(gw: Greenworld, db, filename):
     with open(filename, "r", encoding="utf-8") as file:
         data = json.load(file)
     assert json_schema.validate(data) == data
+    taxon = Taxon()
+
     with db.connect() as con:
         works_cited_map = get_works_cited_map(gw, con, data)
 
@@ -69,6 +72,7 @@ def enter_data(gw: Greenworld, db, filename):
         last_other_id = get_last_id(con, orm.other_species_table)
         for row in data["others"] if "others" in data else []:
             values = copy.deepcopy(row)
+            values["species"] = taxon.parse(values["species"]).format()
             result = select_by(
                 con, orm.other_species_table, "species", values["species"]
             )
@@ -95,6 +99,7 @@ def enter_data(gw: Greenworld, db, filename):
         last_plant_id = get_last_id(con, orm.plants_table)
         for row in data["plants"] if "plants" in data else []:
             values = copy.deepcopy(row)
+            values["species"] = taxon.parse(values["species"]).format()
             del values["id"]
             local_ecology_data = values.pop("ecology") if "ecology" in values else []
 
@@ -170,9 +175,11 @@ def get_works_cited_map(gw: Greenworld, con, data):
 
 # Write ecological data with a many-to-many relationship to the database
 def process_ecological_fields(gw: Greenworld, con, works_cited_map, plant_id, data):
+    taxon = Taxon()
     for row in data:
         # Retrieve (and/or create) plant or non-plant species
         is_plant = True
+        row["species"] = taxon.parse(row["species"]).format()
         result = select_by(con, orm.plants_table, "species", row["species"])
         if not result:
             is_plant = False
