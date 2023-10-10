@@ -112,9 +112,9 @@ class SunlightRule(Rule):
         GrowthHabit.VINE: 0,
         GrowthHabit.FORB: 0,
         GrowthHabit.GRAMINOID: 0,
-        GrowthHabit.SUBSHRUB: 2,
-        GrowthHabit.SHRUB: 3,
-        GrowthHabit.TREE: 4,
+        GrowthHabit.SUBSHRUB: 1,
+        GrowthHabit.SHRUB: 2,
+        GrowthHabit.TREE: 3,
     }
 
     def generate_factor(self, _con, p1, p2) -> Factor:

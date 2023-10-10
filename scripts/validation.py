@@ -350,9 +350,13 @@ sys.stdout.write(
 # Plot distributions and save to image
 common = {"histtype": "step", "bins": 100}
 plt.set_loglevel(level="warning")
-plt.hist(good_dist, **common, color="green")
-plt.hist(neutral_dist, **common, color="blue")
-plt.hist(bad_dist, **common, color="red")
+plt.title("Compatibility Scores for Companions of Expected Quality")
+plt.xlabel("Compatibility score")
+plt.ylabel("Frequency")
+plt.hist(good_dist, **common, color="green", label="Expected good pairs")
+plt.hist(neutral_dist, **common, color="blue", label="Expected neutral pairs")
+plt.hist(bad_dist, **common, color="red", label="Expected bad pairs")
+plt.legend()
 plt.savefig("scripts/garden.png")
 
 # Species companion data with references
