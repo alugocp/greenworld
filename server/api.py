@@ -34,8 +34,8 @@ def main(app, db):
             )
             return list(map(dict, con.execute(stmt).mappings().fetchall()))
 
-    @app.route("/neighbors/<int:id_>")
-    def grab_neighbors_endpoint(id_):
+    @app.route("/neighbors/<int:id_>/<desc>")
+    def grab_neighbors_endpoint(id_, desc):
         stmt = (
             sqlalchemy.select(
                 orm.reports_table.c.plant1,
@@ -51,9 +51,11 @@ def main(app, db):
                     orm.reports_table.c.score != None,
                 )
             )
-            .order_by(orm.reports_table.c.score.desc())
-            .limit(100)
         )
+        if desc == "true":
+            stmt = stmt.order_by(orm.reports_table.c.score.desc()).limit(100)
+        else:
+            stmt = stmt.order_by(orm.reports_table.c.score).limit(100)
 
         def remove_query_species(x):
             x = dict(x)

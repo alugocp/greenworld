@@ -8,6 +8,12 @@
     Find a plant's companions by various query options
 </p>
 
+<input type="checkbox" id="best" checked>
+<label for="best">Sort by best companions</label>
+</br>
+</br>
+</br>
+
 <div>
     Plant:
     {% import 'macros/search.html' as lookup %}
@@ -19,29 +25,21 @@
 </br>
 
 <script>
-let previous;
-let searched;
-
 async function renderCompanions(id, name, species) {
     const results = document.getElementById('companion-results');
     results.innerHTML = '<p>Retrieving suitable companions...</p>';
-    previous = null;
     const companions = await gw.companions.discover({
+        desc: document.getElementById("best").checked,
         id,
-        previous
     });
     let html = `<p><span id="companion-number">Top ${companions.length}</span> companions found for ${name} (<i>${species}</i>)</p><table>`;
     html += '<tr><td><u>Comman name</u></td><td><u>Species</u></td><td><u>Compatibility score</u></td><td></td><td></td></tr>';
     for (const plant of companions) {
         html += gw.companions.getResultLink(plant, species);
-        if (previous === null || plant.id > previous) {
-            previous = plant.id;
-        }
     }
     html += '</table>';
     results.innerHTML = html;
     document.getElementById('search-field').value = species;
     document.getElementById('search-results').innerHTML = '';
-    searched = species;
 }
 </script>

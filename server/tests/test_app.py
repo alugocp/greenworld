@@ -70,8 +70,12 @@ class ServerAppCase(unittest.TestCase):
         Tests the /neighbors endpoint
         """
         self.assertEqual(
-            requests.get(url=f"{BASE}/neighbors/1", timeout=5).json(),
+            requests.get(url=f"{BASE}/neighbors/1/true", timeout=5).json(),
             [[3, 0.367], [1, -1.0], [2, -1.0]],
+        )
+        self.assertEqual(
+            requests.get(url=f"{BASE}/neighbors/1/false", timeout=5).json(),
+            [[1, -1.0], [2, -1.0], [3, 0.367]],
         )
 
     def test_handlers(self):

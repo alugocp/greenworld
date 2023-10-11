@@ -54,7 +54,7 @@ describe('./frontend/companions.ts', function () {
         fetchStub.onCall(1).returns(handlers);
         await expect(gw.companions.discover({
             id: 1,
-            thresh: 2
+            desc: true,
         })).to.eventually.equal(handlers);
     });
 });
