@@ -1,5 +1,6 @@
 # Generated files
 server/static/script.js
+seed-data/tmp*.json
 scripts/*.png
 scripts/*.txt
 node_modules
@@ -10,7 +11,6 @@ __pycache__
 *.js.map
 *.pyc
 *.db
-tmp.*
 /.env
 
 # Referenced data

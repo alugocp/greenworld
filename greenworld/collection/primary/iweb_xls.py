@@ -2,7 +2,7 @@ from typing import Optional, List
 import csv
 import re
 import xlrd
-from greenworld.collection import BaseDataCollector
+from greenworld.collection.base import BaseDataCollector
 from greenworld.taxonomy import Taxon
 from greenworld import defs
 

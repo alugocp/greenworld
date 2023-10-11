@@ -36,7 +36,7 @@ def main(gw: Greenworld, seed_data=False):
         enter.main(
             gw,
             [
-                "seed-data/tmp.json",
+                "seed-data/tmp0.json",
                 "seed-data/pests.json",
                 "seed-data/pathogens.json",
                 "seed-data/pollinators.json",

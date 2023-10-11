@@ -1,7 +1,7 @@
 from typing import Dict, List
 import re
 import csv
-from greenworld.collection import BaseDataCollector
+from greenworld.collection.base import BaseDataCollector
 from greenworld import Greenworld
 
 growth_habits_map = {

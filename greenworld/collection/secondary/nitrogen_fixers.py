@@ -1,6 +1,6 @@
 from typing import Set
 import re
-from greenworld.collection import BaseDataCollector
+from greenworld.collection.base import BaseDataCollector
 from greenworld import Greenworld
 
 

@@ -1,8 +1,8 @@
 import unittest
-from greenworld.collection import iweb_xls
+from greenworld.collection.primary import iweb_xls
 
 
-class CollectionIwebXlsxCase(unittest.TestCase):
+class CollectionPrimaryIwebXlsxCase(unittest.TestCase):
     def test_parse_species_name(self):
         self.assertEqual(iweb_xls.parse_species_name(["zea mays"]), "zea mays")
         self.assertEqual(iweb_xls.parse_species_name(["ZEA MAYS"]), "zea mays")
