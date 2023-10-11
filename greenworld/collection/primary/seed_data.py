@@ -14,7 +14,7 @@ class SeedDataCollector(BaseDataCollector):
         """
         Match seed data JSON filenames
         """
-        return re.match(r"^seed-data/\w+\.json$", key)
+        return re.match(r"^seed-data/[\w\-]+\.json$", key)
 
     def collect_data(self, key: str) -> dict:
         """
@@ -25,4 +25,5 @@ class SeedDataCollector(BaseDataCollector):
             for i, plant in enumerate(data["plants"] if "plants" in data else []):
                 self.request_data(f"plants.{i}")
                 self.request_data(f"plants.{i}.nitrogen")
+            self.request_data("(pathogens)")
             return data

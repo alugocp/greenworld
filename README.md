@@ -75,6 +75,15 @@ make enter FILES=file,...
 This schema can be found in the file [greenworld/schema.py](./greenworld/schema.py).
 Example files can be found in the [seed-data](./seed-data) folder.
 
+### Data collection
+This command can be used to automatically collect and insert relevant data into seed data files.
+
+```bash
+make collect FILES=file,...
+```
+
+`file` arguments follow the same guidelines as the `make enter` script, but this script can also input other formats (see `referenced-data/clements_1923.xls`).
+
 ### Project Navigation
 - `frontend`: TypeScript code for the Greenworld browser-based UI
 - `greenworld`: Greenworld code and maintenance scripts

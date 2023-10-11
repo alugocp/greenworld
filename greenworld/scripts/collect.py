@@ -1,7 +1,3 @@
-# Separate this logic out into a library file which takes in a collection of plant entries.
-# This file should maintain its existing functionality (write the result to a JSON file).
-# Collectors should be flagged as cached or non-cached (do they access the web or not).
-# The enter script can be preceeded by this library logic for automatic discovery on data submission.
 import json
 import sys
 from greenworld import Greenworld

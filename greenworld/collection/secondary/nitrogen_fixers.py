@@ -24,6 +24,6 @@ class NitrogenFixersDataCollector(BaseDataCollector):
     def collect_data(self, key: dict) -> dict:
         genus = key["species"].split(" ")[0]
         if genus in self.__genera:
-            print(f"{genus} is a nitrogen fixer!")
+            self.gw.log(f"{genus} is a nitrogen fixer!")
             return {"nitrogen": "Nitrogen.FIXER"}
         return None

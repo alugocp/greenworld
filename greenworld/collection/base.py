@@ -24,8 +24,20 @@ class BaseDataCollector:
 
     # Gets a value from the data at the given path
     def get(self, data, path):
-        keys = re.search(r"([a-z]+)\.([0-9]+)", path).groups()
-        return data[keys[0]][int(keys[1])]
+        queries = [
+            r"^([a-z]+)\.([0-9]+)",
+            r"^([a-z]+)",
+        ]
+        for regex in queries:
+            results = re.search(regex, path)
+            if results is None:
+                continue
+            keys = results.groups()
+            if len(keys) == 2:
+                return data[keys[0]][int(keys[1])]
+            elif len(keys) == 1:
+                return data[keys[0]]
+        return data
 
     # Updates some missing data at the given path
     def fill(self, data, path, value):

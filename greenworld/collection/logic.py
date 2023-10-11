@@ -27,7 +27,7 @@ def fill_missing_path(collectors, data, missing):
 
 def collect(gw, args):
     # Initialize collectors
-    collectors = get_collectors(gw)
+    collectors = get_collectors(gw, False)
 
     # Collect data
     outputs = []
