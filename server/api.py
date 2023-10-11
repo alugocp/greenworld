@@ -36,20 +36,17 @@ def main(app, db):
 
     @app.route("/neighbors/<int:id_>/<desc>")
     def grab_neighbors_endpoint(id_, desc):
-        stmt = (
-            sqlalchemy.select(
-                orm.reports_table.c.plant1,
-                orm.reports_table.c.plant2,
-                orm.reports_table.c.score,
-            )
-            .where(
-                sqlalchemy.and_(
-                    sqlalchemy.or_(
-                        orm.reports_table.c.plant1 == id_,
-                        orm.reports_table.c.plant2 == id_,
-                    ),
-                    orm.reports_table.c.score != None,
-                )
+        stmt = sqlalchemy.select(
+            orm.reports_table.c.plant1,
+            orm.reports_table.c.plant2,
+            orm.reports_table.c.score,
+        ).where(
+            sqlalchemy.and_(
+                sqlalchemy.or_(
+                    orm.reports_table.c.plant1 == id_,
+                    orm.reports_table.c.plant2 == id_,
+                ),
+                orm.reports_table.c.score != None,
             )
         )
         if desc == "true":
