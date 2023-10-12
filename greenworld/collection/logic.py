@@ -1,5 +1,3 @@
-import json
-import sys
 from greenworld import Greenworld
 from greenworld.scripts.enter import json_schema
 from greenworld.collection.collectors import get_collectors
@@ -25,7 +23,7 @@ def fill_missing_path(collectors, data, missing):
             break
 
 
-def collect(gw, args):
+def collect(gw: Greenworld, args):
     # Initialize collectors
     collectors = get_collectors(gw, False)
 

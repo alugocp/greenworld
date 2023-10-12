@@ -1,3 +1,6 @@
+"""
+This module defines the Greenworld class, which stores important values used by all the utilities
+"""
 from typing import Callable, Dict
 import logging
 import os

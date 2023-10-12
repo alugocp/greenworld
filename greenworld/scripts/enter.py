@@ -56,11 +56,7 @@ def parse_enum_range(enums):
 
 
 # Process plant table bulk data entry for a JSON file
-def enter_data(gw: Greenworld, db, filename):
-    gw.log("")
-    gw.log(f"Writing data from {filename}...")
-    with open(filename, "r", encoding="utf-8") as file:
-        data = json.load(file)
+def enter_data(gw: Greenworld, db, data):
     assert json_schema.validate(data) == data
     taxon = Taxon()
 
@@ -146,8 +142,8 @@ def enter_data(gw: Greenworld, db, filename):
                 con.execute(orm.plants_table.insert().values(**values))
 
         # Handle ecological data
-        for plant_id, data in ecology_data.items():
-            process_ecological_fields(gw, con, works_cited_map, plant_id, data)
+        for plant_id, ecology_data_entry in ecology_data.items():
+            process_ecological_fields(gw, con, works_cited_map, plant_id, ecology_data_entry)
         con.commit()
 
 
@@ -187,6 +183,9 @@ def process_ecological_fields(gw: Greenworld, con, works_cited_map, plant_id, da
         if not result:
             species = row["species"]
             raise ValueError(f"Unknown interactive species '{species}'")
+        if row["citation"] not in works_cited_map:
+            citation_id = row["citation"]
+            raise ValueError(f"Unknown citation with ID '{citation_id}'")
         interaction = {
             "plant": plant_id,
             "relationship": parse_enum(row["relationship"]),
@@ -242,7 +241,13 @@ def main(gw: Greenworld, args):
         if args[a] == "--help":
             print_help()
             break
-        enter_data(gw, db, args[a])
+
+        # Run the enter logic
+        gw.log("")
+        gw.log(f"Writing data from {args[a]}...")
+        with open(args[a], "r", encoding="utf-8") as file:
+            data = json.load(file)
+            enter_data(gw, db, data)
 
 
 if __name__ == "__main__":

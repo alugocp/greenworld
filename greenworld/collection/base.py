@@ -35,7 +35,7 @@ class BaseDataCollector:
             keys = results.groups()
             if len(keys) == 2:
                 return data[keys[0]][int(keys[1])]
-            elif len(keys) == 1:
+            if len(keys) == 1:
                 return data[keys[0]]
         return data
 

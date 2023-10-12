@@ -3,9 +3,7 @@ This script queries and inserts relevant pathogen species into a seed data file
 """
 from typing import List
 import urllib.request
-import json
 import ssl
-import sys
 import re
 from greenworld.collection.base import BaseDataCollector
 

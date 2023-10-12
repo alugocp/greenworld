@@ -66,7 +66,7 @@ class Taxon:
         # Clean up the extra field and check for invalid arguments
         self.extra = self.extra.strip()
         if self.genus is None:
-            raise Exception(f"Species name '{text}' is invalid")
+            raise ValueError(f"Species name '{text}' is invalid")
         return self
 
     def format(self) -> str:
