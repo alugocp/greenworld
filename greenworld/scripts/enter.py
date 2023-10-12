@@ -69,6 +69,8 @@ def enter_data(gw: Greenworld, db, data):
         for row in data["others"] if "others" in data else []:
             values = copy.deepcopy(row)
             values["species"] = taxon.parse(values["species"]).format()
+            if "family" in values:
+                values["family"] = Taxon.family(values["family"])
             result = select_by(
                 con, orm.other_species_table, "species", values["species"]
             )
@@ -96,6 +98,7 @@ def enter_data(gw: Greenworld, db, data):
         for row in data["plants"] if "plants" in data else []:
             values = copy.deepcopy(row)
             values["species"] = taxon.parse(values["species"]).format()
+            values["family"] = Taxon.family(values["family"])
             del values["id"]
             local_ecology_data = values.pop("ecology") if "ecology" in values else []
 

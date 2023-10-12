@@ -85,3 +85,10 @@ class Taxon:
                 )
             )
         )
+
+    @staticmethod
+    def family(family: str) -> str:
+        """
+        Properly format a taxonomic family
+        """
+        return family.lower().capitalize()
