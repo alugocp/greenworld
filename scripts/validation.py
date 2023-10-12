@@ -20,210 +20,210 @@ from greenworld.orm import init_db
 #  - The algorithm needs tweaks
 
 # Tested species list
-# Corn - zea mays
-# Squash - cucurbita maxima
-# Beans - phaseolus vulgaris
-# Sunflower - helianthus annuus
-# Ramps - allium tricoccum
-# Groundnut - apios americana
-# Tomato - solanum lycopersicum
-# Sweet potato - ipomoea batatas
-# Potato - solanum tuberosum
-# Broccoli - brassica oleracea var. italica
-# Basil - ocimum basilicum
-# Garlic - allium sativum
-# Onion - allium cepa
-# Dill - anethum graveolens
-# Fennel - foeniculum vulgare
-# Watermelon - citrullus lanatus
-# Mint - mentha spp.
-# Kohlrabi - brassica oleracea var. gongylodes
-# Nasturtium - tropaeolum majus
-# Marigold - tagetes patula
-# Cucumber - cucumis sativus
-# Cilantro - coriandrum sativum
+# Corn - Zea mays
+# Squash - Cucurbita maxima
+# Beans - Phaseolus vulgaris
+# Sunflower - Helianthus annuus
+# Ramps - Allium tricoccum
+# Groundnut - Apios americana
+# Tomato - Solanum lycopersicum
+# Sweet potato - Ipomoea batatas
+# Potato - Solanum tuberosum
+# Broccoli - Brassica oleracea var. italica
+# Basil - Ocimum basilicum
+# Garlic - Allium sativum
+# Onion - Allium cepa
+# Dill - Anethum graveolens
+# Fennel - Foeniculum vulgare
+# Watermelon - Citrullus lanatus
+# Mint - Mentha spp.
+# Kohlrabi - Brassica oleracea var. gongylodes
+# Nasturtium - Tropaeolum majus
+# Marigold - Tagetes patula
+# Cucumber - Cucumis sativus
+# Cilantro - Coriandrum sativum
 
 # Expected companion results
 GOOD = {
-    "zea mays": ["cucurbita maxima", "phaseolus vulgaris"],
-    "cucurbita maxima": ["phaseolus vulgaris"],
-    "solanum lycopersicum": [
-        "tagetes patula",
-        "tropaeolum majus",
-        "coriandrum sativum",
-        "helianthus annuus",
-        "ocimum basilicum",
-        "allium sativum",
+    "Zea mays": ["Cucurbita maxima", "Phaseolus vulgaris"],
+    "Cucurbita maxima": ["Phaseolus vulgaris"],
+    "Solanum lycopersicum": [
+        "Tagetes patula",
+        "Tropaeolum majus",
+        "Coriandrum sativum",
+        "Helianthus annuus",
+        "Ocimum basilicum",
+        "Allium sativum",
     ],
-    "ipomoea batatas": [
-        "allium tricoccum",
-        "allium cepa",
-        "allium sativum",
-        "anethum graveolens",
-        "ocimum basilicum",
-        "phaseolus vulgaris",
-        "tagetes patula",
-        "tropaeolum majus",
+    "Ipomoea batatas": [
+        "Allium tricoccum",
+        "Allium cepa",
+        "Allium sativum",
+        "Anethum graveolens",
+        "Ocimum basilicum",
+        "Phaseolus vulgaris",
+        "Tagetes patula",
+        "Tropaeolum majus",
     ],
-    "solanum tuberosum": [
-        "ocimum basilicum",
-        "phaseolus vulgaris",
-        "coriandrum sativum",
-        "zea mays",
-        "tagetes patula",
-        "tropaeolum majus",
+    "Solanum tuberosum": [
+        "Ocimum basilicum",
+        "Phaseolus vulgaris",
+        "Coriandrum sativum",
+        "Zea mays",
+        "Tagetes patula",
+        "Tropaeolum majus",
     ],
-    "brassica oleracea var. italica": [
-        "allium tricoccum",
-        "allium cepa",
-        "allium sativum",
-        "tropaeolum majus",
-        "tagetes patula",
-        "anethum graveolens",
-        "ocimum basilicum",
-        "mentha spp.",
-        "solanum tuberosum",
+    "Brassica oleracea var. italica": [
+        "Allium tricoccum",
+        "Allium cepa",
+        "Allium sativum",
+        "Tropaeolum majus",
+        "Tagetes patula",
+        "Anethum graveolens",
+        "Ocimum basilicum",
+        "Mentha spp.",
+        "Solanum tuberosum",
     ],
-    "ocimum basilicum": [
-        "coriandrum sativum",
-        "tagetes patula",
-        "solanum lycopersicum",
-        "solanum tuberosum",
+    "Ocimum basilicum": [
+        "Coriandrum sativum",
+        "Tagetes patula",
+        "Solanum lycopersicum",
+        "Solanum tuberosum",
     ],
-    "allium sativum": [
-        "anethum graveolens",
-        "solanum lycopersicum",
-        "solanum tuberosum",
-        "brassica oleracea var. italica",
-        "brassica oleracea var. gongylodes",
-        "tropaeolum majus",
-        "tagetes patula",
+    "Allium sativum": [
+        "Anethum graveolens",
+        "Solanum lycopersicum",
+        "Solanum tuberosum",
+        "Brassica oleracea var. italica",
+        "Brassica oleracea var. gongylodes",
+        "Tropaeolum majus",
+        "Tagetes patula",
     ],
-    "allium cepa": [
-        "allium cepa",
-        "allium sativum",
-        "allium tricoccum",
-        "brassica oleracea var. italica",
-        "brassica oleracea var. gongylodes",
-        "solanum lycopersicum",
-        "solanum tuberosum",
-        "anethum graveolens",
-        "tagetes patula",
+    "Allium cepa": [
+        "Allium cepa",
+        "Allium sativum",
+        "Allium tricoccum",
+        "Brassica oleracea var. italica",
+        "Brassica oleracea var. gongylodes",
+        "Solanum lycopersicum",
+        "Solanum tuberosum",
+        "Anethum graveolens",
+        "Tagetes patula",
     ],
-    "anethum graveolens": [
-        "zea mays",
-        "cucumis sativus",
-        "allium cepa",
-        "brassica oleracea var. italica",
-        "brassica oleracea var. gongylodes",
+    "Anethum graveolens": [
+        "Zea mays",
+        "Cucumis sativus",
+        "Allium cepa",
+        "Brassica oleracea var. italica",
+        "Brassica oleracea var. gongylodes",
     ],
-    "foeniculum vulgare": ["anethum graveolens", "cucumis sativus"],
-    "citrullus lanatus": [
-        "zea mays",
-        "phaseolus vulgaris",
-        "anethum graveolens",
-        "tagetes patula",
-        "tropaeolum majus",
-        "allium sativum",
-        "mentha spp.",
-        "brassica oleracea var. italica",
+    "Foeniculum vulgare": ["Anethum graveolens", "Cucumis sativus"],
+    "Citrullus lanatus": [
+        "Zea mays",
+        "Phaseolus vulgaris",
+        "Anethum graveolens",
+        "Tagetes patula",
+        "Tropaeolum majus",
+        "Allium sativum",
+        "Mentha spp.",
+        "Brassica oleracea var. italica",
     ],
-    "mentha spp.": [
-        "cucurbita maxima",
-        "brassica oleracea var. italica",
-        "allium cepa",
-        "phaseolus vulgaris",
-        "solanum lycopersicum",
-        "tagetes patula",
+    "Mentha spp.": [
+        "Cucurbita maxima",
+        "Brassica oleracea var. italica",
+        "Allium cepa",
+        "Phaseolus vulgaris",
+        "Solanum lycopersicum",
+        "Tagetes patula",
     ],
-    "brassica oleracea var. gongylodes": [
-        "phaseolus vulgaris",
-        "cucumis sativus",
-        "allium cepa",
-        "solanum tuberosum",
+    "Brassica oleracea var. gongylodes": [
+        "Phaseolus vulgaris",
+        "Cucumis sativus",
+        "Allium cepa",
+        "Solanum tuberosum",
     ],
-    "tropaeolum majus": [
-        "phaseolus vulgaris",
-        "cucumis sativus",
-        "cucurbita maxima",
-        "brassica oleracea var. italica",
+    "Tropaeolum majus": [
+        "Phaseolus vulgaris",
+        "Cucumis sativus",
+        "Cucurbita maxima",
+        "Brassica oleracea var. italica",
     ],
-    "tagetes patula": [
-        "cucumis sativus",
-        "cucurbita maxima",
-        "citrullus lanatus",
-        "solanum lycopersicum",
-        "solanum tuberosum",
-        "phaseolus vulgaris",
-        "brassica oleracea var. italica",
-        "allium cepa",
+    "Tagetes patula": [
+        "Cucumis sativus",
+        "Cucurbita maxima",
+        "Citrullus lanatus",
+        "Solanum lycopersicum",
+        "Solanum tuberosum",
+        "Phaseolus vulgaris",
+        "Brassica oleracea var. italica",
+        "Allium cepa",
     ],
-    "cucumis sativus": [
-        "phaseolus vulgaris",
-        "zea mays",
-        "anethum graveolens",
-        "tropaeolum majus",
-        "tagetes patula",
-        "helianthus annuus",
-        "allium sativum",
-        "apios americana",
+    "Cucumis sativus": [
+        "Phaseolus vulgaris",
+        "Zea mays",
+        "Anethum graveolens",
+        "Tropaeolum majus",
+        "Tagetes patula",
+        "Helianthus annuus",
+        "Allium sativum",
+        "Apios americana",
     ],
-    "coriandrum sativum": [
-        "phaseolus vulgaris",
-        "apios americana",
-        "helianthus annuus",
+    "Coriandrum sativum": [
+        "Phaseolus vulgaris",
+        "Apios americana",
+        "Helianthus annuus",
     ],
 }
 BAD = {
-    "zea mays": ["solanum lycopersicum"],
-    "solanum lycopersicum": [
-        "brassica oleracea var. italica",
-        "foeniculum vulgare",
-        "anethum graveolens",
-        "solanum tuberosum",
-        "cucumis sativus",
-        "zea mays",
+    "Zea mays": ["Solanum lycopersicum"],
+    "Solanum lycopersicum": [
+        "Brassica oleracea var. italica",
+        "Foeniculum vulgare",
+        "Anethum graveolens",
+        "Solanum tuberosum",
+        "Cucumis sativus",
+        "Zea mays",
     ],
-    "ipomoea batatas": [
-        "cucurbita maxima",
-        "solanum lycopersicum",
-        "helianthus annuus",
+    "Ipomoea batatas": [
+        "Cucurbita maxima",
+        "Solanum lycopersicum",
+        "Helianthus annuus",
     ],
-    "solanum tuberosum": [
-        "cucumis sativus",
-        "foeniculum vulgare",
-        "allium cepa",
-        "cucurbita maxima",
-        "helianthus annuus",
-        "solanum lycopersicum",
+    "Solanum tuberosum": [
+        "Cucumis sativus",
+        "Foeniculum vulgare",
+        "Allium cepa",
+        "Cucurbita maxima",
+        "Helianthus annuus",
+        "Solanum lycopersicum",
     ],
-    "brassica oleracea var. italica": [
-        "brassica oleracea var. gongylodes",
-        "solanum lycopersicum",
-        "cucurbita maxima",
+    "Brassica oleracea var. italica": [
+        "Brassica oleracea var. gongylodes",
+        "Solanum lycopersicum",
+        "Cucurbita maxima",
     ],
-    "ocimum basilicum": ["cucumis sativus", "foeniculum vulgare"],
-    "allium sativum": ["phaseolus vulgaris", "apios americana"],
-    "allium cepa": ["phaseolus vulgaris", "apios americana"],
-    "foeniculum vulgare": [
-        "phaseolus vulgaris",
-        "solanum lycopersicum",
-        "solanum tuberosum",
+    "Ocimum basilicum": ["Cucumis sativus", "Foeniculum vulgare"],
+    "Allium sativum": ["Phaseolus vulgaris", "Apios americana"],
+    "Allium cepa": ["Phaseolus vulgaris", "Apios americana"],
+    "Foeniculum vulgare": [
+        "Phaseolus vulgaris",
+        "Solanum lycopersicum",
+        "Solanum tuberosum",
     ],
-    "citrullus lanatus": ["solanum tuberosum", "cucurbita maxima", "cucumis sativus"],
-    "brassica oleracea var. gongylodes": [
-        "brassica oleracea var. gongylodes",
-        "brassica oleracea var. italica",
-        "solanum lycopersicum",
+    "Citrullus lanatus": ["Solanum tuberosum", "Cucurbita maxima", "Cucumis sativus"],
+    "Brassica oleracea var. gongylodes": [
+        "Brassica oleracea var. gongylodes",
+        "Brassica oleracea var. italica",
+        "Solanum lycopersicum",
     ],
-    "tropaeolum majus": ["mentha spp.", "solanum lycopersicum"],
-    "cucumis sativus": [
-        "mentha spp.",
-        "solanum tuberosum",
-        "citrullus lanatus",
-        "foeniculum vulgare",
+    "Tropaeolum majus": ["Mentha spp.", "Solanum lycopersicum"],
+    "Cucumis sativus": [
+        "Mentha spp.",
+        "Solanum tuberosum",
+        "Citrullus lanatus",
+        "Foeniculum vulgare",
     ],
-    "coriandrum sativum": ["foeniculum vulgare"],
+    "Coriandrum sativum": ["Foeniculum vulgare"],
 }
 
 # Generate report data

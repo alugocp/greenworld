@@ -175,21 +175,22 @@ def process_ecological_fields(gw: Greenworld, con, works_cited_map, plant_id, da
     for row in data:
         # Retrieve (and/or create) plant or non-plant species
         is_plant = True
-        row["species"] = taxon.parse(row["species"]).format()
-        result = select_by(con, orm.plants_table, "species", row["species"])
+        values = copy.deepcopy(row)
+        values["species"] = taxon.parse(values["species"]).format()
+        result = select_by(con, orm.plants_table, "species", values["species"])
         if not result:
             is_plant = False
-            result = select_by(con, orm.other_species_table, "species", row["species"])
+            result = select_by(con, orm.other_species_table, "species", values["species"])
         if not result:
-            species = row["species"]
+            species = values["species"]
             raise ValueError(f"Unknown interactive species '{species}'")
-        if row["citation"] not in works_cited_map:
-            citation_id = row["citation"]
+        if values["citation"] not in works_cited_map:
+            citation_id = values["citation"]
             raise ValueError(f"Unknown citation with ID '{citation_id}'")
         interaction = {
             "plant": plant_id,
-            "relationship": parse_enum(row["relationship"]),
-            "citation": works_cited_map[row["citation"]],
+            "relationship": parse_enum(values["relationship"]),
+            "citation": works_cited_map[values["citation"]],
         }
 
         # Insert or update in database
