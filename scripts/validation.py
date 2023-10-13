@@ -19,30 +19,18 @@ from greenworld.orm import init_db
 #  - Plant data is missing or inaccurate
 #  - The algorithm needs tweaks
 
+
 def get_pair(s1, s2):
     pair = [s1, s2]
     pair.sort()
     return " x ".join(pair)
 
-# Expected companion results
-BAD = {}
-GOOD = {}
+
+# Read the validation test data file
 with open("scripts/validation.json", "r") as file:
     validation_data = json.loads(file.read())
-for expectation in validation_data["expected"]:
-    GOOD[expectation["host"]] = expectation["good"]
-    BAD[expectation["host"]] = expectation["bad"]
 
-# Generate report data
-gw = Greenworld()
-reset.main(gw, seed_data=False)
-enter.main(gw, validation_data["sources"])
-report.main(gw)
-
-# Double check the companion data species names and duplicate pairs
-db = init_db()
-with db.connect() as con:
-    db_species = con.execute(sqlalchemy.select(plants_table.c.species)).fetchall()
+# Check for unrepresented species or duplicate pairs
 processed_pairs = []
 species_names = list(map(lambda x: x["host"], validation_data["expected"]))
 for expectation in validation_data["expected"]:
@@ -55,6 +43,25 @@ for expectation in validation_data["expected"]:
             print(f"Duplicate pair {pair}")
             sys.exit(1)
         processed_pairs.append(pair)
+
+# Cache the expected pair qualities
+PAIRS = {}
+for expectation in validation_data["expected"]:
+    for s in expectation["good"]:
+        PAIRS[get_pair(expectation["host"], s)] = True
+    for s in expectation["bad"]:
+        PAIRS[get_pair(expectation["host"], s)] = False
+
+# Generate report data
+gw = Greenworld()
+reset.main(gw, seed_data=False)
+enter.main(gw, validation_data["sources"])
+report.main(gw)
+
+# Check that every referenced species is in the database
+db = init_db()
+with db.connect() as con:
+    db_species = con.execute(sqlalchemy.select(plants_table.c.species)).fetchall()
 for name in species_names:
     if (name,) not in db_species:
         print(f"Unknown species '{name}'")
@@ -89,10 +96,12 @@ for r in results:
     r["score"] = 0.0 if r["score"] is None else float(r["score"])
     s1 = r["species1"]
     s2 = r["species2"]
-    if (s1 in GOOD and s2 in GOOD[s1]) or (s2 in GOOD and s1 in GOOD[s2]):
+    pair = get_pair(s1, s2)
+    quality = PAIRS[pair] if pair in PAIRS else None
+    if quality == True:
         good_dist.append(r["score"])
         good_reports.append(r)
-    elif (s1 in BAD and s2 in BAD[s1]) or (s2 in BAD and s1 in BAD[s2]):
+    elif quality == False:
         bad_dist.append(r["score"])
         bad_reports.append(r)
     elif s1 in species_names and s2 in species_names:
@@ -108,11 +117,12 @@ with open("scripts/garden-bad-reports.txt", "w", encoding="utf-8") as file:
     file.write(json.dumps(bad_reports, indent=4))
 
 
-def percent_good(dist):
+def percent_quality(dist, good=True):
     """
     Percentage of "good" identified companions within a distribution
     """
-    percent = len(list(filter(lambda x: x > 0, dist))) / len(dist)
+    l = (lambda x: x > 0) if good else (lambda x: x < 0)
+    percent = len(list(filter(l, dist))) / len(dist)
     return round(percent * 10000) / 100
 
 
@@ -131,17 +141,32 @@ sys.stdout.write(
     "Bad companions vs good: \u001b[31m%s\u001b[0m\n"
     % (stats.ranksums(bad_dist, good_dist, alternative="less").pvalue)
 )
+sys.stdout.write("---\n")
 sys.stdout.write(
     "Good companions percentage of good companions: \u001b[31m%s\u001b[0m%%\n"
-    % (percent_good(good_dist))
+    % (percent_quality(good_dist))
 )
+sys.stdout.write(
+    "Bad companions percentage of good companions: \u001b[31m%s\u001b[0m%%\n"
+    % (percent_quality(good_dist, False))
+)
+sys.stdout.write("---\n")
 sys.stdout.write(
     "Good companions percentage of neutral companions: \u001b[31m%s\u001b[0m%%\n"
-    % (percent_good(neutral_dist))
+    % (percent_quality(neutral_dist))
 )
 sys.stdout.write(
+    "Bad companions percentage of neutral companions: \u001b[31m%s\u001b[0m%%\n"
+    % (percent_quality(neutral_dist, False))
+)
+sys.stdout.write("---\n")
+sys.stdout.write(
     "Good companions percentage of bad companions: \u001b[31m%s\u001b[0m%%\n"
-    % (percent_good(bad_dist))
+    % (percent_quality(bad_dist))
+)
+sys.stdout.write(
+    "Bad companions percentage of bad companions: \u001b[31m%s\u001b[0m%%\n"
+    % (percent_quality(bad_dist, False))
 )
 # pylint: enable=consider-using-f-string
 
