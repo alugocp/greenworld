@@ -23,15 +23,24 @@ from greenworld.orm import init_db
 
 
 def get_pair(s1, s2):
+    """
+    Deterministic identifier for a pair of plant species
+    """
     pair = [s1, s2]
     pair.sort()
     return " x ".join(pair)
 
+
 def validate(filename):
+    """
+    Runs the Greenworld algorithm on a set of plant data, then
+    performs rank-sum tests on distributions of compatibility scores
+    against a set of expected good and bad companion pairs
+    """
     sys.stdout.write(f"Processing {filename}...\n")
 
     # Read the validation test data file
-    with open(f"validation/data/{filename}.json", "r") as file:
+    with open(f"validation/data/{filename}.json", "r", encoding = "utf-8") as file:
         validation_data = json.loads(file.read())
 
     # Check for unrepresented species or duplicate pairs
@@ -126,7 +135,6 @@ def validate(filename):
     with open(f"validation/{filename}-bad.txt", "w", encoding="utf-8") as file:
         file.write(json.dumps(bad_reports, indent=4))
 
-
     def percent_quality(dist, good=True):
         """
         Percentage of "good" identified companions within a distribution
@@ -136,7 +144,6 @@ def validate(filename):
         l = (lambda x: x > 0) if good else (lambda x: x < 0)
         percent = len(list(filter(l, dist))) / len(dist)
         return round(percent * 10000) / 100
-
 
     # Statistical comparison between distributions (Wilcoxon rank-sum tests)
     # pylint: disable=consider-using-f-string
@@ -195,8 +202,15 @@ def validate(filename):
     plt.legend()
     plt.savefig(f"validation/{filename}.png")
 
-if __name__ == "__main__":
+
+def run_all_validation():
+    """
+    Runs the validation method for all data files
+    """
     data_files = os.listdir("validation/data")
     for file in data_files:
         filename = re.match(r"^(\w+)\.json$", file).groups()[0]
         validate(filename)
+
+if __name__ == "__main__":
+    run_all_validation()
