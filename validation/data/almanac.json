@@ -1,0 +1,512 @@
+{
+    "sources": [
+        "seed-data/almanac.json"
+    ],
+    "expected": [
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Alyssum",
+            "host": "Lobularia maritima",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Asparagus",
+            "host": "Asparagus officinalis",
+            "good": [
+                "Calendula officinalis",
+                "Petunia spp.",
+                "Solanum lycopersicum"
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Basil",
+            "host": "Ocimum basilicum",
+            "good": [
+                "Portulaca spp.",
+                "Solanum lycopersicum"
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Beans",
+            "host": "Phaseolus vulgaris",
+            "good": [
+                "Beta vulgaris",
+                "Levisticum officinale",
+                "Tropaeolum majus",
+                "Salvia rosmarinus",
+                "Cucurbita spp.",
+                "Fragaria spp.",
+                "Helianthus annuus"
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Beets",
+            "host": "Beta vulgaris",
+            "good": [
+                "Lobularia maritima",
+                "Brassica oleracea var. italica",
+                "Brassica oleracea",
+                "Armoracia rusticana",
+                "Raphanus sativus",
+                "Brassica rapa",
+                "Allium schoenoprasum",
+                "Allium sativum",
+                "Allium ampeloprasum",
+                "Allium cepa",
+                "Allium spp.",
+                "Lactuca sativa"
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Borage",
+            "host": "Borago officinalis",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Broccoli",
+            "host": "Brassica oleracea var. italica",
+            "good": [
+                "Origanum vulgare",
+                "Lobularia maritima",
+                "Brassica oleracea var. italica",
+                "Brassica oleracea",
+                "Armoracia rusticana",
+                "Raphanus sativus",
+                "Brassica rapa"
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Buckwheat",
+            "host": "Fagopyrum esculentum",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Cabbage",
+            "host": "Brassica oleracea",
+            "good": [
+                "Allium sativum",
+                "Tropaeolum majus",
+                "Salvia officinalis"
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Calendula",
+            "host": "Calendula officinalis",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Carrot",
+            "host": "Daucus carota var. sativus",
+            "good": [
+                "Allium schoenoprasum",
+                "Allium ampeloprasum",
+                "Allium cepa",
+                "Lathyrus oleraceus",
+                "Raphanus sativus",
+                "Salvia rosmarinus",
+                "Salvia officinalis"
+            ],
+            "bad": [
+                "Anethum graveolens"
+            ]
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Catmint / Catnip",
+            "host": "Nepeta cataria",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Chard",
+            "host": "Beta vulgaris var. vulgaris",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Chervil",
+            "host": "Anthriscus cerefolium",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Chives",
+            "host": "Allium schoenoprasum",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Cilantro",
+            "host": "Coriandrum sativum",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Corn",
+            "host": "Zea mays",
+            "good": [
+                "Phaseolus vulgaris",
+                "Cucumis sativus",
+                "Anethum graveolens",
+                "Citrullus lanatus",
+                "Lathyrus oleraceus",
+                "Cucurbita spp.",
+                "Helianthus annuus"
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Cucumber",
+            "host": "Cucumis sativus",
+            "good": [
+                "Phaseolus vulgaris",
+                "Borago officinalis",
+                "Anethum graveolens",
+                "Lactuca sativa",
+                "Tropaeolum majus",
+                "Origanum vulgare",
+                "Raphanus sativus",
+                "Helianthus annuus",
+                "Tanacetum vulgare"
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Dill",
+            "host": "Anethum graveolens",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Eggplant",
+            "host": "Solanum melongena",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Garlic",
+            "host": "Allium sativum",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Grapes",
+            "host": "Vitis vinifera",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Horseradish",
+            "host": "Armoracia rusticana",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Leeks",
+            "host": "Allium ampeloprasum",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Lettuce",
+            "host": "Lactuca sativa",
+            "good": [
+                "Allium schoenoprasum",
+                "Allium cepa",
+                "Origanum vulgare",
+                "Lathyrus oleraceus",
+                "Limnanthes douglasii",
+                "Raphanus sativus",
+                "Allium spp.",
+                "Zinnia spp."
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Lovage",
+            "host": "Levisticum officinale",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Marigold",
+            "host": "Tagetes patula",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Marjoram",
+            "host": "Origanum majorana",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Melon",
+            "host": "Citrullus lanatus",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Mint",
+            "host": "Mentha spp.",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Nasturtium",
+            "host": "Tropaeolum majus",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Onion",
+            "host": "Allium cepa",
+            "good": [
+                "Brassica oleracea",
+                "Beta vulgaris var. vulgaris",
+                "Fragaria spp."
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Oregano",
+            "host": "Origanum vulgare",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Parsley",
+            "host": "Petroselinum crispum",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Pea",
+            "host": "Lathyrus oleraceus",
+            "good": [
+                "Lobularia maritima",
+                "Allium schoenoprasum",
+                "Vitis vinifera",
+                "Mentha spp.",
+                "Brassica rapa"
+            ],
+            "bad": [
+                "Allium sativum",
+                "Allium cepa"
+            ]
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Peppers",
+            "host": "Capsicum annuum",
+            "good": [
+                "Ocimum basilicum",
+                "Origanum majorana",
+                "Allium cepa",
+                "Origanum vulgare"
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Petunia",
+            "host": "Petunia spp.",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Poached egg plants",
+            "host": "Limnanthes douglasii",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Potato",
+            "host": "Solanum tuberosum",
+            "good": [
+                "Ocimum basilicum",
+                "Phaseolus vulgaris",
+                "Calendula officinalis",
+                "Nepeta cataria",
+                "Coriandrum sativum",
+                "Allium sativum",
+                "Armoracia rusticana",
+                "Origanum vulgare",
+                "Lathyrus oleraceus",
+                "Tanacetum vulgare"
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Purslane",
+            "host": "Portulaca spp.",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Radish",
+            "host": "Raphanus sativus",
+            "good": [
+                "Anthriscus cerefolium",
+                "Tropaeolum majus",
+                "Lathyrus oleraceus"
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Rosemary",
+            "host": "Salvia rosmarinus",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Sage",
+            "host": "Salvia officinalis",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Scallion",
+            "host": "Allium spp.",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Spinach",
+            "host": "Spinacia oleracea",
+            "good": [
+                "Phaseolus vulgaris",
+                "Coriandrum sativum",
+                "Solanum melongena",
+                "Origanum vulgare",
+                "Lathyrus oleraceus",
+                "Salvia rosmarinus",
+                "Fragaria spp."
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Squash",
+            "host": "Cucurbita spp.",
+            "good": [
+                "Fagopyrum esculentum",
+                "Calendula officinalis",
+                "Tagetes patula",
+                "Tropaeolum majus",
+                "Origanum vulgare",
+                "Zinnia spp."
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Strawberry",
+            "host": "Fragaria spp.",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Sunflower",
+            "host": "Helianthus annuus",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Tansy",
+            "host": "Tanacetum vulgare",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Thyme",
+            "host": "Thymus spp.",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Tomato",
+            "host": "Solanum lycopersicum",
+            "good": [
+                "Borago officinalis",
+                "Calendula officinalis",
+                "Anethum graveolens",
+                "Allium sativum",
+                "Tropaeolum majus",
+                "Allium cepa",
+                "Petroselinum crispum",
+                "Thymus spp."
+            ],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Turnip",
+            "host": "Brassica rapa",
+            "good": [],
+            "bad": []
+        },
+        {
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables",
+            "name": "Zinnia",
+            "host": "Zinnia spp.",
+            "good": [],
+            "bad": []
+        }
+    ]
+}

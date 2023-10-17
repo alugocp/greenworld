@@ -37,7 +37,7 @@ test-py:
 	$(PYTHON) -m pytest --capture=no
 
 validate:
-	$(ENV) $(PYTHON) scripts/validation.py
+	$(ENV) $(PYTHON) validation/validate.py
 
 $(SCRIPTS):
 	$(ENV) $(PYTHON) greenworld/scripts/$@.py $(subst $(COMMA),$(SPACE),$(FILES))

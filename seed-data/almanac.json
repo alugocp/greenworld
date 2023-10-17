@@ -1,0 +1,1227 @@
+{
+    "plants": [
+        {
+            "id": 1,
+            "name": "Alyssum",
+            "species": "Lobularia maritima",
+            "family": "Brassicaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Pea pollinators",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 2,
+            "name": "Asparagus",
+            "species": "Asparagus officinalis",
+            "family": "Asparagaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Crioceris spp.",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Tomato pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 3,
+            "name": "Basil",
+            "species": "Ocimum basilicum",
+            "family": "Lamiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Solanum lycopersicum",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Capsicum annuum",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Lactuca sativa",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Pepper pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Tomato pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Tetranychidae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Tomato pollinators",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 4,
+            "name": "Beans",
+            "species": "Phaseolus vulgaris",
+            "family": "Fabaceae",
+            "growth_habit": "GrowthHabit.VINE",
+            "nitrogen": "Nitrogen.FIXER",
+            "ecology": [
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Bean pests",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 5,
+            "name": "Beets",
+            "species": "Beta vulgaris",
+            "family": "Amaranthaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Borers",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Cutworms",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 6,
+            "name": "Borage",
+            "species": "Borago officinalis",
+            "family": "Boraginaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Formicidae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Coleoptera",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Tomato pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 7,
+            "name": "Broccoli",
+            "species": "Brassica oleracea var. italica",
+            "family": "Brassicaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Broccoli pests",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 8,
+            "name": "Buckwheat",
+            "species": "Fagopyrum esculentum",
+            "family": "Polygonaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "citations": {}
+        },
+        {
+            "id": 9,
+            "name": "Cabbage",
+            "species": "Brassica oleracea",
+            "family": "Brassicaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Cabbage pests",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Mamestra brassicae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Coleoptera",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 10,
+            "name": "Calendula",
+            "species": "Calendula officinalis",
+            "family": "Asteraceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Crioceris spp.",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Leptinotarsa decemlineata",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Anasa tristis",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Tomato pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 11,
+            "name": "Carrot",
+            "species": "Daucus carota var. sativus",
+            "family": "Apiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Mites",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Diptera",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Chamaepsila rosae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 12,
+            "name": "Catmint / Catnip",
+            "species": "Nepeta cataria",
+            "family": "Lamiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Leptinotarsa decemlineata",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 13,
+            "name": "Chard",
+            "species": "Beta vulgaris var. vulgaris",
+            "family": "Amaranthaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "citations": {}
+        },
+        {
+            "id": 14,
+            "name": "Chervil",
+            "species": "Anthriscus cerefolium",
+            "family": "Apiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Raphanus sativus",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 15,
+            "name": "Chives",
+            "species": "Allium schoenoprasum",
+            "family": "Amaryllidaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Borers",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Cutworms",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Daucus carota var. sativus",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Mites",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Diptera",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 16,
+            "name": "Cilantro",
+            "species": "Coriandrum sativum",
+            "family": "Apiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Tetranychidae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Leptinotarsa decemlineata",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Spinach pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 17,
+            "name": "Corn",
+            "species": "Zea mays",
+            "family": "Graminaceae",
+            "growth_habit": "GrowthHabit.GRAMINOID",
+            "nitrogen": "Nitrogen.HEAVY",
+            "ecology": [
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Mites",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 18,
+            "name": "Cucumber",
+            "species": "Cucumis sativus",
+            "family": "Cucurbitaceae",
+            "growth_habit": "GrowthHabit.VINE",
+            "ecology": [
+                {
+                    "species": "Coleoptera",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Cucumber pests",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Chrysomelidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Alticini",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Formicidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 19,
+            "name": "Dill",
+            "species": "Anethum graveolens",
+            "family": "Apiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Daucus carota var. sativus",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Mites",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Tomato pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 20,
+            "name": "Eggplant",
+            "species": "Solanum melongena",
+            "family": "Solanaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "citations": {}
+        },
+        {
+            "id": 21,
+            "name": "Garlic",
+            "species": "Allium sativum",
+            "family": "Amaryllidaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Borers",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Cutworms",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Cabbage pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Lathyrus oleraceus",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 22,
+            "name": "Grapes",
+            "species": "Vitis vinifera",
+            "family": "Vitaceae",
+            "growth_habit": "GrowthHabit.VINE",
+            "citations": {}
+        },
+        {
+            "id": 23,
+            "name": "Horseradish",
+            "species": "Armoracia rusticana",
+            "family": "Brassicaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Leptinotarsa decemlineata",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 24,
+            "name": "Leeks",
+            "species": "Allium ampeloprasum",
+            "family": "Amaryllidaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Borers",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Cutworms",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Chamaepsila rosae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 25,
+            "name": "Lettuce",
+            "species": "Lactuca sativa",
+            "family": "Asteraceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Alticini",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 26,
+            "name": "Lovage",
+            "species": "Levisticum officinale",
+            "family": "Apiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Bean pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 27,
+            "name": "Marigold",
+            "species": "Tagetes patula",
+            "family": "Asteraceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Delia antiqua",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 28,
+            "name": "Marjoram",
+            "species": "Origanum majorana",
+            "family": "Lamiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Pepper pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 29,
+            "name": "Melon",
+            "species": "Citrullus lanatus",
+            "family": "Cucurbitaceae",
+            "growth_habit": "GrowthHabit.VINE",
+            "citations": {}
+        },
+        {
+            "id": 30,
+            "name": "Mint",
+            "species": "Mentha spp.",
+            "family": "Lamiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Lathyrus oleraceus",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 31,
+            "name": "Nasturtium",
+            "species": "Tropaeolum majus",
+            "family": "Tropaeolaceae",
+            "growth_habit": "GrowthHabit.VINE",
+            "ecology": [
+                {
+                    "species": "Coleoptera",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Cucumis sativus",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Chrysomelidae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Radish pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Anasa tristis",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 32,
+            "name": "Onion",
+            "species": "Allium cepa",
+            "family": "Amaryllidaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Borers",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Cutworms",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Delia antiqua",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Lathyrus oleraceus",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 33,
+            "name": "Oregano",
+            "species": "Origanum vulgare",
+            "family": "Lamiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Broccoli pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Cucumber pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Pepper pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Anasa tristis",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Spinach pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Squash pollinators",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 34,
+            "name": "Parsley",
+            "species": "Petroselinum crispum",
+            "family": "Apiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "citations": {}
+        },
+        {
+            "id": 35,
+            "name": "Pea",
+            "species": "Lathyrus oleraceus",
+            "family": "Fabaceae",
+            "growth_habit": "GrowthHabit.VINE",
+            "ecology": [
+                {
+                    "species": "Pea pollinators",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 36,
+            "name": "Peppers",
+            "species": "Capsicum annuum",
+            "family": "Solanaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Pepper pests",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 37,
+            "name": "Petunia",
+            "species": "Petunia spp.",
+            "family": "Solanaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Crioceris spp.",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 38,
+            "name": "Poached egg plants",
+            "species": "Limnanthes douglasii",
+            "family": "Limnanthaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "citations": {}
+        },
+        {
+            "id": 39,
+            "name": "Potato",
+            "species": "Solanum tuberosum",
+            "family": "Solanaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "nitrogen": "Nitrogen.HEAVY",
+            "ecology": [
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Tetranychidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Leptinotarsa decemlineata",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 40,
+            "name": "Purslane",
+            "species": "Portulaca spp.",
+            "family": "Portulacaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "citations": {}
+        },
+        {
+            "id": 41,
+            "name": "Radish",
+            "species": "Raphanus sativus",
+            "family": "Brassicaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "nitrogen": "Nitrogen.HEAVY",
+            "ecology": [
+                {
+                    "species": "Chrysomelidae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Alticini",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Radish pests",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Alticini",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 42,
+            "name": "Rosemary",
+            "species": "Salvia rosmarinus",
+            "family": "Lamiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Bean pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Chamaepsila rosae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Spinach pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 43,
+            "name": "Sage",
+            "species": "Salvia officinalis",
+            "family": "Lamiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Mamestra brassicae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Chamaepsila rosae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 44,
+            "name": "Scallion",
+            "species": "Allium spp.",
+            "family": "Amaryllidaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Borers",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Cutworms",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 45,
+            "name": "Spinach",
+            "species": "Spinacia oleracea",
+            "family": "Amaranthaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Spinach pests",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 46,
+            "name": "Squash",
+            "species": "Cucurbita spp.",
+            "family": "Cucurbitaceae",
+            "growth_habit": "GrowthHabit.VINE",
+            "ecology": [
+                {
+                    "species": "Anasa tristis",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Squash pollinators",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 47,
+            "name": "Strawberry",
+            "species": "Fragaria spp.",
+            "family": "Rosaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "citations": {}
+        },
+        {
+            "id": 48,
+            "name": "Sunflower",
+            "species": "Helianthus annuus",
+            "family": "Asteraceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "citations": {}
+        },
+        {
+            "id": 49,
+            "name": "Tansy",
+            "species": "Tanacetum vulgare",
+            "family": "Asteraceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Chrysomelidae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Formicidae",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Coleoptera",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Leptinotarsa decemlineata",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 50,
+            "name": "Thyme",
+            "species": "Thymus spp.",
+            "family": "Lamiaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Tomato pests",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 51,
+            "name": "Tomato",
+            "species": "Solanum lycopersicum",
+            "family": "Solanaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Crioceris spp.",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 1
+                },
+                {
+                    "species": "Aphidoidea",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Tetranychidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Tomato pests",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 1
+                },
+                {
+                    "species": "Tomato pollinators",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        },
+        {
+            "id": 52,
+            "name": "Turnip",
+            "species": "Brassica rapa",
+            "family": "Brassicaceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "citations": {}
+        },
+        {
+            "id": 53,
+            "name": "Zinnia",
+            "species": "Zinnia spp.",
+            "family": "Asteraceae",
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Squash pollinators",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 1
+                }
+            ],
+            "citations": {}
+        }
+    ],
+    "others": [
+        {
+            "species": "Crioceris spp.",
+            "name": "Asparagus Beetle"
+        },
+        {
+            "species": "Aphidoidea",
+            "name": "Aphid Family"
+        },
+        {
+            "species": "Bean pests",
+            "name": "Bean Pests"
+        },
+        {
+            "species": "Borers",
+            "name": "Borers"
+        },
+        {
+            "species": "Cutworms",
+            "name": "Cutworms"
+        },
+        {
+            "species": "Broccoli pests",
+            "name": "Broccoli Pests"
+        },
+        {
+            "species": "Coleoptera",
+            "name": "Beetle Order"
+        },
+        {
+            "species": "Mamestra brassicae",
+            "name": "Cabbage Moth"
+        },
+        {
+            "species": "Cabbage pests",
+            "name": "Cabbage Pests"
+        },
+        {
+            "species": "Mites",
+            "name": "Mites"
+        },
+        {
+            "species": "Diptera",
+            "name": "Flies Order"
+        },
+        {
+            "species": "Chamaepsila rosae",
+            "name": "Carrot Fly"
+        },
+        {
+            "species": "Cucumber pests",
+            "name": "Cucumber Pests"
+        },
+        {
+            "species": "Chrysomelidae",
+            "name": "Cucumber Beetle"
+        },
+        {
+            "species": "Alticini",
+            "name": "Flea Beetle"
+        },
+        {
+            "species": "Formicidae",
+            "name": "Ants Family"
+        },
+        {
+            "species": "Delia antiqua",
+            "name": "Onion Maggot Fly"
+        },
+        {
+            "species": "Pea pollinators",
+            "name": "Pea Pollinators"
+        },
+        {
+            "species": "Pepper pests",
+            "name": "Pepper Pests"
+        },
+        {
+            "species": "Tetranychidae",
+            "name": "Spider Mite Family"
+        },
+        {
+            "species": "Leptinotarsa decemlineata",
+            "name": "Potato Beetle"
+        },
+        {
+            "species": "Radish pests",
+            "name": "Radish Pests"
+        },
+        {
+            "species": "Anasa tristis",
+            "name": "Squash Beetle"
+        },
+        {
+            "species": "Spinach pests",
+            "name": "Spinach Pests"
+        },
+        {
+            "species": "Squash pollinators",
+            "name": "Squash Pollinators"
+        },
+        {
+            "species": "Tomato pests",
+            "name": "Tomato Pests"
+        },
+        {
+            "species": "Tomato pollinators",
+            "name": "Tomato Pollinators"
+        }
+    ],
+    "works_cited": [
+        {
+            "id": 1,
+            "citation": "https://www.almanac.com/companion-planting-guide-vegetables"
+        }
+    ]
+}

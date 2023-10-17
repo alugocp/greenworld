@@ -1,8 +1,8 @@
 # Generated files
 server/static/script.js
 seed-data/tmp*.json
-scripts/*.png
-scripts/*.txt
+validation/*.png
+validation/*.txt
 node_modules
 .DS_Store
 __pycache__
