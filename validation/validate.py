@@ -193,7 +193,7 @@ def validate(filename):
     # Plot distributions and save to image
     common = {"histtype": "step", "bins": 100}
     plt.set_loglevel(level="warning")
-    plt.title("Compatibility Scores for Companions of Expected Quality")
+    plt.title(f"Compatibility Scores for Companions of Expected Quality ({filename})")
     plt.xlabel("Compatibility score")
     plt.ylabel("Frequency")
     plt.hist(good_dist, **common, color="green", label="Expected good pairs")
@@ -201,6 +201,7 @@ def validate(filename):
     plt.hist(bad_dist, **common, color="red", label="Expected bad pairs")
     plt.legend()
     plt.savefig(f"validation/{filename}.png")
+    plt.close()
 
 
 def run_all_validation():
