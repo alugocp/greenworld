@@ -1,0 +1,865 @@
+{
+  "plants": [
+    {
+      "id": 1,
+      "name": "Yarrow",
+      "species": "Achillea millefolium",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 2,
+      "name": "Onion",
+      "species": "Allium cepa",
+      "family": "Amaryllidaceae",
+      "citations": {}
+    },
+    {
+      "id": 3,
+      "name": "Shallot",
+      "species": "Allium cepa var. aggregatum",
+      "family": "Amaryllidaceae",
+      "citations": {}
+    },
+    {
+      "id": 4,
+      "name": "Welsh onion",
+      "species": "Allium fistulosum",
+      "family": "Amaryllidaceae",
+      "citations": {}
+    },
+    {
+      "id": 5,
+      "name": "Leek",
+      "species": "Allium porrum",
+      "family": "Amaryllidaceae",
+      "citations": {}
+    },
+    {
+      "id": 6,
+      "name": "Garlic",
+      "species": "Allium sativum",
+      "family": "Amaryllidaceae",
+      "citations": {}
+    },
+    {
+      "id": 7,
+      "name": "Chives",
+      "species": "Allium schoenoprasum",
+      "family": "Amaryllidaceae",
+      "citations": {}
+    },
+    {
+      "id": 8,
+      "name": "Dill",
+      "species": "Anethum graveolens",
+      "family": "Apiaceae",
+      "citations": {}
+    },
+    {
+      "id": 9,
+      "name": "Celery",
+      "species": "Apium graveolens",
+      "family": "Apiaceae",
+      "citations": {}
+    },
+    {
+      "id": 10,
+      "name": "Peanut",
+      "species": "Arachis hypogaea",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 11,
+      "name": "Horseradish",
+      "species": "Armoracia rusticana",
+      "family": "Brassicaceae",
+      "citations": {}
+    },
+    {
+      "id": 12,
+      "name": "Garry oats",
+      "species": "Avena sativa",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 13,
+      "name": "Saia oats",
+      "species": "Avena strigosa",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 14,
+      "name": "Beet",
+      "species": "Beta vulgaris",
+      "family": "Amaranthaceae",
+      "citations": {}
+    },
+    {
+      "id": 15,
+      "name": "Borage",
+      "species": "Borago officinalis",
+      "family": "Boraginaceae",
+      "citations": {}
+    },
+    {
+      "id": 16,
+      "name": "Sea ox-eye",
+      "species": "Borrichia frutescens",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 17,
+      "name": "Indian Mustard",
+      "species": "Brassica juncea",
+      "family": "Brassicaceae",
+      "citations": {}
+    },
+    {
+      "id": 18,
+      "name": "Rapeseed",
+      "species": "Brassica napus",
+      "family": "Brassicaceae",
+      "citations": {}
+    },
+    {
+      "id": 19,
+      "name": "Black Mustard",
+      "species": "Brassica nigra",
+      "family": "Brassicaceae",
+      "citations": {}
+    },
+    {
+      "id": 20,
+      "name": "Kale/Broccoli",
+      "species": "Brassica oleracea",
+      "family": "Brassicaceae",
+      "citations": {}
+    },
+    {
+      "id": 21,
+      "name": "Cabbage",
+      "species": "Brassica rapa",
+      "family": "Brassicaceae",
+      "citations": {}
+    },
+    {
+      "id": 22,
+      "name": "Napa Cabbage",
+      "species": "Brassica rapa sub. pekinensis",
+      "family": "Brassicaceae",
+      "citations": {}
+    },
+    {
+      "id": 23,
+      "name": "Some Brassica",
+      "species": "Brassica spp.",
+      "family": "Brassicaceae",
+      "citations": {}
+    },
+    {
+      "id": 24,
+      "name": "Calendula",
+      "species": "Calendula officinalis",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 25,
+      "name": "Pepper",
+      "species": "Capsicum annuum",
+      "family": "Solanaceae",
+      "citations": {}
+    },
+    {
+      "id": 26,
+      "name": "Jalapeño Pepper",
+      "species": "Capsicum chinense",
+      "family": "Solanaceae",
+      "citations": {}
+    },
+    {
+      "id": 27,
+      "name": "Some Pepper",
+      "species": "Capsicum spp.",
+      "family": "Solanaceae",
+      "citations": {}
+    },
+    {
+      "id": 28,
+      "name": "Cornflower",
+      "species": "Centaurea cyanus",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 29,
+      "name": "Chrysanthemum",
+      "species": "Chrysanthemum spp.",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 30,
+      "name": "Watermelon",
+      "species": "Citrullus lanatus",
+      "family": "Cucurbitaceae",
+      "citations": {}
+    },
+    {
+      "id": 31,
+      "name": "Taro",
+      "species": "Colocasia esculenta",
+      "family": "Araceae",
+      "citations": {}
+    },
+    {
+      "id": 32,
+      "name": "Cilantro",
+      "species": "Coriandrum sativum",
+      "family": "Apiaceae",
+      "citations": {}
+    },
+    {
+      "id": 33,
+      "name": "Garden Cosmos",
+      "species": "Cosmos bipinnatus",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 34,
+      "name": "Indian hemp",
+      "species": "Crotalaria juncea",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 35,
+      "name": "Muskmelon",
+      "species": "Cucumis melo",
+      "family": "Cucurbitaceae",
+      "citations": {}
+    },
+    {
+      "id": 36,
+      "name": "Melon",
+      "species": "Cucumis melo var. inodorus",
+      "family": "Cucurbitaceae",
+      "citations": {}
+    },
+    {
+      "id": 37,
+      "name": "Cucumber",
+      "species": "Cucumis sativus",
+      "family": "Cucurbitaceae",
+      "citations": {}
+    },
+    {
+      "id": 38,
+      "name": "Squash",
+      "species": "Cucurbita pepo",
+      "family": "Cucurbitaceae",
+      "citations": {}
+    },
+    {
+      "id": 39,
+      "name": "Some Cucurbit",
+      "species": "Cucurbita spp.",
+      "family": "Cucurbitaceae",
+      "citations": {}
+    },
+    {
+      "id": 40,
+      "name": "Lemongrass",
+      "species": "Cymbopogon citratus",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 41,
+      "name": "Carrot",
+      "species": "Daucus carota",
+      "family": "Apiaceae",
+      "citations": {}
+    },
+    {
+      "id": 42,
+      "name": "Desmodium",
+      "species": "Desmodium spp.",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 43,
+      "name": "False yellowhead",
+      "species": "Dittrichia viscosa",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 44,
+      "name": "Texas kidneywood",
+      "species": "Eysenhardtia texana",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 45,
+      "name": "Buckwheat",
+      "species": "Fagopyrum esculentum",
+      "family": "Polygonaceae",
+      "citations": {}
+    },
+    {
+      "id": 46,
+      "name": "Festulolium",
+      "species": "Festulolium braunii",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 47,
+      "name": "Fennel",
+      "species": "Foeniculum vulgare",
+      "family": "Apiaceae",
+      "citations": {}
+    },
+    {
+      "id": 48,
+      "name": "Strawberry",
+      "species": "Fragaria spp.",
+      "family": "Rosaceae",
+      "citations": {}
+    },
+    {
+      "id": 49,
+      "name": "Bigroot geranium",
+      "species": "Geranium macrorrhizum",
+      "family": "Geraniaceae",
+      "citations": {}
+    },
+    {
+      "id": 50,
+      "name": "Cotton",
+      "species": "Gossypium spp.",
+      "family": "Malvaceae",
+      "citations": {}
+    },
+    {
+      "id": 51,
+      "name": "Sunflower",
+      "species": "Helianthus annuus",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 52,
+      "name": "Barley",
+      "species": "Hordeum vulgare",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 53,
+      "name": "Hyssop",
+      "species": "Hyssopus officinalis",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 54,
+      "name": "Sweet Potato",
+      "species": "Ipomoea batatas",
+      "family": "Convolvulaceae",
+      "citations": {}
+    },
+    {
+      "id": 55,
+      "name": "Lettuce",
+      "species": "Lactuca sativa",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 56,
+      "name": "Lettuce (longifolia)",
+      "species": "Lactuca sativa var. longifolia",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 57,
+      "name": "Lavender",
+      "species": "Lavandula spp.",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 58,
+      "name": "Flax",
+      "species": "Linum usitatissimum",
+      "family": "Linaceae",
+      "citations": {}
+    },
+    {
+      "id": 59,
+      "name": "Sweet alyssum",
+      "species": "Lobularia maritima",
+      "family": "Brassicaceae",
+      "citations": {}
+    },
+    {
+      "id": 60,
+      "name": "Lolium",
+      "species": "Lolium spp.",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 61,
+      "name": "Bird's-foot trefoil",
+      "species": "Lotus corniculatus",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 62,
+      "name": "Orchard apple",
+      "species": "Malus domestica",
+      "family": "Rosaceae",
+      "citations": {}
+    },
+    {
+      "id": 63,
+      "name": "Chamomile",
+      "species": "Matricaria recutita",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 64,
+      "name": "Alfalfa",
+      "species": "Medicago sativa",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 65,
+      "name": "Candy mint",
+      "species": "Mentha gracilis",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 66,
+      "name": "Peppermint",
+      "species": "Mentha piperita",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 67,
+      "name": "Spearmint",
+      "species": "Mentha spicata",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 68,
+      "name": "Some Mint",
+      "species": "Mentha spp.",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 69,
+      "name": "Apple Mint",
+      "species": "Mentha suaveolens",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 70,
+      "name": "Jute mallow",
+      "species": "Nalta jute",
+      "family": "Malvaceae",
+      "citations": {}
+    },
+    {
+      "id": 71,
+      "name": "Catnip",
+      "species": "Nepeta cataria",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 72,
+      "name": "Basil",
+      "species": "Ocimum basilicum",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 73,
+      "name": "Gaura",
+      "species": "Oenothera lindheimeri",
+      "family": "Onagraceae",
+      "citations": {}
+    },
+    {
+      "id": 74,
+      "name": "Syrian Oregano",
+      "species": "Origanum syriacum",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 75,
+      "name": "Oregano",
+      "species": "Origanum vulgare",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 76,
+      "name": "Geranium",
+      "species": "Pelargonium spp.",
+      "family": "Geraniaceae",
+      "citations": {}
+    },
+    {
+      "id": 77,
+      "name": "Napier grass",
+      "species": "Pennisetum purpureum",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 78,
+      "name": "Parsley",
+      "species": "Petroselinum crispum",
+      "family": "Apiaceae",
+      "citations": {}
+    },
+    {
+      "id": 79,
+      "name": "Bean",
+      "species": "Phaseolus vulgaris",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 80,
+      "name": "Turkey tangle frogfruit",
+      "species": "Phyla nodiflora",
+      "family": "Verbenaceae",
+      "citations": {}
+    },
+    {
+      "id": 81,
+      "name": "Pea",
+      "species": "Pisum sativum",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 82,
+      "name": "Common purslane",
+      "species": "Portulaca oleracea",
+      "family": "Portulacaceae",
+      "citations": {}
+    },
+    {
+      "id": 83,
+      "name": "Pomegranate",
+      "species": "Punica granatum",
+      "family": "Lythraceae",
+      "citations": {}
+    },
+    {
+      "id": 84,
+      "name": "Radish",
+      "species": "Raphanus sativus",
+      "family": "Brassicaceae",
+      "citations": {}
+    },
+    {
+      "id": 85,
+      "name": "Common rue",
+      "species": "Ruta graveolens",
+      "family": "Rutaceae",
+      "citations": {}
+    },
+    {
+      "id": 86,
+      "name": "Opposite-leaved saltwort",
+      "species": "Salsola soda",
+      "family": "Amaranthaceae",
+      "citations": {}
+    },
+    {
+      "id": 87,
+      "name": "Mealy sage",
+      "species": "Salvia farinacea",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 88,
+      "name": "Hot Lips Salvia",
+      "species": "Salvia microphylla",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 89,
+      "name": "Rosemary",
+      "species": "Salvia rosmarinus",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 90,
+      "name": "Rye",
+      "species": "Secale cereale",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 91,
+      "name": "White Mustard",
+      "species": "Sinapis alba",
+      "family": "Brassicaceae",
+      "citations": {}
+    },
+    {
+      "id": 92,
+      "name": "Tomato",
+      "species": "Solanum lycopersicum",
+      "family": "Solanaceae",
+      "citations": {}
+    },
+    {
+      "id": 93,
+      "name": "Eggplant",
+      "species": "Solanum melongena",
+      "family": "Solanaceae",
+      "citations": {}
+    },
+    {
+      "id": 94,
+      "name": "Potato",
+      "species": "Solanum tuberosum",
+      "family": "Solanaceae",
+      "citations": {}
+    },
+    {
+      "id": 95,
+      "name": "Sorghum",
+      "species": "Sorghum bicolor",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 96,
+      "name": "Sudangrass hybrid",
+      "species": "Sorghum bicolor x Sorghum sudanense",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 97,
+      "name": "Some Sorghum",
+      "species": "Sorghum spp.",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 98,
+      "name": "Desert Seepweed",
+      "species": "Suaeda salsa",
+      "family": "Amaranthaceae",
+      "citations": {}
+    },
+    {
+      "id": 99,
+      "name": "African marigold",
+      "species": "Tagetes erecta",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 100,
+      "name": "French marigold",
+      "species": "Tagetes patula",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 101,
+      "name": "Some Marigold",
+      "species": "Tagetes spp.",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 102,
+      "name": "Feverfew",
+      "species": "Tanacetum parthenium",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 103,
+      "name": "Tansy",
+      "species": "Tanacetum vulgare",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 104,
+      "name": "Thyme",
+      "species": "Thymus vulgaris",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 105,
+      "name": "Egyptian clover",
+      "species": "Trifolium alexandrinum",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 106,
+      "name": "Crimson clover",
+      "species": "Trifolium incarnatum",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 107,
+      "name": "Red clover",
+      "species": "Trifolium pratense",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 108,
+      "name": "White clover",
+      "species": "Trifolium repens",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 109,
+      "name": "Some Clover",
+      "species": "Trifolium spp.",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 110,
+      "name": "Fenugreek",
+      "species": "Trigonella foenum-graecum",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 111,
+      "name": "Common Wheat",
+      "species": "Triticum aestivum",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 112,
+      "name": "Some Wheat",
+      "species": "Triticum spp.",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 113,
+      "name": "Durum wheat",
+      "species": "Triticum turgidum sub. durum",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 114,
+      "name": "Nasturtium",
+      "species": "Tropaeolum majus",
+      "family": "Tropaeolaceae",
+      "citations": {}
+    },
+    {
+      "id": 115,
+      "name": "Faba bean",
+      "species": "Vicia faba",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 116,
+      "name": "Lentil",
+      "species": "Vicia lens",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 117,
+      "name": "Hairy vetch",
+      "species": "Vicia villosa",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 118,
+      "name": "Mung bean",
+      "species": "Vigna radiata",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 119,
+      "name": "Cowpea",
+      "species": "Vigna unguiculata",
+      "family": "Fabaceae",
+      "citations": {}
+    },
+    {
+      "id": 120,
+      "name": "Chaste tree",
+      "species": "Vitex spp.",
+      "family": "Lamiaceae",
+      "citations": {}
+    },
+    {
+      "id": 121,
+      "name": "Corn",
+      "species": "Zea mays",
+      "family": "Poaceae",
+      "citations": {}
+    },
+    {
+      "id": 122,
+      "name": "Common Zinnia",
+      "species": "Zinnia elegans",
+      "family": "Asteraceae",
+      "citations": {}
+    },
+    {
+      "id": 123,
+      "name": "Zinnia hybrid",
+      "species": "Zinnia x marylandica",
+      "family": "Asteraceae",
+      "citations": {}
+    }
+  ]
+}
