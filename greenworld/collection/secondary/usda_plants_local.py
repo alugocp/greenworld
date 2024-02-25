@@ -58,14 +58,18 @@ class UsdaPlantsLocalDataCollector(BaseDataCollector):
                             entry.append(sanitized[4])
                             break
 
-    def find_match(self, species: str) -> dict:
-        genus = species.split(" ")[0]
+    def find_match(self, species: str, needs: List[str]) -> dict:
+        genus = species.split(" ")[0].lower()
         if genus in self.__genera:
             suffix = " ".join(species.split(" ")[1:])
             for entry in self.__genera[genus]:
                 if suffix in entry[0]:
-                    result = {"name": entry[1], "family": self.__families[genus]}
-                    if len(entry) == 3:
+                    result = {}
+                    if "name" in needs:
+                        result["name"] = entry[1]
+                    if "family" in needs:
+                        result["family"] = self.__families[genus]
+                    if len(entry) == 3 and "growth_habit" in needs:
                         result["growth_habit"] = growth_habits_map[entry[2]]
                     return result
         return None
@@ -75,7 +79,17 @@ class UsdaPlantsLocalDataCollector(BaseDataCollector):
 
     def collect_data(self, key: dict) -> dict:
         species = key["species"]
+        needs = []
+        if "name" not in key:
+            needs.append("name")
+        if "family" not in key:
+            needs.append("family")
+        if "growth_habit" not in key:
+            needs.append("growth_habit")
 
         # Query cached USDA plants database
+        if len(needs) == 0:
+            self.gw.log(f"Nothing is needed for {species}")
+            return None
         self.gw.log(f"Searching cached USDA Plants Database for {species}...")
-        return self.find_match(species)
+        return self.find_match(species, needs)

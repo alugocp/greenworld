@@ -26,21 +26,24 @@
       "name": "Welsh onion",
       "species": "Allium fistulosum",
       "family": "Amaryllidaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 5,
       "name": "Leek",
       "species": "Allium porrum",
       "family": "Amaryllidaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 6,
       "name": "Garlic",
       "species": "Allium sativum",
       "family": "Amaryllidaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 7,
@@ -54,7 +57,8 @@
       "name": "Dill",
       "species": "Anethum graveolens",
       "family": "Apiaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 9,
@@ -68,14 +72,17 @@
       "name": "Peanut",
       "species": "Arachis hypogaea",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB",
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 11,
       "name": "Horseradish",
       "species": "Armoracia rusticana",
       "family": "Brassicaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 12,
@@ -89,7 +96,8 @@
       "name": "Saia oats",
       "species": "Avena strigosa",
       "family": "Poaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.GRAMINOID"
     },
     {
       "id": 14,
@@ -103,14 +111,16 @@
       "name": "Borage",
       "species": "Borago officinalis",
       "family": "Boraginaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 16,
       "name": "Sea ox-eye",
       "species": "Borrichia frutescens",
       "family": "Asteraceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.SUBSHRUB"
     },
     {
       "id": 17,
@@ -131,7 +141,8 @@
       "name": "Black Mustard",
       "species": "Brassica nigra",
       "family": "Brassicaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 20,
@@ -177,7 +188,7 @@
     },
     {
       "id": 26,
-      "name": "Jalapeño Pepper",
+      "name": "Jalape\u00f1o Pepper",
       "species": "Capsicum chinense",
       "family": "Solanaceae",
       "citations": {}
@@ -194,7 +205,8 @@
       "name": "Cornflower",
       "species": "Centaurea cyanus",
       "family": "Asteraceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 29,
@@ -222,21 +234,25 @@
       "name": "Cilantro",
       "species": "Coriandrum sativum",
       "family": "Apiaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 33,
       "name": "Garden Cosmos",
       "species": "Cosmos bipinnatus",
       "family": "Asteraceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 34,
       "name": "Indian hemp",
       "species": "Crotalaria juncea",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB",
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 35,
@@ -278,7 +294,8 @@
       "name": "Lemongrass",
       "species": "Cymbopogon citratus",
       "family": "Poaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.GRAMINOID"
     },
     {
       "id": 41,
@@ -292,7 +309,8 @@
       "name": "Desmodium",
       "species": "Desmodium spp.",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 43,
@@ -306,7 +324,8 @@
       "name": "Texas kidneywood",
       "species": "Eysenhardtia texana",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 45,
@@ -327,7 +346,8 @@
       "name": "Fennel",
       "species": "Foeniculum vulgare",
       "family": "Apiaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 48,
@@ -383,7 +403,8 @@
       "name": "Lettuce",
       "species": "Lactuca sativa",
       "family": "Asteraceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 56,
@@ -411,7 +432,8 @@
       "name": "Sweet alyssum",
       "species": "Lobularia maritima",
       "family": "Brassicaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 60,
@@ -425,7 +447,8 @@
       "name": "Bird's-foot trefoil",
       "species": "Lotus corniculatus",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 62,
@@ -439,21 +462,24 @@
       "name": "Chamomile",
       "species": "Matricaria recutita",
       "family": "Asteraceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 64,
       "name": "Alfalfa",
       "species": "Medicago sativa",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 65,
       "name": "Candy mint",
       "species": "Mentha gracilis",
       "family": "Lamiaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 66,
@@ -481,7 +507,8 @@
       "name": "Apple Mint",
       "species": "Mentha suaveolens",
       "family": "Lamiaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 70,
@@ -495,21 +522,24 @@
       "name": "Catnip",
       "species": "Nepeta cataria",
       "family": "Lamiaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 72,
       "name": "Basil",
       "species": "Ocimum basilicum",
       "family": "Lamiaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 73,
       "name": "Gaura",
       "species": "Oenothera lindheimeri",
       "family": "Onagraceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 74,
@@ -523,7 +553,8 @@
       "name": "Oregano",
       "species": "Origanum vulgare",
       "family": "Lamiaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 76,
@@ -537,21 +568,24 @@
       "name": "Napier grass",
       "species": "Pennisetum purpureum",
       "family": "Poaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.GRAMINOID"
     },
     {
       "id": 78,
       "name": "Parsley",
       "species": "Petroselinum crispum",
       "family": "Apiaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 79,
       "name": "Bean",
       "species": "Phaseolus vulgaris",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 80,
@@ -565,7 +599,8 @@
       "name": "Pea",
       "species": "Pisum sativum",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 82,
@@ -600,7 +635,8 @@
       "name": "Opposite-leaved saltwort",
       "species": "Salsola soda",
       "family": "Amaranthaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 87,
@@ -628,14 +664,16 @@
       "name": "Rye",
       "species": "Secale cereale",
       "family": "Poaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.GRAMINOID"
     },
     {
       "id": 91,
       "name": "White Mustard",
       "species": "Sinapis alba",
       "family": "Brassicaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 92,
@@ -691,14 +729,16 @@
       "name": "African marigold",
       "species": "Tagetes erecta",
       "family": "Asteraceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 100,
       "name": "French marigold",
       "species": "Tagetes patula",
       "family": "Asteraceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 101,
@@ -712,7 +752,8 @@
       "name": "Feverfew",
       "species": "Tanacetum parthenium",
       "family": "Asteraceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB"
     },
     {
       "id": 103,
@@ -726,49 +767,58 @@
       "name": "Thyme",
       "species": "Thymus vulgaris",
       "family": "Lamiaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.SUBSHRUB"
     },
     {
       "id": 105,
       "name": "Egyptian clover",
       "species": "Trifolium alexandrinum",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB",
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 106,
       "name": "Crimson clover",
       "species": "Trifolium incarnatum",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 107,
       "name": "Red clover",
       "species": "Trifolium pratense",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 108,
       "name": "White clover",
       "species": "Trifolium repens",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 109,
       "name": "Some Clover",
       "species": "Trifolium spp.",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 110,
       "name": "Fenugreek",
       "species": "Trigonella foenum-graecum",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB",
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 111,
@@ -803,35 +853,41 @@
       "name": "Faba bean",
       "species": "Vicia faba",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 116,
       "name": "Lentil",
       "species": "Vicia lens",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 117,
       "name": "Hairy vetch",
       "species": "Vicia villosa",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 118,
       "name": "Mung bean",
       "species": "Vigna radiata",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "growth_habit": "GrowthHabit.FORB",
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 119,
       "name": "Cowpea",
       "species": "Vigna unguiculata",
       "family": "Fabaceae",
-      "citations": {}
+      "citations": {},
+      "nitrogen": "Nitrogen.FIXER"
     },
     {
       "id": 120,
