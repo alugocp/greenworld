@@ -24,8 +24,11 @@ def fill_missing_path(collectors, data, missing):
 
 
 def collect(gw: Greenworld, args):
+    # Grab input parameters
+    include_web_queries = (input("Include web queries? (y/N): ").lower() == "y")
+
     # Initialize collectors
-    collectors = get_collectors(gw, False)
+    collectors = get_collectors(gw, include_web_queries)
 
     # Collect data
     outputs = []

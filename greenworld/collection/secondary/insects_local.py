@@ -4,7 +4,7 @@ from openpyxl import load_workbook
 from greenworld.collection.base import BaseDataCollector
 from greenworld.taxonomy import Taxon
 from greenworld import Greenworld
-
+# TODO consider a web query version of this from https://gd.eppo.int/taxon/MYZUPE
 
 class InsectsLocalDataCollector(BaseDataCollector):
     __database: Dict[str, dict] = {}

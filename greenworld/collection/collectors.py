@@ -8,6 +8,7 @@ from greenworld.collection.secondary.usda_plants_local import UsdaPlantsLocalDat
 from greenworld.collection.secondary.insects_local import InsectsLocalDataCollector
 from greenworld.collection.secondary.nitrogen_fixers import NitrogenFixersDataCollector
 from greenworld.collection.secondary.phi_pathology import PhiPathologyDataCollector
+from greenworld.collection.secondary.dbif_pests import DbifPestDataCollector
 
 def get_collectors(gw: Greenworld, include_web_queries = False):
     """
@@ -22,6 +23,7 @@ def get_collectors(gw: Greenworld, include_web_queries = False):
     ]
     if include_web_queries:
         collectors += [
-            PhiPathologyDataCollector(gw)
+            PhiPathologyDataCollector(gw),
+            DbifPestDataCollector(gw)
         ]
     return collectors
