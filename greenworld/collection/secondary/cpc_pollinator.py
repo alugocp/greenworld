@@ -66,15 +66,7 @@ class CpcPollinatorDataCollector(BaseDataCollector):
         """
 
         # Set up the citations
-        works_cited = key["works_cited"] if "works_cited" in key else []
-        citation_id = max(list(map(lambda x: x["id"], works_cited))) + 1 if len(works_cited) > 0 else 1
-        works_cited.append(
-            {
-                "id": citation_id,
-                "citation": "https://saveplants.org/pollinator-search/",
-            }
-        )
-        key["works_cited"] = works_cited
+        citation_id = self.populate_works_cited(key, "https://saveplants.org/pollinator-search/")
 
         # Grab pollinators for each plant species
         other_species = key["others"] if "others" in key else []

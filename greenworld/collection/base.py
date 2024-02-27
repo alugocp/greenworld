@@ -58,3 +58,19 @@ class BaseDataCollector:
     # Clears the list of secondary data to request
     def clear_missing_paths(self):
         self.__missing_paths.clear()
+
+    # Grabs the ID of a citation in the works_cited and adds one if none such exists
+    def populate_works_cited(self, key: dict, citation: str) -> int:
+        works_cited = key["works_cited"] if "works_cited" in key else []
+        candidates = list(filter(lambda x: x["citation"] == citation, works_cited))
+        if len(candidates) > 0:
+            return candidates[0]["id"]
+        citation_id = max(list(map(lambda x: x["id"], works_cited))) + 1 if len(works_cited) > 0 else 1
+        works_cited.append(
+            {
+                "id": citation_id,
+                "citation": citation,
+            }
+        )
+        key["works_cited"] = works_cited
+        return citation_id
