@@ -95,6 +95,11 @@
                     "species": "ustilago maydis",
                     "relationship": "Ecology.PATHOGEN",
                     "citation": 12
+                },
+                {
+                    "species": "fusarium asiaticum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
                 }
             ]
         },
@@ -121,6 +126,11 @@
                     "species": "fusarium solani",
                     "relationship": "Ecology.PATHOGEN",
                     "citation": 12
+                },
+                {
+                    "species": "Pieris rapae",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 14
                 }
             ],
             "citations": {
@@ -192,6 +202,21 @@
                     "species": "sclerotinia sclerotiorum",
                     "relationship": "Ecology.PATHOGEN",
                     "citation": 12
+                },
+                {
+                    "species": "pseudomonas savastanoi",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 12
+                },
+                {
+                    "species": "Epargyreus clarus",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 14
+                },
+                {
+                    "species": "Pieris rapae",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 14
                 }
             ]
         }
@@ -244,6 +269,14 @@
         {
             "id": 12,
             "citation": "http://www.phi-base.org/searchFacet.htm?queryTerm="
+        },
+        {
+            "id": 13,
+            "citation": "https://dbif.brc.ac.uk/"
+        },
+        {
+            "id": 14,
+            "citation": "https://saveplants.org/pollinator-search/"
         }
     ],
     "others": [
@@ -325,6 +358,22 @@
         },
         {
             "species": "sclerotinia sclerotiorum",
+            "name": "???"
+        },
+        {
+            "species": "fusarium asiaticum",
+            "name": "???"
+        },
+        {
+            "species": "pseudomonas savastanoi",
+            "name": "???"
+        },
+        {
+            "species": "Pieris rapae",
+            "name": "???"
+        },
+        {
+            "species": "Epargyreus clarus",
             "name": "???"
         }
     ]

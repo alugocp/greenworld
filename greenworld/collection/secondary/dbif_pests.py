@@ -71,26 +71,9 @@ class DbifPestDataCollector(BaseDataCollector):
         citation_id = self.populate_works_cited(key, "https://dbif.brc.ac.uk/")
 
         # Grab pests for each plant species
-        other_species = key["others"] if "others" in key else []
         for plant in key["plants"] if "plants" in key else []:
             pests = self.get_pest_species(plant["species"])
-
-            # Add the pest if they're not already listed for this plant species
-            ecology = plant["ecology"] if "ecology" in key else []
-            for pest in pests:
-                if not any(pest == partner["species"] for partner in ecology):
-                    ecology.append(
-                        {
-                            "species": pest,
-                            "relationship": "Ecology.PREDATOR",
-                            "citation": citation_id,
-                        }
-                    )
-                if not any(pest == species["species"] for species in other_species):
-                    other_species.append({"species": pest, "name": "???"})
-            if len(ecology) > 0:
-                plant["ecology"] = ecology
-        key["others"] = other_species
+            self.add_ecology(key, plant, citation_id, pests, "Ecology.PREDATOR")
 
         # Return the updated data
         return key

@@ -74,3 +74,24 @@ class BaseDataCollector:
         )
         key["works_cited"] = works_cited
         return citation_id
+
+    # Populates plant data with some ecological partner
+    def add_ecology(self, key: dict, plant: dict, citation_id: int, partners: List[str], relationship: str) -> ():
+        other_species = key["others"] if "others" in key else []
+
+        # Add the partner if they're not already listed for this plant species
+        ecology = plant["ecology"] if "ecology" in plant else []
+        for partner in partners:
+            if not any(partner == species["species"] for species in ecology):
+                ecology.append(
+                    {
+                        "species": partner,
+                        "relationship": relationship,
+                        "citation": citation_id,
+                    }
+                )
+            if not any(partner == species["species"] for species in other_species):
+                other_species.append({"species": partner, "name": "???"})
+        if len(ecology) > 0:
+            plant["ecology"] = ecology
+        key["others"] = other_species

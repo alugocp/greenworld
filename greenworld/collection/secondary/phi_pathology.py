@@ -41,25 +41,9 @@ class PhiPathologyDataCollector(BaseDataCollector):
         citation_id = self.populate_works_cited(key, "http://www.phi-base.org/searchFacet.htm?queryTerm=")
 
         # Grab pathogens for each plant species
-        other_species = key["others"] if "others" in key else []
         for plant in key["plants"] if "plants" in key else []:
             pathogens = self.get_pathogen_species(plant["species"])
-
-            # Add the pathogen if they're not already listed for this plant species
-            ecology = plant["ecology"] if "ecology" in key else []
-            for pathogen in pathogens:
-                if not any(pathogen == partner["species"] for partner in ecology):
-                    ecology.append(
-                        {
-                            "species": pathogen,
-                            "relationship": "Ecology.PATHOGEN",
-                            "citation": citation_id,
-                        }
-                    )
-                if not any(pathogen == species["species"] for species in other_species):
-                    other_species.append({"species": pathogen, "name": "???"})
-            plant["ecology"] = ecology
-        key["others"] = other_species
+            self.add_ecology(key, plant, citation_id, pathogens, "Ecology.PATHOGEN")
 
         # Return the updated data
         return key

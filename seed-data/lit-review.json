@@ -591,6 +591,36 @@
                     "species": "Rhopalomyia ptarmicae",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Agathis vulgaris",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Lycaena helloides",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Gnophaela vermiculata",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Panzeria ampelus",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Synanthedon albicornis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Terellia occidentalis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -745,6 +775,51 @@
                     "species": "Thrips tabaci",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "burkholderia cenocepacia",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "burkholderia glumae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "magnaporthe oryzae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pantoea allii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pantoea ananatis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pantoea stewartii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "Glaucopsyche lygdamus",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -896,6 +971,11 @@
                     "species": "Papilio machaon",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Celastrina neglecta",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -950,6 +1030,21 @@
                     "species": "Agonopterix yeatiana",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "pectobacterium brasiliense",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pectobacterium carotovorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -996,6 +1091,16 @@
                     "species": "Haplotinea ditella",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "aspergillus flavus",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -1365,6 +1470,21 @@
                     "species": "Frankliniella tenuicornis",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "bipolaris victoriae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium graminearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "gaeumannomyces graminis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -1380,6 +1500,11 @@
                     "species": "Phytomyza nigra",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "pseudomonas cannabina",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -1514,6 +1639,11 @@
                     "species": "Cassida vittata",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "cercospora beticola",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -1611,6 +1741,16 @@
                     "species": "Agrotis segetum",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "alternaria brassicicola",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "leptosphaeria maculans",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -1780,6 +1920,36 @@
                     "species": "Cnephasia stephensiana",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "alternaria brassicicola",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fulvia fulva",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "leptosphaeria maculans",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pyrenopeziza brassicae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "verticillium longisporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -1880,6 +2050,46 @@
                     "species": "Agrotis segetum",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Speyeria coronis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Coenonympha tullia",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Euchloe ausonides ausonides",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Junonia coenia",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Lycaena xanthoides",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Papilio zelicaon",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Plebejus acmon",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Satyrium sylvinus",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -2194,6 +2404,46 @@
                     "species": "Selania leplastriana",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "alternaria brassicicola",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pectobacterium odoriferum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pectobacterium versatile",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas aeruginosa",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas cannabina",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas cichorii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "xanthomonas campestris",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -2373,6 +2623,46 @@
                     "species": "Agrotis segetum",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "alternaria brassicicola",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "dickeya dadantii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pectobacterium carotovorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas aeruginosa",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "xanthomonas campestris",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -2445,6 +2735,46 @@
                     "species": "Coccus hesperidum",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "colletotrichum acutatum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "phytophthora capsici",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas aeruginosa",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas syringae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "ralstonia solanacearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "xanthomonas campestris",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -2453,7 +2783,14 @@
             "name": "Jalape\u00f1o Pepper",
             "species": "Capsicum chinense",
             "family": "Solanaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Nannotrigona perilampoides",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                }
+            ]
         },
         {
             "id": 27,
@@ -2489,6 +2826,16 @@
                     "species": "Dactynotus jaceae",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Polites themistocles",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Pyrgus communis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -2515,6 +2862,21 @@
                     "species": "Phytomyza horticola",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "paracidovorax citrulli",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "verticillium dahliae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -2552,6 +2914,36 @@
                     "species": "Euzophera cinerosella",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Atalopedes campestris",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Colias philodice",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Danaus plexippus",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Pontia protodice",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Pyrgus communis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Vanessa cardui",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -2585,6 +2977,31 @@
                     "species": "Liriomyza trifolii",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "colletotrichum orbiculare",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "listeria monocytogenes",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "paracidovorax citrulli",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas cichorii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -2651,6 +3068,51 @@
                     "species": "Thrips tabaci",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "colletotrichum lagenaria",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "colletotrichum orbiculare",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas cichorii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "Pyrgus communis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Pieris rapae",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Nannotrigona testaceicornis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -2680,6 +3142,21 @@
                     "species": "Helicoverpa armigera",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "Peponapis pruinosa",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Xenoglossa strenua",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -2994,6 +3471,31 @@
                     "species": "Aethes williana",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "agrobacterium tumefaciens",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pectobacterium carotovorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "Sphecid wasp",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Syritta hoverflies",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Musca domestica",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -3025,7 +3527,14 @@
             "species": "Eysenhardtia texana",
             "family": "Fabaceae",
             "citations": {},
-            "nitrogen": "Nitrogen.FIXER"
+            "nitrogen": "Nitrogen.FIXER",
+            "ecology": [
+                {
+                    "species": "Chlosyne lacinia",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                }
+            ]
         },
         {
             "id": 45,
@@ -3043,6 +3552,11 @@
                     "species": "Euxoa tritici",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Vanessa virginiensis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -3120,6 +3634,26 @@
                     "species": "Sitochroa palealis",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Lycaena xanthoides",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Apis cerana",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Apis dorsata",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Apis florea",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -3170,6 +3704,61 @@
                     "species": "Aulacorthum solani",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "verticillium dahliae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "Speyeria nokomis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Chlosyne gorgone",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Colias philodice",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Danaus plexippus",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Hesperia leonardus pawnee",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Papilio multicaudata",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Phyciodes tharos",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Vanessa cardui",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -3354,6 +3943,56 @@
                     "species": "Apamea sordens",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "bipolaris sorokiniana",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "blumeria graminis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium graminearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium pseudograminearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "magnaporthe oryzae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "metarhizium robertsii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pyrenophora teres",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "rhynchosporium commune",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "ustilago hordei",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "ustilago maydis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -3815,6 +4454,51 @@
                     "species": "Tettigonia viridissima",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "bremia lactucae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas aeruginosa",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas cichorii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas syringae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "salmonella enterica",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "verticillium dahliae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "xanthomonas campestris",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -3878,6 +4562,11 @@
                     "species": "Thrips angusticeps",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "melampsora lini",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -3893,6 +4582,16 @@
                     "species": "Pieris brassicae",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Pyrgus communis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Camponotus micans",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -4554,6 +5253,56 @@
                     "species": "Coleophora serratella",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "alternaria alternata",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "colletotrichum fructicola",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "colletotrichum gloeosporioides",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "cryphonectria parasitica",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "erwinia amylovora",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium graminearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "penicillium expansum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "valsa mali",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -5019,6 +5768,71 @@
                     "species": "Apion tenue",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "burkholderia cenocepacia",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "colletotrichum trifolii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "salmonella enterica",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "Aglais milberti",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Amblyscirtes aenus",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Amblyscirtes vialis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Anatrytone logan lagus",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Anatrytone logan logan",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Ancyloxypha numitor",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria aphrodite",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria callippe",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria coronis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria cybele",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -5108,6 +5922,16 @@
                     "species": "Cassida viridis",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Colias eurytheme",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Plebejus icarioides",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -5200,6 +6024,51 @@
                     "species": "Apion vicinum",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Plebejus icarioides",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Pieris rapae",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria aphrodite",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria callippe",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria hesperis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Atalopedes campestris",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Cercyonis pegala",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Lycaena arota",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Ochlodes sylvanoides",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -5473,6 +6342,16 @@
                     "species": "Apion flavimanum",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Pieris rapae",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Aglais uritcae",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -5563,6 +6442,16 @@
                     "species": "Amphipyra tragopoginis",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "phytophthora parasitica",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "phytophthora sojae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -5638,6 +6527,56 @@
                     "species": "Maruca testulalis",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "beauveria bassiana",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "colletotrichum lindemuthianum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas amygdali",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas savastanoi",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas syringae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "Epargyreus clarus",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Pieris rapae",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -5895,6 +6834,31 @@
                     "species": "Apion ervi",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "fusarium solani",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas syringae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "Nathalis iole",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Thorybes pylades",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -5968,6 +6932,11 @@
                     "species": "Euzophera bigella",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "xanthomonas axonopodis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -6082,6 +7051,71 @@
                     "species": "Pieris rapae",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "alternaria brassicicola",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "streptomyces scabiei",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "streptomyces turgidiscabies",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "xanthomonas campestris",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "Copaeodes aurantiaca",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Erynnis tristis tatius",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Euchloe ausonides ausonides",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Abaeis nicippe",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Junonia coenia",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Neophasia menapia",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Papilio zelicaon",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Pontia occidentalis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Pyrgus communis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -6124,7 +7158,34 @@
             "name": "Mealy sage",
             "species": "Salvia farinacea",
             "family": "Lamiaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Colias eurytheme",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Euptoieta claudia",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Polites peckius",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Polites themistocles",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Vanessa cardui",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                }
+            ]
         },
         {
             "id": 88,
@@ -6347,6 +7408,16 @@
                     "species": "Frankliniella tenuicornis",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "claviceps purpurea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium graminearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -6641,6 +7712,36 @@
                     "species": "xanthomonas perforans",
                     "relationship": "Ecology.PATHOGEN",
                     "citation": 1
+                },
+                {
+                    "species": "Bombus terrestris",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Bombus lapidarius",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Bombus sylvarum",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Megachile willoughbiella",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Hylaeus gibbus",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Lasioglossum morio",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -6730,6 +7831,41 @@
                     "species": "Leucinodes orbonalis",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "clavibacter michiganensis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas cichorii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "ralstonia solanacearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "verticillium dahliae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "Bombus impatiens",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Augochloropsis metallica",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -7069,6 +8205,101 @@
                     "species": "Gryllotalpa gryllotalpa",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "agrobacterium tumefaciens",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "alternaria solani",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "burkholderia glumae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "dickeya dadantii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "dickeya solani",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium sambucinum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "globodera pallida",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pectobacterium atrosepticum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pectobacterium brasiliense",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pectobacterium carotovorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pectobacterium wasabiae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "phytophthora infestans",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "phytophthora sojae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "ralstonia solanacearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "streptomyces scabiei",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "synchytrium endobioticum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "verticillium dahliae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -7083,6 +8314,11 @@
                     "species": "Sipha maydis",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "microdochium sorghi",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -7119,6 +8355,26 @@
                     "species": "botrytis cinerea",
                     "relationship": "Ecology.PATHOGEN",
                     "citation": 1
+                },
+                {
+                    "species": "Atalopedes campestris",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Hesperia leonardus pawnee",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Polites peckius",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Pyrgus communis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -7166,6 +8422,11 @@
                     "species": "Homoeosoma nimbella",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Polites peckius",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -7811,6 +9072,51 @@
                     "species": "Apion virens",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Bombus terrestris",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Amblyscirtes vialis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Ancyloxypha numitor",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria aphrodite",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria atlantis sorocko",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria edwardsii",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria hesperis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria mormonia",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria nokomis",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -8176,6 +9482,56 @@
                     "species": "Apion virens",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Ancyloxypha numitor",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria callippe",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Speyeria mormonia",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Atalopedes campestris",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Celastrina neglecta",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Colias eurytheme",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Colias philodice",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Cupido comyntas",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Euptoieta claudia",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
+                },
+                {
+                    "species": "Echinargus isola",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -8589,6 +9945,101 @@
                     "species": "Sitotroga cerealella",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "bipolaris sorokiniana",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "blumeria graminis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium asiaticum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium culmorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium graminearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium pseudograminearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium verticillioides",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "gaeumannomyces graminis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "komagataella pastoris",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "parastagonospora nodorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas fluorescens",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas fuscovaginae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pseudomonas syringae",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "puccinia graminis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "puccinia striiformis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "puccinia triticina",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "xanthomonas translucens",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "zymoseptoria tritici",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -8677,6 +10128,11 @@
                     "species": "Phalera bucephala",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Hyles lineata",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -8892,6 +10348,11 @@
                     "species": "Apion vorax",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "botrytis cinerea",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -8975,6 +10436,11 @@
                     "species": "Apion spencii",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "Cupido comyntas",
+                    "relationship": "Ecology.POLLINATOR",
+                    "citation": 3
                 }
             ]
         },
@@ -9051,6 +10517,11 @@
                     "species": "Parthenolecanium corni",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "sclerotinia sclerotiorum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -9237,6 +10708,76 @@
                     "species": "Cnephasia asseclana",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
+                },
+                {
+                    "species": "aspergillus flavus",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "bipolaris maydis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "bipolaris zeicola",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "colletotrichum graminicola",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "curvularia lunata",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "exserohilum turcicum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium asiaticum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium fujikuroi",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium graminearum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium oxysporum",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "fusarium verticillioides",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "pantoea stewartii",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "trichoderma virens",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
+                },
+                {
+                    "species": "ustilago maydis",
+                    "relationship": "Ecology.PATHOGEN",
+                    "citation": 1
                 }
             ]
         },
@@ -9263,6 +10804,10 @@
         {
             "id": 2,
             "citation": "https://dbif.brc.ac.uk/"
+        },
+        {
+            "id": 3,
+            "citation": "https://saveplants.org/pollinator-search/"
         }
     ],
     "others": [
@@ -13096,6 +14641,330 @@
         },
         {
             "species": "Hymenia recurvalis",
+            "name": "???"
+        },
+        {
+            "species": "Agathis vulgaris",
+            "name": "???"
+        },
+        {
+            "species": "Lycaena helloides",
+            "name": "???"
+        },
+        {
+            "species": "Gnophaela vermiculata",
+            "name": "???"
+        },
+        {
+            "species": "Panzeria ampelus",
+            "name": "???"
+        },
+        {
+            "species": "Synanthedon albicornis",
+            "name": "???"
+        },
+        {
+            "species": "Terellia occidentalis",
+            "name": "???"
+        },
+        {
+            "species": "Glaucopsyche lygdamus",
+            "name": "???"
+        },
+        {
+            "species": "Celastrina neglecta",
+            "name": "???"
+        },
+        {
+            "species": "Speyeria coronis",
+            "name": "???"
+        },
+        {
+            "species": "Coenonympha tullia",
+            "name": "???"
+        },
+        {
+            "species": "Euchloe ausonides ausonides",
+            "name": "???"
+        },
+        {
+            "species": "Junonia coenia",
+            "name": "???"
+        },
+        {
+            "species": "Lycaena xanthoides",
+            "name": "???"
+        },
+        {
+            "species": "Papilio zelicaon",
+            "name": "???"
+        },
+        {
+            "species": "Plebejus acmon",
+            "name": "???"
+        },
+        {
+            "species": "Satyrium sylvinus",
+            "name": "???"
+        },
+        {
+            "species": "Nannotrigona perilampoides",
+            "name": "???"
+        },
+        {
+            "species": "Polites themistocles",
+            "name": "???"
+        },
+        {
+            "species": "Pyrgus communis",
+            "name": "???"
+        },
+        {
+            "species": "Atalopedes campestris",
+            "name": "???"
+        },
+        {
+            "species": "Colias philodice",
+            "name": "???"
+        },
+        {
+            "species": "Danaus plexippus",
+            "name": "???"
+        },
+        {
+            "species": "Pontia protodice",
+            "name": "???"
+        },
+        {
+            "species": "Vanessa cardui",
+            "name": "???"
+        },
+        {
+            "species": "Nannotrigona testaceicornis",
+            "name": "???"
+        },
+        {
+            "species": "Peponapis pruinosa",
+            "name": "???"
+        },
+        {
+            "species": "Xenoglossa strenua",
+            "name": "???"
+        },
+        {
+            "species": "Sphecid wasp",
+            "name": "???"
+        },
+        {
+            "species": "Syritta hoverflies",
+            "name": "???"
+        },
+        {
+            "species": "Musca domestica",
+            "name": "???"
+        },
+        {
+            "species": "Chlosyne lacinia",
+            "name": "???"
+        },
+        {
+            "species": "Vanessa virginiensis",
+            "name": "???"
+        },
+        {
+            "species": "Apis cerana",
+            "name": "???"
+        },
+        {
+            "species": "Apis dorsata",
+            "name": "???"
+        },
+        {
+            "species": "Apis florea",
+            "name": "???"
+        },
+        {
+            "species": "Speyeria nokomis",
+            "name": "???"
+        },
+        {
+            "species": "Chlosyne gorgone",
+            "name": "???"
+        },
+        {
+            "species": "Hesperia leonardus pawnee",
+            "name": "???"
+        },
+        {
+            "species": "Papilio multicaudata",
+            "name": "???"
+        },
+        {
+            "species": "Phyciodes tharos",
+            "name": "???"
+        },
+        {
+            "species": "Camponotus micans",
+            "name": "???"
+        },
+        {
+            "species": "Aglais milberti",
+            "name": "???"
+        },
+        {
+            "species": "Amblyscirtes aenus",
+            "name": "???"
+        },
+        {
+            "species": "Amblyscirtes vialis",
+            "name": "???"
+        },
+        {
+            "species": "Anatrytone logan lagus",
+            "name": "???"
+        },
+        {
+            "species": "Anatrytone logan logan",
+            "name": "???"
+        },
+        {
+            "species": "Ancyloxypha numitor",
+            "name": "???"
+        },
+        {
+            "species": "Speyeria aphrodite",
+            "name": "???"
+        },
+        {
+            "species": "Speyeria callippe",
+            "name": "???"
+        },
+        {
+            "species": "Speyeria cybele",
+            "name": "???"
+        },
+        {
+            "species": "Colias eurytheme",
+            "name": "???"
+        },
+        {
+            "species": "Plebejus icarioides",
+            "name": "???"
+        },
+        {
+            "species": "Speyeria hesperis",
+            "name": "???"
+        },
+        {
+            "species": "Cercyonis pegala",
+            "name": "???"
+        },
+        {
+            "species": "Lycaena arota",
+            "name": "???"
+        },
+        {
+            "species": "Ochlodes sylvanoides",
+            "name": "???"
+        },
+        {
+            "species": "Aglais uritcae",
+            "name": "???"
+        },
+        {
+            "species": "Epargyreus clarus",
+            "name": "???"
+        },
+        {
+            "species": "Nathalis iole",
+            "name": "???"
+        },
+        {
+            "species": "Thorybes pylades",
+            "name": "???"
+        },
+        {
+            "species": "Copaeodes aurantiaca",
+            "name": "???"
+        },
+        {
+            "species": "Erynnis tristis tatius",
+            "name": "???"
+        },
+        {
+            "species": "Abaeis nicippe",
+            "name": "???"
+        },
+        {
+            "species": "Neophasia menapia",
+            "name": "???"
+        },
+        {
+            "species": "Pontia occidentalis",
+            "name": "???"
+        },
+        {
+            "species": "Euptoieta claudia",
+            "name": "???"
+        },
+        {
+            "species": "Polites peckius",
+            "name": "???"
+        },
+        {
+            "species": "Bombus terrestris",
+            "name": "???"
+        },
+        {
+            "species": "Bombus lapidarius",
+            "name": "???"
+        },
+        {
+            "species": "Bombus sylvarum",
+            "name": "???"
+        },
+        {
+            "species": "Megachile willoughbiella",
+            "name": "???"
+        },
+        {
+            "species": "Hylaeus gibbus",
+            "name": "???"
+        },
+        {
+            "species": "Lasioglossum morio",
+            "name": "???"
+        },
+        {
+            "species": "Bombus impatiens",
+            "name": "???"
+        },
+        {
+            "species": "Augochloropsis metallica",
+            "name": "???"
+        },
+        {
+            "species": "Speyeria atlantis sorocko",
+            "name": "???"
+        },
+        {
+            "species": "Speyeria edwardsii",
+            "name": "???"
+        },
+        {
+            "species": "Speyeria mormonia",
+            "name": "???"
+        },
+        {
+            "species": "Cupido comyntas",
+            "name": "???"
+        },
+        {
+            "species": "Echinargus isola",
+            "name": "???"
+        },
+        {
+            "species": "Hyles lineata",
             "name": "???"
         }
     ]

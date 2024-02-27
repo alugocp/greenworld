@@ -69,26 +69,9 @@ class CpcPollinatorDataCollector(BaseDataCollector):
         citation_id = self.populate_works_cited(key, "https://saveplants.org/pollinator-search/")
 
         # Grab pollinators for each plant species
-        other_species = key["others"] if "others" in key else []
         for plant in key["plants"] if "plants" in key else []:
             pollinators = self.get_pollinator_species(plant["species"])
-
-            # Add the pollinator if they're not already listed for this plant species
-            ecology = plant["ecology"] if "ecology" in key else []
-            for pollinator in pollinators:
-                if not any(pollinator == partner["species"] for partner in ecology):
-                    ecology.append(
-                        {
-                            "species": pollinator,
-                            "relationship": "Ecology.POLLINATOR",
-                            "citation": citation_id,
-                        }
-                    )
-                if not any(pollinator == species["species"] for species in other_species):
-                    other_species.append({"species": pollinator, "name": "???"})
-            if len(ecology) > 0:
-                plant["ecology"] = ecology
-        key["others"] = other_species
+            self.add_ecology(key, plant, citation_id, pollinators, "Ecology.POLLINATOR")
 
         # Return the updated data
         return key
