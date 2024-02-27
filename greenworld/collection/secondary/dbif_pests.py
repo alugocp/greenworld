@@ -11,7 +11,7 @@ class DbifPestDataCollector(BaseDataCollector):
 
     def get_pest_species(self, species: str):
         """
-        Extract the list of pests (species + family) for a given host plant
+        Extract the list of pests for a given host plant
         """
         self.gw.log(f"Retrieving pests for {species}...")
         context = ssl.create_default_context()
@@ -32,7 +32,11 @@ class DbifPestDataCollector(BaseDataCollector):
                 "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
             }
         )
-        data = urllib.request.urlopen(request, context=context)
+        try:
+            data = urllib.request.urlopen(request, context=context)
+        except:
+            self.gw.log(f"Error while querying pests for {species}")
+            return []
         results = data.read().decode("utf-8")
         hostid_search = re.search(r"<a href=hostsresults.aspx\?hostid=([0-9]+)>", results)
         if hostid_search is None:

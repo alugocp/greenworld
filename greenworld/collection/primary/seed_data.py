@@ -27,4 +27,5 @@ class SeedDataCollector(BaseDataCollector):
                 self.request_data(f"plants.{i}.nitrogen")
             self.request_data("(pathogens)")
             self.request_data("(pests)")
+            self.request_data("(pollinators)")
             return data
