@@ -828,6 +828,13 @@
             "name": "Shallot",
             "species": "Allium cepa var. aggregatum",
             "family": "Amaryllidaceae",
+            "ecology": [
+                {
+                    "species": "Solanum lycopersicum",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 4
+                }
+            ],
             "citations": {}
         },
         {
@@ -1232,6 +1239,11 @@
             "citations": {},
             "ecology": [
                 {
+                    "species": "Fragaria spp.",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 5
+                },
+                {
                     "species": "Rhizoglyphus echinopus",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
@@ -1496,6 +1508,11 @@
             "citations": {},
             "growth_habit": "GrowthHabit.GRAMINOID",
             "ecology": [
+                {
+                    "species": "Fragaria spp.",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 5
+                },
                 {
                     "species": "Phytomyza nigra",
                     "relationship": "Ecology.PREDATOR",
@@ -4001,6 +4018,13 @@
             "name": "Hyssop",
             "species": "Hyssopus officinalis",
             "family": "Lamiaceae",
+            "ecology": [
+                {
+                    "species": "Solanum lycopersicum",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 8
+                }
+            ],
             "citations": {}
         },
         {
@@ -5849,6 +5873,13 @@
             "name": "Peppermint",
             "species": "Mentha piperita",
             "family": "Lamiaceae",
+            "ecology": [
+                {
+                    "species": "Solanum lycopersicum",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 8
+                }
+            ],
             "citations": {}
         },
         {
@@ -6077,6 +6108,13 @@
             "name": "Basil",
             "species": "Ocimum basilicum",
             "family": "Lamiaceae",
+            "ecology": [
+                {
+                    "species": "Solanum lycopersicum",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 8
+                }
+            ],
             "citations": {},
             "growth_habit": "GrowthHabit.FORB"
         },
@@ -8327,6 +8365,13 @@
             "name": "Sudangrass hybrid",
             "species": "Sorghum bicolor x Sorghum sudanense",
             "family": "Poaceae",
+            "ecology": [
+                {
+                    "species": "Fragaria spp.",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 6
+                }
+            ],
             "citations": {}
         },
         {
@@ -9567,6 +9612,11 @@
             "citations": {},
             "ecology": [
                 {
+                    "species": "Citrullus lanatus",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 6
+                },
+                {
                     "species": "Rhizoglyphus echinopus",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
@@ -10048,6 +10098,13 @@
             "name": "Some Wheat",
             "species": "Triticum spp.",
             "family": "Poaceae",
+            "ecology": [
+                {
+                    "species": "Cucumis sativus",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 7
+                }
+            ],
             "citations": {}
         },
         {
@@ -10808,6 +10865,26 @@
         {
             "id": 3,
             "citation": "https://saveplants.org/pollinator-search/"
+        },
+        {
+            "id": 4,
+            "citation": "https://www.frontiersin.org/articles/10.3389/fpls.2015.00726/full"
+        },
+        {
+            "id": 5,
+            "citation": "https://www.sciencedirect.com/science/article/pii/S0261219402000509"
+        },
+        {
+            "id": 6,
+            "citation": "https://apsjournals.apsnet.org/doi/abs/10.1094/PDIS-08-18-1387-RE"
+        },
+        {
+            "id": 7,
+            "citation": "https://www.sciencedirect.com/science/article/pii/S2095311917616988"
+        },
+        {
+            "id": 8,
+            "citation": "https://www.scirp.org/html/2-2604823_104644.htm"
         }
     ],
     "others": [
