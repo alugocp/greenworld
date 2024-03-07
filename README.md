@@ -84,6 +84,15 @@ make collect FILES=file,...
 
 `file` arguments follow the same guidelines as the `make enter` script, but this script can also input other formats (see `referenced-data/clements_1923.xls`).
 
+### Data linting
+This command can be used to lint seed data files.
+
+```bash
+make check FILES=file,...
+```
+
+`file` arguments follow the same guidelines as the `make enter` script.
+
 ### Project Navigation
 - `frontend`: TypeScript code for the Greenworld browser-based UI
 - `greenworld`: Greenworld code and maintenance scripts
