@@ -960,6 +960,21 @@
             "growth_habit": "GrowthHabit.FORB",
             "ecology": [
                 {
+                    "species": "Diaeretiella rapae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
+                    "species": "Hippodamia convergens",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
+                    "species": "Syrphidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
                     "species": "Lasioptera carophila",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
@@ -2118,6 +2133,16 @@
             "citations": {},
             "ecology": [
                 {
+                    "species": "Lipaphis erysimi",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
+                    "species": "Mamestra brassicae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 10
+                },
+                {
                     "species": "Phyllotreta aerea",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
@@ -2705,6 +2730,26 @@
             "citations": {},
             "ecology": [
                 {
+                    "species": "Diaeretiella rapae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
+                    "species": "Hippodamia convergens",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
+                    "species": "Syrphidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
+                    "species": "Propylea japonica",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 9
+                },
+                {
                     "species": "Liriomyza trifolii",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
@@ -2825,6 +2870,16 @@
             "growth_habit": "GrowthHabit.FORB",
             "ecology": [
                 {
+                    "species": "Microplitis mediator",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 10
+                },
+                {
+                    "species": "Phryxe vulgaris",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 10
+                },
+                {
                     "species": "Psylliodes chalcomera",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
@@ -2912,6 +2967,21 @@
             "citations": {},
             "growth_habit": "GrowthHabit.FORB",
             "ecology": [
+                {
+                    "species": "Diaeretiella rapae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
+                    "species": "Hippodamia convergens",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
+                    "species": "Syrphidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
                 {
                     "species": "Psila rosae",
                     "relationship": "Ecology.PREDATOR",
@@ -3679,7 +3749,19 @@
             "name": "Strawberry",
             "species": "Fragaria spp.",
             "family": "Rosaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Macrosiphum euphorbiae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 14
+                },
+                {
+                    "species": "Ephestia kuehniella",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 14
+                }
+            ]
         },
         {
             "id": 49,
@@ -4603,6 +4685,11 @@
             "growth_habit": "GrowthHabit.FORB",
             "ecology": [
                 {
+                    "species": "Orius laevigatus",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 14
+                },
+                {
                     "species": "Pieris brassicae",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
@@ -5254,6 +5341,11 @@
             "citations": {},
             "ecology": [
                 {
+                    "species": "Aphis citricola",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 9
+                },
+                {
                     "species": "Phytomyza heringiana",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
@@ -5866,7 +5958,14 @@
             "species": "Mentha gracilis",
             "family": "Lamiaceae",
             "citations": {},
-            "growth_habit": "GrowthHabit.FORB"
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Phytoseiulus persimilis",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 12
+                }
+            ]
         },
         {
             "id": 66,
@@ -5889,6 +5988,11 @@
             "family": "Lamiaceae",
             "citations": {},
             "ecology": [
+                {
+                    "species": "Phytoseiulus persimilis",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 12
+                },
                 {
                     "species": "Chrysolina banksi",
                     "relationship": "Ecology.PREDATOR",
@@ -6501,6 +6605,11 @@
             "citations": {},
             "nitrogen": "Nitrogen.FIXER",
             "ecology": [
+                {
+                    "species": "Tetranychus urticae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 12
+                },
                 {
                     "species": "Callosobruchus chinensis",
                     "relationship": "Ecology.PREDATOR",
@@ -7567,6 +7676,11 @@
             "citations": {},
             "ecology": [
                 {
+                    "species": "Coleomegilla maculata",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
                     "species": "alternaria alternata",
                     "relationship": "Ecology.PATHOGEN",
                     "citation": 1
@@ -8396,6 +8510,21 @@
             "citations": {},
             "growth_habit": "GrowthHabit.FORB",
             "ecology": [
+                {
+                    "species": "Diaeretiella rapae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
+                    "species": "Hippodamia convergens",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
+                    "species": "Syrphidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
                 {
                     "species": "botrytis cinerea",
                     "relationship": "Ecology.PATHOGEN",
@@ -10597,6 +10726,11 @@
             "citations": {},
             "ecology": [
                 {
+                    "species": "Helicoverpa zea",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
                     "species": "Eriophyes tulipae",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
@@ -10885,9 +11019,170 @@
         {
             "id": 8,
             "citation": "https://www.scirp.org/html/2-2604823_104644.htm"
+        },
+        {
+            "id": 9,
+            "citation": "https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2664.13353"
+        },
+        {
+            "id": 10,
+            "citation": "https://www.sciencedirect.com/science/article/pii/S1049964414000917"
+        },
+        {
+            "id": 11,
+            "citation": "https://academicjournals.org/journal/AJAR/article-full-text-pdf/637C69059568.pdf"
+        },
+        {
+            "id": 12,
+            "citation": "https://www.nature.com/articles/s41598-018-38098-x"
+        },
+        {
+            "id": 13,
+            "citation": "https://academic.oup.com/ee/article-abstract/35/5/1334/339971"
+        },
+        {
+            "id": 14,
+            "citation": "https://link.springer.com/article/10.1007/s10340-022-01570-9"
         }
     ],
     "others": [
+        {
+            "species": "Macrosiphum euphorbiae",
+            "name": "Potato Aphid",
+            "ecology": [
+                {
+                    "species": "Orius laevigatus",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 14
+                }
+            ]
+        },
+        {
+            "species": "Ephestia kuehniella",
+            "name": "Mediterranean Flour Moth",
+            "ecology": [
+                {
+                    "species": "Orius laevigatus",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 14
+                }
+            ]
+        },
+        {
+            "species": "Helicoverpa zea",
+            "name": "Corn Earworm",
+            "ecology": [
+                {
+                    "species": "Coleomegilla maculata",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                }
+            ]
+        },
+        {
+            "species": "Tetranychus urticae",
+            "name": "Red Spider-mite",
+            "ecology": [
+                {
+                    "species": "Neoseiulus californicus",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 12
+                },
+                {
+                    "species": "Phytoseiulus persimilis",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 12
+                }
+            ]
+        },
+        {
+            "species": "Lipaphis erysimi",
+            "name": "Mustard Aphid",
+            "ecology": [
+                {
+                    "species": "Diaeretiella rapae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
+                    "species": "Hippodamia convergens",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                },
+                {
+                    "species": "Syrphidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 11
+                }
+            ]
+        },
+        {
+            "species": "Mamestra brassicae",
+            "name": "Cabbage Moth",
+            "ecology": [
+                {
+                    "species": "Microplitis mediator",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 10
+                },
+                {
+                    "species": "Phryxe vulgaris",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 10
+                }
+            ]
+        },
+        {
+            "species": "Aphis citricola",
+            "name": "Spirea Aphid",
+            "ecology": [
+                {
+                    "species": "Propylea japonica",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 9
+                }
+            ]
+        },
+        {
+            "species": "Orius laevigatus",
+            "name": "Orius"
+        },
+        {
+            "species": "Coleomegilla maculata",
+            "name": "Spotted Lady Beetle"
+        },
+        {
+            "species": "Phytoseiulus persimilis",
+            "name": "Phytoseiulus"
+        },
+        {
+            "species": "Neoseiulus californicus",
+            "name": "Neoseiulus"
+        },
+        {
+            "species": "Syrphidae",
+            "name": "Hoverflies"
+        },
+        {
+            "species": "Hippodamia convergens",
+            "name": "Convergent Lady Beetle"
+        },
+        {
+            "species": "Diaeretiella rapae",
+            "name": "Diaeretiella"
+        },
+        {
+            "species": "Microplitis mediator",
+            "name": "Microplitis"
+        },
+        {
+            "species": "Phryxe vulgaris",
+            "name": "Phryxe"
+        },
+        {
+            "species": "Propylea japonica",
+            "name": "Propylea"
+        },
         {
             "species": "botrytis cinerea",
             "name": "???"
@@ -11182,10 +11477,6 @@
         },
         {
             "species": "hyaloperonospora arabidopsidis",
-            "name": "???"
-        },
-        {
-            "species": "macrosiphum euphorbiae",
             "name": "???"
         },
         {
@@ -11890,10 +12181,6 @@
         },
         {
             "species": "Discestra trifolii",
-            "name": "???"
-        },
-        {
-            "species": "Mamestra brassicae",
             "name": "???"
         },
         {
@@ -12886,10 +13173,6 @@
         },
         {
             "species": "Dactynotus sonchi",
-            "name": "???"
-        },
-        {
-            "species": "Macrosiphum euphorbiae",
             "name": "???"
         },
         {
@@ -14126,10 +14409,6 @@
         },
         {
             "species": "Euzophera bigella",
-            "name": "???"
-        },
-        {
-            "species": "Lipaphis erysimi",
             "name": "???"
         },
         {
