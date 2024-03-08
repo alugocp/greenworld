@@ -67,6 +67,15 @@ json_schema = Schema(
                 "name": str,
                 # Taxonomic family
                 Optional("family"): str,
+                # Ecological partnerships for this nonplant species
+                Optional("predators"): [
+                    {
+                        # Scientific name
+                        "species": str,
+                        # An id in works_cited
+                        "citation": int,
+                    }
+                ],
             }
         ],
         # Citations list

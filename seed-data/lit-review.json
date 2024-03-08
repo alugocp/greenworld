@@ -11049,10 +11049,9 @@
         {
             "species": "Macrosiphum euphorbiae",
             "name": "Potato Aphid",
-            "ecology": [
+            "predators": [
                 {
                     "species": "Orius laevigatus",
-                    "relationship": "Ecology.PREDATOR",
                     "citation": 14
                 }
             ]
@@ -11060,10 +11059,9 @@
         {
             "species": "Ephestia kuehniella",
             "name": "Mediterranean Flour Moth",
-            "ecology": [
+            "predators": [
                 {
                     "species": "Orius laevigatus",
-                    "relationship": "Ecology.PREDATOR",
                     "citation": 14
                 }
             ]
@@ -11071,10 +11069,9 @@
         {
             "species": "Helicoverpa zea",
             "name": "Corn Earworm",
-            "ecology": [
+            "predators": [
                 {
                     "species": "Coleomegilla maculata",
-                    "relationship": "Ecology.PREDATOR",
                     "citation": 13
                 }
             ]
@@ -11082,15 +11079,13 @@
         {
             "species": "Tetranychus urticae",
             "name": "Red Spider-mite",
-            "ecology": [
+            "predators": [
                 {
                     "species": "Neoseiulus californicus",
-                    "relationship": "Ecology.PREDATOR",
                     "citation": 12
                 },
                 {
                     "species": "Phytoseiulus persimilis",
-                    "relationship": "Ecology.PREDATOR",
                     "citation": 12
                 }
             ]
@@ -11098,20 +11093,17 @@
         {
             "species": "Lipaphis erysimi",
             "name": "Mustard Aphid",
-            "ecology": [
+            "predators": [
                 {
                     "species": "Diaeretiella rapae",
-                    "relationship": "Ecology.PREDATOR",
                     "citation": 11
                 },
                 {
                     "species": "Hippodamia convergens",
-                    "relationship": "Ecology.PREDATOR",
                     "citation": 11
                 },
                 {
                     "species": "Syrphidae",
-                    "relationship": "Ecology.PREDATOR",
                     "citation": 11
                 }
             ]
@@ -11119,15 +11111,13 @@
         {
             "species": "Mamestra brassicae",
             "name": "Cabbage Moth",
-            "ecology": [
+            "predators": [
                 {
                     "species": "Microplitis mediator",
-                    "relationship": "Ecology.PREDATOR",
                     "citation": 10
                 },
                 {
                     "species": "Phryxe vulgaris",
-                    "relationship": "Ecology.PREDATOR",
                     "citation": 10
                 }
             ]
@@ -11135,10 +11125,9 @@
         {
             "species": "Aphis citricola",
             "name": "Spirea Aphid",
-            "ecology": [
+            "predators": [
                 {
                     "species": "Propylea japonica",
-                    "relationship": "Ecology.PREDATOR",
                     "citation": 9
                 }
             ]

@@ -112,3 +112,12 @@ ecology_plant_table = Table(
     Column("relationship", Integer, nullable=False),  # Ecology enum
     Column("citation", Integer, ForeignKey("works_cited.id"), nullable=False),
 )
+
+# Tracks which insects eat which other insects
+ecology_predator_table = Table(
+    "ecology_predator",
+    meta,
+    Column("predator", Integer, ForeignKey("other_species.id"), nullable=False),
+    Column("prey", Integer, ForeignKey("other_species.id"), nullable=False),
+    Column("citation", Integer, ForeignKey("works_cited.id"), nullable=False),
+)
