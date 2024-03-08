@@ -2,7 +2,7 @@
 Scientific species name parsing logic
 """
 from enum import IntEnum, unique
-from typing import Optional
+from typing import Optional, Self
 
 
 @unique
@@ -26,7 +26,7 @@ class Taxon:
     species: Optional[str]
     extra: str
 
-    def parse(self, text: str):
+    def parse(self, text: str) -> Self:
         """
         Parses a raw string species name so Greenworld knows what it's dealing with.
         Will throw an error if the argument is an invalid species name.
