@@ -2,7 +2,7 @@
 This is LugoCorp's companion planting data warehouse research project.
 The purpose of this project is to identify potential companion plant groups (a.k.a. `guilds`).
 
-**Note:** This project targets `Python 3.8`
+**Note:** This project targets `Python 3.11`
 
 ## Algorithm design
 The core algorithm looks at every combination of plants and generates a compatibility report for each one.
@@ -13,6 +13,9 @@ A compatibility report consists of a set of suggested ranges to keep between two
 This project uses a Postgres database hosted in Docker.
 You must do the following in order to set it up:
 ```bash
+# Install Python dependencies
+python3 -m pip install -r requirements.txt
+
 # Record a database password
 echo "PASSWORD=<SOME PASSWORD HERE>" > .env
 
@@ -88,7 +91,7 @@ make collect FILES=file,...
 This command can be used to lint seed data files.
 
 ```bash
-make check FILES=file,...
+make format FILES=file,...
 ```
 
 `file` arguments follow the same guidelines as the `make enter` script.

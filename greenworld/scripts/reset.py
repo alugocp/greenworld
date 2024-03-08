@@ -48,4 +48,4 @@ def main(gw: Greenworld, seed_data=False):
 
 
 if __name__ == "__main__":
-    main(Greenworld(), seed_data=True)
+    main(Greenworld(), seed_data=(input("Populate with seed data? (y/N): ").lower() == "y"))
