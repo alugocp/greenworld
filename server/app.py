@@ -1,6 +1,7 @@
 """
 Entry point module for the Greenworld server
 """
+
 from flask import Flask
 import pages
 import api

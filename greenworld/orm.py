@@ -1,6 +1,7 @@
 """
 This module defines the SQLAlchemy ORM database schema
 """
+
 import os
 from sqlalchemy_utils import NumericRangeType
 from sqlalchemy import (

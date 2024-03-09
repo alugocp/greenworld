@@ -1,6 +1,7 @@
 """
 Helpers for the Greenworld server to help render the frontend
 """
+
 import re
 from math import log
 from intervals import DecimalInterval

@@ -1,6 +1,7 @@
 """
 Scientific species name parsing logic
 """
+
 import re
 from enum import IntEnum, unique
 from typing import Optional, Self

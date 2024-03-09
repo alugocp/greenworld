@@ -1,6 +1,7 @@
 """
 Schema validation for Greenworld seed data
 """
+
 from schema import Schema, Optional, And, Or
 from greenworld import defs
 

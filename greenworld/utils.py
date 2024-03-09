@@ -1,6 +1,7 @@
 """
 Helper classes used by Greenworld as an interface to the core algorithm
 """
+
 from dataclasses import dataclass
 from typing import List
 

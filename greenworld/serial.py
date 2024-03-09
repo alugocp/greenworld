@@ -1,6 +1,7 @@
 """
 Logic for serializing/deserializing to/from the database
 """
+
 import math
 
 

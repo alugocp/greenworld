@@ -1,6 +1,7 @@
 """
 This module defines the Greenworld class, which stores important values used by all the utilities
 """
+
 from typing import Callable, Dict
 import logging
 import os
@@ -38,9 +39,9 @@ class Greenworld:
         else:
             password = env["PASSWORD"]
             host = "database" if os.environ["PYTHONPATH"] == "/srv" else "localhost"
-            os.environ[
-                "GREENWORLD_DB"
-            ] = f"postgresql://postgres:{password}@{host}:5432/greenworld"
+            os.environ["GREENWORLD_DB"] = (
+                f"postgresql://postgres:{password}@{host}:5432/greenworld"
+            )
         logging.basicConfig(filename=filename, encoding="utf-8", level=logging.NOTSET)
         self.__log = log_func
         self.log("Greenworld script initialized")

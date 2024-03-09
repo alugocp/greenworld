@@ -1,6 +1,7 @@
 """
 This script validates that the Greenworld algorithm is indeed accurate
 """
+
 import os
 import re
 import sys
@@ -40,7 +41,7 @@ def validate(filename):
     sys.stdout.write(f"Processing {filename}...\n")
 
     # Read the validation test data file
-    with open(f"validation/data/{filename}.json", "r", encoding = "utf-8") as file:
+    with open(f"validation/data/{filename}.json", "r", encoding="utf-8") as file:
         validation_data = json.loads(file.read())
 
     # Check for unrepresented species or duplicate pairs
@@ -212,6 +213,7 @@ def run_all_validation():
     for file in data_files:
         filename = re.match(r"^(\w+)\.json$", file).groups()[0]
         validate(filename)
+
 
 if __name__ == "__main__":
     run_all_validation()

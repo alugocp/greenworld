@@ -1,6 +1,7 @@
 """
 This module houses the constant values used throughout Greenworld
 """
+
 from enum import IntEnum, unique
 
 # Constant representing the entire plant kingdom

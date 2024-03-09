@@ -4,8 +4,8 @@ import type UiWrapper from './wrapper';
 
 // Query options for the companion search app
 interface CompanionSearchQuery {
-    id: number;
-    desc: boolean;
+    id: number
+    desc: boolean
 };
 
 type ScoredPlantHandle = PlantHandle & { score: number };
@@ -26,7 +26,7 @@ export default class CompanionSearch {
      */
     async discover(query: CompanionSearchQuery): Promise<ScoredPlantHandle[]> {
         // Grab neighbor IDs, then get handlers for these IDs
-        const neighborsUrl: string = `${this.baseUrl}neighbors/${query.id}/${query.desc}`;
+        const neighborsUrl: string = `${this.baseUrl}neighbors/${query.id}/${query.desc ? 'true' : 'false'}`;
         const idsAndScores: Array<[number, number]> = await this.wrapper.fetch(neighborsUrl);
         const ids = idsAndScores.map((x) => x[0]);
         const handlers: ScoredPlantHandle[] = await this.wrapper.fetch(`${this.baseUrl}handlers?ids=${ids.join(',')}`);

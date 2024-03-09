@@ -1,6 +1,7 @@
 """
 This module defines the Greenworld core algorithm and its rules
 """
+
 from typing import List
 import sqlalchemy
 from greenworld.serial import deserialize_enum_list
@@ -17,6 +18,7 @@ from greenworld.defs import Nitrogen
 from greenworld.defs import Ecology
 from greenworld.defs import Sun
 
+
 def asymptotic_total(factors: List[Factor]) -> float:
     """
     Uses an asymptotic function to calculate the value of a factor from the ecology rule
@@ -24,6 +26,7 @@ def asymptotic_total(factors: List[Factor]) -> float:
     x = sum(list(map(lambda x: x.value, factors)))
     coeff = -1 if x < 0 else 1
     return round(coeff * (1 - (1 / (((0.6 * x) ** 2) + 1))), 3)
+
 
 class GreenworldAlgorithm(CompanionAlgorithm):
     """
@@ -255,13 +258,17 @@ class AllelopathyRule(Rule):
                 Ecology.NO_ALLELOPATHY: None,
             },
         }[
-            Ecology.NO_ALLELOPATHY
-            if p1_to_p2_relationship is None
-            else p1_to_p2_relationship
+            (
+                Ecology.NO_ALLELOPATHY
+                if p1_to_p2_relationship is None
+                else p1_to_p2_relationship
+            )
         ][
-            Ecology.NO_ALLELOPATHY
-            if p2_to_p1_relationship is None
-            else p2_to_p1_relationship
+            (
+                Ecology.NO_ALLELOPATHY
+                if p2_to_p1_relationship is None
+                else p2_to_p1_relationship
+            )
         ]
 
 
@@ -472,6 +479,7 @@ class FirstClassEcologyRule(Rule):
             return None
         return Factor(asymptotic_total(factors), union.label)
 
+
 class SecondClassEcologyRule(Rule):
     """
     Accounts for indirect ecological interactions that two input plants experience via nonplant partners
@@ -497,9 +505,12 @@ class SecondClassEcologyRule(Rule):
             sqlalchemy.select(
                 ecology_other_table.c["non_plant"],
                 ecology_other_table.c["relationship"],
-                other_species_table.c["species"]
+                other_species_table.c["species"],
             )
-            .join(other_species_table, ecology_other_table.c["non_plant"] == other_species_table.c["id"])
+            .join(
+                other_species_table,
+                ecology_other_table.c["non_plant"] == other_species_table.c["id"],
+            )
             .where(ecology_other_table.c["plant"] == p1.id)
         ).alias("i1")
 
@@ -508,9 +519,12 @@ class SecondClassEcologyRule(Rule):
             sqlalchemy.select(
                 ecology_other_table.c["non_plant"],
                 ecology_other_table.c["relationship"],
-                other_species_table.c["species"]
+                other_species_table.c["species"],
             )
-            .join(other_species_table, ecology_other_table.c["non_plant"] == other_species_table.c["id"])
+            .join(
+                other_species_table,
+                ecology_other_table.c["non_plant"] == other_species_table.c["id"],
+            )
             .where(ecology_other_table.c["plant"] == p2.id)
         ).alias("i2")
 
@@ -523,16 +537,22 @@ class SecondClassEcologyRule(Rule):
                 i2.c["non_plant"],
                 i2.c["species"],
                 i2.c["relationship"],
-                ecology_predator_table.c["predator"]
+                ecology_predator_table.c["predator"],
             )
-            .join(ecology_predator_table, sqlalchemy.or_(
-                i1.c["non_plant"] == ecology_predator_table.c["predator"],
-                i1.c["non_plant"] == ecology_predator_table.c["prey"]
-            ))
-            .join(i2, sqlalchemy.or_(
-                i2.c["non_plant"] == ecology_predator_table.c["predator"],
-                i2.c["non_plant"] == ecology_predator_table.c["prey"]
-            ))
+            .join(
+                ecology_predator_table,
+                sqlalchemy.or_(
+                    i1.c["non_plant"] == ecology_predator_table.c["predator"],
+                    i1.c["non_plant"] == ecology_predator_table.c["prey"],
+                ),
+            )
+            .join(
+                i2,
+                sqlalchemy.or_(
+                    i2.c["non_plant"] == ecology_predator_table.c["predator"],
+                    i2.c["non_plant"] == ecology_predator_table.c["prey"],
+                ),
+            )
             .where(i1.c["non_plant"] != i2.c["non_plant"])
         )
 
@@ -554,16 +574,20 @@ class SecondClassEcologyRule(Rule):
 
             # Logic matrix based on the second-class ecological interaction
             if prey_relation == Ecology.PREDATOR:
-                factors.append(Factor(
-                    1.0,
-                    f"{plant_with_predator.name} attracts {predator_species}, which predates upon {plant_with_prey.name}'s predator species {prey_species}"
-                ))
+                factors.append(
+                    Factor(
+                        1.0,
+                        f"{plant_with_predator.name} attracts {predator_species}, which predates upon {plant_with_prey.name}'s predator species {prey_species}",
+                    )
+                )
 
             if prey_relation == Ecology.POLLINATOR:
-                factors.append(Factor(
-                    -1.0,
-                    f"{plant_with_predator.name} attracts {predator_species}, which predates upon {plant_with_prey.name}'s pollinator species {prey_species}"
-                ))
+                factors.append(
+                    Factor(
+                        -1.0,
+                        f"{plant_with_predator.name} attracts {predator_species}, which predates upon {plant_with_prey.name}'s pollinator species {prey_species}",
+                    )
+                )
 
         union = Factor.union(factors)
         if union is None:

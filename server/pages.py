@@ -1,6 +1,7 @@
 """
 This module registers page routes for the Flask app
 """
+
 import copy
 from urllib.parse import unquote_plus
 import sqlalchemy
