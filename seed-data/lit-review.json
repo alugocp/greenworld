@@ -2408,11 +2408,6 @@
                     "citation": 2
                 },
                 {
-                    "species": "Mamestra brassicae",
-                    "relationship": "Ecology.PREDATOR",
-                    "citation": 2
-                },
-                {
                     "species": "Agrotis ipsilon",
                     "relationship": "Ecology.PREDATOR",
                     "citation": 2
@@ -11173,4144 +11168,4140 @@
             "name": "Propylea"
         },
         {
-            "species": "botrytis cinerea",
-            "name": "???"
+            "species": "Botrytis cinerea",
+            "name": "Botrytis"
         },
         {
-            "species": "burkholderia cenocepacia",
-            "name": "???"
+            "species": "Burkholderia cenocepacia",
+            "name": "Burkholderia"
         },
         {
-            "species": "burkholderia glumae",
-            "name": "???"
+            "species": "Burkholderia glumae",
+            "name": "Burkholderia"
         },
         {
-            "species": "fusarium oxysporum",
-            "name": "???"
+            "species": "Fusarium oxysporum",
+            "name": "Fusarium"
         },
         {
-            "species": "magnaporthe oryzae",
-            "name": "???"
+            "species": "Magnaporthe oryzae",
+            "name": "Magnaporthe"
         },
         {
-            "species": "pantoea allii",
-            "name": "???"
+            "species": "Pantoea allii",
+            "name": "Pantoea"
         },
         {
-            "species": "pantoea ananatis",
-            "name": "???"
+            "species": "Pantoea ananatis",
+            "name": "Pantoea"
         },
         {
-            "species": "pantoea stewartii",
-            "name": "???"
+            "species": "Pantoea stewartii",
+            "name": "Pantoea"
         },
         {
-            "species": "pectobacterium brasiliense",
-            "name": "???"
+            "species": "Pectobacterium brasiliense",
+            "name": "Pectobacterium"
         },
         {
-            "species": "pectobacterium carotovorum",
-            "name": "???"
+            "species": "Pectobacterium carotovorum",
+            "name": "Pectobacterium"
         },
         {
-            "species": "sclerotinia sclerotiorum",
-            "name": "???"
+            "species": "Sclerotinia sclerotiorum",
+            "name": "Sclerotinia"
         },
         {
-            "species": "aspergillus flavus",
-            "name": "???"
+            "species": "Aspergillus flavus",
+            "name": "Aspergillus"
         },
         {
-            "species": "bipolaris victoriae",
-            "name": "???"
+            "species": "Bipolaris victoriae",
+            "name": "Bipolaris"
         },
         {
-            "species": "fusarium graminearum",
-            "name": "???"
+            "species": "Fusarium graminearum",
+            "name": "Fusarium"
         },
         {
-            "species": "gaeumannomyces graminis",
-            "name": "???"
+            "species": "Gaeumannomyces graminis",
+            "name": "Gaeumannomyces"
         },
         {
-            "species": "pseudomonas cannabina",
-            "name": "???"
+            "species": "Pseudomonas cannabina",
+            "name": "Pseudomonas"
         },
         {
-            "species": "cercospora beticola",
-            "name": "???"
+            "species": "Cercospora beticola",
+            "name": "Cercospora"
         },
         {
-            "species": "alternaria brassicicola",
-            "name": "???"
+            "species": "Alternaria brassicicola",
+            "name": "Alternaria"
         },
         {
-            "species": "leptosphaeria maculans",
-            "name": "???"
+            "species": "Leptosphaeria maculans",
+            "name": "Leptosphaeria"
         },
         {
-            "species": "fulvia fulva",
-            "name": "???"
+            "species": "Fulvia fulva",
+            "name": "Fulvia"
         },
         {
-            "species": "pyrenopeziza brassicae",
-            "name": "???"
+            "species": "Pyrenopeziza brassicae",
+            "name": "Pyrenopeziza"
         },
         {
-            "species": "verticillium longisporum",
-            "name": "???"
+            "species": "Verticillium longisporum",
+            "name": "Verticillium"
         },
         {
-            "species": "pectobacterium odoriferum",
-            "name": "???"
+            "species": "Pectobacterium odoriferum",
+            "name": "Pectobacterium"
         },
         {
-            "species": "pectobacterium versatile",
-            "name": "???"
+            "species": "Pectobacterium versatile",
+            "name": "Pectobacterium"
         },
         {
-            "species": "pseudomonas aeruginosa",
-            "name": "???"
+            "species": "Pseudomonas aeruginosa",
+            "name": "Pseudomonas"
         },
         {
-            "species": "pseudomonas cichorii",
-            "name": "???"
+            "species": "Pseudomonas cichorii",
+            "name": "Pseudomonas"
         },
         {
-            "species": "xanthomonas campestris",
-            "name": "???"
+            "species": "Xanthomonas campestris",
+            "name": "Xanthomonas"
         },
         {
-            "species": "dickeya dadantii",
-            "name": "???"
+            "species": "Dickeya dadantii",
+            "name": "Dickeya"
         },
         {
-            "species": "colletotrichum acutatum",
-            "name": "???"
+            "species": "Colletotrichum acutatum",
+            "name": "Colletotrichum"
         },
         {
-            "species": "phytophthora capsici",
-            "name": "???"
+            "species": "Phytophthora capsici",
+            "name": "Phytophthora"
         },
         {
-            "species": "pseudomonas syringae",
-            "name": "???"
+            "species": "Pseudomonas syringae",
+            "name": "Pseudomonas"
         },
         {
-            "species": "ralstonia solanacearum",
-            "name": "???"
+            "species": "Ralstonia solanacearum",
+            "name": "Ralstonia"
         },
         {
-            "species": "paracidovorax citrulli",
-            "name": "???"
+            "species": "Paracidovorax citrulli",
+            "name": "Paracidovorax"
         },
         {
-            "species": "verticillium dahliae",
-            "name": "???"
+            "species": "Verticillium dahliae",
+            "name": "Verticillium"
         },
         {
-            "species": "colletotrichum orbiculare",
-            "name": "???"
+            "species": "Colletotrichum orbiculare",
+            "name": "Colletotrichum"
         },
         {
-            "species": "listeria monocytogenes",
-            "name": "???"
+            "species": "Listeria monocytogenes",
+            "name": "Listeria"
         },
         {
-            "species": "colletotrichum lagenaria",
-            "name": "???"
+            "species": "Colletotrichum lagenaria",
+            "name": "Colletotrichum"
         },
         {
-            "species": "agrobacterium tumefaciens",
-            "name": "???"
+            "species": "Agrobacterium tumefaciens",
+            "name": "Agrobacterium"
         },
         {
-            "species": "bipolaris sorokiniana",
-            "name": "???"
+            "species": "Bipolaris sorokiniana",
+            "name": "Bipolaris"
         },
         {
-            "species": "blumeria graminis",
-            "name": "???"
+            "species": "Blumeria graminis",
+            "name": "Blumeria"
         },
         {
-            "species": "fusarium pseudograminearum",
-            "name": "???"
+            "species": "Fusarium pseudograminearum",
+            "name": "Fusarium"
         },
         {
-            "species": "metarhizium robertsii",
-            "name": "???"
+            "species": "Metarhizium robertsii",
+            "name": "Metarhizium"
         },
         {
-            "species": "pyrenophora teres",
-            "name": "???"
+            "species": "Pyrenophora teres",
+            "name": "Pyrenophora"
         },
         {
-            "species": "rhynchosporium commune",
-            "name": "???"
+            "species": "Rhynchosporium commune",
+            "name": "Rhynchosporium"
         },
         {
-            "species": "ustilago hordei",
-            "name": "???"
+            "species": "Ustilago hordei",
+            "name": "Ustilago"
         },
         {
-            "species": "ustilago maydis",
-            "name": "???"
+            "species": "Ustilago maydis",
+            "name": "Ustilago"
         },
         {
-            "species": "bremia lactucae",
-            "name": "???"
+            "species": "Bremia lactucae",
+            "name": "Bremia"
         },
         {
-            "species": "salmonella enterica",
-            "name": "???"
+            "species": "Salmonella enterica",
+            "name": "Salmonella"
         },
         {
-            "species": "melampsora lini",
-            "name": "???"
+            "species": "Melampsora lini",
+            "name": "Melampsora"
         },
         {
-            "species": "alternaria alternata",
-            "name": "???"
+            "species": "Alternaria alternata",
+            "name": "Alternaria"
         },
         {
-            "species": "colletotrichum fructicola",
-            "name": "???"
+            "species": "Colletotrichum fructicola",
+            "name": "Colletotrichum"
         },
         {
-            "species": "colletotrichum gloeosporioides",
-            "name": "???"
+            "species": "Colletotrichum gloeosporioides",
+            "name": "Colletotrichum"
         },
         {
-            "species": "cryphonectria parasitica",
-            "name": "???"
+            "species": "Cryphonectria parasitica",
+            "name": "Cryphonectria"
         },
         {
-            "species": "erwinia amylovora",
-            "name": "???"
+            "species": "Erwinia amylovora",
+            "name": "Erwinia"
         },
         {
-            "species": "penicillium expansum",
-            "name": "???"
+            "species": "Penicillium expansum",
+            "name": "Penicillium"
         },
         {
-            "species": "valsa mali",
-            "name": "???"
+            "species": "Valsa mali",
+            "name": "Valsa"
         },
         {
-            "species": "colletotrichum trifolii",
-            "name": "???"
+            "species": "Colletotrichum trifolii",
+            "name": "Colletotrichum"
         },
         {
-            "species": "phytophthora parasitica",
-            "name": "???"
+            "species": "Phytophthora parasitica",
+            "name": "Phytophthora"
         },
         {
-            "species": "phytophthora sojae",
-            "name": "???"
+            "species": "Phytophthora sojae",
+            "name": "Phytophthora"
         },
         {
-            "species": "beauveria bassiana",
-            "name": "???"
+            "species": "Beauveria bassiana",
+            "name": "Beauveria"
         },
         {
-            "species": "colletotrichum lindemuthianum",
-            "name": "???"
+            "species": "Colletotrichum lindemuthianum",
+            "name": "Colletotrichum"
         },
         {
-            "species": "pseudomonas amygdali",
-            "name": "???"
+            "species": "Pseudomonas amygdali",
+            "name": "Pseudomonas"
         },
         {
-            "species": "pseudomonas savastanoi",
-            "name": "???"
+            "species": "Pseudomonas savastanoi",
+            "name": "Pseudomonas"
         },
         {
-            "species": "fusarium solani",
-            "name": "???"
+            "species": "Fusarium solani",
+            "name": "Fusarium"
         },
         {
-            "species": "xanthomonas axonopodis",
-            "name": "???"
+            "species": "Xanthomonas axonopodis",
+            "name": "Xanthomonas"
         },
         {
-            "species": "streptomyces scabiei",
-            "name": "???"
+            "species": "Streptomyces scabiei",
+            "name": "Streptomyces"
         },
         {
-            "species": "streptomyces turgidiscabies",
-            "name": "???"
+            "species": "Streptomyces turgidiscabies",
+            "name": "Streptomyces"
         },
         {
-            "species": "claviceps purpurea",
-            "name": "???"
+            "species": "Claviceps purpurea",
+            "name": "Claviceps"
         },
         {
-            "species": "alternaria solani",
-            "name": "???"
+            "species": "Alternaria solani",
+            "name": "Alternaria"
         },
         {
-            "species": "clavibacter michiganensis",
-            "name": "???"
+            "species": "Clavibacter michiganensis",
+            "name": "Clavibacter"
         },
         {
-            "species": "colletotrichum coccodes",
-            "name": "???"
+            "species": "Colletotrichum coccodes",
+            "name": "Colletotrichum"
         },
         {
-            "species": "fusarium fujikuroi",
-            "name": "???"
+            "species": "Fusarium fujikuroi",
+            "name": "Fusarium"
         },
         {
-            "species": "globodera rostochiensis",
-            "name": "???"
+            "species": "Globodera rostochiensis",
+            "name": "Globodera"
         },
         {
-            "species": "hyaloperonospora arabidopsidis",
-            "name": "???"
+            "species": "Hyaloperonospora arabidopsidis",
+            "name": "Hyaloperonospora"
         },
         {
-            "species": "meloidogyne javanica",
-            "name": "???"
+            "species": "Meloidogyne javanica",
+            "name": "Meloidogyne"
         },
         {
-            "species": "phytophthora cactorum",
-            "name": "???"
+            "species": "Phytophthora cactorum",
+            "name": "Phytophthora"
         },
         {
-            "species": "phytophthora infestans",
-            "name": "???"
+            "species": "Phytophthora infestans",
+            "name": "Phytophthora"
         },
         {
-            "species": "pseudocercospora fijiensis",
-            "name": "???"
+            "species": "Pseudocercospora fijiensis",
+            "name": "Pseudocercospora"
         },
         {
-            "species": "pseudocercospora fuligena",
-            "name": "???"
+            "species": "Pseudocercospora fuligena",
+            "name": "Pseudocercospora"
         },
         {
-            "species": "pseudopyrenochaeta lycopersici",
-            "name": "???"
+            "species": "Pseudopyrenochaeta lycopersici",
+            "name": "Pseudopyrenochaeta"
         },
         {
-            "species": "pythium aphanidermatum",
-            "name": "???"
+            "species": "Pythium aphanidermatum",
+            "name": "Pythium"
         },
         {
-            "species": "radopholus similis",
-            "name": "???"
+            "species": "Radopholus similis",
+            "name": "Radopholus"
         },
         {
-            "species": "septoria lycopersici",
-            "name": "???"
+            "species": "Septoria lycopersici",
+            "name": "Septoria"
         },
         {
-            "species": "trichoderma virens",
-            "name": "???"
+            "species": "Trichoderma virens",
+            "name": "Trichoderma"
         },
         {
-            "species": "xanthomonas euvesicatoria",
-            "name": "???"
+            "species": "Xanthomonas euvesicatoria",
+            "name": "Xanthomonas"
         },
         {
-            "species": "xanthomonas perforans",
-            "name": "???"
+            "species": "Xanthomonas perforans",
+            "name": "Xanthomonas"
         },
         {
-            "species": "dickeya solani",
-            "name": "???"
+            "species": "Dickeya solani",
+            "name": "Dickeya"
         },
         {
-            "species": "fusarium sambucinum",
-            "name": "???"
+            "species": "Fusarium sambucinum",
+            "name": "Fusarium"
         },
         {
-            "species": "globodera pallida",
-            "name": "???"
+            "species": "Globodera pallida",
+            "name": "Globodera"
         },
         {
-            "species": "pectobacterium atrosepticum",
-            "name": "???"
+            "species": "Pectobacterium atrosepticum",
+            "name": "Pectobacterium"
         },
         {
-            "species": "pectobacterium wasabiae",
-            "name": "???"
+            "species": "Pectobacterium wasabiae",
+            "name": "Pectobacterium"
         },
         {
-            "species": "synchytrium endobioticum",
-            "name": "???"
+            "species": "Synchytrium endobioticum",
+            "name": "Synchytrium"
         },
         {
-            "species": "microdochium sorghi",
-            "name": "???"
+            "species": "Microdochium sorghi",
+            "name": "Microdochium"
         },
         {
-            "species": "fusarium asiaticum",
-            "name": "???"
+            "species": "Fusarium asiaticum",
+            "name": "Fusarium"
         },
         {
-            "species": "fusarium culmorum",
-            "name": "???"
+            "species": "Fusarium culmorum",
+            "name": "Fusarium"
         },
         {
-            "species": "fusarium verticillioides",
-            "name": "???"
+            "species": "Fusarium verticillioides",
+            "name": "Fusarium"
         },
         {
-            "species": "komagataella pastoris",
-            "name": "???"
+            "species": "Komagataella pastoris",
+            "name": "Komagataella"
         },
         {
-            "species": "parastagonospora nodorum",
-            "name": "???"
+            "species": "Parastagonospora nodorum",
+            "name": "Parastagonospora"
         },
         {
-            "species": "pseudomonas fluorescens",
-            "name": "???"
+            "species": "Pseudomonas fluorescens",
+            "name": "Pseudomonas"
         },
         {
-            "species": "pseudomonas fuscovaginae",
-            "name": "???"
+            "species": "Pseudomonas fuscovaginae",
+            "name": "Pseudomonas"
         },
         {
-            "species": "puccinia graminis",
-            "name": "???"
+            "species": "Puccinia graminis",
+            "name": "Puccinia"
         },
         {
-            "species": "puccinia striiformis",
-            "name": "???"
+            "species": "Puccinia striiformis",
+            "name": "Puccinia"
         },
         {
-            "species": "puccinia triticina",
-            "name": "???"
+            "species": "Puccinia triticina",
+            "name": "Puccinia"
         },
         {
-            "species": "xanthomonas translucens",
-            "name": "???"
+            "species": "Xanthomonas translucens",
+            "name": "Xanthomonas"
         },
         {
-            "species": "zymoseptoria tritici",
-            "name": "???"
+            "species": "Zymoseptoria tritici",
+            "name": "Zymoseptoria"
         },
         {
-            "species": "bipolaris maydis",
-            "name": "???"
+            "species": "Bipolaris maydis",
+            "name": "Bipolaris"
         },
         {
-            "species": "bipolaris zeicola",
-            "name": "???"
+            "species": "Bipolaris zeicola",
+            "name": "Bipolaris"
         },
         {
-            "species": "colletotrichum graminicola",
-            "name": "???"
+            "species": "Colletotrichum graminicola",
+            "name": "Colletotrichum"
         },
         {
-            "species": "curvularia lunata",
-            "name": "???"
+            "species": "Curvularia lunata",
+            "name": "Curvularia"
         },
         {
-            "species": "exserohilum turcicum",
-            "name": "???"
+            "species": "Exserohilum turcicum",
+            "name": "Exserohilum"
         },
         {
             "species": "Eriophyes kiefferi",
-            "name": "???"
+            "name": "Eriophyes"
         },
         {
             "species": "Bruchidius villosus",
-            "name": "???"
+            "name": "Bruchidius"
         },
         {
             "species": "Chrysolina marginata",
-            "name": "???"
+            "name": "Chrysolina"
         },
         {
             "species": "Chrysolina staphylaea",
-            "name": "???"
+            "name": "Chrysolina"
         },
         {
             "species": "Galeruca tanaceti",
-            "name": "???"
+            "name": "Galeruca"
         },
         {
             "species": "Longitarsus absynthii",
-            "name": "???"
+            "name": "Longitarsus"
         },
         {
             "species": "Longitarsus atricillus",
-            "name": "???"
+            "name": "Longitarsus"
         },
         {
             "species": "Longitarsus ochroleucus",
-            "name": "???"
+            "name": "Longitarsus"
         },
         {
             "species": "Longitarsus succineus",
-            "name": "???"
+            "name": "Longitarsus"
         },
         {
             "species": "Neocrepidodera ferruginea",
-            "name": "???"
+            "name": "Neocrepidodera"
         },
         {
             "species": "Neocrepidodera transversa",
-            "name": "???"
+            "name": "Neocrepidodera"
         },
         {
             "species": "Ceuthorhynchidius barnevillei",
-            "name": "???"
+            "name": "Ceuthorhynchidius"
         },
         {
             "species": "Ceutorhynchus triangulum",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Microplontus triangulum",
-            "name": "???"
+            "name": "Microplontus"
         },
         {
             "species": "Trichosirocalus barnevillei",
-            "name": "???"
+            "name": "Trichosirocalus"
         },
         {
             "species": "Otiorhynchus ligustici",
-            "name": "???"
+            "name": "Otiorhynchus"
         },
         {
             "species": "Phyllobius vespertinus",
-            "name": "???"
+            "name": "Phyllobius"
         },
         {
             "species": "Mordellistena parvula",
-            "name": "???"
+            "name": "Mordellistena"
         },
         {
             "species": "Olibrus millefolii",
-            "name": "???"
+            "name": "Olibrus"
         },
         {
             "species": "Liriomyza flavopicta",
-            "name": "???"
+            "name": "Liriomyza"
         },
         {
             "species": "Liriomyza hampsteadensis",
-            "name": "???"
+            "name": "Liriomyza"
         },
         {
             "species": "Liriomyza millefolii",
-            "name": "???"
+            "name": "Liriomyza"
         },
         {
             "species": "Melanagromyza dettmeri",
-            "name": "???"
+            "name": "Melanagromyza"
         },
         {
             "species": "Ophiomyia curvipalpis",
-            "name": "???"
+            "name": "Ophiomyia"
         },
         {
             "species": "Phytomyza horticola",
-            "name": "???"
+            "name": "Phytomyza"
         },
         {
             "species": "Phytomyza pullula",
-            "name": "???"
+            "name": "Phytomyza"
         },
         {
             "species": "Phytomyza tanaceti",
-            "name": "???"
+            "name": "Phytomyza"
         },
         {
             "species": "Botanophila spinosa",
-            "name": "???"
+            "name": "Botanophila"
         },
         {
             "species": "Pegohylemyia spinosa",
-            "name": "???"
+            "name": "Pegohylemyia"
         },
         {
             "species": "Dasineura francoisi",
-            "name": "???"
+            "name": "Dasineura"
         },
         {
             "species": "Lasioptera francoisi",
-            "name": "???"
+            "name": "Lasioptera"
         },
         {
             "species": "Lasioptera niveocincta",
-            "name": "???"
+            "name": "Lasioptera"
         },
         {
             "species": "Macrolabis achilleae",
-            "name": "???"
+            "name": "Macrolabis"
         },
         {
             "species": "Ozirhincus millefolii",
-            "name": "???"
+            "name": "Ozirhincus"
         },
         {
             "species": "Cheilosia vernalis",
-            "name": "???"
+            "name": "Cheilosia"
         },
         {
             "species": "Dithryca guttularis",
-            "name": "???"
+            "name": "Dithryca"
         },
         {
             "species": "Oxyna flavipennis",
-            "name": "???"
+            "name": "Oxyna"
         },
         {
             "species": "Tephritis leontodontis",
-            "name": "???"
+            "name": "Tephritis"
         },
         {
             "species": "Chlorita viridula",
-            "name": "???"
+            "name": "Chlorita"
         },
         {
             "species": "Eupteryx tenella",
-            "name": "???"
+            "name": "Eupteryx"
         },
         {
             "species": "Calocoris roseomaculatus",
-            "name": "???"
+            "name": "Calocoris"
         },
         {
             "species": "Megalocoleus molliculus",
-            "name": "???"
+            "name": "Megalocoleus"
         },
         {
             "species": "Orthocephalus coriaceus",
-            "name": "???"
+            "name": "Orthocephalus"
         },
         {
             "species": "Phytocoris varipes",
-            "name": "???"
+            "name": "Phytocoris"
         },
         {
             "species": "Plagiognathus chrysanthemi",
-            "name": "???"
+            "name": "Plagiognathus"
         },
         {
             "species": "Parthenolecanium corni",
-            "name": "???"
+            "name": "Parthenolecanium"
         },
         {
             "species": "Eriococcus insignis",
-            "name": "???"
+            "name": "Eriococcus"
         },
         {
             "species": "Eriococcus munroi",
-            "name": "???"
+            "name": "Eriococcus"
         },
         {
             "species": "Eriococcus pseudinsignis",
-            "name": "???"
+            "name": "Eriococcus"
         },
         {
             "species": "Coloradoa achilleae",
-            "name": "???"
+            "name": "Coloradoa"
         },
         {
             "species": "Dactynotus achilleae",
-            "name": "???"
+            "name": "Dactynotus"
         },
         {
             "species": "Macrosiphoniella millefolii",
-            "name": "???"
+            "name": "Macrosiphoniella"
         },
         {
             "species": "Macrosiphoniella sejuncta",
-            "name": "???"
+            "name": "Macrosiphoniella"
         },
         {
             "species": "Macrosiphoniella usquertensis",
-            "name": "???"
+            "name": "Macrosiphoniella"
         },
         {
             "species": "Microsiphum millefolii",
-            "name": "???"
+            "name": "Microsiphum"
         },
         {
             "species": "Pleotrichophorus duponti",
-            "name": "???"
+            "name": "Pleotrichophorus"
         },
         {
             "species": "Aphis vandergooti",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Trama troglodytes",
-            "name": "???"
+            "name": "Trama"
         },
         {
             "species": "Craspedolepta nervosa",
-            "name": "???"
+            "name": "Craspedolepta"
         },
         {
             "species": "Trioza abdominalis",
-            "name": "???"
+            "name": "Trioza"
         },
         {
             "species": "Polyommatus icarus",
-            "name": "???"
+            "name": "Polyommatus"
         },
         {
             "species": "Cynthia cardui",
-            "name": "???"
+            "name": "Cynthia"
         },
         {
             "species": "Mellicta athalia",
-            "name": "???"
+            "name": "Mellicta"
         },
         {
             "species": "Phragmatobia fuliginosa",
-            "name": "???"
+            "name": "Phragmatobia"
         },
         {
             "species": "Tyria jacobaeae",
-            "name": "???"
+            "name": "Tyria"
         },
         {
             "species": "Aspitates gilvaria",
-            "name": "???"
+            "name": "Aspitates"
         },
         {
             "species": "Alcis repandata",
-            "name": "???"
+            "name": "Alcis"
         },
         {
             "species": "Lycia zonaria",
-            "name": "???"
+            "name": "Lycia"
         },
         {
             "species": "Thalera fimbrialis",
-            "name": "???"
+            "name": "Thalera"
         },
         {
             "species": "Thetidia smaragdaria",
-            "name": "???"
+            "name": "Thetidia"
         },
         {
             "species": "Chloroclystis v-ata",
-            "name": "???"
+            "name": "Chloroclystis"
         },
         {
             "species": "Eupithecia absinthiata",
-            "name": "???"
+            "name": "Eupithecia"
         },
         {
             "species": "Eupithecia centaureata",
-            "name": "???"
+            "name": "Eupithecia"
         },
         {
             "species": "Eupithecia goossensiata",
-            "name": "???"
+            "name": "Eupithecia"
         },
         {
             "species": "Eupithecia icterata",
-            "name": "???"
+            "name": "Eupithecia"
         },
         {
             "species": "Eupithecia millefoliata",
-            "name": "???"
+            "name": "Eupithecia"
         },
         {
             "species": "Eupithecia subfuscata",
-            "name": "???"
+            "name": "Eupithecia"
         },
         {
             "species": "Eupithecia succenturiata",
-            "name": "???"
+            "name": "Eupithecia"
         },
         {
             "species": "Eupithecia vulgata",
-            "name": "???"
+            "name": "Eupithecia"
         },
         {
             "species": "Scopula immutata",
-            "name": "???"
+            "name": "Scopula"
         },
         {
             "species": "Scopula marginepunctata",
-            "name": "???"
+            "name": "Scopula"
         },
         {
             "species": "Gortyna flavago",
-            "name": "???"
+            "name": "Gortyna"
         },
         {
             "species": "Aporophyla lutulenta",
-            "name": "???"
+            "name": "Aporophyla"
         },
         {
             "species": "Macdunnoughia confusa",
-            "name": "???"
+            "name": "Macdunnoughia"
         },
         {
             "species": "Coleophora argentula",
-            "name": "???"
+            "name": "Coleophora"
         },
         {
             "species": "Coleophora gardesanella",
-            "name": "???"
+            "name": "Coleophora"
         },
         {
             "species": "Coleophora trochilella",
-            "name": "???"
+            "name": "Coleophora"
         },
         {
             "species": "Coleophora vibicigerella",
-            "name": "???"
+            "name": "Coleophora"
         },
         {
             "species": "Xystophora pulveratella",
-            "name": "???"
+            "name": "Xystophora"
         },
         {
             "species": "Bucculatrix capreella",
-            "name": "???"
+            "name": "Bucculatrix"
         },
         {
             "species": "Bucculatrix cristatella",
-            "name": "???"
+            "name": "Bucculatrix"
         },
         {
             "species": "Depressaria olerella",
-            "name": "???"
+            "name": "Depressaria"
         },
         {
             "species": "Depressaria silesiaca",
-            "name": "???"
+            "name": "Depressaria"
         },
         {
             "species": "Platyptilia pallidactyla",
-            "name": "???"
+            "name": "Platyptilia"
         },
         {
             "species": "Phycitodes maritima",
-            "name": "???"
+            "name": "Phycitodes"
         },
         {
             "species": "Dichrorampha gueneeana",
-            "name": "???"
+            "name": "Dichrorampha"
         },
         {
             "species": "Dichrorampha montanana",
-            "name": "???"
+            "name": "Dichrorampha"
         },
         {
             "species": "Dichrorampha plumbagana",
-            "name": "???"
+            "name": "Dichrorampha"
         },
         {
             "species": "Dichrorampha plumbana",
-            "name": "???"
+            "name": "Dichrorampha"
         },
         {
             "species": "Dichrorampha sequana",
-            "name": "???"
+            "name": "Dichrorampha"
         },
         {
             "species": "Thiodia citrana",
-            "name": "???"
+            "name": "Thiodia"
         },
         {
             "species": "Cnephasia asseclana",
-            "name": "???"
+            "name": "Cnephasia"
         },
         {
             "species": "Cnephasia incertana",
-            "name": "???"
+            "name": "Cnephasia"
         },
         {
             "species": "Cnephasia stephensiana",
-            "name": "???"
+            "name": "Cnephasia"
         },
         {
             "species": "Haplothrips propinquus",
-            "name": "???"
+            "name": "Haplothrips"
         },
         {
             "species": "Haplothrips setiger",
-            "name": "???"
+            "name": "Haplothrips"
         },
         {
             "species": "Thrips pillichi",
-            "name": "???"
+            "name": "Thrips"
         },
         {
             "species": "Thrips tabaci",
-            "name": "???"
+            "name": "Thrips"
         },
         {
             "species": "Thrips vulgatissimus",
-            "name": "???"
+            "name": "Thrips"
         },
         {
             "species": "Cassida denticollis",
-            "name": "???"
+            "name": "Cassida"
         },
         {
             "species": "Cassida prasina",
-            "name": "???"
+            "name": "Cassida"
         },
         {
             "species": "Aethes margaritana",
-            "name": "???"
+            "name": "Aethes"
         },
         {
             "species": "Aethes smeathmanniana",
-            "name": "???"
+            "name": "Aethes"
         },
         {
             "species": "Eusomus ovulum",
-            "name": "???"
+            "name": "Eusomus"
         },
         {
             "species": "Hypocassida subferruginea",
-            "name": "???"
+            "name": "Hypocassida"
         },
         {
             "species": "Rhopalomyia millefolii",
-            "name": "???"
+            "name": "Rhopalomyia"
         },
         {
             "species": "Rhopalomyia ptarmicae",
-            "name": "???"
+            "name": "Rhopalomyia"
         },
         {
             "species": "Rhizoglyphus echinopus",
-            "name": "???"
+            "name": "Rhizoglyphus"
         },
         {
             "species": "Eriophyes tulipae",
-            "name": "???"
+            "name": "Eriophyes"
         },
         {
             "species": "Petrobia latens",
-            "name": "???"
+            "name": "Petrobia"
         },
         {
             "species": "Athous haemorrhoidalis",
-            "name": "???"
+            "name": "Athous"
         },
         {
             "species": "Actenicerus sjaelandicus",
-            "name": "???"
+            "name": "Actenicerus"
         },
         {
             "species": "Agriotes lineatus",
-            "name": "???"
+            "name": "Agriotes"
         },
         {
             "species": "Agriotes obscurus",
-            "name": "???"
+            "name": "Agriotes"
         },
         {
             "species": "Agriotes sputator",
-            "name": "???"
+            "name": "Agriotes"
         },
         {
             "species": "Liriomyza trifolii",
-            "name": "???"
+            "name": "Liriomyza"
         },
         {
             "species": "Delia antiqua",
-            "name": "???"
+            "name": "Delia"
         },
         {
             "species": "Delia florilega",
-            "name": "???"
+            "name": "Delia"
         },
         {
             "species": "Delia platura",
-            "name": "???"
+            "name": "Delia"
         },
         {
             "species": "Scaptomyza pallida",
-            "name": "???"
+            "name": "Scaptomyza"
         },
         {
             "species": "Hydrellia griseola",
-            "name": "???"
+            "name": "Hydrellia"
         },
         {
             "species": "Muscina stabulans",
-            "name": "???"
+            "name": "Muscina"
         },
         {
             "species": "Eumerus strigatus",
-            "name": "???"
+            "name": "Eumerus"
         },
         {
             "species": "Eumerus tuberculatus",
-            "name": "???"
+            "name": "Eumerus"
         },
         {
             "species": "Adelphocoris lineolatus",
-            "name": "???"
+            "name": "Adelphocoris"
         },
         {
             "species": "Macrosiphum avenae",
-            "name": "???"
+            "name": "Macrosiphum"
         },
         {
             "species": "Myzus ascalonicus",
-            "name": "???"
+            "name": "Myzus"
         },
         {
             "species": "Myzus cymbalariellus",
-            "name": "???"
+            "name": "Myzus"
         },
         {
             "species": "Hydraecia micacea",
-            "name": "???"
+            "name": "Hydraecia"
         },
         {
             "species": "Discestra trifolii",
-            "name": "???"
+            "name": "Discestra"
         },
         {
             "species": "Euxoa nigricans",
-            "name": "???"
+            "name": "Euxoa"
         },
         {
             "species": "Acrolepiopsis assectella",
-            "name": "???"
+            "name": "Acrolepiopsis"
         },
         {
             "species": "Acrolepiopsis betulella",
-            "name": "???"
+            "name": "Acrolepiopsis"
         },
         {
             "species": "Pieris brassicae",
-            "name": "???"
+            "name": "Pieris"
         },
         {
             "species": "Papilio machaon",
-            "name": "???"
+            "name": "Papilio"
         },
         {
             "species": "Standfussiana lucernea",
-            "name": "???"
+            "name": "Standfussiana"
         },
         {
             "species": "Lasioptera carophila",
-            "name": "???"
+            "name": "Lasioptera"
         },
         {
             "species": "Psila rosae",
-            "name": "???"
+            "name": "Psila"
         },
         {
             "species": "Dysaphis apiifolia",
-            "name": "???"
+            "name": "Dysaphis"
         },
         {
             "species": "Calosirus terminatus",
-            "name": "???"
+            "name": "Calosirus"
         },
         {
             "species": "Ceutorhynchus terminatus",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Lixus iridis",
-            "name": "???"
+            "name": "Lixus"
         },
         {
             "species": "Cavariella aegopodii",
-            "name": "???"
+            "name": "Cavariella"
         },
         {
             "species": "Cavariella konoi",
-            "name": "???"
+            "name": "Cavariella"
         },
         {
             "species": "Dysaphis crataegi",
-            "name": "???"
+            "name": "Dysaphis"
         },
         {
             "species": "Agonopterix yeatiana",
-            "name": "???"
+            "name": "Agonopterix"
         },
         {
             "species": "Penthaleus major",
-            "name": "???"
+            "name": "Penthaleus"
         },
         {
             "species": "Callosobruchus chinensis",
-            "name": "???"
+            "name": "Callosobruchus"
         },
         {
             "species": "Coccus hesperidum",
-            "name": "???"
+            "name": "Coccus"
         },
         {
             "species": "Coccus longulus",
-            "name": "???"
+            "name": "Coccus"
         },
         {
             "species": "Aphis craccivora",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Spodoptera littoralis",
-            "name": "???"
+            "name": "Spodoptera"
         },
         {
             "species": "Haplotinea ditella",
-            "name": "???"
+            "name": "Haplotinea"
         },
         {
             "species": "Phaedon cochleariae",
-            "name": "???"
+            "name": "Phaedon"
         },
         {
             "species": "Phyllotreta aerea",
-            "name": "???"
+            "name": "Phyllotreta"
         },
         {
             "species": "Phyllotreta nemorum",
-            "name": "???"
+            "name": "Phyllotreta"
         },
         {
             "species": "Phyllotreta tetrastigma",
-            "name": "???"
+            "name": "Phyllotreta"
         },
         {
             "species": "Ceutorhynchus pleurostigma",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Ceutorhynchus sulcicollis",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Ceutorhynchus timidus",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Delia floralis",
-            "name": "???"
+            "name": "Delia"
         },
         {
             "species": "Contarinia nasturtii",
-            "name": "???"
+            "name": "Contarinia"
         },
         {
             "species": "Eurydema oleracea",
-            "name": "???"
+            "name": "Eurydema"
         },
         {
             "species": "Athalia rosae",
-            "name": "???"
+            "name": "Athalia"
         },
         {
             "species": "Anthocharis cardamines",
-            "name": "???"
+            "name": "Anthocharis"
         },
         {
             "species": "Pieris napi",
-            "name": "???"
+            "name": "Pieris"
         },
         {
             "species": "Pieris rapae",
-            "name": "???"
+            "name": "Pieris"
         },
         {
             "species": "Pontia daplidice",
-            "name": "???"
+            "name": "Pontia"
         },
         {
             "species": "Spilosoma luteum",
-            "name": "???"
+            "name": "Spilosoma"
         },
         {
             "species": "Xanthorhoe designata",
-            "name": "???"
+            "name": "Xanthorhoe"
         },
         {
             "species": "Xanthorhoe fluctuata",
-            "name": "???"
+            "name": "Xanthorhoe"
         },
         {
             "species": "Caradrina morpheus",
-            "name": "???"
+            "name": "Caradrina"
         },
         {
             "species": "Clytie illunaris",
-            "name": "???"
+            "name": "Clytie"
         },
         {
             "species": "Steneotarsonemus spirifex",
-            "name": "???"
+            "name": "Steneotarsonemus"
         },
         {
             "species": "Zabrus tenebrioides",
-            "name": "???"
+            "name": "Zabrus"
         },
         {
             "species": "Oulema melanopa",
-            "name": "???"
+            "name": "Oulema"
         },
         {
             "species": "Ctenicera cuprea",
-            "name": "???"
+            "name": "Ctenicera"
         },
         {
             "species": "Cerodontha denticornis",
-            "name": "???"
+            "name": "Cerodontha"
         },
         {
             "species": "Cerodontha incisa",
-            "name": "???"
+            "name": "Cerodontha"
         },
         {
             "species": "Agromyza ambigua",
-            "name": "???"
+            "name": "Agromyza"
         },
         {
             "species": "Agromyza nigrella",
-            "name": "???"
+            "name": "Agromyza"
         },
         {
             "species": "Liriomyza flaveola",
-            "name": "???"
+            "name": "Liriomyza"
         },
         {
             "species": "Phytomyza nigra",
-            "name": "???"
+            "name": "Phytomyza"
         },
         {
             "species": "Pseudonapomyza atra",
-            "name": "???"
+            "name": "Pseudonapomyza"
         },
         {
             "species": "Haplodiplosis marginata",
-            "name": "???"
+            "name": "Haplodiplosis"
         },
         {
             "species": "Hybolasioptera cerealis",
-            "name": "???"
+            "name": "Hybolasioptera"
         },
         {
             "species": "Hybolasioptera fasciata",
-            "name": "???"
+            "name": "Hybolasioptera"
         },
         {
             "species": "Mayetiola avenae",
-            "name": "???"
+            "name": "Mayetiola"
         },
         {
             "species": "Mayetiola destructor",
-            "name": "???"
+            "name": "Mayetiola"
         },
         {
             "species": "Monardia toxicodendri",
-            "name": "???"
+            "name": "Monardia"
         },
         {
             "species": "Sitodiplosis mosellana",
-            "name": "???"
+            "name": "Sitodiplosis"
         },
         {
             "species": "Xylopriona toxicodendri",
-            "name": "???"
+            "name": "Xylopriona"
         },
         {
             "species": "Camarota curvipennis",
-            "name": "???"
+            "name": "Camarota"
         },
         {
             "species": "Lasiosina cinctipes",
-            "name": "???"
+            "name": "Lasiosina"
         },
         {
             "species": "Oscinella frit",
-            "name": "???"
+            "name": "Oscinella"
         },
         {
             "species": "Opomyza germinationis",
-            "name": "???"
+            "name": "Opomyza"
         },
         {
             "species": "Tipula paludosa",
-            "name": "???"
+            "name": "Tipula"
         },
         {
             "species": "Muellerianella brevipennis",
-            "name": "???"
+            "name": "Muellerianella"
         },
         {
             "species": "Muellerianella fairmairei",
-            "name": "???"
+            "name": "Muellerianella"
         },
         {
             "species": "Leptopterna dolabrata",
-            "name": "???"
+            "name": "Leptopterna"
         },
         {
             "species": "Macrosiphum fragariae",
-            "name": "???"
+            "name": "Macrosiphum"
         },
         {
             "species": "Metopolophium festucae",
-            "name": "???"
+            "name": "Metopolophium"
         },
         {
             "species": "Rhopalosiphum insertum",
-            "name": "???"
+            "name": "Rhopalosiphum"
         },
         {
             "species": "Rhopalosiphum padi",
-            "name": "???"
+            "name": "Rhopalosiphum"
         },
         {
             "species": "Sipha maydis",
-            "name": "???"
+            "name": "Sipha"
         },
         {
             "species": "Luperina testacea",
-            "name": "???"
+            "name": "Luperina"
         },
         {
             "species": "Mesapamea secalis",
-            "name": "???"
+            "name": "Mesapamea"
         },
         {
             "species": "Mesoligia literosa",
-            "name": "???"
+            "name": "Mesoligia"
         },
         {
             "species": "Oria musculosa",
-            "name": "???"
+            "name": "Oria"
         },
         {
             "species": "Apamea anceps",
-            "name": "???"
+            "name": "Apamea"
         },
         {
             "species": "Rhipidothrips gratiosus",
-            "name": "???"
+            "name": "Rhipidothrips"
         },
         {
             "species": "Frankliniella tenuicornis",
-            "name": "???"
+            "name": "Frankliniella"
         },
         {
             "species": "Mantura chrysanthemi",
-            "name": "???"
+            "name": "Mantura"
         },
         {
             "species": "Phyllotreta atra",
-            "name": "???"
+            "name": "Phyllotreta"
         },
         {
             "species": "Phyllotreta vittula",
-            "name": "???"
+            "name": "Phyllotreta"
         },
         {
             "species": "Psylliodes chalcomera",
-            "name": "???"
+            "name": "Psylliodes"
         },
         {
             "species": "Baris scolopacea",
-            "name": "???"
+            "name": "Baris"
         },
         {
             "species": "Otiorhynchus clavipes",
-            "name": "???"
+            "name": "Otiorhynchus"
         },
         {
             "species": "Sitona lineatus",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Tanymecus palliatus",
-            "name": "???"
+            "name": "Tanymecus"
         },
         {
             "species": "Chromoderus affinis",
-            "name": "???"
+            "name": "Chromoderus"
         },
         {
             "species": "Liparus coronatus",
-            "name": "???"
+            "name": "Liparus"
         },
         {
             "species": "Melolontha melolontha",
-            "name": "???"
+            "name": "Melolontha"
         },
         {
             "species": "Amauromyza flavifrons",
-            "name": "???"
+            "name": "Amauromyza"
         },
         {
             "species": "Liriomyza strigata",
-            "name": "???"
+            "name": "Liriomyza"
         },
         {
             "species": "Pegomya betae",
-            "name": "???"
+            "name": "Pegomya"
         },
         {
             "species": "Pegomya hyoscyami",
-            "name": "???"
+            "name": "Pegomya"
         },
         {
             "species": "Aphis fabae",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Scopula emutaria",
-            "name": "???"
+            "name": "Scopula"
         },
         {
             "species": "Ochropleura plecta",
-            "name": "???"
+            "name": "Ochropleura"
         },
         {
             "species": "Acherontia atropos",
-            "name": "???"
+            "name": "Acherontia"
         },
         {
             "species": "Cassida nebulosa",
-            "name": "???"
+            "name": "Cassida"
         },
         {
             "species": "Cassida vittata",
-            "name": "???"
+            "name": "Cassida"
         },
         {
             "species": "Longitarsus anchusae",
-            "name": "???"
+            "name": "Longitarsus"
         },
         {
             "species": "Ceutorhynchus asperifoliarum",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Ceutorhynchus geographicus",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Agromyza abiens",
-            "name": "???"
+            "name": "Agromyza"
         },
         {
             "species": "Argynnis lathonia",
-            "name": "???"
+            "name": "Argynnis"
         },
         {
             "species": "Euplagia quadripunctaria",
-            "name": "???"
+            "name": "Euplagia"
         },
         {
             "species": "Utetheisa pulchella",
-            "name": "???"
+            "name": "Utetheisa"
         },
         {
             "species": "Agrotis vestigialis",
-            "name": "???"
+            "name": "Agrotis"
         },
         {
             "species": "Ceutorhynchus quadridens",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Phytomyza rufipes",
-            "name": "???"
+            "name": "Phytomyza"
         },
         {
             "species": "Dasineura brassicae",
-            "name": "???"
+            "name": "Dasineura"
         },
         {
             "species": "Dasineura napi",
-            "name": "???"
+            "name": "Dasineura"
         },
         {
             "species": "Agrotis segetum",
-            "name": "???"
+            "name": "Agrotis"
         },
         {
             "species": "Psylliodes chrysocephala",
-            "name": "???"
+            "name": "Psylliodes"
         },
         {
             "species": "Psylliodes cuprea",
-            "name": "???"
+            "name": "Psylliodes"
         },
         {
             "species": "Baris chlorizans",
-            "name": "???"
+            "name": "Baris"
         },
         {
             "species": "Ceutorhynchus assimilis",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Ceutorhynchus picitarsis",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Ceutorhynchus rapae",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Ceutorhynchus syrites",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Delia planipalpis",
-            "name": "???"
+            "name": "Delia"
         },
         {
             "species": "Tenthredo atra",
-            "name": "???"
+            "name": "Tenthredo"
         },
         {
             "species": "Agrotis exclamationis",
-            "name": "???"
+            "name": "Agrotis"
         },
         {
             "species": "Agrotis ipsilon",
-            "name": "???"
+            "name": "Agrotis"
         },
         {
             "species": "Peridroma saucia",
-            "name": "???"
+            "name": "Peridroma"
         },
         {
             "species": "Trichoplusia ni",
-            "name": "???"
+            "name": "Trichoplusia"
         },
         {
             "species": "Phyllotreta nigripes",
-            "name": "???"
+            "name": "Phyllotreta"
         },
         {
             "species": "Phyllotreta undulata",
-            "name": "???"
+            "name": "Phyllotreta"
         },
         {
             "species": "Ceutorhynchus erysimi",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Tenthredo dominiquei",
-            "name": "???"
+            "name": "Tenthredo"
         },
         {
             "species": "Phyllotreta consobrina",
-            "name": "???"
+            "name": "Phyllotreta"
         },
         {
             "species": "Phyllotreta vittata",
-            "name": "???"
+            "name": "Phyllotreta"
         },
         {
             "species": "Psylliodes napi",
-            "name": "???"
+            "name": "Psylliodes"
         },
         {
             "species": "Baris laticollis",
-            "name": "???"
+            "name": "Baris"
         },
         {
             "species": "Ceutorhynchus hepaticus",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Meligethes aeneus",
-            "name": "???"
+            "name": "Meligethes"
         },
         {
             "species": "Delia brassicae",
-            "name": "???"
+            "name": "Delia"
         },
         {
             "species": "Delia radicum",
-            "name": "???"
+            "name": "Delia"
         },
         {
             "species": "Anthomyia pluvialis",
-            "name": "???"
+            "name": "Anthomyia"
         },
         {
             "species": "Gephyraulus raphanistri",
-            "name": "???"
+            "name": "Gephyraulus"
         },
         {
             "species": "Drosophila busckii",
-            "name": "???"
+            "name": "Drosophila"
         },
         {
             "species": "Muscina assimilis",
-            "name": "???"
+            "name": "Muscina"
         },
         {
             "species": "Aleyrodes proletella",
-            "name": "???"
+            "name": "Aleyrodes"
         },
         {
             "species": "Camptogramma bilineata",
-            "name": "???"
+            "name": "Camptogramma"
         },
         {
             "species": "Phlogophora meticulosa",
-            "name": "???"
+            "name": "Phlogophora"
         },
         {
             "species": "Eumichtis lichenea",
-            "name": "???"
+            "name": "Eumichtis"
         },
         {
             "species": "Polymixis lichenea",
-            "name": "???"
+            "name": "Polymixis"
         },
         {
             "species": "Lacanobia oleracea",
-            "name": "???"
+            "name": "Lacanobia"
         },
         {
             "species": "Anaplectoides prasina",
-            "name": "???"
+            "name": "Anaplectoides"
         },
         {
             "species": "Syngrapha circumflexa",
-            "name": "???"
+            "name": "Syngrapha"
         },
         {
             "species": "Selania leplastriana",
-            "name": "???"
+            "name": "Selania"
         },
         {
             "species": "Eilema sericea",
-            "name": "???"
+            "name": "Eilema"
         },
         {
             "species": "Napomyza lateralis",
-            "name": "???"
+            "name": "Napomyza"
         },
         {
             "species": "Heliothis peltigera",
-            "name": "???"
+            "name": "Heliothis"
         },
         {
             "species": "Eriophyes lycopersici",
-            "name": "???"
+            "name": "Eriophyes"
         },
         {
             "species": "Polyphagotarsonemus latus",
-            "name": "???"
+            "name": "Polyphagotarsonemus"
         },
         {
             "species": "Chaetostomella cylindrica",
-            "name": "???"
+            "name": "Chaetostomella"
         },
         {
             "species": "Dactynotus jaceae",
-            "name": "???"
+            "name": "Dactynotus"
         },
         {
             "species": "Liriomyza bryoniae",
-            "name": "???"
+            "name": "Liriomyza"
         },
         {
             "species": "Euzophera cinerosella",
-            "name": "???"
+            "name": "Euzophera"
         },
         {
             "species": "Pnyxia scabiei",
-            "name": "???"
+            "name": "Pnyxia"
         },
         {
             "species": "Aphis frangulae",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Trialeurodes vaporariorum",
-            "name": "???"
+            "name": "Trialeurodes"
         },
         {
             "species": "Jaapiella bryoniae",
-            "name": "???"
+            "name": "Jaapiella"
         },
         {
             "species": "Helicoverpa armigera",
-            "name": "???"
+            "name": "Helicoverpa"
         },
         {
             "species": "Eriophyes peucedani",
-            "name": "???"
+            "name": "Eriophyes"
         },
         {
             "species": "Phytoecia cylindrica",
-            "name": "???"
+            "name": "Phytoecia"
         },
         {
             "species": "Hypera adspersa",
-            "name": "???"
+            "name": "Hypera"
         },
         {
             "species": "Hypera pastinacae",
-            "name": "???"
+            "name": "Hypera"
         },
         {
             "species": "Phytomyza chaerophylli",
-            "name": "???"
+            "name": "Phytomyza"
         },
         {
             "species": "Phytomyza syngenesiae",
-            "name": "???"
+            "name": "Phytomyza"
         },
         {
             "species": "Contarinia pastinacae",
-            "name": "???"
+            "name": "Contarinia"
         },
         {
             "species": "Kiefferia pericarpiicola",
-            "name": "???"
+            "name": "Kiefferia"
         },
         {
             "species": "Calocoris norvegicus",
-            "name": "???"
+            "name": "Calocoris"
         },
         {
             "species": "Rhopalosiphoninus latysiphon",
-            "name": "???"
+            "name": "Rhopalosiphoninus"
         },
         {
             "species": "Semiaphis dauci",
-            "name": "???"
+            "name": "Semiaphis"
         },
         {
             "species": "Aphis lambersi",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Pemphigus phenax",
-            "name": "???"
+            "name": "Pemphigus"
         },
         {
             "species": "Trioza apicalis",
-            "name": "???"
+            "name": "Trioza"
         },
         {
             "species": "Systole tuonela",
-            "name": "???"
+            "name": "Systole"
         },
         {
             "species": "Aspitates ochrearia",
-            "name": "???"
+            "name": "Aspitates"
         },
         {
             "species": "Semiaspilates ochrearia",
-            "name": "???"
+            "name": "Semiaspilates"
         },
         {
             "species": "Eupithecia tripunctaria",
-            "name": "???"
+            "name": "Eupithecia"
         },
         {
             "species": "Xanthorhoe spadicearia",
-            "name": "???"
+            "name": "Xanthorhoe"
         },
         {
             "species": "Malacosoma castrensis",
-            "name": "???"
+            "name": "Malacosoma"
         },
         {
             "species": "Dasypolia templi",
-            "name": "???"
+            "name": "Dasypolia"
         },
         {
             "species": "Heliothis viriplaca",
-            "name": "???"
+            "name": "Heliothis"
         },
         {
             "species": "Agrotis clavis",
-            "name": "???"
+            "name": "Agrotis"
         },
         {
             "species": "Cataplectica profugella",
-            "name": "???"
+            "name": "Cataplectica"
         },
         {
             "species": "Epermenia aequidentellus",
-            "name": "???"
+            "name": "Epermenia"
         },
         {
             "species": "Epermenia chaerophyllella",
-            "name": "???"
+            "name": "Epermenia"
         },
         {
             "species": "Agonopterix capreolella",
-            "name": "???"
+            "name": "Agonopterix"
         },
         {
             "species": "Agonopterix ciliella",
-            "name": "???"
+            "name": "Agonopterix"
         },
         {
             "species": "Agonopterix heracliana",
-            "name": "???"
+            "name": "Agonopterix"
         },
         {
             "species": "Depressaria aegopodiella",
-            "name": "???"
+            "name": "Depressaria"
         },
         {
             "species": "Depressaria albipunctella",
-            "name": "???"
+            "name": "Depressaria"
         },
         {
             "species": "Depressaria depressana",
-            "name": "???"
+            "name": "Depressaria"
         },
         {
             "species": "Depressaria douglasella",
-            "name": "???"
+            "name": "Depressaria"
         },
         {
             "species": "Depressaria pulcherrimella",
-            "name": "???"
+            "name": "Depressaria"
         },
         {
             "species": "Agonopterix purpurea",
-            "name": "???"
+            "name": "Agonopterix"
         },
         {
             "species": "Agonopterix rotundella",
-            "name": "???"
+            "name": "Agonopterix"
         },
         {
             "species": "Sitochroa palealis",
-            "name": "???"
+            "name": "Sitochroa"
         },
         {
             "species": "Cydia gallicana",
-            "name": "???"
+            "name": "Cydia"
         },
         {
             "species": "Aethes francillana",
-            "name": "???"
+            "name": "Aethes"
         },
         {
             "species": "Aethes williana",
-            "name": "???"
+            "name": "Aethes"
         },
         {
             "species": "Longitarsus aeruginosus",
-            "name": "???"
+            "name": "Longitarsus"
         },
         {
             "species": "Chaetocnema concinna",
-            "name": "???"
+            "name": "Chaetocnema"
         },
         {
             "species": "Euxoa tritici",
-            "name": "???"
+            "name": "Euxoa"
         },
         {
             "species": "Phaedon tumidulus",
-            "name": "???"
+            "name": "Phaedon"
         },
         {
             "species": "Dysaphis lauberti",
-            "name": "???"
+            "name": "Dysaphis"
         },
         {
             "species": "Systole albipennis",
-            "name": "???"
+            "name": "Systole"
         },
         {
             "species": "Amphipyra tragopoginis",
-            "name": "???"
+            "name": "Amphipyra"
         },
         {
             "species": "Eupteryx atropunctata",
-            "name": "???"
+            "name": "Eupteryx"
         },
         {
             "species": "Aulacorthum solani",
-            "name": "???"
+            "name": "Aulacorthum"
         },
         {
             "species": "Abacarus hystrix",
-            "name": "???"
+            "name": "Abacarus"
         },
         {
             "species": "Chaetocnema hortensis",
-            "name": "???"
+            "name": "Chaetocnema"
         },
         {
             "species": "Cerodontha lateralis",
-            "name": "???"
+            "name": "Cerodontha"
         },
         {
             "species": "Agromyza albipennis",
-            "name": "???"
+            "name": "Agromyza"
         },
         {
             "species": "Agromyza intermittens",
-            "name": "???"
+            "name": "Agromyza"
         },
         {
             "species": "Agromyza rondensis",
-            "name": "???"
+            "name": "Agromyza"
         },
         {
             "species": "Phytomyza milii",
-            "name": "???"
+            "name": "Phytomyza"
         },
         {
             "species": "Mayetiola hordei",
-            "name": "???"
+            "name": "Mayetiola"
         },
         {
             "species": "Chlorops pumilionis",
-            "name": "???"
+            "name": "Chlorops"
         },
         {
             "species": "Rhopalosiphum maidis",
-            "name": "???"
+            "name": "Rhopalosiphum"
         },
         {
             "species": "Schizaphis graminum",
-            "name": "???"
+            "name": "Schizaphis"
         },
         {
             "species": "Sipha glyceriae",
-            "name": "???"
+            "name": "Sipha"
         },
         {
             "species": "Sipha kurdjumovi",
-            "name": "???"
+            "name": "Sipha"
         },
         {
             "species": "Anoecia vagans",
-            "name": "???"
+            "name": "Anoecia"
         },
         {
             "species": "Forda skorkini",
-            "name": "???"
+            "name": "Forda"
         },
         {
             "species": "Apamea sordens",
-            "name": "???"
+            "name": "Apamea"
         },
         {
             "species": "Longitarsus pellucidus",
-            "name": "???"
+            "name": "Longitarsus"
         },
         {
             "species": "Pinnaspis strachani",
-            "name": "???"
+            "name": "Pinnaspis"
         },
         {
             "species": "Agrius cingulata",
-            "name": "???"
+            "name": "Agrius"
         },
         {
             "species": "Bedellia somnulentella",
-            "name": "???"
+            "name": "Bedellia"
         },
         {
             "species": "Emmelina monodactyla",
-            "name": "???"
+            "name": "Emmelina"
         },
         {
             "species": "Chrysocrambus linetella",
-            "name": "???"
+            "name": "Chrysocrambus"
         },
         {
             "species": "Helophorus porculus",
-            "name": "???"
+            "name": "Helophorus"
         },
         {
             "species": "Helophorus rufipes",
-            "name": "???"
+            "name": "Helophorus"
         },
         {
             "species": "Ophiomyia pinguis",
-            "name": "???"
+            "name": "Ophiomyia"
         },
         {
             "species": "Botanophila gnava",
-            "name": "???"
+            "name": "Botanophila"
         },
         {
             "species": "Pegohylemyia gnava",
-            "name": "???"
+            "name": "Pegohylemyia"
         },
         {
             "species": "Bibio marci",
-            "name": "???"
+            "name": "Bibio"
         },
         {
             "species": "Dilophus febrilis",
-            "name": "???"
+            "name": "Dilophus"
         },
         {
             "species": "Acyrthosiphon scariolae",
-            "name": "???"
+            "name": "Acyrthosiphon"
         },
         {
             "species": "Dactynotus sonchi",
-            "name": "???"
+            "name": "Dactynotus"
         },
         {
             "species": "Myzus persicae",
-            "name": "???"
+            "name": "Myzus"
         },
         {
             "species": "Nasonovia ribisnigri",
-            "name": "???"
+            "name": "Nasonovia"
         },
         {
             "species": "Neotrama caudata",
-            "name": "???"
+            "name": "Neotrama"
         },
         {
             "species": "Protrama flavescens",
-            "name": "???"
+            "name": "Protrama"
         },
         {
             "species": "Pemphigus bursarius",
-            "name": "???"
+            "name": "Pemphigus"
         },
         {
             "species": "Arctia caja",
-            "name": "???"
+            "name": "Arctia"
         },
         {
             "species": "Arctia villica",
-            "name": "???"
+            "name": "Arctia"
         },
         {
             "species": "Coscinia cribraria",
-            "name": "???"
+            "name": "Coscinia"
         },
         {
             "species": "Cybosia mesomella",
-            "name": "???"
+            "name": "Cybosia"
         },
         {
             "species": "Eilema caniola",
-            "name": "???"
+            "name": "Eilema"
         },
         {
             "species": "Eilema deplana",
-            "name": "???"
+            "name": "Eilema"
         },
         {
             "species": "Eilema griseola",
-            "name": "???"
+            "name": "Eilema"
         },
         {
             "species": "Parasemia plantaginis",
-            "name": "???"
+            "name": "Parasemia"
         },
         {
             "species": "Pelosia muscerda",
-            "name": "???"
+            "name": "Pelosia"
         },
         {
             "species": "Scopula imitaria",
-            "name": "???"
+            "name": "Scopula"
         },
         {
             "species": "Hepialus lupulinus",
-            "name": "???"
+            "name": "Hepialus"
         },
         {
             "species": "Athetis pallustris",
-            "name": "???"
+            "name": "Athetis"
         },
         {
             "species": "Elaphria venustula",
-            "name": "???"
+            "name": "Elaphria"
         },
         {
             "species": "Cucullia umbratica",
-            "name": "???"
+            "name": "Cucullia"
         },
         {
             "species": "Antitype chi",
-            "name": "???"
+            "name": "Antitype"
         },
         {
             "species": "Hada nana",
-            "name": "???"
+            "name": "Hada"
         },
         {
             "species": "Hadena luteago",
-            "name": "???"
+            "name": "Hadena"
         },
         {
             "species": "Hecatera bicolorata",
-            "name": "???"
+            "name": "Hecatera"
         },
         {
             "species": "Hecatera dysodea",
-            "name": "???"
+            "name": "Hecatera"
         },
         {
             "species": "Lacanobia suasa",
-            "name": "???"
+            "name": "Lacanobia"
         },
         {
             "species": "Lacanobia thalassina",
-            "name": "???"
+            "name": "Lacanobia"
         },
         {
             "species": "Orthosia gracilis",
-            "name": "???"
+            "name": "Orthosia"
         },
         {
             "species": "Papestra biren",
-            "name": "???"
+            "name": "Papestra"
         },
         {
             "species": "Polia bombycina",
-            "name": "???"
+            "name": "Polia"
         },
         {
             "species": "Diarsia rubi",
-            "name": "???"
+            "name": "Diarsia"
         },
         {
             "species": "Agrotis puta",
-            "name": "???"
+            "name": "Agrotis"
         },
         {
             "species": "Agrotis ripae",
-            "name": "???"
+            "name": "Agrotis"
         },
         {
             "species": "Noctua pronuba",
-            "name": "???"
+            "name": "Noctua"
         },
         {
             "species": "Autographa bractea",
-            "name": "???"
+            "name": "Autographa"
         },
         {
             "species": "Ctenoplusia limbirena",
-            "name": "???"
+            "name": "Ctenoplusia"
         },
         {
             "species": "Schrankia costaestrigalis",
-            "name": "???"
+            "name": "Schrankia"
         },
         {
             "species": "Schrankia taenialis",
-            "name": "???"
+            "name": "Schrankia"
         },
         {
             "species": "Eucosma conterminana",
-            "name": "???"
+            "name": "Eucosma"
         },
         {
             "species": "Gryllus campestris",
-            "name": "???"
+            "name": "Gryllus"
         },
         {
             "species": "Nemobius sylvestris",
-            "name": "???"
+            "name": "Nemobius"
         },
         {
             "species": "Conocephalus dorsalis",
-            "name": "???"
+            "name": "Conocephalus"
         },
         {
             "species": "Thrips nigropilosus",
-            "name": "???"
+            "name": "Thrips"
         },
         {
             "species": "Decticus verrucivorus",
-            "name": "???"
+            "name": "Decticus"
         },
         {
             "species": "Tettigonia viridissima",
-            "name": "???"
+            "name": "Tettigonia"
         },
         {
             "species": "Longitarsus parvulus",
-            "name": "???"
+            "name": "Longitarsus"
         },
         {
             "species": "Aphthona euphorbiae",
-            "name": "???"
+            "name": "Aphthona"
         },
         {
             "species": "Dasineura sampaina",
-            "name": "???"
+            "name": "Dasineura"
         },
         {
             "species": "Tyta luctuosa",
-            "name": "???"
+            "name": "Tyta"
         },
         {
             "species": "Thrips angusticeps",
-            "name": "???"
+            "name": "Thrips"
         },
         {
             "species": "Eriophyes euaspis",
-            "name": "???"
+            "name": "Eriophyes"
         },
         {
             "species": "Bruchidius cisti",
-            "name": "???"
+            "name": "Bruchidius"
         },
         {
             "species": "Bruchus loti",
-            "name": "???"
+            "name": "Bruchus"
         },
         {
             "species": "Crepidodera ferruginea",
-            "name": "???"
+            "name": "Crepidodera"
         },
         {
             "species": "Altica oleracea",
-            "name": "???"
+            "name": "Altica"
         },
         {
             "species": "Miarus plantarum",
-            "name": "???"
+            "name": "Miarus"
         },
         {
             "species": "Pachytychius haematocephalus",
-            "name": "???"
+            "name": "Pachytychius"
         },
         {
             "species": "Tychius junceus",
-            "name": "???"
+            "name": "Tychius"
         },
         {
             "species": "Phyllobius roboretanus",
-            "name": "???"
+            "name": "Phyllobius"
         },
         {
             "species": "Phyllobius viridiaeris",
-            "name": "???"
+            "name": "Phyllobius"
         },
         {
             "species": "Sitona cambricus",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Sitona gemellatus",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Sitona hispidulus",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Sitona lineellus",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Sitona puncticollis",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Sitona sulcifrons",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Sitona waterhousei",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Trachyphloeus aristatus",
-            "name": "???"
+            "name": "Trachyphloeus"
         },
         {
             "species": "Hypera meles",
-            "name": "???"
+            "name": "Hypera"
         },
         {
             "species": "Hypera plantaginis",
-            "name": "???"
+            "name": "Hypera"
         },
         {
             "species": "Hypera postica",
-            "name": "???"
+            "name": "Hypera"
         },
         {
             "species": "Hypera venusta",
-            "name": "???"
+            "name": "Hypera"
         },
         {
             "species": "Meligethes erythropus",
-            "name": "???"
+            "name": "Meligethes"
         },
         {
             "species": "Melanagromyza cunctans",
-            "name": "???"
+            "name": "Melanagromyza"
         },
         {
             "species": "Asphondylia melanopus",
-            "name": "???"
+            "name": "Asphondylia"
         },
         {
             "species": "Contarinia barbichei",
-            "name": "???"
+            "name": "Contarinia"
         },
         {
             "species": "Contarinia loti",
-            "name": "???"
+            "name": "Contarinia"
         },
         {
             "species": "Dasineura loti",
-            "name": "???"
+            "name": "Dasineura"
         },
         {
             "species": "Jaapiella loticola",
-            "name": "???"
+            "name": "Jaapiella"
         },
         {
             "species": "Berytinus signoreti",
-            "name": "???"
+            "name": "Berytinus"
         },
         {
             "species": "Adelphocoris seticornis",
-            "name": "???"
+            "name": "Adelphocoris"
         },
         {
             "species": "Notostira elongata",
-            "name": "???"
+            "name": "Notostira"
         },
         {
             "species": "Acyrthosiphon loti",
-            "name": "???"
+            "name": "Acyrthosiphon"
         },
         {
             "species": "Acyrthosiphon pisum",
-            "name": "???"
+            "name": "Acyrthosiphon"
         },
         {
             "species": "Aphis loti",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Aphis lotiradicis",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Therioaphis trifolii",
-            "name": "???"
+            "name": "Therioaphis"
         },
         {
             "species": "Tenthredo acerrima",
-            "name": "???"
+            "name": "Tenthredo"
         },
         {
             "species": "Tenthredo arcuata",
-            "name": "???"
+            "name": "Tenthredo"
         },
         {
             "species": "Eurytoma gibba",
-            "name": "???"
+            "name": "Eurytoma"
         },
         {
             "species": "Eurytoma platyptera",
-            "name": "???"
+            "name": "Eurytoma"
         },
         {
             "species": "Erynnis tages",
-            "name": "???"
+            "name": "Erynnis"
         },
         {
             "species": "Pyrgus malvae",
-            "name": "???"
+            "name": "Pyrgus"
         },
         {
             "species": "Thymelicus acteon",
-            "name": "???"
+            "name": "Thymelicus"
         },
         {
             "species": "Callophrys rubi",
-            "name": "???"
+            "name": "Callophrys"
         },
         {
-            "species": "Cupido (Everes)",
-            "name": "???"
+            "species": "Cupido (everes)",
+            "name": "Cupido"
         },
         {
             "species": "Everes argiades",
-            "name": "???"
+            "name": "Everes"
         },
         {
             "species": "Lysandra bellargus",
-            "name": "???"
+            "name": "Lysandra"
         },
         {
             "species": "Lysandra coridon",
-            "name": "???"
+            "name": "Lysandra"
         },
         {
             "species": "Plebejus argus",
-            "name": "???"
+            "name": "Plebejus"
         },
         {
             "species": "Colias croceus",
-            "name": "???"
+            "name": "Colias"
         },
         {
             "species": "Colias hyale",
-            "name": "???"
+            "name": "Colias"
         },
         {
             "species": "Leptidea sinapis",
-            "name": "???"
+            "name": "Leptidea"
         },
         {
             "species": "Eilema complana",
-            "name": "???"
+            "name": "Eilema"
         },
         {
             "species": "Charissa obscurata",
-            "name": "???"
+            "name": "Charissa"
         },
         {
             "species": "Cleora cinctaria",
-            "name": "???"
+            "name": "Cleora"
         },
         {
             "species": "Selenia dentaria",
-            "name": "???"
+            "name": "Selenia"
         },
         {
             "species": "Selidosema brunnearia",
-            "name": "???"
+            "name": "Selidosema"
         },
         {
             "species": "Siona lineata",
-            "name": "???"
+            "name": "Siona"
         },
         {
             "species": "Scotopteryx bipunctaria",
-            "name": "???"
+            "name": "Scotopteryx"
         },
         {
             "species": "Scotopteryx chenopodiata",
-            "name": "???"
+            "name": "Scotopteryx"
         },
         {
             "species": "Idaea ochrata",
-            "name": "???"
+            "name": "Idaea"
         },
         {
             "species": "Scopula rubiginata",
-            "name": "???"
+            "name": "Scopula"
         },
         {
             "species": "Lasiocampa trifolii",
-            "name": "???"
+            "name": "Lasiocampa"
         },
         {
             "species": "Callistege mi",
-            "name": "???"
+            "name": "Callistege"
         },
         {
             "species": "Euclidia glyphica",
-            "name": "???"
+            "name": "Euclidia"
         },
         {
             "species": "Aporophyla lueneburgensis",
-            "name": "???"
+            "name": "Aporophyla"
         },
         {
             "species": "Egira conspicillaris",
-            "name": "???"
+            "name": "Egira"
         },
         {
             "species": "Actebia praecox",
-            "name": "???"
+            "name": "Actebia"
         },
         {
             "species": "Euxoa cursoria",
-            "name": "???"
+            "name": "Euxoa"
         },
         {
             "species": "Ochropleura leucogaster",
-            "name": "???"
+            "name": "Ochropleura"
         },
         {
             "species": "Nola aerugula",
-            "name": "???"
+            "name": "Nola"
         },
         {
             "species": "Bembecia ichneumoniformis",
-            "name": "???"
+            "name": "Bembecia"
         },
         {
             "species": "Bembecia scopigera",
-            "name": "???"
+            "name": "Bembecia"
         },
         {
             "species": "Hemaris tityus",
-            "name": "???"
+            "name": "Hemaris"
         },
         {
             "species": "Adscita geryon",
-            "name": "???"
+            "name": "Adscita"
         },
         {
             "species": "Zygaeana purpuralis",
-            "name": "???"
+            "name": "Zygaeana"
         },
         {
             "species": "Zygaena exulans",
-            "name": "???"
+            "name": "Zygaena"
         },
         {
             "species": "Zygaena filipendulae",
-            "name": "???"
+            "name": "Zygaena"
         },
         {
             "species": "Zygaena lonicerae",
-            "name": "???"
+            "name": "Zygaena"
         },
         {
             "species": "Zygaena loti",
-            "name": "???"
+            "name": "Zygaena"
         },
         {
             "species": "Zygaena trifolii",
-            "name": "???"
+            "name": "Zygaena"
         },
         {
             "species": "Zygaena viciae",
-            "name": "???"
+            "name": "Zygaena"
         },
         {
             "species": "Coleophora discordella",
-            "name": "???"
+            "name": "Coleophora"
         },
         {
             "species": "Chionodes fumatella",
-            "name": "???"
+            "name": "Chionodes"
         },
         {
             "species": "Monochroa conspersella",
-            "name": "???"
+            "name": "Monochroa"
         },
         {
             "species": "Syncopacma cinctella",
-            "name": "???"
+            "name": "Syncopacma"
         },
         {
             "species": "Syncopacma larseniella",
-            "name": "???"
+            "name": "Syncopacma"
         },
         {
             "species": "Syncopacma sangiella",
-            "name": "???"
+            "name": "Syncopacma"
         },
         {
             "species": "Syncopacma taeniolella",
-            "name": "???"
+            "name": "Syncopacma"
         },
         {
             "species": "Leucoptera lotella",
-            "name": "???"
+            "name": "Leucoptera"
         },
         {
             "species": "Pancalia schwarzella",
-            "name": "???"
+            "name": "Pancalia"
         },
         {
             "species": "Trifurcula cryptella",
-            "name": "???"
+            "name": "Trifurcula"
         },
         {
             "species": "Trifurcula eurema",
-            "name": "???"
+            "name": "Trifurcula"
         },
         {
             "species": "Trifurcula subnitidella",
-            "name": "???"
+            "name": "Trifurcula"
         },
         {
             "species": "Onocera semirubella",
-            "name": "???"
+            "name": "Onocera"
         },
         {
             "species": "Pima boisduvaliella",
-            "name": "???"
+            "name": "Pima"
         },
         {
             "species": "Dolicharthria punctalis",
-            "name": "???"
+            "name": "Dolicharthria"
         },
         {
             "species": "Scythris picaepennis",
-            "name": "???"
+            "name": "Scythris"
         },
         {
             "species": "Scythris siccella",
-            "name": "???"
+            "name": "Scythris"
         },
         {
             "species": "Cydia compositella",
-            "name": "???"
+            "name": "Cydia"
         },
         {
             "species": "Lathronympha strigana",
-            "name": "???"
+            "name": "Lathronympha"
         },
         {
             "species": "Lobesia littoralis",
-            "name": "???"
+            "name": "Lobesia"
         },
         {
             "species": "Odontothrips loti",
-            "name": "???"
+            "name": "Odontothrips"
         },
         {
             "species": "Sericothrips bicornis",
-            "name": "???"
+            "name": "Sericothrips"
         },
         {
             "species": "Nanophyes gracilis",
-            "name": "???"
+            "name": "Nanophyes"
         },
         {
             "species": "Apion ebeninum",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion ervi",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion loti",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion subulatum",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Phytomyza heringiana",
-            "name": "???"
+            "name": "Phytomyza"
         },
         {
             "species": "Eupithecia insigniata",
-            "name": "???"
+            "name": "Eupithecia"
         },
         {
             "species": "Pasiphila rectangulata",
-            "name": "???"
+            "name": "Pasiphila"
         },
         {
             "species": "Coleophora serratella",
-            "name": "???"
+            "name": "Coleophora"
         },
         {
             "species": "Ceutorhynchus rugulosus",
-            "name": "???"
+            "name": "Ceutorhynchus"
         },
         {
             "species": "Gymnetron rostellum",
-            "name": "???"
+            "name": "Gymnetron"
         },
         {
             "species": "Pseudostyphlus pillumus",
-            "name": "???"
+            "name": "Pseudostyphlus"
         },
         {
             "species": "Olibrus aeneus",
-            "name": "???"
+            "name": "Olibrus"
         },
         {
             "species": "Trupanea stellata",
-            "name": "???"
+            "name": "Trupanea"
         },
         {
             "species": "Metopoplax ditomoides",
-            "name": "???"
+            "name": "Metopoplax"
         },
         {
             "species": "Brachycaudus cardui",
-            "name": "???"
+            "name": "Brachycaudus"
         },
         {
             "species": "Macrosiphoniella tapuskae",
-            "name": "???"
+            "name": "Macrosiphoniella"
         },
         {
             "species": "Cucullia chamomillae",
-            "name": "???"
+            "name": "Cucullia"
         },
         {
             "species": "Cochylidia implicitana",
-            "name": "???"
+            "name": "Cochylidia"
         },
         {
             "species": "Piercea luridana",
-            "name": "???"
+            "name": "Piercea"
         },
         {
             "species": "Rhopalomyia syngenesiae",
-            "name": "???"
+            "name": "Rhopalomyia"
         },
         {
             "species": "Apion confluens",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion laevigatum",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Eriophyes plicator",
-            "name": "???"
+            "name": "Eriophyes"
         },
         {
             "species": "Bryobia praetiosa",
-            "name": "???"
+            "name": "Bryobia"
         },
         {
             "species": "Subcoccinella vigintiquattuorpunctata",
-            "name": "???"
+            "name": "Subcoccinella"
         },
         {
             "species": "Tychius crassirostris",
-            "name": "???"
+            "name": "Tychius"
         },
         {
             "species": "Barypeithes pellucidus",
-            "name": "???"
+            "name": "Barypeithes"
         },
         {
             "species": "Sitona humeralis",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Sitona lepidus",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Sitona macularius",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Hypera fuscocinerea",
-            "name": "???"
+            "name": "Hypera"
         },
         {
             "species": "Hypera nigrirostris",
-            "name": "???"
+            "name": "Hypera"
         },
         {
             "species": "Hypera punctata",
-            "name": "???"
+            "name": "Hypera"
         },
         {
             "species": "Sminthurus viridis",
-            "name": "???"
+            "name": "Sminthurus"
         },
         {
             "species": "Agromyza frontella",
-            "name": "???"
+            "name": "Agromyza"
         },
         {
             "species": "Agromyza nana",
-            "name": "???"
+            "name": "Agromyza"
         },
         {
             "species": "Liriomyza congesta",
-            "name": "???"
+            "name": "Liriomyza"
         },
         {
             "species": "Asphondylia miki",
-            "name": "???"
+            "name": "Asphondylia"
         },
         {
             "species": "Contarinia medicaginis",
-            "name": "???"
+            "name": "Contarinia"
         },
         {
             "species": "Dasineura lupulinae",
-            "name": "???"
+            "name": "Dasineura"
         },
         {
             "species": "Dasineura medicaginis",
-            "name": "???"
+            "name": "Dasineura"
         },
         {
             "species": "Fabomyia medicaginis",
-            "name": "???"
+            "name": "Fabomyia"
         },
         {
             "species": "Jaapiella jaapiana",
-            "name": "???"
+            "name": "Jaapiella"
         },
         {
             "species": "Jaapiella medicaginis",
-            "name": "???"
+            "name": "Jaapiella"
         },
         {
             "species": "Chlamydatus pullus",
-            "name": "???"
+            "name": "Chlamydatus"
         },
         {
             "species": "Lygus rugulipennis",
-            "name": "???"
+            "name": "Lygus"
         },
         {
             "species": "Palomena prasina",
-            "name": "???"
+            "name": "Palomena"
         },
         {
             "species": "Aphis medicaginis",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Aporia crataegi",
-            "name": "???"
+            "name": "Aporia"
         },
         {
             "species": "Chiasma clathrata",
-            "name": "???"
+            "name": "Chiasma"
         },
         {
             "species": "Semiothisa clathrata",
-            "name": "???"
+            "name": "Semiothisa"
         },
         {
             "species": "Hada plebeja",
-            "name": "???"
+            "name": "Hada"
         },
         {
             "species": "Heliothis armigera",
-            "name": "???"
+            "name": "Heliothis"
         },
         {
             "species": "Tathorhynchus exsiccata",
-            "name": "???"
+            "name": "Tathorhynchus"
         },
         {
             "species": "Aproaerema anthyllidella",
-            "name": "???"
+            "name": "Aproaerema"
         },
         {
             "species": "Cydia medicaginis",
-            "name": "???"
+            "name": "Cydia"
         },
         {
             "species": "Cnephasia genitalana",
-            "name": "???"
+            "name": "Cnephasia"
         },
         {
             "species": "Apion filirostre",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion pisi",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion seniculus",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion tenue",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Chrysolina banksi",
-            "name": "???"
+            "name": "Chrysolina"
         },
         {
             "species": "Chrysolina menthastri",
-            "name": "???"
+            "name": "Chrysolina"
         },
         {
             "species": "Longitarsus ferrugineus",
-            "name": "???"
+            "name": "Longitarsus"
         },
         {
             "species": "Phytomyza petoei",
-            "name": "???"
+            "name": "Phytomyza"
         },
         {
             "species": "Liocoris tripustulatus",
-            "name": "???"
+            "name": "Liocoris"
         },
         {
             "species": "Ovatus mentharius",
-            "name": "???"
+            "name": "Ovatus"
         },
         {
             "species": "Scopula ornata",
-            "name": "???"
+            "name": "Scopula"
         },
         {
             "species": "Diachrysia chrysitis",
-            "name": "???"
+            "name": "Diachrysia"
         },
         {
             "species": "Diachrysia chryson",
-            "name": "???"
+            "name": "Diachrysia"
         },
         {
             "species": "Endothenia quadrimaculana",
-            "name": "???"
+            "name": "Endothenia"
         },
         {
             "species": "Cassida viridis",
-            "name": "???"
+            "name": "Cassida"
         },
         {
             "species": "Meligethes incanus",
-            "name": "???"
+            "name": "Meligethes"
         },
         {
             "species": "Meligethes umbrosus",
-            "name": "???"
+            "name": "Meligethes"
         },
         {
             "species": "Wachtliella stachydis",
-            "name": "???"
+            "name": "Wachtliella"
         },
         {
             "species": "Eupteryx aurata",
-            "name": "???"
+            "name": "Eupteryx"
         },
         {
             "species": "Eupteryx melissae",
-            "name": "???"
+            "name": "Eupteryx"
         },
         {
             "species": "Udea fulvalis",
-            "name": "???"
+            "name": "Udea"
         },
         {
             "species": "Apion vicinum",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Eriophyes thomasi",
-            "name": "???"
+            "name": "Eriophyes"
         },
         {
             "species": "Phytoptus origani",
-            "name": "???"
+            "name": "Phytoptus"
         },
         {
             "species": "Chrysolina polita",
-            "name": "???"
+            "name": "Chrysolina"
         },
         {
             "species": "Longitarsus obliteratus",
-            "name": "???"
+            "name": "Longitarsus"
         },
         {
             "species": "Aphthona atratula",
-            "name": "???"
+            "name": "Aphthona"
         },
         {
             "species": "Meligethes lugubris",
-            "name": "???"
+            "name": "Meligethes"
         },
         {
             "species": "Phytomyza origani",
-            "name": "???"
+            "name": "Phytomyza"
         },
         {
             "species": "Blastomyia origani",
-            "name": "???"
+            "name": "Blastomyia"
         },
         {
             "species": "Eupteryx origani",
-            "name": "???"
+            "name": "Eupteryx"
         },
         {
             "species": "Sehirus dubius",
-            "name": "???"
+            "name": "Sehirus"
         },
         {
             "species": "Aphis origani",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Kaltenbachiella pallida",
-            "name": "???"
+            "name": "Kaltenbachiella"
         },
         {
             "species": "Tenthredo marginella",
-            "name": "???"
+            "name": "Tenthredo"
         },
         {
             "species": "Lycaena phlaeas",
-            "name": "???"
+            "name": "Lycaena"
         },
         {
             "species": "Maculinea arion",
-            "name": "???"
+            "name": "Maculinea"
         },
         {
             "species": "Plebicula dorylas",
-            "name": "???"
+            "name": "Plebicula"
         },
         {
             "species": "Colostygia pectinataria",
-            "name": "???"
+            "name": "Colostygia"
         },
         {
             "species": "Eupithecia distinctaria",
-            "name": "???"
+            "name": "Eupithecia"
         },
         {
             "species": "Eupithecia subumbrata",
-            "name": "???"
+            "name": "Eupithecia"
         },
         {
             "species": "Gymnoscelis rufifasciata",
-            "name": "???"
+            "name": "Gymnoscelis"
         },
         {
             "species": "Scopula immorata",
-            "name": "???"
+            "name": "Scopula"
         },
         {
             "species": "Scopula nigropunctata",
-            "name": "???"
+            "name": "Scopula"
         },
         {
             "species": "Mythimna albipuncta",
-            "name": "???"
+            "name": "Mythimna"
         },
         {
             "species": "Coleophora albitarsella",
-            "name": "???"
+            "name": "Coleophora"
         },
         {
             "species": "Acompsia cinerella",
-            "name": "???"
+            "name": "Acompsia"
         },
         {
             "species": "Psamathocrita osseella",
-            "name": "???"
+            "name": "Psamathocrita"
         },
         {
             "species": "Reuttia subocellea",
-            "name": "???"
+            "name": "Reuttia"
         },
         {
             "species": "Telephila schmidtiellus",
-            "name": "???"
+            "name": "Telephila"
         },
         {
             "species": "Thiotricha subocellea",
-            "name": "???"
+            "name": "Thiotricha"
         },
         {
             "species": "Pterophorus baliodactylus",
-            "name": "???"
+            "name": "Pterophorus"
         },
         {
             "species": "Pempelia obductella",
-            "name": "???"
+            "name": "Pempelia"
         },
         {
             "species": "Microstega pandalis",
-            "name": "???"
+            "name": "Microstega"
         },
         {
             "species": "Pyrausta aurata",
-            "name": "???"
+            "name": "Pyrausta"
         },
         {
             "species": "Pyrausta nigrata",
-            "name": "???"
+            "name": "Pyrausta"
         },
         {
             "species": "Thrips origani",
-            "name": "???"
+            "name": "Thrips"
         },
         {
             "species": "Eupoecilia angustana",
-            "name": "???"
+            "name": "Eupoecilia"
         },
         {
             "species": "Apion flavimanum",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Euleia heraclei",
-            "name": "???"
+            "name": "Euleia"
         },
         {
             "species": "Callosobruchus maculatus",
-            "name": "???"
+            "name": "Callosobruchus"
         },
         {
             "species": "Acanthoscelides obtectus",
-            "name": "???"
+            "name": "Acanthoscelides"
         },
         {
             "species": "Zabrotes subfasciatus",
-            "name": "???"
+            "name": "Zabrotes"
         },
         {
             "species": "Lampides boeticus",
-            "name": "???"
+            "name": "Lampides"
         },
         {
             "species": "Maruca testulalis",
-            "name": "???"
+            "name": "Maruca"
         },
         {
             "species": "Bruchus atomarius",
-            "name": "???"
+            "name": "Bruchus"
         },
         {
             "species": "Bruchus pisorum",
-            "name": "???"
+            "name": "Bruchus"
         },
         {
             "species": "Bruchus rufimanus",
-            "name": "???"
+            "name": "Bruchus"
         },
         {
             "species": "Bruchus rufipes",
-            "name": "???"
+            "name": "Bruchus"
         },
         {
             "species": "Callosobruchus analis",
-            "name": "???"
+            "name": "Callosobruchus"
         },
         {
             "species": "Derocrepis rufipes",
-            "name": "???"
+            "name": "Derocrepis"
         },
         {
             "species": "Tychius quinquepunctatus",
-            "name": "???"
+            "name": "Tychius"
         },
         {
             "species": "Philopedon plagiatus",
-            "name": "???"
+            "name": "Philopedon"
         },
         {
             "species": "Sitona striatellus",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Aclypea opaca",
-            "name": "???"
+            "name": "Aclypea"
         },
         {
             "species": "Agromyza lathyri",
-            "name": "???"
+            "name": "Agromyza"
         },
         {
             "species": "Liriomyza pisivora",
-            "name": "???"
+            "name": "Liriomyza"
         },
         {
             "species": "Ophiomyia orbiculata",
-            "name": "???"
+            "name": "Ophiomyia"
         },
         {
             "species": "Clinodiplosis cilicrus",
-            "name": "???"
+            "name": "Clinodiplosis"
         },
         {
             "species": "Contarinia pisi",
-            "name": "???"
+            "name": "Contarinia"
         },
         {
             "species": "Caradrina clavipalpis",
-            "name": "???"
+            "name": "Caradrina"
         },
         {
             "species": "Paradrina clavipalpis",
-            "name": "???"
+            "name": "Paradrina"
         },
         {
             "species": "Autographa gamma",
-            "name": "???"
+            "name": "Autographa"
         },
         {
             "species": "Cydia lunulana",
-            "name": "???"
+            "name": "Cydia"
         },
         {
             "species": "Cydia nigricana",
-            "name": "???"
+            "name": "Cydia"
         },
         {
             "species": "Cydia orobana",
-            "name": "???"
+            "name": "Cydia"
         },
         {
             "species": "Kakothrips pisivorus",
-            "name": "???"
+            "name": "Kakothrips"
         },
         {
             "species": "Myzus certus",
-            "name": "???"
+            "name": "Myzus"
         },
         {
             "species": "Ceroplastes ceriferus",
-            "name": "???"
+            "name": "Ceroplastes"
         },
         {
             "species": "Chloropulvinaria psidii",
-            "name": "???"
+            "name": "Chloropulvinaria"
         },
         {
             "species": "Parasaissetia nigra",
-            "name": "???"
+            "name": "Parasaissetia"
         },
         {
             "species": "Hemiberlesia lataniae",
-            "name": "???"
+            "name": "Hemiberlesia"
         },
         {
             "species": "Lepidosaphes conchyformis",
-            "name": "???"
+            "name": "Lepidosaphes"
         },
         {
             "species": "Pinnaspis buxi",
-            "name": "???"
+            "name": "Pinnaspis"
         },
         {
             "species": "Dysgonia algira",
-            "name": "???"
+            "name": "Dysgonia"
         },
         {
             "species": "Cryptoblabes gnidiella",
-            "name": "???"
+            "name": "Cryptoblabes"
         },
         {
             "species": "Euzophera bigella",
-            "name": "???"
+            "name": "Euzophera"
         },
         {
             "species": "Scrobipalpa instabilella",
-            "name": "???"
+            "name": "Scrobipalpa"
         },
         {
             "species": "Scrobipalpa salinella",
-            "name": "???"
+            "name": "Scrobipalpa"
         },
         {
             "species": "Siteroptes cerealium",
-            "name": "???"
+            "name": "Siteroptes"
         },
         {
             "species": "Agromyza cinerascens",
-            "name": "???"
+            "name": "Agromyza"
         },
         {
             "species": "Agromyza nigrociliata",
-            "name": "???"
+            "name": "Agromyza"
         },
         {
             "species": "Delia coarctata",
-            "name": "???"
+            "name": "Delia"
         },
         {
             "species": "Contarinia tritici",
-            "name": "???"
+            "name": "Contarinia"
         },
         {
             "species": "Opomyza florum",
-            "name": "???"
+            "name": "Opomyza"
         },
         {
             "species": "Trachelus tabidus",
-            "name": "???"
+            "name": "Trachelus"
         },
         {
             "species": "Trachelus troglodyta",
-            "name": "???"
+            "name": "Trachelus"
         },
         {
             "species": "Evergestis extimalis",
-            "name": "???"
+            "name": "Evergestis"
         },
         {
             "species": "Leptinotarsa decemlineata",
-            "name": "???"
+            "name": "Leptinotarsa"
         },
         {
             "species": "Epitrix pubescens",
-            "name": "???"
+            "name": "Epitrix"
         },
         {
             "species": "Asterodiaspis pustulans",
-            "name": "???"
+            "name": "Asterodiaspis"
         },
         {
             "species": "Saissetia coffeae",
-            "name": "???"
+            "name": "Saissetia"
         },
         {
             "species": "Orthezia insignis",
-            "name": "???"
+            "name": "Orthezia"
         },
         {
             "species": "Euzophera osseatella",
-            "name": "???"
+            "name": "Euzophera"
         },
         {
             "species": "Leucinodes orbonalis",
-            "name": "???"
+            "name": "Leucinodes"
         },
         {
             "species": "Aculops lycopersici",
-            "name": "???"
+            "name": "Aculops"
         },
         {
             "species": "Perlohmannia dissimilis",
-            "name": "???"
+            "name": "Perlohmannia"
         },
         {
             "species": "Psylliodes affinis",
-            "name": "???"
+            "name": "Psylliodes"
         },
         {
             "species": "Selatosomus aeneus",
-            "name": "???"
+            "name": "Selatosomus"
         },
         {
             "species": "Campylomma verbasci",
-            "name": "???"
+            "name": "Campylomma"
         },
         {
             "species": "Dicyphus epilobii",
-            "name": "???"
+            "name": "Dicyphus"
         },
         {
             "species": "Lygocoris pabulinus",
-            "name": "???"
+            "name": "Lygocoris"
         },
         {
             "species": "Saissetia oleae",
-            "name": "???"
+            "name": "Saissetia"
         },
         {
             "species": "Aspidiotus hederae",
-            "name": "???"
+            "name": "Aspidiotus"
         },
         {
             "species": "Jacksonia papillata",
-            "name": "???"
+            "name": "Jacksonia"
         },
         {
             "species": "Aphis beccabungae",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Aphis nasturtii",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Smynthurodes betae",
-            "name": "???"
+            "name": "Smynthurodes"
         },
         {
             "species": "Pachyprotasis variegata",
-            "name": "???"
+            "name": "Pachyprotasis"
         },
         {
             "species": "Hepialus humuli",
-            "name": "???"
+            "name": "Hepialus"
         },
         {
             "species": "Xestia rhomboidea",
-            "name": "???"
+            "name": "Xestia"
         },
         {
             "species": "Manduca quinquemaculatus",
-            "name": "???"
+            "name": "Manduca"
         },
         {
             "species": "Phthorimaea operculella",
-            "name": "???"
+            "name": "Phthorimaea"
         },
         {
             "species": "Pthorimaea operculella",
-            "name": "???"
+            "name": "Pthorimaea"
         },
         {
             "species": "Scrobipalpa costella",
-            "name": "???"
+            "name": "Scrobipalpa"
         },
         {
             "species": "Gryllotalpa gryllotalpa",
-            "name": "???"
+            "name": "Gryllotalpa"
         },
         {
             "species": "Homoeosoma nimbella",
-            "name": "???"
+            "name": "Homoeosoma"
         },
         {
             "species": "Chrysolina graminis",
-            "name": "???"
+            "name": "Chrysolina"
         },
         {
             "species": "Longitarsus suturellus",
-            "name": "???"
+            "name": "Longitarsus"
         },
         {
             "species": "Trypeta artemisiae",
-            "name": "???"
+            "name": "Trypeta"
         },
         {
             "species": "Blastobasis decolorella",
-            "name": "???"
+            "name": "Blastobasis"
         },
         {
             "species": "Isophrictis striatella",
-            "name": "???"
+            "name": "Isophrictis"
         },
         {
             "species": "Depressaria emeritella",
-            "name": "???"
+            "name": "Depressaria"
         },
         {
             "species": "Platyptilia ochrodactyla",
-            "name": "???"
+            "name": "Platyptilia"
         },
         {
             "species": "Homoeosoma nebulella",
-            "name": "???"
+            "name": "Homoeosoma"
         },
         {
             "species": "Celypha rufana",
-            "name": "???"
+            "name": "Celypha"
         },
         {
             "species": "Dichrorampha acuminatana",
-            "name": "???"
+            "name": "Dichrorampha"
         },
         {
             "species": "Dichrorampha flavidorsana",
-            "name": "???"
+            "name": "Dichrorampha"
         },
         {
             "species": "Dichrorampha petiverella",
-            "name": "???"
+            "name": "Dichrorampha"
         },
         {
             "species": "Dichrorampha sedatana",
-            "name": "???"
+            "name": "Dichrorampha"
         },
         {
             "species": "Dichrorampha senectana",
-            "name": "???"
+            "name": "Dichrorampha"
         },
         {
             "species": "Cassida rubiginosa",
-            "name": "???"
+            "name": "Cassida"
         },
         {
             "species": "Cassida sanguinosa",
-            "name": "???"
+            "name": "Cassida"
         },
         {
             "species": "Chrysolina americana",
-            "name": "???"
+            "name": "Chrysolina"
         },
         {
             "species": "Bayeria thymicola",
-            "name": "???"
+            "name": "Bayeria"
         },
         {
             "species": "Bayeriola thymicola",
-            "name": "???"
+            "name": "Bayeriola"
         },
         {
             "species": "Dasineura leguminicola",
-            "name": "???"
+            "name": "Dasineura"
         },
         {
             "species": "Apion virens",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Eriophyes plicator-trifolii",
-            "name": "???"
+            "name": "Eriophyes"
         },
         {
             "species": "Bruchidius varius",
-            "name": "???"
+            "name": "Bruchidius"
         },
         {
             "species": "Orsodacne lineola",
-            "name": "???"
+            "name": "Orsodacne"
         },
         {
             "species": "Miccotrogus picirostris",
-            "name": "???"
+            "name": "Miccotrogus"
         },
         {
             "species": "Tychius lineatulus",
-            "name": "???"
+            "name": "Tychius"
         },
         {
             "species": "Tychius polylineatus",
-            "name": "???"
+            "name": "Tychius"
         },
         {
             "species": "Tychius stephensi",
-            "name": "???"
+            "name": "Tychius"
         },
         {
             "species": "Campylomyza ormerodi",
-            "name": "???"
+            "name": "Campylomyza"
         },
         {
             "species": "Dasineura gentneri",
-            "name": "???"
+            "name": "Dasineura"
         },
         {
             "species": "Dasineura trifolii",
-            "name": "???"
+            "name": "Dasineura"
         },
         {
             "species": "Giardomyia britannica",
-            "name": "???"
+            "name": "Giardomyia"
         },
         {
             "species": "Hadrobremia longiventris",
-            "name": "???"
+            "name": "Hadrobremia"
         },
         {
             "species": "Hadrobremia trifolii",
-            "name": "???"
+            "name": "Hadrobremia"
         },
         {
             "species": "Mycodiplosis inimica",
-            "name": "???"
+            "name": "Mycodiplosis"
         },
         {
             "species": "Tricholaba barnesi",
-            "name": "???"
+            "name": "Tricholaba"
         },
         {
             "species": "Tricholaba trifolii",
-            "name": "???"
+            "name": "Tricholaba"
         },
         {
             "species": "Philaenus spumarius",
-            "name": "???"
+            "name": "Philaenus"
         },
         {
             "species": "Ceraleptus lividus",
-            "name": "???"
+            "name": "Ceraleptus"
         },
         {
             "species": "Brachycaudus helichrysi",
-            "name": "???"
+            "name": "Brachycaudus"
         },
         {
             "species": "Nearctaphis bakeri",
-            "name": "???"
+            "name": "Nearctaphis"
         },
         {
             "species": "Aphis coronillae",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Therioaphis luteola",
-            "name": "???"
+            "name": "Therioaphis"
         },
         {
             "species": "Cyaniris semiargus",
-            "name": "???"
+            "name": "Cyaniris"
         },
         {
-            "species": "Polyommatus (Cyaniris)",
-            "name": "???"
+            "species": "Polyommatus (cyaniris)",
+            "name": "Polyommatus"
         },
         {
             "species": "Orthosia gothica",
-            "name": "???"
+            "name": "Orthosia"
         },
         {
             "species": "Coleophora deauratella",
-            "name": "???"
+            "name": "Coleophora"
         },
         {
             "species": "Parectopa ononidis",
-            "name": "???"
+            "name": "Parectopa"
         },
         {
             "species": "Apion apricans",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion assimile",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion dichroum",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion dissimile",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion nigritarse",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion trifolii",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion varipes",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Meligethes nigrescens",
-            "name": "???"
+            "name": "Meligethes"
         },
         {
             "species": "Brachineura squamigera",
-            "name": "???"
+            "name": "Brachineura"
         },
         {
             "species": "Berytinus minor",
-            "name": "???"
+            "name": "Berytinus"
         },
         {
             "species": "Chlamydatus saltitans",
-            "name": "???"
+            "name": "Chlamydatus"
         },
         {
             "species": "Subacyrthosiphon cryptobius",
-            "name": "???"
+            "name": "Subacyrthosiphon"
         },
         {
             "species": "Tenthredo schaefferi",
-            "name": "???"
+            "name": "Tenthredo"
         },
         {
             "species": "Hipparchia semele",
-            "name": "???"
+            "name": "Hipparchia"
         },
         {
             "species": "Melanchra persicariae",
-            "name": "???"
+            "name": "Melanchra"
         },
         {
             "species": "Coleophora frischella",
-            "name": "???"
+            "name": "Coleophora"
         },
         {
             "species": "Coleophora mayrella",
-            "name": "???"
+            "name": "Coleophora"
         },
         {
             "species": "Apion curtisi",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion laevicolle",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Psylliodes luteola",
-            "name": "???"
+            "name": "Psylliodes"
         },
         {
             "species": "Helophorus nubilis",
-            "name": "???"
+            "name": "Helophorus"
         },
         {
             "species": "Agromyza mobilis",
-            "name": "???"
+            "name": "Agromyza"
         },
         {
             "species": "Phorbia fumigata",
-            "name": "???"
+            "name": "Phorbia"
         },
         {
             "species": "Phorbia securis",
-            "name": "???"
+            "name": "Phorbia"
         },
         {
             "species": "Bibio ferruginatus",
-            "name": "???"
+            "name": "Bibio"
         },
         {
             "species": "Bibio hortulanus",
-            "name": "???"
+            "name": "Bibio"
         },
         {
             "species": "Bibio johannis",
-            "name": "???"
+            "name": "Bibio"
         },
         {
             "species": "Meromyza saltatrix",
-            "name": "???"
+            "name": "Meromyza"
         },
         {
             "species": "Oscinella pusilla",
-            "name": "???"
+            "name": "Oscinella"
         },
         {
             "species": "Geomyza tripunctata",
-            "name": "???"
+            "name": "Geomyza"
         },
         {
             "species": "Javesella pellucida",
-            "name": "???"
+            "name": "Javesella"
         },
         {
             "species": "Sitobion avenae",
-            "name": "???"
+            "name": "Sitobion"
         },
         {
             "species": "Laingia psammae",
-            "name": "???"
+            "name": "Laingia"
         },
         {
             "species": "Anoecia willcocksi",
-            "name": "???"
+            "name": "Anoecia"
         },
         {
             "species": "Mesopolobus graminum",
-            "name": "???"
+            "name": "Mesopolobus"
         },
         {
             "species": "Cephus pygmeus",
-            "name": "???"
+            "name": "Cephus"
         },
         {
             "species": "Sitotroga cerealella",
-            "name": "???"
+            "name": "Sitotroga"
         },
         {
             "species": "Scaptomyza flava",
-            "name": "???"
+            "name": "Scaptomyza"
         },
         {
             "species": "Phalera bucephala",
-            "name": "???"
+            "name": "Phalera"
         },
         {
             "species": "Lixus algirus",
-            "name": "???"
+            "name": "Lixus"
         },
         {
             "species": "Lixus angustatus",
-            "name": "???"
+            "name": "Lixus"
         },
         {
             "species": "Melanagromyza fabae",
-            "name": "???"
+            "name": "Melanagromyza"
         },
         {
             "species": "Megoura viciae",
-            "name": "???"
+            "name": "Megoura"
         },
         {
             "species": "Apion pomonae",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion spencii",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion vorax",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Sitona suturalis",
-            "name": "???"
+            "name": "Sitona"
         },
         {
             "species": "Contarinia craccae",
-            "name": "???"
+            "name": "Contarinia"
         },
         {
             "species": "Dasineura viciae",
-            "name": "???"
+            "name": "Dasineura"
         },
         {
             "species": "Tricholaba similis",
-            "name": "???"
+            "name": "Tricholaba"
         },
         {
             "species": "Aphis craccae",
-            "name": "???"
+            "name": "Aphis"
         },
         {
             "species": "Apion afer",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Apion cerdo",
-            "name": "???"
+            "name": "Apion"
         },
         {
             "species": "Diabrotica virgifera",
-            "name": "???"
+            "name": "Diabrotica"
         },
         {
             "species": "Melanotus punctolineatus",
-            "name": "???"
+            "name": "Melanotus"
         },
         {
             "species": "Glischrochilus hortensis",
-            "name": "???"
+            "name": "Glischrochilus"
         },
         {
             "species": "Metopolophium dirhodum",
-            "name": "???"
+            "name": "Metopolophium"
         },
         {
             "species": "Hippotion celerio",
-            "name": "???"
+            "name": "Hippotion"
         },
         {
             "species": "Hymenia recurvalis",
-            "name": "???"
+            "name": "Hymenia"
         },
         {
             "species": "Agathis vulgaris",
-            "name": "???"
+            "name": "Agathis"
         },
         {
             "species": "Lycaena helloides",
-            "name": "???"
+            "name": "Lycaena"
         },
         {
             "species": "Gnophaela vermiculata",
-            "name": "???"
+            "name": "Gnophaela"
         },
         {
             "species": "Panzeria ampelus",
-            "name": "???"
+            "name": "Panzeria"
         },
         {
             "species": "Synanthedon albicornis",
-            "name": "???"
+            "name": "Synanthedon"
         },
         {
             "species": "Terellia occidentalis",
-            "name": "???"
+            "name": "Terellia"
         },
         {
             "species": "Glaucopsyche lygdamus",
-            "name": "???"
+            "name": "Glaucopsyche"
         },
         {
             "species": "Celastrina neglecta",
-            "name": "???"
+            "name": "Celastrina"
         },
         {
             "species": "Speyeria coronis",
-            "name": "???"
+            "name": "Speyeria"
         },
         {
             "species": "Coenonympha tullia",
-            "name": "???"
+            "name": "Coenonympha"
         },
         {
-            "species": "Euchloe ausonides ausonides",
-            "name": "???"
+            "species": "Euchloe ausonides",
+            "name": "Euchloe"
         },
         {
             "species": "Junonia coenia",
-            "name": "???"
+            "name": "Junonia"
         },
         {
             "species": "Lycaena xanthoides",
-            "name": "???"
+            "name": "Lycaena"
         },
         {
             "species": "Papilio zelicaon",
-            "name": "???"
+            "name": "Papilio"
         },
         {
             "species": "Plebejus acmon",
-            "name": "???"
+            "name": "Plebejus"
         },
         {
             "species": "Satyrium sylvinus",
-            "name": "???"
+            "name": "Satyrium"
         },
         {
             "species": "Nannotrigona perilampoides",
-            "name": "???"
+            "name": "Nannotrigona"
         },
         {
             "species": "Polites themistocles",
-            "name": "???"
+            "name": "Polites"
         },
         {
             "species": "Pyrgus communis",
-            "name": "???"
+            "name": "Pyrgus"
         },
         {
             "species": "Atalopedes campestris",
-            "name": "???"
+            "name": "Atalopedes"
         },
         {
             "species": "Colias philodice",
-            "name": "???"
+            "name": "Colias"
         },
         {
             "species": "Danaus plexippus",
-            "name": "???"
+            "name": "Danaus"
         },
         {
             "species": "Pontia protodice",
-            "name": "???"
+            "name": "Pontia"
         },
         {
             "species": "Vanessa cardui",
-            "name": "???"
+            "name": "Vanessa"
         },
         {
             "species": "Nannotrigona testaceicornis",
-            "name": "???"
+            "name": "Nannotrigona"
         },
         {
             "species": "Peponapis pruinosa",
-            "name": "???"
+            "name": "Peponapis"
         },
         {
             "species": "Xenoglossa strenua",
-            "name": "???"
+            "name": "Xenoglossa"
         },
         {
             "species": "Sphecid wasp",
-            "name": "???"
+            "name": "Sphecid"
         },
         {
             "species": "Syritta hoverflies",
-            "name": "???"
+            "name": "Syritta"
         },
         {
             "species": "Musca domestica",
-            "name": "???"
+            "name": "Musca"
         },
         {
             "species": "Chlosyne lacinia",
-            "name": "???"
+            "name": "Chlosyne"
         },
         {
             "species": "Vanessa virginiensis",
-            "name": "???"
+            "name": "Vanessa"
         },
         {
             "species": "Apis cerana",
-            "name": "???"
+            "name": "Apis"
         },
         {
             "species": "Apis dorsata",
-            "name": "???"
+            "name": "Apis"
         },
         {
             "species": "Apis florea",
-            "name": "???"
+            "name": "Apis"
         },
         {
             "species": "Speyeria nokomis",
-            "name": "???"
+            "name": "Speyeria"
         },
         {
             "species": "Chlosyne gorgone",
-            "name": "???"
+            "name": "Chlosyne"
         },
         {
-            "species": "Hesperia leonardus pawnee",
-            "name": "???"
+            "species": "Hesperia leonardus",
+            "name": "Hesperia"
         },
         {
             "species": "Papilio multicaudata",
-            "name": "???"
+            "name": "Papilio"
         },
         {
             "species": "Phyciodes tharos",
-            "name": "???"
+            "name": "Phyciodes"
         },
         {
             "species": "Camponotus micans",
-            "name": "???"
+            "name": "Camponotus"
         },
         {
             "species": "Aglais milberti",
-            "name": "???"
+            "name": "Aglais"
         },
         {
             "species": "Amblyscirtes aenus",
-            "name": "???"
+            "name": "Amblyscirtes"
         },
         {
             "species": "Amblyscirtes vialis",
-            "name": "???"
+            "name": "Amblyscirtes"
         },
         {
-            "species": "Anatrytone logan lagus",
-            "name": "???"
-        },
-        {
-            "species": "Anatrytone logan logan",
-            "name": "???"
+            "species": "Anatrytone logan",
+            "name": "Anatrytone"
         },
         {
             "species": "Ancyloxypha numitor",
-            "name": "???"
+            "name": "Ancyloxypha"
         },
         {
             "species": "Speyeria aphrodite",
-            "name": "???"
+            "name": "Speyeria"
         },
         {
             "species": "Speyeria callippe",
-            "name": "???"
+            "name": "Speyeria"
         },
         {
             "species": "Speyeria cybele",
-            "name": "???"
+            "name": "Speyeria"
         },
         {
             "species": "Colias eurytheme",
-            "name": "???"
+            "name": "Colias"
         },
         {
             "species": "Plebejus icarioides",
-            "name": "???"
+            "name": "Plebejus"
         },
         {
             "species": "Speyeria hesperis",
-            "name": "???"
+            "name": "Speyeria"
         },
         {
             "species": "Cercyonis pegala",
-            "name": "???"
+            "name": "Cercyonis"
         },
         {
             "species": "Lycaena arota",
-            "name": "???"
+            "name": "Lycaena"
         },
         {
             "species": "Ochlodes sylvanoides",
-            "name": "???"
+            "name": "Ochlodes"
         },
         {
             "species": "Aglais uritcae",
-            "name": "???"
+            "name": "Aglais"
         },
         {
             "species": "Epargyreus clarus",
-            "name": "???"
+            "name": "Epargyreus"
         },
         {
             "species": "Nathalis iole",
-            "name": "???"
+            "name": "Nathalis"
         },
         {
             "species": "Thorybes pylades",
-            "name": "???"
+            "name": "Thorybes"
         },
         {
             "species": "Copaeodes aurantiaca",
-            "name": "???"
+            "name": "Copaeodes"
         },
         {
-            "species": "Erynnis tristis tatius",
-            "name": "???"
+            "species": "Erynnis tristis",
+            "name": "Erynnis"
         },
         {
             "species": "Abaeis nicippe",
-            "name": "???"
+            "name": "Abaeis"
         },
         {
             "species": "Neophasia menapia",
-            "name": "???"
+            "name": "Neophasia"
         },
         {
             "species": "Pontia occidentalis",
-            "name": "???"
+            "name": "Pontia"
         },
         {
             "species": "Euptoieta claudia",
-            "name": "???"
+            "name": "Euptoieta"
         },
         {
             "species": "Polites peckius",
-            "name": "???"
+            "name": "Polites"
         },
         {
             "species": "Bombus terrestris",
-            "name": "???"
+            "name": "Bombus"
         },
         {
             "species": "Bombus lapidarius",
-            "name": "???"
+            "name": "Bombus"
         },
         {
             "species": "Bombus sylvarum",
-            "name": "???"
+            "name": "Bombus"
         },
         {
             "species": "Megachile willoughbiella",
-            "name": "???"
+            "name": "Megachile"
         },
         {
             "species": "Hylaeus gibbus",
-            "name": "???"
+            "name": "Hylaeus"
         },
         {
             "species": "Lasioglossum morio",
-            "name": "???"
+            "name": "Lasioglossum"
         },
         {
             "species": "Bombus impatiens",
-            "name": "???"
+            "name": "Bombus"
         },
         {
             "species": "Augochloropsis metallica",
-            "name": "???"
+            "name": "Augochloropsis"
         },
         {
-            "species": "Speyeria atlantis sorocko",
-            "name": "???"
+            "species": "Speyeria atlantis",
+            "name": "Speyeria"
         },
         {
             "species": "Speyeria edwardsii",
-            "name": "???"
+            "name": "Speyeria"
         },
         {
             "species": "Speyeria mormonia",
-            "name": "???"
+            "name": "Speyeria"
         },
         {
             "species": "Cupido comyntas",
-            "name": "???"
+            "name": "Cupido"
         },
         {
             "species": "Echinargus isola",
-            "name": "???"
+            "name": "Echinargus"
         },
         {
             "species": "Hyles lineata",
-            "name": "???"
+            "name": "Hyles"
         }
     ]
 }
