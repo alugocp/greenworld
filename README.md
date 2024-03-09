@@ -2,7 +2,7 @@
 This is LugoCorp's companion planting data warehouse research project.
 The purpose of this project is to identify potential companion plant groups (a.k.a. `guilds`).
 
-**Note:** This project targets `Python 3.11`
+**Note:** This project targets `Python 3.11.8` via PyEnv
 
 ## Algorithm design
 The core algorithm looks at every combination of plants and generates a compatibility report for each one.
@@ -10,13 +10,30 @@ Pairwise compatibility is determined by morphology, nutrients, non-plant relatio
 A compatibility report consists of a set of suggested ranges to keep between two planted species.
 
 ## Setup
+This Python project uses PyEnv for version control and has several dependencies.
+Here is how you install them all:
+```bash
+# Install PyEnv
+curl https://pyenv.run | bash
+
+# You may need to run this line on Linux systems if _sqlite3 is missing
+# (uninstall the project version of Python, then run this, then reinstall Python)
+sudo apt install libsqlite3-dev
+
+# Install the project's Python version
+pyenv install 3.11.8
+
+# Add the PyEnv hooks to your ~/.bashrc script if you'd like,
+# just make sure that you're on the right version of Python
+
+# Install all dependencies
+python -m pip install -r requirements.txt
+npm install
+```
+
 This project uses a Postgres database hosted in Docker.
 You must do the following in order to set it up:
 ```bash
-# Install all dependencies
-python3 -m pip install -r requirements.txt
-npm install
-
 # Record a database password
 echo "PASSWORD=<SOME PASSWORD HERE>" > .env
 

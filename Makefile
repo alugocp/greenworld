@@ -1,6 +1,6 @@
 SCRIPTS := $(patsubst greenworld/scripts/%.py,%,$(shell ls greenworld/scripts/*.py))
 ENV := PYTHONPATH=.
-PYTHON := python3
+PYTHON := python
 NPM_BIN := ./node_modules/.bin
 COMMA:= ,
 EMPTY:=

@@ -12,7 +12,7 @@ from greenworld import defs
 # Prints helpful information to the terminal
 def print_help():
     print(
-        "Usage: python3 enter [file [...]]",
+        "Usage: python greenworld/scripts/enter.py [file [...]]",
         "This command inserts all data from the given JSON file(s) into the Greenworld database.",
         "Each file must follow the structure defined in README.md",
         sep="\n",
