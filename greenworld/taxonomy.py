@@ -1,6 +1,7 @@
 """
 Scientific species name parsing logic
 """
+import re
 from enum import IntEnum, unique
 from typing import Optional, Self
 
@@ -15,6 +16,7 @@ class TaxonParseState(IntEnum):
     SPECIES = 1
     EXTRA = 2
     SEARCHING = 3
+    HYBRID = 4
 
 
 class Taxon:
@@ -46,17 +48,36 @@ class Taxon:
 
             # Search for signifiers
             if state == TaxonParseState.SEARCHING:
-                if part in ["c.", "cv.", "var.", "v."]:
+                if part == "x":
+                    self.extra = "x"
+                    state = TaxonParseState.HYBRID
+                    continue
+                elif part in ["c.", "cv.", "var.", "v."]:
                     self.extra = f"{self.extra} {part}"
                     state = TaxonParseState.EXTRA
 
+            if state == TaxonParseState.HYBRID:
+                if re.match("^[a-z]\.$", part) or part == self.genus.lower():
+                    self.extra = f"{self.extra} {self.genus}"
+                    state = TaxonParseState.EXTRA
+                else:
+                    if self.species:
+                        self.extra = f"{self.extra} {self.genus} {part}"
+                    else:
+                        self.extra = f"{self.extra} {part}"
+                    state = TaxonParseState.SEARCHING
+
             # Parse the species name
             if state == TaxonParseState.SPECIES:
-                if part in ["sp.", "spp."]:
+                if part == "x":
+                    self.extra = "x"
+                    state = TaxonParseState.HYBRID
+                elif part in ["sp.", "spp."]:
                     self.species = "spp."
+                    state = TaxonParseState.SEARCHING
                 else:
                     self.species = part
-                state = TaxonParseState.SEARCHING
+                    state = TaxonParseState.SEARCHING
 
             # Parse the genus name
             if state == TaxonParseState.GENUS:

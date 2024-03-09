@@ -45,6 +45,24 @@ class TaxonomyCase(unittest.TestCase):
             taxon.parse("zea spp.").format(), "Zea spp."
         )
 
+    def test_hybrid_species_parse(self):
+        """
+        Tests hybrid species notation
+        """
+        taxon = Taxon()
+        self.assertEqual(
+            taxon.parse("Musa x paradisiaca").format(), "Musa x paradisiaca"
+        )
+        self.assertEqual(
+            taxon.parse("Musa acuminata x M. balbisiana").format(), "Musa acuminata x Musa balbisiana"
+        )
+        self.assertEqual(
+            taxon.parse("Musa acuminata x Musa balbisiana").format(), "Musa acuminata x Musa balbisiana"
+        )
+        self.assertEqual(
+            taxon.parse("Musa acuminata x balbisiana").format(), "Musa acuminata x Musa balbisiana"
+        )
+
     def test_invalid_parse(self):
         """
         Tests invalid species name cases
