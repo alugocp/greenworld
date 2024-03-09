@@ -70,6 +70,7 @@ def enter_data(gw: Greenworld, db, data):
         for row in data["others"] if "others" in data else []:
             values = copy.deepcopy(row)
             values["species"] = taxon.parse(values["species"]).format()
+            local_predation_data = values.pop("predators") if "predators" in values else []
             if "family" in values:
                 values["family"] = Taxon.family(values["family"])
             result = select_by(
@@ -90,7 +91,7 @@ def enter_data(gw: Greenworld, db, data):
                 last_other_id += 1
                 gw.log(f"INSERT {values}")
                 con.execute(orm.other_species_table.insert().values(**values))
-            for predator in (values["predators"] if "predators" in values else []):
+            for predator in local_predation_data:
                 predation_data.append([predator["species"], values["species"], predator["citation"]])
 
         # Handle predation data
@@ -101,11 +102,13 @@ def enter_data(gw: Greenworld, db, data):
                 raise Error(f"Predator species {predation[0]} is unknown")
             if prey is None:
                 raise Error(f"Prey species {predation[1]} is unknown")
-            con.execute(orm.ecology_predator_table.insert().values([{
+            values = {
                 "predator": predator["id"],
                 "prey": prey["id"],
                 "citation": predation[2]
-            }]))
+            }
+            gw.log(f"INSERT {values}")
+            con.execute(orm.ecology_predator_table.insert().values(**values))
 
         gw.log("")
 

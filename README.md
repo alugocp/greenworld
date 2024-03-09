@@ -13,8 +13,9 @@ A compatibility report consists of a set of suggested ranges to keep between two
 This project uses a Postgres database hosted in Docker.
 You must do the following in order to set it up:
 ```bash
-# Install Python dependencies
+# Install all dependencies
 python3 -m pip install -r requirements.txt
+npm install
 
 # Record a database password
 echo "PASSWORD=<SOME PASSWORD HERE>" > .env

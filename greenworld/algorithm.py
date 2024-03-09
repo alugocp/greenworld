@@ -1,9 +1,11 @@
 """
 This module defines the Greenworld core algorithm and its rules
 """
+from typing import List
 import sqlalchemy
 from greenworld.serial import deserialize_enum_list
 from greenworld.orm import other_species_table
+from greenworld.orm import ecology_predator_table
 from greenworld.orm import ecology_other_table
 from greenworld.orm import ecology_plant_table
 from greenworld.utils import CompanionAlgorithm
@@ -15,6 +17,13 @@ from greenworld.defs import Nitrogen
 from greenworld.defs import Ecology
 from greenworld.defs import Sun
 
+def asymptotic_total(factors: List[Factor]) -> float:
+    """
+    Uses an asymptotic function to calculate the value of a factor from the ecology rule
+    """
+    x = sum(list(map(lambda x: x.value, factors)))
+    coeff = -1 if x < 0 else 1
+    return round(coeff * (1 - (1 / (((0.6 * x) ** 2) + 1))), 3)
 
 class GreenworldAlgorithm(CompanionAlgorithm):
     """
@@ -461,15 +470,7 @@ class FirstClassEcologyRule(Rule):
         union = Factor.union(factors)
         if union is None:
             return None
-        return Factor(self.calculate_total(factors), union.label)
-
-    def calculate_total(self, factors):
-        """
-        Uses an asymptotic function to calculate the value of a factor from the ecology rule
-        """
-        x = sum(list(map(lambda x: x.value, factors)))
-        coeff = -1 if x < 0 else 1
-        return round(coeff * (1 - (1 / (((0.6 * x) ** 2) + 1))), 3)
+        return Factor(asymptotic_total(factors), union.label)
 
 class SecondClassEcologyRule(Rule):
     """
@@ -479,210 +480,92 @@ class SecondClassEcologyRule(Rule):
     def generate_factor(self, con, p1, p2):
         """
         Generates a factor for the second-class ecology rule
+
+        Query logic as raw SQL:
+        select i1.plant, i1.non_plant, i1.species, i1.relationship, i2.plant, i2.non_plant, i2.species, i2.relationship, ecology_predator.predator from
+        (select ecology_other.plant, ecology_other.non_plant, ecology_other.relationship, other_species.species from ecology_other join other_species on other_species.id = ecology_other.non_plant where ecology_other.plant = 47) as i1
+        join ecology_predator
+        on ecology_predator.predator = i1.non_plant or ecology_predator.prey = i1.non_plant join
+        (select ecology_other.plant, ecology_other.non_plant, ecology_other.relationship, other_species.species from ecology_other join other_species on other_species.id = ecology_other.non_plant where ecology_other.plant = 58) as i2
+        on ecology_predator.predator = i2.non_plant or ecology_predator.prey = i2.non_plant
         """
         if p1.species == p2.species:
             return None
-        e1 = ecology_other_table.alias("e1")
-        e2 = ecology_other_table.alias("e2")
+
+        # Grab relevant non-plant ecological partner species for P1
+        i1 = (
+            sqlalchemy.select(
+                ecology_other_table.c["non_plant"],
+                ecology_other_table.c["relationship"],
+                other_species_table.c["species"]
+            )
+            .join(other_species_table, ecology_other_table.c["non_plant"] == other_species_table.c["id"])
+            .where(ecology_other_table.c["plant"] == p1.id)
+        ).alias("i1")
+
+        # Grab relevant non-plant ecological partner species for P2
+        i2 = (
+            sqlalchemy.select(
+                ecology_other_table.c["non_plant"],
+                ecology_other_table.c["relationship"],
+                other_species_table.c["species"]
+            )
+            .join(other_species_table, ecology_other_table.c["non_plant"] == other_species_table.c["id"])
+            .where(ecology_other_table.c["plant"] == p2.id)
+        ).alias("i2")
+
+        # Join I1 and I2 using the ecological predators table
         stmt = (
             sqlalchemy.select(
-                other_species_table.c["name"],
-                e1.c["relationship"].label("r1"),
-                e2.c["relationship"].label("r2"),
+                i1.c["non_plant"],
+                i1.c["species"],
+                i1.c["relationship"],
+                i2.c["non_plant"],
+                i2.c["species"],
+                i2.c["relationship"],
+                ecology_predator_table.c["predator"]
             )
-            .join(e2, e1.c["non_plant"] == e2.c["non_plant"])
-            .join(other_species_table, other_species_table.c["id"] == e1.c["non_plant"])
-            .where(sqlalchemy.and_(e1.c["plant"] == p1.id, e2.c["plant"] == p2.id))
-            .distinct()
+            .join(ecology_predator_table, sqlalchemy.or_(
+                i1.c["non_plant"] == ecology_predator_table.c["predator"],
+                i1.c["non_plant"] == ecology_predator_table.c["prey"]
+            ))
+            .join(i2, sqlalchemy.or_(
+                i2.c["non_plant"] == ecology_predator_table.c["predator"],
+                i2.c["non_plant"] == ecology_predator_table.c["prey"]
+            ))
+            .where(i1.c["non_plant"] != i2.c["non_plant"])
         )
+
         factors = []
         for result in con.execute(stmt):
-            non_plant, r1, r2 = result
-            factors.append(
-                {
-                    Ecology.NEGATIVE_ALLELOPATHY: {
-                        Ecology.NEGATIVE_ALLELOPATHY: Factor(
-                            1.0,
-                            f"{p1.name} and {p2.name} are both negative allelopaths for {non_plant}",
-                        ),
-                        Ecology.POSITIVE_ALLELOPATHY: Factor(
-                            -1.0,
-                            f"{p1.name} is a negative allelopath and {p2.name} is a positive allelopath for {non_plant}",
-                        ),
-                        Ecology.NO_ALLELOPATHY: None,
-                        Ecology.PATHOGEN: Factor(
-                            1.0,
-                            f"{p1.name} is a negative allelopath for {p2.name}'s pathogenic species {non_plant}",
-                        ),
-                        Ecology.PREDATOR: Factor(
-                            1.0,
-                            f"{p1.name} is a negative allelopath for {p2.name}'s predator species {non_plant}",
-                        ),
-                        Ecology.SEED_DISPERSER: Factor(
-                            -1.0,
-                            f"{p1.name} is a negative allelopath for {p2.name}'s seed disperser species {non_plant}",
-                        ),
-                        Ecology.POLLINATOR: Factor(
-                            -1.0,
-                            f"{p1.name} is a negative allelopath for {p2.name}'s pollinator species {non_plant}",
-                        ),
-                    },
-                    Ecology.POSITIVE_ALLELOPATHY: {
-                        Ecology.NEGATIVE_ALLELOPATHY: Factor(
-                            -1.0,
-                            f"{p1.name} is a positive allelopath and {p2.name} is a negative allelopath for {non_plant}",
-                        ),
-                        Ecology.POSITIVE_ALLELOPATHY: Factor(
-                            1.0,
-                            f"{p1.name} and {p2.name} are both positive allelopaths for {non_plant}",
-                        ),
-                        Ecology.NO_ALLELOPATHY: None,
-                        Ecology.PATHOGEN: Factor(
-                            -1.0,
-                            f"{p1.name} is a positive allelopath for {p2.name}'s pathogenic species {non_plant}",
-                        ),
-                        Ecology.PREDATOR: Factor(
-                            -1.0,
-                            f"{p1.name} is a positive allelopath for {p2.name}'s predator species {non_plant}",
-                        ),
-                        Ecology.SEED_DISPERSER: Factor(
-                            1.0,
-                            f"{p1.name} is a positive allelopath for {p2.name}'s seed disperser species {non_plant}",
-                        ),
-                        Ecology.POLLINATOR: Factor(
-                            1.0,
-                            f"{p1.name} is a positive allelopath for {p2.name}'s pollinator species {non_plant}",
-                        ),
-                    },
-                    Ecology.NO_ALLELOPATHY: {
-                        Ecology.NEGATIVE_ALLELOPATHY: None,
-                        Ecology.POSITIVE_ALLELOPATHY: None,
-                        Ecology.NO_ALLELOPATHY: None,
-                        Ecology.PATHOGEN: None,
-                        Ecology.PREDATOR: None,
-                        Ecology.SEED_DISPERSER: None,
-                        Ecology.POLLINATOR: None,
-                    },
-                    Ecology.PATHOGEN: {
-                        Ecology.NEGATIVE_ALLELOPATHY: Factor(
-                            1.0,
-                            f"{p2.name} is a negative allelopath for {p1.name}'s pathogenic species {non_plant}",
-                        ),
-                        Ecology.POSITIVE_ALLELOPATHY: Factor(
-                            -1.0,
-                            f"{p2.name} is a positive allelopath for {p1.name}'s pathogenic species {non_plant}",
-                        ),
-                        Ecology.NO_ALLELOPATHY: None,
-                        Ecology.PATHOGEN: Factor(
-                            -1.0,
-                            f"{p1.name} and {p2.name} have a common pathogenic species {non_plant}",
-                        ),
-                        Ecology.PREDATOR: Factor(
-                            -1.0,
-                            f"{p1.name}'s pathogenic species {non_plant} is a predator for {p2.name}",
-                        ),
-                        Ecology.SEED_DISPERSER: Factor(
-                            -1.0,
-                            f"{p1.name}'s pathogenic species {non_plant} is a seed disperser for {p2.name}",
-                        ),
-                        Ecology.POLLINATOR: Factor(
-                            -1.0,
-                            f"{p1.name}'s pathogenic species {non_plant} is a pollinator for {p2.name}",
-                        ),
-                    },
-                    Ecology.PREDATOR: {
-                        Ecology.NEGATIVE_ALLELOPATHY: Factor(
-                            1.0,
-                            f"{p2.name} is a negative allelopath for {p1.name}'s predator species {non_plant}",
-                        ),
-                        Ecology.POSITIVE_ALLELOPATHY: Factor(
-                            -1.0,
-                            f"{p2.name} is a positive allelopath for {p1.name}'s predator species {non_plant}",
-                        ),
-                        Ecology.NO_ALLELOPATHY: None,
-                        Ecology.PATHOGEN: Factor(
-                            -1.0,
-                            f"{p1.name}'s predator species {non_plant} is a pathogen for {p2.name}",
-                        ),
-                        Ecology.PREDATOR: Factor(
-                            1.0,
-                            f"{p1.name} and {p2.name} have a common predator species {non_plant}",
-                        ),
-                        Ecology.SEED_DISPERSER: Factor(
-                            1.0,
-                            f"{p1.name}'s predator species {non_plant} is a seed disperser for {p2.name}",
-                        ),
-                        Ecology.POLLINATOR: Factor(
-                            1.0,
-                            f"{p1.name}'s predator species {non_plant} is a pollinator for {p2.name}",
-                        ),
-                    },
-                    Ecology.SEED_DISPERSER: {
-                        Ecology.NEGATIVE_ALLELOPATHY: Factor(
-                            -1.0,
-                            f"{p2.name} is a negative allelopath for {p1.name}'s seed disperser species {non_plant}",
-                        ),
-                        Ecology.POSITIVE_ALLELOPATHY: Factor(
-                            1.0,
-                            f"{p2.name} is a positive allelopath for {p1.name}'s seed disperser species {non_plant}",
-                        ),
-                        Ecology.NO_ALLELOPATHY: None,
-                        Ecology.PATHOGEN: Factor(
-                            -1.0,
-                            f"{p1.name}'s seed disperser species {non_plant} is a pathogen for {p2.name}",
-                        ),
-                        Ecology.PREDATOR: Factor(
-                            1.0,
-                            f"{p1.name}'s seed disperser species {non_plant} is a predator for {p2.name}",
-                        ),
-                        Ecology.SEED_DISPERSER: Factor(
-                            1.0,
-                            f"{p1.name} and {p2.name} have a common seed disperser species {non_plant}",
-                        ),
-                        Ecology.POLLINATOR: Factor(
-                            1.0,
-                            f"{p1.name}'s seed disperser species {non_plant} is a pollinator for {p2.name}",
-                        ),
-                    },
-                    Ecology.POLLINATOR: {
-                        Ecology.NEGATIVE_ALLELOPATHY: Factor(
-                            -1.0,
-                            f"{p2.name} is a negative allelopath for {p1.name}'s pollinator species {non_plant}",
-                        ),
-                        Ecology.POSITIVE_ALLELOPATHY: Factor(
-                            1.0,
-                            f"{p2.name} is a positive allelopath for {p1.name}'s pollinator species {non_plant}",
-                        ),
-                        Ecology.NO_ALLELOPATHY: None,
-                        Ecology.PATHOGEN: Factor(
-                            -1.0,
-                            f"{p1.name}'s pollinator species {non_plant} is a pathogen for {p2.name}",
-                        ),
-                        Ecology.PREDATOR: Factor(
-                            -1.0,
-                            f"{p1.name}'s pollinator species {non_plant} is a predator for {p2.name}",
-                        ),
-                        Ecology.SEED_DISPERSER: Factor(
-                            1.0,
-                            f"{p1.name}'s pollinator species {non_plant} is a seed disperser for {p2.name}",
-                        ),
-                        Ecology.POLLINATOR: Factor(
-                            1.0,
-                            f"{p1.name} and {p2.name} have a common pollinator species {non_plant}",
-                        ),
-                    },
-                }[r1][r2]
-            )
+            # Determine which data is for the predator and which is for the prey
+            if result[0] == result[6]:
+                plant_with_predator = p1
+                plant_with_prey = p2
+                predator_species = result[1]
+                prey_species = result[4]
+                prey_relation = result[5]
+            else:
+                plant_with_predator = p2
+                plant_with_prey = p1
+                predator_species = result[4]
+                prey_species = result[1]
+                prey_relation = result[2]
+
+            # Logic matrix based on the second-class ecological interaction
+            if prey_relation == Ecology.PREDATOR:
+                factors.append(Factor(
+                    1.0,
+                    f"{plant_with_predator.name} attracts {predator_species}, which predates upon {plant_with_prey.name}'s predator species {prey_species}"
+                ))
+
+            if prey_relation == Ecology.POLLINATOR:
+                factors.append(Factor(
+                    -1.0,
+                    f"{plant_with_predator.name} attracts {predator_species}, which predates upon {plant_with_prey.name}'s pollinator species {prey_species}"
+                ))
+
         union = Factor.union(factors)
         if union is None:
             return None
-        return Factor(self.calculate_total(factors), union.label)
-
-    def calculate_total(self, factors):
-        """
-        Uses an asymptotic function to calculate the value of a factor from the ecology rule
-        """
-        x = sum(list(map(lambda x: x.value, factors)))
-        coeff = -1 if x < 0 else 1
-        return round(coeff * (1 - (1 / (((0.6 * x) ** 2) + 1))), 3)
-
+        return Factor(asymptotic_total(factors), union.label)
