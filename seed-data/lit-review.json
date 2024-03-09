@@ -19,7 +19,14 @@
             "name": "Shallot",
             "species": "Allium cepa var. aggregatum",
             "family": "Amaryllidaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Solanum lycopersicum",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 44
+                }
+            ]
         },
         {
             "id": 4,
@@ -106,7 +113,14 @@
             "name": "Garry oats",
             "species": "Avena sativa",
             "family": "Poaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Fragaria spp.",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 56
+                }
+            ]
         },
         {
             "id": 13,
@@ -114,7 +128,14 @@
             "species": "Avena strigosa",
             "family": "Poaceae",
             "citations": {},
-            "growth_habit": "GrowthHabit.GRAMINOID"
+            "growth_habit": "GrowthHabit.GRAMINOID",
+            "ecology": [
+                {
+                    "species": "Fragaria spp.",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 56
+                }
+            ]
         },
         {
             "id": 14,
@@ -481,7 +502,14 @@
             "name": "Hyssop",
             "species": "Hyssopus officinalis",
             "family": "Lamiaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Solanum lycopersicum",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 23
+                }
+            ]
         },
         {
             "id": 54,
@@ -599,7 +627,14 @@
             "name": "Peppermint",
             "species": "Mentha piperita",
             "family": "Lamiaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Solanum lycopersicum",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 23
+                }
+            ]
         },
         {
             "id": 67,
@@ -651,7 +686,14 @@
             "species": "Ocimum basilicum",
             "family": "Lamiaceae",
             "citations": {},
-            "growth_habit": "GrowthHabit.FORB"
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Solanum lycopersicum",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 23
+                }
+            ]
         },
         {
             "id": 73,
@@ -842,7 +884,14 @@
             "name": "Sudangrass hybrid",
             "species": "Sorghum bicolor x Sorghum sudanense",
             "family": "Poaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Fragaria spp.",
+                    "relationship": "Ecology.NEGATIVE_ALLELOPATHY",
+                    "citation": 56
+                }
+            ]
         },
         {
             "id": 97,
@@ -976,14 +1025,28 @@
             "name": "Common Wheat",
             "species": "Triticum aestivum",
             "family": "Poaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Citrullus lanatus",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 48
+                }
+            ]
         },
         {
             "id": 112,
             "name": "Some Wheat",
             "species": "Triticum spp.",
             "family": "Poaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Cucumis sativus",
+                    "relationship": "Ecology.POSITIVE_ALLELOPATHY",
+                    "citation": 45
+                }
+            ]
         },
         {
             "id": 113,
