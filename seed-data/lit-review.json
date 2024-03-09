@@ -58,7 +58,24 @@
             "species": "Anethum graveolens",
             "family": "Apiaceae",
             "citations": {},
-            "growth_habit": "GrowthHabit.FORB"
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Diaeretiella rapae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
+                    "species": "Hippodamia convergens",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
+                    "species": "Syrphidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                }
+            ]
         },
         {
             "id": 9,
@@ -149,7 +166,19 @@
             "name": "Kale/Broccoli",
             "species": "Brassica oleracea",
             "family": "Brassicaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Lipaphis erysimi",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
+                    "species": "Mamestra brassicae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 10
+                }
+            ]
         },
         {
             "id": 21,
@@ -177,7 +206,29 @@
             "name": "Calendula",
             "species": "Calendula officinalis",
             "family": "Asteraceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Diaeretiella rapae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
+                    "species": "Hippodamia convergens",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
+                    "species": "Syrphidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
+                    "species": "Propylea japonica",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 8
+                }
+            ]
         },
         {
             "id": 25,
@@ -206,7 +257,19 @@
             "species": "Centaurea cyanus",
             "family": "Asteraceae",
             "citations": {},
-            "growth_habit": "GrowthHabit.FORB"
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Microplitis mediator",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 10
+                },
+                {
+                    "species": "Phryxe vulgaris",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 10
+                }
+            ]
         },
         {
             "id": 29,
@@ -235,7 +298,24 @@
             "species": "Coriandrum sativum",
             "family": "Apiaceae",
             "citations": {},
-            "growth_habit": "GrowthHabit.FORB"
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Diaeretiella rapae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
+                    "species": "Hippodamia convergens",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
+                    "species": "Syrphidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                }
+            ]
         },
         {
             "id": 33,
@@ -354,7 +434,19 @@
             "name": "Strawberry",
             "species": "Fragaria spp.",
             "family": "Rosaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Macrosiphum euphorbiae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 54
+                },
+                {
+                    "species": "Ephestia kuehniella",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 54
+                }
+            ]
         },
         {
             "id": 49,
@@ -433,7 +525,14 @@
             "species": "Lobularia maritima",
             "family": "Brassicaceae",
             "citations": {},
-            "growth_habit": "GrowthHabit.FORB"
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Orius laevigatus",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 54
+                }
+            ]
         },
         {
             "id": 60,
@@ -455,7 +554,14 @@
             "name": "Orchard apple",
             "species": "Malus domestica",
             "family": "Rosaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Aphis citricola",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 8
+                }
+            ]
         },
         {
             "id": 63,
@@ -479,7 +585,14 @@
             "species": "Mentha gracilis",
             "family": "Lamiaceae",
             "citations": {},
-            "growth_habit": "GrowthHabit.FORB"
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Phytoseiulus persimilis",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 14
+                }
+            ]
         },
         {
             "id": 66,
@@ -493,7 +606,14 @@
             "name": "Spearmint",
             "species": "Mentha spicata",
             "family": "Lamiaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Phytoseiulus persimilis",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 14
+                }
+            ]
         },
         {
             "id": 68,
@@ -585,7 +705,14 @@
             "species": "Phaseolus vulgaris",
             "family": "Fabaceae",
             "citations": {},
-            "nitrogen": "Nitrogen.FIXER"
+            "nitrogen": "Nitrogen.FIXER",
+            "ecology": [
+                {
+                    "species": "Tetranychus urticae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 14
+                }
+            ]
         },
         {
             "id": 80,
@@ -680,7 +807,14 @@
             "name": "Tomato",
             "species": "Solanum lycopersicum",
             "family": "Solanaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Coleomegilla maculata",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 26
+                }
+            ]
         },
         {
             "id": 93,
@@ -730,7 +864,24 @@
             "species": "Tagetes erecta",
             "family": "Asteraceae",
             "citations": {},
-            "growth_habit": "GrowthHabit.FORB"
+            "growth_habit": "GrowthHabit.FORB",
+            "ecology": [
+                {
+                    "species": "Diaeretiella rapae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
+                    "species": "Hippodamia convergens",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
+                    "species": "Syrphidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                }
+            ]
         },
         {
             "id": 100,
@@ -901,7 +1052,14 @@
             "name": "Corn",
             "species": "Zea mays",
             "family": "Poaceae",
-            "citations": {}
+            "citations": {},
+            "ecology": [
+                {
+                    "species": "Helicoverpa zea",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 26
+                }
+            ]
         },
         {
             "id": 122,
@@ -918,6 +1076,207 @@
             "citations": {}
         }
     ],
-    "works_cited": [],
-    "others": []
+    "others": [
+        {
+            "species": "Macrosiphum euphorbiae",
+            "name": "Potato Aphid",
+            "ecology": [
+                {
+                    "species": "Orius laevigatus",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 54
+                }
+            ]
+        },
+        {
+            "species": "Ephestia kuehniella",
+            "name": "Mediterranean Flour Moth",
+            "ecology": [
+                {
+                    "species": "Orius laevigatus",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 54
+                }
+            ]
+        },
+        {
+            "species": "Helicoverpa zea",
+            "name": "Corn Earworm",
+            "ecology": [
+                {
+                    "species": "Coleomegilla maculata",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 26
+                }
+            ]
+        },
+        {
+            "species": "Tetranychus urticae",
+            "name": "Red Spider-mite",
+            "ecology": [
+                {
+                    "species": "Neoseiulus californicus",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 14
+                },
+                {
+                    "species": "Phytoseiulus persimilis",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 14
+                }
+            ]
+        },
+        {
+            "species": "Lipaphis erysimi",
+            "name": "Mustard Aphid",
+            "ecology": [
+                {
+                    "species": "Diaeretiella rapae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
+                    "species": "Hippodamia convergens",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                },
+                {
+                    "species": "Syrphidae",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 13
+                }
+            ]
+        },
+        {
+            "species": "Mamestra brassicae",
+            "name": "Cabbage Moth",
+            "ecology": [
+                {
+                    "species": "Microplitis mediator",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 10
+                },
+                {
+                    "species": "Phryxe vulgaris",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 10
+                }
+            ]
+        },
+        {
+            "species": "Aphis citricola",
+            "name": "Spirea Aphid",
+            "ecology": [
+                {
+                    "species": "Propylea japonica",
+                    "relationship": "Ecology.PREDATOR",
+                    "citation": 8
+                }
+            ]
+        },
+        {
+            "species": "Orius laevigatus",
+            "name": "Orius"
+        },
+        {
+            "species": "Coleomegilla maculata",
+            "name": "Spotted Lady Beetle"
+        },
+        {
+            "species": "Phytoseiulus persimilis",
+            "name": "Phytoseiulus"
+        },
+        {
+            "species": "Neoseiulus californicus",
+            "name": "Neoseiulus"
+        },
+        {
+            "species": "Syrphidae",
+            "name": "Hoverflies"
+        },
+        {
+            "species": "Hippodamia convergens",
+            "name": "Convergent Lady Beetle"
+        },
+        {
+            "species": "Diaeretiella rapae",
+            "name": "Diaeretiella"
+        },
+        {
+            "species": "Microplitis mediator",
+            "name": "Microplitis"
+        },
+        {
+            "species": "Phryxe vulgaris",
+            "name": "Phryxe"
+        },
+        {
+            "species": "Propylea japonica",
+            "name": "Propylea"
+        }
+    ],
+    "works_cited": [
+        {"id": 1, "citation": "https://www.mdpi.com/2075-4450/8/4/112"},
+        {"id": 2, "citation": "https://link.springer.com/article/10.1007/s13744-021-00939-2"},
+        {"id": 3, "citation": "https://mail.smujo.id/biodiv/article/view/12471"},
+        {"id": 4, "citation": "https://www.sciencedirect.com/science/article/pii/S0167880917302335"},
+        {"id": 5, "citation": "https://onlinelibrary.wiley.com/doi/abs/10.1111/eea.12473"},
+        {"id": 6, "citation": "https://link.springer.com/article/10.1007/s13355-018-00602-0"},
+        {"id": 7, "citation": "https://www.sciencedirect.com/science/article/pii/S0378429017300734"},
+        {"id": 8, "citation": "https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2664.13353"},
+        {"id": 9, "citation": "https://bioone.org/journals/southwestern-entomologist/volume-40/issue-1/059.040.0101/Attraction-Repellence-and-Predation--Role-of-Companion-Plants-in/10.3958/059.040.0101.short"},
+        {"id": 10, "citation": "https://www.sciencedirect.com/science/article/pii/S1049964414000917"},
+        {"id": 11, "citation": "https://www.mdpi.com/2075-4450/9/4/128"},
+        {"id": 12, "citation": "https://resjournals.onlinelibrary.wiley.com/doi/abs/10.1111/een.12880"},
+        {"id": 13, "citation": "https://academicjournals.org/journal/AJAR/article-full-text-pdf/637C69059568.pdf"},
+        {"id": 14, "citation": "https://www.nature.com/articles/s41598-018-38098-x"},
+        {"id": 15, "citation": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ps.4427"},
+        {"id": 16, "citation": "https://attradev.ncat.org/wp-content/uploads/2022/06/companion-planting.pdf"},
+        {"id": 17, "citation": "https://www.tandfonline.com/doi/abs/10.1080/01448765.2015.1017736"},
+        {"id": 18, "citation": "https://www.ext.vsu.edu/s/Companion-planting-Revised.pdf"},
+        {"id": 19, "citation": "https://pdfs.semanticscholar.org/d1d7/dff3be988a01d058234954833976e4a872d7.pdf"},
+        {"id": 20, "citation": "https://www.sciencedirect.com/science/article/pii/S030442381500076X"},
+        {"id": 21, "citation": "https://www.actahort.org/books/933/933_45.htm"},
+        {"id": 22, "citation": "https://www.researchgate.net/profile/Lagunovschi-Luchian-Viorica/publication/317936463_TECHNIQUES_OF_COMPANION_PLANTING_FOR_IMPROVING_FRUIT_QUALITY_AND_THE_PROTECTION_AGAINST_DISEASES_AND_PESTS_IN_TOMATO_CULTURE/links/595234e50f7e9b329238071c/TECHNIQUES-OF-COMPANION-PLANTING-FOR-IMPROVING-FRUIT-QUALITY-AND-THE-PROTECTION-AGAINST-DISEASES-AND-PESTS-IN-TOMATO-CULTURE.pdf"},
+        {"id": 23, "citation": "https://www.scirp.org/html/2-2604823_104644.htm"},
+        {"id": 24, "citation": "https://jppe.ppe.or.kr/upload/pdf/ksppe-2022-25-4-349.pdf"},
+        {"id": 25, "citation": "https://journals.ashs.org/hortsci/view/journals/hortsci/35/4/article-p620.xml"},
+        {"id": 26, "citation": "https://academic.oup.com/ee/article-abstract/35/5/1334/339971"},
+        {"id": 27, "citation": "https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/agronj13.0466"},
+        {"id": 28, "citation": "https://www.sciencedirect.com/science/article/pii/S026121942100082X"},
+        {"id": 29, "citation": "https://www.sciencedirect.com/science/article/pii/S1658077X1400023X"},
+        {"id": 30, "citation": "https://www.scielo.br/j/rceres/a/SQdydGNq9qnkGY995xM7fxt/?lang=en"},
+        {"id": 31, "citation": "https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1570-7458.2001.00884.x"},
+        {"id": 32, "citation": "https://jppe.ppe.or.kr/upload/pdf/ksppe-2022-25-4-337.pdf"},
+        {"id": 33, "citation": "https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1570-7458.2000.00684.x"},
+        {"id": 34, "citation": "https://jpp.journals.ekb.eg/article_206730.html"},
+        {"id": 35, "citation": "https://suntextreviews.org/uploads/journals/pdfs/1632892927.pdf"},
+        {"id": 36, "citation": "https://www.tandfonline.com/doi/abs/10.1080/01448765.2006.9755336"},
+        {"id": 37, "citation": "https://www.cropandweed.com/archives/2022/vol18issue3/18-3-40.pdf"},
+        {"id": 38, "citation": "https://resjournals.onlinelibrary.wiley.com/doi/abs/10.1111/afe.12199"},
+        {"id": 39, "citation": "https://www.actajournal.com/article/33/2-1-12-395.pdf"},
+        {"id": 40, "citation": "https://www.researchgate.net/profile/Mohammad-Mousaei-Sanjerehei/publication/374723638_Mixed_Cropping_with_Companion_Crops/links/653585de1d6e8a7070450248/Mixed-Cropping-with-Companion-Crops.pdf"},
+        {"id": 41, "citation": "https://www.researchgate.net/profile/Susan-Calumpang/publication/286367716_Behavioral_response_of_spodoptera_litura_F_Lepidoptera_Noctuidae_to_selected_herbs_and_eggplant/links/5a352552a6fdcc769fd488fa/Behavioral-response-of-spodoptera-litura-F-Lepidoptera-Noctuidae-to-selected-herbs-and-eggplant.pdf"},
+        {"id": 42, "citation": "https://www.sciencedirect.com/science/article/pii/S0304423817301899"},
+        {"id": 43, "citation": "https://journals.ashs.org/horttech/view/journals/horttech/16/1/article-p12.xml"},
+        {"id": 44, "citation": "https://www.frontiersin.org/articles/10.3389/fpls.2015.00726/full"},
+        {"id": 45, "citation": "https://www.sciencedirect.com/science/article/pii/S2095311917616988"},
+        {"id": 46, "citation": "https://www.nature.com/articles/s41598-021-83580-8"},
+        {"id": 47, "citation": "https://www.researchgate.net/profile/Hossein-Aroiee/publication/267561709_Companion_Culture_for_Myopardalis_pardalino_Control_of_Cucumis_melo_var_inodorus/links/55524d1e08ae6943a86d716b/Companion-Culture-for-Myopardalis-pardalino-Control-of-Cucumis-melo-var-inodorus.pdf"},
+        {"id": 48, "citation": "https://apsjournals.apsnet.org/doi/abs/10.1094/PDIS-08-18-1387-RE"},
+        {"id": 49, "citation": "https://www.tandfonline.com/doi/abs/10.1080/09670874.2013.851429"},
+        {"id": 50, "citation": "https://www.tandfonline.com/doi/abs/10.1080/01140671.2006.9514418"},
+        {"id": 51, "citation": "https://journals.ashs.org/hortsci/view/journals/hortsci/55/2/article-p164.xml"},
+        {"id": 52, "citation": "https://link.springer.com/article/10.1007/s10340-022-01522-3"},
+        {"id": 53, "citation": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10331949/"},
+        {"id": 54, "citation": "https://link.springer.com/article/10.1007/s10340-022-01570-9"},
+        {"id": 55, "citation": "https://www.mdpi.com/2311-7524/7/4/63"},
+        {"id": 56, "citation": "https://www.sciencedirect.com/science/article/pii/S0261219402000509"},
+        {"id": 57, "citation": "https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/jpa1999.0116"},
+        {"id": 58, "citation": "https://www.sciencedirect.com/science/article/pii/S1161030117301284"},
+        {"id": 59, "citation": "https://www.mdpi.com/2073-4395/11/1/78"},
+        {"id": 60, "citation": "https://deepblue.lib.umich.edu/handle/2027.42/110135"},
+        {"id": 61, "citation": "https://link.springer.com/chapter/10.1007/978-94-007-1521-9_12"},
+        {"id": 62, "citation": "https://journals.tubitak.gov.tr/agriculture/vol34/iss4/2/"}
+    ]
 }
