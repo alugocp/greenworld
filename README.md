@@ -16,9 +16,9 @@ Here is how you install them all:
 # Install PyEnv
 curl https://pyenv.run | bash
 
-# You may need to run this line on Linux systems if _sqlite3 is missing
+# You may need to run this line on Linux systems if _sqlite3 or _ctypes are missing
 # (uninstall the project version of Python, then run this, then reinstall Python)
-sudo apt install libsqlite3-dev
+sudo apt install libsqlite3-dev libffi-dev
 
 # Install the project's Python version
 pyenv install 3.11.8

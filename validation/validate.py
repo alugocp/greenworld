@@ -2,6 +2,7 @@ import sys
 import csv
 import json
 import sqlalchemy
+from scipy.stats import mannwhitneyu
 from greenworld import Greenworld
 from greenworld.scripts import reset
 from greenworld.scripts import enter
@@ -11,6 +12,15 @@ from greenworld.orm import reports_table
 from greenworld.orm import init_db
 
 
+
+def mann_whitney(label, d1, d2):
+    """
+    Performs a Mann-Whitney U test against two distributions and prints the outcome
+    """
+    p = mannwhitneyu(d1, d2, alternative = "greater").pvalue
+    result = "\033[31mNULL ACCEPTED" if p > 0.05 else "\033[32mNULL REJECTED"
+    sys.stdout.write(f"\033[1m{label}: {result}\033[0m\n")
+
 def main():
     """
     Main logic for this validation script
@@ -18,9 +28,10 @@ def main():
 
     # Initialize database state
     gw = Greenworld()
-    reset.main(gw, False)
-    enter.main(gw, ["seed-data/lit-review.json"])
-    report.main(gw)
+    if input("Reinitialize database? (y/N): ").lower() == "y":
+        reset.main(gw, False)
+        enter.main(gw, ["seed-data/lit-review.json"])
+        report.main(gw)
 
     # Retrieve all used citations (used to auto-filter the companion data)
     referenced = set()
@@ -33,14 +44,15 @@ def main():
         for x in other["predators"] if "predators" in other else []:
             referenced.add(x["citation"])
 
-    # Filter expected companionship data by referenced citations
+    # Filter expected companionship data by referenced citations, and only
+    # allow one expected companionship value per plant species pairing
     companions = []
     with open(
         "validation/Literature Review - Plant Pairs - Pairs.csv", "r", encoding="utf-8"
     ) as file:
         data = csv.reader(file)
         for row in data:
-            if any(x.isnumeric() and int(x) in referenced for x in row[3].split(", ")):
+            if any(x.isnumeric() and int(x) in referenced for x in row[3].split(", ")) and not any((x[0] == row[0] and x[1] == row[1]) for x in companions):
                 companions.append(row[0:3])
 
     # Query Greenworld for the calculated compatibility scores
@@ -57,27 +69,49 @@ def main():
     GOOD_SCORES = []
     BAD_SCORES = []
     SCORES_LOG = []
+    BASELINE = [0 for _ in range(10)]
     db = init_db()
     with db.connect() as con:
         for result in con.execute(stmt):
             p1, p2, score = result
-            catch = next(filter(lambda x: p1 in x and p2 in x, companions), None)
+            catch = next(filter(lambda x: (p1 == x[0] and p2 == x[1]) or (p2 == x[0] and p1 == x[1]), companions), None)
             if catch:
+                SCORES_LOG.append([p1 if p1 < p2 else p2, p2 if p1 < p2 else p1, float(score or 0)])
                 {"NEUTRAL": NEUTRAL_SCORES, "GOOD": GOOD_SCORES, "BAD": BAD_SCORES}[
                     catch[2]
-                ].append([p1, p2, score])
-                SCORES_LOG.append([p1, p2, score])
+                ].append(float(score or 0))
 
+    companions.sort(key=lambda x: ", ".join(x[0:2]))
+    SCORES_LOG.sort(key=lambda x: ", ".join(x[0:2]))
     if len(SCORES_LOG) < len(companions):
         diff = len(companions) - len(SCORES_LOG)
         print(
             f"Missing {diff} scores from database! Perhaps the species names weren't parsed correctly?"
         )
+
+        print("Companions | SCORES_LOG")
+        for i, x in enumerate(companions):
+            y = SCORES_LOG[i] if i < len(SCORES_LOG) else None
+            print(f"{x} | {y}")
         sys.exit(1)
 
-    print([(float(x[2]) if x[2] else 0) for x in NEUTRAL_SCORES])
-    print([(float(x[2]) if x[2] else 0) for x in GOOD_SCORES])
-    print([(float(x[2]) if x[2] else 0) for x in BAD_SCORES])
+    sys.stdout.write(f"\033[1mNeutral scores:\033[0m {NEUTRAL_SCORES}\n")
+    sys.stdout.write(f"\033[1mGood scores:\033[0m {GOOD_SCORES}\n")
+    sys.stdout.write(f"\033[1mBad scores:\033[0m {BAD_SCORES}\n")
+    sys.stdout.write(f"\033[1mBaseline:\033[0m {BASELINE}\n")
+    # Mann-Whitney U tests:
+    # • Expect GOOD_SCORES to reject the null hypothesis against NEUTRAL_SCORES
+    # • Expect NEUTRAL_SCORES to reject the null hypothesis against BAD_SCORES
+    # • Expect GOOD_SCORES to reject the null hypothesis against BAD_SCORES
+    # • Expect NEUTRAL_SCORES to accept the null hypothesis against [ 0 ]
+    # • Expect GOOD_SCORES to reject the null hypothesis against [ 0 ]
+    # • Expect BAD_SCORES to reject the null hypothesis against [ 0 ]
+    mann_whitney("GOOD > NEUTRAL", GOOD_SCORES, NEUTRAL_SCORES)
+    mann_whitney("NEUTRAL > BAD", NEUTRAL_SCORES, BAD_SCORES)
+    mann_whitney("GOOD > BAD", GOOD_SCORES, BAD_SCORES)
+    mann_whitney("GOOD > BASELINE", GOOD_SCORES, BASELINE)
+    mann_whitney("NEUTRAL > BASELINE", NEUTRAL_SCORES, BASELINE)
+    mann_whitney("BASELINE > BAD", BASELINE, BAD_SCORES)
 
 
 if __name__ == "__main__":
