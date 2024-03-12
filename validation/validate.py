@@ -12,14 +12,14 @@ from greenworld.orm import reports_table
 from greenworld.orm import init_db
 
 
-
 def mann_whitney(label, d1, d2):
     """
     Performs a Mann-Whitney U test against two distributions and prints the outcome
     """
-    p = mannwhitneyu(d1, d2, alternative = "greater").pvalue
+    p = mannwhitneyu(d1, d2, alternative="greater").pvalue
     result = "\033[31mNULL ACCEPTED" if p > 0.05 else "\033[32mNULL REJECTED"
     sys.stdout.write(f"\033[1m{label}: {result}\033[0m\n")
+
 
 def main():
     """
@@ -52,7 +52,9 @@ def main():
     ) as file:
         data = csv.reader(file)
         for row in data:
-            if any(x.isnumeric() and int(x) in referenced for x in row[3].split(", ")) and not any((x[0] == row[0] and x[1] == row[1]) for x in companions):
+            if any(
+                x.isnumeric() and int(x) in referenced for x in row[3].split(", ")
+            ) and not any((x[0] == row[0] and x[1] == row[1]) for x in companions):
                 companions.append(row[0:3])
 
     # Query Greenworld for the calculated compatibility scores
@@ -74,9 +76,18 @@ def main():
     with db.connect() as con:
         for result in con.execute(stmt):
             p1, p2, score = result
-            catch = next(filter(lambda x: (p1 == x[0] and p2 == x[1]) or (p2 == x[0] and p1 == x[1]), companions), None)
+            catch = next(
+                filter(
+                    lambda x: (p1 == x[0] and p2 == x[1])
+                    or (p2 == x[0] and p1 == x[1]),
+                    companions,
+                ),
+                None,
+            )
             if catch:
-                SCORES_LOG.append([p1 if p1 < p2 else p2, p2 if p1 < p2 else p1, float(score or 0)])
+                SCORES_LOG.append(
+                    [p1 if p1 < p2 else p2, p2 if p1 < p2 else p1, float(score or 0)]
+                )
                 {"NEUTRAL": NEUTRAL_SCORES, "GOOD": GOOD_SCORES, "BAD": BAD_SCORES}[
                     catch[2]
                 ].append(float(score or 0))
