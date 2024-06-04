@@ -18,7 +18,7 @@ def mann_whitney(label, d1, d2):
     """
     p = mannwhitneyu(d1, d2, alternative="greater").pvalue
     result = "\033[31mNULL ACCEPTED" if p > 0.05 else "\033[32mNULL REJECTED"
-    sys.stdout.write(f"\033[1m{label}: {result}\033[0m\n")
+    sys.stdout.write(f"\033[1m{label}: {result}\033[0m (p = {p})\n")
 
 
 def main():

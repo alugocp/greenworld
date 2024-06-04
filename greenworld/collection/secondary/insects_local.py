@@ -12,7 +12,7 @@ class InsectsLocalDataCollector(BaseDataCollector):
     def __init__(self, gw: Greenworld):
         super().__init__(gw)
         taxon = Taxon()
-        wb = load_workbook(filename="referenced-data/Common_names_list_07-30-23.xlsx")
+        wb = load_workbook(filename="referenced-data/Common_names_list_02-27-24.xlsx")
         for i, row in enumerate(wb.active.rows):
             if i < 4:
                 continue
