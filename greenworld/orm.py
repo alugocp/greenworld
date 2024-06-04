@@ -24,6 +24,13 @@ meta = MetaData()
 DB = None
 
 
+def get_db_string():
+    """
+    Returns the SQLAlchemy connection string used for this project
+    """
+    return os.getenv("GREENWORLD_DB")
+
+
 # This function initializes or retrieves a singular database connection object
 def init_db():
     """
@@ -32,7 +39,7 @@ def init_db():
     # pylint: disable-next=global-statement
     global DB
     if not DB:
-        dbstring = os.getenv("GREENWORLD_DB")
+        dbstring = get_db_string()
         if not dbstring:
             raise ValueError(
                 "Please set GREENWORLD_DB environment variable to an ODBC string"

@@ -11,6 +11,8 @@ djlint
 black
 
 # Server
+flask-sqlalchemy
+flask-login
 flask
 
 # Data collection

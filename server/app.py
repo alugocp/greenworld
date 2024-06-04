@@ -2,6 +2,7 @@
 Entry point module for the Greenworld server
 """
 
+from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
 import pages
 import api
@@ -34,6 +35,14 @@ def main():
     # Import other server code
     pages.main(app, db)
     api.main(app, db)
+
+    # Setup auth/login stuff
+    app.config["SECRET_KEY"] = "secret-key-goes-here"
+    app.config["SQLALCHEMY_DATABASE_URI"] = orm.get_db_string()
+    flask_sql = SQLAlchemy()
+    flask_sql.init_app(app)
+    from auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint)
 
     # Run the server
     # TODO this function is not intended for production use, please rewrite before launch
