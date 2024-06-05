@@ -85,7 +85,7 @@ Then you can use the following commands while interacting with the database:
 - `make report` generates companionship reports for newly added plant species
 - `make invalidate` invalidates the reports table so the next report command will iterate through every plant pair
 
-### Data entry
+### Data entry (command line)
 This command can be used to enter data into the database:
 
 ```bash
@@ -114,7 +114,19 @@ make format FILES=file,...
 
 `file` arguments follow the same guidelines as the `make enter` script.
 
-### Project Navigation
+## Server Maintenance
+If you plan to host a Greenworld server then you'll need an admin, someone with access to the underlying databases.
+The Greenworld server uses a connection to the same database that stores plant data and reports.
+It also connects to a second database to track users for data submission via the GUI.
+Server admins will have to manually grant new users submission access with the following SQL command:
+
+```sql
+UPDATE user SET accepted = true WHERE email LIKE '<email of the accepted user>';
+```
+
+There is currently no way to issue a `make report` run from the GUI so admins will have to do so manually (or put it in a CRON job).
+
+## Project Navigation
 - `frontend`: TypeScript code for the Greenworld browser-based UI
 - `greenworld`: Greenworld code and maintenance scripts
 - `journal`: Notes used to aid development
@@ -122,3 +134,4 @@ make format FILES=file,...
 - `scripts`: Miscellaneous scripts that don't fit anywhere else
 - `seed-data`: Data used to seed Greenworld instances
 - `server`: Greenworld web server
+- `validation`: Statistical test to validate the algorithm's accuracy

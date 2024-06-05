@@ -1,0 +1,18 @@
+<!doctype html>
+<title>Greenworld - Data Submission</title>
+<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}"/>
+{% include "macros/scripting.html" %}
+{% include "macros/header.html" %}
+
+<h2>Data Submission</h2>
+
+{% if current_user.accepted %}
+
+{% else %}
+
+<p>
+    The account registered with {{ current_user.email }} does not have submission access.
+    Please contact a server admin to request access.
+</p>
+
+{% endif %}

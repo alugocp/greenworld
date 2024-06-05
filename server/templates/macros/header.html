@@ -9,4 +9,15 @@
     <!-- The companion search app -->
     <a href="{{ url_for('companion_search_endpoint') }}">Companion Search</a>
 
+    |
+
+    <!-- Data submission -->
+    <a href="{{ url_for('submission_endpoint') }}">Submit Data</a>
+    {% if current_user.is_authenticated %}
+
+    |
+
+    <!-- End the user session -->
+    <a href="/logout">Logout ({{ current_user.email }})</a>
+    {% endif %}
 </div>

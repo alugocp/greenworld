@@ -7,6 +7,8 @@ from werkzeug.security import check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_login import UserMixin
+from flask_login import login_required
+from flask_login import logout_user
 from flask_login import login_user
 from flask import Blueprint
 from flask import render_template
@@ -34,6 +36,12 @@ def main(app):
     with app.app_context():
         flask_sql.create_all()
 
+    # Add the data submission endpoint
+    @app.route("/submission")
+    @login_required
+    def submission_endpoint():
+        return render_template("submission.html")
+
 
 # Model for the User table
 class User(UserMixin, flask_sql.Model):
@@ -44,7 +52,7 @@ class User(UserMixin, flask_sql.Model):
     id = flask_sql.Column(flask_sql.Integer, primary_key=True)
     email = flask_sql.Column(flask_sql.String(100), unique=True)
     password = flask_sql.Column(flask_sql.String(100))
-    name = flask_sql.Column(flask_sql.String(1000))
+    accepted = flask_sql.Column(flask_sql.Boolean, default = False)
 
 
 # TODO use this somewhere
@@ -61,14 +69,6 @@ def load_user(user_id):
 #
 
 
-@auth.route("/signup")
-def signup():
-    """
-    Renders the signup page
-    """
-    return render_template("signup.html")
-
-
 @auth.route("/login")
 def login():
     """
@@ -78,11 +78,13 @@ def login():
 
 
 @auth.route("/logout")
+@login_required
 def logout():
     """
     Renders the logout page
     """
-    return "Logout"
+    logout_user()
+    return redirect("/")
 
 
 #
@@ -105,7 +107,7 @@ def login_post():
         flash("Password is incorrect or user does not exist.")
         return redirect(url_for("auth.login"))
     login_user(user, remember=remember)
-    return redirect("/")
+    return redirect("/submission")
 
 
 @auth.route("/signup", methods=["POST"])
@@ -114,7 +116,6 @@ def signup_post():
     Validates and registers a new user
     """
     email = request.form.get("email")
-    name = request.form.get("name")
     password = request.form.get("password")
 
     # Make sure user doesn't already exist
@@ -124,7 +125,8 @@ def signup_post():
         return redirect(url_for("auth.signup"))
 
     # Register the new user and go to login
-    new_user = User(email=email, name=name, password=generate_password_hash(password))
+    new_user = User(email = email, password = generate_password_hash(password))
     flask_sql.session.add(new_user)
     flask_sql.session.commit()
-    return redirect(url_for("auth.login"))
+    login_user(new_user)
+    return redirect("/submission")

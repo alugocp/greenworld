@@ -73,10 +73,6 @@ def main(app, db):
                 "report.html", report=report, plant1=plants[0], plant2=plants[1]
             )
 
-    @app.route("/placement")
-    def guild_placement_endpoint():
-        return render_template("placement.html")
-
     @app.route("/companions")
     def companion_search_endpoint():
         return render_template("companions.html")
