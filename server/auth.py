@@ -1,8 +1,32 @@
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
+from flask_login import UserMixin
+from flask_login import login_user
 from flask import Blueprint
 from flask import render_template
 from flask import request
+from flask import redirect
+from flask import url_for
+from flask import flash
 
 auth = Blueprint('auth', __name__)
+
+flask_sql = SQLAlchemy()
+
+class User(UserMixin, flask_sql.Model):
+    id = flask_sql.Column(flask_sql.Integer, primary_key=True)
+    email = flask_sql.Column(flask_sql.String(100), unique=True)
+    password = flask_sql.Column(flask_sql.String(100))
+    name = flask_sql.Column(flask_sql.String(1000))
+
+login_manager = LoginManager()
+login_manager.login_view = 'auth.login'
+
+@login_manager.user_loader
+def load_user(user_id):
+    # since the user_id is just the primary key of our user table, use it in the query for the user
+    return User.query.get(int(user_id))
 
 @auth.route('/login')
 def login():
@@ -25,7 +49,7 @@ def login_post():
 
     # if the above check passes, then we know the user has the right credentials
     login_user(user, remember=remember)
-    return redirect(url_for('main.profile'))
+    return redirect('/')
 
 @auth.route('/signup')
 def signup():
@@ -45,11 +69,11 @@ def signup_post():
         return redirect(url_for('auth.signup'))
 
     # create a new user with the form data. Hash the password so the plaintext version isn't saved.
-    new_user = User(email=email, name=name, password=generate_password_hash(password, method='sha256'))
+    new_user = User(email=email, name=name, password=generate_password_hash(password))
 
     # add the new user to the database
-    db.session.add(new_user)
-    db.session.commit()
+    flask_sql.session.add(new_user)
+    flask_sql.session.commit()
     return redirect(url_for('auth.login'))
 
 @auth.route('/logout')

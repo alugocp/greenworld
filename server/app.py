@@ -2,9 +2,6 @@
 Entry point module for the Greenworld server
 """
 
-from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
-from flask_login import UserMixin
 from flask import Flask
 import sqlalchemy
 import pages
@@ -12,6 +9,9 @@ import api
 import lib
 from greenworld import orm
 from greenworld import Greenworld
+from auth import flask_sql
+from auth import login_manager
+from auth import auth as auth_blueprint
 
 app = Flask(
     "Greenworld",
@@ -44,26 +44,11 @@ def main():
     # Setup auth/login stuff
     app.config["SECRET_KEY"] = "secret-key-goes-here"
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///server.db"
-    flask_sql = SQLAlchemy()
     flask_sql.init_app(app)
-    from auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
-    # flask_sql.create_all(app=app)
-
-    class User(UserMixin, flask_sql.Model):
-        id = flask_sql.Column(flask_sql.Integer, primary_key=True)
-        email = flask_sql.Column(flask_sql.String(100), unique=True)
-        password = flask_sql.Column(flask_sql.String(100))
-        name = flask_sql.Column(flask_sql.String(1000))
-
-    login_manager = LoginManager()
-    login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
-
-    @login_manager.user_loader
-    def load_user(user_id):
-        # since the user_id is just the primary key of our user table, use it in the query for the user
-        return User.query.get(int(user_id))
+    with app.app_context():
+        flask_sql.create_all()
 
     # Run the server
     # TODO this function is not intended for production use, please rewrite before launch
