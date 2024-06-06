@@ -4,9 +4,35 @@
 {% include "macros/scripting.html" %}
 {% include "macros/header.html" %}
 
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+{% endif %}
+{% endwith %}
+
 <h2>Data Submission</h2>
 
 {% if current_user.accepted %}
+
+<p>
+    A server admin has granted you upload access.
+    Upload your data file here to enter new or ammended plant data into this Greenworld server.
+    New plant species may not appear in reports immediately.
+</p>
+
+<form method="POST" action="/submission" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <br>
+    <input type="submit">
+</form>
+
+<p>
+    Greenworld data is uploaded in JSON files that match the following schema:
+</p>
+
+<p style="white-space: pre;">{{schema}}</p>
 
 {% else %}
 

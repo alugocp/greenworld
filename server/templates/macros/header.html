@@ -12,7 +12,7 @@
     |
 
     <!-- Data submission -->
-    <a href="{{ url_for('submission_endpoint') }}">Submit Data</a>
+    <a href="{{ url_for('auth.submission_endpoint') }}">Submit Data</a>
     {% if current_user.is_authenticated %}
 
     |

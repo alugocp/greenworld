@@ -29,13 +29,13 @@ def main():
     """
     Main method, entry for the Greenworld server
     """
-    Greenworld()
+    gw = Greenworld()
     db = orm.init_db()
 
     # Import other server code
     pages.main(app, db)
     api.main(app, db)
-    auth.main(app)
+    auth.main(app, db, gw)
 
     # Run the server
     # TODO this function is not intended for production use, please rewrite before launch
