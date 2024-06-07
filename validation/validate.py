@@ -10,6 +10,7 @@ from greenworld.scripts import report
 from greenworld.orm import plants_table
 from greenworld.orm import reports_table
 from greenworld.orm import init_db
+from matplotlib import pyplot
 
 
 def mann_whitney(label, d1, d2):
@@ -123,6 +124,24 @@ def main():
     mann_whitney("GOOD > BASELINE", GOOD_SCORES, BASELINE)
     mann_whitney("NEUTRAL > BASELINE", NEUTRAL_SCORES, BASELINE)
     mann_whitney("BASELINE > BAD", BASELINE, BAD_SCORES)
+
+    # Render a boxplot for each of the distributions
+    pyplot.set_loglevel(level = "warning")
+    pyplot.boxplot(
+        [
+            GOOD_SCORES,
+            NEUTRAL_SCORES,
+            BAD_SCORES,
+            BASELINE
+        ],
+        labels = [
+            "Good",
+            "Neutral",
+            "Bad",
+            "Baseline"
+        ]
+    )
+    pyplot.savefig("validation/boxes.png")
 
 
 if __name__ == "__main__":
